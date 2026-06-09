@@ -19,12 +19,12 @@ function getOpenAI(): OpenAI {
 const generatedCardSchema = z.object({
   front: z.string().min(1),
   back: z.string(),
-  card_type: z.enum(["basic", "cloze"]).optional(),
+  card_type: z.enum(["basic", "cloze"]),
 });
 
 const generatedDeckSchema = z.object({
   deckName: z.string().min(1),
-  description: z.string().optional(),
+  description: z.string(),
   cards: z.array(generatedCardSchema).min(1),
 });
 
@@ -91,12 +91,12 @@ export async function generateDeckWithAI(options: GenerateDeckOptions): Promise<
                   back: { type: "string" },
                   card_type: { type: "string", enum: ["basic", "cloze"] },
                 },
-                required: ["front", "back"],
+                required: ["front", "back", "card_type"],
                 additionalProperties: false,
               },
             },
           },
-          required: ["deckName", "cards"],
+          required: ["deckName", "description", "cards"],
           additionalProperties: false,
         },
       },

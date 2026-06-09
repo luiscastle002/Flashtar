@@ -59,7 +59,8 @@ export async function POST(request: Request) {
     .single();
 
   if (genError || !generation) {
-    return NextResponse.json({ error: "Failed to start generation" }, { status: 500 });
+    console.error("AI_GENERATIONS_INSERT_ERROR:", genError);
+    return NextResponse.json({ error: "Failed to start generation",details: genError, }, { status: 500 });
   }
 
   try {
