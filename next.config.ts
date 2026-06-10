@@ -14,7 +14,9 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  serverExternalPackages: ["sql.js"],
+  experimental: {
+    serverComponentsExternalPackages: [],
+  },
 };
 
 export default nextConfig;
