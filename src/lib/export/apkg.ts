@@ -22,7 +22,7 @@ function getAnkiModel(cardType: string): { name: string; fields: string[]; templ
 export async function buildApkg(deckName: string, cards: Flashcard[]): Promise<Uint8Array> {
   const initSqlJs = (await import("sql.js")).default;
   const SQL = await initSqlJs({
-    locateFile: (file) => `https://sql.js.org/dist/${file}`,
+    locateFile: (file) => `/${file}`,
   });
 
   const db = new SQL.Database();
