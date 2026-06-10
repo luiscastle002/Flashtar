@@ -6,25 +6,16 @@ function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
 }
 
-function resolveCardType(cardType: Flashcard["card_type"]): "basic" | "cloze" {
-  return cardType === "cloze" ? "cloze" : "basic";
-}
-
 let sqlInitPromise: Promise<SqlJsStatic> | null = null;
 
 async function getSql(): Promise<SqlJsStatic> {
   if (!sqlInitPromise) {
     sqlInitPromise = (async () => {
       const initSqlJs = (await import("sql.js")).default;
-      if (typeof window === "undefined") {
-        const path = await import("path");
-        return initSqlJs({
-          locateFile: (file) =>
-            path.join(process.cwd(), "node_modules", "sql.js", "dist", file),
-        });
-      }
+      const path = await import("path");
       return initSqlJs({
-        locateFile: (file) => `/${file}`,
+        locateFile: (file) =>
+          path.join(process.cwd(), "node_modules", "sql.js", "dist", file),
       });
     })();
   }
@@ -39,7 +30,6 @@ export async function buildApkg(deckName: string, cards: Flashcard[]): Promise<U
     config: null,
   });
 
-  // Create models ONCE
   const basicModel = Model.basic();
   const clozeModel = Model.cloze();
 
@@ -47,10 +37,7 @@ export async function buildApkg(deckName: string, cards: Flashcard[]): Promise<U
     const front = stripHtml(card.front);
     const back = stripHtml(card.back);
 
-    const model =
-      card.card_type === "cloze"
-        ? clozeModel
-        : basicModel;
+    const model = card.card_type === "cloze" ? clozeModel : basicModel;
 
     deck.addNote(
       new Note({
@@ -64,14 +51,4 @@ export async function buildApkg(deckName: string, cards: Flashcard[]): Promise<U
   pkg.addDeck(deck);
 
   return pkg.toUint8Array(SQL);
-}
-
-export function downloadApkg(filename: string, data: Uint8Array) {
-  const blob = new Blob([new Uint8Array(data)], { type: "application/octet-stream" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = filename.endsWith(".apkg") ? filename : `${filename}.apkg`;
-  link.click();
-  URL.revokeObjectURL(url);
 }
