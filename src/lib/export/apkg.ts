@@ -1,19 +1,12 @@
 import { Package, Deck, Model, Note } from "ankipack";
 import type { SqlJsStatic } from "sql.js";
 import type { Flashcard } from "@/types";
-import path from "path";
 
 function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
 }
 
 let sqlInitPromise: Promise<SqlJsStatic> | null = null;
-
-type SqlJsInit = (options: { locateFile: (file: string) => string }) => Promise<SqlJsStatic>;
-
-type SqlJsModule = {
-  default?: SqlJsInit;
-} & SqlJsInit;
 
 async function getSql(): Promise<SqlJsStatic> {
   if (!sqlInitPromise) {
@@ -22,13 +15,11 @@ async function getSql(): Promise<SqlJsStatic> {
         const sqlModule = await import("sql.js");
 
         const initSqlJs = sqlModule.default ?? sqlModule;
-        if (typeof initSqlJs !== "function") {
-          throw new Error("sql.js initializer is not a function");
-        }
-        const SQL = await initSqlJs({
-          locateFile: (file: string) =>
-            `https://sql.js.org/dist/${file}`,
-        });
+
+          const SQL = await initSqlJs({
+            locateFile: (file: string) =>
+              `https://sql.js.org/dist/${file}`,
+          });
       
         return SQL;
       } catch (err) {
