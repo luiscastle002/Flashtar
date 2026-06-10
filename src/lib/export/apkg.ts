@@ -9,21 +9,22 @@ function stripHtml(html: string): string {
 
 let sqlInitPromise: Promise<SqlJsStatic> | null = null;
 
+type SqlJsInit = (options: { locateFile: (file: string) => string }) => Promise<SqlJsStatic>;
+
+type SqlJsModule = {
+  default?: SqlJsInit;
+} & SqlJsInit;
+
 async function getSql(): Promise<SqlJsStatic> {
   if (!sqlInitPromise) {
     sqlInitPromise = (async () => {
       try {
-        const sqlModule = await import("sql.js");
-      
-        console.log("SQL MODULE:", sqlModule);
-        console.log("SQL MODULE KEYS:", Object.keys(sqlModule));
-      
-        const initSqlJs =
-          (sqlModule as any).default ??
-          sqlModule;
-      
-        console.log("INIT SQL TYPE:", typeof initSqlJs);
-      
+        const sqlModule = (await import("sql.js")) as unknown as SqlJsModule;
+
+        const initSqlJs = sqlModule.default ?? sqlModule;
+        if (typeof initSqlJs !== "function") {
+          throw new Error("sql.js initializer is not a function");
+        }
         const SQL = await initSqlJs({
           locateFile: (file: string) =>
             path.join(

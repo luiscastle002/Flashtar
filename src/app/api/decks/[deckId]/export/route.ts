@@ -42,7 +42,8 @@ export async function GET(
     .eq("deck_id", deckId)
     .order("position");
 
-  const safeName = deck.name.replace(/[^a-z0-9]/gi, "_");
+  const safeName =
+  (deck.name ?? "deck").replace(/[^a-z0-9]/gi, "_");
 
   if (format === "csv") {
     const csv = flashcardsToCsv(deck.name, cards ?? []);
@@ -63,7 +64,7 @@ export async function GET(
     }
 
     const apkg = await buildApkg(deck.name, cards ?? []);
-    return new NextResponse(Buffer.from(apkg), {
+    return new NextResponse(new Uint8Array(apkg), {
       headers: {
         "Content-Type": "application/octet-stream",
         "Content-Disposition": `attachment; filename="${safeName}.apkg"`,
