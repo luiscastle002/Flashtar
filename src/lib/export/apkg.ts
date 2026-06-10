@@ -26,13 +26,24 @@ async function getSql(): Promise<SqlJsStatic> {
 
 export async function buildApkg(deckName: string, cards: Flashcard[]): Promise<Uint8Array> {
   const SQL = await getSql();
-  const deck = new Deck({ name: deckName, config: null });
+
+  const deck = new Deck({
+    name: deckName,
+    config: null,
+  });
+
+  // Create models ONCE
+  const basicModel = Model.basic();
+  const clozeModel = Model.cloze();
 
   for (const card of cards) {
-    const type = resolveCardType(card.card_type);
-    const model = type === "cloze" ? Model.cloze() : Model.basic();
     const front = stripHtml(card.front);
     const back = stripHtml(card.back);
+
+    const model =
+      card.card_type === "cloze"
+        ? clozeModel
+        : basicModel;
 
     deck.addNote(
       new Note({
@@ -44,6 +55,7 @@ export async function buildApkg(deckName: string, cards: Flashcard[]): Promise<U
 
   const pkg = new Package();
   pkg.addDeck(deck);
+
   return pkg.toUint8Array(SQL);
 }
 

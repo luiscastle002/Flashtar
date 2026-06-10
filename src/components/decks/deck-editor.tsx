@@ -187,13 +187,31 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
       toast.error("APKG export requires a Pro subscription.");
       return;
     }
+  
     setExporting(true);
+  
     try {
+      console.log("Starting APKG export...");
+      console.log("Cards:", cards.length);
+  
       const data = await buildApkg(deck.name, cards);
+  
+      console.log("APKG generated");
+      console.log("Size:", data.length);
+  
       downloadApkg(deck.name, data);
+  
       toast.success("APKG downloaded");
-    } catch {
-      toast.error("Failed to export APKG");
+    } catch (error) {
+      console.error("APKG EXPORT ERROR:", error);
+  
+      if (error instanceof Error) {
+        console.error("Message:", error.message);
+        console.error("Stack:", error.stack);
+        toast.error(error.message);
+      } else {
+        toast.error("Failed to export APKG");
+      }
     } finally {
       setExporting(false);
     }
