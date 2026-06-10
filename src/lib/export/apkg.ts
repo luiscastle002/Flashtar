@@ -1,4 +1,5 @@
 import type { Flashcard } from "@/types";
+import { loadSql } from "@/lib/sql/initSql";
 
 function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
@@ -20,10 +21,7 @@ function getAnkiModel(cardType: string): { name: string; fields: string[]; templ
 }
 
 export async function buildApkg(deckName: string, cards: Flashcard[]): Promise<Uint8Array> {
-  const initSqlJs = (await import("sql.js")).default;
-  const SQL = await initSqlJs({
-    locateFile: (file) => `/${file}`,
-  });
+  const SQL = await loadSql();
 
   const db = new SQL.Database();
   const now = Math.floor(Date.now() / 1000);
