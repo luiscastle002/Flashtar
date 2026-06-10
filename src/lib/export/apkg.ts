@@ -11,14 +11,38 @@ let sqlInitPromise: Promise<SqlJsStatic> | null = null;
 async function getSql(): Promise<SqlJsStatic> {
   if (!sqlInitPromise) {
     sqlInitPromise = (async () => {
-      const initSqlJs = (await import("sql.js")).default;
-      const path = await import("path");
-      return initSqlJs({
-        locateFile: (file) =>
-          path.join(process.cwd(), "node_modules", "sql.js", "dist", file),
-      });
+      try {
+        console.log("Initializing sql.js...");
+
+        const initSqlJs = (await import("sql.js")).default;
+        const path = await import("path");
+
+        const SQL = await initSqlJs({
+          locateFile: (file) => {
+            const wasmPath = path.join(
+              process.cwd(),
+              "node_modules",
+              "sql.js",
+              "dist",
+              file
+            );
+
+            console.log("WASM PATH:", wasmPath);
+
+            return wasmPath;
+          },
+        });
+
+        console.log("sql.js initialized successfully");
+
+        return SQL;
+      } catch (err) {
+        console.error("SQL INIT ERROR:", err);
+        throw err;
+      }
     })();
   }
+
   return sqlInitPromise;
 }
 
