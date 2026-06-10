@@ -24,9 +24,8 @@ async function getSql(): Promise<SqlJsStatic> {
         }
 
         const SQL = await initSqlJs({
-          // safest option for Vercel
           locateFile: (file: string) =>
-            `https://sql.js.org/dist/${file}`,
+            `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/${file}`,
         });
 
         return SQL;
