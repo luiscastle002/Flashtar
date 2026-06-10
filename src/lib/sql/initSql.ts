@@ -12,6 +12,6 @@ export async function loadSql(): Promise<SqlJsStatic> {
 
   return initSqlJs({
     locateFile: (file: string) =>
-      `https://sql.js.org/dist/${file}`,
+      `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/${file}`,
   });
 }
