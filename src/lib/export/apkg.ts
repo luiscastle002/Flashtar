@@ -2,6 +2,7 @@ import { Package, Deck, Model, Note } from "ankipack";
 import type { SqlJsStatic } from "sql.js";
 import type { Flashcard } from "@/types";
 
+
 function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
 }
@@ -12,15 +13,22 @@ async function getSql(): Promise<SqlJsStatic> {
   if (!sqlInitPromise) {
     sqlInitPromise = (async () => {
       try {
+        // IMPORTANT: simple dynamic import (no eval, no tricks)
         const sqlModule = await import("sql.js");
 
-        const initSqlJs = sqlModule.default ?? sqlModule;
+        const initSqlJs =
+          sqlModule.default ?? sqlModule;
 
-          const SQL = await initSqlJs({
-            locateFile: (file: string) =>
-              `https://sql.js.org/dist/${file}`,
-          });
-      
+        if (typeof initSqlJs !== "function") {
+          throw new Error("sql.js initializer is not a function");
+        }
+
+        const SQL = await initSqlJs({
+          // safest option for Vercel
+          locateFile: (file: string) =>
+            `https://sql.js.org/dist/${file}`,
+        });
+
         return SQL;
       } catch (err) {
         console.error("FULL SQL ERROR:", err);
