@@ -27,13 +27,7 @@ async function getSql(): Promise<SqlJsStatic> {
         }
         const SQL = await initSqlJs({
           locateFile: (file: string) =>
-            path.join(
-              process.cwd(),
-              "node_modules",
-              "sql.js",
-              "dist",
-              file
-            ),
+            `https://sql.js.org/dist/${file}`,
         });
       
         return SQL;
