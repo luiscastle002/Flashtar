@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { buildApkg } from "@/lib/export/apkg";
 import { flashcardsToCsv } from "@/lib/export/csv";
+import { getSubscription } from "@/lib/queries/user";
+import type { Plan } from "@/types";
+import { PLAN_LIMITS } from "@/types";
+
+export const runtime = "nodejs";
 
 export async function GET(
   request: Request,
@@ -36,15 +42,34 @@ export async function GET(
     .eq("deck_id", deckId)
     .order("position");
 
+  const safeName = deck.name.replace(/[^a-z0-9]/gi, "_");
+
   if (format === "csv") {
     const csv = flashcardsToCsv(deck.name, cards ?? []);
     return new NextResponse(csv, {
       headers: {
         "Content-Type": "text/csv",
-        "Content-Disposition": `attachment; filename="${deck.name.replace(/[^a-z0-9]/gi, "_")}.csv"`,
+        "Content-Disposition": `attachment; filename="${safeName}.csv"`,
       },
     });
   }
 
-  return NextResponse.json({ error: "Use client-side export for APKG format" }, { status: 400 });
+  if (format === "apkg") {
+    const subscription = await getSubscription(user.id);
+    const plan = (subscription?.plan ?? "free") as Plan;
+
+    if (!PLAN_LIMITS[plan].apkgExport) {
+      return NextResponse.json({ error: "APKG export requires a Pro subscription." }, { status: 403 });
+    }
+
+    const apkg = await buildApkg(deck.name, cards ?? []);
+    return new NextResponse(Buffer.from(apkg), {
+      headers: {
+        "Content-Type": "application/octet-stream",
+        "Content-Disposition": `attachment; filename="${safeName}.apkg"`,
+      },
+    });
+  }
+
+  return NextResponse.json({ error: "Unsupported export format" }, { status: 400 });
 }

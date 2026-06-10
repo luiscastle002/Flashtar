@@ -32,7 +32,6 @@ import {
 } from "@/actions/flashcards";
 import { updateDeck } from "@/actions/decks";
 import { downloadCsv, flashcardsToCsv } from "@/lib/export/csv";
-import { buildApkg, downloadApkg } from "@/lib/export/apkg";
 import { toast } from "sonner";
 import type { Deck, Flashcard, Plan, Profile } from "@/types";
 import { PLAN_LIMITS } from "@/types";
@@ -187,31 +186,27 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
       toast.error("APKG export requires a Pro subscription.");
       return;
     }
-  
+
     setExporting(true);
-  
+
     try {
-      console.log("Starting APKG export...");
-      console.log("Cards:", cards.length);
-  
-      const data = await buildApkg(deck.name, cards);
-  
-      console.log("APKG generated");
-      console.log("Size:", data.length);
-  
-      downloadApkg(deck.name, data);
-  
+      const res = await fetch(`/api/decks/${deck.id}/export?format=apkg`);
+      if (!res.ok) {
+        const err = (await res.json().catch(() => ({}))) as { error?: string };
+        throw new Error(err.error ?? "Export failed");
+      }
+
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${deck.name}.apkg`;
+      link.click();
+      URL.revokeObjectURL(url);
+
       toast.success("APKG downloaded");
     } catch (error) {
-      console.error("APKG EXPORT ERROR:", error);
-  
-      if (error instanceof Error) {
-        console.error("Message:", error.message);
-        console.error("Stack:", error.stack);
-        toast.error(error.message);
-      } else {
-        toast.error("Failed to export APKG");
-      }
+      toast.error(error instanceof Error ? error.message : "Failed to export APKG");
     } finally {
       setExporting(false);
     }
