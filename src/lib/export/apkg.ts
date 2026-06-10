@@ -1,6 +1,7 @@
 import { Package, Deck, Model, Note } from "ankipack";
 import type { SqlJsStatic } from "sql.js";
 import type { Flashcard } from "@/types";
+import path from "path";
 
 function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
@@ -12,32 +13,31 @@ async function getSql(): Promise<SqlJsStatic> {
   if (!sqlInitPromise) {
     sqlInitPromise = (async () => {
       try {
-        console.log("Initializing sql.js...");
-
-        const initSqlJs = (await import("sql.js")).default;
-        const path = await import("path");
-
+        const sqlModule = await import("sql.js");
+      
+        console.log("SQL MODULE:", sqlModule);
+        console.log("SQL MODULE KEYS:", Object.keys(sqlModule));
+      
+        const initSqlJs =
+          (sqlModule as any).default ??
+          sqlModule;
+      
+        console.log("INIT SQL TYPE:", typeof initSqlJs);
+      
         const SQL = await initSqlJs({
-          locateFile: (file) => {
-            const wasmPath = path.join(
+          locateFile: (file: string) =>
+            path.join(
               process.cwd(),
               "node_modules",
               "sql.js",
               "dist",
               file
-            );
-
-            console.log("WASM PATH:", wasmPath);
-
-            return wasmPath;
-          },
+            ),
         });
-
-        console.log("sql.js initialized successfully");
-
+      
         return SQL;
       } catch (err) {
-        console.error("SQL INIT ERROR:", err);
+        console.error("FULL SQL ERROR:", err);
         throw err;
       }
     })();
