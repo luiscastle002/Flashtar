@@ -19,7 +19,7 @@ async function getSql(): Promise<SqlJsStatic> {
   if (!sqlInitPromise) {
     sqlInitPromise = (async () => {
       try {
-        const sqlModule = eval("require")("sql.js");
+        const sqlModule = await import("sql.js");
 
         const initSqlJs = sqlModule.default ?? sqlModule;
         if (typeof initSqlJs !== "function") {

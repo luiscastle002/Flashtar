@@ -13,6 +13,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  serverExternalPackages: ["sql.js"],
 };
 
 export default nextConfig;
