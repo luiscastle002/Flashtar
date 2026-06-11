@@ -100,7 +100,7 @@ export async function POST(request: Request) {
     const { error: cardsError } = await supabase.from("flashcards").insert(flashcards);
     if (cardsError) throw new Error(cardsError.message);
 
-    await supabase
+    const { error: updateError } = await supabase
       .from("ai_generations")
       .update({
         status: "completed",
@@ -110,19 +110,36 @@ export async function POST(request: Request) {
       })
       .eq("id", generation.id);
 
+    if (updateError) {
+      // Log detailed error but continue since the deck was successfully created.
+      // Failing the request here would result in orphaned decks in the DB and a bad UX.
+      console.error("AI_GENERATIONS_UPDATE_SUCCESS_ERROR:", {
+        generationId: generation.id,
+        deckId: savedDeck.id,
+        error: updateError,
+      });
+    }
+
     return NextResponse.json({
       deck: savedDeck,
       cardCount: deck.cards.length,
       generationId: generation.id,
     });
   } catch (error) {
-    await supabase
+    const { error: updateError } = await supabase
       .from("ai_generations")
       .update({
         status: "failed",
         error_message: error instanceof Error ? error.message : "Generation failed",
       })
       .eq("id", generation.id);
+
+    if (updateError) {
+      console.error("AI_GENERATIONS_UPDATE_FAILURE_ERROR:", {
+        generationId: generation.id,
+        error: updateError,
+      });
+    }
 
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Generation failed" },

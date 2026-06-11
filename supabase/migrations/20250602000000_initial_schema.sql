@@ -247,6 +247,10 @@ CREATE POLICY "Users can insert own generations"
   ON public.ai_generations FOR INSERT
   WITH CHECK (auth.uid() = user_id);
 
+CREATE POLICY "Users can update own generations"
+  ON public.ai_generations FOR UPDATE
+  USING (auth.uid() = user_id);
+
 CREATE POLICY "Admins can view all generations"
   ON public.ai_generations FOR SELECT
   USING (
