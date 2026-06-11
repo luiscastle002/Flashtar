@@ -1,10 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { buildApkg } from "@/lib/export/apkg";
 import { flashcardsToCsv } from "@/lib/export/csv";
-import { getSubscription } from "@/lib/queries/user";
-import type { Plan } from "@/types";
-import { PLAN_LIMITS } from "@/types";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -57,20 +53,10 @@ export async function GET(
   }
 
   if (format === "apkg") {
-    const subscription = await getSubscription(user.id);
-    const plan = (subscription?.plan ?? "free") as Plan;
-
-    if (!PLAN_LIMITS[plan].apkgExport) {
-      return NextResponse.json({ error: "APKG export requires a Pro subscription." }, { status: 403 });
-    }
-
-    const apkg = await buildApkg(deck.name, cards ?? []);
-    return new NextResponse(new Uint8Array(apkg), {
-      headers: {
-        "Content-Type": "application/octet-stream",
-        "Content-Disposition": `attachment; filename="${safeName}.apkg"`,
-      },
-    });
+    return NextResponse.json(
+      { error: "APKG export is now generated directly in the browser." },
+      { status: 400 }
+    );
   }
 
   return NextResponse.json({ error: "Unsupported export format" }, { status: 400 });

@@ -188,15 +188,15 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
     }
 
     setExporting(true);
+    const toastId = toast.loading("Initializing Anki compiler... (loading WebAssembly)");
 
     try {
-      const res = await fetch(`/api/decks/${deck.id}/export?format=apkg`);
-      if (!res.ok) {
-        const err = (await res.json().catch(() => ({}))) as { error?: string };
-        throw new Error(err.error ?? "Export failed");
-      }
+      const { buildApkgClient } = await import("@/lib/export/apkg-client");
+      toast.loading("Generating APKG package...", { id: toastId });
+      const bytes = await buildApkgClient(deck.name, cards);
 
-      const blob = await res.blob();
+      toast.loading("Downloading...", { id: toastId });
+      const blob = new Blob([bytes as unknown as BlobPart], { type: "application/octet-stream" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
@@ -204,9 +204,9 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
       link.click();
       URL.revokeObjectURL(url);
 
-      toast.success("APKG downloaded");
+      toast.success("APKG downloaded successfully!", { id: toastId });
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Failed to export APKG");
+      toast.error(error instanceof Error ? error.message : "Failed to export APKG", { id: toastId });
     } finally {
       setExporting(false);
     }
@@ -232,8 +232,8 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
               CSV
             </Button>
             <Button variant="outline" size="sm" onClick={handleExportApkg} disabled={exporting}>
-              <Download className="mr-2 h-4 w-4" />
-              APKG
+              <Download className={`mr-2 h-4 w-4 ${exporting ? "animate-bounce" : ""}`} />
+              {exporting ? "Exporting..." : "APKG"}
             </Button>
             <Button size="sm" onClick={handleSave} disabled={saving}>
               <Save className="mr-2 h-4 w-4" />
