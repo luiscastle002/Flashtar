@@ -12,12 +12,16 @@ import { toast } from "sonner";
 
 export default function SignUpPage() {
   const [loading, setLoading] = useState(false);
+  const [successEmail, setSuccessEmail] = useState<string | null>(null);
 
   async function handleSubmit(formData: FormData) {
     setLoading(true);
     const result = await signUp(formData);
     if (result?.error) {
       toast.error(result.error);
+      setLoading(false);
+    } else if (result?.success) {
+      setSuccessEmail(result.email || (formData.get("email") as string));
       setLoading(false);
     }
   }
@@ -29,6 +33,36 @@ export default function SignUpPage() {
       toast.error(result.error);
       setLoading(false);
     }
+  }
+
+  if (successEmail) {
+    return (
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <Card className="w-full max-w-md">
+          <CardHeader className="text-center">
+            <Link href="/" className="inline-flex items-center justify-center gap-2 font-bold text-xl mb-2">
+              <Sparkles className="h-6 w-6 text-primary" />
+              AnkiAI
+            </Link>
+            <CardTitle>Verify your email</CardTitle>
+            <CardDescription>One last step to get started</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6 text-center">
+            <div className="space-y-2">
+              <p className="text-sm font-semibold text-green-600 dark:text-green-400">
+                Account created successfully.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Please check your email <strong className="text-foreground">{successEmail}</strong> and click the verification link before signing in.
+              </p>
+            </div>
+            <Button asChild className="w-full">
+              <Link href="/login">Back to Login</Link>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
   }
 
   return (
