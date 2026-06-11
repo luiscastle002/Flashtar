@@ -289,19 +289,27 @@ export default async function HomePage() {
       {/* Footer */}
       <footer className="border-t py-12">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2 font-bold">
               <Sparkles className="h-5 w-5 text-primary" />
               AnkiAI
             </div>
+            <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex gap-4">
+                <Link href="/login" className="hover:text-foreground transition-colors">Sign in</Link>
+                <Link href="/signup" className="hover:text-foreground transition-colors">Sign up</Link>
+                <Link href="#pricing" className="hover:text-foreground transition-colors">Pricing</Link>
+              </div>
+              <span className="hidden sm:inline text-border">|</span>
+              <div className="flex gap-4">
+                <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
+                <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+                <Link href="/refund" className="hover:text-foreground transition-colors">Refunds</Link>
+              </div>
+            </div>
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} AnkiAI. All rights reserved.
             </p>
-            <div className="flex gap-4 text-sm text-muted-foreground">
-              <Link href="/login" className="hover:text-foreground">Sign in</Link>
-              <Link href="/signup" className="hover:text-foreground">Sign up</Link>
-              <Link href="#pricing" className="hover:text-foreground">Pricing</Link>
-            </div>
           </div>
         </div>
       </footer>
