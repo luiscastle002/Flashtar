@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Plus, Search, Copy, Trash2, Layers } from "lucide-react";
-import { DashboardShellClient } from "@/components/dashboard/dashboard-shell-client";
+import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -94,7 +94,7 @@ export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClien
   }
 
   return (
-    <DashboardShellClient currentPath="/decks" profile={profile}>
+    <DashboardShell currentPath="/decks" profile={profile}>
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
@@ -200,6 +200,6 @@ export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClien
           </div>
         )}
       </div>
-    </DashboardShellClient>
+    </DashboardShell>
   );
 }

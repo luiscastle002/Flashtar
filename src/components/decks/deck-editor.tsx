@@ -20,7 +20,7 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import { GripVertical, Plus, Trash2, Download, Save } from "lucide-react";
 import { RichTextEditor } from "@/components/flashcards/rich-text-editor";
-import { DashboardShellClient } from "@/components/dashboard/dashboard-shell-client";
+import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -213,7 +213,7 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
   }
 
   return (
-    <DashboardShellClient currentPath="/decks" profile={profile}>
+    <DashboardShell currentPath="/decks" profile={profile}>
       <div className="max-w-4xl mx-auto space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
           <div className="flex-1 space-y-2">
@@ -263,6 +263,6 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
           Add Card
         </Button>
       </div>
-    </DashboardShellClient>
+    </DashboardShell>
   );
 }

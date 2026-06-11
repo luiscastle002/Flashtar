@@ -2,13 +2,17 @@ import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { getDashboardStats, getRecentDecks } from "@/lib/queries/user";
+import { getDashboardStats, getRecentDecks, getProfile } from "@/lib/queries/user";
 import { formatDate, pluralize } from "@/lib/utils";
 import Link from "next/link";
 import { Layers, Sparkles, CreditCard, ArrowRight } from "lucide-react";
 
 export default async function DashboardPage() {
-  const [stats, recentDecks] = await Promise.all([getDashboardStats(), getRecentDecks()]);
+  const [stats, recentDecks, profile] = await Promise.all([
+    getDashboardStats(),
+    getRecentDecks(),
+    getProfile(),
+  ]);
 
   const usagePercent =
     stats && stats.generationLimit !== Infinity
@@ -16,7 +20,7 @@ export default async function DashboardPage() {
       : 0;
 
   return (
-    <DashboardShell currentPath="/dashboard">
+    <DashboardShell currentPath="/dashboard" profile={profile}>
       <div className="space-y-8">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold">Dashboard</h1>

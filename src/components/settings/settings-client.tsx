@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { CreditCard, User } from "lucide-react";
-import { DashboardShellClient } from "@/components/dashboard/dashboard-shell-client";
+import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -50,7 +50,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
   }
 
   return (
-    <DashboardShellClient currentPath="/settings" profile={profile}>
+    <DashboardShell currentPath="/settings" profile={profile}>
       <div className="max-w-2xl mx-auto space-y-6">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold">Settings</h1>
@@ -107,6 +107,6 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
           </CardContent>
         </Card>
       </div>
-    </DashboardShellClient>
+    </DashboardShell>
   );
 }

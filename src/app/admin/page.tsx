@@ -35,7 +35,7 @@ export default async function AdminPage() {
   const proCount = subscriptions?.filter((s) => s.plan === "pro" && s.status === "active").length ?? 0;
 
   return (
-    <DashboardShell currentPath="/admin">
+    <DashboardShell currentPath="/admin" profile={profile}>
       <div className="space-y-8">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold">Admin Dashboard</h1>

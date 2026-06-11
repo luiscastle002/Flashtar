@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   LayoutDashboard,
@@ -7,7 +9,6 @@ import {
   Shield,
   LogOut,
 } from "lucide-react";
-import { signOut } from "@/actions/auth";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -18,8 +19,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { getProfile } from "@/lib/queries/user";
 import { cn } from "@/lib/utils";
+import { createClient } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
+import type { Profile } from "@/types";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -28,17 +31,26 @@ const navItems = [
   { href: "/settings", label: "Settings", icon: Settings },
 ];
 
-export async function DashboardShell({
+export function DashboardShell({
   children,
   currentPath,
+  profile,
 }: {
   children: React.ReactNode;
   currentPath: string;
+  profile?: Profile | null;
 }) {
-  const profile = await getProfile();
+  const router = useRouter();
   const initials = profile?.full_name
-    ? profile.full_name.split(" ").map((n: string) => n[0]).join("").slice(0, 2).toUpperCase()
+    ? profile.full_name.split(" ").map((n) => n[0]).join("").slice(0, 2).toUpperCase()
     : profile?.email?.slice(0, 2).toUpperCase() ?? "U";
+
+  async function handleSignOut() {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    router.push("/");
+    router.refresh();
+  }
 
   return (
     <div className="min-h-screen flex">
@@ -125,13 +137,9 @@ export async function DashboardShell({
                   <Link href="/settings">Settings</Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <form action={signOut}>
-                    <button type="submit" className="flex w-full items-center gap-2">
-                      <LogOut className="h-4 w-4" />
-                      Sign out
-                    </button>
-                  </form>
+                <DropdownMenuItem onClick={handleSignOut} className="cursor-pointer">
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Sign out
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
