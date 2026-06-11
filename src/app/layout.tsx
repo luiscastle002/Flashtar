@@ -13,13 +13,26 @@ export const metadata: Metadata = {
   },
   description:
     "Generate complete Anki decks with AI. Create, edit, and export high-quality flashcards in seconds.",
+  icons: {
+    icon: "/anki-ai.icon.png",
+    apple: "/anki-ai.icon.png",
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
           <Toaster />
         </ThemeProvider>
