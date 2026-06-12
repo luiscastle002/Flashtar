@@ -19,6 +19,9 @@ export interface Subscription {
   user_id: string;
   stripe_customer_id: string | null;
   stripe_subscription_id: string | null;
+  paddle_customer_id: string | null;
+  paddle_subscription_id: string | null;
+  billing_provider: 'stripe' | 'paddle';
   status: SubscriptionStatus;
   plan: Plan;
   current_period_end: string | null;

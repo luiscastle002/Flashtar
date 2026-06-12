@@ -4,6 +4,9 @@ const clientEnvSchema = z.object({
   NEXT_PUBLIC_SUPABASE_URL: z.string().url(),
   NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().min(1),
   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string().optional(),
+  NEXT_PUBLIC_PADDLE_CLIENT_TOKEN: z.string().optional(),
+  NEXT_PUBLIC_PADDLE_PRICE_ID: z.string().optional(),
+  NEXT_PUBLIC_PADDLE_ENV: z.enum(["sandbox", "production"]).default("sandbox"),
   NEXT_PUBLIC_APP_URL: z.string().url().default("http://localhost:3000"),
 });
 
@@ -13,6 +16,8 @@ const serverEnvSchema = clientEnvSchema.extend({
   STRIPE_SECRET_KEY: z.string().min(1).optional(),
   STRIPE_WEBHOOK_SECRET: z.string().min(1).optional(),
   STRIPE_PRO_PRICE_ID: z.string().min(1).optional(),
+  PADDLE_API_KEY: z.string().min(1).optional(),
+  PADDLE_WEBHOOK_SECRET_KEY: z.string().min(1).optional(),
   ADMIN_EMAILS: z.string().optional(),
 });
 
@@ -26,6 +31,9 @@ function parseClientEnv(): ClientEnv {
     NEXT_PUBLIC_SUPABASE_ANON_KEY:
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "placeholder-anon-key",
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
+    NEXT_PUBLIC_PADDLE_CLIENT_TOKEN: process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN,
+    NEXT_PUBLIC_PADDLE_PRICE_ID: process.env.NEXT_PUBLIC_PADDLE_PRICE_ID,
+    NEXT_PUBLIC_PADDLE_ENV: process.env.NEXT_PUBLIC_PADDLE_ENV,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
   };
 
@@ -48,6 +56,8 @@ export function getServerEnv(): ServerEnv {
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
     STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
     STRIPE_PRO_PRICE_ID: process.env.STRIPE_PRO_PRICE_ID,
+    PADDLE_API_KEY: process.env.PADDLE_API_KEY,
+    PADDLE_WEBHOOK_SECRET_KEY: process.env.PADDLE_WEBHOOK_SECRET_KEY,
     ADMIN_EMAILS: process.env.ADMIN_EMAILS,
   });
 }

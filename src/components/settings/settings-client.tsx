@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CreditCard, User } from "lucide-react";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,9 @@ import { Label } from "@/components/ui/label";
 import { PLANS } from "@/lib/stripe";
 import { toast } from "sonner";
 import type { Profile, Subscription } from "@/types";
+import { env } from "@/lib/env";
+import { initializePaddle, type Paddle } from "@paddle/paddle-js";
+import { getPaddleUpdateTx, cancelPaddleSubscription } from "@/actions/paddle";
 
 interface SettingsClientProps {
   profile: Profile | null;
@@ -18,8 +21,20 @@ interface SettingsClientProps {
 
 export function SettingsClient({ profile, subscription }: SettingsClientProps) {
   const [loading, setLoading] = useState<"checkout" | "portal" | null>(null);
+  const [paddle, setPaddle] = useState<Paddle | null>(null);
   const plan = subscription?.plan ?? "free";
   const planInfo = PLANS[plan];
+
+  useEffect(() => {
+    if (env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN) {
+      initializePaddle({
+        environment: env.NEXT_PUBLIC_PADDLE_ENV,
+        token: env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN,
+      }).then((p) => {
+        if (p) setPaddle(p);
+      });
+    }
+  }, []);
 
   async function handleCheckout() {
     setLoading("checkout");
@@ -35,6 +50,29 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
     }
   }
 
+  async function handlePaddleCheckout() {
+    if (!paddle) {
+      toast.error("Billing system is initializing. Please try again in a moment.");
+      return;
+    }
+    if (!env.NEXT_PUBLIC_PADDLE_PRICE_ID) {
+      toast.error("Paddle price configuration is missing.");
+      return;
+    }
+    setLoading("checkout");
+    try {
+      paddle.Checkout.open({
+        items: [{ priceId: env.NEXT_PUBLIC_PADDLE_PRICE_ID, quantity: 1 }],
+        customData: { userId: profile?.id },
+      });
+    } catch (error) {
+      console.error("Paddle checkout failed:", error);
+      toast.error("Could not initiate checkout.");
+    } finally {
+      setLoading(null);
+    }
+  }
+
   async function handlePortal() {
     setLoading("portal");
     try {
@@ -44,6 +82,52 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
       else toast.error(data.error ?? "Portal failed");
     } catch {
       toast.error("Could not open billing portal");
+    } finally {
+      setLoading(null);
+    }
+  }
+
+  const [canceling, setCanceling] = useState(false);
+
+  async function handlePaddleCancel() {
+    if (!window.confirm("Are you sure you want to cancel your subscription?")) return;
+    setCanceling(true);
+    try {
+      const res = await cancelPaddleSubscription();
+      if (res.error) {
+        toast.error(res.error);
+      } else {
+        toast.success("Subscription successfully canceled at the end of the billing period.");
+      }
+    } catch {
+      toast.error("Failed to cancel subscription");
+    } finally {
+      setCanceling(false);
+    }
+  }
+
+  async function handlePaddlePortal() {
+    if (!paddle) {
+      toast.error("Billing system is initializing. Please try again in a moment.");
+      return;
+    }
+    setLoading("portal");
+    try {
+      const res = await getPaddleUpdateTx();
+      if (res.error) {
+        toast.error(res.error);
+        return;
+      }
+      if (res.transactionId) {
+        paddle.Checkout.open({
+          transactionId: res.transactionId,
+        });
+      } else {
+        toast.error("Could not retrieve billing details.");
+      }
+    } catch (error) {
+      console.error("Paddle portal failed:", error);
+      toast.error("Could not open billing details.");
     } finally {
       setLoading(null);
     }
@@ -96,13 +180,31 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
               ))}
             </ul>
             {plan === "free" ? (
-              <Button onClick={handleCheckout} disabled={loading === "checkout"}>
-                {loading === "checkout" ? "Redirecting..." : "Upgrade to Pro — $12/month"}
-              </Button>
+              <div className="flex flex-wrap gap-2">
+                <Button onClick={handlePaddleCheckout} disabled={loading === "checkout"}>
+                  {loading === "checkout" ? "Loading..." : "Upgrade via Paddle — $12/month"}
+                </Button>
+                <Button variant="outline" onClick={handleCheckout} disabled={loading === "checkout"}>
+                  {loading === "checkout" ? "Loading..." : "Upgrade via Stripe — $12/month"}
+                </Button>
+              </div>
             ) : (
-              <Button variant="outline" onClick={handlePortal} disabled={loading === "portal"}>
-                {loading === "portal" ? "Redirecting..." : "Manage Subscription"}
-              </Button>
+              <div className="flex flex-col gap-2">
+                {subscription?.billing_provider === "paddle" ? (
+                  <>
+                    <Button onClick={handlePaddlePortal} disabled={loading === "portal"}>
+                      {loading === "portal" ? "Opening..." : "Update Payment Method (Paddle)"}
+                    </Button>
+                    <Button variant="destructive" onClick={handlePaddleCancel} disabled={canceling}>
+                      {canceling ? "Canceling..." : "Cancel Subscription"}
+                    </Button>
+                  </>
+                ) : (
+                  <Button variant="outline" onClick={handlePortal} disabled={loading === "portal"}>
+                    {loading === "portal" ? "Redirecting..." : "Manage Subscription (Stripe)"}
+                  </Button>
+                )}
+              </div>
             )}
           </CardContent>
         </Card>
