@@ -35,9 +35,10 @@ export async function cancelPaddleSubscription() {
 
     revalidatePath("/settings");
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error("Failed to cancel Paddle subscription:", error);
-    return { error: error.message || "Failed to cancel subscription" };
+    const message = error instanceof Error ? error.message : "Failed to cancel subscription";
+    return { error: message };
   }
 }
 
@@ -63,8 +64,9 @@ export async function getPaddleUpdateTx() {
       subscription.paddle_subscription_id
     );
     return { transactionId: transaction.id };
-  } catch (error: any) {
+  } catch (error) {
     console.error("Failed to generate payment update transaction:", error);
-    return { error: error.message || "Failed to generate update link" };
+    const message = error instanceof Error ? error.message : "Failed to generate update link";
+    return { error: message };
   }
 }
