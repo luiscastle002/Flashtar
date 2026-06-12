@@ -56,12 +56,23 @@ export async function POST(request: Request) {
       const customerId = data.customerId;
 
       if (userId && subscriptionId) {
-        await supabase.from("subscriptions").upsert({
-          user_id: userId,
-          billing_provider: "paddle",
-          paddle_customer_id: customerId,
-          paddle_subscription_id: subscriptionId,
-        });
+        console.log("[Paddle Webhook] transaction.completed payload:", { userId, customerId, subscriptionId });
+        const { data: dbData, error } = await supabase
+          .from("subscriptions")
+          .upsert(
+            {
+              user_id: userId,
+              billing_provider: "paddle",
+              paddle_customer_id: customerId,
+              paddle_subscription_id: subscriptionId,
+            },
+            { onConflict: "user_id" }
+          );
+        if (error) {
+          console.error("[Paddle Webhook] transaction.completed DB Error:", error);
+        } else {
+          console.log("[Paddle Webhook] transaction.completed DB Success:", dbData);
+        }
       }
       break;
     }
@@ -75,17 +86,28 @@ export async function POST(request: Request) {
       const isActive = data.status === "active" || data.status === "trialing";
 
       if (userId) {
-        await supabase.from("subscriptions").upsert({
-          user_id: userId,
-          billing_provider: "paddle",
-          paddle_customer_id: customerId,
-          paddle_subscription_id: subscriptionId,
-          status,
-          plan: (isActive ? "pro" : "free") as Plan,
-          current_period_end: data.currentBillingPeriod?.endsAt
-            ? new Date(data.currentBillingPeriod.endsAt).toISOString()
-            : null,
-        });
+        console.log("[Paddle Webhook] subscription.created payload:", { userId, customerId, subscriptionId, status, isActive });
+        const { data: dbData, error } = await supabase
+          .from("subscriptions")
+          .upsert(
+            {
+              user_id: userId,
+              billing_provider: "paddle",
+              paddle_customer_id: customerId,
+              paddle_subscription_id: subscriptionId,
+              status,
+              plan: (isActive ? "pro" : "free") as Plan,
+              current_period_end: data.currentBillingPeriod?.endsAt
+                ? new Date(data.currentBillingPeriod.endsAt).toISOString()
+                : null,
+            },
+            { onConflict: "user_id" }
+          );
+        if (error) {
+          console.error("[Paddle Webhook] subscription.created DB Error:", error);
+        } else {
+          console.log("[Paddle Webhook] subscription.created DB Success:", dbData);
+        }
       }
       break;
     }
@@ -98,18 +120,30 @@ export async function POST(request: Request) {
       const periodEnd = data.currentBillingPeriod?.endsAt;
 
       if (userId) {
-        await supabase.from("subscriptions").upsert({
-          user_id: userId,
-          billing_provider: "paddle",
-          paddle_customer_id: customerId,
-          paddle_subscription_id: subscriptionId,
-          plan: "pro",
-          status: "active",
-          current_period_end: periodEnd ? new Date(periodEnd).toISOString() : null,
-        });
+        console.log("[Paddle Webhook] subscription.activated payload:", { userId, customerId, subscriptionId, periodEnd });
+        const { data: dbData, error } = await supabase
+          .from("subscriptions")
+          .upsert(
+            {
+              user_id: userId,
+              billing_provider: "paddle",
+              paddle_customer_id: customerId,
+              paddle_subscription_id: subscriptionId,
+              plan: "pro",
+              status: "active",
+              current_period_end: periodEnd ? new Date(periodEnd).toISOString() : null,
+            },
+            { onConflict: "user_id" }
+          );
+        if (error) {
+          console.error("[Paddle Webhook] subscription.activated DB Error:", error);
+        } else {
+          console.log("[Paddle Webhook] subscription.activated DB Success:", dbData);
+        }
       } else {
         // Fallback if customData isn't carried (e.g. from historical contexts or other channels)
-        await supabase
+        console.log("[Paddle Webhook] subscription.activated fallback. No user_id, updating by paddle_subscription_id:", subscriptionId);
+        const { data: dbData, error } = await supabase
           .from("subscriptions")
           .update({
             plan: "pro",
@@ -117,6 +151,11 @@ export async function POST(request: Request) {
             current_period_end: periodEnd ? new Date(periodEnd).toISOString() : null,
           })
           .eq("paddle_subscription_id", subscriptionId);
+        if (error) {
+          console.error("[Paddle Webhook] subscription.activated fallback DB Error:", error);
+        } else {
+          console.log("[Paddle Webhook] subscription.activated fallback DB Success:", dbData);
+        }
       }
       break;
     }
