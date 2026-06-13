@@ -89,7 +89,7 @@ const faqs = [
   },
   {
     q: "How do I cancel my subscription?",
-    a: "Manage your subscription anytime through the Stripe Customer Portal in your account settings.",
+    a: "Manage your subscription anytime through the billing section in your account settings.",
   },
 ];
 

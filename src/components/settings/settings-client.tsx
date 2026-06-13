@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CreditCard, User } from "lucide-react";
+import { CreditCard, User, Key, Mail } from "lucide-react";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -13,6 +13,8 @@ import type { Profile, Subscription } from "@/types";
 import { env } from "@/lib/env";
 import { initializePaddle, type Paddle } from "@paddle/paddle-js";
 import { getPaddleUpdateTx, cancelPaddleSubscription } from "@/actions/paddle";
+import { createClient } from "@/lib/supabase/client";
+import { changePassword, changeEmail } from "@/actions/auth";
 
 interface SettingsClientProps {
   profile: Profile | null;
@@ -25,6 +27,15 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
   const plan = subscription?.plan ?? "free";
   const planInfo = PLANS[plan];
 
+  const [isEmailUser, setIsEmailUser] = useState(false);
+  const [checkingUser, setCheckingUser] = useState(true);
+  const [newEmail, setNewEmail] = useState("");
+  const [emailLoading, setEmailLoading] = useState(false);
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordLoading, setPasswordLoading] = useState(false);
+
   useEffect(() => {
     if (env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN) {
       initializePaddle({
@@ -34,6 +45,15 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
         if (p) setPaddle(p);
       });
     }
+
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (user) {
+        const emailIdentity = user.identities?.some((id) => id.provider === "email");
+        setIsEmailUser(!!emailIdentity);
+      }
+      setCheckingUser(false);
+    });
   }, []);
 
   async function handleCheckout() {
@@ -133,6 +153,62 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
     }
   }
 
+  async function handleEmailChange(e: React.FormEvent) {
+    e.preventDefault();
+    if (!newEmail) return;
+    setEmailLoading(true);
+    try {
+      const formData = new FormData();
+      formData.append("email", newEmail);
+      const res = await changeEmail(formData);
+      if (res.error) {
+        toast.error(res.error);
+      } else {
+        toast.success(res.success ?? "Email change requested.");
+        setNewEmail("");
+      }
+    } catch {
+      toast.error("Failed to request email change.");
+    } finally {
+      setEmailLoading(false);
+    }
+  }
+
+  async function handlePasswordChange(e: React.FormEvent) {
+    e.preventDefault();
+    if (newPassword.length < 8) {
+      toast.error("New password must be at least 8 characters.");
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      toast.error("New passwords do not match.");
+      return;
+    }
+    setPasswordLoading(true);
+    try {
+      const formData = new FormData();
+      if (currentPassword) {
+        formData.append("currentPassword", currentPassword);
+      }
+      formData.append("newPassword", newPassword);
+      formData.append("confirmPassword", confirmPassword);
+
+      const res = await changePassword(formData);
+      if (res.error) {
+        toast.error(res.error);
+      } else {
+        toast.success(res.success ?? "Password updated successfully!");
+        setCurrentPassword("");
+        setNewPassword("");
+        setConfirmPassword("");
+      }
+    } catch {
+      toast.error("Failed to update password.");
+    } finally {
+      setPasswordLoading(false);
+    }
+  }
+
   return (
     <DashboardShell currentPath="/settings" profile={profile}>
       <div className="max-w-2xl mx-auto space-y-6">
@@ -163,6 +239,93 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
+              <Mail className="h-5 w-5" />
+              Change Email
+            </CardTitle>
+            <CardDescription>
+              Update your account email address. Confirmation links will be sent to both your current and new email addresses.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleEmailChange} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="new-email">New Email Address</Label>
+                <Input
+                  id="new-email"
+                  type="email"
+                  placeholder="new@example.com"
+                  value={newEmail}
+                  onChange={(e) => setNewEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <Button type="submit" disabled={emailLoading}>
+                {emailLoading ? "Updating..." : "Update Email"}
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Key className="h-5 w-5" />
+              Change Password
+            </CardTitle>
+            <CardDescription>
+              Update your security credentials.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            {checkingUser ? (
+              <p className="text-sm text-muted-foreground animate-pulse">Checking credentials status...</p>
+            ) : isEmailUser ? (
+              <form onSubmit={handlePasswordChange} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="current-password">Current Password</Label>
+                  <Input
+                    id="current-password"
+                    type="password"
+                    value={currentPassword}
+                    onChange={(e) => setCurrentPassword(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="new-password">New Password</Label>
+                  <Input
+                    id="new-password"
+                    type="password"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="confirm-password">Confirm Password</Label>
+                  <Input
+                    id="confirm-password"
+                    type="password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    required
+                  />
+                </div>
+                <Button type="submit" disabled={passwordLoading}>
+                  {passwordLoading ? "Updating..." : "Update Password"}
+                </Button>
+              </form>
+            ) : (
+              <p className="text-sm text-muted-foreground">
+                You are currently signed in using Google/OAuth. Password management is handled by your identity provider.
+              </p>
+            )}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
               <CreditCard className="h-5 w-5" />
               Subscription
             </CardTitle>
@@ -182,10 +345,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
             {plan === "free" ? (
               <div className="flex flex-wrap gap-2">
                 <Button onClick={handlePaddleCheckout} disabled={loading === "checkout"}>
-                  {loading === "checkout" ? "Loading..." : "Upgrade via Paddle — $12/month"}
-                </Button>
-                <Button variant="outline" onClick={handleCheckout} disabled={loading === "checkout"}>
-                  {loading === "checkout" ? "Loading..." : "Upgrade via Stripe — $12/month"}
+                  {loading === "checkout" ? "Loading..." : "Upgrade to Pro — $12/month"}
                 </Button>
               </div>
             ) : (

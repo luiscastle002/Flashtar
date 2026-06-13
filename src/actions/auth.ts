@@ -96,3 +96,65 @@ export async function updatePassword(formData: FormData) {
   if (error) return { error: error.message };
   redirect("/dashboard");
 }
+
+export async function changePassword(formData: FormData) {
+  const currentPassword = formData.get("currentPassword");
+  const newPassword = formData.get("newPassword");
+  const confirmPassword = formData.get("confirmPassword");
+
+  if (typeof newPassword !== "string" || newPassword.length < 8) {
+    return { error: "New password must be at least 8 characters." };
+  }
+  if (newPassword !== confirmPassword) {
+    return { error: "Passwords do not match." };
+  }
+
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    return { error: "Not authenticated" };
+  }
+
+  const isEmailUser = user.identities?.some((id) => id.provider === "email");
+  if (isEmailUser) {
+    if (!currentPassword || typeof currentPassword !== "string") {
+      return { error: "Current password is required." };
+    }
+    const { error: signInError } = await supabase.auth.signInWithPassword({
+      email: user.email!,
+      password: currentPassword,
+    });
+    if (signInError) {
+      return { error: "Incorrect current password." };
+    }
+  }
+
+  const { error } = await supabase.auth.updateUser({ password: newPassword });
+  if (error) return { error: error.message };
+
+  return { success: "Password updated successfully!" };
+}
+
+export async function changeEmail(formData: FormData) {
+  const newEmail = formData.get("email");
+  if (typeof newEmail !== "string" || !z.string().email().safeParse(newEmail).success) {
+    return { error: "Please enter a valid email address." };
+  }
+
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    return { error: "Not authenticated" };
+  }
+
+  if (user.email === newEmail) {
+    return { error: "New email must be different from your current email." };
+  }
+
+  const { error } = await supabase.auth.updateUser({ email: newEmail });
+  if (error) return { error: error.message };
+
+  return {
+    success: "Confirmation links sent! Please check both your current and new email addresses to confirm the change.",
+  };
+}
