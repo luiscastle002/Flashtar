@@ -12,7 +12,7 @@ import {
   parseStep,
   formatDueIn,
 } from "./sm2";
-import type { StudyCard, DeckStudySettings } from "@/types";
+import type { StudyCard, DeckStudySettings } from "../../types";
 
 // ---------------------------------------------------------------------------
 // Test fixtures
