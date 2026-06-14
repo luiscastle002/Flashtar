@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   LayoutDashboard,
@@ -8,6 +9,7 @@ import {
   Settings,
   Shield,
   LogOut,
+  BookOpen,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -26,9 +28,10 @@ import type { Profile } from "@/types";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/generate", label: "Generate", icon: Sparkles },
-  { href: "/decks", label: "Decks", icon: Layers },
-  { href: "/settings", label: "Settings", icon: Settings },
+  { href: "/study",     label: "Study",     icon: BookOpen },
+  { href: "/generate",  label: "Generate",  icon: Sparkles },
+  { href: "/decks",     label: "Decks",     icon: Layers },
+  { href: "/settings",  label: "Settings",  icon: Settings },
 ];
 
 export function DashboardShell({
@@ -41,6 +44,28 @@ export function DashboardShell({
   profile?: Profile | null;
 }) {
   const router = useRouter();
+  const [dueCount, setDueCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!profile) return;
+
+    async function fetchDueCount() {
+      try {
+        const res = await fetch("/api/study/due-count");
+        if (res.ok) {
+          const data = await res.json();
+          setDueCount(data.totalDue ?? 0);
+        }
+      } catch (err) {
+        console.error("Error fetching due count:", err);
+      }
+    }
+
+    fetchDueCount();
+    const interval = setInterval(fetchDueCount, 2 * 60 * 1000); // Poll every 2 minutes
+    return () => clearInterval(interval);
+  }, [profile]);
+
   const initials = profile?.full_name
     ? profile.full_name.split(" ").map((n) => n[0]).join("").slice(0, 2).toUpperCase()
     : profile?.email?.slice(0, 2).toUpperCase() ?? "U";
@@ -67,14 +92,21 @@ export function DashboardShell({
               key={item.href}
               href={item.href}
               className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors",
+                "flex items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors",
                 currentPath.startsWith(item.href)
                   ? "bg-primary/10 text-primary font-medium"
                   : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
               )}
             >
-              <item.icon className="h-4 w-4" />
-              {item.label}
+              <div className="flex items-center gap-3">
+                <item.icon className="h-4 w-4" />
+                {item.label}
+              </div>
+              {item.href === "/study" && dueCount !== null && dueCount > 0 && (
+                <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-semibold text-white">
+                  {dueCount}
+                </span>
+              )}
             </Link>
           ))}
           {profile?.is_admin && (
@@ -108,11 +140,16 @@ export function DashboardShell({
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "px-3 py-1.5 rounded-md text-xs whitespace-nowrap",
+                  "px-3 py-1.5 rounded-md text-xs whitespace-nowrap flex items-center gap-1.5",
                   currentPath.startsWith(item.href) ? "bg-primary/10 text-primary" : "text-muted-foreground"
                 )}
               >
                 {item.label}
+                {item.href === "/study" && dueCount !== null && dueCount > 0 && (
+                  <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[9px] font-bold text-white">
+                    {dueCount}
+                  </span>
+                )}
               </Link>
             ))}
           </nav>

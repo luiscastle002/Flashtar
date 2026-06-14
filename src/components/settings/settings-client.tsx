@@ -56,6 +56,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
     });
   }, []);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async function handleCheckout() {
     setLoading("checkout");
     try {

@@ -20,6 +20,7 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import { GripVertical, Plus, Trash2, Download, Save } from "lucide-react";
 import { RichTextEditor } from "@/components/flashcards/rich-text-editor";
+import { AddToStudyDeckButton } from "@/components/study/add-to-study-deck-button";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -227,6 +228,7 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
+            <AddToStudyDeckButton generatedDeckId={deck.id} flashcardCount={cards.length} />
             <Button variant="outline" size="sm" onClick={handleExportCsv}>
               <Download className="mr-2 h-4 w-4" />
               CSV
