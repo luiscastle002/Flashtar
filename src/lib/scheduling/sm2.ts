@@ -1,5 +1,5 @@
 /**
- * Modified SM-2 Scheduling Engine — AnkiAI Study Mode v2
+ * Modified SM-2 Scheduling Engine — Flashtar Study Mode v2
  *
  * Pure functions with zero side-effects and zero database calls.
  * All scheduling decisions happen here; the server action just persists the result.

@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         "/decks/",
       ],
     },
-    sitemap: "https://anki-ai.app/sitemap.xml",
+    sitemap: "https://flashtar.app/sitemap.xml",
   };
 }

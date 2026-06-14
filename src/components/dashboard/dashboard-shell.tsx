@@ -83,7 +83,7 @@ export function DashboardShell({
         <div className="h-16 flex items-center px-6 border-b">
           <Link href="/dashboard" className="flex items-center gap-2 font-bold">
             <Sparkles className="h-5 w-5 text-primary" />
-            AnkiAI
+            Flashtar
           </Link>
         </div>
         <nav className="flex-1 p-4 space-y-1">
@@ -131,7 +131,7 @@ export function DashboardShell({
           <div className="md:hidden">
             <Link href="/dashboard" className="flex items-center gap-2 font-bold">
               <Sparkles className="h-5 w-5 text-primary" />
-              AnkiAI
+              Flashtar
             </Link>
           </div>
           <nav className="flex md:hidden gap-1 overflow-x-auto">

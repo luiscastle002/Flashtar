@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://anki-ai.app";
+  const baseUrl = "https://flashtar.app";
   const lastModified = new Date();
 
   return [

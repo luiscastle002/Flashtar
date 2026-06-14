@@ -54,7 +54,7 @@ const steps = [
 
 const testimonials = [
   {
-    quote: "AnkiAI cut my deck creation time from hours to minutes. The quality of generated cards is impressive.",
+    quote: "Flashtar cut my deck creation time from hours to minutes. The quality of generated cards is impressive.",
     author: "Sarah M.",
     role: "Medical Student",
   },
@@ -106,7 +106,7 @@ export default async function HomePage() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <Sparkles className="h-6 w-6 text-primary" />
-            AnkiAI
+            Flashtar
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</Link>
@@ -292,7 +292,7 @@ export default async function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2 font-bold">
               <Sparkles className="h-5 w-5 text-primary" />
-              AnkiAI
+              Flashtar
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-muted-foreground">
               <div className="flex gap-4">
@@ -308,7 +308,7 @@ export default async function HomePage() {
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} AnkiAI. All rights reserved.
+              © {new Date().getFullYear()} Flashtar. All rights reserved.
             </p>
           </div>
         </div>

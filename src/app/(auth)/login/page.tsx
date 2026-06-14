@@ -37,7 +37,7 @@ export default function LoginPage() {
         <CardHeader className="text-center">
           <Link href="/" className="inline-flex items-center justify-center gap-2 font-bold text-xl mb-2">
             <Sparkles className="h-6 w-6 text-primary" />
-            AnkiAI
+            Flashtar
           </Link>
           <CardTitle>Welcome back</CardTitle>
           <CardDescription>Sign in to your account to continue</CardDescription>

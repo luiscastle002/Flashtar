@@ -1,8 +1,8 @@
-# AnkiAI Architecture
+# Flashtar Architecture
 
 ## Overview
 
-AnkiAI is a full-stack SaaS built with Next.js 15 (App Router), Supabase, Stripe, and OpenAI.
+Flashtar is a full-stack SaaS built with Next.js 15 (App Router), Supabase, Stripe, and OpenAI.
 
 ```
 ┌─────────────┐     ┌──────────────┐     ┌─────────────┐

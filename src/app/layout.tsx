@@ -8,14 +8,14 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: {
-    default: "AnkiAI — AI-Powered Flashcard Generation",
-    template: "%s | AnkiAI",
+    default: "Flashtar — AI-Powered Flashcard Generation",
+    template: "%s | Flashtar",
   },
   description:
-    "Generate complete Anki decks with AI. Create, edit, and export high-quality flashcards in seconds.",
+    "Generate complete, high-quality flashcard decks with AI. Create, edit, and study in seconds.",
   icons: {
-    icon: "/anki-ai.icon.png",
-    apple: "/anki-ai.icon.png",
+    icon: "/flashtar.icon.png",
+    apple: "/flashtar.icon.png",
   },
 };
 

@@ -1,4 +1,4 @@
-# AnkiAI
+# Flashtar
 
 AI-powered flashcard and Anki deck generation platform.
 
@@ -8,7 +8,7 @@ Generate complete Anki decks from simple prompts, edit flashcards, organize stud
 
 ## Overview
 
-AnkiAI is a SaaS application that allows users to create high-quality flashcards using AI.
+Flashtar is a SaaS application that allows users to create high-quality flashcards using AI.
 
 Users can:
 

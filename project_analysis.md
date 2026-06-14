@@ -1,4 +1,4 @@
-# AnkiAI — Project Understanding Report
+# Flashtar — Project Understanding Report
 
 > **Review Date:** June 10, 2026  
 > **Methodology:** Exhaustive line-by-line inspection of every source file in the repository  
@@ -8,7 +8,7 @@
 
 ## What the App Does
 
-AnkiAI is a **SaaS web application** that lets users generate Anki-compatible flashcard decks using AI (OpenAI). Users describe a topic in natural language, and the platform generates structured flashcard decks (basic front/back or cloze deletion format), which can be edited in a rich-text editor, managed in a dashboard, and exported as CSV or `.apkg` files for direct import into the Anki desktop app.
+Flashtar is a **SaaS web application** that lets users generate Anki-compatible flashcard decks using AI (OpenAI). Users describe a topic in natural language, and the platform generates structured flashcard decks (basic front/back or cloze deletion format), which can be edited in a rich-text editor, managed in a dashboard, and exported as CSV or `.apkg` files for direct import into the Anki desktop app.
 
 The core value proposition: **Transform knowledge into study-ready Anki decks in seconds instead of hours.**
 
@@ -108,7 +108,7 @@ flowchart TD
 
 ## Database Structure
 
-Single Supabase migration file ([20250602000000_initial_schema.sql](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/supabase/migrations/20250602000000_initial_schema.sql)):
+Single Supabase migration file ([20250602000000_initial_schema.sql](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/supabase/migrations/20250602000000_initial_schema.sql)):
 
 ```mermaid
 erDiagram
@@ -201,12 +201,12 @@ erDiagram
 
 ## AI Generation Flow
 
-**File:** [generate-deck.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/openai/generate-deck.ts)  
-**API Route:** [/api/generate/route.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/app/api/generate/route.ts)
+**File:** [generate-deck.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/openai/generate-deck.ts)  
+**API Route:** [/api/generate/route.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/app/api/generate/route.ts)
 
-1. User submits prompt, language, difficulty, card count, card type from the [GenerateForm](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/components/generate/generate-form.tsx) component
-2. **Rate limiting:** In-memory map, 5 requests/minute per user (see [rate-limit.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/rate-limit.ts))
-3. **Plan limit check:** [canGenerateDeck](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/queries/user.ts#L96-L135) validates monthly generation count and card-per-deck limit
+1. User submits prompt, language, difficulty, card count, card type from the [GenerateForm](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/components/generate/generate-form.tsx) component
+2. **Rate limiting:** In-memory map, 5 requests/minute per user (see [rate-limit.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/rate-limit.ts))
+3. **Plan limit check:** [canGenerateDeck](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/queries/user.ts#L96-L135) validates monthly generation count and card-per-deck limit
 4. **Generation record** inserted as `processing` in `ai_generations`
 5. **OpenAI call:** `gpt-4o-mini` with `response_format: json_schema` (strict structured output)
 6. **Validation:** Response parsed with Zod schema
@@ -222,10 +222,10 @@ erDiagram
 ## Subscription Flow
 
 **Files:**
-- [Stripe checkout](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/app/api/stripe/checkout/route.ts)
-- [Stripe portal](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/app/api/stripe/portal/route.ts)
-- [Stripe webhook](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/app/api/webhooks/stripe/route.ts)
-- [Settings UI](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/components/settings/settings-client.tsx)
+- [Stripe checkout](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/app/api/stripe/checkout/route.ts)
+- [Stripe portal](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/app/api/stripe/portal/route.ts)
+- [Stripe webhook](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/app/api/webhooks/stripe/route.ts)
+- [Settings UI](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/components/settings/settings-client.tsx)
 
 ### Checkout flow:
 1. Free user clicks "Upgrade to Pro" in Settings
@@ -250,9 +250,9 @@ erDiagram
 ## Export Flow
 
 **Files:**
-- [CSV export](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/export/csv.ts) — client-side download
-- [APKG export](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/export/apkg.ts) — server-side via API route
-- [Export API](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/app/api/decks/%5BdeckId%5D/export/route.ts)
+- [CSV export](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/export/csv.ts) — client-side download
+- [APKG export](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/export/apkg.ts) — server-side via API route
+- [Export API](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/app/api/decks/%5BdeckId%5D/export/route.ts)
 
 ### CSV:
 - Available to all users
@@ -269,7 +269,7 @@ erDiagram
 - Downloaded as binary blob via fetch from the API
 
 > [!IMPORTANT]
-> **Dead code:** [apkg-legacy.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/export/apkg-legacy.ts) is an older version that imports from `@/lib/sql/initSql` — it is **never imported anywhere** and is functionally identical to the current `apkg.ts`. The `ankipack` npm dependency (v0.1.3) is also unused.
+> **Dead code:** [apkg-legacy.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/export/apkg-legacy.ts) is an older version that imports from `@/lib/sql/initSql` — it is **never imported anywhere** and is functionally identical to the current `apkg.ts`. The `ankipack` npm dependency (v0.1.3) is also unused.
 
 ---
 
@@ -281,9 +281,9 @@ erDiagram
   - Google OAuth
   - Password reset via email
 - **Session management:** Handled by `@supabase/ssr` middleware that refreshes tokens on every request
-- **Route protection:** [middleware.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/supabase/middleware.ts) protects `/dashboard`, `/decks`, `/generate`, `/settings`, `/admin`
+- **Route protection:** [middleware.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/supabase/middleware.ts) protects `/dashboard`, `/decks`, `/generate`, `/settings`, `/admin`
 - **Admin access:** Middleware checks `is_admin` flag for `/admin` routes; admin page also double-checks server-side
-- **Auth callback:** [/auth/callback/route.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/app/auth/callback/route.ts) exchanges OAuth code for session
+- **Auth callback:** [/auth/callback/route.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/app/auth/callback/route.ts) exchanges OAuth code for session
 
 ### Pages:
 | Route | Purpose |
@@ -331,9 +331,9 @@ The following MCP servers are available in the development environment:
 
 ### 🔴 High Severity
 
-1. **In-memory rate limiting will not work in production (Vercel serverless).** The [rate-limit.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/rate-limit.ts) uses a `Map` stored in module scope. Each serverless function invocation gets a fresh memory space, making this ineffective. Needs Redis/Upstash or Supabase-based rate limiting.
+1. **In-memory rate limiting will not work in production (Vercel serverless).** The [rate-limit.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/rate-limit.ts) uses a `Map` stored in module scope. Each serverless function invocation gets a fresh memory space, making this ineffective. Needs Redis/Upstash or Supabase-based rate limiting.
 
-2. **APKG ZIP has no compression.** The custom [buildZip](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/export/apkg.ts#L194-L227) uses store-only (no deflate). While Anki may accept it, this produces larger files and **may fail with some Anki versions or importers** that expect deflate-compressed entries.
+2. **APKG ZIP has no compression.** The custom [buildZip](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/export/apkg.ts#L194-L227) uses store-only (no deflate). While Anki may accept it, this produces larger files and **may fail with some Anki versions or importers** that expect deflate-compressed entries.
 
 3. **`sql.js` WASM file loading relies on `locateFile: (file) => \`/${file}\``** — this means the `sql-wasm.wasm` file must be in the `/public` directory at build time. If it's missing, APKG export will silently fail at runtime.
 
@@ -343,12 +343,12 @@ The following MCP servers are available in the development environment:
 
 ### 🟡 Medium Severity
 
-6. **Duplicate `DashboardShell` components.** Both [dashboard-shell.tsx](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/components/dashboard/dashboard-shell.tsx) (server) and [dashboard-shell-client.tsx](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/components/dashboard/dashboard-shell-client.tsx) (client) contain ~145 lines of nearly identical layout code. This violates DRY and will lead to drift.
+6. **Duplicate `DashboardShell` components.** Both [dashboard-shell.tsx](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/components/dashboard/dashboard-shell.tsx) (server) and [dashboard-shell-client.tsx](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/components/dashboard/dashboard-shell-client.tsx) (client) contain ~145 lines of nearly identical layout code. This violates DRY and will lead to drift.
 
 7. **Dead code:**
-   - [apkg-legacy.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/export/apkg-legacy.ts) — unused legacy file
-   - [initSql.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/sql/initSql.ts) — only imported by the unused legacy file
-   - [sql.js.d.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/types/sql.js.d.ts) — type declarations for unused path
+   - [apkg-legacy.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/export/apkg-legacy.ts) — unused legacy file
+   - [initSql.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/sql/initSql.ts) — only imported by the unused legacy file
+   - [sql.js.d.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/types/sql.js.d.ts) — type declarations for unused path
    - `ankipack` npm dependency — never imported
    - `streamDeckGeneration` function — async generator that's never called
    - `@dnd-kit/utilities` is imported in package.json but the `CSS` utility import comes from `@dnd-kit/utilities` in the deck editor (this one IS used)
@@ -359,7 +359,7 @@ The following MCP servers are available in the development environment:
 
 10. **Flashcard count queries are computed in JavaScript** by fetching all flashcard rows and counting them, rather than using the existing `decks_with_counts` view or SQL count queries. This won't scale.
 
-11. **Environment validation uses placeholders.** The [env.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/env.ts#L24-L27) falls back to `"https://placeholder.supabase.co"` and `"placeholder-anon-key"` when env vars are missing. This means the app will **silently start with broken database connections** instead of failing fast.
+11. **Environment validation uses placeholders.** The [env.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/env.ts#L24-L27) falls back to `"https://placeholder.supabase.co"` and `"placeholder-anon-key"` when env vars are missing. This means the app will **silently start with broken database connections** instead of failing fast.
 
 12. **Server-side environment variables are all optional.** `OPENAI_API_KEY`, `STRIPE_SECRET_KEY`, `SUPABASE_SERVICE_ROLE_KEY` are all marked as `.optional()` in the Zod schema. This allows the app to build and start without them, but API routes will throw at runtime.
 
@@ -375,7 +375,7 @@ The following MCP servers are available in the development environment:
 
 17. **Testimonials are hardcoded.** Not necessarily a bug, but worth noting they are fabricated data.
 
-18. **The `Stripe API version` is hardcoded to `2025-08-27.basil`** in [stripe/index.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Anki-Ai/src/lib/stripe/index.ts#L13) — this is a future/preview version string. May need verification.
+18. **The `Stripe API version` is hardcoded to `2025-08-27.basil`** in [stripe/index.ts](file:///c:/Users/Luis/Desktop/Projects/Cursor/Flashtar/src/lib/stripe/index.ts#L13) — this is a future/preview version string. May need verification.
 
 ---
 

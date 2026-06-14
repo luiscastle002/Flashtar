@@ -10,7 +10,7 @@ import { StudyDeckCard } from "@/components/study/study-deck-card";
 import { CreateStudyDeckButton } from "@/components/study/create-study-deck-button";
 
 export const metadata = {
-  title: "Study Decks — AnkiAI",
+  title: "Study Decks — Flashtar",
   description: "Review your flashcards with spaced repetition. Your personalized study decks.",
 };
 

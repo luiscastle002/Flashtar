@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/shared/theme-toggle";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for AnkiAI — Learn how we collect, use, and protect your personal data.",
+    "Privacy Policy for Flashtar — Learn how we collect, use, and protect your personal data.",
 };
 
 export default function PrivacyPage() {
@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <Sparkles className="h-6 w-6 text-primary" />
-            AnkiAI
+            Flashtar
           </Link>
           <ThemeToggle />
         </div>
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
           <p>
             Your privacy is important to us. This Privacy Policy explains what
             data we collect, how we use it, and your rights regarding your
-            personal information when using AnkiAI (&quot;the Service&quot;).
+            personal information when using Flashtar (&quot;the Service&quot;).
           </p>
 
           <section>
@@ -225,7 +225,7 @@ export default function PrivacyPage() {
               className="flex items-center gap-2 font-bold text-foreground"
             >
               <Sparkles className="h-4 w-4 text-primary" />
-              AnkiAI
+              Flashtar
             </Link>
             <div className="flex gap-4">
               <Link href="/terms" className="hover:text-foreground">

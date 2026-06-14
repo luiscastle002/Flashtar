@@ -1,5 +1,5 @@
 -- =============================================================================
--- AnkiAI Study Mode v2 Schema
+-- Flashtar Study Mode v2 Schema
 -- Migration: 20260614000000_study_mode_v2.sql
 --
 -- Creates all tables for native spaced repetition study mode.

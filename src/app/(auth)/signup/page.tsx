@@ -42,7 +42,7 @@ export default function SignUpPage() {
           <CardHeader className="text-center">
             <Link href="/" className="inline-flex items-center justify-center gap-2 font-bold text-xl mb-2">
               <Sparkles className="h-6 w-6 text-primary" />
-              AnkiAI
+              Flashtar
             </Link>
             <CardTitle>Verify your email</CardTitle>
             <CardDescription>One last step to get started</CardDescription>
@@ -71,7 +71,7 @@ export default function SignUpPage() {
         <CardHeader className="text-center">
           <Link href="/" className="inline-flex items-center justify-center gap-2 font-bold text-xl mb-2">
             <Sparkles className="h-6 w-6 text-primary" />
-            AnkiAI
+            Flashtar
           </Link>
           <CardTitle>Create your account</CardTitle>
           <CardDescription>Start generating AI flashcards for free</CardDescription>

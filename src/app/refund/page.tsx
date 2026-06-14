@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/shared/theme-toggle";
 export const metadata: Metadata = {
   title: "Refund Policy",
   description:
-    "Refund Policy for AnkiAI — Understand our refund process for subscription payments.",
+    "Refund Policy for Flashtar — Understand our refund process for subscription payments.",
 };
 
 export default function RefundPage() {
@@ -16,7 +16,7 @@ export default function RefundPage() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <Sparkles className="h-6 w-6 text-primary" />
-            AnkiAI
+            Flashtar
           </Link>
           <ThemeToggle />
         </div>
@@ -30,7 +30,7 @@ export default function RefundPage() {
 
         <div className="prose prose-neutral dark:prose-invert max-w-none space-y-8">
           <p>
-            Thank you for subscribing to AnkiAI. We want you to be satisfied
+            Thank you for subscribing to Flashtar. We want you to be satisfied
             with our Service. Please read our refund policy below.
           </p>
 
@@ -39,7 +39,7 @@ export default function RefundPage() {
               1. Digital Subscription Policy
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              AnkiAI is a digital subscription service. Due to the nature of
+              Flashtar is a digital subscription service. Due to the nature of
               digital products and instant access to AI generation features,
               subscription payments are generally{" "}
               <span className="font-medium text-foreground">
@@ -124,7 +124,7 @@ export default function RefundPage() {
               6. Free Plan
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              The free tier of AnkiAI does not involve any charges. If you are
+              The free tier of Flashtar does not involve any charges. If you are
               on the free plan, no refund is applicable.
             </p>
           </section>
@@ -154,7 +154,7 @@ export default function RefundPage() {
               className="flex items-center gap-2 font-bold text-foreground"
             >
               <Sparkles className="h-4 w-4 text-primary" />
-              AnkiAI
+              Flashtar
             </Link>
             <div className="flex gap-4">
               <Link href="/terms" className="hover:text-foreground">

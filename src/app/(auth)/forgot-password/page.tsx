@@ -32,7 +32,7 @@ export default function ForgotPasswordPage() {
         <CardHeader className="text-center">
           <Link href="/" className="inline-flex items-center justify-center gap-2 font-bold text-xl mb-2">
             <Sparkles className="h-6 w-6 text-primary" />
-            AnkiAI
+            Flashtar
           </Link>
           <CardTitle>Reset password</CardTitle>
           <CardDescription>

@@ -1,10 +1,10 @@
 # TASK.md
 
-# AnkiAI Development Roadmap
+# Flashtar Development Roadmap
 
 ## Product Vision
 
-AnkiAI should become the fastest way for students and professionals to transform knowledge into high-quality spaced-repetition flashcards.
+Flashtar should become the fastest way for students and professionals to transform knowledge into high-quality spaced-repetition flashcards.
 
 The primary focus is helping users generate, edit, organize, and export Anki decks using AI.
 

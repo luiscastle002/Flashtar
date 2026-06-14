@@ -1,4 +1,4 @@
--- AnkiAI initial schema
+-- Flashtar initial schema
 -- profiles, subscriptions, decks, flashcards, ai_generations
 
 -- Extensions
