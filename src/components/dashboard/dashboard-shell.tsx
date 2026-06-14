@@ -12,6 +12,7 @@ import {
   BookOpen,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { SpaceBackground } from "@/components/shared/space-background";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -78,8 +79,10 @@ export function DashboardShell({
   }
 
   return (
-    <div className="min-h-screen flex">
-      <aside className="hidden md:flex w-64 flex-col border-r bg-card">
+    <div className="relative min-h-screen flex">
+      <SpaceBackground />
+      <div className="relative z-10 flex flex-1 min-w-0">
+        <aside className="hidden md:flex w-64 flex-col border-r bg-card/85 backdrop-blur-sm">
         <div className="h-16 flex items-center px-6 border-b">
           <Link href="/dashboard" className="flex items-center gap-2 font-bold">
             <Sparkles className="h-5 w-5 text-primary" />
@@ -183,6 +186,7 @@ export function DashboardShell({
           </div>
         </header>
         <main className="flex-1 p-4 md:p-6 overflow-auto">{children}</main>
+      </div>
       </div>
     </div>
   );

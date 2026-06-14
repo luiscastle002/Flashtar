@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { SpaceBackground } from "@/components/shared/space-background";
 import { PLANS } from "@/lib/stripe";
 import { createClient } from "@/lib/supabase/server";
 
@@ -100,9 +101,10 @@ export default async function HomePage() {
   } = await supabase.auth.getUser();
 
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen overflow-hidden">
+      <SpaceBackground />
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-sm">
+      <header className="relative z-10 sticky top-0 z-50 border-b bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <Sparkles className="h-6 w-6 text-primary" />
@@ -134,7 +136,8 @@ export default async function HomePage() {
         </div>
       </header>
 
-      {/* Hero */}
+      <main className="relative z-10">
+        {/* Hero */}
       <section className="container mx-auto px-4 py-24 md:py-32 text-center">
         <div className="mx-auto max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm text-muted-foreground">
@@ -286,8 +289,10 @@ export default async function HomePage() {
         </div>
       </section>
 
+      </main>
+
       {/* Footer */}
-      <footer className="border-t py-12">
+      <footer className="relative z-10 border-t py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2 font-bold">
