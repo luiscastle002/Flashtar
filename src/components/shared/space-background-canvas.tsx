@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 import { useSpaceBackground } from "./space-background-context";
 
 interface Star {
-  x: number;
-  y: number;
+  x: number; // normalized coordinate [0..1]
+  y: number; // normalized coordinate [0..1]
   size: number;
   baseOpacity: number;
   speed: number; // in radians per second
@@ -26,12 +26,11 @@ interface ShootingStar {
 }
 
 interface NebulaBlob {
-  x: number;
-  y: number;
-  baseRadius: number;
-  currentRadius: number;
-  colorRGB: string; // e.g. "99, 102, 241"
-  colorAlpha: number; // base opacity
+  xRatio: number; // normalized X center point ratio
+  yRatio: number; // normalized Y center point ratio
+  radiusRatio: number; // radius ratio relative to Math.min(width, height)
+  colorRGB: string;
+  colorAlpha: number;
   angle: number;
   speed: number;
   pulsePhase: number;
@@ -51,7 +50,7 @@ export const SpaceBackgroundCanvas: React.FC = () => {
   const shootingStarsRef = useRef<ShootingStar[]>([]);
   const nebulaRef = useRef<NebulaBlob[]>([]);
 
-  // Viewport dimensions in CSS pixels (updated via ResizeObserver)
+  // Viewport dimensions in CSS pixels (updated inside the render loop)
   const viewportSizeRef = useRef({ width: 0, height: 0 });
 
   // Parallax mouse coordinates
@@ -80,21 +79,21 @@ export const SpaceBackgroundCanvas: React.FC = () => {
     propsRef.current = config;
   }, [config]);
 
-  // Initialize stars and nebula blobs
-  const initUniverse = useCallback((width: number, height: number) => {
+  // Initialize stars and nebula blobs (normalized coordinates)
+  const initUniverse = useCallback(() => {
     const stars: Star[] = [];
     const totalCount = propsRef.current.starCount;
 
     // Distribute stars proportionally
-    const farCount = Math.round(totalCount * 0.60);    // ~45 stars for default 75
-    const midCount = Math.round(totalCount * 0.27);    // ~20 stars for default 75
-    const nearCount = totalCount - farCount - midCount;  // ~10 stars for default 75
+    const farCount = Math.round(totalCount * 0.60);
+    const midCount = Math.round(totalCount * 0.27);
+    const nearCount = totalCount - farCount - midCount;
 
     // Layer 1: Far (Background)
     for (let i = 0; i < farCount; i++) {
       stars.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
+        x: Math.random(),
+        y: Math.random(),
         size: 0.5 + Math.random() * 0.4, // 0.5px to 0.9px
         baseOpacity: 0.15 + Math.random() * 0.45,
         speed: 0.3 + Math.random() * 0.7, // slow twinkle (radians per sec)
@@ -106,8 +105,8 @@ export const SpaceBackgroundCanvas: React.FC = () => {
     // Layer 2: Midground
     for (let i = 0; i < midCount; i++) {
       stars.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
+        x: Math.random(),
+        y: Math.random(),
         size: 1.0 + Math.random() * 0.4, // 1.0px to 1.4px
         baseOpacity: 0.3 + Math.random() * 0.5,
         speed: 0.5 + Math.random() * 0.8,
@@ -119,8 +118,8 @@ export const SpaceBackgroundCanvas: React.FC = () => {
     // Layer 3: Foreground (Near)
     for (let i = 0; i < nearCount; i++) {
       stars.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
+        x: Math.random(),
+        y: Math.random(),
         size: 1.5 + Math.random() * 0.7, // 1.5px to 2.2px
         baseOpacity: 0.5 + Math.random() * 0.5,
         speed: 0.8 + Math.random() * 1.0,
@@ -131,40 +130,36 @@ export const SpaceBackgroundCanvas: React.FC = () => {
 
     starsRef.current = stars;
 
-    // Soft, wide-spread nebula color points (very subtle Indigo, Cyan, Violet)
-    const minDim = Math.min(width, height);
+    // Soft, wide-spread nebula color points
     nebulaRef.current = [
       {
-        x: width * 0.25,
-        y: height * 0.35,
-        baseRadius: minDim * 0.45,
-        currentRadius: minDim * 0.45,
+        xRatio: 0.25,
+        yRatio: 0.35,
+        radiusRatio: 0.45,
         colorRGB: "99, 102, 241", // Indigo-500
-        colorAlpha: 0.04, // extremely subtle
+        colorAlpha: 0.04,
         angle: Math.random() * Math.PI * 2,
         speed: 0.0001,
         pulsePhase: Math.random() * Math.PI * 2,
         pulseSpeed: 0.0002,
       },
       {
-        x: width * 0.75,
-        y: height * 0.65,
-        baseRadius: minDim * 0.5,
-        currentRadius: minDim * 0.5,
+        xRatio: 0.75,
+        yRatio: 0.65,
+        radiusRatio: 0.5,
         colorRGB: "6, 182, 212", // Cyan-500
-        colorAlpha: 0.03, // extremely subtle
+        colorAlpha: 0.03,
         angle: Math.random() * Math.PI * 2,
         speed: 0.00008,
         pulsePhase: Math.random() * Math.PI * 2,
         pulseSpeed: 0.00015,
       },
       {
-        x: width * 0.5,
-        y: height * 0.5,
-        baseRadius: minDim * 0.35,
-        currentRadius: minDim * 0.35,
+        xRatio: 0.5,
+        yRatio: 0.5,
+        radiusRatio: 0.35,
         colorRGB: "139, 92, 246", // Violet-500
-        colorAlpha: 0.03, // extremely subtle
+        colorAlpha: 0.03,
         angle: Math.random() * Math.PI * 2,
         speed: 0.00007,
         pulsePhase: Math.random() * Math.PI * 2,
@@ -175,10 +170,7 @@ export const SpaceBackgroundCanvas: React.FC = () => {
 
   // Re-initialize stars if starCount changes
   useEffect(() => {
-    const { width, height } = viewportSizeRef.current;
-    if (width > 0 && height > 0) {
-      initUniverse(width, height);
-    }
+    initUniverse();
   }, [config.starCount, initUniverse]);
 
   // Main render and physics loop
@@ -189,13 +181,44 @@ export const SpaceBackgroundCanvas: React.FC = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Authoritative CSS dimensions of the element
+    const cssWidth = canvas.clientWidth;
+    const cssHeight = canvas.clientHeight;
+    const dpr = window.devicePixelRatio || 1;
+
+    const targetWidth = Math.floor(cssWidth * dpr);
+    const targetHeight = Math.floor(cssHeight * dpr);
+
+    // Self-healing backing store synchronization
+    if (canvas.width !== targetWidth || canvas.height !== targetHeight) {
+      canvas.width = targetWidth;
+      canvas.height = targetHeight;
+      viewportSizeRef.current = { width: cssWidth, height: cssHeight };
+
+      console.log("INSTRUMENTATION - self-healing resize:", {
+        innerWidth: window.innerWidth,
+        innerHeight: window.innerHeight,
+        visualWidth: window.visualViewport?.width,
+        visualHeight: window.visualViewport?.height,
+        canvasClientWidth: cssWidth,
+        canvasClientHeight: cssHeight,
+        canvasWidth: canvas.width,
+        canvasHeight: canvas.height,
+        dpr
+      });
+
+      // Universe initialization
+      if (starsRef.current.length === 0) {
+        initUniverse();
+      }
+    }
+
     const { width, height } = viewportSizeRef.current;
     if (width === 0 || height === 0) {
       requestRef.current = requestAnimationFrame(animate);
       return;
     }
 
-    const dpr = window.devicePixelRatio || 1;
     const isLight = themeRef.current === "light";
 
     // 1. Clear physical canvas area
@@ -206,9 +229,9 @@ export const SpaceBackgroundCanvas: React.FC = () => {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
-    // Save context state, scale for high-DPI, and do all drawing in CSS pixels
+    // Save context state, scale for high-DPI using setTransform, and draw in CSS units
     ctx.save();
-    ctx.scale(dpr, dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     const activeNebula = propsRef.current.nebula && !reducedMotionRef.current;
     const activeParallax = propsRef.current.parallax && !reducedMotionRef.current;
@@ -219,13 +242,16 @@ export const SpaceBackgroundCanvas: React.FC = () => {
       nebulaRef.current.forEach((blob) => {
         // Orbit center point slightly
         blob.angle += blob.speed;
-        const radiusOffset = blob.baseRadius * 0.1;
-        const orbitX = blob.x + Math.cos(blob.angle) * 15;
-        const orbitY = blob.y + Math.sin(blob.angle) * 15;
+        const minDim = Math.min(width, height);
+        const baseRadius = minDim * blob.radiusRatio;
+        const radiusOffset = baseRadius * 0.1;
+        
+        const orbitX = (blob.xRatio * width) + Math.cos(blob.angle) * 15;
+        const orbitY = (blob.yRatio * height) + Math.sin(blob.angle) * 15;
 
         // Breathe/pulse size
         blob.pulsePhase += blob.pulseSpeed;
-        blob.currentRadius = blob.baseRadius + Math.sin(blob.pulsePhase) * radiusOffset;
+        const currentRadius = baseRadius + Math.sin(blob.pulsePhase) * radiusOffset;
 
         // Render radial glow
         const grad = ctx.createRadialGradient(
@@ -234,7 +260,7 @@ export const SpaceBackgroundCanvas: React.FC = () => {
           0,
           orbitX,
           orbitY,
-          blob.currentRadius
+          currentRadius
         );
 
         // Subtler nebula in light mode
@@ -246,7 +272,7 @@ export const SpaceBackgroundCanvas: React.FC = () => {
 
         ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.arc(orbitX, orbitY, blob.currentRadius, 0, Math.PI * 2);
+        ctx.arc(orbitX, orbitY, currentRadius, 0, Math.PI * 2);
         ctx.fill();
       });
     }
@@ -265,26 +291,26 @@ export const SpaceBackgroundCanvas: React.FC = () => {
     // 4. Update and Draw Stars (in CSS units)
     const timeSec = time / 1000;
     starsRef.current.forEach((star) => {
-      // Slow constant drift (slower for background stars)
-      const baseDrift = 0.03; // pixels per frame in CSS units
+      // Slow constant drift
+      const baseDrift = 0.03;
       if (!reducedMotionRef.current) {
-        star.x += baseDrift * star.depth;
-        star.y += baseDrift * 0.3 * star.depth;
+        star.x += (baseDrift * star.depth) / width;
+        star.y += (baseDrift * 0.3 * star.depth) / height;
 
-        // Wrap around edge boundaries (using CSS width/height)
-        if (star.x > width) star.x = 0;
-        if (star.x < 0) star.x = width;
-        if (star.y > height) star.y = 0;
-        if (star.y < 0) star.y = height;
+        // Wrap around normalized edge boundaries
+        if (star.x > 1) star.x = 0;
+        if (star.x < 0) star.x = 1;
+        if (star.y > 1) star.y = 0;
+        if (star.y < 0) star.y = 1;
       }
 
-      // Parallax offsets (using CSS limits)
+      // Parallax offsets
       const parallaxFactor = 15;
       const offsetX = mouseRef.current.x * parallaxFactor * star.depth;
       const offsetY = mouseRef.current.y * parallaxFactor * star.depth;
 
-      let drawX = star.x + offsetX;
-      let drawY = star.y + offsetY;
+      let drawX = star.x * width + offsetX;
+      let drawY = star.y * height + offsetY;
 
       // Local wrapping to keep stars on canvas even with heavy parallax
       if (drawX > width) drawX -= width;
@@ -300,10 +326,8 @@ export const SpaceBackgroundCanvas: React.FC = () => {
 
       // Render star
       if (isLight) {
-        // Light mode: subtle dark slate/indigo stars
         ctx.fillStyle = `rgba(15, 23, 42, ${opacity * 0.15})`;
       } else {
-        // Dark mode: bright white stars
         ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
       }
       ctx.beginPath();
@@ -313,7 +337,6 @@ export const SpaceBackgroundCanvas: React.FC = () => {
 
     // 5. Update and Draw Shooting Stars (in CSS units)
     if (activeShootingStars) {
-      // Low probability random spawn
       if (Math.random() < 0.0006 && shootingStarsRef.current.length < 2) {
         const sideRand = Math.random();
         let spawnX = 0;
@@ -327,7 +350,7 @@ export const SpaceBackgroundCanvas: React.FC = () => {
           spawnY = 0;
         }
 
-        const angle = 0.35 + Math.random() * 0.2; // ~20 to 30 degrees diagonal down-right
+        const angle = 0.35 + Math.random() * 0.2;
         const speed = 10 + Math.random() * 8;
 
         shootingStarsRef.current.push({
@@ -341,7 +364,6 @@ export const SpaceBackgroundCanvas: React.FC = () => {
         });
       }
 
-      // Draw and decay active shooting stars
       shootingStarsRef.current = shootingStarsRef.current.filter((sStar) => {
         sStar.x += sStar.vx;
         sStar.y += sStar.vy;
@@ -380,7 +402,7 @@ export const SpaceBackgroundCanvas: React.FC = () => {
     ctx.restore();
 
     requestRef.current = requestAnimationFrame(animate);
-  }, []);
+  }, [initUniverse]);
 
   // 1. Detect prefers-reduced-motion
   useEffect(() => {
@@ -405,7 +427,6 @@ export const SpaceBackgroundCanvas: React.FC = () => {
           requestRef.current = null;
         }
       } else {
-        // Resume loop if it was stopped
         if (!requestRef.current && canvasRef.current) {
           requestRef.current = requestAnimationFrame(animate);
         }
@@ -442,65 +463,17 @@ export const SpaceBackgroundCanvas: React.FC = () => {
     };
   }, [config.parallax, reducedMotion]);
 
-  // 4. ResizeObserver: manages canvas dimensions & high-DPI scaling
+  // 4. Zero event listeners for layout resize / visualViewport / scroll / polling
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const container = containerRef.current;
-    if (!canvas || !container) return;
-
-    const handleResize = (entries: ResizeObserverEntry[]) => {
-      for (const entry of entries) {
-        const { width, height } = entry.contentRect;
-        
-        // Save CSS dimensions to ref
-        viewportSizeRef.current = { width, height };
-
-        // Scale backbuffer to physical screen pixels for High-DPI screens
-        const dpr = window.devicePixelRatio || 1;
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-
-        // Initialize positions if first setup or aspect ratio changed significantly
-        if (starsRef.current.length === 0) {
-          initUniverse(width, height);
-        } else {
-          // Adjust star positions mapping to maintain viewport coverage
-          starsRef.current.forEach((star) => {
-            if (star.x > width) star.x = Math.random() * width;
-            if (star.y > height) star.y = Math.random() * height;
-          });
-          // Update nebula positions relative to the new dimensions
-          if (nebulaRef.current.length > 0) {
-            const minDim = Math.min(width, height);
-            nebulaRef.current[0].x = width * 0.25;
-            nebulaRef.current[0].y = height * 0.35;
-            nebulaRef.current[0].baseRadius = minDim * 0.45;
-
-            nebulaRef.current[1].x = width * 0.75;
-            nebulaRef.current[1].y = height * 0.65;
-            nebulaRef.current[1].baseRadius = minDim * 0.5;
-
-            nebulaRef.current[2].x = width * 0.5;
-            nebulaRef.current[2].y = height * 0.5;
-            nebulaRef.current[2].baseRadius = minDim * 0.35;
-          }
-        }
-      }
-    };
-
-    const resizeObserver = new ResizeObserver(handleResize);
-    resizeObserver.observe(container);
-
-    // Initial loop execution
+    // Start animation loop
     requestRef.current = requestAnimationFrame(animate);
 
     return () => {
-      resizeObserver.disconnect();
       if (requestRef.current) {
         cancelAnimationFrame(requestRef.current);
       }
     };
-  }, [animate, initUniverse]);
+  }, [animate]);
 
   return (
     <div
@@ -514,7 +487,14 @@ export const SpaceBackgroundCanvas: React.FC = () => {
     >
       <canvas
         ref={canvasRef}
-        style={{ width: "100%", height: "100%", display: "block" }}
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "block",
+          position: "absolute",
+          top: 0,
+          left: 0,
+        }}
       />
     </div>
   );
