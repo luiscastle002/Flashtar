@@ -25,7 +25,7 @@ export default function PrivacyPage() {
       <main className="flex-1 container mx-auto px-4 py-16 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold mb-2">Privacy Policy</h1>
         <p className="text-muted-foreground mb-10">
-          Last updated: June 10, 2026
+          Last updated: June 15, 2026
         </p>
 
         <div className="prose prose-neutral dark:prose-invert max-w-none space-y-8">
@@ -34,6 +34,21 @@ export default function PrivacyPage() {
             data we collect, how we use it, and your rights regarding your
             personal information when using Flashtar (&quot;the Service&quot;).
           </p>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Data Controller</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Promptback is the operator of Flashtar and acts as the controller
+              of personal information processed through{" "}
+              <a
+                href="https://flashtar.app"
+                className="text-primary hover:underline"
+              >
+                https://flashtar.app
+              </a>
+              .
+            </p>
+          </section>
 
           <section>
             <h2 className="text-xl font-semibold mb-3">
@@ -64,8 +79,11 @@ export default function PrivacyPage() {
                 <span className="font-medium text-foreground">
                   Payment information:
                 </span>{" "}
-                Managed by our third-party payment provider — we do not store
-                credit card details
+                Account information is processed by Promptback. Billing
+                information is processed by Paddle as the Merchant of Record.
+                Payment information is handled by Paddle according to
+                Paddle&apos;s Privacy Policy. Flashtar itself does not directly
+                store full payment card details.
               </li>
             </ul>
           </section>
@@ -105,14 +123,16 @@ export default function PrivacyPage() {
               </li>
               <li>
                 <span className="font-medium text-foreground">OpenAI</span> —
-                Processes your prompts to generate flashcard content (prompts are
-                sent to OpenAI for processing)
+                Processes your prompts to generate flashcard content (prompts
+                are sent to OpenAI for processing)
               </li>
               <li>
                 <span className="font-medium text-foreground">
-                  Payment provider (Stripe / Paddle)
+                  Payment provider (Paddle)
                 </span>{" "}
-                — Handles subscription billing and payment processing
+                — Paddle acts as our Merchant of Record and authorised reseller,
+                handling subscription billing, payment processing, and related
+                customer records according to Paddle&apos;s policies.
               </li>
               <li>
                 <span className="font-medium text-foreground">Vercel</span> —
@@ -146,9 +166,9 @@ export default function PrivacyPage() {
             <p className="text-muted-foreground leading-relaxed">
               Your data is stored securely using Supabase with Row Level
               Security, ensuring that only you can access your own decks and
-              flashcards. We use industry-standard encryption for data in transit
-              (HTTPS/TLS). While we take reasonable precautions to protect your
-              data, no method of electronic storage is 100% secure.
+              flashcards. We use industry-standard encryption for data in
+              transit (HTTPS/TLS). While we take reasonable precautions to
+              protect your data, no method of electronic storage is 100% secure.
             </p>
           </section>
 
@@ -206,10 +226,10 @@ export default function PrivacyPage() {
               If you have questions about this Privacy Policy or wish to
               exercise your data rights, please contact us at{" "}
               <a
-                href="mailto:luiscastle002@gmail.com"
+                href="mailto:support@flashtar.app"
                 className="text-primary hover:underline"
               >
-                luiscastle002@gmail.com
+                support@flashtar.app
               </a>
               .
             </p>

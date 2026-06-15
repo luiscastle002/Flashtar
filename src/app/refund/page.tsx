@@ -25,7 +25,7 @@ export default function RefundPage() {
       <main className="flex-1 container mx-auto px-4 py-16 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold mb-2">Refund Policy</h1>
         <p className="text-muted-foreground mb-10">
-          Last updated: June 10, 2026
+          Last updated: June 15, 2026
         </p>
 
         <div className="prose prose-neutral dark:prose-invert max-w-none space-y-8">
@@ -36,93 +36,123 @@ export default function RefundPage() {
 
           <section>
             <h2 className="text-xl font-semibold mb-3">
-              1. Digital Subscription Policy
+              1. Digital Subscription Policy (General Rule)
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               Flashtar is a digital subscription service. Due to the nature of
               digital products and instant access to AI generation features,
-              subscription payments are generally{" "}
+              digital subscriptions are generally{" "}
               <span className="font-medium text-foreground">
                 non-refundable
               </span>{" "}
-              once processed.
+              unless required by law. Refund requests may be granted at
+              Promptback&apos;s discretion. Refund requests may also be
+              processed by Paddle as Merchant of Record.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold mb-3">
-              2. When Refunds May Be Granted
+              2. Consumer Protection Rights
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-3">
-              We may issue a refund at our discretion in the following
-              situations:
+              Certain jurisdictions provide consumers with statutory withdrawal
+              or cancellation rights. Where local consumer protection laws
+              provide greater rights, those rights prevail:
             </p>
             <ul className="list-disc list-inside space-y-1.5 text-muted-foreground">
-              <li>You were charged incorrectly or experienced a billing error</li>
               <li>
-                The Service was unavailable or significantly degraded for an
-                extended period during your billing cycle
+                <span className="font-medium text-foreground">
+                  European Union / EEA / United Kingdom / Switzerland:
+                </span>{" "}
+                Consumers may have up to 14 days withdrawal rights where
+                applicable.
               </li>
               <li>
-                You were charged after canceling your subscription due to a
-                processing delay
+                <span className="font-medium text-foreground">
+                  Brazil / South Korea / China / Canada:
+                </span>{" "}
+                Consumers may have up to 7 days cancellation rights where
+                required by local law.
               </li>
-              <li>A refund is required by applicable consumer protection law</li>
+              <li>
+                <span className="font-medium text-foreground">Singapore:</span>{" "}
+                Consumers may have up to 5 days cancellation rights.
+              </li>
             </ul>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold mb-3">
-              3. How to Request a Refund
+              3. Technical Defects &amp; Exceptions
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-3">
+              Refunds may be granted if:
+            </p>
+            <ul className="list-disc list-inside space-y-1.5 text-muted-foreground">
+              <li>Flashtar experiences persistent technical failures;</li>
+              <li>Users are incorrectly charged;</li>
+              <li>
+                Users are billed after cancellation due to processing errors;
+              </li>
+              <li>The service is materially unavailable;</li>
+              <li>Refunds are required under applicable law.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">
+              4. Subscription Cancellation
             </h2>
             <p className="text-muted-foreground leading-relaxed">
+              Users may cancel subscriptions at any time through the Paddle
+              customer portal, the billing page, or account settings (when
+              available). Cancellation prevents future renewals but does not
+              automatically guarantee a refund.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">
+              5. Paddle Relationship
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Paddle acts as the Merchant of Record and authorised reseller for
+              transactions processed through Flashtar. Certain refund requests,
+              payment disputes, and statutory rights may be administered
+              directly by Paddle in accordance with Paddle&apos;s policies.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">
+              6. Refund Request Process &amp; Processing Times
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-3">
               To request a refund, please contact us at{" "}
               <a
-                href="mailto:luiscastle002@gmail.com"
+                href="mailto:support@flashtar.app"
                 className="text-primary hover:underline"
               >
-                luiscastle002@gmail.com
+                support@flashtar.app
               </a>{" "}
               with the following information:
             </p>
-            <ul className="list-disc list-inside space-y-1.5 text-muted-foreground mt-3">
+            <ul className="list-disc list-inside space-y-1.5 text-muted-foreground mb-3">
               <li>Your account email address</li>
               <li>Date of the charge</li>
               <li>Reason for the refund request</li>
             </ul>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">
-              4. Processing Time
-            </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Refund requests are reviewed within{" "}
-              <span className="font-medium text-foreground">
-                5–10 business days
-              </span>
-              . If approved, the refund will be processed to your original
-              payment method. Depending on your bank or payment provider, it may
-              take an additional 5–10 business days for the refund to appear on
-              your statement.
+              Approved refunds are generally returned to the original payment
+              method. Processing times depend on Paddle and banking providers
+              (typically taking 5–10 business days). Access to paid features may
+              be revoked after a refund.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold mb-3">5. Cancellation</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              You can cancel your subscription at any time through your account
-              settings or via the payment provider&apos;s customer portal. After
-              cancellation, you will retain access to paid features until the
-              end of your current billing period. No further charges will be
-              made after cancellation.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-3">
-              6. Free Plan
-            </h2>
+            <h2 className="text-xl font-semibold mb-3">7. Free Plan</h2>
             <p className="text-muted-foreground leading-relaxed">
               The free tier of Flashtar does not involve any charges. If you are
               on the free plan, no refund is applicable.
@@ -130,15 +160,15 @@ export default function RefundPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold mb-3">7. Contact</h2>
+            <h2 className="text-xl font-semibold mb-3">8. Contact</h2>
             <p className="text-muted-foreground leading-relaxed">
               For any questions about our refund policy, please reach out to us
               at{" "}
               <a
-                href="mailto:luiscastle002@gmail.com"
+                href="mailto:support@flashtar.app"
                 className="text-primary hover:underline"
               >
-                luiscastle002@gmail.com
+                support@flashtar.app
               </a>
               .
             </p>
