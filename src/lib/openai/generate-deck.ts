@@ -28,6 +28,13 @@ const generatedDeckSchema = z.object({
   cards: z.array(generatedCardSchema).min(1),
 });
 
+export interface NormalizedSource {
+  sourceType: "prompt" | "file" | "url";
+  sourceName?: string;
+  sourceUrl?: string;
+  content: string;
+}
+
 export interface GenerateDeckOptions {
   prompt: string;
   language: string;
@@ -36,16 +43,30 @@ export interface GenerateDeckOptions {
   cardType: CardType;
 }
 
-function buildSystemPrompt(options: GenerateDeckOptions): string {
+function buildSystemPrompt(
+  source: NormalizedSource,
+  options: Omit<GenerateDeckOptions, "prompt">
+): string {
   const cardTypeInstructions: Record<CardType, string> = {
     basic: "Generate basic front/back flashcards. Each card must have a clear question on the front and a concise answer on the back.",
     cloze: "Generate cloze deletion flashcards. Put the full sentence on the front with {{c1::hidden text}} syntax for cloze deletions. The back should contain the full sentence with the answer revealed.",
     mixed: "Generate a mix of basic front/back and cloze deletion cards. Mark each card with card_type as 'basic' or 'cloze'.",
   };
 
+  let sourceContext = "";
+  if (source.sourceType === "prompt") {
+    sourceContext = "Generate flashcards based on the user's prompt request.";
+  } else if (source.sourceType === "file") {
+    sourceContext = `Generate flashcards directly from the provided source document text (File Name: ${source.sourceName || 'unnamed'}). Focus on extracting the most important educational concepts from the text.`;
+  } else if (source.sourceType === "url") {
+    sourceContext = `Generate flashcards directly from the provided website/web page content (URL: ${source.sourceUrl || 'unknown'}, Title: ${source.sourceName || 'web page'}). Focus on extracting the most important educational concepts from the text.`;
+  }
+
   return `You are an expert educational content creator specializing in spaced repetition flashcards for Anki.
 
-Generate exactly ${options.cardCount} high-quality flashcards based on the user's request.
+${sourceContext}
+
+Generate exactly ${options.cardCount} high-quality flashcards.
 
 Language: ${options.language}
 Difficulty: ${options.difficulty}
@@ -60,7 +81,10 @@ Rules:
 - deckName should be descriptive and concise`;
 }
 
-export async function generateDeckWithAI(options: GenerateDeckOptions): Promise<{
+export async function generateDeckFromText(
+  source: NormalizedSource,
+  options: Omit<GenerateDeckOptions, "prompt">
+): Promise<{
   deck: GeneratedDeck;
   tokensUsed: number;
 }> {
@@ -69,8 +93,8 @@ export async function generateDeckWithAI(options: GenerateDeckOptions): Promise<
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [
-      { role: "system", content: buildSystemPrompt(options) },
-      { role: "user", content: options.prompt },
+      { role: "system", content: buildSystemPrompt(source, options) },
+      { role: "user", content: source.content },
     ],
     response_format: {
       type: "json_schema",
@@ -113,6 +137,19 @@ export async function generateDeckWithAI(options: GenerateDeckOptions): Promise<
   const tokensUsed = response.usage?.total_tokens ?? 0;
 
   return { deck: parsed, tokensUsed };
+}
+
+export async function generateDeckWithAI(options: GenerateDeckOptions): Promise<{
+  deck: GeneratedDeck;
+  tokensUsed: number;
+}> {
+  return generateDeckFromText(
+    {
+      sourceType: "prompt",
+      content: options.prompt,
+    },
+    options
+  );
 }
 
 export async function* streamDeckGeneration(

@@ -41,8 +41,8 @@ interface GeneratePageProps {
 
 type GenerateMode = "prompt" | "import" | "url";
 
-const ALLOWED_EXTENSIONS = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'png', 'jpg', 'jpeg', 'webp', 'txt'];
-const ACCEPT_ATTRIBUTE = ".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.png,.jpg,.jpeg,.webp,.txt";
+const ALLOWED_EXTENSIONS = ["pdf", "docx", "pptx", "xlsx", "txt", "png", "jpg", "jpeg", "webp"];
+const ACCEPT_ATTRIBUTE = ".pdf,.docx,.pptx,.xlsx,.txt,.png,.jpg,.jpeg,.webp";
 
 function formatFileSize(bytes: number) {
   if (bytes === 0) return "0 Bytes";
@@ -58,10 +58,10 @@ function getFileIcon(fileName: string) {
   if (["png", "jpg", "jpeg", "webp"].includes(ext)) {
     return FileImage;
   }
-  if (["xls", "xlsx"].includes(ext)) {
+  if (["xlsx"].includes(ext)) {
     return FileSpreadsheet;
   }
-  if (["doc", "docx", "pdf", "ppt", "pptx", "txt"].includes(ext)) {
+  if (["docx", "pdf", "pptx", "txt"].includes(ext)) {
     return FileText;
   }
   return File;
@@ -73,6 +73,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [prompt, setPrompt] = useState("");
+  const [url, setUrl] = useState("");
   const [language, setLanguage] = useState("English");
   const [difficulty, setDifficulty] = useState("intermediate");
   const [cardCount, setCardCount] = useState(20);
@@ -97,8 +98,9 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
       return;
     }
 
-    if (cardCount > limits.maxCardsPerDeck) {
-      toast.error(`Your plan allows up to ${limits.maxCardsPerDeck} cards per deck.`);
+    const maxCards = Math.min(limits.maxCardsPerDeck, 50);
+    if (cardCount > maxCards) {
+      toast.error(`Your plan allows up to ${maxCards} cards per deck.`);
       return;
     }
 
@@ -147,8 +149,20 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
       return;
     }
 
-    if (cardCount > limits.maxCardsPerDeck) {
-      toast.error(`Your plan allows up to ${limits.maxCardsPerDeck} cards per deck.`);
+    if (uploadedFiles.length > 5) {
+      toast.error("Maximum of 5 files can be uploaded per request.");
+      return;
+    }
+
+    const totalSize = uploadedFiles.reduce((sum, f) => sum + f.size, 0);
+    if (totalSize > 4 * 1024 * 1024) {
+      toast.error("Maximum combined file upload size is 4MB.");
+      return;
+    }
+
+    const maxCards = Math.min(limits.maxCardsPerDeck, 50);
+    if (cardCount > maxCards) {
+      toast.error(`Your plan allows up to ${maxCards} cards per deck.`);
       return;
     }
 
@@ -161,15 +175,90 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
     setProgress(20);
 
     const interval = setInterval(() => {
-      setProgress((p) => Math.min(p + 15, 95));
-    }, 400);
+      setProgress((p) => Math.min(p + 12, 92));
+    }, 600);
 
     try {
-      // Simulate file upload and analysis (UI only, backend is not implemented yet)
-      // Note: For .txt files, backend extraction can simply use: await file.text()
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      const formData = new FormData();
+      formData.append("sourceType", "file");
+      uploadedFiles.forEach((file) => {
+        formData.append("files", file);
+      });
+      formData.append("language", language);
+      formData.append("difficulty", difficulty);
+      formData.append("cardCount", cardCount.toString());
+      formData.append("cardType", cardType);
+
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error ?? "Generation failed");
+      }
+
       setProgress(100);
-      toast.success(`Received files: ${uploadedFiles.map((f) => f.name).join(", ")}. Backend generation is not implemented yet!`);
+      toast.success(`Generated ${data.cardCount} flashcards!`);
+      router.push(`/decks/${data.deck.id}`);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Generation failed");
+    } finally {
+      clearInterval(interval);
+      setLoading(false);
+      setProgress(0);
+    }
+  }
+
+  async function handleUrlGenerate(e: React.FormEvent) {
+    e.preventDefault();
+
+    if (!url) {
+      toast.error("Please enter a valid URL.");
+      return;
+    }
+
+    const maxCards = Math.min(limits.maxCardsPerDeck, 50);
+    if (cardCount > maxCards) {
+      toast.error(`Your plan allows up to ${maxCards} cards per deck.`);
+      return;
+    }
+
+    if (remaining <= 0) {
+      toast.error("You've reached your monthly generation limit. Upgrade to Pro for unlimited generations.");
+      return;
+    }
+
+    setLoading(true);
+    setProgress(20);
+
+    const interval = setInterval(() => {
+      setProgress((p) => Math.min(p + 12, 92));
+    }, 600);
+
+    try {
+      const formData = new FormData();
+      formData.append("sourceType", "url");
+      formData.append("url", url);
+      formData.append("language", language);
+      formData.append("difficulty", difficulty);
+      formData.append("cardCount", cardCount.toString());
+      formData.append("cardType", cardType);
+
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error ?? "Generation failed");
+      }
+
+      setProgress(100);
+      toast.success(`Generated ${data.cardCount} flashcards!`);
+      router.push(`/decks/${data.deck.id}`);
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "Generation failed");
     } finally {
@@ -219,10 +308,21 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
       });
 
       if (validFiles.length < files.length) {
-        toast.error("Some files were ignored because their format is not supported.");
+        toast.error("This file type is not supported.");
       }
 
       if (validFiles.length > 0) {
+        if (uploadedFiles.length + validFiles.length > 5) {
+          toast.error("Maximum of 5 files can be uploaded per request.");
+          return;
+        }
+
+        const totalSize = [...uploadedFiles, ...validFiles].reduce((sum, f) => sum + f.size, 0);
+        if (totalSize > 4 * 1024 * 1024) {
+          toast.error("Maximum combined file upload size is 4MB.");
+          return;
+        }
+
         setUploadedFiles((prev) => [...prev, ...validFiles]);
       }
     }
@@ -237,10 +337,21 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
       });
 
       if (validFiles.length < files.length) {
-        toast.error("Some files were ignored because their format is not supported.");
+        toast.error("This file type is not supported.");
       }
 
       if (validFiles.length > 0) {
+        if (uploadedFiles.length + validFiles.length > 5) {
+          toast.error("Maximum of 5 files can be uploaded per request.");
+          return;
+        }
+
+        const totalSize = [...uploadedFiles, ...validFiles].reduce((sum, f) => sum + f.size, 0);
+        if (totalSize > 4 * 1024 * 1024) {
+          toast.error("Maximum combined file upload size is 4MB.");
+          return;
+        }
+
         setUploadedFiles((prev) => [...prev, ...validFiles]);
       }
     }
@@ -565,29 +676,57 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-6">
-                  {/* Under construction / placeholder interface */}
-                  {/* TODO: This panel will evolve to support URL extraction in a future task */}
+                <form onSubmit={handleUrlGenerate} className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="url-input">URL</Label>
                     <Input
                       id="url-input"
                       type="url"
                       placeholder="https://example.com/article-to-learn-from"
-                      disabled
+                      value={url}
+                      onChange={(e) => setUrl(e.target.value)}
+                      required
+                      disabled={loading}
                     />
                     <p className="text-xs text-muted-foreground">
-                      YouTube videos, articles, and documentation pages will be supported.
+                      YouTube videos, articles, and documentation pages are supported.
                     </p>
                   </div>
 
-                  {renderSettings()}
+                  <div className="space-y-4 border-t pt-6">
+                    <h3 className="text-sm font-semibold">Settings</h3>
+                    {renderSettings()}
+                  </div>
 
-                  <Button className="w-full" size="lg" disabled>
-                    <Sparkles className="mr-2 h-4 w-4" />
-                    Generate From URL (Coming Soon)
+                  {loading && (
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Generating flashcards with AI...
+                      </div>
+                      <Progress value={progress} className="h-2" />
+                    </div>
+                  )}
+
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    size="lg"
+                    disabled={loading || !url}
+                  >
+                    {loading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Generating...
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="mr-2 h-4 w-4" />
+                        Generate From URL
+                      </>
+                    )}
                   </Button>
-                </div>
+                </form>
               </CardContent>
             </Card>
           )}
