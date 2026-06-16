@@ -16,7 +16,6 @@ import {
   SlidersHorizontal,
   Trash2,
   Star,
-  Check,
   Pin
 } from "lucide-react";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
@@ -178,9 +177,14 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
   const [isPending, startTransition] = useTransition();
 
   const [savedPrompts, setSavedPrompts] = useState<SavedPrompt[]>(initialPrompts);
+  type OptimisticAction =
+    | { type: "add"; payload: SavedPrompt }
+    | { type: "delete"; payload: string }
+    | { type: "update"; payload: { id: string; updates: Partial<Omit<SavedPrompt, "id" | "user_id" | "created_at" | "updated_at">> } };
+
   const [optimisticPrompts, setOptimisticPrompts] = useOptimistic(
     savedPrompts,
-    (state, action: { type: "add" | "delete" | "update"; payload: any }) => {
+    (state, action: OptimisticAction) => {
       switch (action.type) {
         case "add":
           return [action.payload, ...state];
