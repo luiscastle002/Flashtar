@@ -41,6 +41,7 @@ export interface GenerateDeckOptions {
   difficulty: Difficulty;
   cardCount: number;
   cardType: CardType;
+  customInstructions?: string;
 }
 
 function buildSystemPrompt(
@@ -62,7 +63,7 @@ function buildSystemPrompt(
     sourceContext = `Generate flashcards directly from the provided website/web page content (URL: ${source.sourceUrl || 'unknown'}, Title: ${source.sourceName || 'web page'}). Focus on extracting the most important educational concepts from the text.`;
   }
 
-  return `You are an expert educational content creator specializing in spaced repetition flashcards for Anki.
+  let systemPrompt = `You are an expert educational content creator specializing in spaced repetition flashcards for Anki.
 
 ${sourceContext}
 
@@ -79,6 +80,12 @@ Rules:
 - For cloze cards, use Anki syntax: {{c1::answer}} for single cloze
 - Return valid JSON matching the schema exactly
 - deckName should be descriptive and concise`;
+
+  if (options.customInstructions) {
+    systemPrompt += `\n\nUser Custom Instructions:\n${options.customInstructions}`;
+  }
+
+  return systemPrompt;
 }
 
 export async function generateDeckFromText(

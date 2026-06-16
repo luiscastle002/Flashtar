@@ -301,3 +301,14 @@ export interface DeckDueCounts {
   review_count: number;
   total_due: number;
 }
+
+export interface SavedPrompt {
+  id: string;
+  user_id: string;
+  name: string;
+  content: string;
+  is_favorite: boolean;
+  is_default: boolean;
+  created_at: string;
+  updated_at: string;
+}

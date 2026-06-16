@@ -24,6 +24,7 @@ const generateSchema = z.object({
   difficulty: z.enum(["beginner", "intermediate", "advanced"]),
   cardCount: z.number().int().min(1).max(50), // Cap at 50 max cards per request
   cardType: z.enum(["basic", "cloze", "mixed"]),
+  customInstructions: z.string().max(2000).optional(),
 });
 
 const ALLOWED_EXTENSIONS = ["pdf", "docx", "pptx", "xlsx", "txt", "png", "jpg", "jpeg", "webp"];
@@ -53,6 +54,7 @@ export async function POST(request: Request) {
   let difficulty: "beginner" | "intermediate" | "advanced" = "intermediate";
   let cardCount = 20;
   let cardType: "basic" | "cloze" | "mixed" = "basic";
+  let customInstructions: string | undefined;
 
   const contentType = request.headers.get("content-type") || "";
 
@@ -67,6 +69,7 @@ export async function POST(request: Request) {
       difficulty = (formData.get("difficulty") as "beginner" | "intermediate" | "advanced") || "intermediate";
       cardCount = parseInt(formData.get("cardCount") as string || "20", 10);
       cardType = (formData.get("cardType") as "basic" | "cloze" | "mixed") || "basic";
+      customInstructions = formData.get("customInstructions") as string || undefined;
     } else {
       const body = await request.json();
       const parsed = generateSchema.parse(body);
@@ -77,12 +80,13 @@ export async function POST(request: Request) {
       difficulty = parsed.difficulty;
       cardCount = parsed.cardCount;
       cardType = parsed.cardType;
+      customInstructions = parsed.customInstructions;
     }
   } catch {
     return NextResponse.json({ error: "Invalid request payload format." }, { status: 400 });
   }
 
-  logStep(2, "Request payload parsed", { sourceType, promptLength: prompt?.length, url, filesCount: files.length });
+  logStep(2, "Request payload parsed", { sourceType, promptLength: prompt?.length, url, filesCount: files.length, hasInstructions: !!customInstructions });
 
   // Validate fields with Schema
   const validation = generateSchema.safeParse({
@@ -93,6 +97,7 @@ export async function POST(request: Request) {
     difficulty,
     cardCount,
     cardType,
+    customInstructions,
   });
 
   if (!validation.success) {
@@ -209,6 +214,7 @@ export async function POST(request: Request) {
         difficulty,
         cardCount,
         cardType,
+        customInstructions,
       }
     );
     logStep(9, "OpenAI finished", { tokensUsed });
