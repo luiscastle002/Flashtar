@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   Sparkles,
@@ -41,6 +41,62 @@ interface GeneratePageProps {
 
 type GenerateMode = "prompt" | "import" | "url";
 
+type GenerationState =
+  | "idle"
+  | "uploading"
+  | "processing"
+  | "redirecting"
+  | "error";
+
+const STATUS_MESSAGES = [
+  "🧠 Reading your files...",
+  "📝 Extracting text...",
+  "✨ Generating flashcards...",
+  "📚 Preparing your deck...",
+];
+
+function uploadWithProgress(
+  url: string,
+  formData: FormData,
+  onProgress: (percent: number) => void
+): Promise<{ deck: { id: string }; cardCount: number; generationId: string }> {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+
+    xhr.upload.onprogress = (event) => {
+      if (event.lengthComputable) {
+        const percentComplete = Math.round((event.loaded / event.total) * 100);
+        onProgress(percentComplete);
+      }
+    };
+
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        try {
+          const response = JSON.parse(xhr.responseText);
+          resolve(response);
+        } catch {
+          reject(new Error("Failed to parse response"));
+        }
+      } else {
+        try {
+          const response = JSON.parse(xhr.responseText);
+          reject(new Error(response.error ?? `Upload failed with status ${xhr.status}`));
+        } catch {
+          reject(new Error(`Upload failed with status ${xhr.status}`));
+        }
+      }
+    };
+
+    xhr.onerror = () => {
+      reject(new Error("Network error occurred"));
+    };
+
+    xhr.send(formData);
+  });
+}
+
 const ALLOWED_EXTENSIONS = ["pdf", "docx", "pptx", "xlsx", "txt", "png", "jpg", "jpeg", "webp"];
 const ACCEPT_ATTRIBUTE = ".pdf,.docx,.pptx,.xlsx,.txt,.png,.jpg,.jpeg,.webp";
 
@@ -70,8 +126,24 @@ function getFileIcon(fileName: string) {
 export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePageProps) {
   const router = useRouter();
   const limits = PLAN_LIMITS[plan];
-  const [loading, setLoading] = useState(false);
+  const [generationState, setGenerationState] = useState<GenerationState>("idle");
+  const loading = generationState !== "idle";
   const [progress, setProgress] = useState(0);
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+
+  useEffect(() => {
+    if (generationState !== "processing") {
+      setCurrentMessageIndex(0);
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setCurrentMessageIndex((prev) => (prev + 1) % STATUS_MESSAGES.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [generationState]);
+
   const [prompt, setPrompt] = useState("");
   const [url, setUrl] = useState("");
   const [language, setLanguage] = useState("English");
@@ -109,12 +181,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
       return;
     }
 
-    setLoading(true);
-    setProgress(20);
-
-    const interval = setInterval(() => {
-      setProgress((p) => Math.min(p + 10, 90));
-    }, 800);
+    setGenerationState("processing");
 
     try {
       const response = await fetch("/api/generate", {
@@ -129,15 +196,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
         throw new Error(data.error ?? "Generation failed");
       }
 
-      setProgress(100);
+      setGenerationState("redirecting");
       toast.success(`Generated ${data.cardCount} flashcards!`);
       router.push(`/decks/${data.deck.id}`);
     } catch (error) {
+      setGenerationState("idle");
       toast.error(error instanceof Error ? error.message : "Generation failed");
-    } finally {
-      clearInterval(interval);
-      setLoading(false);
-      setProgress(0);
     }
   }
 
@@ -171,12 +235,8 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
       return;
     }
 
-    setLoading(true);
-    setProgress(20);
-
-    const interval = setInterval(() => {
-      setProgress((p) => Math.min(p + 12, 92));
-    }, 600);
+    setGenerationState("uploading");
+    setProgress(0);
 
     try {
       const formData = new FormData();
@@ -189,25 +249,20 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
       formData.append("cardCount", cardCount.toString());
       formData.append("cardType", cardType);
 
-      const response = await fetch("/api/generate", {
-        method: "POST",
-        body: formData,
+      const data = await uploadWithProgress("/api/generate", formData, (percent) => {
+        setProgress(percent);
+        if (percent >= 100) {
+          setGenerationState("processing");
+        }
       });
 
-      const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.error ?? "Generation failed");
-      }
-
-      setProgress(100);
+      setGenerationState("redirecting");
       toast.success(`Generated ${data.cardCount} flashcards!`);
       router.push(`/decks/${data.deck.id}`);
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Generation failed");
-    } finally {
-      clearInterval(interval);
-      setLoading(false);
+      setGenerationState("idle");
       setProgress(0);
+      toast.error(error instanceof Error ? error.message : "Generation failed");
     }
   }
 
@@ -230,12 +285,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
       return;
     }
 
-    setLoading(true);
-    setProgress(20);
-
-    const interval = setInterval(() => {
-      setProgress((p) => Math.min(p + 12, 92));
-    }, 600);
+    setGenerationState("processing");
 
     try {
       const formData = new FormData();
@@ -256,15 +306,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
         throw new Error(data.error ?? "Generation failed");
       }
 
-      setProgress(100);
+      setGenerationState("redirecting");
       toast.success(`Generated ${data.cardCount} flashcards!`);
       router.push(`/decks/${data.deck.id}`);
     } catch (error) {
+      setGenerationState("idle");
       toast.error(error instanceof Error ? error.message : "Generation failed");
-    } finally {
-      clearInterval(interval);
-      setLoading(false);
-      setProgress(0);
     }
   }
 
@@ -520,16 +567,6 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
 
                   {renderSettings()}
 
-                  {loading && (
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        Generating flashcards with AI...
-                      </div>
-                      <Progress value={progress} className="h-2" />
-                    </div>
-                  )}
-
                   <Button type="submit" className="w-full" size="lg" disabled={loading}>
                     {loading ? (
                       <>
@@ -636,11 +673,11 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
                     {renderSettings()}
                   </div>
 
-                  {loading && (
+                  {generationState === "uploading" && (
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Loader2 className="h-4 w-4 animate-spin" />
-                        Generating flashcards with AI...
+                        Uploading files ({progress}%)...
                       </div>
                       <Progress value={progress} className="h-2" />
                     </div>
@@ -698,15 +735,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
                     {renderSettings()}
                   </div>
 
-                  {loading && (
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        Generating flashcards with AI...
-                      </div>
-                      <Progress value={progress} className="h-2" />
-                    </div>
-                  )}
+
 
                   <Button
                     type="submit"
@@ -732,6 +761,33 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
           )}
         </div>
       </div>
+
+      {/* Full-screen processing overlay */}
+      {(generationState === "processing" || generationState === "redirecting") && (
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background/80 backdrop-blur-md transition-all duration-300 animate-in fade-in">
+          <div className="max-w-md w-full mx-auto px-6 flex flex-col items-center text-center space-y-6">
+            <div className="relative flex items-center justify-center">
+              {/* Outer glowing ring */}
+              <div className="absolute inset-0 rounded-full bg-primary/10 blur-xl animate-pulse h-24 w-24 -m-4" />
+              <div className="relative p-6 bg-card rounded-full border border-border shadow-lg">
+                <Loader2 className="h-10 w-10 text-primary animate-spin" />
+              </div>
+            </div>
+            
+            <div className="space-y-2">
+              <h2 className="text-xl md:text-2xl font-bold tracking-tight text-foreground transition-all duration-300 min-h-[2.5rem]">
+                {generationState === "redirecting" 
+                  ? "📚 Opening your deck..." 
+                  : STATUS_MESSAGES[currentMessageIndex]}
+              </h2>
+              <p className="text-sm text-muted-foreground max-w-[280px] sm:max-w-[320px] leading-relaxed">
+                Please don&apos;t close this page.<br />
+                Large PDFs and images may take up to 1 minute.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </DashboardShell>
   );
 }
