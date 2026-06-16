@@ -1,8 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { Sparkles, Loader2 } from "lucide-react";
+import {
+  Sparkles,
+  Loader2,
+  Folder,
+  FileText,
+  Upload,
+  X,
+  FileSpreadsheet,
+  FileImage,
+  File
+} from "lucide-react";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -20,11 +30,37 @@ import { Progress } from "@/components/ui/progress";
 import { toast } from "sonner";
 import type { Plan, Profile } from "@/types";
 import { PLAN_LIMITS } from "@/types";
+import { cn } from "@/lib/utils";
 
 interface GeneratePageProps {
   plan: Plan;
   monthlyGenerations: number;
   profile: Profile | null;
+}
+
+type GenerateMode = "prompt" | "import";
+
+function formatFileSize(bytes: number) {
+  if (bytes === 0) return "0 Bytes";
+  const k = 1024;
+  const sizes = ["Bytes", "KB", "MB", "GB"];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + " " + sizes[i];
+}
+
+function getFileIcon(fileName: string) {
+  const ext = fileName.split('.').pop()?.toLowerCase();
+  if (!ext) return File;
+  if (["png", "jpg", "jpeg", "webp"].includes(ext)) {
+    return FileImage;
+  }
+  if (["xls", "xlsx"].includes(ext)) {
+    return FileSpreadsheet;
+  }
+  if (["doc", "docx", "pdf", "ppt", "pptx"].includes(ext)) {
+    return FileText;
+  }
+  return File;
 }
 
 export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePageProps) {
@@ -37,6 +73,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
   const [difficulty, setDifficulty] = useState("intermediate");
   const [cardCount, setCardCount] = useState(20);
   const [cardType, setCardType] = useState("basic");
+
+  // New state variables for file upload workflow
+  const [mode, setMode] = useState<GenerateMode>("prompt");
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [isDragging, setIsDragging] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const remaining =
     limits.monthlyGenerations === Infinity
@@ -93,6 +135,164 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
     }
   }
 
+  async function handleImportGenerate(e: React.FormEvent) {
+    e.preventDefault();
+
+    if (uploadedFiles.length === 0) {
+      toast.error("Please upload at least one file.");
+      return;
+    }
+
+    if (cardCount > limits.maxCardsPerDeck) {
+      toast.error(`Your plan allows up to ${limits.maxCardsPerDeck} cards per deck.`);
+      return;
+    }
+
+    if (remaining <= 0) {
+      toast.error("You've reached your monthly generation limit. Upgrade to Pro for unlimited generations.");
+      return;
+    }
+
+    setLoading(true);
+    setProgress(20);
+
+    const interval = setInterval(() => {
+      setProgress((p) => Math.min(p + 15, 95));
+    }, 400);
+
+    try {
+      // Simulate file upload and analysis (UI only, backend is not implemented yet)
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      setProgress(100);
+      toast.success(`Received files: ${uploadedFiles.map((f) => f.name).join(", ")}. Backend generation is not implemented yet!`);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Generation failed");
+    } finally {
+      clearInterval(interval);
+      setLoading(false);
+      setProgress(0);
+    }
+  }
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      const files = Array.from(e.dataTransfer.files);
+      const validFiles = files.filter((file) => {
+        const ext = file.name.split('.').pop()?.toLowerCase();
+        const allowedExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'png', 'jpg', 'jpeg', 'webp'];
+        return ext && allowedExtensions.includes(ext);
+      });
+
+      if (validFiles.length < files.length) {
+        toast.error("Some files were ignored because their format is not supported.");
+      }
+
+      if (validFiles.length > 0) {
+        setUploadedFiles((prev) => [...prev, ...validFiles]);
+      }
+    }
+  };
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const files = Array.from(e.target.files);
+      const validFiles = files.filter((file) => {
+        const ext = file.name.split('.').pop()?.toLowerCase();
+        const allowedExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'png', 'jpg', 'jpeg', 'webp'];
+        return ext && allowedExtensions.includes(ext);
+      });
+
+      if (validFiles.length < files.length) {
+        toast.error("Some files were ignored because their format is not supported.");
+      }
+
+      if (validFiles.length > 0) {
+        setUploadedFiles((prev) => [...prev, ...validFiles]);
+      }
+    }
+  };
+
+  const removeFile = (index: number) => {
+    setUploadedFiles((prev) => prev.filter((_, idx) => idx !== index));
+  };
+
+  const renderSettings = () => (
+    <div className="grid sm:grid-cols-2 gap-4">
+      <div className="space-y-2">
+        <Label>Language</Label>
+        <Select value={language} onValueChange={setLanguage} disabled={loading}>
+          <SelectTrigger>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {["English", "Spanish", "French", "German", "Portuguese", "Japanese", "Chinese"].map(
+              (lang) => (
+                <SelectItem key={lang} value={lang}>
+                  {lang}
+                </SelectItem>
+              )
+            )}
+          </SelectContent>
+        </Select>
+      </div>
+
+      <div className="space-y-2">
+        <Label>Difficulty</Label>
+        <Select value={difficulty} onValueChange={setDifficulty} disabled={loading}>
+          <SelectTrigger>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="beginner">Beginner</SelectItem>
+            <SelectItem value="intermediate">Intermediate</SelectItem>
+            <SelectItem value="advanced">Advanced</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="cardCount">Number of Cards</Label>
+        <Input
+          id="cardCount"
+          type="number"
+          min={1}
+          max={limits.maxCardsPerDeck}
+          value={cardCount}
+          onChange={(e) => setCardCount(Number(e.target.value))}
+          disabled={loading}
+        />
+        <p className="text-xs text-muted-foreground">Max {limits.maxCardsPerDeck} on your plan</p>
+      </div>
+
+      <div className="space-y-2">
+        <Label>Card Type</Label>
+        <Select value={cardType} onValueChange={setCardType} disabled={loading}>
+          <SelectTrigger>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="basic">Basic Front/Back</SelectItem>
+            <SelectItem value="cloze">Cloze Deletion</SelectItem>
+            <SelectItem value="mixed">Mixed</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+    </div>
+  );
+
   return (
     <DashboardShell currentPath="/generate" profile={profile}>
       <div className="max-w-2xl mx-auto space-y-6">
@@ -121,115 +321,211 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
           </Card>
         )}
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Deck Settings</CardTitle>
-            <CardDescription>Configure your AI-generated flashcard deck</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleGenerate} className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="prompt">Prompt</Label>
-                <Textarea
-                  id="prompt"
-                  placeholder="Create a deck of 50 flashcards about JavaScript closures..."
-                  value={prompt}
-                  onChange={(e) => setPrompt(e.target.value)}
-                  rows={4}
-                  required
-                  disabled={loading}
-                />
-              </div>
+        {/* Tab Selector */}
+        <div className="flex p-1 bg-card/70 backdrop-blur-md rounded-xl border border-border/50 max-w-sm shadow-md">
+          <button
+            type="button"
+            onClick={() => setMode("prompt")}
+            className={cn(
+              "flex-1 flex items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-lg transition-all duration-200 cursor-pointer select-none",
+              mode === "prompt"
+                ? "bg-primary text-primary-foreground shadow-md"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
+            )}
+          >
+            <Sparkles className="h-4 w-4" />
+            Prompt
+          </button>
+          <button
+            type="button"
+            onClick={() => setMode("import")}
+            className={cn(
+              "flex-1 flex items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-lg transition-all duration-200 cursor-pointer select-none",
+              mode === "import"
+                ? "bg-primary text-primary-foreground shadow-md"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
+            )}
+          >
+            <Folder className="h-4 w-4" />
+            Import Files
+          </button>
+        </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label>Language</Label>
-                  <Select value={language} onValueChange={setLanguage} disabled={loading}>
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {["English", "Spanish", "French", "German", "Portuguese", "Japanese", "Chinese"].map(
-                        (lang) => (
-                          <SelectItem key={lang} value={lang}>
-                            {lang}
-                          </SelectItem>
-                        )
-                      )}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label>Difficulty</Label>
-                  <Select value={difficulty} onValueChange={setDifficulty} disabled={loading}>
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="beginner">Beginner</SelectItem>
-                      <SelectItem value="intermediate">Intermediate</SelectItem>
-                      <SelectItem value="advanced">Advanced</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="cardCount">Number of Cards</Label>
-                  <Input
-                    id="cardCount"
-                    type="number"
-                    min={1}
-                    max={limits.maxCardsPerDeck}
-                    value={cardCount}
-                    onChange={(e) => setCardCount(Number(e.target.value))}
-                    disabled={loading}
-                  />
-                  <p className="text-xs text-muted-foreground">Max {limits.maxCardsPerDeck} on your plan</p>
-                </div>
-
-                <div className="space-y-2">
-                  <Label>Card Type</Label>
-                  <Select value={cardType} onValueChange={setCardType} disabled={loading}>
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="basic">Basic Front/Back</SelectItem>
-                      <SelectItem value="cloze">Cloze Deletion</SelectItem>
-                      <SelectItem value="mixed">Mixed</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
-              {loading && (
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    Generating flashcards with AI...
+        <div className="transition-all duration-300">
+          {mode === "prompt" ? (
+            <Card className="transition-all duration-300">
+              <CardHeader>
+                <CardTitle>Deck Settings</CardTitle>
+                <CardDescription>Configure your AI-generated flashcard deck</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleGenerate} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="prompt">Prompt</Label>
+                    <Textarea
+                      id="prompt"
+                      placeholder="Create a deck of 50 flashcards about JavaScript closures..."
+                      value={prompt}
+                      onChange={(e) => setPrompt(e.target.value)}
+                      rows={4}
+                      required
+                      disabled={loading}
+                    />
                   </div>
-                  <Progress value={progress} className="h-2" />
-                </div>
-              )}
 
-              <Button type="submit" className="w-full" size="lg" disabled={loading}>
-                {loading ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Generating...
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="mr-2 h-4 w-4" />
-                    Generate Deck
-                  </>
-                )}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+                  {renderSettings()}
+
+                  {loading && (
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Generating flashcards with AI...
+                      </div>
+                      <Progress value={progress} className="h-2" />
+                    </div>
+                  )}
+
+                  <Button type="submit" className="w-full" size="lg" disabled={loading}>
+                    {loading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Generating...
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="mr-2 h-4 w-4" />
+                        Generate Deck
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          ) : (
+            <Card className="transition-all duration-300">
+              <CardHeader>
+                <CardTitle>Import Files</CardTitle>
+                <CardDescription>
+                  Upload documents or images and AI will generate flashcards automatically.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleImportGenerate} className="space-y-6">
+                  <div
+                    onClick={() => fileInputRef.current?.click()}
+                    onDragOver={handleDragOver}
+                    onDragLeave={handleDragLeave}
+                    onDrop={handleDrop}
+                    className={cn(
+                      "border-2 border-dashed rounded-xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 cursor-pointer select-none",
+                      isDragging
+                        ? "border-primary bg-primary/10 scale-[0.99]"
+                        : "border-border/60 hover:border-primary/50 bg-muted/20 hover:bg-muted/40"
+                    )}
+                  >
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      multiple
+                      accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.png,.jpg,.jpeg,.webp"
+                      className="hidden"
+                      onChange={handleFileSelect}
+                      disabled={loading}
+                    />
+                    <div className="p-3 bg-background/80 rounded-full border border-border shadow-sm">
+                      <Upload className={cn("h-6 w-6 text-muted-foreground transition-colors", isDragging && "text-primary")} />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">
+                        Drag and drop files here or <span className="text-primary hover:underline">click to browse</span>
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Supported formats: PDF, Word, Excel, PowerPoint, Images
+                      </p>
+                    </div>
+                  </div>
+
+                  {uploadedFiles.length > 0 && (
+                    <div className="space-y-2 max-h-[250px] overflow-y-auto pr-1">
+                      {uploadedFiles.map((file, idx) => {
+                        const Icon = getFileIcon(file.name);
+                        return (
+                          <div
+                            key={idx}
+                            className="flex items-center justify-between p-3 rounded-lg border border-border bg-card/50 backdrop-blur-sm transition-all hover:bg-card/85"
+                          >
+                            <div className="flex items-center gap-3 min-w-0">
+                              <div className="p-2 bg-background/60 rounded-md border border-border/30">
+                                <Icon className="h-4 w-4 text-primary" />
+                              </div>
+                              <div className="min-w-0">
+                                <p className="text-sm font-medium truncate max-w-[200px] sm:max-w-[320px]">
+                                  {file.name}
+                                </p>
+                                <p className="text-xs text-muted-foreground">
+                                  {formatFileSize(file.size)}
+                                </p>
+                              </div>
+                            </div>
+                            <Button
+                              type="button"
+                              variant="ghost"
+                              size="icon"
+                              className="h-8 w-8 text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                removeFile(idx);
+                              }}
+                              disabled={loading}
+                            >
+                              <X className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  <div className="space-y-4 border-t pt-6">
+                    <h3 className="text-sm font-semibold">Settings</h3>
+                    {renderSettings()}
+                  </div>
+
+                  {loading && (
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Generating flashcards with AI...
+                      </div>
+                      <Progress value={progress} className="h-2" />
+                    </div>
+                  )}
+
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    size="lg"
+                    disabled={loading || uploadedFiles.length === 0}
+                  >
+                    {loading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Generating...
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="mr-2 h-4 w-4" />
+                        Generate From Files
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          )}
+        </div>
       </div>
     </DashboardShell>
   );
 }
+
