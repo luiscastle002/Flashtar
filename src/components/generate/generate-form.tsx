@@ -11,7 +11,8 @@ import {
   X,
   FileSpreadsheet,
   FileImage,
-  File
+  File,
+  Link as LinkIcon
 } from "lucide-react";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
@@ -38,7 +39,10 @@ interface GeneratePageProps {
   profile: Profile | null;
 }
 
-type GenerateMode = "prompt" | "import";
+type GenerateMode = "prompt" | "import" | "url";
+
+const ALLOWED_EXTENSIONS = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'png', 'jpg', 'jpeg', 'webp', 'txt'];
+const ACCEPT_ATTRIBUTE = ".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.png,.jpg,.jpeg,.webp,.txt";
 
 function formatFileSize(bytes: number) {
   if (bytes === 0) return "0 Bytes";
@@ -57,7 +61,7 @@ function getFileIcon(fileName: string) {
   if (["xls", "xlsx"].includes(ext)) {
     return FileSpreadsheet;
   }
-  if (["doc", "docx", "pdf", "ppt", "pptx"].includes(ext)) {
+  if (["doc", "docx", "pdf", "ppt", "pptx", "txt"].includes(ext)) {
     return FileText;
   }
   return File;
@@ -162,6 +166,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
 
     try {
       // Simulate file upload and analysis (UI only, backend is not implemented yet)
+      // Note: For .txt files, backend extraction can simply use: await file.text()
       await new Promise((resolve) => setTimeout(resolve, 3000));
       setProgress(100);
       toast.success(`Received files: ${uploadedFiles.map((f) => f.name).join(", ")}. Backend generation is not implemented yet!`);
@@ -188,12 +193,29 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
     e.preventDefault();
     setIsDragging(false);
 
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      const files = Array.from(e.dataTransfer.files);
+    // Detect if the drop event contains URLs or text formats
+    const types = Array.from(e.dataTransfer.types || []);
+    const hasUrl = types.includes("text/uri-list") || types.includes("text/plain") || types.includes("text/html");
+    
+    const files = e.dataTransfer.files ? Array.from(e.dataTransfer.files) : [];
+    const hasFiles = files.length > 0;
+
+    // TODO: This drag-and-drop URL detection will evolve into the new "Import URL" feature.
+    // 1. If no files are present and a URL/text type is detected, show the toast and abort file processing.
+    if (hasUrl && !hasFiles) {
+      toast.error("Use URL panel instead.");
+      return;
+    }
+
+    // 2. If both files and URLs are dropped simultaneously, process supported files normally but show the message.
+    if (hasUrl && hasFiles) {
+      toast.error("Use URL panel instead.");
+    }
+
+    if (hasFiles) {
       const validFiles = files.filter((file) => {
         const ext = file.name.split('.').pop()?.toLowerCase();
-        const allowedExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'png', 'jpg', 'jpeg', 'webp'];
-        return ext && allowedExtensions.includes(ext);
+        return ext && ALLOWED_EXTENSIONS.includes(ext);
       });
 
       if (validFiles.length < files.length) {
@@ -211,8 +233,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
       const files = Array.from(e.target.files);
       const validFiles = files.filter((file) => {
         const ext = file.name.split('.').pop()?.toLowerCase();
-        const allowedExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'png', 'jpg', 'jpeg', 'webp'];
-        return ext && allowedExtensions.includes(ext);
+        return ext && ALLOWED_EXTENSIONS.includes(ext);
       });
 
       if (validFiles.length < files.length) {
@@ -322,7 +343,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
         )}
 
         {/* Tab Selector */}
-        <div className="flex p-1 bg-card/70 backdrop-blur-md rounded-xl border border-border/50 max-w-sm shadow-md">
+        <div className="flex p-1 bg-card/70 backdrop-blur-md rounded-xl border border-border/50 max-w-md shadow-md">
           <button
             type="button"
             onClick={() => setMode("prompt")}
@@ -348,6 +369,19 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
           >
             <Folder className="h-4 w-4" />
             Import Files
+          </button>
+          <button
+            type="button"
+            onClick={() => setMode("url")}
+            className={cn(
+              "flex-1 flex items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-lg transition-all duration-200 cursor-pointer select-none",
+              mode === "url"
+                ? "bg-primary text-primary-foreground shadow-md"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
+            )}
+          >
+            <LinkIcon className="h-4 w-4" />
+            Import URL
           </button>
         </div>
 
@@ -401,12 +435,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
                 </form>
               </CardContent>
             </Card>
-          ) : (
+          ) : mode === "import" ? (
             <Card className="transition-all duration-300">
               <CardHeader>
                 <CardTitle>Import Files</CardTitle>
                 <CardDescription>
-                  Upload documents or images and AI will generate flashcards automatically.
+                  Upload documents, text files, or images and AI will generate flashcards automatically.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -427,7 +461,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
                       ref={fileInputRef}
                       type="file"
                       multiple
-                      accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.png,.jpg,.jpeg,.webp"
+                      accept={ACCEPT_ATTRIBUTE}
                       className="hidden"
                       onChange={handleFileSelect}
                       disabled={loading}
@@ -440,7 +474,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
                         Drag and drop files here or <span className="text-primary hover:underline">click to browse</span>
                       </p>
                       <p className="text-xs text-muted-foreground mt-1">
-                        Supported formats: PDF, Word, Excel, PowerPoint, Images
+                        Supported formats: PDF, Word, Excel, PowerPoint, Images, Text (.txt)
                       </p>
                     </div>
                   </div>
@@ -520,6 +554,40 @@ export function GenerateForm({ plan, monthlyGenerations, profile }: GeneratePage
                     )}
                   </Button>
                 </form>
+              </CardContent>
+            </Card>
+          ) : (
+            <Card className="transition-all duration-300">
+              <CardHeader>
+                <CardTitle>Import URL</CardTitle>
+                <CardDescription>
+                  Enter a web page or YouTube link and AI will generate flashcards automatically.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-6">
+                  {/* Under construction / placeholder interface */}
+                  {/* TODO: This panel will evolve to support URL extraction in a future task */}
+                  <div className="space-y-2">
+                    <Label htmlFor="url-input">URL</Label>
+                    <Input
+                      id="url-input"
+                      type="url"
+                      placeholder="https://example.com/article-to-learn-from"
+                      disabled
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      YouTube videos, articles, and documentation pages will be supported.
+                    </p>
+                  </div>
+
+                  {renderSettings()}
+
+                  <Button className="w-full" size="lg" disabled>
+                    <Sparkles className="mr-2 h-4 w-4" />
+                    Generate From URL (Coming Soon)
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           )}
