@@ -113,3 +113,8 @@
 .animate-confetti-fall {
   animation: confetti-fall linear forwards;
 }
+
+.prose u {
+  text-decoration: underline;
+}
+
