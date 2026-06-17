@@ -144,6 +144,10 @@ export async function POST(request: Request) {
           return NextResponse.json({ error: "This file type is not supported." }, { status: 400 });
         }
 
+        if (ext === "xlsx" && file.size > 1 * 1024 * 1024) {
+          return NextResponse.json({ error: `Excel file "${file.name}" exceeds the 1MB size limit.` }, { status: 400 });
+        }
+
         const arrayBuffer = await file.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
         const text = await extractTextFromFile(file.name, file.type, buffer);

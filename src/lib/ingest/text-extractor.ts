@@ -79,7 +79,23 @@ async function parsePptx(buffer: Buffer): Promise<string> {
 }
 
 function parseXlsx(buffer: Buffer): string {
-  const workbook = XLSX.read(buffer, { type: "buffer" });
+  // Validate magic numbers (ZIP archive signature: PK\x03\x04)
+  if (
+    buffer.length < 4 ||
+    buffer[0] !== 0x50 || // 'P'
+    buffer[1] !== 0x4B || // 'K'
+    buffer[2] !== 0x03 || // \x03
+    buffer[3] !== 0x04    // \x04
+  ) {
+    throw new Error("Invalid Excel file. The file signature does not match a valid OpenXML spreadsheet.");
+  }
+
+  const workbook = XLSX.read(buffer, {
+    type: "buffer",
+    cellFormula: false, // Disables formula evaluation (prevents ReDoS/pollution)
+    cellHTML: false,    // Disables HTML parsing
+    sheetRows: 505      // Stop parsing after 505 rows (limits memory usage)
+  });
   let extractedText = "";
 
   // Process first 10 sheets

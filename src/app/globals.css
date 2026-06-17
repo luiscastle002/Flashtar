@@ -94,7 +94,7 @@
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent;
+    @apply bg-linear-to-r from-primary to-violet-500 bg-clip-text text-transparent;
   }
 }
 
@@ -117,4 +117,3 @@
 .prose u {
   text-decoration: underline;
 }
-

@@ -543,6 +543,10 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
     if (hasFiles) {
       const validFiles = files.filter((file) => {
         const ext = file.name.split('.').pop()?.toLowerCase();
+        if (ext === "xlsx" && file.size > 1 * 1024 * 1024) {
+          toast.error(`Excel file "${file.name}" exceeds the 1MB limit.`);
+          return false;
+        }
         return ext && ALLOWED_EXTENSIONS.includes(ext);
       });
 
@@ -572,6 +576,10 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       const files = Array.from(e.target.files);
       const validFiles = files.filter((file) => {
         const ext = file.name.split('.').pop()?.toLowerCase();
+        if (ext === "xlsx" && file.size > 1 * 1024 * 1024) {
+          toast.error(`Excel file "${file.name}" exceeds the 1MB limit.`);
+          return false;
+        }
         return ext && ALLOWED_EXTENSIONS.includes(ext);
       });
 
