@@ -132,6 +132,8 @@ export interface StudyDeck {
   color: string;
   is_archived: boolean;
   card_count: number;
+  icon_type: "emoji" | "image";
+  custom_icon_path: string | null;
   created_at: string;
   updated_at: string;
   // Joined fields (not in DB — computed by queries)

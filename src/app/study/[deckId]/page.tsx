@@ -1,5 +1,6 @@
 import { redirect, notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { BookOpen, Play, Settings } from "lucide-react";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
@@ -12,6 +13,7 @@ import { ImportToStudyDeckButton } from "@/components/study/import-to-study-deck
 import { ImportCsvButton } from "@/components/study/import-csv-button";
 import { StudyCardListItem } from "@/components/study/study-card-list-item";
 import type { DeckStudySettings } from "@/types";
+import { getDeckIconUrl } from "@/lib/utils/image";
 
 interface StudyDeckPageProps {
   params: Promise<{ deckId: string }>;
@@ -32,11 +34,21 @@ export default async function StudyDeckPage({ params }: StudyDeckPageProps) {
 
   const { cards, count: totalCards } = await getStudyCards(deckId, { limit: 50 });
 
-  const deck = deckData as typeof deckData & { deck_study_settings: DeckStudySettings | null };
+  const deck = deckData as typeof deckData & {
+    name: string;
+    description: string | null;
+    emoji: string | null;
+    icon_type: "emoji" | "image";
+    custom_icon_path: string | null;
+    deck_study_settings: DeckStudySettings | null;
+  };
+
   const totalDue = dueCounts?.total_due ?? 0;
   const newCount = dueCounts?.new_count ?? 0;
   const learnCount = dueCounts?.learn_count ?? 0;
   const reviewCount = dueCounts?.review_count ?? 0;
+
+  const customIconUrl = getDeckIconUrl(deck.custom_icon_path);
 
   return (
     <DashboardShell currentPath="/study" profile={profile}>
@@ -45,7 +57,13 @@ export default async function StudyDeckPage({ params }: StudyDeckPageProps) {
         <div className="flex items-start gap-4 flex-wrap">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-2xl">{deck.emoji ?? "📚"}</span>
+              {deck.icon_type === "image" && customIconUrl ? (
+                <span className="relative inline-block w-8 h-8 rounded-full overflow-hidden border bg-muted shrink-0">
+                  <Image src={customIconUrl} alt={deck.name} fill className="object-cover" />
+                </span>
+              ) : (
+                <span className="text-2xl">{deck.emoji ?? "📚"}</span>
+              )}
               <h1 className="text-2xl font-bold">{deck.name}</h1>
             </div>
             {deck.description && (

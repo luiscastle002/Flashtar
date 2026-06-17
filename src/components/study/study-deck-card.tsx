@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Play } from "lucide-react";
+import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import type { StudyDeck } from "@/types";
 import { cn } from "@/lib/utils";
+import { getDeckIconUrl } from "@/lib/utils/image";
 
 interface StudyDeckCardProps {
   deck: StudyDeck & { due_count?: number; new_count?: number };
@@ -16,6 +18,7 @@ interface StudyDeckCardProps {
 export function StudyDeckCard({ deck }: StudyDeckCardProps) {
   const router = useRouter();
   const hasDue = (deck.due_count ?? 0) > 0;
+  const customIconUrl = getDeckIconUrl(deck.custom_icon_path);
 
   return (
     <Link href={`/study/${deck.id}`} className="block group">
@@ -33,7 +36,13 @@ export function StudyDeckCard({ deck }: StudyDeckCardProps) {
         <CardHeader className="pb-3 pt-4">
           <div className="flex items-start justify-between gap-2">
             <div className="flex items-center gap-2 min-w-0">
-              <span className="text-2xl shrink-0">{deck.emoji ?? "📚"}</span>
+              {deck.icon_type === "image" && customIconUrl ? (
+                <span className="relative inline-block w-8 h-8 rounded-full overflow-hidden border shrink-0 bg-muted">
+                  <Image src={customIconUrl} alt={deck.name} fill className="object-cover" />
+                </span>
+              ) : (
+                <span className="text-2xl shrink-0">{deck.emoji ?? "📚"}</span>
+              )}
               <div className="min-w-0">
                 <p className="font-semibold leading-tight truncate">{deck.name}</p>
                 <p className="text-xs text-muted-foreground mt-0.5">

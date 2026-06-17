@@ -11,9 +11,11 @@ import { getCurrentUser, canCreateStudyDeck } from "@/lib/queries/user";
 
 const studyDeckSchema = z.object({
   name: z.string().min(1, "Name is required").max(200, "Name too long"),
-  description: z.string().max(1000, "Description too long").optional(),
-  emoji: z.string().max(10).optional(),
+  description: z.string().max(1000, "Description too long").nullable().optional(),
+  emoji: z.string().max(10).nullable().optional(),
   color: z.string().regex(/^#[0-9a-fA-F]{6}$/, "Invalid hex color").optional(),
+  icon_type: z.enum(["emoji", "image"]).optional(),
+  custom_icon_path: z.string().max(1000).nullable().optional(),
 });
 
 const settingsSchema = z.object({
@@ -59,6 +61,8 @@ export async function createStudyDeck(input: z.input<typeof studyDeckSchema>) {
       description: parsed.data.description ?? null,
       emoji: parsed.data.emoji ?? null,
       color: parsed.data.color ?? "#6366f1",
+      icon_type: parsed.data.icon_type ?? "emoji",
+      custom_icon_path: parsed.data.custom_icon_path ?? null,
     })
     .select()
     .single();
@@ -81,10 +85,15 @@ export async function updateStudyDeck(
   const user = await getCurrentUser();
   if (!user) return { error: "Not authenticated" };
 
+  const parsed = studyDeckSchema.partial().safeParse(input);
+  if (!parsed.success) {
+    return { error: parsed.error.errors[0]?.message ?? "Invalid deck data" };
+  }
+
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("study_decks")
-    .update(input)
+    .update(parsed.data)
     .eq("id", deckId)
     .eq("user_id", user.id)
     .select()
@@ -128,6 +137,20 @@ export async function deleteStudyDeck(deckId: string) {
   if (!user) return { error: "Not authenticated" };
 
   const supabase = await createClient();
+
+  // Fetch custom_icon_path before deletion to purge storage
+  const { data: deck } = await supabase
+    .from("study_decks")
+    .select("custom_icon_path")
+    .eq("id", deckId)
+    .eq("user_id", user.id)
+    .single();
+
+  if (deck?.custom_icon_path) {
+    // Delete the file from the deck-icons storage bucket
+    await supabase.storage.from("deck-icons").remove([deck.custom_icon_path]);
+  }
+
   const { error } = await supabase
     .from("study_decks")
     .delete()
