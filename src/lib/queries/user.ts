@@ -15,8 +15,32 @@ export async function getProfile() {
   const user = await getCurrentUser();
   if (!user) return null;
 
-  const { data } = await supabase.from("profiles").select("*").eq("id", user.id).single();
-  return data;
+  const { data: profile } = await supabase.from("profiles").select("*").eq("id", user.id).single();
+  if (!profile) return null;
+
+  // Progressive synchronization of Google avatar URL
+  const avatarType = profile.avatar_type;
+  if (!avatarType || avatarType === 'google') {
+    const googleAvatar = user.user_metadata?.avatar_url ?? user.user_metadata?.picture ?? null;
+    if (googleAvatar && googleAvatar !== profile.avatar_url) {
+      const { data: updatedProfile } = await supabase
+        .from("profiles")
+        .update({
+          avatar_url: googleAvatar,
+          avatar_type: 'google',
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", user.id)
+        .select()
+        .single();
+      
+      if (updatedProfile) {
+        return updatedProfile;
+      }
+    }
+  }
+
+  return profile;
 }
 
 export async function getSubscription(userId: string) {

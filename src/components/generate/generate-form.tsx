@@ -16,7 +16,9 @@ import {
   SlidersHorizontal,
   Trash2,
   Star,
-  Pin
+  Pin,
+  ChevronDown,
+  ChevronRight
 } from "lucide-react";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
@@ -49,6 +51,8 @@ import {
   updateSavedPrompt,
   deleteSavedPrompt,
 } from "@/actions/prompts";
+import { SYSTEM_PROMPTS } from "@/lib/constants/system-prompts";
+
 
 interface GeneratePageProps {
   plan: Plan;
@@ -218,6 +222,20 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       setCustomInstructions(defaultPrompt.content);
     }
   }, [initialPrompts]);
+
+  const [systemTemplatesCollapsed, setSystemTemplatesCollapsed] = useState(false);
+
+  useEffect(() => {
+    const collapsed = localStorage.getItem("flashtar_system_prompts_collapsed") === "true";
+    setSystemTemplatesCollapsed(collapsed);
+  }, []);
+
+  const toggleSystemTemplates = () => {
+    const nextState = !systemTemplatesCollapsed;
+    setSystemTemplatesCollapsed(nextState);
+    localStorage.setItem("flashtar_system_prompts_collapsed", String(nextState));
+  };
+
 
   const handleLanguageChange = (val: string) => {
     setLanguage(val);
@@ -1038,9 +1056,65 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
               </div>
             </div>
 
+            {/* System Templates (Onboarding Examples) */}
+            <div className="border-t pt-4 space-y-3">
+              <div 
+                className="flex items-center justify-between cursor-pointer select-none"
+                onClick={toggleSystemTemplates}
+              >
+                <h3 className="text-sm font-semibold tracking-tight flex items-center gap-1.5 hover:text-primary transition-colors">
+                  {systemTemplatesCollapsed ? (
+                    <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                  ) : (
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  )}
+                  System Templates
+                </h3>
+                <span className="text-[10px] bg-muted px-1.5 py-0.5 rounded text-muted-foreground font-medium">
+                  {SYSTEM_PROMPTS.length} Example{SYSTEM_PROMPTS.length !== 1 ? 's' : ''}
+                </span>
+              </div>
+
+              {!systemTemplatesCollapsed && (
+                <div className="space-y-2 max-h-[150px] overflow-y-auto pr-1 animate-in fade-in-50 duration-200">
+                  {SYSTEM_PROMPTS.map((p) => (
+                    <div
+                      key={p.id}
+                      className="flex items-center justify-between p-2 rounded-lg border border-border/60 text-sm bg-muted/20 transition-colors hover:bg-muted/40"
+                    >
+                      <div className="min-w-0 flex-1 pr-2">
+                        <div className="flex items-center gap-1.5">
+                          <span className="font-semibold text-xs truncate max-w-[200px]">{p.name}</span>
+                          <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-medium">Built-in</span>
+                        </div>
+                        <p className="text-[11px] text-muted-foreground truncate max-w-[350px]">
+                          {p.content}
+                        </p>
+                      </div>
+
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="sm"
+                          className="h-7 px-2 text-xs font-semibold hover:bg-background/80"
+                          onClick={() => {
+                            setTempInstructions(p.content);
+                            toast.success(`Loaded system template: ${p.name}`);
+                          }}
+                        >
+                          Load
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {/* Saved Prompt Manager */}
             <div className="border-t pt-4 space-y-3">
-              <h3 className="text-sm font-semibold tracking-tight">Saved Prompt Templates</h3>
+              <h3 className="text-sm font-semibold tracking-tight">Your Templates</h3>
 
               {/* Inline Save Prompt Action */}
               <div className="flex gap-2">

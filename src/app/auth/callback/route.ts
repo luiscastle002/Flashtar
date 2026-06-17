@@ -10,6 +10,27 @@ export async function GET(request: Request) {
     const supabase = await createClient();
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (!error) {
+      // Sync Google avatar immediately upon login callback
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        const { data: profile } = await supabase.from("profiles").select("avatar_url, avatar_type").eq("id", user.id).single();
+        if (profile) {
+          const avatarType = profile.avatar_type;
+          if (!avatarType || avatarType === 'google') {
+            const googleAvatar = user.user_metadata?.avatar_url ?? user.user_metadata?.picture ?? null;
+            if (googleAvatar && googleAvatar !== profile.avatar_url) {
+              await supabase
+                .from("profiles")
+                .update({
+                  avatar_url: googleAvatar,
+                  avatar_type: 'google',
+                  updated_at: new Date().toISOString(),
+                })
+                .eq("id", user.id);
+            }
+          }
+        }
+      }
       return NextResponse.redirect(`${origin}${next}`);
     }
   }

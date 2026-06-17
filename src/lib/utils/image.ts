@@ -62,3 +62,35 @@ export function getDeckIconUrl(customIconPath: string | null | undefined): strin
   if (!customIconPath) return null;
   return `${env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/${customIconPath}`;
 }
+
+/**
+ * Converts a storage path like "profile-icons/userId.webp" to a fully-qualified public URL
+ */
+export function getProfileAvatarUrl(customAvatarPath: string | null | undefined): string | null {
+  if (!customAvatarPath) return null;
+  return `${env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/${customAvatarPath}`;
+}
+
+/**
+ * Returns the correct profile picture display URL based on avatar_type and path, with cache busting for custom uploads.
+ */
+export function getProfileAvatarDisplayUrl(
+  profile: {
+    avatar_type?: "google" | "custom";
+    custom_avatar_path?: string | null;
+    avatar_url?: string | null;
+    updated_at?: string;
+  } | null | undefined
+): string | null {
+  if (!profile) return null;
+  if (profile.avatar_type === "custom" && profile.custom_avatar_path) {
+    const url = getProfileAvatarUrl(profile.custom_avatar_path);
+    if (url) {
+      const ts = profile.updated_at ? new Date(profile.updated_at).getTime() : Date.now();
+      return `${url}?t=${ts}`;
+    }
+  }
+  return profile.avatar_url ?? null;
+}
+
+

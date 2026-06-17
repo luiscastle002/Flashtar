@@ -26,6 +26,8 @@ import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import type { Profile } from "@/types";
+import { getProfileAvatarDisplayUrl } from "@/lib/utils/image";
+
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -162,7 +164,7 @@ export function DashboardShell({
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative h-9 w-9 rounded-full">
                   <Avatar className="h-9 w-9">
-                    <AvatarImage src={profile?.avatar_url ?? undefined} alt={profile?.full_name ?? ""} />
+                    <AvatarImage src={getProfileAvatarDisplayUrl(profile) ?? undefined} alt={profile?.full_name ?? ""} />
                     <AvatarFallback>{initials}</AvatarFallback>
                   </Avatar>
                 </Button>

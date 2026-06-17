@@ -10,6 +10,8 @@ export interface Profile {
   full_name: string | null;
   avatar_url: string | null;
   is_admin: boolean;
+  avatar_type: 'google' | 'custom';
+  custom_avatar_path: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -308,9 +310,11 @@ export interface SavedPrompt {
   id: string;
   user_id: string;
   name: string;
+  title?: string;
   content: string;
   is_favorite: boolean;
   is_default: boolean;
+  is_system?: boolean;
   created_at: string;
   updated_at: string;
 }

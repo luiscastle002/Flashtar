@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { CreditCard, User, Key, Mail } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { CreditCard, User, Key, Mail, Loader2 } from "lucide-react";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,6 +15,11 @@ import { initializePaddle, type Paddle } from "@paddle/paddle-js";
 import { getPaddleUpdateTx, cancelPaddleSubscription } from "@/actions/paddle";
 import { createClient } from "@/lib/supabase/client";
 import { changePassword, changeEmail } from "@/actions/auth";
+import { useRouter } from "next/navigation";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { compressToIcon, getProfileAvatarDisplayUrl } from "@/lib/utils/image";
+import { updateProfileAvatar, resetToGoogleAvatar, getGoogleAvatar } from "@/actions/profile";
+
 
 interface SettingsClientProps {
   profile: Profile | null;
@@ -35,6 +40,132 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordLoading, setPasswordLoading] = useState(false);
+
+  const router = useRouter();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [avatarUploading, setAvatarUploading] = useState(false);
+  const [googleAvatarUrl, setGoogleAvatarUrl] = useState<string | null>(null);
+  const [currentProfile, setCurrentProfile] = useState<Profile | null>(profile);
+
+  useEffect(() => {
+    setCurrentProfile(profile);
+  }, [profile]);
+
+  useEffect(() => {
+    getGoogleAvatar().then((url) => setGoogleAvatarUrl(url));
+  }, []);
+
+  const initials = currentProfile?.full_name
+    ? currentProfile.full_name.split(" ").map((n) => n[0]).join("").slice(0, 2).toUpperCase()
+    : currentProfile?.email?.slice(0, 2).toUpperCase() ?? "U";
+
+  async function handleFileSelect(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error("File size exceeds 5MB limit.");
+      return;
+    }
+
+    const allowedTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
+    if (!allowedTypes.includes(file.type)) {
+      toast.error("Unsupported file format. Please upload PNG, JPG, or WEBP.");
+      return;
+    }
+
+    setAvatarUploading(true);
+
+    try {
+      const compressedBlob = await compressToIcon(file, 256);
+
+      const clientSupabase = createClient();
+      const { data: { user } } = await clientSupabase.auth.getUser();
+      if (!user) {
+        toast.error("User session not found.");
+        setAvatarUploading(false);
+        return;
+      }
+
+      const fileName = `${user.id}.webp`;
+      
+      const { error: uploadError } = await clientSupabase.storage
+        .from("profile-icons")
+        .upload(fileName, compressedBlob, {
+          contentType: "image/webp",
+          upsert: true,
+        });
+
+      if (uploadError) {
+        toast.error(`Image upload failed: ${uploadError.message}`);
+        setAvatarUploading(false);
+        return;
+      }
+
+      const dbPath = `profile-icons/${fileName}`;
+      const res = await updateProfileAvatar(dbPath);
+
+      if (res.error) {
+        toast.error(`Database update failed: ${res.error}`);
+      } else {
+        toast.success("Profile picture updated successfully!");
+        if (res.data) {
+          setCurrentProfile(res.data as Profile);
+        }
+        router.refresh();
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("An error occurred during upload.");
+    } finally {
+      setAvatarUploading(false);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
+  }
+
+  async function handleRemoveAvatar() {
+    setAvatarUploading(true);
+    try {
+      const res = await resetToGoogleAvatar();
+      if (res.error) {
+        toast.error(`Failed to remove profile picture: ${res.error}`);
+      } else {
+        toast.success("Profile picture removed.");
+        if (res.data) {
+          setCurrentProfile(res.data as Profile);
+        }
+        router.refresh();
+      }
+    } catch {
+      toast.error("An error occurred while removing profile picture.");
+    } finally {
+      setAvatarUploading(false);
+    }
+  }
+
+  async function handleUseGoogleAvatar() {
+    if (!googleAvatarUrl) {
+      toast.error("No Google profile photo available.");
+      return;
+    }
+    setAvatarUploading(true);
+    try {
+      const res = await resetToGoogleAvatar();
+      if (res.error) {
+        toast.error(`Failed to switch to Google photo: ${res.error}`);
+      } else {
+        toast.success("Switched to Google profile photo.");
+        if (res.data) {
+          setCurrentProfile(res.data as Profile);
+        }
+        router.refresh();
+      }
+    } catch {
+      toast.error("An error occurred.");
+    } finally {
+      setAvatarUploading(false);
+    }
+  }
 
   useEffect(() => {
     if (env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN) {
@@ -226,6 +357,87 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
+            {/* Profile Picture Section */}
+            <div className="flex flex-col sm:flex-row items-center gap-6 pb-6 border-b border-border">
+              <div className="relative shrink-0">
+                <Avatar className="h-24 w-24 border-2 border-border shadow-sm">
+                  <AvatarImage 
+                    src={getProfileAvatarDisplayUrl(currentProfile) ?? undefined} 
+                    alt={currentProfile?.full_name ?? ""} 
+                  />
+                  <AvatarFallback className="text-xl font-bold bg-muted text-muted-foreground">{initials}</AvatarFallback>
+                </Avatar>
+                {avatarUploading && (
+                  <div className="absolute inset-0 bg-background/60 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Loader2 className="h-6 w-6 text-primary animate-spin" />
+                  </div>
+                )}
+              </div>
+              
+              <div className="space-y-2 text-center sm:text-left">
+                <h3 className="text-sm font-semibold">Profile Picture</h3>
+                <p className="text-xs text-muted-foreground">
+                  PNG, JPG, or WEBP. Max 5MB (automatically compressed to 256x256 WebP).
+                </p>
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    accept=".png,.jpg,.jpeg,.webp"
+                    className="hidden"
+                    onChange={handleFileSelect}
+                    disabled={avatarUploading}
+                  />
+                  
+                  {currentProfile?.avatar_type === "custom" ? (
+                    <>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={() => fileInputRef.current?.click()}
+                        disabled={avatarUploading}
+                      >
+                        Replace Photo
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        className="text-destructive hover:text-destructive hover:bg-destructive/10"
+                        onClick={handleRemoveAvatar}
+                        disabled={avatarUploading}
+                      >
+                        Remove Photo
+                      </Button>
+                    </>
+                  ) : (
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => fileInputRef.current?.click()}
+                      disabled={avatarUploading}
+                    >
+                      Upload Photo
+                    </Button>
+                  )}
+                  
+                  {googleAvatarUrl && currentProfile?.avatar_type !== "google" && (
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={handleUseGoogleAvatar}
+                      disabled={avatarUploading}
+                    >
+                      Use Google Photo
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </div>
+
             <div className="space-y-2">
               <Label>Email</Label>
               <Input value={profile?.email ?? ""} disabled />
