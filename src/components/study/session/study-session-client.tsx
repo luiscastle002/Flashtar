@@ -1,14 +1,20 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useEffect, useCallback, useRef, useReducer, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, MoreVertical, Edit, Pause, Trash2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 import { StudyCardDisplay } from "./study-card-display";
 import { ConfidenceBar } from "./confidence-bar";
 import { SessionCompletionScreen } from "./session-completion-screen";
 import { submitReview, endStudySession, addMoreNewCards } from "@/actions/study-sessions";
+import { updateStudyCard, suspendStudyCard, deleteStudyCard } from "@/actions/imports";
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
 import { translateError } from "@/lib/i18n/utils";
@@ -31,6 +37,99 @@ interface SessionStats {
   newSeen: number;
 }
 
+interface SessionState {
+  cards: StudyCard[];
+  currentIndex: number;
+  isFlipped: boolean;
+  isSubmitting: boolean;
+  isComplete: boolean;
+  stats: SessionStats;
+}
+
+type SessionAction =
+  | { type: "SET_FLIPPED"; isFlipped: boolean }
+  | { type: "SET_SUBMITTING"; isSubmitting: boolean }
+  | { type: "EDIT_CARD"; cardId: string; front: string; back: string }
+  | { type: "REMOVE_CARD"; cardId: string }
+  | { type: "APPEND_CARDS"; cards: StudyCard[] }
+  | { type: "RATE_CARD_SUCCESS"; rating: ConfidenceRating; isNewCard: boolean }
+  | { type: "COMPLETE_SESSION" };
+
+function sessionReducer(state: SessionState, action: SessionAction): SessionState {
+  switch (action.type) {
+    case "SET_FLIPPED":
+      return { ...state, isFlipped: action.isFlipped };
+    case "SET_SUBMITTING":
+      return { ...state, isSubmitting: action.isSubmitting };
+    case "EDIT_CARD":
+      return {
+        ...state,
+        cards: state.cards.map((c) =>
+          c.id === action.cardId ? { ...c, front: action.front, back: action.back } : c
+        ),
+      };
+    case "REMOVE_CARD": {
+      const updatedCards = state.cards.filter((c) => c.id !== action.cardId);
+      const isQueueEmpty = updatedCards.length === 0;
+
+      let nextIndex = state.currentIndex;
+      // If we removed the last card, shift index back
+      if (state.currentIndex >= updatedCards.length) {
+        nextIndex = Math.max(0, updatedCards.length - 1);
+      }
+
+      const isComplete = isQueueEmpty || (updatedCards.length > 0 && nextIndex >= updatedCards.length);
+
+      return {
+        ...state,
+        cards: updatedCards,
+        currentIndex: nextIndex,
+        isFlipped: false,
+        isComplete,
+      };
+    }
+    case "APPEND_CARDS": {
+      const nextIndex = state.cards.length; // jump to first of new batch
+      return {
+        ...state,
+        cards: [...state.cards, ...action.cards],
+        currentIndex: nextIndex,
+        isFlipped: false,
+        isComplete: false,
+      };
+    }
+    case "RATE_CARD_SUCCESS": {
+      const nextIndex = state.currentIndex + 1;
+      const isComplete = nextIndex >= state.cards.length;
+
+      const rating = action.rating;
+      const isNew = action.isNewCard;
+
+      const newStats = {
+        ...state.stats,
+        studied: state.stats.studied + 1,
+        again: state.stats.again + (rating === "again" ? 1 : 0),
+        hard: state.stats.hard + (rating === "hard" ? 1 : 0),
+        good: state.stats.good + (rating === "good" ? 1 : 0),
+        easy: state.stats.easy + (rating === "easy" ? 1 : 0),
+        newSeen: state.stats.newSeen + (isNew ? 1 : 0),
+      };
+
+      return {
+        ...state,
+        currentIndex: isComplete ? state.currentIndex : nextIndex,
+        isFlipped: false,
+        isComplete,
+        stats: newStats,
+      };
+    }
+    case "COMPLETE_SESSION":
+      return { ...state, isComplete: true };
+    default:
+      return state;
+  }
+}
+
 export function StudySessionClient({
   initialCards,
   sessionId,
@@ -41,41 +140,57 @@ export function StudySessionClient({
   const router = useRouter();
   const t = useTranslations("study.session");
   const tRoot = useTranslations();
-  const [cards, setCards] = useState<StudyCard[]>(initialCards);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isComplete, setIsComplete] = useState(false);
-  const [stats, setStats] = useState<SessionStats>({
-    studied: 0, again: 0, hard: 0, good: 0, easy: 0, newSeen: 0,
+  const tCommon = useTranslations("common");
+
+  const [state, dispatch] = useReducer(sessionReducer, {
+    cards: initialCards,
+    currentIndex: 0,
+    isFlipped: false,
+    isSubmitting: false,
+    isComplete: initialCards.length === 0,
+    stats: { studied: 0, again: 0, hard: 0, good: 0, easy: 0, newSeen: 0 },
   });
+
+  // Dialog and dropdown states
+  const [editOpen, setEditOpen] = useState(false);
+  const [editFront, setEditFront] = useState("");
+  const [editBack, setEditBack] = useState("");
+  const [confirmSuspendOpen, setConfirmSuspendOpen] = useState(false);
+  const [confirmDeleteOpen, setConfirmDeleteOpen] = useState(false);
+  const [isActionPending, setIsActionPending] = useState(false);
+
   const cardStartRef = useRef<number>(Date.now());
   const sessionStartRef = useRef<number>(Date.now());
 
-  const currentCard = cards[currentIndex];
-  const progress = cards.length > 0
-    ? Math.round((currentIndex / cards.length) * 100)
+  const currentCard = state.cards[state.currentIndex];
+  const progress = state.cards.length > 0
+    ? Math.round((state.currentIndex / state.cards.length) * 100)
     : 100;
+
+  // Initialize edit form values when currentCard changes or edit opens
+  useEffect(() => {
+    if (currentCard) {
+      setEditFront(currentCard.front);
+      setEditBack(currentCard.back);
+    }
+  }, [currentCard, editOpen]);
 
   // Keyboard shortcuts
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
-      // Don't intercept if modal/dialog is open
       if (e.target !== document.body && (e.target as HTMLElement).tagName !== "BODY") {
-        // allow input fields to type normally
         if ((e.target as HTMLElement).tagName === "INPUT" ||
             (e.target as HTMLElement).tagName === "TEXTAREA") return;
       }
 
-      if (!isFlipped) {
+      if (!state.isFlipped) {
         if (e.code === "Space" || e.code === "Enter") {
           e.preventDefault();
-          setIsFlipped(true);
+          dispatch({ type: "SET_FLIPPED", isFlipped: true });
         }
         return;
       }
 
-      // Answer shortcuts (only when card is flipped)
       if (e.key === "1") handleRate(0);
       if (e.key === "2") handleRate(30);
       if (e.key === "3") handleRate(60);
@@ -84,15 +199,15 @@ export function StudySessionClient({
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isFlipped, currentIndex]);
+  }, [state.isFlipped, state.currentIndex, state.cards.length]);
 
   const handleFlip = useCallback(() => {
-    setIsFlipped(true);
+    dispatch({ type: "SET_FLIPPED", isFlipped: true });
   }, []);
 
   const handleRate = useCallback(async (confidencePct: number) => {
-    if (!currentCard || isSubmitting) return;
-    setIsSubmitting(true);
+    if (!currentCard || state.isSubmitting) return;
+    dispatch({ type: "SET_SUBMITTING", isSubmitting: true });
 
     const durationMs = Date.now() - cardStartRef.current;
 
@@ -106,44 +221,101 @@ export function StudySessionClient({
 
       if ("error" in result && result.error) {
         toast.error(translateError(result.error, tRoot));
-        setIsSubmitting(false);
+        dispatch({ type: "SET_SUBMITTING", isSubmitting: false });
         return;
       }
 
-      // Update local stats
       const rating: ConfidenceRating = result.data?.rating ?? "good";
-      setStats((prev) => ({
-        studied: prev.studied + 1,
-        again: prev.again + (rating === "again" ? 1 : 0),
-        hard: prev.hard + (rating === "hard" ? 1 : 0),
-        good: prev.good + (rating === "good" ? 1 : 0),
-        easy: prev.easy + (rating === "easy" ? 1 : 0),
-        newSeen: prev.newSeen + (currentCard.state === "new" ? 1 : 0),
-      }));
+      dispatch({
+        type: "RATE_CARD_SUCCESS",
+        rating,
+        isNewCard: currentCard.state === "new",
+      });
+      cardStartRef.current = Date.now();
+    } catch {
+      toast.error(tCommon("toast_save_failed"));
+    } finally {
+      dispatch({ type: "SET_SUBMITTING", isSubmitting: false });
+    }
+  }, [currentCard, state.isSubmitting, sessionId, tRoot, tCommon]);
 
-      // Advance to next card
-      const nextIndex = currentIndex + 1;
-      if (nextIndex >= cards.length) {
-        setIsComplete(true);
+  // Session options triggers
+  const handleEditCard = async () => {
+    if (!currentCard || isActionPending) return;
+    setIsActionPending(true);
+    try {
+      const res = await updateStudyCard(currentCard.id, {
+        front: editFront,
+        back: editBack,
+      });
+      if ("error" in res && res.error) {
+        toast.error(res.error);
       } else {
-        setCurrentIndex(nextIndex);
-        setIsFlipped(false);
+        dispatch({
+          type: "EDIT_CARD",
+          cardId: currentCard.id,
+          front: editFront,
+          back: editBack,
+        });
+        toast.success(t("toast_edit_success"));
+        setEditOpen(false);
+      }
+    } catch {
+      toast.error(tCommon("toast_save_failed"));
+    } finally {
+      setIsActionPending(false);
+    }
+  };
+
+  const handleSuspendCard = async () => {
+    if (!currentCard || isActionPending) return;
+    setIsActionPending(true);
+    try {
+      const res = await suspendStudyCard(currentCard.id);
+      if ("error" in res && res.error) {
+        toast.error(res.error);
+      } else {
+        dispatch({ type: "REMOVE_CARD", cardId: currentCard.id });
+        toast.success(t("toast_suspend_success"));
+        setConfirmSuspendOpen(false);
         cardStartRef.current = Date.now();
       }
+    } catch {
+      toast.error(tCommon("toast_save_failed"));
     } finally {
-      setIsSubmitting(false);
+      setIsActionPending(false);
     }
-  }, [currentCard, currentIndex, cards.length, isSubmitting, sessionId, tRoot]);
+  };
+
+  const handleDeleteCard = async () => {
+    if (!currentCard || isActionPending) return;
+    setIsActionPending(true);
+    try {
+      const res = await deleteStudyCard(currentCard.id, deckId);
+      if ("error" in res && res.error) {
+        toast.error(res.error);
+      } else {
+        dispatch({ type: "REMOVE_CARD", cardId: currentCard.id });
+        toast.success(t("toast_delete_success"));
+        setConfirmDeleteOpen(false);
+        cardStartRef.current = Date.now();
+      }
+    } catch {
+      toast.error(tCommon("toast_save_failed"));
+    } finally {
+      setIsActionPending(false);
+    }
+  };
 
   async function handleFinish() {
     const durationMs = Date.now() - sessionStartRef.current;
     await endStudySession(sessionId, {
-      cardsStudied: stats.studied,
-      cardsAgain: stats.again,
-      cardsHard: stats.hard,
-      cardsGood: stats.good,
-      cardsEasy: stats.easy,
-      newCardsSeen: stats.newSeen,
+      cardsStudied: state.stats.studied,
+      cardsAgain: state.stats.again,
+      cardsHard: state.stats.hard,
+      cardsGood: state.stats.good,
+      cardsEasy: state.stats.easy,
+      newCardsSeen: state.stats.newSeen,
       durationMs,
     });
     router.push(`/study/${deckId}`);
@@ -160,17 +332,14 @@ export function StudySessionClient({
       toast.info(t("no_more_new_cards"));
       return;
     }
-    setCards((prev) => [...prev, ...result.cards]);
-    setCurrentIndex(cards.length); // jump to first of new batch
-    setIsFlipped(false);
-    setIsComplete(false);
+    dispatch({ type: "APPEND_CARDS", cards: result.cards });
     cardStartRef.current = Date.now();
   }
 
-  if (isComplete) {
+  if (state.isComplete) {
     return (
       <SessionCompletionScreen
-        stats={stats}
+        stats={state.stats}
         durationMs={Date.now() - sessionStartRef.current}
         onFinish={handleFinish}
         onStudyMore={handleStudyMore}
@@ -181,7 +350,7 @@ export function StudySessionClient({
   if (!currentCard) return null;
 
   return (
-    <div className="flex flex-col min-h-[calc(100vh-8rem)] max-w-2xl mx-auto">
+    <div className="flex flex-col min-h-[calc(100vh-8rem)] max-w-2xl mx-auto space-y-4">
       {/* Top bar */}
       <div className="flex items-center gap-3 mb-6">
         <Button
@@ -197,28 +366,53 @@ export function StudySessionClient({
           <Progress value={progress} className="h-2" />
         </div>
         <span className="text-sm text-muted-foreground tabular-nums shrink-0">
-          {currentIndex + 1}/{cards.length}
+          {state.currentIndex + 1}/{state.cards.length}
         </span>
+        {state.isFlipped && (
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground shrink-0">
+                <MoreVertical className="h-4.5 w-4.5" />
+                <span className="sr-only">{t("options_tooltip")}</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setEditOpen(true)}>
+                <Edit className="h-4 w-4 mr-2" />
+                {t("edit_card")}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setConfirmSuspendOpen(true)} className="text-orange-600 dark:text-orange-400">
+                <Pause className="h-4 w-4 mr-2" />
+                {t("suspend_card")}
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={() => setConfirmDeleteOpen(true)} className="text-red-600 dark:text-red-400">
+                <Trash2 className="h-4 w-4 mr-2" />
+                {t("delete_card")}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        )}
       </div>
 
       {/* Card display */}
       <div className="flex-1 flex flex-col">
         <StudyCardDisplay
           card={currentCard}
-          isFlipped={isFlipped}
+          isFlipped={state.isFlipped}
           onFlip={handleFlip}
         />
 
         {/* Answer controls — only shown after flip */}
-        {isFlipped && (
+        {state.isFlipped && (
           <div className="mt-6 animate-in fade-in slide-in-from-bottom-2 duration-200">
             {showConfidenceBar ? (
               <ConfidenceBar
                 onRate={handleRate}
-                disabled={isSubmitting}
+                disabled={state.isSubmitting}
               />
             ) : (
-              <ClassicButtons onRate={handleRate} disabled={isSubmitting} />
+              <ClassicButtons onRate={handleRate} disabled={state.isSubmitting} />
             )}
             <p className="text-center text-xs text-muted-foreground mt-3">
               {t.rich("keyboard_help", {
@@ -237,7 +431,7 @@ export function StudySessionClient({
         )}
 
         {/* Show Answer button */}
-        {!isFlipped && (
+        {!state.isFlipped && (
           <div className="mt-6 text-center">
             <Button
               size="lg"
@@ -250,6 +444,87 @@ export function StudySessionClient({
           </div>
         )}
       </div>
+
+      {/* Edit Flashcard Dialog */}
+      <Dialog open={editOpen} onOpenChange={setEditOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t("edit_modal_title")}</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 py-2">
+            <div className="space-y-1.5">
+              <Label htmlFor="front">{t("edit_modal_front")}</Label>
+              <Input
+                id="front"
+                value={editFront}
+                onChange={(e) => setEditFront(e.target.value)}
+                placeholder="Front content..."
+              />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="back">{t("edit_modal_back")}</Label>
+              <Textarea
+                id="back"
+                value={editBack}
+                onChange={(e) => setEditBack(e.target.value)}
+                placeholder="Back content..."
+                rows={4}
+              />
+            </div>
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setEditOpen(false)} disabled={isActionPending}>
+              {tCommon("cancel")}
+            </Button>
+            <Button onClick={handleEditCard} disabled={isActionPending || !editFront.trim()}>
+              {isActionPending && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+              {t("edit_modal_save")}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Suspend Card Confirm Dialog */}
+      <Dialog open={confirmSuspendOpen} onOpenChange={setConfirmSuspendOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t("suspend_card")}</DialogTitle>
+            <DialogDescription>
+              {tRoot("study.card_manager.bulk_actions.suspend_confirm_desc", { count: 1 })}
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setConfirmSuspendOpen(false)} disabled={isActionPending}>
+              {tCommon("cancel")}
+            </Button>
+            <Button onClick={handleSuspendCard} disabled={isActionPending}>
+              {isActionPending && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+              {t("suspend_card")}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Delete Card Confirm Dialog */}
+      <Dialog open={confirmDeleteOpen} onOpenChange={setConfirmDeleteOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t("delete_card")}</DialogTitle>
+            <DialogDescription>
+              {tRoot("study.card_manager.bulk_actions.delete_confirm_desc", { count: 1 })}
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setConfirmDeleteOpen(false)} disabled={isActionPending}>
+              {tCommon("cancel")}
+            </Button>
+            <Button variant="destructive" onClick={handleDeleteCard} disabled={isActionPending}>
+              {isActionPending && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+              {tCommon("delete")}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

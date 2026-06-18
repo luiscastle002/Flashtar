@@ -236,7 +236,18 @@
       "all_caught_up_title": "Tudo revisado!",
       "no_cards_due": "Nenhum cartão pendente em {name} no momento.",
       "back_to_deck": "Voltar ao baralho",
-      "start_session_failed": "Falha ao iniciar a sessão: {error}"
+      "start_session_failed": "Falha ao iniciar a sessão: {error}",
+      "options_tooltip": "Opções do cartão",
+      "edit_card": "Editar cartão",
+      "suspend_card": "Suspender cartão",
+      "delete_card": "Excluir cartão",
+      "edit_modal_title": "Editar Flashcard",
+      "edit_modal_front": "Texto da frente",
+      "edit_modal_back": "Texto do verso",
+      "edit_modal_save": "Salvar alterações",
+      "toast_suspend_success": "Cartão suspenso e removido da sessão.",
+      "toast_delete_success": "Cartão excluído e removido da sessão.",
+      "toast_edit_success": "Cartão atualizado com sucesso."
     },
     "import": {
       "button": "Adicionar Cartões",
@@ -281,6 +292,37 @@
       "new_count": "{count} novos",
       "study_count": "Estudar ({count})",
       "browse": "Navegar"
+    },
+    "card_manager": {
+      "search_placeholder": "Buscar cartões...",
+      "filter_suspended_only": "Suspensos apenas",
+      "filter_show_all": "Mostrar todos",
+      "sort_label": "Ordenar por",
+      "sort_name_asc": "Nome (A-Z)",
+      "sort_name_desc": "Nome (Z-A)",
+      "sort_created_desc": "Data de criação (Mais novo)",
+      "sort_created_asc": "Data de criação (Mais antigo)",
+      "pagination": {
+        "prev": "Anterior",
+        "next": "Próximo",
+        "info": "Página {page} de {totalPages}"
+      },
+      "bulk_actions": {
+        "title": "Ações em lote",
+        "selected_plural": "{count, plural, =1 {# cartão selecionado} other {# cartões selecionados}}",
+        "delete_button": "Excluir",
+        "suspend_button": "Suspender",
+        "unsuspend_button": "Reativar",
+        "toast_delete_success": "Excluído {count} {count, plural, =1 {cartão} other {cartões}} com sucesso.",
+        "toast_suspend_success": "Suspenso {count} {count, plural, =1 {cartão} other {cartões}} com sucesso.",
+        "toast_unsuspend_success": "Reativado {count} {count, plural, =1 {cartão} other {cartões}} com sucesso.",
+        "delete_confirm_title": "Excluir cartões selecionados?",
+        "delete_confirm_desc": "Tem certeza de que deseja excluir permanentemente os {count} {count, plural, =1 {cartão selecionado} other {cartões selecionados}}? Esta ação é irreversível.",
+        "suspend_confirm_title": "Suspender cartões selecionados?",
+        "suspend_confirm_desc": "Tem certeza de que deseja suspender os {count} {count, plural, =1 {cartão selecionado} other {cartões selecionados}}? Eles serão excluídos de todas as sessões de estudo.",
+        "unsuspend_confirm_title": "Reativar cartões selecionados?",
+        "unsuspend_confirm_desc": "Tem certeza de que deseja reativar os {count} {count, plural, =1 {cartão selecionado} other {cartões selecionados}}? Eles voltarão aos seus estados de estudo anteriores."
+      }
     }
   },
   "generate": {

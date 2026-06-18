@@ -237,7 +237,18 @@
       "all_caught_up_title": "今日の復習は完了！",
       "no_cards_due": "現在 {name} に復習予定のカードはありません。",
       "back_to_deck": "デッキに戻る",
-      "start_session_failed": "セッションの開始に失敗しました: {error}"
+      "start_session_failed": "セッションの開始に失敗しました: {error}",
+      "options_tooltip": "カードの操作",
+      "edit_card": "カードを編集する",
+      "suspend_card": "カードを保留する",
+      "delete_card": "カードを削除する",
+      "edit_modal_title": "暗記カードの編集",
+      "edit_modal_front": "問題面",
+      "edit_modal_back": "解答面",
+      "edit_modal_save": "変更を保存",
+      "toast_suspend_success": "カードを保留にし、セッションから削除しました。",
+      "toast_delete_success": "カードを削除し、セッションから除外しました。",
+      "toast_edit_success": "カードが正常に更新されました。"
     },
     "import": {
       "button": "カードを追加",
@@ -282,6 +293,37 @@
       "new_count": "新規 {count}枚",
       "study_count": "学習 ({count}枚)",
       "browse": "閲覧"
+    },
+    "card_manager": {
+      "search_placeholder": "カードを検索...",
+      "filter_suspended_only": "保留のみ",
+      "filter_show_all": "すべて表示",
+      "sort_label": "並べ替え",
+      "sort_name_asc": "名前順 (A-Z)",
+      "sort_name_desc": "名前順 (Z-A)",
+      "sort_created_desc": "作成日順 (新しい順)",
+      "sort_created_asc": "作成日順 (古い順)",
+      "pagination": {
+        "prev": "前へ",
+        "next": "次へ",
+        "info": "{totalPages} ページ中 {page} ページ目"
+      },
+      "bulk_actions": {
+        "title": "一括操作",
+        "selected_plural": "{count, plural, other {# 枚のカードを選択中}}",
+        "delete_button": "削除する",
+        "suspend_button": "保留にする",
+        "unsuspend_button": "保留を解除",
+        "toast_delete_success": "{count}枚のカードを正常に削除しました。",
+        "toast_suspend_success": "{count}枚のカードを正常に保留にしました。",
+        "toast_unsuspend_success": "{count}枚のカードの保留を解除しました。",
+        "delete_confirm_title": "選択したカードを削除しますか？",
+        "delete_confirm_desc": "選択した {count}枚のカードを本当に完全に削除しますか？この操作は元に戻せません。",
+        "suspend_confirm_title": "選択したカードを保留にしますか？",
+        "suspend_confirm_desc": "選択した {count}枚のカードを本当に保留にしますか？保留にされたカードは、今後の学習セッションから除外されます。",
+        "unsuspend_confirm_title": "選択したカードの保留を解除しますか？",
+        "unsuspend_confirm_desc": "選択した {count}枚のカードの保留を本当に解除しますか？カードは元の学習状態に戻ります。"
+      }
     }
   },
   "generate": {

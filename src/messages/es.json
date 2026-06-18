@@ -236,7 +236,18 @@
       "all_caught_up_title": "¡Todo al día!",
       "no_cards_due": "No hay tarjetas pendientes en {name} en este momento.",
       "back_to_deck": "Volver a la baraja",
-      "start_session_failed": "Error al iniciar la sesión: {error}"
+      "start_session_failed": "Error al iniciar la sesión: {error}",
+      "options_tooltip": "Opciones de tarjeta",
+      "edit_card": "Editar tarjeta",
+      "suspend_card": "Suspender tarjeta",
+      "delete_card": "Eliminar tarjeta",
+      "edit_modal_title": "Editar tarjeta",
+      "edit_modal_front": "Texto del anverso",
+      "edit_modal_back": "Texto del reverso",
+      "edit_modal_save": "Guardar cambios",
+      "toast_suspend_success": "Tarjeta suspendida y eliminada de la sesión.",
+      "toast_delete_success": "Tarjeta eliminada de la sesión.",
+      "toast_edit_success": "Tarjeta actualizada con éxito."
     },
     "import": {
       "button": "Añadir Tarjetas",
@@ -281,6 +292,37 @@
       "new_count": "{count} nuevas",
       "study_count": "Estudiar ({count})",
       "browse": "Explorar"
+    },
+    "card_manager": {
+      "search_placeholder": "Buscar tarjetas...",
+      "filter_suspended_only": "Solo suspendidas",
+      "filter_show_all": "Mostrar todas",
+      "sort_label": "Ordenar por",
+      "sort_name_asc": "Nombre (A-Z)",
+      "sort_name_desc": "Nombre (Z-A)",
+      "sort_created_desc": "Fecha de creación (Más nueva)",
+      "sort_created_asc": "Fecha de creación (Más antigua)",
+      "pagination": {
+        "prev": "Anterior",
+        "next": "Siguiente",
+        "info": "Página {page} de {totalPages}"
+      },
+      "bulk_actions": {
+        "title": "Acciones en lote",
+        "selected_plural": "{count, plural, =1 {# tarjeta seleccionada} other {# tarjetas seleccionadas}}",
+        "delete_button": "Eliminar",
+        "suspend_button": "Suspender",
+        "unsuspend_button": "Reactivar",
+        "toast_delete_success": "Se eliminaron {count} {count, plural, =1 {tarjeta} other {tarjetas}} con éxito.",
+        "toast_suspend_success": "Se suspendieron {count} {count, plural, =1 {tarjeta} other {tarjetas}} con éxito.",
+        "toast_unsuspend_success": "Se reactivaron {count} {count, plural, =1 {tarjeta} other {tarjetas}} con éxito.",
+        "delete_confirm_title": "¿Eliminar tarjetas seleccionadas?",
+        "delete_confirm_desc": "¿Estás seguro de que deseas eliminar permanentemente las {count} {count, plural, =1 {tarjeta seleccionada} other {tarjetas seleccionadas}}? Esta acción es irreversible.",
+        "suspend_confirm_title": "¿Suspender tarjetas seleccionadas?",
+        "suspend_confirm_desc": "¿Estás seguro de que deseas suspender las {count} {count, plural, =1 {tarjeta seleccionada} other {tarjetas seleccionadas}}? Se excluirán de todas las sesiones de estudio.",
+        "unsuspend_confirm_title": "¿Reactivar tarjetas seleccionadas?",
+        "unsuspend_confirm_desc": "¿Estás seguro de que deseas reactivar las {count} {count, plural, =1 {tarjeta seleccionada} other {tarjetas seleccionadas}}? Volverán a sus estados de estudio anteriores."
+      }
     }
   },
   "generate": {

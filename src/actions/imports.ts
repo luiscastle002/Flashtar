@@ -240,28 +240,252 @@ export async function getImportHistory(studyDeckId: string, limit = 10) {
 
 export async function getStudyCards(
   studyDeckId: string,
-  options: { state?: string; limit?: number; offset?: number } = {}
-) {
+  options: {
+    state?: string;
+    limit?: number;
+    offset?: number;
+    search?: string;
+    page?: number;
+    sort?: "name_asc" | "name_desc" | "created_asc" | "created_desc";
+    suspended?: "all" | "suspended_only";
+    cursor?: string;
+    direction?: "next" | "prev";
+  } = {}
+): Promise<{
+  cards: StudyCard[];
+  count: number;
+  useKeyset: boolean;
+  nextCursor: string | null;
+  prevCursor: string | null;
+}> {
   const user = await getCurrentUser();
-  if (!user) return { cards: [], count: 0 };
+  if (!user) return { cards: [], count: 0, useKeyset: false, nextCursor: null, prevCursor: null };
 
   const supabase = await createClient();
-  let query = supabase
-    .from("study_cards")
-    .select("*", { count: "exact" })
-    .eq("study_deck_id", studyDeckId)
+
+  // 1. Fetch user subscription details to check for Pro plan
+  const { data: sub } = await supabase
+    .from("subscriptions")
+    .select("plan")
     .eq("user_id", user.id)
-    .order("position");
+    .maybeSingle();
+  const plan = sub?.plan ?? "free";
 
-  if (options.state) {
-    query = query.eq("state", options.state);
+  // 2. Fetch the deck's card count
+  const { data: deck } = await supabase
+    .from("study_decks")
+    .select("card_count")
+    .eq("id", studyDeckId)
+    .eq("user_id", user.id)
+    .single();
+  const totalCards = deck?.card_count ?? 0;
+
+  // 3. Determine pagination strategy
+  const limit = options.limit ?? 100;
+  const useKeyset = plan === "pro" && totalCards >= 5000;
+
+  const sort = options.sort ?? "created_desc";
+  const suspended = options.suspended ?? "all";
+  const search = options.search;
+
+  const sortCol = (sort === "name_asc" || sort === "name_desc") ? "front" : "created_at";
+  const isAsc = (sort === "name_asc" || sort === "created_asc");
+
+  if (useKeyset) {
+    // Keyset (Cursor-based) Pagination
+    const direction = options.direction ?? "next";
+    const queryForward = direction === "next";
+    const queryAsc = queryForward ? isAsc : !isAsc;
+
+    let cursorObj: { sortValue: string | number; id: string } | null = null;
+    if (options.cursor) {
+      try {
+        cursorObj = JSON.parse(Buffer.from(options.cursor, "base64").toString("utf-8"));
+      } catch (e) {
+        console.error("Failed to parse pagination cursor:", e);
+      }
+    }
+
+    let query = supabase
+      .from("study_cards")
+      .select("*", { count: "exact" })
+      .eq("study_deck_id", studyDeckId)
+      .eq("user_id", user.id);
+
+    // Apply suspended filters
+    if (suspended === "suspended_only") {
+      query = query.eq("state", "suspended");
+    }
+
+    // Apply trigram search
+    if (search) {
+      query = query.ilike("search_text", `%${search}%`);
+    }
+
+    // Apply keyset comparisons
+    if (cursorObj) {
+      const val = cursorObj.sortValue;
+      const cid = cursorObj.id;
+      const operator = (isAsc === queryForward) ? "gt" : "lt";
+      query = query.or(`${sortCol}.${operator}."${val}",and(${sortCol}.eq."${val}",id.${operator}."${cid}")`);
+    }
+
+    // Database sorting & limit
+    query = query
+      .order(sortCol, { ascending: queryAsc })
+      .order("id", { ascending: queryAsc })
+      .limit(limit);
+
+    const { data, count } = await query;
+    let cards = (data ?? []) as StudyCard[];
+
+    // If querying backward, reverse results to restore sorting order
+    if (!queryForward) {
+      cards = cards.reverse();
+    }
+
+    const nextCursorObj = cards.length > 0
+      ? { sortValue: cards[cards.length - 1][sortCol as keyof StudyCard], id: cards[cards.length - 1].id }
+      : null;
+    const prevCursorObj = cards.length > 0
+      ? { sortValue: cards[0][sortCol as keyof StudyCard], id: cards[0].id }
+      : null;
+
+    const nextCursor = (queryForward ? cards.length === limit : true) && nextCursorObj
+      ? Buffer.from(JSON.stringify(nextCursorObj)).toString("base64")
+      : null;
+    const prevCursor = (queryForward ? cursorObj !== null : cards.length === limit) && prevCursorObj
+      ? Buffer.from(JSON.stringify(prevCursorObj)).toString("base64")
+      : null;
+
+    return {
+      cards,
+      count: count ?? 0,
+      useKeyset: true,
+      nextCursor,
+      prevCursor,
+    };
+  } else {
+    // Offset-based Pagination
+    const page = options.page ?? 1;
+    const offset = options.offset ?? (page - 1) * limit;
+
+    let query = supabase
+      .from("study_cards")
+      .select("*", { count: "exact" })
+      .eq("study_deck_id", studyDeckId)
+      .eq("user_id", user.id);
+
+    // Apply suspended filters
+    if (suspended === "suspended_only") {
+      query = query.eq("state", "suspended");
+    }
+
+    // Apply trigram search
+    if (search) {
+      query = query.ilike("search_text", `%${search}%`);
+    }
+
+    // Sorting
+    query = query
+      .order(sortCol, { ascending: isAsc })
+      .order("id", { ascending: isAsc })
+      .range(offset, offset + limit - 1);
+
+    const { data, count } = await query;
+    return {
+      cards: (data ?? []) as StudyCard[],
+      count: count ?? 0,
+      useKeyset: false,
+      nextCursor: null,
+      prevCursor: null,
+    };
   }
+}
 
-  if (options.limit) query = query.limit(options.limit);
-  if (options.offset) query = query.range(options.offset, options.offset + (options.limit ?? 50) - 1);
+// ---------------------------------------------------------------------------
+// bulkDeleteStudyCards
+// ---------------------------------------------------------------------------
 
-  const { data, count } = await query;
-  return { cards: (data ?? []) as StudyCard[], count: count ?? 0 };
+export async function bulkDeleteStudyCards(ids: string[], studyDeckId: string) {
+  const user = await getCurrentUser();
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!ids.length) return { error: "errors.imports.no_rows" };
+
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("study_cards")
+    .delete()
+    .in("id", ids)
+    .eq("study_deck_id", studyDeckId)
+    .eq("user_id", user.id);
+
+  if (error) return { error: error.message };
+  revalidatePath(`/study/${studyDeckId}`);
+  return { success: true };
+}
+
+// ---------------------------------------------------------------------------
+// bulkSuspendStudyCards
+// ---------------------------------------------------------------------------
+
+export async function bulkSuspendStudyCards(ids: string[], studyDeckId: string) {
+  const user = await getCurrentUser();
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!ids.length) return { error: "errors.imports.no_rows" };
+
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("study_cards")
+    .update({ state: "suspended" })
+    .in("id", ids)
+    .eq("study_deck_id", studyDeckId)
+    .eq("user_id", user.id);
+
+  if (error) return { error: error.message };
+  revalidatePath(`/study/${studyDeckId}`);
+  return { success: true };
+}
+
+// ---------------------------------------------------------------------------
+// bulkUnsuspendStudyCards
+// ---------------------------------------------------------------------------
+
+export async function bulkUnsuspendStudyCards(ids: string[], studyDeckId: string) {
+  const user = await getCurrentUser();
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!ids.length) return { error: "errors.imports.no_rows" };
+
+  const supabase = await createClient();
+
+  const { data: cards, error: fetchError } = await supabase
+    .from("study_cards")
+    .select("id, repetitions, interval_days")
+    .in("id", ids)
+    .eq("study_deck_id", studyDeckId)
+    .eq("user_id", user.id);
+
+  if (fetchError || !cards) return { error: fetchError?.message ?? "errors.study_decks.card_not_found" };
+
+  const updates = cards.map((card) => {
+    const restoredState =
+      card.repetitions === 0 ? "new" :
+      card.interval_days < 1 ? "learn" :
+      "review";
+
+    return supabase
+      .from("study_cards")
+      .update({ state: restoredState })
+      .eq("id", card.id)
+      .eq("user_id", user.id);
+  });
+
+  const results = await Promise.all(updates);
+  const errorResult = results.find((r) => r.error);
+  if (errorResult) return { error: errorResult.error?.message };
+
+  revalidatePath(`/study/${studyDeckId}`);
+  return { success: true };
 }
 
 // ---------------------------------------------------------------------------

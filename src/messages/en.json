@@ -236,7 +236,18 @@
       "all_caught_up_title": "All caught up!",
       "no_cards_due": "No cards are due in {name} right now.",
       "back_to_deck": "Back to Deck",
-      "start_session_failed": "Failed to start session: {error}"
+      "start_session_failed": "Failed to start session: {error}",
+      "options_tooltip": "Card options",
+      "edit_card": "Edit Card",
+      "suspend_card": "Suspend Card",
+      "delete_card": "Delete Card",
+      "edit_modal_title": "Edit Flashcard",
+      "edit_modal_front": "Front text",
+      "edit_modal_back": "Back text",
+      "edit_modal_save": "Save Changes",
+      "toast_suspend_success": "Card suspended and removed from session.",
+      "toast_delete_success": "Card deleted and removed from session.",
+      "toast_edit_success": "Card updated successfully."
     },
     "import": {
       "button": "Add Cards",
@@ -281,6 +292,37 @@
       "new_count": "{count} new",
       "study_count": "Study ({count})",
       "browse": "Browse"
+    },
+    "card_manager": {
+      "search_placeholder": "Search cards...",
+      "filter_suspended_only": "Suspended Only",
+      "filter_show_all": "Show All Cards",
+      "sort_label": "Sort by",
+      "sort_name_asc": "Name (A-Z)",
+      "sort_name_desc": "Name (Z-A)",
+      "sort_created_desc": "Date Created (Newest)",
+      "sort_created_asc": "Date Created (Oldest)",
+      "pagination": {
+        "prev": "Previous",
+        "next": "Next",
+        "info": "Page {page} of {totalPages}"
+      },
+      "bulk_actions": {
+        "title": "Bulk Actions",
+        "selected_plural": "{count, plural, =1 {# card selected} other {# cards selected}}",
+        "delete_button": "Delete",
+        "suspend_button": "Suspend",
+        "unsuspend_button": "Unsuspend",
+        "toast_delete_success": "Successfully deleted {count} {count, plural, =1 {card} other {cards}}.",
+        "toast_suspend_success": "Successfully suspended {count} {count, plural, =1 {card} other {cards}}.",
+        "toast_unsuspend_success": "Successfully unsuspended {count} {count, plural, =1 {card} other {cards}}.",
+        "delete_confirm_title": "Delete selected cards?",
+        "delete_confirm_desc": "Are you sure you want to permanently delete {count} selected {count, plural, =1 {card} other {cards}}? This action is irreversible.",
+        "suspend_confirm_title": "Suspend selected cards?",
+        "suspend_confirm_desc": "Are you sure you want to suspend {count} selected {count, plural, =1 {card} other {cards}}? They will be excluded from all study sessions.",
+        "unsuspend_confirm_title": "Unsuspend selected cards?",
+        "unsuspend_confirm_desc": "Are you sure you want to unsuspend {count} selected {count, plural, =1 {card} other {cards}}? They will return to their previous study states."
+      }
     }
   },
   "generate": {

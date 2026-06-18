@@ -1,23 +1,30 @@
 import { redirect, notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpen, Play, Settings } from "lucide-react";
+import { Play, Settings } from "lucide-react";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { getCurrentUser, getProfile } from "@/lib/queries/user";
 import { getStudyDeckWithSettings, getDeckDueCounts } from "@/actions/study-decks";
 import { getStudyCards } from "@/actions/imports";
 import { ImportToStudyDeckButton } from "@/components/study/import-to-study-deck-button";
 import { ImportCsvButton } from "@/components/study/import-csv-button";
-import { StudyCardListItem } from "@/components/study/study-card-list-item";
+import { StudyCardListManager } from "@/components/study/study-card-list-manager";
 import type { DeckStudySettings } from "@/types";
 import { getDeckIconUrl } from "@/lib/utils/image";
 import { getTranslations } from "next-intl/server";
 
 interface StudyDeckPageProps {
   params: Promise<{ deckId: string }>;
+  searchParams: Promise<{
+    search?: string;
+    page?: string;
+    sort?: "name_asc" | "name_desc" | "created_asc" | "created_desc";
+    suspended?: "all" | "suspended_only";
+    cursor?: string;
+    direction?: "next" | "prev";
+  }>;
 }
 
 export async function generateMetadata({ params }: StudyDeckPageProps) {
@@ -29,8 +36,9 @@ export async function generateMetadata({ params }: StudyDeckPageProps) {
   };
 }
 
-export default async function StudyDeckPage({ params }: StudyDeckPageProps) {
+export default async function StudyDeckPage({ params, searchParams }: StudyDeckPageProps) {
   const { deckId } = await params;
+  const sParams = await searchParams;
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
@@ -44,7 +52,23 @@ export default async function StudyDeckPage({ params }: StudyDeckPageProps) {
 
   if (!deckData) notFound();
 
-  const { cards, count: totalCards } = await getStudyCards(deckId, { limit: 50 });
+  // Parse parameters from searchParams Promise
+  const page = sParams.page ? Number(sParams.page) : 1;
+  const search = sParams.search;
+  const sort = sParams.sort;
+  const suspended = sParams.suspended;
+  const cursor = sParams.cursor;
+  const direction = sParams.direction;
+
+  const { cards, count: totalCards, useKeyset, nextCursor, prevCursor } = await getStudyCards(deckId, {
+    search,
+    page,
+    sort,
+    suspended,
+    cursor,
+    direction,
+    limit: 100, // Display only 100 cards per page
+  });
 
   const deck = deckData as typeof deckData & {
     name: string;
@@ -121,33 +145,17 @@ export default async function StudyDeckPage({ params }: StudyDeckPageProps) {
         </div>
 
         {/* Cards list */}
-        {cards.length === 0 ? (
-          <Card>
-            <CardContent className="py-12 text-center">
-              <BookOpen className="h-10 w-10 text-muted-foreground mx-auto mb-3" />
-              <p className="font-medium mb-1">{t("deck_view.no_cards_title")}</p>
-              <p className="text-sm text-muted-foreground">
-                {t("deck_view.no_cards_desc")}
-              </p>
-            </CardContent>
-          </Card>
-        ) : (
-          <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <h2 className="font-semibold">{t("deck_view.cards_title")}</h2>
-              {totalCards > 50 && (
-                <span className="text-xs text-muted-foreground">
-                  {t("deck_view.showing_limited", { count: 50, total: totalCards })}
-                </span>
-              )}
-            </div>
-            <div className="divide-y rounded-lg border bg-card overflow-hidden">
-              {cards.map((card) => (
-                <StudyCardListItem key={card.id} card={card} />
-              ))}
-            </div>
-          </div>
-        )}
+        <div className="space-y-2">
+          <h2 className="font-semibold">{t("deck_view.cards_title")}</h2>
+          <StudyCardListManager
+            initialCards={cards}
+            totalCount={totalCards}
+            useKeyset={useKeyset}
+            nextCursor={nextCursor}
+            prevCursor={prevCursor}
+            deckId={deckId}
+          />
+        </div>
       </div>
     </DashboardShell>
   );

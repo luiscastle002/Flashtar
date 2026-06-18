@@ -6,11 +6,21 @@ import { cn } from "@/lib/utils";
 import { formatDueIn } from "@/lib/scheduling/sm2";
 import { useTranslations } from "next-intl";
 
+import { Checkbox } from "@/components/ui/checkbox";
+
 interface StudyCardListItemProps {
   card: StudyCard;
+  checked?: boolean;
+  onCheckedChange?: (checked: boolean) => void;
+  showCheckbox?: boolean;
 }
 
-export function StudyCardListItem({ card }: StudyCardListItemProps) {
+export function StudyCardListItem({
+  card,
+  checked = false,
+  onCheckedChange,
+  showCheckbox = false,
+}: StudyCardListItemProps) {
   const t = useTranslations("study.card.state");
   const tRoot = useTranslations();
 
@@ -33,6 +43,15 @@ export function StudyCardListItem({ card }: StudyCardListItemProps) {
       "flex items-start gap-4 px-4 py-3 hover:bg-accent/30 transition-colors",
       card.is_flagged && "border-l-2 border-amber-400"
     )}>
+      {showCheckbox && (
+        <div className="flex items-center h-5 shrink-0 pt-0.5">
+          <Checkbox
+            checked={checked}
+            onCheckedChange={(val) => onCheckedChange?.(!!val)}
+            aria-label="Select card"
+          />
+        </div>
+      )}
       {/* Front preview */}
       <div className="flex-1 min-w-0">
         <p
