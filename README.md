@@ -108,6 +108,7 @@ To avoid accidental English fallbacks, all developers must adhere to the followi
    "file_size": { "bytes": "Bytes", "kb": "KB", "mb": "MB", "gb": "GB" }
    ```
 6. **Centralized Error Translation**: Database constraint failures, input validations, and API rejections must return structured error keys (`errors.generate.failed`) and map through the `translateError` helper.
+7. **Deterministic Relative Time Rendering**: All relative time formatting must use a globally provided reference time (`now`) to avoid client-server hydration mismatch issues. Define a request-time `now={new Date()}` Date object in the root layout `<NextIntlClientProvider>` to be shared across all descendant components.
 
 ---
 

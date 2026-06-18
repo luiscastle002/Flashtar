@@ -100,6 +100,12 @@ Translate them at the form client boundary using the `translateError` helper:
 toast.error(translateError(error.message, tRoot));
 ```
 
+### 6. Relative Time Guidelines
+To format relative times deterministically and avoid Next.js hydration warnings (e.g. `ENVIRONMENT_FALLBACK` alerts):
+- Never invoke `format.relativeTime()` in a component without a deterministic `now` parameter unless a default `now` Date is configured in the root-level `<NextIntlClientProvider>`.
+- The root layout `<NextIntlClientProvider>` must always be configured with a request-time `now={new Date()}` on the server.
+- Descendant components automatically inherit this reference timestamp. Avoid local dynamic overrides (`new Date()`) inside Client Component render loops to prevent hydration mismatch.
+
 ---
 
 ## JSON Safety & Verification Rules
