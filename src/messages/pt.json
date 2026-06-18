@@ -119,7 +119,14 @@
       "no_cards_title": "Nenhum cartão ainda",
       "no_cards_desc": "Importe cartões de seus baralhos gerados por IA para começar a estudar.",
       "cards_title": "Cartões",
-      "showing_limited": "Exibindo {count} de {total}"
+      "showing_limited": "Exibindo {count} de {total}",
+      "created_at": "Criado em {date}",
+      "last_studied_at": "Estudado {time}",
+      "never_studied": "Nunca estudado",
+      "show_cards": "Mostrar Cartões",
+      "hide_cards": "Ocultar Cartões",
+      "cards_hidden_title": "🔒 Os cartões estão ocultos",
+      "cards_hidden_desc": "Estude este baralho para revelar seu conteúdo."
     },
     "add_to_study": "Adicionar ao Baralho de Estudo",
     "target_decks": "Selecionar baralhos de estudo de destino:",
@@ -294,6 +301,7 @@
       "browse": "Navegar"
     },
     "card_manager": {
+      "card_content_header": "Conteúdo do Cartão",
       "search_placeholder": "Buscar cartões...",
       "filter_suspended_only": "Suspensos apenas",
       "filter_show_all": "Mostrar todos",

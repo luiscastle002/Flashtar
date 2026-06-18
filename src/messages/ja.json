@@ -119,7 +119,14 @@
       "no_cards_title": "カードがまだありません",
       "no_cards_desc": "AIが生成したデッキからカードを取り込んで学習を開始しましょう。",
       "cards_title": "カード一覧",
-      "showing_limited": "{total}枚中 {count}枚を表示中"
+      "showing_limited": "{total}枚中 {count}枚を表示中",
+      "created_at": "{date}に作成",
+      "last_studied_at": "{time}に学習",
+      "never_studied": "未学習",
+      "show_cards": "カードを表示",
+      "hide_cards": "カードを非表示",
+      "cards_hidden_title": "🔒 カードは非表示です",
+      "cards_hidden_desc": "このデックを学習してコンテンツを表示します。"
     },
     "add_to_study": "学習デッキに追加",
     "target_decks": "追加先の学習デッキを選択してください:",
@@ -295,6 +302,7 @@
       "browse": "閲覧"
     },
     "card_manager": {
+      "card_content_header": "カード内容",
       "search_placeholder": "カードを検索...",
       "filter_suspended_only": "保留のみ",
       "filter_show_all": "すべて表示",

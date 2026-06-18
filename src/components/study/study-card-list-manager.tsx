@@ -340,7 +340,7 @@ export function StudyCardListManager({
             />
           </div>
           <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-            {t("title", { defaultValue: "Card Content" })}
+            {t("card_content_header", { defaultValue: "Card Content" })}
           </span>
         </div>
 

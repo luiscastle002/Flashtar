@@ -119,7 +119,14 @@
       "no_cards_title": "No cards yet",
       "no_cards_desc": "Import cards from your AI-generated decks to start studying.",
       "cards_title": "Cards",
-      "showing_limited": "Showing {count} of {total}"
+      "showing_limited": "Showing {count} of {total}",
+      "created_at": "Created {date}",
+      "last_studied_at": "Studied {time}",
+      "never_studied": "Never studied",
+      "show_cards": "Show Cards",
+      "hide_cards": "Hide Cards",
+      "cards_hidden_title": "🔒 Cards are hidden",
+      "cards_hidden_desc": "Study this deck to reveal its content."
     },
     "add_to_study": "Add to Study Deck",
     "target_decks": "Select target study decks:",
@@ -294,6 +301,7 @@
       "browse": "Browse"
     },
     "card_manager": {
+      "card_content_header": "Card Content",
       "search_placeholder": "Search cards...",
       "filter_suspended_only": "Suspended Only",
       "filter_show_all": "Show All Cards",

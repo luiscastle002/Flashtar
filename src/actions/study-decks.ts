@@ -31,6 +31,7 @@ const settingsSchema = z.object({
   ease_minimum: z.number().min(1.0).max(3.0),
   new_card_order: z.enum(["due", "random"]),
   show_confidence_bar: z.boolean(),
+  show_card_preview: z.boolean().optional(),
 });
 
 // ---------------------------------------------------------------------------

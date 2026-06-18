@@ -141,6 +141,7 @@ export interface StudyDeck {
   custom_icon_path: string | null;
   created_at: string;
   updated_at: string;
+  last_studied_at: string | null;
   // Joined fields (not in DB — computed by queries)
   due_count?: number;
   new_count?: number;
@@ -161,6 +162,7 @@ export interface DeckStudySettings {
   ease_minimum: number;
   new_card_order: "due" | "random";
   show_confidence_bar: boolean;
+  show_card_preview: boolean;
   created_at: string;
   updated_at: string;
 }
