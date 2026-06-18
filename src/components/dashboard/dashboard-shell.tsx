@@ -27,14 +27,22 @@ import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import type { Profile } from "@/types";
 import { getProfileAvatarDisplayUrl } from "@/lib/utils/image";
+import { useTranslations, useLocale } from "next-intl";
+import { LanguageSelector } from "@/components/shared/language-selector";
 
 
-const navItems = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/study",     label: "Study",     icon: BookOpen },
-  { href: "/generate",  label: "Generate",  icon: Sparkles },
-  { href: "/decks",     label: "Decks",     icon: Layers },
-  { href: "/settings",  label: "Settings",  icon: Settings },
+interface NavItem {
+  href: string;
+  key: "dashboard" | "study" | "generate" | "decks" | "settings";
+  icon: React.ComponentType<{ className?: string }>;
+}
+
+const navItems: NavItem[] = [
+  { href: "/dashboard", key: "dashboard", icon: LayoutDashboard },
+  { href: "/study",     key: "study",     icon: BookOpen },
+  { href: "/generate",  key: "generate",  icon: Sparkles },
+  { href: "/decks",     key: "decks",     icon: Layers },
+  { href: "/settings",  key: "settings",  icon: Settings },
 ];
 
 export function DashboardShell({
@@ -46,8 +54,20 @@ export function DashboardShell({
   currentPath: string;
   profile?: Profile | null;
 }) {
+  const t = useTranslations("navigation");
+  const locale = useLocale();
   const router = useRouter();
   const [dueCount, setDueCount] = useState<number | null>(null);
+
+  // Synchronize database preferred language to NEXT_LOCALE cookie if they differ
+  useEffect(() => {
+    if (!profile) return;
+    const dbLang = profile.preferred_language || "en";
+    if (dbLang !== locale) {
+      document.cookie = `NEXT_LOCALE=${dbLang}; path=/; max-age=31536000; SameSite=Lax`;
+      router.refresh();
+    }
+  }, [profile, locale, router]);
 
   useEffect(() => {
     if (!profile) return;
@@ -105,7 +125,7 @@ export function DashboardShell({
             >
               <div className="flex items-center gap-3">
                 <item.icon className="h-4 w-4" />
-                {item.label}
+                {t(item.key)}
               </div>
               {item.href === "/study" && dueCount !== null && dueCount > 0 && (
                 <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-semibold text-white">
@@ -125,7 +145,7 @@ export function DashboardShell({
               )}
             >
               <Shield className="h-4 w-4" />
-              Admin
+              {t("admin")}
             </Link>
           )}
         </nav>
@@ -149,7 +169,7 @@ export function DashboardShell({
                   currentPath.startsWith(item.href) ? "bg-primary/10 text-primary" : "text-muted-foreground"
                 )}
               >
-                {item.label}
+                {t(item.key)}
                 {item.href === "/study" && dueCount !== null && dueCount > 0 && (
                   <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[9px] font-bold text-white">
                     {dueCount}
@@ -159,6 +179,7 @@ export function DashboardShell({
             ))}
           </nav>
           <div className="flex items-center gap-2 ml-auto">
+            <LanguageSelector />
             <ThemeToggle />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -171,17 +192,17 @@ export function DashboardShell({
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <div className="px-2 py-1.5">
-                  <p className="text-sm font-medium">{profile?.full_name ?? "User"}</p>
+                  <p className="text-sm font-medium">{profile?.full_name ?? t("user_fallback")}</p>
                   <p className="text-xs text-muted-foreground">{profile?.email}</p>
                 </div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
-                  <Link href="/settings">Settings</Link>
+                  <Link href="/settings">{t("settings")}</Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={handleSignOut} className="cursor-pointer">
                   <LogOut className="h-4 w-4 mr-2" />
-                  Sign out
+                  {t("sign_out")}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

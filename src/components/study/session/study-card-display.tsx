@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Flag } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { updateStudyCard } from "@/actions/imports";
@@ -16,6 +17,8 @@ interface StudyCardDisplayProps {
 
 export function StudyCardDisplay({ card, isFlipped, onFlip }: StudyCardDisplayProps) {
   const [flagged, setFlagged] = useState(card.is_flagged);
+  const t = useTranslations("study.session");
+  const tCard = useTranslations("study.card");
 
   async function handleFlag() {
     const newValue = !flagged;
@@ -48,9 +51,9 @@ export function StudyCardDisplay({ card, isFlipped, onFlip }: StudyCardDisplayPr
             </div>
             <div className="flex items-center justify-between px-5 py-3 border-t text-xs text-muted-foreground">
               <Badge variant="outline" className="capitalize text-xs">
-                {card.state}
+                {tCard(`state.${card.state}` as Parameters<typeof tCard>[0])}
               </Badge>
-              <span className="opacity-60">Click or press Space to reveal</span>
+              <span className="opacity-60">{t("reveal_hint")}</span>
             </div>
           </div>
 
@@ -91,7 +94,7 @@ export function StudyCardDisplay({ card, isFlipped, onFlip }: StudyCardDisplayPr
                 }}
               >
                 <Flag className={cn("h-3 w-3 mr-1", flagged && "fill-amber-500")} />
-                {flagged ? "Flagged" : "Flag"}
+                {flagged ? t("flagged") : t("flag")}
               </Button>
             </div>
           </div>

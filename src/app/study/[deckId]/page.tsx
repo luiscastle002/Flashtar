@@ -14,9 +14,19 @@ import { ImportCsvButton } from "@/components/study/import-csv-button";
 import { StudyCardListItem } from "@/components/study/study-card-list-item";
 import type { DeckStudySettings } from "@/types";
 import { getDeckIconUrl } from "@/lib/utils/image";
+import { getTranslations } from "next-intl/server";
 
 interface StudyDeckPageProps {
   params: Promise<{ deckId: string }>;
+}
+
+export async function generateMetadata({ params }: StudyDeckPageProps) {
+  const { deckId } = await params;
+  const deckData = await getStudyDeckWithSettings(deckId);
+  const t = await getTranslations("study");
+  return {
+    title: `${deckData?.name ?? t("title")} — Flashtar`,
+  };
 }
 
 export default async function StudyDeckPage({ params }: StudyDeckPageProps) {
@@ -24,10 +34,12 @@ export default async function StudyDeckPage({ params }: StudyDeckPageProps) {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
-  const [profile, deckData, dueCounts] = await Promise.all([
+  const [profile, deckData, dueCounts, t, tCard] = await Promise.all([
     getProfile(),
     getStudyDeckWithSettings(deckId),
     getDeckDueCounts(deckId),
+    getTranslations("study"),
+    getTranslations("study.card"),
   ]);
 
   if (!deckData) notFound();
@@ -70,10 +82,10 @@ export default async function StudyDeckPage({ params }: StudyDeckPageProps) {
               <p className="text-muted-foreground">{deck.description}</p>
             )}
             <div className="flex items-center gap-3 mt-3 flex-wrap">
-              <Badge variant="outline">{totalCards} total cards</Badge>
-              {newCount > 0 && <Badge variant="secondary">{newCount} new</Badge>}
-              {learnCount > 0 && <Badge className="bg-orange-500/10 text-orange-600 border-orange-200">{learnCount} learning</Badge>}
-              {reviewCount > 0 && <Badge className="bg-blue-500/10 text-blue-600 border-blue-200">{reviewCount} review</Badge>}
+              <Badge variant="outline">{t("deck_view.total_cards_plural", { count: totalCards })}</Badge>
+              {newCount > 0 && <Badge variant="secondary">{tCard("new_count", { count: newCount })}</Badge>}
+              {learnCount > 0 && <Badge className="bg-orange-500/10 text-orange-600 border-orange-200">{t("deck_view.learning_count", { count: learnCount })}</Badge>}
+              {reviewCount > 0 && <Badge className="bg-blue-500/10 text-blue-600 border-blue-200">{t("deck_view.review_count", { count: reviewCount })}</Badge>}
             </div>
           </div>
           <div className="flex gap-2">
@@ -90,12 +102,12 @@ export default async function StudyDeckPage({ params }: StudyDeckPageProps) {
               {totalDue > 0 ? (
                 <Link href={`/study/${deckId}/session`}>
                   <Play className="h-4 w-4 mr-1.5" />
-                  Study Now ({totalDue})
+                  {t("deck_view.study_now", { count: totalDue })}
                 </Link>
               ) : (
                 <>
                   <Play className="h-4 w-4 mr-1.5" />
-                  Nothing due
+                  {t("deck_view.nothing_due")}
                 </>
               )}
             </Button>
@@ -113,18 +125,20 @@ export default async function StudyDeckPage({ params }: StudyDeckPageProps) {
           <Card>
             <CardContent className="py-12 text-center">
               <BookOpen className="h-10 w-10 text-muted-foreground mx-auto mb-3" />
-              <p className="font-medium mb-1">No cards yet</p>
+              <p className="font-medium mb-1">{t("deck_view.no_cards_title")}</p>
               <p className="text-sm text-muted-foreground">
-                Import cards from your AI-generated decks to start studying.
+                {t("deck_view.no_cards_desc")}
               </p>
             </CardContent>
           </Card>
         ) : (
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <h2 className="font-semibold">Cards</h2>
+              <h2 className="font-semibold">{t("deck_view.cards_title")}</h2>
               {totalCards > 50 && (
-                <span className="text-xs text-muted-foreground">Showing 50 of {totalCards}</span>
+                <span className="text-xs text-muted-foreground">
+                  {t("deck_view.showing_limited", { count: 50, total: totalCards })}
+                </span>
               )}
             </div>
             <div className="divide-y rounded-lg border bg-card overflow-hidden">

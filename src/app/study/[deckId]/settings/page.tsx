@@ -6,9 +6,17 @@ import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { DeckSettingsForm } from "@/components/study/deck-settings-form";
 import type { DeckStudySettings } from "@/types";
 import { getDeckIconUrl } from "@/lib/utils/image";
+import { getTranslations } from "next-intl/server";
 
 interface SettingsPageProps {
   params: Promise<{ deckId: string }>;
+}
+
+export async function generateMetadata() {
+  const t = await getTranslations("study.settings");
+  return {
+    title: `${t("title")} — Flashtar`,
+  };
 }
 
 export default async function DeckSettingsPage({ params }: SettingsPageProps) {
@@ -16,9 +24,10 @@ export default async function DeckSettingsPage({ params }: SettingsPageProps) {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
-  const [profile, deckData] = await Promise.all([
+  const [profile, deckData, t] = await Promise.all([
     getProfile(),
     getStudyDeckWithSettings(deckId),
+    getTranslations("study.settings"),
   ]);
 
   if (!deckData) notFound();
@@ -40,7 +49,7 @@ export default async function DeckSettingsPage({ params }: SettingsPageProps) {
     <DashboardShell currentPath="/study" profile={profile}>
       <div className="max-w-xl space-y-6">
         <div>
-          <h1 className="text-xl font-bold">Deck Settings</h1>
+          <h1 className="text-xl font-bold">{t("title")}</h1>
           <div className="flex items-center gap-2 mt-1">
             {deck.icon_type === "image" && customIconUrl ? (
               <span className="relative inline-block w-6 h-6 rounded-full overflow-hidden border">

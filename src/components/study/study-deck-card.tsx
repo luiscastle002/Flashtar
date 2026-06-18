@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import type { StudyDeck } from "@/types";
 import { cn } from "@/lib/utils";
 import { getDeckIconUrl } from "@/lib/utils/image";
+import { useTranslations } from "next-intl";
 
 interface StudyDeckCardProps {
   deck: StudyDeck & { due_count?: number; new_count?: number };
@@ -17,6 +18,7 @@ interface StudyDeckCardProps {
 
 export function StudyDeckCard({ deck }: StudyDeckCardProps) {
   const router = useRouter();
+  const t = useTranslations("study.card");
   const hasDue = (deck.due_count ?? 0) > 0;
   const customIconUrl = getDeckIconUrl(deck.custom_icon_path);
 
@@ -46,7 +48,7 @@ export function StudyDeckCard({ deck }: StudyDeckCardProps) {
               <div className="min-w-0">
                 <p className="font-semibold leading-tight truncate">{deck.name}</p>
                 <p className="text-xs text-muted-foreground mt-0.5">
-                  {deck.card_count} card{deck.card_count !== 1 ? "s" : ""}
+                  {t("count_plural", { count: deck.card_count })}
                 </p>
               </div>
             </div>
@@ -71,7 +73,7 @@ export function StudyDeckCard({ deck }: StudyDeckCardProps) {
             <div className="flex items-center gap-2">
               {(deck.new_count ?? 0) > 0 && (
                 <span className="text-xs text-muted-foreground">
-                  {deck.new_count} new
+                  {t("new_count", { count: deck.new_count ?? 0 })}
                 </span>
               )}
             </div>
@@ -89,7 +91,7 @@ export function StudyDeckCard({ deck }: StudyDeckCardProps) {
               }}
             >
               <Play className="h-3 w-3 mr-1" />
-              {hasDue ? `Study (${deck.due_count})` : "Browse"}
+              {hasDue ? t("study_count", { count: deck.due_count ?? 0 }) : t("browse")}
             </Button>
           </div>
         </CardContent>

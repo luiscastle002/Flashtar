@@ -257,26 +257,42 @@ export function shouldBury(card: StudyCard, reviewsToday: number, limit: number)
  * Returns a human-readable description of when a card is next due.
  * Used in the session UI and card list views.
  */
-export function formatDueIn(dueAt: Date): string {
+export function formatDueIn(
+  dueAt: Date,
+  t?: (key: string, values?: Record<string, number | string>) => string
+): string {
   const now = new Date();
   const diffMs = dueAt.getTime() - now.getTime();
 
-  if (diffMs <= 0) return "Due now";
+  if (diffMs <= 0) {
+    return t ? t("study.session.due_now") : "Due now";
+  }
 
   const diffMin = Math.floor(diffMs / 60000);
-  if (diffMin < 60) return `${diffMin}m`;
+  if (diffMin < 60) {
+    return t ? t("study.session.due_minutes", { count: diffMin }) : `${diffMin}m`;
+  }
 
   const diffHr = Math.floor(diffMin / 60);
-  if (diffHr < 24) return `${diffHr}h`;
+  if (diffHr < 24) {
+    return t ? t("study.session.due_hours", { count: diffHr }) : `${diffHr}h`;
+  }
 
   const diffDays = Math.floor(diffHr / 24);
-  if (diffDays === 1) return "Tomorrow";
-  if (diffDays < 30) return `${diffDays}d`;
+  if (diffDays === 1) {
+    return t ? t("study.session.tomorrow") : "Tomorrow";
+  }
+  if (diffDays < 30) {
+    return t ? t("study.session.due_days", { count: diffDays }) : `${diffDays}d`;
+  }
 
   const diffMonths = Math.floor(diffDays / 30);
-  if (diffMonths < 12) return `${diffMonths}mo`;
+  if (diffMonths < 12) {
+    return t ? t("study.session.due_months", { count: diffMonths }) : `${diffMonths}mo`;
+  }
 
-  return `${Math.floor(diffMonths / 12)}y`;
+  const diffYears = Math.floor(diffMonths / 12);
+  return t ? t("study.session.due_years", { count: diffYears }) : `${diffYears}y`;
 }
 
 // ---------------------------------------------------------------------------

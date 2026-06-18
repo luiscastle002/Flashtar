@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { locales, defaultLocale, type Locale } from "@/lib/i18n/config";
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
@@ -12,9 +13,17 @@ export async function GET(request: Request) {
     if (!error) {
       // Sync Google avatar immediately upon login callback
       const { data: { user } } = await supabase.auth.getUser();
+      let preferredLanguage: string | null = null;
+
       if (user) {
-        const { data: profile } = await supabase.from("profiles").select("avatar_url, avatar_type").eq("id", user.id).single();
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("avatar_url, avatar_type, preferred_language")
+          .eq("id", user.id)
+          .single();
+
         if (profile) {
+          preferredLanguage = profile.preferred_language;
           const avatarType = profile.avatar_type;
           if (!avatarType || avatarType === 'google') {
             const googleAvatar = user.user_metadata?.avatar_url ?? user.user_metadata?.picture ?? null;
@@ -31,7 +40,22 @@ export async function GET(request: Request) {
           }
         }
       }
-      return NextResponse.redirect(`${origin}${next}`);
+
+      const response = NextResponse.redirect(`${origin}${next}`);
+
+      if (preferredLanguage) {
+        const finalLocale = (locales as readonly string[]).includes(preferredLanguage)
+          ? (preferredLanguage as Locale)
+          : defaultLocale;
+
+        response.cookies.set("NEXT_LOCALE", finalLocale, {
+          path: "/",
+          maxAge: 31536000,
+          sameSite: "lax",
+        });
+      }
+
+      return response;
     }
   }
 

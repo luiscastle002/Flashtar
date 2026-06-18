@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
-const ZONE_LABELS = ["Again", "Hard", "Good", "Easy"] as const;
+const ZONE_KEYS = ["again", "hard", "good", "easy"] as const;
 const ZONE_COLORS = [
   "hsl(0, 85%, 55%)",    // Again  — red
   "hsl(30, 90%, 55%)",   // Hard   — orange
-  "hsl(55, 85%, 55%)",   // Good   — yellow-green
+  "hsl(55, 85%, 55%)",   // Good   // yellow-green
   "hsl(120, 60%, 45%)",  // Easy   — green
 ] as const;
 
@@ -24,6 +25,7 @@ interface ConfidenceBarProps {
 }
 
 export function ConfidenceBar({ onRate, disabled = false }: ConfidenceBarProps) {
+  const t = useTranslations("study.session");
   const [fillPct, setFillPct] = useState<number | null>(null);
   const [hoveredZone, setHoveredZone] = useState<number | null>(null);
   const [isDesktop, setIsDesktop] = useState(true);
@@ -96,7 +98,7 @@ export function ConfidenceBar({ onRate, disabled = false }: ConfidenceBarProps) 
             className="text-sm font-semibold transition-colors duration-150"
             style={{ color: ZONE_COLORS[displayZone] }}
           >
-            {ZONE_LABELS[displayZone]}
+            {t(`rating.${ZONE_KEYS[displayZone]}`)}
           </span>
         )}
       </div>
@@ -127,7 +129,7 @@ export function ConfidenceBar({ onRate, disabled = false }: ConfidenceBarProps) 
         }}
         onMouseLeave={() => setHoveredZone(null)}
         role="slider"
-        aria-label="Confidence level"
+        aria-label={t("confidence_level")}
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={fillPct ?? 0}
@@ -158,9 +160,9 @@ export function ConfidenceBar({ onRate, disabled = false }: ConfidenceBarProps) 
 
       {/* Zone hint labels */}
       <div className="flex justify-between text-[10px] text-muted-foreground px-1">
-        {ZONE_LABELS.map((label, i) => (
-          <span key={label} style={{ color: displayZone === i ? ZONE_COLORS[i] : undefined }}>
-            {label}
+        {ZONE_KEYS.map((key, i) => (
+          <span key={key} style={{ color: displayZone === i ? ZONE_COLORS[i] : undefined }}>
+            {t(`rating.${key}`)}
           </span>
         ))}
       </div>
@@ -175,7 +177,7 @@ export function ConfidenceBar({ onRate, disabled = false }: ConfidenceBarProps) 
           }}
           disabled={disabled}
         >
-          Submit — {ZONE_LABELS[pctToZoneIndex(fillPct)]}
+          {t("submit_rating", { rating: t(`rating.${ZONE_KEYS[pctToZoneIndex(fillPct)]}`) })}
         </button>
       )}
     </div>

@@ -10,6 +10,8 @@ import { ConfidenceBar } from "./confidence-bar";
 import { SessionCompletionScreen } from "./session-completion-screen";
 import { submitReview, endStudySession, addMoreNewCards } from "@/actions/study-sessions";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
+import { translateError } from "@/lib/i18n/utils";
 import type { StudyCard, ConfidenceRating } from "@/types";
 
 interface StudySessionClientProps {
@@ -37,6 +39,8 @@ export function StudySessionClient({
   showConfidenceBar,
 }: StudySessionClientProps) {
   const router = useRouter();
+  const t = useTranslations("study.session");
+  const tRoot = useTranslations();
   const [cards, setCards] = useState<StudyCard[]>(initialCards);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -101,7 +105,7 @@ export function StudySessionClient({
       });
 
       if ("error" in result && result.error) {
-        toast.error(result.error);
+        toast.error(translateError(result.error, tRoot));
         setIsSubmitting(false);
         return;
       }
@@ -129,7 +133,7 @@ export function StudySessionClient({
     } finally {
       setIsSubmitting(false);
     }
-  }, [currentCard, currentIndex, cards.length, isSubmitting, sessionId]);
+  }, [currentCard, currentIndex, cards.length, isSubmitting, sessionId, tRoot]);
 
   async function handleFinish() {
     const durationMs = Date.now() - sessionStartRef.current;
@@ -149,11 +153,11 @@ export function StudySessionClient({
   async function handleStudyMore() {
     const result = await addMoreNewCards(deckId);
     if ("error" in result && result.error) {
-      toast.error(result.error);
+      toast.error(translateError(result.error, tRoot));
       return;
     }
     if (!result.cards.length) {
-      toast.info("No more new cards available");
+      toast.info(t("no_more_new_cards"));
       return;
     }
     setCards((prev) => [...prev, ...result.cards]);
@@ -217,11 +221,17 @@ export function StudySessionClient({
               <ClassicButtons onRate={handleRate} disabled={isSubmitting} />
             )}
             <p className="text-center text-xs text-muted-foreground mt-3">
-              Keyboard: <kbd className="font-mono bg-muted px-1 rounded">Space</kbd> to flip ·{" "}
-              <kbd className="font-mono bg-muted px-1 rounded">1</kbd>{" "}
-              <kbd className="font-mono bg-muted px-1 rounded">2</kbd>{" "}
-              <kbd className="font-mono bg-muted px-1 rounded">3</kbd>{" "}
-              <kbd className="font-mono bg-muted px-1 rounded">4</kbd> to rate
+              {t.rich("keyboard_help", {
+                space: () => <kbd className="font-mono bg-muted px-1 rounded">{t("keyboard_space")}</kbd>,
+                keys: () => (
+                  <>
+                    <kbd className="font-mono bg-muted px-1 rounded">1</kbd>{" "}
+                    <kbd className="font-mono bg-muted px-1 rounded">2</kbd>{" "}
+                    <kbd className="font-mono bg-muted px-1 rounded">3</kbd>{" "}
+                    <kbd className="font-mono bg-muted px-1 rounded">4</kbd>
+                  </>
+                )
+              })}
             </p>
           </div>
         )}
@@ -234,8 +244,8 @@ export function StudySessionClient({
               onClick={handleFlip}
               className="px-10 animate-in fade-in duration-200"
             >
-              Show Answer
-              <span className="ml-2 text-xs opacity-60 font-mono">Space</span>
+              {t("show_answer")}
+              <span className="ml-2 text-xs opacity-60 font-mono">{t("keyboard_space")}</span>
             </Button>
           </div>
         )}
@@ -252,22 +262,25 @@ function ClassicButtons({
   onRate: (pct: number) => void;
   disabled: boolean;
 }) {
+  const t = useTranslations("study.session");
+  const buttons = [
+    { key: "again", pct: 10, className: "border-red-200 text-red-600 hover:bg-red-50 dark:border-red-900 dark:text-red-400 dark:hover:bg-red-950" },
+    { key: "hard",  pct: 35, className: "border-orange-200 text-orange-600 hover:bg-orange-50 dark:border-orange-900 dark:text-orange-400 dark:hover:bg-orange-950" },
+    { key: "good",  pct: 65, className: "border-green-200 text-green-600 hover:bg-green-50 dark:border-green-900 dark:text-green-400 dark:hover:bg-green-950" },
+    { key: "easy",  pct: 90, className: "border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-900 dark:text-blue-400 dark:hover:bg-blue-950" },
+  ] as const;
+
   return (
     <div className="grid grid-cols-4 gap-2">
-      {([
-        { label: "Again", pct: 10, className: "border-red-200 text-red-600 hover:bg-red-50 dark:border-red-900 dark:text-red-400 dark:hover:bg-red-950" },
-        { label: "Hard",  pct: 35, className: "border-orange-200 text-orange-600 hover:bg-orange-50 dark:border-orange-900 dark:text-orange-400 dark:hover:bg-orange-950" },
-        { label: "Good",  pct: 65, className: "border-green-200 text-green-600 hover:bg-green-50 dark:border-green-900 dark:text-green-400 dark:hover:bg-green-950" },
-        { label: "Easy",  pct: 90, className: "border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-900 dark:text-blue-400 dark:hover:bg-blue-950" },
-      ] as const).map(({ label, pct, className }) => (
+      {buttons.map(({ key, pct, className }) => (
         <Button
-          key={label}
+          key={key}
           variant="outline"
           disabled={disabled}
           onClick={() => onRate(pct)}
           className={`h-12 text-sm font-medium ${className}`}
         >
-          {label}
+          {t(`rating.${key}`)}
         </Button>
       ))}
     </div>

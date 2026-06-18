@@ -18,7 +18,17 @@ import { changePassword, changeEmail } from "@/actions/auth";
 import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { compressToIcon, getProfileAvatarDisplayUrl } from "@/lib/utils/image";
-import { updateProfileAvatar, resetToGoogleAvatar, getGoogleAvatar } from "@/actions/profile";
+import { updateProfileAvatar, resetToGoogleAvatar, getGoogleAvatar, updatePreferredLanguage } from "@/actions/profile";
+import type { Locale } from "@/lib/i18n/config";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useTranslations } from "next-intl";
+import { translateError } from "@/lib/i18n/utils";
 
 
 interface SettingsClientProps {
@@ -27,6 +37,9 @@ interface SettingsClientProps {
 }
 
 export function SettingsClient({ profile, subscription }: SettingsClientProps) {
+  const t = useTranslations("settings");
+  const tRoot = useTranslations();
+
   const [loading, setLoading] = useState<"checkout" | "portal" | null>(null);
   const [paddle, setPaddle] = useState<Paddle | null>(null);
   const plan = subscription?.plan ?? "free";
@@ -40,6 +53,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordLoading, setPasswordLoading] = useState(false);
+  const [langLoading, setLangLoading] = useState(false);
 
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -64,13 +78,13 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
     if (!file) return;
 
     if (file.size > 5 * 1024 * 1024) {
-      toast.error("File size exceeds 5MB limit.");
+      toast.error(t("toast.size_exceeded"));
       return;
     }
 
     const allowedTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
     if (!allowedTypes.includes(file.type)) {
-      toast.error("Unsupported file format. Please upload PNG, JPG, or WEBP.");
+      toast.error(t("toast.unsupported_format"));
       return;
     }
 
@@ -82,7 +96,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
       const clientSupabase = createClient();
       const { data: { user } } = await clientSupabase.auth.getUser();
       if (!user) {
-        toast.error("User session not found.");
+        toast.error(t("toast.session_not_found"));
         setAvatarUploading(false);
         return;
       }
@@ -97,7 +111,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
         });
 
       if (uploadError) {
-        toast.error(`Image upload failed: ${uploadError.message}`);
+        toast.error(`${tRoot("errors.profile.avatar_resolve_failed")}: ${uploadError.message}`);
         setAvatarUploading(false);
         return;
       }
@@ -106,9 +120,9 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
       const res = await updateProfileAvatar(dbPath);
 
       if (res.error) {
-        toast.error(`Database update failed: ${res.error}`);
+        toast.error(translateError(res.error, tRoot));
       } else {
-        toast.success("Profile picture updated successfully!");
+        toast.success(t("toast.picture_updated"));
         if (res.data) {
           setCurrentProfile(res.data as Profile);
         }
@@ -116,7 +130,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
       }
     } catch (err) {
       console.error(err);
-      toast.error("An error occurred during upload.");
+      toast.error(tRoot("errors.profile.avatar_resolve_failed"));
     } finally {
       setAvatarUploading(false);
       if (fileInputRef.current) fileInputRef.current.value = "";
@@ -128,16 +142,16 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
     try {
       const res = await resetToGoogleAvatar();
       if (res.error) {
-        toast.error(`Failed to remove profile picture: ${res.error}`);
+        toast.error(translateError(res.error, tRoot));
       } else {
-        toast.success("Profile picture removed.");
+        toast.success(t("toast.picture_removed"));
         if (res.data) {
           setCurrentProfile(res.data as Profile);
         }
         router.refresh();
       }
     } catch {
-      toast.error("An error occurred while removing profile picture.");
+      toast.error(tRoot("errors.profile.avatar_resolve_failed"));
     } finally {
       setAvatarUploading(false);
     }
@@ -145,23 +159,23 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
 
   async function handleUseGoogleAvatar() {
     if (!googleAvatarUrl) {
-      toast.error("No Google profile photo available.");
+      toast.error(t("toast.no_google_photo"));
       return;
     }
     setAvatarUploading(true);
     try {
       const res = await resetToGoogleAvatar();
       if (res.error) {
-        toast.error(`Failed to switch to Google photo: ${res.error}`);
+        toast.error(translateError(res.error, tRoot));
       } else {
-        toast.success("Switched to Google profile photo.");
+        toast.success(t("toast.switched_google"));
         if (res.data) {
           setCurrentProfile(res.data as Profile);
         }
         router.refresh();
       }
     } catch {
-      toast.error("An error occurred.");
+      toast.error(tRoot("errors.profile.avatar_resolve_failed"));
     } finally {
       setAvatarUploading(false);
     }
@@ -194,9 +208,9 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
       const res = await fetch("/api/stripe/checkout", { method: "POST" });
       const data = await res.json();
       if (data.url) window.location.href = data.url;
-      else toast.error(data.error ?? "Checkout failed");
+      else toast.error(translateError(data.error, tRoot) || t("toast.stripe_checkout_failed"));
     } catch {
-      toast.error("Checkout failed");
+      toast.error(t("toast.stripe_checkout_failed"));
     } finally {
       setLoading(null);
     }
@@ -204,11 +218,11 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
 
   async function handlePaddleCheckout() {
     if (!paddle) {
-      toast.error("Billing system is initializing. Please try again in a moment.");
+      toast.error(t("toast.billing_initializing"));
       return;
     }
     if (!env.NEXT_PUBLIC_PADDLE_PRICE_ID) {
-      toast.error("Paddle price configuration is missing.");
+      toast.error(t("toast.paddle_missing_price"));
       return;
     }
     setLoading("checkout");
@@ -219,7 +233,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
       });
     } catch (error) {
       console.error("Paddle checkout failed:", error);
-      toast.error("Could not initiate checkout.");
+      toast.error(t("toast.paddle_checkout_failed"));
     } finally {
       setLoading(null);
     }
@@ -231,9 +245,9 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
       const res = await fetch("/api/stripe/portal", { method: "POST" });
       const data = await res.json();
       if (data.url) window.location.href = data.url;
-      else toast.error(data.error ?? "Portal failed");
+      else toast.error(translateError(data.error, tRoot) || t("toast.stripe_portal_failed"));
     } catch {
-      toast.error("Could not open billing portal");
+      toast.error(t("toast.stripe_portal_failed"));
     } finally {
       setLoading(null);
     }
@@ -242,17 +256,17 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
   const [canceling, setCanceling] = useState(false);
 
   async function handlePaddleCancel() {
-    if (!window.confirm("Are you sure you want to cancel your subscription?")) return;
+    if (!window.confirm(t("toast.cancel_confirm"))) return;
     setCanceling(true);
     try {
       const res = await cancelPaddleSubscription();
       if (res.error) {
-        toast.error(res.error);
+        toast.error(translateError(res.error, tRoot));
       } else {
-        toast.success("Subscription successfully canceled at the end of the billing period.");
+        toast.success(t("toast.cancel_success"));
       }
     } catch {
-      toast.error("Failed to cancel subscription");
+      toast.error(tRoot("errors.billing.cancel_failed"));
     } finally {
       setCanceling(false);
     }
@@ -260,14 +274,14 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
 
   async function handlePaddlePortal() {
     if (!paddle) {
-      toast.error("Billing system is initializing. Please try again in a moment.");
+      toast.error(t("toast.billing_initializing"));
       return;
     }
     setLoading("portal");
     try {
       const res = await getPaddleUpdateTx();
       if (res.error) {
-        toast.error(res.error);
+        toast.error(translateError(res.error, tRoot));
         return;
       }
       if (res.transactionId) {
@@ -275,11 +289,11 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
           transactionId: res.transactionId,
         });
       } else {
-        toast.error("Could not retrieve billing details.");
+        toast.error(t("toast.stripe_portal_failed"));
       }
     } catch (error) {
       console.error("Paddle portal failed:", error);
-      toast.error("Could not open billing details.");
+      toast.error(t("toast.stripe_portal_failed"));
     } finally {
       setLoading(null);
     }
@@ -294,13 +308,13 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
       formData.append("email", newEmail);
       const res = await changeEmail(formData);
       if (res.error) {
-        toast.error(res.error);
+        toast.error(translateError(res.error, tRoot));
       } else {
-        toast.success(res.success ?? "Email change requested.");
+        toast.success(t("toast.email_change_requested"));
         setNewEmail("");
       }
     } catch {
-      toast.error("Failed to request email change.");
+      toast.error(t("toast.email_update_failed"));
     } finally {
       setEmailLoading(false);
     }
@@ -309,11 +323,11 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
   async function handlePasswordChange(e: React.FormEvent) {
     e.preventDefault();
     if (newPassword.length < 8) {
-      toast.error("New password must be at least 8 characters.");
+      toast.error(t("toast.password_short"));
       return;
     }
     if (newPassword !== confirmPassword) {
-      toast.error("New passwords do not match.");
+      toast.error(t("toast.passwords_mismatch"));
       return;
     }
     setPasswordLoading(true);
@@ -327,33 +341,62 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
 
       const res = await changePassword(formData);
       if (res.error) {
-        toast.error(res.error);
+        toast.error(translateError(res.error, tRoot));
       } else {
-        toast.success(res.success ?? "Password updated successfully!");
+        toast.success(t("toast.password_updated"));
         setCurrentPassword("");
         setNewPassword("");
         setConfirmPassword("");
       }
     } catch {
-      toast.error("Failed to update password.");
+      toast.error(t("toast.password_update_failed"));
     } finally {
       setPasswordLoading(false);
     }
   }
 
+  async function handleLanguageChange(val: string) {
+    const langCode = val as Locale;
+    setLangLoading(true);
+    try {
+      // 1. Set the cookie NEXT_LOCALE with 1 year expiration
+      document.cookie = `NEXT_LOCALE=${langCode}; path=/; max-age=31536000; SameSite=Lax`;
+
+      // 2. Call the server action to update database
+      const res = await updatePreferredLanguage(langCode);
+      if (res && "error" in res && res.error) {
+        toast.error(translateError(res.error, tRoot));
+      } else {
+        toast.success(t("toast.language_updated"));
+        if (res && "data" in res && res.data) {
+          setCurrentProfile(res.data as Profile);
+        }
+        router.refresh();
+      }
+    } catch {
+      toast.error(t("toast.language_update_failed"));
+    } finally {
+      setLangLoading(false);
+    }
+  }
+
+  const localizedFeatures = plan === "pro"
+    ? (t.raw("pricing.pro_features") as string[])
+    : (t.raw("pricing.free_features") as string[]);
+
   return (
     <DashboardShell currentPath="/settings" profile={profile}>
       <div className="max-w-2xl mx-auto space-y-6">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold">Settings</h1>
-          <p className="text-muted-foreground">Manage your account and subscription</p>
+          <h1 className="text-2xl md:text-3xl font-bold">{t("title")}</h1>
+          <p className="text-muted-foreground">{t("subtitle")}</p>
         </div>
 
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <User className="h-5 w-5" />
-              Profile
+              {t("profile")}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -375,9 +418,9 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
               </div>
               
               <div className="space-y-2 text-center sm:text-left">
-                <h3 className="text-sm font-semibold">Profile Picture</h3>
+                <h3 className="text-sm font-semibold">{t("profile_picture")}</h3>
                 <p className="text-xs text-muted-foreground">
-                  PNG, JPG, or WEBP. Max 5MB (automatically compressed to 256x256 WebP).
+                  {t("avatar_limits")}
                 </p>
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                   <input
@@ -398,7 +441,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
                         onClick={() => fileInputRef.current?.click()}
                         disabled={avatarUploading}
                       >
-                        Replace Photo
+                        {t("replace_photo")}
                       </Button>
                       <Button
                         type="button"
@@ -408,7 +451,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
                         onClick={handleRemoveAvatar}
                         disabled={avatarUploading}
                       >
-                        Remove Photo
+                        {t("remove_photo")}
                       </Button>
                     </>
                   ) : (
@@ -419,7 +462,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
                       onClick={() => fileInputRef.current?.click()}
                       disabled={avatarUploading}
                     >
-                      Upload Photo
+                      {t("upload_photo")}
                     </Button>
                   )}
                   
@@ -431,7 +474,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
                       onClick={handleUseGoogleAvatar}
                       disabled={avatarUploading}
                     >
-                      Use Google Photo
+                      {t("use_google_photo")}
                     </Button>
                   )}
                 </div>
@@ -439,12 +482,30 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
             </div>
 
             <div className="space-y-2">
-              <Label>Email</Label>
+              <Label>{tRoot("auth.email")}</Label>
               <Input value={profile?.email ?? ""} disabled />
             </div>
             <div className="space-y-2">
-              <Label>Full Name</Label>
+              <Label>{t("full_name")}</Label>
               <Input value={profile?.full_name ?? ""} disabled />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="preferred-language">{t("preferred_language")}</Label>
+              <Select
+                value={currentProfile?.preferred_language ?? "en"}
+                onValueChange={handleLanguageChange}
+                disabled={langLoading}
+              >
+                <SelectTrigger id="preferred-language">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="en">English 🇺🇸</SelectItem>
+                  <SelectItem value="es">Español 🇪🇸</SelectItem>
+                  <SelectItem value="pt">Português 🇧🇷</SelectItem>
+                  <SelectItem value="ja">日本語 🇯🇵</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </CardContent>
         </Card>
@@ -453,16 +514,16 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Mail className="h-5 w-5" />
-              Change Email
+              {t("change_email")}
             </CardTitle>
             <CardDescription>
-              Update your account email address. Confirmation links will be sent to both your current and new email addresses.
+              {t("change_email_desc")}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleEmailChange} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="new-email">New Email Address</Label>
+                <Label htmlFor="new-email">{t("new_email_address")}</Label>
                 <Input
                   id="new-email"
                   type="email"
@@ -473,7 +534,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
                 />
               </div>
               <Button type="submit" disabled={emailLoading}>
-                {emailLoading ? "Updating..." : "Update Email"}
+                {emailLoading ? tRoot("auth.updating") : t("update_email_button")}
               </Button>
             </form>
           </CardContent>
@@ -483,19 +544,19 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Key className="h-5 w-5" />
-              Change Password
+              {t("change_password")}
             </CardTitle>
             <CardDescription>
-              Update your security credentials.
+              {t("change_password_desc")}
             </CardDescription>
           </CardHeader>
           <CardContent>
             {checkingUser ? (
-              <p className="text-sm text-muted-foreground animate-pulse">Checking credentials status...</p>
+              <p className="text-sm text-muted-foreground animate-pulse">{t("checking_status")}</p>
             ) : isEmailUser ? (
               <form onSubmit={handlePasswordChange} className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="current-password">Current Password</Label>
+                  <Label htmlFor="current-password">{t("current_password")}</Label>
                   <Input
                     id="current-password"
                     type="password"
@@ -505,7 +566,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="new-password">New Password</Label>
+                  <Label htmlFor="new-password">{t("new_password")}</Label>
                   <Input
                     id="new-password"
                     type="password"
@@ -515,7 +576,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="confirm-password">Confirm Password</Label>
+                  <Label htmlFor="confirm-password">{t("confirm_password")}</Label>
                   <Input
                     id="confirm-password"
                     type="password"
@@ -525,12 +586,12 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
                   />
                 </div>
                 <Button type="submit" disabled={passwordLoading}>
-                  {passwordLoading ? "Updating..." : "Update Password"}
+                  {passwordLoading ? tRoot("auth.updating") : t("update_password_button")}
                 </Button>
               </form>
             ) : (
               <p className="text-sm text-muted-foreground">
-                You are currently signed in using Google/OAuth. Password management is handled by your identity provider.
+                {t("oauth_notice")}
               </p>
             )}
           </CardContent>
@@ -540,10 +601,10 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <CreditCard className="h-5 w-5" />
-              Subscription
+              {t("subscription")}
             </CardTitle>
             <CardDescription>
-              Current plan: <span className="font-medium capitalize">{planInfo.name}</span>
+              {t("current_plan", { plan: planInfo.name })}
               {subscription?.status && (
                 <span className="ml-2 text-xs capitalize">({subscription.status})</span>
               )}
@@ -551,14 +612,14 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
           </CardHeader>
           <CardContent className="space-y-4">
             <ul className="space-y-1 text-sm text-muted-foreground">
-              {planInfo.features.map((f) => (
+              {localizedFeatures.map((f) => (
                 <li key={f}>• {f}</li>
               ))}
             </ul>
             {plan === "free" ? (
               <div className="flex flex-wrap gap-2">
                 <Button onClick={handlePaddleCheckout} disabled={loading === "checkout"}>
-                  {loading === "checkout" ? "Loading..." : "Upgrade to Pro — $12/month"}
+                  {loading === "checkout" ? tRoot("common.loading") : t("upgrade_pro_button", { price: 12 })}
                 </Button>
               </div>
             ) : (
@@ -566,15 +627,15 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
                 {subscription?.billing_provider === "paddle" ? (
                   <>
                     <Button onClick={handlePaddlePortal} disabled={loading === "portal"}>
-                      {loading === "portal" ? "Opening..." : "Update Payment Method (Paddle)"}
+                      {loading === "portal" ? tRoot("common.loading") : t("update_payment_paddle")}
                     </Button>
                     <Button variant="destructive" onClick={handlePaddleCancel} disabled={canceling}>
-                      {canceling ? "Canceling..." : "Cancel Subscription"}
+                      {canceling ? tRoot("common.deleting") : t("cancel_subscription")}
                     </Button>
                   </>
                 ) : (
                   <Button variant="outline" onClick={handlePortal} disabled={loading === "portal"}>
-                    {loading === "portal" ? "Redirecting..." : "Manage Subscription (Stripe)"}
+                    {loading === "portal" ? tRoot("common.loading") : t("manage_subscription_stripe")}
                   </Button>
                 )}
               </div>

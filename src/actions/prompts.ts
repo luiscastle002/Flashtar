@@ -27,11 +27,11 @@ export async function getSavedPrompts(): Promise<SavedPrompt[]> {
 
 export async function createSavedPrompt(name: string, content: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
-  if (!name.trim()) return { error: "Prompt name cannot be empty" };
-  if (!content.trim()) return { error: "Prompt content cannot be empty" };
-  if (content.length > 5000) return { error: "Prompt content exceeds 5000 characters limit" };
+  if (!name.trim()) return { error: "errors.prompts.empty_name" };
+  if (!content.trim()) return { error: "errors.prompts.empty_content" };
+  if (content.length > 5000) return { error: "errors.prompts.content_too_long" };
 
   const supabase = await createClient();
   const { data, error } = await supabase
@@ -50,7 +50,7 @@ export async function updateSavedPrompt(
   updates: Partial<Omit<SavedPrompt, "id" | "user_id" | "created_at" | "updated_at">>
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
 
@@ -62,7 +62,7 @@ export async function updateSavedPrompt(
       .eq("user_id", user.id);
     
     if (unsetError) {
-      return { error: `Failed to clear previous defaults: ${unsetError.message}` };
+      return { error: `errors.prompts.clear_defaults_failed` };
     }
   }
 
@@ -81,7 +81,7 @@ export async function updateSavedPrompt(
 
 export async function deleteSavedPrompt(id: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
   const { error } = await supabase

@@ -12,7 +12,7 @@ import { scheduleCard, confidenceToRating } from "@/lib/scheduling/sm2";
 
 export async function startStudySession(deckId: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
 
@@ -24,7 +24,7 @@ export async function startStudySession(deckId: string) {
     .eq("user_id", user.id)
     .single();
 
-  if (!deck) return { error: "Deck not found" };
+  if (!deck) return { error: "errors.study_decks.not_found" };
 
   const { data: session, error } = await supabase
     .from("study_sessions")
@@ -46,7 +46,7 @@ export async function startStudySession(deckId: string) {
 
 export async function getSessionQueue(deckId: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated", cards: [] };
+  if (!user) return { error: "errors.auth.not_authenticated", cards: [] };
 
   const supabase = await createClient();
 
@@ -93,7 +93,7 @@ export async function submitReview({
   durationMs: number;     // how long user spent on the card
 }) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
 
@@ -105,7 +105,7 @@ export async function submitReview({
     .eq("user_id", user.id)
     .single();
 
-  if (cardError || !card) return { error: "Card not found" };
+  if (cardError || !card) return { error: "errors.study_decks.card_not_found" };
 
   // Fetch deck settings
   const { data: settingsRow } = await supabase
@@ -114,7 +114,7 @@ export async function submitReview({
     .eq("study_deck_id", card.study_deck_id)
     .single();
 
-  if (!settingsRow) return { error: "Deck settings not found" };
+  if (!settingsRow) return { error: "errors.study_decks.invalid_settings" };
 
   const settings = settingsRow as DeckStudySettings;
   const rating = confidenceToRating(confidencePct);
@@ -180,7 +180,7 @@ export async function endStudySession(
   }
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
 
@@ -208,7 +208,7 @@ export async function endStudySession(
     .select("study_deck_id")
     .single();
 
-  if (sessionError || !session) return { error: sessionError?.message ?? "Session not found" };
+  if (sessionError || !session) return { error: sessionError?.message ?? "errors.study_decks.session_not_found" };
 
   // Upsert daily stats — global row (study_deck_id = NULL) + per-deck row
   const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
@@ -252,7 +252,7 @@ export async function endStudySession(
 
 export async function addMoreNewCards(deckId: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated", cards: [] };
+  if (!user) return { error: "errors.auth.not_authenticated", cards: [] };
 
   const supabase = await createClient();
 

@@ -28,8 +28,8 @@ export async function createFlashcard(
   input: Omit<z.infer<typeof flashcardSchema>, "position"> & { position?: number }
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
-  if (!(await verifyDeckOwnership(deckId, user.id))) return { error: "Deck not found" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!(await verifyDeckOwnership(deckId, user.id))) return { error: "errors.decks.not_found" };
 
   const supabase = await createClient();
 
@@ -43,7 +43,7 @@ export async function createFlashcard(
   }
 
   const parsed = flashcardSchema.safeParse({ ...input, position });
-  if (!parsed.success) return { error: "Invalid flashcard data" };
+  if (!parsed.success) return { error: "errors.flashcards.invalid_data" };
 
   const { data, error } = await supabase
     .from("flashcards")
@@ -62,8 +62,8 @@ export async function updateFlashcard(
   input: Partial<z.infer<typeof flashcardSchema>>
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
-  if (!(await verifyDeckOwnership(deckId, user.id))) return { error: "Deck not found" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!(await verifyDeckOwnership(deckId, user.id))) return { error: "errors.decks.not_found" };
 
   const supabase = await createClient();
   const { data, error } = await supabase
@@ -81,8 +81,8 @@ export async function updateFlashcard(
 
 export async function deleteFlashcard(flashcardId: string, deckId: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
-  if (!(await verifyDeckOwnership(deckId, user.id))) return { error: "Deck not found" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!(await verifyDeckOwnership(deckId, user.id))) return { error: "errors.decks.not_found" };
 
   const supabase = await createClient();
   const { error } = await supabase
@@ -101,8 +101,8 @@ export async function reorderFlashcards(
   orderedIds: string[]
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
-  if (!(await verifyDeckOwnership(deckId, user.id))) return { error: "Deck not found" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!(await verifyDeckOwnership(deckId, user.id))) return { error: "errors.decks.not_found" };
 
   const supabase = await createClient();
   const updates = orderedIds.map((id, index) =>
@@ -119,8 +119,8 @@ export async function bulkUpdateFlashcards(
   cards: Array<{ id: string; front: string; back: string; card_type?: string }>
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
-  if (!(await verifyDeckOwnership(deckId, user.id))) return { error: "Deck not found" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!(await verifyDeckOwnership(deckId, user.id))) return { error: "errors.decks.not_found" };
 
   const supabase = await createClient();
   const updates = cards.map((card, index) =>

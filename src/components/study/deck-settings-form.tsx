@@ -22,6 +22,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useTranslations } from "next-intl";
+import { translateError } from "@/lib/i18n/utils";
 
 const EMOJI_PRESETS = ["📚", "🇯🇵", "🧬", "💻", "🎸", "🏛️", "✏️", "🔬", "🌍", "📐", "🎯", "🧠"];
 const COLOR_PRESETS = [
@@ -53,6 +55,10 @@ export function DeckSettingsForm({
   iconType,
   customIconPath,
 }: DeckSettingsFormProps) {
+  const t = useTranslations("study.settings");
+  const tCommon = useTranslations("common");
+  const tErr = useTranslations("errors");
+
   const router = useRouter();
   const [pending, startTransition] = useTransition();
 
@@ -94,13 +100,13 @@ export function DeckSettingsForm({
     if (!file) return;
 
     if (file.size > 5 * 1024 * 1024) {
-      toast.error("File size exceeds 5MB limit.");
+      toast.error(t("upload_limits"));
       return;
     }
 
     const allowedTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
     if (!allowedTypes.includes(file.type)) {
-      toast.error("Unsupported file format. Please upload PNG, JPG, or WEBP.");
+      toast.error(t("upload_limits"));
       return;
     }
 
@@ -110,7 +116,7 @@ export function DeckSettingsForm({
       const previewUrl = URL.createObjectURL(compressed);
       setImagePreview(previewUrl);
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Error processing image.";
+      const message = err instanceof Error ? err.message : t("toast_error_image_processing");
       toast.error(message);
     }
   }
@@ -127,12 +133,12 @@ export function DeckSettingsForm({
 
   function handleSave() {
     if (!name.trim()) {
-      toast.error("Deck name is required");
+      toast.error(t("toast_error_name"));
       return;
     }
 
     if (currentIconType === "image" && !imageBlob && !customIconPathState) {
-      toast.error("Please upload an image or switch to emoji icon.");
+      toast.error(t("toast_error_image"));
       return;
     }
 
@@ -144,7 +150,7 @@ export function DeckSettingsForm({
       if (currentIconType === "image" && imageBlob) {
         const { data: { user } } = await clientSupabase.auth.getUser();
         if (!user) {
-          toast.error("User session not found. Image could not be uploaded.");
+          toast.error(tErr("auth.not_authenticated"));
           return;
         }
 
@@ -157,7 +163,7 @@ export function DeckSettingsForm({
           });
 
         if (uploadError) {
-          toast.error(`Image upload failed: ${uploadError.message}`);
+          toast.error(uploadError.message);
           return;
         }
 
@@ -177,7 +183,7 @@ export function DeckSettingsForm({
       });
 
       if ("error" in deckResult && deckResult.error) {
-        toast.error(deckResult.error);
+        toast.error(translateError(deckResult.error, tErr));
         return;
       }
 
@@ -194,11 +200,11 @@ export function DeckSettingsForm({
       });
 
       if ("error" in settingsResult && settingsResult.error) {
-        toast.error(settingsResult.error);
+        toast.error(translateError(settingsResult.error, tErr));
         return;
       }
 
-      toast.success("Settings saved");
+      toast.success(t("toast_saved"));
       router.refresh();
     });
   }
@@ -207,11 +213,11 @@ export function DeckSettingsForm({
     startArchiveTransition(async () => {
       const result = await archiveStudyDeck(deckId, !isArchivedState);
       if ("error" in result && result.error) {
-        toast.error(result.error);
+        toast.error(translateError(result.error, tErr));
         return;
       }
       setIsArchivedState(!isArchivedState);
-      toast.success(isArchivedState ? "Deck unarchived" : "Deck archived");
+      toast.success(isArchivedState ? t("toast_unarchived") : t("toast_archived"));
       router.refresh();
     });
   }
@@ -220,10 +226,10 @@ export function DeckSettingsForm({
     startDeleteTransition(async () => {
       const result = await deleteStudyDeck(deckId);
       if ("error" in result && result.error) {
-        toast.error(result.error);
+        toast.error(translateError(result.error, tErr));
         return;
       }
-      toast.success("Deck deleted");
+      toast.success(t("toast_deleted"));
       setConfirmDeleteOpen(false);
       router.push("/study");
       router.refresh();
@@ -235,13 +241,13 @@ export function DeckSettingsForm({
       {/* Identity & Customization */}
       <Card>
         <CardHeader className="pb-4">
-          <CardTitle className="text-base font-semibold">Identity & Appearance</CardTitle>
-          <CardDescription>Customize the name, description, color, and icon of this study deck.</CardDescription>
+          <CardTitle className="text-base font-semibold">{t("identity_title")}</CardTitle>
+          <CardDescription>{t("identity_desc")}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           {/* Icon picker */}
           <div className="space-y-3">
-            <Label className="text-sm font-medium">Icon Style</Label>
+            <Label className="text-sm font-medium">{t("icon_style")}</Label>
             <div className="grid grid-cols-2 gap-2 p-1 bg-muted rounded-lg text-sm max-w-xs">
               <button
                 type="button"
@@ -251,7 +257,7 @@ export function DeckSettingsForm({
                   currentIconType === "emoji" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                Emoji
+                {t("emoji")}
               </button>
               <button
                 type="button"
@@ -261,7 +267,7 @@ export function DeckSettingsForm({
                   currentIconType === "image" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                Custom Image
+                {t("custom_image")}
               </button>
             </div>
 
@@ -292,7 +298,7 @@ export function DeckSettingsForm({
                       <img src={imagePreview} alt="Icon preview" className="w-full h-full object-cover" />
                     </div>
                     <div className="space-y-1">
-                      <p className="text-xs text-muted-foreground">Icon ready to upload (128x128px WebP)</p>
+                      <p className="text-xs text-muted-foreground">{t("image_desc")}</p>
                       <Button
                         type="button"
                         variant="outline"
@@ -300,7 +306,7 @@ export function DeckSettingsForm({
                         className="h-7 text-xs text-destructive hover:text-destructive"
                         onClick={handleRemoveImage}
                       >
-                        Remove
+                        {tCommon("remove")}
                       </Button>
                     </div>
                   </div>
@@ -312,8 +318,8 @@ export function DeckSettingsForm({
                       className="absolute inset-0 opacity-0 cursor-pointer"
                       onChange={handleImageSelect}
                     />
-                    <p className="text-sm font-medium">Click to upload image</p>
-                    <p className="text-xs text-muted-foreground mt-1">PNG, JPG, or WEBP (Max 5MB)</p>
+                    <p className="text-sm font-medium">{t("click_upload")}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{t("upload_limits")}</p>
                   </div>
                 )}
               </div>
@@ -322,7 +328,7 @@ export function DeckSettingsForm({
 
           {/* Color picker */}
           <div className="space-y-1.5">
-            <Label className="text-sm font-medium">Accent Color</Label>
+            <Label className="text-sm font-medium">{t("accent_color")}</Label>
             <div className="flex flex-wrap gap-2">
               {COLOR_PRESETS.map((color) => (
                 <button
@@ -343,7 +349,7 @@ export function DeckSettingsForm({
 
           {/* Deck Name */}
           <div className="space-y-1.5">
-            <Label htmlFor="edit-deck-name">Deck Name</Label>
+            <Label htmlFor="edit-deck-name">{t("deck_name")}</Label>
             <div className="flex items-center gap-2">
               <span className="text-xl">
                 {currentIconType === "emoji" ? (
@@ -361,7 +367,7 @@ export function DeckSettingsForm({
                 id="edit-deck-name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="e.g. Japanese Vocabulary"
+                placeholder={t("deck_name_placeholder")}
                 maxLength={200}
                 required
                 className="flex-1"
@@ -371,12 +377,12 @@ export function DeckSettingsForm({
 
           {/* Description */}
           <div className="space-y-1.5">
-            <Label htmlFor="edit-deck-desc">Description</Label>
+            <Label htmlFor="edit-deck-desc">{t("description")}</Label>
             <Textarea
               id="edit-deck-desc"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="What will you study in this deck?"
+              placeholder={t("description_placeholder")}
               rows={3}
               maxLength={1000}
             />
@@ -387,13 +393,13 @@ export function DeckSettingsForm({
       {/* Daily Limits */}
       <Card>
         <CardHeader className="pb-4">
-          <CardTitle className="text-base">Daily Limits</CardTitle>
-          <CardDescription>Control how many cards you study each day.</CardDescription>
+          <CardTitle className="text-base">{t("daily_limits")}</CardTitle>
+          <CardDescription>{t("daily_limits_desc")}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <Label htmlFor="new-per-day">New cards/day</Label>
+              <Label htmlFor="new-per-day">{t("new_cards_day")}</Label>
               <Input
                 id="new-per-day"
                 type="number"
@@ -404,7 +410,7 @@ export function DeckSettingsForm({
               />
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="max-reviews">Max reviews/day</Label>
+              <Label htmlFor="max-reviews">{t("max_reviews_day")}</Label>
               <Input
                 id="max-reviews"
                 type="number"
@@ -421,17 +427,12 @@ export function DeckSettingsForm({
       {/* Learning Steps */}
       <Card>
         <CardHeader className="pb-4">
-          <CardTitle className="text-base">Learning Steps</CardTitle>
-          <CardDescription>
-            Space-separated intervals for new cards (e.g. <code className="font-mono text-xs bg-muted px-1 rounded">1m 10m</code>).
-            Supported units: <code className="font-mono text-xs bg-muted px-1 rounded">m</code> (minutes),{" "}
-            <code className="font-mono text-xs bg-muted px-1 rounded">h</code> (hours),{" "}
-            <code className="font-mono text-xs bg-muted px-1 rounded">d</code> (days).
-          </CardDescription>
+          <CardTitle className="text-base">{t("learning_steps")}</CardTitle>
+          <CardDescription>{t("learning_steps_desc")}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-1.5">
-            <Label htmlFor="learning-steps">Learning steps</Label>
+            <Label htmlFor="learning-steps">{t("learning_steps_label")}</Label>
             <Input
               id="learning-steps"
               value={learningSteps}
@@ -442,7 +443,7 @@ export function DeckSettingsForm({
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <Label htmlFor="graduating-interval">Graduating interval (days)</Label>
+              <Label htmlFor="graduating-interval">{t("graduating_interval")}</Label>
               <Input
                 id="graduating-interval"
                 type="number"
@@ -452,7 +453,7 @@ export function DeckSettingsForm({
               />
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="easy-interval">Easy interval (days)</Label>
+              <Label htmlFor="easy-interval">{t("easy_interval")}</Label>
               <Input
                 id="easy-interval"
                 type="number"
@@ -463,7 +464,7 @@ export function DeckSettingsForm({
             </div>
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="relearning-steps">Relearning steps (after lapse)</Label>
+            <Label htmlFor="relearning-steps">{t("relearning_steps")}</Label>
             <Input
               id="relearning-steps"
               value={relearningSteps}
@@ -478,12 +479,12 @@ export function DeckSettingsForm({
       {/* Leech Detection */}
       <Card>
         <CardHeader className="pb-4">
-          <CardTitle className="text-base">Leech Detection</CardTitle>
-          <CardDescription>Cards failed too many times are flagged as leeches.</CardDescription>
+          <CardTitle className="text-base">{t("leech_detection")}</CardTitle>
+          <CardDescription>{t("leech_desc")}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-1.5">
-            <Label htmlFor="leech-threshold">Lapse threshold</Label>
+            <Label htmlFor="leech-threshold">{t("lapse_threshold")}</Label>
             <Input
               id="leech-threshold"
               type="number"
@@ -494,7 +495,7 @@ export function DeckSettingsForm({
               className="w-32"
             />
             <p className="text-xs text-muted-foreground">
-              Card will be suspended after this many lapses.
+              {t("lapse_threshold_desc")}
             </p>
           </div>
         </CardContent>
@@ -503,7 +504,7 @@ export function DeckSettingsForm({
       {/* UI Preferences */}
       <Card>
         <CardHeader className="pb-4">
-          <CardTitle className="text-base">Display</CardTitle>
+          <CardTitle className="text-base">{t("display")}</CardTitle>
         </CardHeader>
         <CardContent>
           <label className="flex items-center gap-3 cursor-pointer">
@@ -514,9 +515,9 @@ export function DeckSettingsForm({
               onChange={(e) => setShowConfidenceBar(e.target.checked)}
             />
             <div>
-              <p className="text-sm font-medium">Show confidence bar</p>
+              <p className="text-sm font-medium">{t("show_confidence")}</p>
               <p className="text-xs text-muted-foreground">
-                Use the gradient confidence bar instead of Again / Hard / Good / Easy buttons.
+                {t("show_confidence_desc")}
               </p>
             </div>
           </label>
@@ -526,9 +527,9 @@ export function DeckSettingsForm({
       <div className="flex justify-between items-center gap-4">
         <Button onClick={handleSave} disabled={pending} className="w-full sm:w-auto">
           {pending ? (
-            <><Loader2 className="h-4 w-4 mr-1.5 animate-spin" /> Saving…</>
+            <><Loader2 className="h-4 w-4 mr-1.5 animate-spin" /> {t("saving")}</>
           ) : (
-            <><Save className="h-4 w-4 mr-1.5" /> Save Settings</>
+            <><Save className="h-4 w-4 mr-1.5" /> {t("save_settings")}</>
           )}
         </Button>
       </div>
@@ -538,16 +539,16 @@ export function DeckSettingsForm({
         <CardHeader className="pb-4">
           <CardTitle className="text-base text-destructive flex items-center gap-2">
             <AlertTriangle className="h-5 w-5" />
-            Danger Zone
+            {t("danger_zone")}
           </CardTitle>
-          <CardDescription>Actions here are destructive or modify the deck status.</CardDescription>
+          <CardDescription>{t("danger_desc")}</CardDescription>
         </CardHeader>
         <CardContent className="divide-y divide-destructive/10 space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-2">
             <div>
-              <p className="text-sm font-medium">Archive study deck</p>
+              <p className="text-sm font-medium">{t("archive_title")}</p>
               <p className="text-xs text-muted-foreground">
-                Archived decks are hidden from the daily study lists but saved.
+                {t("archive_desc")}
               </p>
             </div>
             <Button
@@ -561,15 +562,15 @@ export function DeckSettingsForm({
               ) : (
                 <Archive className="h-4 w-4 mr-1.5" />
               )}
-              {isArchivedState ? "Unarchive Deck" : "Archive Deck"}
+              {isArchivedState ? t("unarchive_button") : t("archive_button")}
             </Button>
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4">
             <div>
-              <p className="text-sm font-medium text-destructive">Delete study deck</p>
+              <p className="text-sm font-medium text-destructive">{t("delete_title")}</p>
               <p className="text-xs text-muted-foreground">
-                Permanently delete this study deck, its configuration, and all its cards.
+                {t("delete_desc")}
               </p>
             </div>
             <Button
@@ -579,7 +580,7 @@ export function DeckSettingsForm({
               disabled={deletePending}
             >
               <Trash2 className="h-4 w-4 mr-1.5" />
-              Delete Deck
+              {t("delete_button")}
             </Button>
           </div>
         </CardContent>
@@ -591,10 +592,10 @@ export function DeckSettingsForm({
           <DialogHeader>
             <DialogTitle className="text-destructive flex items-center gap-2">
               <AlertTriangle className="h-5 w-5" />
-              Delete Study Deck?
+              {t("delete_dialog_title")}
             </DialogTitle>
             <DialogDescription>
-              Are you sure you want to permanently delete this study deck? This will delete all flashcards, progress, and review logs associated with it. This action is irreversible.
+              {t("delete_dialog_desc")}
             </DialogDescription>
           </DialogHeader>
           <DialogFooter className="gap-2 sm:gap-0">
@@ -604,7 +605,7 @@ export function DeckSettingsForm({
               onClick={() => setConfirmDeleteOpen(false)}
               disabled={deletePending}
             >
-              Cancel
+              {tCommon("cancel")}
             </Button>
             <Button
               type="button"
@@ -613,9 +614,9 @@ export function DeckSettingsForm({
               disabled={deletePending}
             >
               {deletePending ? (
-                <><Loader2 className="h-4 w-4 mr-1.5 animate-spin" /> Deleting…</>
+                <><Loader2 className="h-4 w-4 mr-1.5 animate-spin" /> {t("deleting")}</>
               ) : (
-                "Delete Permanently"
+                t("delete_dialog_confirm")
               )}
             </Button>
           </DialogFooter>

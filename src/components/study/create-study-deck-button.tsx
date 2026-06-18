@@ -22,6 +22,8 @@ import type { canCreateStudyDeck } from "@/lib/queries/user";
 import { cn } from "@/lib/utils";
 import { compressToIcon } from "@/lib/utils/image";
 import { createClient } from "@/lib/supabase/client";
+import { useTranslations } from "next-intl";
+import { translateError } from "@/lib/i18n/utils";
 
 const EMOJI_PRESETS = ["📚", "🇯🇵", "🧬", "💻", "🎸", "🏛️", "✏️", "🔬", "🌍", "📐", "🎯", "🧠"];
 const COLOR_PRESETS = [
@@ -36,6 +38,11 @@ interface CreateStudyDeckButtonProps {
 }
 
 export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButtonProps) {
+  const t = useTranslations("study.create");
+  const tSettings = useTranslations("study.settings");
+  const tCommon = useTranslations("common");
+  const tErr = useTranslations("errors");
+
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [pending, startTransition] = useTransition();
@@ -54,13 +61,13 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
     if (!file) return;
 
     if (file.size > 5 * 1024 * 1024) {
-      toast.error("File size exceeds 5MB limit.");
+      toast.error(tSettings("upload_limits"));
       return;
     }
 
     const allowedTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
     if (!allowedTypes.includes(file.type)) {
-      toast.error("Unsupported file format. Please upload PNG, JPG, or WEBP.");
+      toast.error(tSettings("upload_limits"));
       return;
     }
 
@@ -70,7 +77,7 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
       const previewUrl = URL.createObjectURL(compressed);
       setImagePreview(previewUrl);
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Error processing image.";
+      const message = err instanceof Error ? err.message : tSettings("toast_error_image_processing");
       toast.error(message);
     }
   }
@@ -88,7 +95,7 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
     if (!name.trim()) return;
 
     if (iconType === "image" && !imageBlob) {
-      toast.error("Please upload an image or switch to emoji icon.");
+      toast.error(tSettings("toast_error_image"));
       return;
     }
 
@@ -104,13 +111,13 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
       });
 
       if ("error" in result && result.error) {
-        toast.error(result.error);
+        toast.error(translateError(result.error, tErr));
         return;
       }
 
       const deck = result.data;
       if (!deck) {
-        toast.error("Failed to create study deck.");
+        toast.error(t("toast_create_failed"));
         return;
       }
 
@@ -119,7 +126,7 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
         const clientSupabase = createClient();
         const { data: { user } } = await clientSupabase.auth.getUser();
         if (!user) {
-          toast.error("User session not found. Image could not be uploaded.");
+          toast.error(tErr("auth.not_authenticated"));
           return;
         }
 
@@ -132,19 +139,19 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
           });
 
         if (uploadError) {
-          toast.error(`Image upload failed: ${uploadError.message}. Falling back to default icon.`);
+          toast.error(tSettings("toast_error_image_upload", { error: uploadError.message }));
         } else {
           // Update the database record with the custom_icon_path
           const updateResult = await updateStudyDeck(deck.id, {
             custom_icon_path: `deck-icons/${filePath}`,
           });
           if ("error" in updateResult && updateResult.error) {
-            toast.error(`Failed to save icon path: ${updateResult.error}`);
+            toast.error(tSettings("toast_error_icon_path", { error: updateResult.error }));
           }
         }
       }
 
-      toast.success("Study deck created!");
+      toast.success(t("toast_created"));
       setOpen(false);
       setName("");
       setDescription("");
@@ -158,7 +165,7 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
     return (
       <Button variant="outline" disabled className={className}>
         <Plus className="h-4 w-4 mr-1.5" />
-        New Deck
+        {t("button")}
       </Button>
     );
   }
@@ -176,20 +183,20 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
       <DialogTrigger asChild>
         <Button className={className}>
           <Plus className="h-4 w-4 mr-1.5" />
-          New Deck
+          {t("button")}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Create study deck</DialogTitle>
+          <DialogTitle>{t("title")}</DialogTitle>
           <DialogDescription>
-            Give your deck a name and personality. You can add cards after creating it.
+            {t("desc")}
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Icon picker */}
           <div className="space-y-3">
-            <Label className="text-xs text-muted-foreground block">Icon Style</Label>
+            <Label className="text-xs text-muted-foreground block">{tSettings("icon_style")}</Label>
             <div className="grid grid-cols-2 gap-2 p-1 bg-muted rounded-lg text-sm">
               <button
                 type="button"
@@ -199,7 +206,7 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
                   iconType === "emoji" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                Emoji
+                {tSettings("emoji")}
               </button>
               <button
                 type="button"
@@ -209,7 +216,7 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
                   iconType === "image" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                Custom Image
+                {tSettings("custom_image")}
               </button>
             </div>
 
@@ -239,7 +246,7 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
                       <img src={imagePreview} alt="Preview" className="w-full h-full object-cover" />
                     </div>
                     <div className="space-y-1">
-                      <p className="text-xs text-muted-foreground">Icon ready to upload (128x128px WebP)</p>
+                      <p className="text-xs text-muted-foreground">{tSettings("image_desc")}</p>
                       <Button
                         type="button"
                         variant="outline"
@@ -247,7 +254,7 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
                         className="h-7 text-xs text-destructive hover:text-destructive"
                         onClick={handleRemoveImage}
                       >
-                        Remove
+                        {tCommon("remove")}
                       </Button>
                     </div>
                   </div>
@@ -259,8 +266,8 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
                       className="absolute inset-0 opacity-0 cursor-pointer"
                       onChange={handleImageSelect}
                     />
-                    <p className="text-sm font-medium">Click to upload image</p>
-                    <p className="text-xs text-muted-foreground mt-1">PNG, JPG, or WEBP (Max 5MB)</p>
+                    <p className="text-sm font-medium">{tSettings("click_upload")}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{tSettings("upload_limits")}</p>
                   </div>
                 )}
               </div>
@@ -269,7 +276,7 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
 
           {/* Color picker */}
           <div>
-            <Label className="text-xs text-muted-foreground mb-2 block">Accent color</Label>
+            <Label className="text-xs text-muted-foreground mb-2 block">{tSettings("accent_color")}</Label>
             <div className="flex flex-wrap gap-2">
               {COLOR_PRESETS.map((color) => (
                 <button
@@ -289,7 +296,7 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
 
           {/* Name */}
           <div className="space-y-1.5">
-            <Label htmlFor="deck-name">Name *</Label>
+            <Label htmlFor="deck-name">{tSettings("deck_name")} *</Label>
             <div className="flex items-center gap-2">
               <span className="text-xl">
                 {iconType === "emoji" ? (
@@ -307,7 +314,7 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
                 id="deck-name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="e.g. Japanese Vocabulary"
+                placeholder={tSettings("deck_name_placeholder")}
                 maxLength={200}
                 autoFocus
                 required
@@ -318,12 +325,12 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
 
           {/* Description */}
           <div className="space-y-1.5">
-            <Label htmlFor="deck-desc">Description <span className="text-muted-foreground">(optional)</span></Label>
+            <Label htmlFor="deck-desc">{tSettings("description")} <span className="text-muted-foreground">({tCommon("optional") ?? "optional"})</span></Label>
             <Textarea
               id="deck-desc"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="What will you study in this deck?"
+              placeholder={tSettings("description_placeholder")}
               rows={2}
               maxLength={1000}
             />
@@ -331,13 +338,13 @@ export function CreateStudyDeckButton({ gate, className }: CreateStudyDeckButton
 
           <DialogFooter>
             <Button type="button" variant="ghost" onClick={() => setOpen(false)}>
-              Cancel
+              {tCommon("cancel")}
             </Button>
             <Button type="submit" disabled={!name.trim() || pending || (iconType === "image" && !imageBlob)}>
               {pending ? (
-                <><Loader2 className="h-4 w-4 mr-1.5 animate-spin" /> Creating…</>
+                <><Loader2 className="h-4 w-4 mr-1.5 animate-spin" /> {tCommon("creating")}</>
               ) : (
-                "Create Deck"
+                tCommon("create")
               )}
             </Button>
           </DialogFooter>

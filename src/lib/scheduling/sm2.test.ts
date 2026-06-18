@@ -329,4 +329,16 @@ describe("formatDueIn", () => {
     const future = new Date(Date.now() + 26 * 60 * 60 * 1000);
     expect(formatDueIn(future)).toBe("Tomorrow");
   });
+
+  it("returns localized outputs if t is present", () => {
+    const mockT = (key: string, values?: Record<string, number | string>) => {
+      if (key === "study.session.due_now") return "Agora";
+      if (key === "study.session.due_minutes") return `${values?.count} minutos`;
+      return key;
+    };
+    const past = new Date(Date.now() - 10_000);
+    expect(formatDueIn(past, mockT)).toBe("Agora");
+    const future = new Date(Date.now() + 30 * 60 * 1000);
+    expect(formatDueIn(future, mockT)).toBe("30 minutos");
+  });
 });

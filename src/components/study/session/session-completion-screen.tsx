@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { PartyPopper, Clock, BookOpen, BarChart2, RotateCcw, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+const ZONE_KEYS = ["again", "hard", "good", "easy"] as const;
 
 interface SessionStats {
   studied: number;
@@ -28,14 +31,16 @@ export function SessionCompletionScreen({
   onFinish,
   onStudyMore,
 }: SessionCompletionScreenProps) {
+  const t = useTranslations("study.session");
+  const tCommon = useTranslations("common");
   const [studyMorePending, setStudyMorePending] = useState(false);
   const [confetti, setConfetti] = useState(false);
 
   // Trigger confetti burst on mount
   useEffect(() => {
     setConfetti(true);
-    const t = setTimeout(() => setConfetti(false), 2000);
-    return () => clearTimeout(t);
+    const tTimer = setTimeout(() => setConfetti(false), 2000);
+    return () => clearTimeout(tTimer);
   }, []);
 
   const retentionPct =
@@ -46,7 +51,9 @@ export function SessionCompletionScreen({
   const durationMin = Math.floor(durationMs / 60000);
   const durationSec = Math.floor((durationMs % 60000) / 1000);
   const durationStr =
-    durationMin > 0 ? `${durationMin}m ${durationSec}s` : `${durationSec}s`;
+    durationMin > 0
+      ? t("duration_min_sec", { minutes: durationMin, seconds: durationSec })
+      : t("duration_sec", { seconds: durationSec });
 
   async function handleStudyMore() {
     setStudyMorePending(true);
@@ -69,9 +76,9 @@ export function SessionCompletionScreen({
         </div>
 
         <div>
-          <h1 className="text-2xl font-bold">Session Complete!</h1>
+          <h1 className="text-2xl font-bold">{t("complete_title")}</h1>
           <p className="text-muted-foreground mt-1 text-sm">
-            Great work — you studied {stats.studied} card{stats.studied !== 1 ? "s" : ""}
+            {t("complete_subtitle", { count: stats.studied })}
           </p>
         </div>
 
@@ -79,23 +86,23 @@ export function SessionCompletionScreen({
         <div className="grid grid-cols-2 gap-3">
           <StatCard
             icon={<BarChart2 className="h-4 w-4" />}
-            label="Retention"
+            label={t("stats.retention")}
             value={`${retentionPct}%`}
             highlight={retentionPct >= 80}
           />
           <StatCard
             icon={<Clock className="h-4 w-4" />}
-            label="Time spent"
+            label={t("stats.time")}
             value={durationStr}
           />
           <StatCard
             icon={<BookOpen className="h-4 w-4" />}
-            label="Cards studied"
+            label={t("stats.cards_studied")}
             value={String(stats.studied)}
           />
           <StatCard
             icon={<RotateCcw className="h-4 w-4" />}
-            label="New cards"
+            label={t("stats.new_cards")}
             value={String(stats.newSeen)}
           />
         </div>
@@ -103,7 +110,7 @@ export function SessionCompletionScreen({
         {/* Rating breakdown */}
         {stats.studied > 0 && (
           <div className="rounded-xl border bg-card p-4">
-            <p className="text-xs text-muted-foreground mb-3 font-medium">Rating breakdown</p>
+            <p className="text-xs text-muted-foreground mb-3 font-medium">{t("rating_breakdown")}</p>
             <div className="flex gap-1 h-2 rounded-full overflow-hidden">
               {[
                 { count: stats.again, color: "hsl(0, 85%, 55%)" },
@@ -124,15 +131,15 @@ export function SessionCompletionScreen({
               )}
             </div>
             <div className="flex justify-between mt-2">
-              {(["Again", "Hard", "Good", "Easy"] as const).map((label, i) => {
+              {ZONE_KEYS.map((key, i) => {
                 const counts = [stats.again, stats.hard, stats.good, stats.easy];
                 const colors = [
                   "text-red-500", "text-orange-500", "text-yellow-500", "text-green-500"
                 ];
                 return (
-                  <div key={label} className="text-center">
+                  <div key={key} className="text-center">
                     <p className={cn("text-xs font-semibold", colors[i])}>{counts[i]}</p>
-                    <p className="text-[10px] text-muted-foreground">{label}</p>
+                    <p className="text-[10px] text-muted-foreground">{t(`rating.${key}`)}</p>
                   </div>
                 );
               })}
@@ -149,18 +156,18 @@ export function SessionCompletionScreen({
             variant="outline"
           >
             {studyMorePending ? (
-              <><Loader2 className="h-4 w-4 mr-1.5 animate-spin" /> Loading…</>
+              <><Loader2 className="h-4 w-4 mr-1.5 animate-spin" /> {tCommon("loading")}</>
             ) : (
-              <><BookOpen className="h-4 w-4 mr-1.5" /> Study More New Cards</>
+              <><BookOpen className="h-4 w-4 mr-1.5" /> {t("study_more")}</>
             )}
           </Button>
           <Button className="w-full" onClick={onFinish}>
-            Finish Session
+            {t("finish")}
           </Button>
           <Button variant="ghost" className="w-full text-muted-foreground text-sm" asChild>
             <Link href={`/stats`}>
               <BarChart2 className="h-4 w-4 mr-1.5" />
-              View Statistics
+              {t("view_stats")}
             </Link>
           </Button>
         </div>

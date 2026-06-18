@@ -36,6 +36,8 @@ import { downloadCsv, flashcardsToCsv } from "@/lib/export/csv";
 import { toast } from "sonner";
 import type { Deck, Flashcard, Plan, Profile } from "@/types";
 import { PLAN_LIMITS } from "@/types";
+import { useTranslations } from "next-intl";
+import { translateError } from "@/lib/i18n/utils";
 
 interface SortableCardProps {
   card: Flashcard;
@@ -45,6 +47,7 @@ interface SortableCardProps {
 }
 
 function SortableCard({ card, index, onUpdate, onDelete }: SortableCardProps) {
+  const t = useTranslations("decks");
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: card.id,
   });
@@ -66,7 +69,9 @@ function SortableCard({ card, index, onUpdate, onDelete }: SortableCardProps) {
         >
           <GripVertical className="h-4 w-4" />
         </button>
-        <CardTitle className="text-sm font-medium flex-1">Card {index + 1}</CardTitle>
+        <CardTitle className="text-sm font-medium flex-1">
+          {t("editor.card_index", { index: index + 1 })}
+        </CardTitle>
         <span className="text-xs text-muted-foreground capitalize">{card.card_type}</span>
         <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => onDelete(card.id)}>
           <Trash2 className="h-4 w-4 text-destructive" />
@@ -74,19 +79,19 @@ function SortableCard({ card, index, onUpdate, onDelete }: SortableCardProps) {
       </CardHeader>
       <CardContent className="space-y-3 pb-4">
         <div>
-          <p className="text-xs text-muted-foreground mb-1">Front</p>
+          <p className="text-xs text-muted-foreground mb-1">{t("editor.front")}</p>
           <RichTextEditor
             content={card.front}
             onChange={(html) => onUpdate(card.id, "front", html)}
-            placeholder="Question or cloze text (use {{c1::answer}} for cloze)"
+            placeholder={t("editor.front_placeholder")}
           />
         </div>
         <div>
-          <p className="text-xs text-muted-foreground mb-1">Back</p>
+          <p className="text-xs text-muted-foreground mb-1">{t("editor.back")}</p>
           <RichTextEditor
             content={card.back}
             onChange={(html) => onUpdate(card.id, "back", html)}
-            placeholder="Answer"
+            placeholder={t("editor.back_placeholder")}
           />
         </div>
       </CardContent>
@@ -102,6 +107,10 @@ interface DeckEditorProps {
 }
 
 export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: DeckEditorProps) {
+  const t = useTranslations("decks");
+  const tCommon = useTranslations("common");
+  const tErr = useTranslations("errors");
+
   const [deck, setDeck] = useState(initialDeck);
   const [cards, setCards] = useState(initialCards);
   const [deckName, setDeckName] = useState(deck.name);
@@ -137,23 +146,23 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
       card_type: deck.card_type === "mixed" ? "basic" : deck.card_type,
     });
     if (result.error) {
-      toast.error(result.error);
+      toast.error(translateError(result.error, tErr));
       return;
     }
     if (result.data) {
       setCards((prev) => [...prev, result.data!]);
-      toast.success("Card added");
+      toast.success(t("editor.toast_card_added"));
     }
   }
 
   async function handleDeleteCard(id: string) {
     const result = await deleteFlashcard(id, deck.id);
     if (result.error) {
-      toast.error(result.error);
+      toast.error(translateError(result.error, tErr));
       return;
     }
     setCards((prev) => prev.filter((c) => c.id !== id));
-    toast.success("Card deleted");
+    toast.success(t("editor.toast_card_deleted"));
   }
 
   async function handleSave() {
@@ -168,35 +177,38 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
     setSaving(false);
 
     if (deckResult.error || cardsResult.error) {
-      toast.error(deckResult.error ?? cardsResult.error ?? "Save failed");
+      toast.error(
+        translateError(deckResult.error ?? cardsResult.error, tErr) ||
+          t("editor.toast_save_failed")
+      );
       return;
     }
 
     if (deckResult.data) setDeck(deckResult.data);
-    toast.success("Deck saved!");
+    toast.success(t("editor.toast_saved"));
   }
 
   async function handleExportCsv() {
     const csv = flashcardsToCsv(deck.name, cards);
     downloadCsv(`${deck.name}.csv`, csv);
-    toast.success("CSV downloaded");
+    toast.success(t("editor.toast_csv_downloaded"));
   }
 
   async function handleExportApkg() {
     if (!PLAN_LIMITS[plan].apkgExport) {
-      toast.error("APKG export requires a Pro subscription.");
+      toast.error(t("editor.apkg_pro_required"));
       return;
     }
 
     setExporting(true);
-    const toastId = toast.loading("Initializing Anki compiler... (loading WebAssembly)");
+    const toastId = toast.loading(t("editor.apkg_loading"));
 
     try {
       const { buildApkgClient } = await import("@/lib/export/apkg-client");
-      toast.loading("Generating APKG package...", { id: toastId });
+      toast.loading(t("editor.apkg_generating"), { id: toastId });
       const bytes = await buildApkgClient(deck.name, cards);
 
-      toast.loading("Downloading...", { id: toastId });
+      toast.loading(t("editor.apkg_downloading"), { id: toastId });
       const blob = new Blob([bytes as unknown as BlobPart], { type: "application/octet-stream" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
@@ -205,7 +217,7 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
       link.click();
       URL.revokeObjectURL(url);
 
-      toast.success("APKG downloaded successfully!", { id: toastId });
+      toast.success(t("editor.toast_apkg_downloaded"), { id: toastId });
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "Failed to export APKG", { id: toastId });
     } finally {
@@ -224,7 +236,7 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
               className="text-2xl font-bold border-0 px-0 h-auto focus-visible:ring-0"
             />
             <p className="text-sm text-muted-foreground">
-              {cards.length} cards · {deck.card_type} · {deck.difficulty}
+              {t("editor.cards_count", { count: cards.length })} · {deck.card_type} · {deck.difficulty}
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -235,11 +247,11 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
             </Button>
             <Button variant="outline" size="sm" onClick={handleExportApkg} disabled={exporting}>
               <Download className={`mr-2 h-4 w-4 ${exporting ? "animate-bounce" : ""}`} />
-              {exporting ? "Exporting..." : "APKG"}
+              {exporting ? tCommon("loading") : "APKG"}
             </Button>
             <Button size="sm" onClick={handleSave} disabled={saving}>
               <Save className="mr-2 h-4 w-4" />
-              {saving ? "Saving..." : "Save"}
+              {saving ? tCommon("saving") : tCommon("save")}
             </Button>
           </div>
         </div>
@@ -262,7 +274,7 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
 
         <Button variant="outline" className="w-full" onClick={handleAddCard}>
           <Plus className="mr-2 h-4 w-4" />
-          Add Card
+          {t("editor.add_card")}
         </Button>
       </div>
     </DashboardShell>

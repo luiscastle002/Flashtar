@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser, getProfile } from "@/lib/queries/user";
 import { getProfileAvatarUrl } from "@/lib/utils/image";
+import type { Locale } from "@/lib/i18n/config";
 
 /**
  * Extracts Google avatar URL from user metadata
@@ -36,13 +37,13 @@ export async function getProfileAvatar(): Promise<string | null> {
  */
 export async function updateProfileAvatar(customAvatarPath: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
-  if (!customAvatarPath) return { error: "Custom avatar path is required" };
+  if (!customAvatarPath) return { error: "errors.profile.avatar_path_required" };
 
   const supabase = await createClient();
   const publicUrl = getProfileAvatarUrl(customAvatarPath);
-  if (!publicUrl) return { error: "Failed to resolve avatar URL" };
+  if (!publicUrl) return { error: "errors.profile.avatar_resolve_failed" };
 
   const { data, error } = await supabase
     .from("profiles")
@@ -68,10 +69,10 @@ export async function updateProfileAvatar(customAvatarPath: string) {
  */
 export async function resetToGoogleAvatar() {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const profile = await getProfile();
-  if (!profile) return { error: "Profile not found" };
+  if (!profile) return { error: "errors.profile.not_found" };
 
   const supabase = await createClient();
 
@@ -91,6 +92,31 @@ export async function resetToGoogleAvatar() {
       avatar_type: "google",
       custom_avatar_path: null,
       avatar_url: googleAvatarUrl,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", user.id)
+    .select()
+    .single();
+
+  if (error) return { error: error.message };
+
+  revalidatePath("/settings");
+  revalidatePath("/dashboard");
+  return { success: true, data };
+}
+
+/**
+ * Updates the user's preferred language in the profile
+ */
+export async function updatePreferredLanguage(language: Locale) {
+  const user = await getCurrentUser();
+  if (!user) return { error: "errors.auth.not_authenticated" };
+
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("profiles")
+    .update({
+      preferred_language: language,
       updated_at: new Date().toISOString(),
     })
     .eq("id", user.id)

@@ -43,6 +43,8 @@ import {
 } from "@/components/ui/dialog";
 import { Progress } from "@/components/ui/progress";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
+import { translateError } from "@/lib/i18n/utils";
 import type { Plan, Profile, SavedPrompt } from "@/types";
 import { PLAN_LIMITS } from "@/types";
 import { cn } from "@/lib/utils";
@@ -70,12 +72,12 @@ type GenerationState =
   | "redirecting"
   | "error";
 
-const STATUS_MESSAGES = [
-  "🧠 Reading your files...",
-  "📝 Extracting text...",
-  "✨ Generating flashcards...",
-  "📚 Preparing your deck...",
-];
+const STATUS_KEYS = [
+  "reading",
+  "extracting",
+  "generating",
+  "organizing",
+] as const;
 
 function uploadWithProgress(
   url: string,
@@ -99,20 +101,20 @@ function uploadWithProgress(
           const response = JSON.parse(xhr.responseText);
           resolve(response);
         } catch {
-          reject(new Error("Failed to parse response"));
+          reject(new Error("errors.generate.parse_failed"));
         }
       } else {
         try {
           const response = JSON.parse(xhr.responseText);
-          reject(new Error(response.error ?? `Upload failed with status ${xhr.status}`));
+          reject(new Error(response.error ?? "errors.generate.failed"));
         } catch {
-          reject(new Error(`Upload failed with status ${xhr.status}`));
+          reject(new Error("errors.generate.failed"));
         }
       }
     };
 
     xhr.onerror = () => {
-      reject(new Error("Network error occurred"));
+      reject(new Error("errors.generate.network_error"));
     };
 
     xhr.send(formData);
@@ -122,10 +124,15 @@ function uploadWithProgress(
 const ALLOWED_EXTENSIONS = ["pdf", "docx", "pptx", "xlsx", "txt", "png", "jpg", "jpeg", "webp"];
 const ACCEPT_ATTRIBUTE = ".pdf,.docx,.pptx,.xlsx,.txt,.png,.jpg,.jpeg,.webp";
 
-function formatFileSize(bytes: number) {
-  if (bytes === 0) return "0 Bytes";
+function formatFileSize(bytes: number, tCommon: (key: string) => string) {
+  if (bytes === 0) return `0 ${tCommon("file_size.bytes")}`;
   const k = 1024;
-  const sizes = ["Bytes", "KB", "MB", "GB"];
+  const sizes = [
+    tCommon("file_size.bytes"),
+    tCommon("file_size.kb"),
+    tCommon("file_size.mb"),
+    tCommon("file_size.gb")
+  ];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + " " + sizes[i];
 }
@@ -147,6 +154,18 @@ function getFileIcon(fileName: string) {
 
 export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts }: GeneratePageProps) {
   const router = useRouter();
+  const t = useTranslations("generate");
+  const tCommon = useTranslations("common");
+  const tRoot = useTranslations();
+  const langKeyMap: Record<string, string> = {
+    English: "language.english",
+    Spanish: "language.spanish",
+    Portuguese: "language.portuguese",
+    Japanese: "language.japanese",
+    French: "language.french",
+    German: "language.german",
+    Chinese: "language.chinese",
+  };
   const limits = PLAN_LIMITS[plan];
   const [generationState, setGenerationState] = useState<GenerationState>("idle");
   const loading = generationState !== "idle";
@@ -160,7 +179,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
     }
 
     const interval = setInterval(() => {
-      setCurrentMessageIndex((prev) => (prev + 1) % STATUS_MESSAGES.length);
+      setCurrentMessageIndex((prev) => (prev + 1) % STATUS_KEYS.length);
     }, 4000);
 
     return () => clearInterval(interval);
@@ -256,7 +275,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
   const handleCloseConfig = (open: boolean) => {
     if (!open) {
       if (tempInstructions !== customInstructions) {
-        if (!confirm("You have unsaved changes in AI Instructions. Discard them?")) {
+        if (!confirm(t("confirm_discard_changes"))) {
           return;
         }
       }
@@ -266,12 +285,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
 
   const handleApplyConfig = () => {
     if (tempInstructions.length > 2000) {
-      toast.error("AI Instructions cannot exceed 2000 characters");
+      toast.error(t("toast_instructions_limit"));
       return;
     }
     setCustomInstructions(tempInstructions);
     setConfigOpen(false);
-    toast.success("Configuration applied");
+    toast.success(t("toast_config_applied"));
   };
 
   // CRUD actions using server actions with optimistic updates
@@ -280,10 +299,10 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       setOptimisticPrompts({ type: "delete", payload: id });
       const res = await deleteSavedPrompt(id);
       if (res && "error" in res) {
-        toast.error(res.error);
+        toast.error(translateError(res.error, tRoot));
       } else {
         setSavedPrompts((prev) => prev.filter((p) => p.id !== id));
-        toast.success("Prompt deleted");
+        toast.success(t("toast_prompt_deleted"));
       }
     });
   };
@@ -294,7 +313,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       setOptimisticPrompts({ type: "update", payload: { id: promptItem.id, updates: { is_favorite: newFav } } });
       const res = await updateSavedPrompt(promptItem.id, { is_favorite: newFav });
       if (res && "error" in res) {
-        toast.error(res.error);
+        toast.error(translateError(res.error, tRoot));
       } else if (res.data) {
         setSavedPrompts((prev) => prev.map((p) => (p.id === promptItem.id ? res.data : p)));
       }
@@ -307,7 +326,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       setOptimisticPrompts({ type: "update", payload: { id: promptItem.id, updates: { is_default: newDefault } } });
       const res = await updateSavedPrompt(promptItem.id, { is_default: newDefault });
       if (res && "error" in res) {
-        toast.error(res.error);
+        toast.error(translateError(res.error, tRoot));
       } else if (res.data) {
         setSavedPrompts((prev) => {
           return prev.map((p) => {
@@ -322,15 +341,15 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
 
   const handleCreatePrompt = async () => {
     if (!newPromptName.trim()) {
-      toast.error("Please enter a name for the prompt");
+      toast.error(t("toast_prompt_empty"));
       return;
     }
     if (!tempInstructions.trim()) {
-      toast.error("AI Instructions are empty");
+      toast.error(t("toast_instructions_empty"));
       return;
     }
     if (tempInstructions.length > 5000) {
-      toast.error("Instructions cannot exceed 5000 characters to save");
+      toast.error(t("toast_instructions_save_limit"));
       return;
     }
 
@@ -350,11 +369,11 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       setOptimisticPrompts({ type: "add", payload: newPromptPlaceholder });
       const res = await createSavedPrompt(newPromptName.trim(), tempInstructions.trim());
       if (res && "error" in res) {
-        toast.error(res.error);
+        toast.error(translateError(res.error, tRoot));
       } else if (res.data) {
         setSavedPrompts((prev) => [res.data, ...prev]);
         setNewPromptName("");
-        toast.success("Prompt saved");
+        toast.success(t("toast_prompt_saved"));
       }
     });
   };
@@ -374,18 +393,18 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
     e.preventDefault();
 
     if (prompt.length < 10) {
-      toast.error("Please enter a more detailed prompt (at least 10 characters).");
+      toast.error(t("toast_prompt_short"));
       return;
     }
 
     const maxCards = Math.min(limits.maxCardsPerDeck, 50);
     if (cardCount > maxCards) {
-      toast.error(`Your plan allows up to ${maxCards} cards per deck.`);
+      toast.error(t("toast_plan_limit", { max: maxCards }));
       return;
     }
 
     if (remaining <= 0) {
-      toast.error("You've reached your monthly generation limit. Upgrade to Pro for unlimited generations.");
+      toast.error(t("toast_limit_reached"));
       return;
     }
 
@@ -405,11 +424,11 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       }
 
       setGenerationState("redirecting");
-      toast.success(`Generated ${data.cardCount} flashcards!`);
+      toast.success(t("toast_generated_count", { count: data.cardCount }));
       router.push(`/decks/${data.deck.id}`);
     } catch (error) {
       setGenerationState("idle");
-      toast.error(error instanceof Error ? error.message : "Generation failed");
+      toast.error(error instanceof Error ? translateError(error.message, tRoot) : tRoot("errors.generate.failed"));
     }
   }
 
@@ -417,29 +436,29 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
     e.preventDefault();
 
     if (uploadedFiles.length === 0) {
-      toast.error("Please upload at least one file.");
+      toast.error(t("toast_upload_empty"));
       return;
     }
 
     if (uploadedFiles.length > 5) {
-      toast.error("Maximum of 5 files can be uploaded per request.");
+      toast.error(t("toast_max_files"));
       return;
     }
 
     const totalSize = uploadedFiles.reduce((sum, f) => sum + f.size, 0);
     if (totalSize > 4 * 1024 * 1024) {
-      toast.error("Maximum combined file upload size is 4MB.");
+      toast.error(t("toast_max_size"));
       return;
     }
 
     const maxCards = Math.min(limits.maxCardsPerDeck, 50);
     if (cardCount > maxCards) {
-      toast.error(`Your plan allows up to ${maxCards} cards per deck.`);
+      toast.error(t("toast_plan_limit", { max: maxCards }));
       return;
     }
 
     if (remaining <= 0) {
-      toast.error("You've reached your monthly generation limit. Upgrade to Pro for unlimited generations.");
+      toast.error(t("toast_limit_reached"));
       return;
     }
 
@@ -468,12 +487,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       });
 
       setGenerationState("redirecting");
-      toast.success(`Generated ${data.cardCount} flashcards!`);
+      toast.success(t("toast_generated_count", { count: data.cardCount }));
       router.push(`/decks/${data.deck.id}`);
     } catch (error) {
       setGenerationState("idle");
       setProgress(0);
-      toast.error(error instanceof Error ? error.message : "Generation failed");
+      toast.error(error instanceof Error ? translateError(error.message, tRoot) : tRoot("errors.generate.failed"));
     }
   }
 
@@ -481,18 +500,18 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
     e.preventDefault();
 
     if (!url) {
-      toast.error("Please enter a valid URL.");
+      toast.error(t("toast_invalid_url"));
       return;
     }
 
     const maxCards = Math.min(limits.maxCardsPerDeck, 50);
     if (cardCount > maxCards) {
-      toast.error(`Your plan allows up to ${maxCards} cards per deck.`);
+      toast.error(t("toast_plan_limit", { max: maxCards }));
       return;
     }
 
     if (remaining <= 0) {
-      toast.error("You've reached your monthly generation limit. Upgrade to Pro for unlimited generations.");
+      toast.error(t("toast_limit_reached"));
       return;
     }
 
@@ -521,11 +540,11 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       }
 
       setGenerationState("redirecting");
-      toast.success(`Generated ${data.cardCount} flashcards!`);
+      toast.success(t("toast_generated_count", { count: data.cardCount }));
       router.push(`/decks/${data.deck.id}`);
     } catch (error) {
       setGenerationState("idle");
-      toast.error(error instanceof Error ? error.message : "Generation failed");
+      toast.error(error instanceof Error ? translateError(error.message, tRoot) : tRoot("errors.generate.failed"));
     }
   }
 
@@ -550,37 +569,37 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
     const hasFiles = files.length > 0;
 
     if (hasUrl && !hasFiles) {
-      toast.error("Use URL panel instead.");
+      toast.error(t("toast_use_url"));
       return;
     }
 
     if (hasUrl && hasFiles) {
-      toast.error("Use URL panel instead.");
+      toast.error(t("toast_use_url"));
     }
 
     if (hasFiles) {
       const validFiles = files.filter((file) => {
         const ext = file.name.split('.').pop()?.toLowerCase();
         if (ext === "xlsx" && file.size > 1 * 1024 * 1024) {
-          toast.error(`Excel file "${file.name}" exceeds the 1MB limit.`);
+          toast.error(t("toast_excel_limit", { name: file.name }));
           return false;
         }
         return ext && ALLOWED_EXTENSIONS.includes(ext);
       });
 
       if (validFiles.length < files.length) {
-        toast.error("This file type is not supported.");
+        toast.error(t("toast_file_unsupported"));
       }
 
       if (validFiles.length > 0) {
         if (uploadedFiles.length + validFiles.length > 5) {
-          toast.error("Maximum of 5 files can be uploaded per request.");
+          toast.error(t("toast_max_files"));
           return;
         }
 
         const totalSize = [...uploadedFiles, ...validFiles].reduce((sum, f) => sum + f.size, 0);
         if (totalSize > 4 * 1024 * 1024) {
-          toast.error("Maximum combined file upload size is 4MB.");
+          toast.error(t("toast_max_size"));
           return;
         }
 
@@ -595,25 +614,25 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       const validFiles = files.filter((file) => {
         const ext = file.name.split('.').pop()?.toLowerCase();
         if (ext === "xlsx" && file.size > 1 * 1024 * 1024) {
-          toast.error(`Excel file "${file.name}" exceeds the 1MB limit.`);
+          toast.error(t("toast_excel_limit", { name: file.name }));
           return false;
         }
         return ext && ALLOWED_EXTENSIONS.includes(ext);
       });
 
       if (validFiles.length < files.length) {
-        toast.error("This file type is not supported.");
+        toast.error(t("toast_file_unsupported"));
       }
 
       if (validFiles.length > 0) {
         if (uploadedFiles.length + validFiles.length > 5) {
-          toast.error("Maximum of 5 files can be uploaded per request.");
+          toast.error(t("toast_max_files"));
           return;
         }
 
         const totalSize = [...uploadedFiles, ...validFiles].reduce((sum, f) => sum + f.size, 0);
         if (totalSize > 4 * 1024 * 1024) {
-          toast.error("Maximum combined file upload size is 4MB.");
+          toast.error(t("toast_max_size"));
           return;
         }
 
@@ -630,21 +649,21 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
   const renderMainControls = () => (
     <div className="grid sm:grid-cols-2 gap-4">
       <div className="space-y-2">
-        <Label>Card Type</Label>
+        <Label>{t("card_type")}</Label>
         <Select value={cardType} onValueChange={setCardType} disabled={loading}>
           <SelectTrigger>
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="basic">Basic Front/Back</SelectItem>
-            <SelectItem value="cloze">Cloze Deletion</SelectItem>
-            <SelectItem value="mixed">Mixed</SelectItem>
+            <SelectItem value="basic">{t("basic_type")}</SelectItem>
+            <SelectItem value="cloze">{t("cloze_type")}</SelectItem>
+            <SelectItem value="mixed">{t("mixed_type")}</SelectItem>
           </SelectContent>
         </Select>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="cardCount">Number of Cards</Label>
+        <Label htmlFor="cardCount">{t("number_of_cards")}</Label>
         <Input
           id="cardCount"
           type="number"
@@ -654,7 +673,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
           onChange={(e) => setCardCount(Number(e.target.value))}
           disabled={loading}
         />
-        <p className="text-xs text-muted-foreground">Max {limits.maxCardsPerDeck} on your plan</p>
+        <p className="text-xs text-muted-foreground">{t("max_cards_plan", { max: limits.maxCardsPerDeck })}</p>
       </div>
     </div>
   );
@@ -665,10 +684,10 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
         <div>
           <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2">
             <Sparkles className="h-7 w-7 text-primary" />
-            Generate Deck
+            {t("title")}
           </h1>
           <p className="text-muted-foreground">
-            Describe what you want to learn and AI will create a complete flashcard deck.
+            {t("description")}
           </p>
         </div>
 
@@ -676,8 +695,8 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
           <Card>
             <CardContent className="pt-6">
               <div className="flex justify-between text-sm mb-2">
-                <span>Monthly generations remaining</span>
-                <span className="font-medium">{remaining} of {limits.monthlyGenerations}</span>
+                <span>{t("monthly_remaining")}</span>
+                <span className="font-medium">{t("remaining_count", { remaining, total: limits.monthlyGenerations })}</span>
               </div>
               <Progress
                 value={(monthlyGenerations / limits.monthlyGenerations) * 100}
@@ -700,7 +719,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
             )}
           >
             <Sparkles className="h-4 w-4" />
-            Prompt
+            {t("prompt_tab")}
           </button>
           <button
             type="button"
@@ -713,7 +732,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
             )}
           >
             <Folder className="h-4 w-4" />
-            Import Files
+            {t("files_tab")}
           </button>
           <button
             type="button"
@@ -726,7 +745,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
             )}
           >
             <LinkIcon className="h-4 w-4" />
-            Import URL
+            {t("url_tab")}
           </button>
         </div>
 
@@ -734,16 +753,16 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
           {mode === "prompt" ? (
             <Card className="transition-all duration-300">
               <CardHeader>
-                <CardTitle>Deck Settings</CardTitle>
-                <CardDescription>Configure your AI-generated flashcard deck</CardDescription>
+                <CardTitle>{t("configuration")}</CardTitle>
+                <CardDescription>{t("config_desc")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleGenerate} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="prompt">Prompt</Label>
+                    <Label htmlFor="prompt">{t("prompt_label")}</Label>
                     <Textarea
                       id="prompt"
-                      placeholder="Create a deck of 50 flashcards about JavaScript closures..."
+                      placeholder={t("prompt_placeholder")}
                       value={prompt}
                       onChange={(e) => setPrompt(e.target.value)}
                       rows={4}
@@ -763,7 +782,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                       disabled={loading}
                     >
                       <SlidersHorizontal className="mr-2 h-4 w-4" />
-                      Configuration
+                      {t("configuration")}
                       {customInstructions.trim() && (
                         <span className="ml-2 w-2 h-2 rounded-full bg-primary" />
                       )}
@@ -774,12 +793,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                     {loading ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Generating...
+                        {t("generating")}
                       </>
                     ) : (
                       <>
                         <Sparkles className="mr-2 h-4 w-4" />
-                        Generate Deck
+                        {t("generate_deck")}
                       </>
                     )}
                   </Button>
@@ -789,20 +808,29 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
           ) : mode === "import" ? (
             <Card className="transition-all duration-300">
               <CardHeader>
-                <CardTitle>Import Files</CardTitle>
+                <CardTitle>{t("import_files_title")}</CardTitle>
                 <CardDescription>
-                  Upload documents, text files, or images and AI will generate flashcards automatically.
+                  {t("import_files_desc")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleImportGenerate} className="space-y-6">
                   <div
                     onClick={() => fileInputRef.current?.click()}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        fileInputRef.current?.click();
+                      }
+                    }}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
                     onDrop={handleDrop}
+                    tabIndex={0}
+                    role="button"
+                    aria-describedby="file-upload-formats"
                     className={cn(
-                      "border-2 border-dashed rounded-xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 cursor-pointer select-none",
+                      "border-2 border-dashed rounded-xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 cursor-pointer select-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 outline-none",
                       isDragging
                         ? "border-primary bg-primary/10 scale-[0.99]"
                         : "border-border/60 hover:border-primary/50 bg-muted/20 hover:bg-muted/40"
@@ -822,10 +850,13 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                     </div>
                     <div>
                       <p className="text-sm font-medium">
-                        Drag and drop files here or <span className="text-primary hover:underline">click to browse</span>
+                        {t.rich("drag_drop_files", {
+                          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                          browse: (_chunks) => <span className="text-primary hover:underline">{t("click_browse")}</span>
+                        })}
                       </p>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        Supported formats: PDF, Word, Excel, PowerPoint, Images, Text (.txt)
+                      <p id="file-upload-formats" className="text-xs text-muted-foreground mt-1">
+                        {t("supported_formats")}
                       </p>
                     </div>
                   </div>
@@ -848,7 +879,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                                   {file.name}
                                 </p>
                                 <p className="text-xs text-muted-foreground">
-                                  {formatFileSize(file.size)}
+                                  {formatFileSize(file.size, tCommon)}
                                 </p>
                               </div>
                             </div>
@@ -882,7 +913,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                       disabled={loading}
                     >
                       <SlidersHorizontal className="mr-2 h-4 w-4" />
-                      Configuration
+                      {t("configuration")}
                       {customInstructions.trim() && (
                         <span className="ml-2 w-2 h-2 rounded-full bg-primary" />
                       )}
@@ -893,7 +924,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Loader2 className="h-4 w-4 animate-spin" />
-                        Uploading files ({progress}%)...
+                        {t("uploading_files", { percent: progress })}
                       </div>
                       <Progress value={progress} className="h-2" />
                     </div>
@@ -908,12 +939,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                     {loading ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Generating...
+                        {t("generating")}
                       </>
                     ) : (
                       <>
                         <Sparkles className="mr-2 h-4 w-4" />
-                        Generate From Files
+                        {t("generate_from_files")}
                       </>
                     )}
                   </Button>
@@ -923,26 +954,26 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
           ) : (
             <Card className="transition-all duration-300">
               <CardHeader>
-                <CardTitle>Import URL</CardTitle>
+                <CardTitle>{t("import_url_title")}</CardTitle>
                 <CardDescription>
-                  Enter a web page or YouTube link and AI will generate flashcards automatically.
+                  {t("import_url_desc")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleUrlGenerate} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="url-input">URL</Label>
+                    <Label htmlFor="url-input">{t("url_label")}</Label>
                     <Input
                       id="url-input"
                       type="url"
-                      placeholder="https://example.com/article-to-learn-from"
+                      placeholder={t("url_placeholder")}
                       value={url}
                       onChange={(e) => setUrl(e.target.value)}
                       required
                       disabled={loading}
                     />
                     <p className="text-xs text-muted-foreground">
-                      YouTube videos, articles, and documentation pages are supported.
+                      {t("url_supported_hint")}
                     </p>
                   </div>
 
@@ -957,7 +988,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                       disabled={loading}
                     >
                       <SlidersHorizontal className="mr-2 h-4 w-4" />
-                      Configuration
+                      {t("configuration")}
                       {customInstructions.trim() && (
                         <span className="ml-2 w-2 h-2 rounded-full bg-primary" />
                       )}
@@ -973,12 +1004,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                     {loading ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Generating...
+                        {t("generating")}
                       </>
                     ) : (
                       <>
                         <Sparkles className="mr-2 h-4 w-4" />
-                        Generate From URL
+                        {t("generate_from_url")}
                       </>
                     )}
                   </Button>
@@ -993,9 +1024,9 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       <Dialog open={configOpen} onOpenChange={handleCloseConfig}>
         <DialogContent className="max-w-xl max-h-[85vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>Generation Configuration</DialogTitle>
+            <DialogTitle>{t("config_title")}</DialogTitle>
             <DialogDescription>
-              Customize system instructions and deck configurations.
+              {t("config_desc")}
             </DialogDescription>
           </DialogHeader>
 
@@ -1003,7 +1034,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
             {/* AI Custom Instructions */}
             <div className="space-y-2">
               <div className="flex justify-between items-center">
-                <Label htmlFor="custom-instructions">AI Instructions</Label>
+                <Label htmlFor="custom-instructions">{t("ai_instructions")}</Label>
                 <span className={cn(
                   "text-xs text-muted-foreground",
                   tempInstructions.length > 2000 && "text-destructive font-medium"
@@ -1013,18 +1044,18 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
               </div>
               <Textarea
                 id="custom-instructions"
-                placeholder="Examples:&#13;• Focus heavily on specific terms and direct definitions.&#13;• Structure questions like college exam items.&#13;• Avoid basic trivia; prioritize deep conceptual links.&#13;• Translate and include phonetic spelling on the back."
+                placeholder={t("ai_instructions_placeholder")}
                 value={tempInstructions}
                 onChange={(e) => setTempInstructions(e.target.value)}
                 rows={5}
-                className="resize-none"
+                className="whitespace-pre-wrap resize-none"
               />
             </div>
 
             {/* Language & Difficulty Settings */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label>Language</Label>
+                <Label>{t("language")}</Label>
                 <Select value={language} onValueChange={handleLanguageChange}>
                   <SelectTrigger>
                     <SelectValue />
@@ -1033,7 +1064,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                     {["English", "Spanish", "French", "German", "Portuguese", "Japanese", "Chinese"].map(
                       (lang) => (
                         <SelectItem key={lang} value={lang}>
-                          {lang}
+                          {langKeyMap[lang] ? tRoot(langKeyMap[lang] as Parameters<typeof tRoot>[0]) : lang}
                         </SelectItem>
                       )
                     )}
@@ -1042,15 +1073,15 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
               </div>
 
               <div className="space-y-2">
-                <Label>Difficulty</Label>
+                <Label>{t("difficulty")}</Label>
                 <Select value={difficulty} onValueChange={handleDifficultyChange}>
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="beginner">Beginner</SelectItem>
-                    <SelectItem value="intermediate">Intermediate</SelectItem>
-                    <SelectItem value="advanced">Advanced</SelectItem>
+                    <SelectItem value="beginner">{t("difficulty_beginner")}</SelectItem>
+                    <SelectItem value="intermediate">{t("difficulty_intermediate")}</SelectItem>
+                    <SelectItem value="advanced">{t("difficulty_advanced")}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -1068,10 +1099,10 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                   ) : (
                     <ChevronDown className="h-4 w-4 text-muted-foreground" />
                   )}
-                  System Templates
+                  {t("system_templates")}
                 </h3>
                 <span className="text-[10px] bg-muted px-1.5 py-0.5 rounded text-muted-foreground font-medium">
-                  {SYSTEM_PROMPTS.length} Example{SYSTEM_PROMPTS.length !== 1 ? 's' : ''}
+                  {t("example_count_plural", { count: SYSTEM_PROMPTS.length })}
                 </span>
               </div>
 
@@ -1085,7 +1116,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                       <div className="min-w-0 flex-1 pr-2">
                         <div className="flex items-center gap-1.5">
                           <span className="font-semibold text-xs truncate max-w-[200px]">{p.name}</span>
-                          <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-medium">Built-in</span>
+                          <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-medium">{t("builtin")}</span>
                         </div>
                         <p className="text-[11px] text-muted-foreground truncate max-w-[350px]">
                           {p.content}
@@ -1100,10 +1131,10 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                           className="h-7 px-2 text-xs font-semibold hover:bg-background/80"
                           onClick={() => {
                             setTempInstructions(p.content);
-                            toast.success(`Loaded system template: ${p.name}`);
+                            toast.success(t("toast_loaded_system", { name: p.name }));
                           }}
                         >
-                          Load
+                          {t("load")}
                         </Button>
                       </div>
                     </div>
@@ -1114,12 +1145,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
 
             {/* Saved Prompt Manager */}
             <div className="border-t pt-4 space-y-3">
-              <h3 className="text-sm font-semibold tracking-tight">Your Templates</h3>
+              <h3 className="text-sm font-semibold tracking-tight">{t("your_templates")}</h3>
 
               {/* Inline Save Prompt Action */}
               <div className="flex gap-2">
                 <Input
-                  placeholder="Save current instructions as name..."
+                  placeholder={t("save_current_placeholder")}
                   value={newPromptName}
                   onChange={(e) => setNewPromptName(e.target.value)}
                   className="flex-1"
@@ -1131,7 +1162,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                   onClick={handleCreatePrompt}
                   disabled={isPending || !tempInstructions.trim()}
                 >
-                  Save Current
+                  {t("save_current")}
                 </Button>
               </div>
 
@@ -1139,7 +1170,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
               <div className="space-y-2 max-h-[200px] overflow-y-auto pr-1">
                 {optimisticPrompts.length === 0 ? (
                   <p className="text-xs text-muted-foreground text-center py-4">
-                    No custom templates saved yet. Write instructions above and save to repeat them.
+                    {t("no_templates")}
                   </p>
                 ) : (
                   optimisticPrompts.map((p) => (
@@ -1154,7 +1185,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                         <div className="flex items-center gap-1.5">
                           <span className="font-semibold text-xs truncate max-w-[150px]">{p.name}</span>
                           {p.is_default && (
-                            <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-medium">Default</span>
+                            <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-medium">{t("default")}</span>
                           )}
                         </div>
                         <p className="text-[11px] text-muted-foreground truncate max-w-[280px]">
@@ -1171,10 +1202,10 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                           className="h-7 px-2 text-xs font-semibold hover:bg-background/80"
                           onClick={() => {
                             setTempInstructions(p.content);
-                            toast.success(`Loaded prompt template: ${p.name}`);
+                            toast.success(t("toast_loaded_prompt", { name: p.name }));
                           }}
                         >
-                          Load
+                          {t("load")}
                         </Button>
 
                         {/* Favorite button */}
@@ -1201,7 +1232,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                             p.is_default && "text-primary fill-primary"
                           )}
                           onClick={() => handleToggleDefault(p)}
-                          title={p.is_default ? "Primary default instruction" : "Set as default prompt"}
+                          title={p.is_default ? t("primary_default") : t("set_default")}
                         >
                           <Pin className="h-3.5 w-3.5" />
                         </Button>
@@ -1213,7 +1244,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                           size="icon"
                           className="h-7 w-7 text-muted-foreground hover:text-destructive hover:bg-background/80"
                           onClick={() => {
-                            if (confirm(`Are you sure you want to delete "${p.name}"?`)) {
+                            if (confirm(t("confirm_delete_prompt", { name: p.name }))) {
                               handleDeletePrompt(p.id);
                             }
                           }}
@@ -1234,14 +1265,14 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
               variant="outline"
               onClick={() => handleCloseConfig(false)}
             >
-              Cancel
+              {tCommon("cancel")}
             </Button>
             <Button
               type="button"
               onClick={handleApplyConfig}
               disabled={tempInstructions.length > 2000}
             >
-              Apply Settings
+              {t("apply_settings")}
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -1262,12 +1293,11 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
             <div className="space-y-2">
               <h2 className="text-xl md:text-2xl font-bold tracking-tight text-foreground transition-all duration-300 min-h-[2.5rem]">
                 {generationState === "redirecting" 
-                  ? "📚 Opening your deck..." 
-                  : STATUS_MESSAGES[currentMessageIndex]}
+                  ? t("status.opening_deck") 
+                  : t(`status.${STATUS_KEYS[currentMessageIndex]}`)}
               </h2>
-              <p className="text-sm text-muted-foreground max-w-[280px] sm:max-w-[320px] leading-relaxed">
-                Please don&apos;t close this page.<br />
-                Large PDFs and images may take up to 1 minute.
+              <p className="text-sm text-muted-foreground max-w-[280px] sm:max-w-[320px] leading-relaxed whitespace-pre-line">
+                {t("please_wait_hint")}
               </p>
             </div>
           </div>

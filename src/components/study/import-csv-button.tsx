@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/dialog";
 import { importFromCsv } from "@/actions/imports";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
+import { translateError } from "@/lib/i18n/utils";
 
 interface ImportCsvButtonProps {
   deckId: string;
@@ -28,6 +30,9 @@ interface ParsedCard {
 
 export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
   const router = useRouter();
+  const t = useTranslations("study.csv");
+  const tRoot = useTranslations();
+  
   const [open, setOpen] = useState(false);
   const [fileName, setFileName] = useState("");
   const [parsedRows, setParsedRows] = useState<ParsedCard[]>([]);
@@ -95,7 +100,7 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
       }
 
       if (rows.length === 0) {
-        setParseError("Could not find any valid rows. Ensure values are comma-separated.");
+        setParseError(t("invalid_rows"));
         return;
       }
 
@@ -114,7 +119,7 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
 
       const finalRows = rows.slice(startIndex);
       if (finalRows.length === 0) {
-        setParseError("The file only contains a header row.");
+        setParseError(t("header_only"));
         return;
       }
 
@@ -122,7 +127,7 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
       setParseError("");
     } catch (err) {
       console.error(err);
-      setParseError("An error occurred while parsing the CSV file.");
+      setParseError(t("parse_error"));
     }
   }
 
@@ -134,7 +139,7 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
 
   function processFile(file: File) {
     if (file.type !== "text/csv" && !file.name.endsWith(".csv")) {
-      setParseError("Only .csv files are supported.");
+      setParseError(t("unsupported_format"));
       return;
     }
     setFileName(file.name);
@@ -145,7 +150,7 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
       parseCsvContent(text);
     };
     reader.onerror = () => {
-      setParseError("Failed to read file.");
+      setParseError(t("read_failed"));
     };
     reader.readAsText(file);
   }
@@ -177,15 +182,11 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
     startTransition(async () => {
       const result = await importFromCsv(deckId, parsedRows);
       if ("error" in result && result.error) {
-        toast.error(result.error);
+        toast.error(translateError(result.error, tRoot));
         return;
       }
 
-      toast.success(
-        `Imported ${result.imported} card${
-          result.imported !== 1 ? "s" : ""
-        } successfully!`
-      );
+      toast.success(t("toast_success", { count: result.imported ?? 0 }));
       setOpen(false);
       router.refresh();
     });
@@ -198,14 +199,14 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
       <DialogTrigger asChild>
         <Button variant="outline" size="sm">
           <Upload className="h-4 w-4 mr-1.5" />
-          Import CSV
+          {t("button")}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle>Import from CSV</DialogTitle>
+          <DialogTitle>{t("title")}</DialogTitle>
           <DialogDescription>
-            Upload a CSV file. The first column will be imported as **Front**, the second as **Back**, and the optional third column (semicolon-separated) as **Tags**.
+            {t("description")}
           </DialogDescription>
         </DialogHeader>
 
@@ -218,7 +219,16 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
               onDragLeave={handleDrag}
               onDrop={handleDrop}
               onClick={() => fileInputRef.current?.click()}
-              className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all flex flex-col items-center justify-center gap-2 ${
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  fileInputRef.current?.click();
+                }
+              }}
+              tabIndex={0}
+              role="button"
+              aria-describedby="csv-upload-limits"
+              className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all flex flex-col items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 outline-none ${
                 dragActive
                   ? "border-primary bg-primary/5"
                   : "border-border hover:border-primary/50 hover:bg-accent/40"
@@ -234,8 +244,8 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
               <div className="p-3 bg-primary/10 rounded-full text-primary">
                 <Upload className="h-6 w-6" />
               </div>
-              <p className="text-sm font-medium">Click to upload or drag & drop</p>
-              <p className="text-xs text-muted-foreground">Supported format: CSV (max 10MB)</p>
+              <p className="text-sm font-medium">{t("upload_drag")}</p>
+              <p id="csv-upload-limits" className="text-xs text-muted-foreground">{t("support_format")}</p>
             </div>
           ) : (
             <div className="space-y-4">
@@ -246,12 +256,12 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
                   <div className="min-w-0">
                     <p className="text-sm font-medium truncate">{fileName}</p>
                     <p className="text-xs text-muted-foreground">
-                      {parsedRows.length} cards detected
+                      {tRoot("study.import.cards_count_plural", { count: parsedRows.length })}
                     </p>
                   </div>
                 </div>
                 <Button variant="ghost" size="sm" onClick={resetState} disabled={pending}>
-                  Change File
+                  {t("change_file")}
                 </Button>
               </div>
 
@@ -267,15 +277,15 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
               {!parseError && parsedRows.length > 0 && (
                 <div className="space-y-1.5">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                    Preview (First 5 rows):
+                    {t("preview_title")}
                   </p>
                   <div className="border rounded-md overflow-hidden bg-accent/5">
                     <table className="w-full text-xs text-left border-collapse">
                       <thead>
                         <tr className="bg-accent/20 border-b">
-                          <th className="p-2 font-semibold">Front</th>
-                          <th className="p-2 font-semibold">Back</th>
-                          <th className="p-2 font-semibold">Tags</th>
+                          <th className="p-2 font-semibold">{t("table_front")}</th>
+                          <th className="p-2 font-semibold">{t("table_back")}</th>
+                          <th className="p-2 font-semibold">{t("table_tags")}</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y">
@@ -309,7 +319,7 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
 
         <DialogFooter>
           <Button variant="ghost" size="sm" onClick={() => setOpen(false)} disabled={pending}>
-            Cancel
+            {tRoot("common.cancel")}
           </Button>
           <Button
             size="sm"
@@ -319,10 +329,10 @@ export function ImportCsvButton({ deckId }: ImportCsvButtonProps) {
             {pending ? (
               <>
                 <Loader2 className="h-4 w-4 mr-1.5 animate-spin" />
-                Importing...
+                {tRoot("common.creating")}
               </>
             ) : (
-              "Confirm Import"
+              t("confirm_button")
             )}
           </Button>
         </DialogFooter>

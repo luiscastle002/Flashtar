@@ -18,6 +18,8 @@ import { getStudyDecks, createStudyDeck } from "@/actions/study-decks";
 import { importFromGeneratedDeck } from "@/actions/imports";
 import { toast } from "sonner";
 import type { StudyDeck } from "@/types";
+import { useTranslations } from "next-intl";
+import { translateError } from "@/lib/i18n/utils";
 
 interface AddToStudyDeckButtonProps {
   generatedDeckId: string;
@@ -25,6 +27,10 @@ interface AddToStudyDeckButtonProps {
 }
 
 export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToStudyDeckButtonProps) {
+  const t = useTranslations("study");
+  const tCommon = useTranslations("common");
+  const tRoot = useTranslations();
+
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [studyDecks, setStudyDecks] = useState<StudyDeck[]>([]);
@@ -51,7 +57,7 @@ export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToS
       setStudyDecks(decks);
     } catch (err) {
       console.error("Error loading study decks:", err);
-      toast.error("Failed to load study decks");
+      toast.error(t("toast_load_failed"));
     } finally {
       setLoading(false);
     }
@@ -70,11 +76,11 @@ export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToS
       });
 
       if ("error" in result && result.error) {
-        toast.error(result.error);
+        toast.error(translateError(result.error, tRoot));
         return;
       }
 
-      toast.success("Study deck created!");
+      toast.success(t("create.toast_created"));
       setNewDeckName("");
       // Reload list and automatically select the new deck
       const decks = await getStudyDecks();
@@ -84,7 +90,7 @@ export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToS
       }
     } catch (err) {
       console.error("Error creating study deck:", err);
-      toast.error("Failed to create study deck");
+      toast.error(t("create.toast_create_failed"));
     } finally {
       setCreatingNew(false);
     }
@@ -105,7 +111,7 @@ export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToS
       try {
         const result = await importFromGeneratedDeck(generatedDeckId, selectedDeckIds);
         if ("error" in result && result.error) {
-          toast.error(result.error);
+          toast.error(translateError(result.error, tRoot));
           return;
         }
 
@@ -118,20 +124,19 @@ export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToS
         });
 
         if (totalImported === 0 && totalSkipped > 0) {
-          toast.info("All cards are already present in the selected deck(s).");
+          toast.info(t("all_cards_present"));
         } else {
           toast.success(
-            `Imported ${totalImported} card${
-              totalImported !== 1 ? "s" : ""
-            } across ${selectedDeckIds.length} deck${
-              selectedDeckIds.length !== 1 ? "s" : ""
-            }!`
+            t("toast_imported", {
+              count: totalImported,
+              decksCount: selectedDeckIds.length,
+            })
           );
         }
         setOpen(false);
       } catch (err) {
         console.error("Import error:", err);
-        toast.error("Failed to import flashcards");
+        toast.error(t("toast_import_failed"));
       }
     });
   }
@@ -141,14 +146,14 @@ export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToS
       <DialogTrigger asChild>
         <Button variant="outline" size="sm" disabled={flashcardCount === 0}>
           <BookOpen className="mr-2 h-4 w-4" />
-          Add to Study Deck
+          {t("add_to_study")}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Add to Study Deck</DialogTitle>
+          <DialogTitle>{t("add_to_study")}</DialogTitle>
           <DialogDescription>
-            Import these {flashcardCount} flashcards into one or more of your study decks.
+            {t("import_description", { count: flashcardCount })}
           </DialogDescription>
         </DialogHeader>
 
@@ -158,7 +163,7 @@ export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToS
             <Input
               value={newDeckName}
               onChange={(e) => setNewDeckName(e.target.value)}
-              placeholder="Create new study deck..."
+              placeholder={t("create_new_placeholder")}
               className="text-sm h-9"
               maxLength={100}
               disabled={creatingNew}
@@ -175,7 +180,7 @@ export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToS
               ) : (
                 <Plus className="h-4 w-4 mr-1" />
               )}
-              Create
+              {tCommon("create")}
             </Button>
           </form>
 
@@ -186,12 +191,12 @@ export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToS
             </div>
           ) : studyDecks.length === 0 ? (
             <div className="py-8 text-center text-sm text-muted-foreground">
-              No study decks found. Enter a name above to create your first deck!
+              {t("no_study_decks")}
             </div>
           ) : (
             <div className="space-y-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                Select target study decks:
+                {t("target_decks")}
               </p>
               <ScrollArea className="h-48 border rounded-lg p-2 bg-accent/10">
                 <div className="space-y-1.5 pr-2">
@@ -226,7 +231,7 @@ export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToS
 
         <DialogFooter>
           <Button variant="ghost" size="sm" onClick={() => setOpen(false)}>
-            Cancel
+            {tCommon("cancel")}
           </Button>
           <Button
             size="sm"
@@ -236,10 +241,10 @@ export function AddToStudyDeckButton({ generatedDeckId, flashcardCount }: AddToS
             {importPending ? (
               <>
                 <Loader2 className="h-4 w-4 mr-1.5 animate-spin" />
-                Importing...
+                {t("importing")}
               </>
             ) : (
-              `Add to Deck${selectedDeckIds.length !== 1 ? "s" : ""}`
+              t("add_to_decks_count", { count: selectedDeckIds.length })
             )}
           </Button>
         </DialogFooter>

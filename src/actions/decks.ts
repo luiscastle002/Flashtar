@@ -15,10 +15,10 @@ const deckSchema = z.object({
 
 export async function createDeck(input: z.input<typeof deckSchema>) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const parsed = deckSchema.safeParse(input);
-  if (!parsed.success) return { error: "Invalid deck data" };
+  if (!parsed.success) return { error: "errors.decks.invalid_data" };
 
   const supabase = await createClient();
   const { data, error } = await supabase
@@ -38,7 +38,7 @@ export async function updateDeck(
   input: Partial<z.infer<typeof deckSchema>>
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
   const { data, error } = await supabase
@@ -58,7 +58,7 @@ export async function updateDeck(
 
 export async function deleteDeck(deckId: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
   const { error } = await supabase.from("decks").delete().eq("id", deckId).eq("user_id", user.id);
@@ -71,7 +71,7 @@ export async function deleteDeck(deckId: string) {
 
 export async function duplicateDeck(deckId: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
   const { data: deck } = await supabase
@@ -81,7 +81,7 @@ export async function duplicateDeck(deckId: string) {
     .eq("user_id", user.id)
     .single();
 
-  if (!deck) return { error: "Deck not found" };
+  if (!deck) return { error: "errors.decks.not_found" };
 
   const { data: cards } = await supabase
     .from("flashcards")
@@ -102,7 +102,7 @@ export async function duplicateDeck(deckId: string) {
     .select()
     .single();
 
-  if (deckError || !newDeck) return { error: deckError?.message ?? "Failed to duplicate deck" };
+  if (deckError || !newDeck) return { error: deckError?.message ?? "errors.decks.duplicate_failed" };
 
   if (cards?.length) {
     await supabase.from("flashcards").insert(

@@ -1,357 +1,138 @@
-# AGENTS.md
+# AGENTS.md — Developer & AI Agent Operations Manual
 
-## Project Mission
+Welcome, Agent. This document outlines the core operational directives, coding practices, and strict architectural constraints for the **Flashtar** platform. 
 
-Build a production-ready SaaS platform that allows users to generate, manage, edit, and export Anki flashcard decks using AI.
-
-The application should feel modern, fast, intuitive, and scalable.
-
-The primary goal is to maximize learning efficiency by allowing users to convert knowledge into high-quality flashcards with minimal effort.
-
-The project is inspired by Ankify but should not be a clone. Improvements and better UX are encouraged whenever appropriate.
+You must strictly follow these rules without exception to ensure project scalability, type safety, and error-free internationalization.
 
 ---
 
-# Agent Authority
-
-You are allowed to:
-
-* Refactor code when necessary.
-* Improve architecture.
-* Add missing files.
-* Add missing components.
-* Improve database design.
-* Improve user experience.
-* Improve performance.
-* Improve accessibility.
-* Improve security.
-* Improve maintainability.
-
-You do NOT need explicit approval for small or medium architectural improvements.
-
-When requirements are ambiguous:
-
-1. Choose the solution that best supports scalability.
-2. Prefer maintainability over short-term simplicity.
-3. Prefer industry best practices.
-4. Document important decisions.
+## Table of Contents
+1. [Core Principles](#core-principles)
+2. [Agent Authority & Limits](#agent-authority--limits)
+3. [Tech Stack Constraints](#tech-stack-constraints)
+4. [Mandatory i18n Rules](#mandatory-i18n-rules)
+5. [JSON Safety & Verification Rules](#json-safety--verification-rules)
+6. [Database Schema Change Conventions](#database-schema-change-conventions)
+7. [Feature Completion Definition (DoD)](#feature-completion-definition-dod)
 
 ---
 
-# Core Product Requirements
+## Core Principles
 
-Users must be able to:
-
-* Sign up
-* Sign in
-* Manage subscriptions
-* Generate AI flashcard decks
-* Edit decks
-* Edit flashcards
-* Delete decks
-* Export decks
-* View generation history
-
-These features are considered core functionality and should always remain operational.
+1. **Type Safety First**: No `any` type escapes. Use strict TypeScript types and schemas throughout.
+2. **Documentation-Driven Development**: When adding or refactoring features, update the corresponding markdown documents instantly.
+3. **Localization First**: All user-facing strings must be localized across all supported languages upon creation.
+4. **Production Build Integrity**: The application must build clean (`npm run build`) and pass checks (`npm run typecheck`) at the end of every task.
+5. **No Regressions**: Verify existing functions and keep all database schemas and webhooks backward compatible.
 
 ---
 
-# Tech Stack
+## Agent Authority & Limits
 
-Frontend:
+### You are authorized to:
+- Refactor helper modules, database queries, and server actions to support performance.
+- Expand translation namespaces and modify dictionaries to resolve placeholders.
+- Add missing components, API endpoints, or database tables to support approved features.
 
-* Next.js (App Router)
-* TypeScript
-* Tailwind CSS
-* shadcn/ui
-
-Backend:
-
-* Supabase
-* PostgreSQL
-* Row Level Security
-
-Authentication:
-
-* Supabase Auth
-
-Payments:
-
-* Stripe
-
-AI:
-
-* OpenAI API
-
-Deployment:
-
-* Vercel
-
-Do not replace these technologies unless there is a compelling technical reason.
+### You are NOT authorized to:
+- Deprecate existing core functions or change database column names without backward-compatible fallbacks.
+- Replace core tech stack libraries (e.g. swap Next.js for Vite, or Stripe for another payment system) unless explicitly approved by the User.
+- Remove database Row Level Security (RLS) policies or bypass security validation rules.
 
 ---
 
-# Development Philosophy
+## Tech Stack Constraints
 
-Prioritize:
-
-1. Simplicity
-2. Reliability
-3. Scalability
-4. Maintainability
-
-Avoid:
-
-* Overengineering
-* Premature optimization
-* Unnecessary abstractions
-* Excessive dependencies
-
-Favor clean code over clever code.
+- **Frontend**: Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui.
+- **Backend & Database**: Supabase, PostgreSQL, Row-Level Security (RLS) is mandatory for all user-owned rows.
+- **Payments**: Stripe & Paddle. Stripe holds the source of truth for billing; Supabase profiles sync with it.
+- **AI Engine**: OpenAI API with Structured Outputs (zod schemas) to validate generated deck structures before saving.
+- **Locales**: `en` (English), `es` (Spanish), `pt` (Portuguese), and `ja` (Japanese) managed via `next-intl`.
 
 ---
 
-# Architecture Guidelines
+## Mandatory i18n Rules
 
-Use feature-based organization whenever possible.
+Every developer and coding agent must follow these rules to maintain a **Fully Deterministic i18n System**:
 
-Example:
+### 1. UI Text Additions
+All user-facing copy (buttons, labels, dialog alerts, inputs, placeholders, header titles) must use translation keys from the locale files:
+- **English**: `src/messages/en.json` (Source of Truth)
+- **Spanish**: `src/messages/es.json`
+- **Portuguese**: `src/messages/pt.json`
+- **Japanese**: `src/messages/ja.json`
 
-src/
+### 2. Count Pluralizations
+Never write manual ternary string checks for counts. Always use the ICU plural syntax inside JSON message files:
+```json
+"cards_plural": "{count, plural, =1 {# card} other {# cards}}"
+```
+*Never write code like:*
+```typescript
+const label = `${count} card${count !== 1 ? "s" : ""}`;
+```
 
-features/
-auth/
-billing/
-decks/
-flashcards/
-ai-generation/
+### 3. Enum & State Localization
+Database enums and status strings must not be rendered directly to the screen. Map them dynamically using namespace dictionaries:
+```typescript
+const tCard = useTranslations("study.card");
+const label = tCard(`state.${card.state}`);
+```
+Define matching state dictionaries under a namespace matching:
+`feature.state.*`, `feature.status.*`, `feature.type.*`, `feature.difficulty.*`.
 
-shared/
-components/
-hooks/
-lib/
-types/
+### 4. Timespent & Duration Layouts
+Never hardcode suffix characters (`"m"`, `"s"`, `"h"`) or space symbols. Always use dynamic translator variables:
+```typescript
+const label = durationMin > 0 
+  ? t("duration_min_sec", { minutes: durationMin, seconds: durationSec }) 
+  : t("duration_sec", { seconds: durationSec });
+```
+*Never write code like:*
+```typescript
+const durationStr = `${min}m ${sec}s`;
+```
 
-The exact structure may evolve if a better architecture emerges.
-
-The agent has permission to reorganize folders when beneficial.
-
----
-
-# Database Principles
-
-Database design should:
-
-* Follow normalization principles.
-* Support future scaling.
-* Use UUID primary keys.
-* Include created_at timestamps.
-* Include updated_at timestamps where appropriate.
-
-All user-owned resources must support Row Level Security.
-
-Never bypass RLS without strong justification.
-
----
-
-# AI Generation Requirements
-
-The AI generation system should:
-
-* Produce structured outputs.
-* Support multiple flashcard formats.
-* Handle malformed responses gracefully.
-* Retry failed generations when possible.
-* Validate generated data before saving.
-
-Never trust AI output without validation.
+### 5. API & Validation Errors
+All server action errors, database constraints, and zod validation failures must return translation keys (e.g. `errors.auth.invalid_credentials`).
+Translate them at the form client boundary using the `translateError` helper:
+```typescript
+toast.error(translateError(error.message, tRoot));
+```
 
 ---
 
-# Stripe Requirements
+## JSON Safety & Verification Rules
 
-Implement:
+Translation files are large, business-critical assets. Malformed syntax will crash the Next.js compiler.
 
-* Checkout
-* Customer Portal
-* Subscription Status Sync
-* Webhooks
-
-Subscription state should always be synchronized between Stripe and Supabase.
-
-Stripe should be the source of truth for billing status.
-
----
-
-# Security Requirements
-
-Mandatory:
-
-* Input validation
-* Rate limiting
-* Secure API routes
-* Protected server actions
-* Secure environment variable usage
-* CSRF protection where relevant
-
-Never expose secrets to the client.
-
-Never trust client-side authorization.
+### Before Committing Changes:
+1. **JSON Verification**: Confirm the target translation file has a valid syntax structure. Run:
+   ```bash
+   node -e "JSON.parse(require('fs').readFileSync('./src/messages/pt.json','utf8')); console.log('Valid JSON')"
+   ```
+2. **Brace & Token Balance**: Double-check that all ICU parameters (e.g. `{count}`, `{error}`, `{name}`) have matching opening and closing braces.
+3. **Escaped Quotes**: Double-check that inner HTML tags or quotes in strings are properly escaped (e.g., `\"`).
+4. **Namespace Sibling Checks**: Verify new objects are added as direct children of namespaces and do not accidentally overwrite sibling keys.
 
 ---
 
-# User Experience Requirements
+## Database Schema Change Conventions
 
-The application should feel polished.
-
-Implement:
-
-* Loading states
-* Skeletons
-* Error boundaries
-* Empty states
-* Toast notifications
-* Responsive layouts
-
-Users should always understand:
-
-* What is happening
-* What succeeded
-* What failed
-* What action to take next
+- **RLS Mandatory**: Every new table must have Row-Level Security enabled.
+- **Schema Migration**: All database changes must be added via migrations inside the `supabase/migrations/` directory.
+- **Backward Compatibility**: Ensure tables can handle null values or have default constraints during rollout so existing code does not break.
 
 ---
 
-# Performance Requirements
+## Feature Completion Definition (DoD)
 
-Prefer:
+A task or feature branch is not ready for merge until it meets the **Definition of Done**:
 
-* Server Components
-* Streaming
-* Caching
-* Pagination
-* Lazy loading
-
-Avoid unnecessary re-renders.
-
-Avoid unnecessary API calls.
-
-Optimize database queries.
-
----
-
-# Accessibility
-
-Follow WCAG best practices.
-
-Support:
-
-* Keyboard navigation
-* Screen readers
-* Semantic HTML
-* Proper form labels
-
-Accessibility is not optional.
-
----
-
-# Code Quality Standards
-
-Requirements:
-
-* Strict TypeScript
-* ESLint
-* Consistent naming
-* Reusable components
-* Clear separation of concerns
-
-Functions should:
-
-* Have a single responsibility.
-* Be easy to test.
-* Be easy to understand.
-
-Prefer descriptive names.
-
-Avoid cryptic abbreviations.
-
----
-
-# Testing
-
-When implementing critical functionality:
-
-Prioritize testing for:
-
-* Authentication
-* Billing
-* AI generation
-* Deck management
-
-Prefer automated tests when practical.
-
----
-
-# Documentation
-
-Keep documentation updated.
-
-Update:
-
-* README.md
-* Environment setup instructions
-* Database documentation
-* API documentation
-
-when significant changes are introduced.
-
----
-
-# Decision Framework
-
-When multiple solutions exist:
-
-Choose the solution that is:
-
-1. Easier to maintain.
-2. Easier to scale.
-3. Easier for future developers to understand.
-4. Consistent with the existing architecture.
-
----
-
-# MVP Priorities
-
-Highest Priority:
-
-* Authentication
-* AI deck generation
-* Deck management
-* Flashcard editor
-* Stripe subscriptions
-
-Medium Priority:
-
-* APKG export
-* Folder organization
-* Generation history
-
-Future Features:
-
-* PDF import
-* YouTube import
-* Shared decks
-* Public marketplace
-* Team collaboration
-
-Do not allow future features to complicate MVP implementation.
-
----
-
-# Final Rule
-
-The objective is not simply to write code.
-
-The objective is to build a production-ready SaaS that users would be willing to pay for.
-
-When making implementation decisions, optimize for long-term product success rather than short-term completion.
+- [ ] **Typecheck**: Running `npm run typecheck` completes with zero errors.
+- [ ] **Lint**: Running `npm run lint` completes with zero warnings or errors.
+- [ ] **Locales Synced**: All four supported languages (`en`, `es`, `pt`, `ja`) have complete translation keys matching the new feature.
+- [ ] **No Hardcoded Strings**: A codebase scan confirms zero raw English strings are rendered in user-facing components.
+- [ ] **Double-Byte Expansion Checked**: Page layouts verified in Japanese (`ja`) to ensure text expansion does not break grid alignments or action button widths.
+- [ ] **Production Build Succeeded**: Running `npm run build` completes successfully.
+- [ ] **Documentation updated**: The `README.md` database schema and feature guides are updated.

@@ -9,9 +9,17 @@ import { Button } from "@/components/ui/button";
 import { BookOpen } from "lucide-react";
 import Link from "next/link";
 import type { DeckStudySettings } from "@/types";
+import { getTranslations } from "next-intl/server";
 
 interface SessionPageProps {
   params: Promise<{ deckId: string }>;
+}
+
+export async function generateMetadata() {
+  const t = await getTranslations("navigation");
+  return {
+    title: `${t("study")} — Flashtar`,
+  };
 }
 
 export default async function StudySessionPage({ params }: SessionPageProps) {
@@ -19,9 +27,10 @@ export default async function StudySessionPage({ params }: SessionPageProps) {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
-  const [profile, deckData] = await Promise.all([
+  const [profile, deckData, t] = await Promise.all([
     getProfile(),
     getStudyDeckWithSettings(deckId),
+    getTranslations("study.session"),
   ]);
 
   if (!deckData) notFound();
@@ -40,14 +49,13 @@ export default async function StudySessionPage({ params }: SessionPageProps) {
                 <BookOpen className="h-7 w-7 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-lg">All caught up!</p>
+                <p className="font-semibold text-lg">{t("all_caught_up_title")}</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  No cards are due in{" "}
-                  <span className="font-medium">{deckData.name}</span> right now.
+                  {t("no_cards_due", { name: deckData.name })}
                 </p>
               </div>
               <Button asChild variant="outline">
-                <Link href={`/study/${deckId}`}>Back to Deck</Link>
+                <Link href={`/study/${deckId}`}>{t("back_to_deck")}</Link>
               </Button>
             </CardContent>
           </Card>
@@ -61,7 +69,9 @@ export default async function StudySessionPage({ params }: SessionPageProps) {
   if ("error" in sessionResult || !sessionResult.data) {
     return (
       <DashboardShell currentPath="/study" profile={profile}>
-        <p className="text-destructive">Failed to start session: {sessionResult.error}</p>
+        <p className="text-destructive">
+          {t("start_session_failed", { error: sessionResult.error ?? "Unknown error" })}
+        </p>
       </DashboardShell>
     );
   }

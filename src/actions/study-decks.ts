@@ -39,17 +39,17 @@ const settingsSchema = z.object({
 
 export async function createStudyDeck(input: z.input<typeof studyDeckSchema>) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   // Billing gate: check deck limit
   const gate = await canCreateStudyDeck();
   if (!gate.allowed) {
-    return { error: gate.reason ?? "Deck limit reached" };
+    return { error: gate.reason ?? "errors.study_decks.limit_reached" };
   }
 
   const parsed = studyDeckSchema.safeParse(input);
   if (!parsed.success) {
-    return { error: parsed.error.errors[0]?.message ?? "Invalid deck data" };
+    return { error: parsed.error.errors[0]?.message ?? "errors.study_decks.invalid_data" };
   }
 
   const supabase = await createClient();
@@ -83,11 +83,11 @@ export async function updateStudyDeck(
   input: Partial<z.infer<typeof studyDeckSchema>>
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const parsed = studyDeckSchema.partial().safeParse(input);
   if (!parsed.success) {
-    return { error: parsed.error.errors[0]?.message ?? "Invalid deck data" };
+    return { error: parsed.error.errors[0]?.message ?? "errors.study_decks.invalid_data" };
   }
 
   const supabase = await createClient();
@@ -112,7 +112,7 @@ export async function updateStudyDeck(
 
 export async function archiveStudyDeck(deckId: string, archive = true) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
   const { error } = await supabase
@@ -134,7 +134,7 @@ export async function archiveStudyDeck(deckId: string, archive = true) {
 
 export async function deleteStudyDeck(deckId: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
 
@@ -173,11 +173,11 @@ export async function updateDeckSettings(
   input: Partial<z.infer<typeof settingsSchema>>
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const parsed = settingsSchema.partial().safeParse(input);
   if (!parsed.success) {
-    return { error: parsed.error.errors[0]?.message ?? "Invalid settings" };
+    return { error: parsed.error.errors[0]?.message ?? "errors.study_decks.invalid_settings" };
   }
 
   const supabase = await createClient();
@@ -190,7 +190,7 @@ export async function updateDeckSettings(
     .eq("user_id", user.id)
     .single();
 
-  if (!deck) return { error: "Deck not found" };
+  if (!deck) return { error: "errors.study_decks.not_found" };
 
   const { data, error } = await supabase
     .from("deck_study_settings")

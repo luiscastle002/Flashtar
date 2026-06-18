@@ -24,9 +24,11 @@ import {
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { createDeck, deleteDeck, duplicateDeck } from "@/actions/decks";
-import { formatDate, pluralize } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import { toast } from "sonner";
 import type { Deck, Profile } from "@/types";
+import { useTranslations } from "next-intl";
+import { translateError } from "@/lib/i18n/utils";
 
 interface DecksPageClientProps {
   decks: Deck[];
@@ -34,6 +36,10 @@ interface DecksPageClientProps {
 }
 
 export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClientProps) {
+  const t = useTranslations("decks");
+  const tCommon = useTranslations("common");
+  const tErr = useTranslations("errors");
+
   const [decks, setDecks] = useState(initialDecks);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("all");
@@ -57,40 +63,40 @@ export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClien
       description: (formData.get("description") as string) || undefined,
     });
     setCreating(false);
-
+ 
     if (result.error) {
-      toast.error(result.error);
+      toast.error(translateError(result.error, tErr));
       return;
     }
 
     if (result.data) {
       setDecks((prev) => [result.data!, ...prev]);
       setDialogOpen(false);
-      toast.success("Deck created!");
+      toast.success(t("toast_created"));
     }
   }
 
   async function handleDuplicate(deckId: string) {
     const result = await duplicateDeck(deckId);
     if (result.error) {
-      toast.error(result.error);
+      toast.error(translateError(result.error, tErr));
       return;
     }
     if (result.data) {
       setDecks((prev) => [result.data!, ...prev]);
-      toast.success("Deck duplicated!");
+      toast.success(t("toast_duplicated"));
     }
   }
 
   async function handleDelete(deckId: string) {
-    if (!confirm("Are you sure you want to delete this deck?")) return;
+    if (!confirm(t("delete_confirm"))) return;
     const result = await deleteDeck(deckId);
     if (result.error) {
-      toast.error(result.error);
+      toast.error(translateError(result.error, tErr));
       return;
     }
     setDecks((prev) => prev.filter((d) => d.id !== deckId));
-    toast.success("Deck deleted");
+    toast.success(t("toast_deleted"));
   }
 
   return (
@@ -98,31 +104,31 @@ export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClien
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold">My Decks</h1>
-            <p className="text-muted-foreground">{decks.length} {pluralize(decks.length, "deck")}</p>
+            <h1 className="text-2xl md:text-3xl font-bold">{t("title")}</h1>
+            <p className="text-muted-foreground">{t("count_plural", { count: decks.length })}</p>
           </div>
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
             <DialogTrigger asChild>
               <Button>
                 <Plus className="mr-2 h-4 w-4" />
-                New Deck
+                {t("new_deck")}
               </Button>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Create New Deck</DialogTitle>
+                <DialogTitle>{t("create_title")}</DialogTitle>
               </DialogHeader>
               <form action={handleCreate} className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Deck Name</Label>
-                  <Input id="name" name="name" required placeholder="My Flashcards" />
+                  <Label htmlFor="name">{t("deck_name")}</Label>
+                  <Input id="name" name="name" required placeholder={t("deck_name_placeholder")} />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="description">Description (optional)</Label>
-                  <Textarea id="description" name="description" placeholder="What is this deck about?" />
+                  <Label htmlFor="description">{t("description")}</Label>
+                  <Textarea id="description" name="description" placeholder={t("description_placeholder")} />
                 </div>
                 <Button type="submit" className="w-full" disabled={creating}>
-                  {creating ? "Creating..." : "Create Deck"}
+                  {creating ? tCommon("creating") : t("create_button")}
                 </Button>
               </form>
             </DialogContent>
@@ -133,7 +139,7 @@ export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClien
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search decks..."
+              placeholder={t("search_placeholder")}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="pl-9"
@@ -141,13 +147,13 @@ export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClien
           </div>
           <Select value={filter} onValueChange={setFilter}>
             <SelectTrigger className="w-full sm:w-48">
-              <SelectValue placeholder="Filter by type" />
+              <SelectValue placeholder={t("filter_type")} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Types</SelectItem>
-              <SelectItem value="basic">Basic</SelectItem>
-              <SelectItem value="cloze">Cloze</SelectItem>
-              <SelectItem value="mixed">Mixed</SelectItem>
+              <SelectItem value="all">{t("filter_all")}</SelectItem>
+              <SelectItem value="basic">{t("filter_basic")}</SelectItem>
+              <SelectItem value="cloze">{t("filter_cloze")}</SelectItem>
+              <SelectItem value="mixed">{t("filter_mixed")}</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -157,7 +163,7 @@ export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClien
             <div className="py-16 text-center">
               <Layers className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
               <p className="text-muted-foreground">
-                {search || filter !== "all" ? "No decks match your search." : "No decks yet."}
+                {search || filter !== "all" ? t("no_decks_search") : t("no_decks")}
               </p>
             </div>
           </Card>
@@ -169,7 +175,7 @@ export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClien
                   <CardHeader>
                     <CardTitle className="line-clamp-1">{deck.name}</CardTitle>
                     <CardDescription>
-                      {deck.flashcard_count ?? 0} {pluralize(deck.flashcard_count ?? 0, "card")} ·{" "}
+                      {t("editor.cards_count", { count: deck.flashcard_count ?? 0 })} ·{" "}
                       {formatDate(deck.updated_at)}
                     </CardDescription>
                     {deck.description && (

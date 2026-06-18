@@ -3,15 +3,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { getDashboardStats, getRecentDecks, getProfile } from "@/lib/queries/user";
-import { formatDate, pluralize } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 import { Layers, Sparkles, CreditCard, ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 export default async function DashboardPage() {
-  const [stats, recentDecks, profile] = await Promise.all([
+  const [stats, recentDecks, profile, t] = await Promise.all([
     getDashboardStats(),
     getRecentDecks(),
     getProfile(),
+    getTranslations("dashboard"),
   ]);
 
   const usagePercent =
@@ -23,15 +25,15 @@ export default async function DashboardPage() {
     <DashboardShell currentPath="/dashboard" profile={profile}>
       <div className="space-y-8">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold">Dashboard</h1>
-          <p className="text-muted-foreground">Welcome back! Here&apos;s your study overview.</p>
+          <h1 className="text-2xl md:text-3xl font-bold">{t("title")}</h1>
+          <p className="text-muted-foreground">{t("welcome")}</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <Card>
             <CardHeader className="pb-2">
               <CardDescription className="flex items-center gap-2">
-                <Layers className="h-4 w-4" /> Total Decks
+                <Layers className="h-4 w-4" /> {t("total_decks")}
               </CardDescription>
               <CardTitle className="text-3xl">{stats?.totalDecks ?? 0}</CardTitle>
             </CardHeader>
@@ -39,14 +41,14 @@ export default async function DashboardPage() {
           <Card>
             <CardHeader className="pb-2">
               <CardDescription className="flex items-center gap-2">
-                <Sparkles className="h-4 w-4" /> Total Flashcards
+                <Sparkles className="h-4 w-4" /> {t("total_cards")}
               </CardDescription>
               <CardTitle className="text-3xl">{stats?.totalFlashcards ?? 0}</CardTitle>
             </CardHeader>
           </Card>
           <Card>
             <CardHeader className="pb-2">
-              <CardDescription>AI Usage This Month</CardDescription>
+              <CardDescription>{t("ai_usage")}</CardDescription>
               <CardTitle className="text-3xl">
                 {stats?.monthlyGenerations ?? 0}
                 {stats?.generationLimit !== Infinity && (
@@ -65,14 +67,14 @@ export default async function DashboardPage() {
           <Card>
             <CardHeader className="pb-2">
               <CardDescription className="flex items-center gap-2">
-                <CreditCard className="h-4 w-4" /> Plan
+                <CreditCard className="h-4 w-4" /> {t("plan")}
               </CardDescription>
               <CardTitle className="text-3xl capitalize">{stats?.plan ?? "free"}</CardTitle>
             </CardHeader>
             {stats?.plan === "free" && (
               <CardContent>
                 <Button size="sm" asChild>
-                  <Link href="/settings">Upgrade to Pro</Link>
+                  <Link href="/settings">{t("upgrade_pro")}</Link>
                 </Button>
               </CardContent>
             )}
@@ -83,20 +85,20 @@ export default async function DashboardPage() {
           <Button asChild size="lg">
             <Link href="/generate">
               <Sparkles className="mr-2 h-4 w-4" />
-              Generate New Deck
+              {t("generate_new")}
             </Link>
           </Button>
           <Button variant="outline" size="lg" asChild>
-            <Link href="/decks">View All Decks</Link>
+            <Link href="/decks">{t("view_all")}</Link>
           </Button>
         </div>
 
         <div>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold">Recent Decks</h2>
+            <h2 className="text-xl font-semibold">{t("recent_decks")}</h2>
             <Button variant="ghost" size="sm" asChild>
               <Link href="/decks">
-                View all <ArrowRight className="ml-1 h-4 w-4" />
+                {t("view_all_link")} <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
           </div>
@@ -104,9 +106,9 @@ export default async function DashboardPage() {
             <Card>
               <CardContent className="py-12 text-center">
                 <Sparkles className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground mb-4">No decks yet. Generate your first deck with AI!</p>
+                <p className="text-muted-foreground mb-4">{t("no_decks_yet")}</p>
                 <Button asChild>
-                  <Link href="/generate">Generate Deck</Link>
+                  <Link href="/generate">{t("generate_deck")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -118,9 +120,7 @@ export default async function DashboardPage() {
                     <CardHeader>
                       <CardTitle className="line-clamp-1">{deck.name}</CardTitle>
                       <CardDescription>
-                        {deck.flashcard_count}{" "}
-                        {pluralize(deck.flashcard_count ?? 0, "card")} · Updated{" "}
-                        {formatDate(deck.updated_at)}
+                        {t("cards_plural", { count: deck.flashcard_count ?? 0 })} · {t("updated", { date: formatDate(deck.updated_at) })}
                       </CardDescription>
                     </CardHeader>
                   </Card>

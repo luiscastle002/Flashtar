@@ -23,6 +23,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface RichTextEditorProps {
   content: string;
@@ -32,19 +33,23 @@ interface RichTextEditorProps {
 }
 
 const PREDEFINED_COLORS = [
-  { name: "Black", value: "#000000" },
-  { name: "Red", value: "#ef4444" },
-  { name: "Blue", value: "#3b82f6" },
-  { name: "Green", value: "#22c55e" },
-  { name: "Yellow", value: "#eab308" },
-  { name: "Purple", value: "#a855f7" },
-];
+  { name: "black" as const, value: "#000000" },
+  { name: "red" as const, value: "#ef4444" },
+  { name: "blue" as const, value: "#3b82f6" },
+  { name: "green" as const, value: "#22c55e" },
+  { name: "yellow" as const, value: "#eab308" },
+  { name: "purple" as const, value: "#a855f7" },
+] as const;
+
+type ColorKey = "colors.black" | "colors.red" | "colors.blue" | "colors.green" | "colors.yellow" | "colors.purple";
 
 export function RichTextEditor({ content, onChange, placeholder, className }: RichTextEditorProps) {
+  const t = useTranslations("editor");
+
   const editor = useEditor({
     extensions: [
       StarterKit,
-      Placeholder.configure({ placeholder: placeholder ?? "Enter text..." }),
+      Placeholder.configure({ placeholder: placeholder ?? t("placeholder") }),
       Image.configure({ inline: true }),
       Underline,
       TextStyle,
@@ -63,7 +68,7 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
   });
 
   function addImage() {
-    const url = window.prompt("Enter image URL:");
+    const url = window.prompt(t("enter_image_url"));
     if (url && editor) {
       editor.chain().focus().setImage({ src: url }).run();
     }
@@ -84,7 +89,8 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
           className={cn("h-7 w-7", editor.isActive("bold") && "bg-muted")}
           onClick={() => editor.chain().focus().toggleBold().run()}
           data-active={editor.isActive("bold")}
-          title="Bold"
+          title={t("bold")}
+          aria-label={t("bold")}
         >
           <Bold className="h-3.5 w-3.5" />
         </Button>
@@ -97,7 +103,8 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
           className={cn("h-7 w-7", editor.isActive("italic") && "bg-muted")}
           onClick={() => editor.chain().focus().toggleItalic().run()}
           data-active={editor.isActive("italic")}
-          title="Italic"
+          title={t("italic")}
+          aria-label={t("italic")}
         >
           <Italic className="h-3.5 w-3.5" />
         </Button>
@@ -110,7 +117,8 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
           className={cn("h-7 w-7", editor.isActive("underline") && "bg-muted")}
           onClick={() => editor.chain().focus().toggleUnderline().run()}
           data-active={editor.isActive("underline")}
-          title="Underline"
+          title={t("underline")}
+          aria-label={t("underline")}
         >
           <UnderlineIcon className="h-3.5 w-3.5" />
         </Button>
@@ -124,7 +132,8 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
               size="icon"
               className={cn("h-7 w-7", editor.isActive("textStyle") && "bg-muted")}
               data-active={editor.isActive("textStyle")}
-              title="Text Color"
+              title={t("text_color")}
+              aria-label={t("text_color")}
             >
               <Palette 
                 className="h-3.5 w-3.5 transition-colors" 
@@ -137,6 +146,8 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
               <div className="grid grid-cols-3 gap-1.5">
                 {PREDEFINED_COLORS.map((color) => {
                   const isActive = editor.isActive("textStyle", { color: color.value });
+                  const colorKey = `colors.${color.name}` as ColorKey;
+                  const localizedName = t(colorKey);
                   return (
                     <button
                       key={color.name}
@@ -146,7 +157,8 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
                         isActive && "ring-2 ring-primary ring-offset-1"
                       )}
                       style={{ backgroundColor: color.value }}
-                      title={color.name}
+                      title={localizedName}
+                      aria-label={localizedName}
                       onClick={() => {
                         editor.chain().focus().setColor(color.value).run();
                       }}
@@ -161,7 +173,7 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
                 className="w-full h-7 text-[10px] justify-center px-1 font-medium"
                 onClick={() => editor.chain().focus().unsetColor().run()}
               >
-                Reset to Default
+                {t("reset_default")}
               </Button>
             </div>
           </DropdownMenuContent>
@@ -175,7 +187,8 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
           className={cn("h-7 w-7", editor.isActive("bulletList") && "bg-muted")}
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           data-active={editor.isActive("bulletList")}
-          title="Bullet List"
+          title={t("bullet_list")}
+          aria-label={t("bullet_list")}
         >
           <List className="h-3.5 w-3.5" />
         </Button>
@@ -187,7 +200,8 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
           size="icon" 
           className="h-7 w-7" 
           onClick={addImage}
-          title="Insert Image"
+          title={t("insert_image")}
+          aria-label={t("insert_image")}
         >
           <ImageIcon className="h-3.5 w-3.5" />
         </Button>
@@ -199,7 +213,8 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
           size="icon"
           className="h-7 w-7 hover:text-destructive transition-colors"
           onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
-          title="Clear Formatting"
+          title={t("clear_formatting")}
+          aria-label={t("clear_formatting")}
         >
           <Eraser className="h-3.5 w-3.5" />
         </Button>

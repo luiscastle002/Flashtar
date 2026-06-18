@@ -1,3 +1,5 @@
+import type { Locale } from "@/lib/i18n/config";
+
 export type Plan = "free" | "pro";
 export type SubscriptionStatus = "active" | "canceled" | "past_due" | "trialing" | "inactive";
 export type CardType = "basic" | "cloze" | "mixed";
@@ -12,6 +14,7 @@ export interface Profile {
   is_admin: boolean;
   avatar_type: 'google' | 'custom';
   custom_avatar_path: string | null;
+  preferred_language?: Locale | null;
   created_at: string;
   updated_at: string;
 }

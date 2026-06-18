@@ -10,7 +10,7 @@ import { revalidatePath } from "next/cache";
  */
 export async function cancelPaddleSubscription() {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const subscription = await getSubscription(user.id);
   if (
@@ -18,7 +18,7 @@ export async function cancelPaddleSubscription() {
     subscription.billing_provider !== "paddle" ||
     !subscription.paddle_subscription_id
   ) {
-    return { error: "No active Paddle subscription found" };
+    return { error: "errors.billing.no_paddle_subscription" };
   }
 
   try {
@@ -37,7 +37,7 @@ export async function cancelPaddleSubscription() {
     return { success: true };
   } catch (error) {
     console.error("Failed to cancel Paddle subscription:", error);
-    const message = error instanceof Error ? error.message : "Failed to cancel subscription";
+    const message = error instanceof Error ? error.message : "errors.billing.cancel_failed";
     return { error: message };
   }
 }
@@ -47,7 +47,7 @@ export async function cancelPaddleSubscription() {
  */
 export async function getPaddleUpdateTx() {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const subscription = await getSubscription(user.id);
   if (
@@ -55,7 +55,7 @@ export async function getPaddleUpdateTx() {
     subscription.billing_provider !== "paddle" ||
     !subscription.paddle_subscription_id
   ) {
-    return { error: "No active Paddle subscription found" };
+    return { error: "errors.billing.no_paddle_subscription" };
   }
 
   try {
@@ -66,7 +66,7 @@ export async function getPaddleUpdateTx() {
     return { transactionId: transaction.id };
   } catch (error) {
     console.error("Failed to generate payment update transaction:", error);
-    const message = error instanceof Error ? error.message : "Failed to generate update link";
+    const message = error instanceof Error ? error.message : "errors.billing.update_link_failed";
     return { error: message };
   }
 }

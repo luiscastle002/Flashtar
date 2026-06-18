@@ -15,8 +15,8 @@ export async function importFromGeneratedDeck(
   targetStudyDeckIds: string[]
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
-  if (!targetStudyDeckIds.length) return { error: "No target decks selected" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!targetStudyDeckIds.length) return { error: "errors.imports.no_target_decks" };
 
   const supabase = await createClient();
 
@@ -28,7 +28,7 @@ export async function importFromGeneratedDeck(
     .eq("user_id", user.id)
     .single();
 
-  if (!sourceDeck) return { error: "Source deck not found" };
+  if (!sourceDeck) return { error: "errors.imports.source_deck_not_found" };
 
   // Verify all target decks belong to user
   const { data: targetDecks } = await supabase
@@ -37,7 +37,7 @@ export async function importFromGeneratedDeck(
     .in("id", targetStudyDeckIds)
     .eq("user_id", user.id);
 
-  if (!targetDecks?.length) return { error: "Target decks not found" };
+  if (!targetDecks?.length) return { error: "errors.imports.target_decks_not_found" };
 
   // Fetch source flashcards
   const { data: flashcards } = await supabase
@@ -47,7 +47,7 @@ export async function importFromGeneratedDeck(
     .order("position");
 
   if (!flashcards?.length) {
-    return { error: "Source deck has no flashcards" };
+    return { error: "errors.imports.source_deck_empty" };
   }
 
   const results = [];
@@ -140,8 +140,8 @@ export async function importFromCsv(
   rows: Array<{ front: string; back: string; tags?: string[] }>
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
-  if (!rows.length) return { error: "No rows to import" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!rows.length) return { error: "errors.imports.no_rows" };
 
   const supabase = await createClient();
 
@@ -153,7 +153,7 @@ export async function importFromCsv(
     .eq("user_id", user.id)
     .single();
 
-  if (!deck) return { error: "Study deck not found" };
+  if (!deck) return { error: "errors.study_decks.not_found" };
 
   // Validate rows
   const validRows = rows.filter(
@@ -161,7 +161,7 @@ export async function importFromCsv(
   );
   const skippedCount = rows.length - validRows.length;
 
-  if (!validRows.length) return { error: "No valid rows found (front and back are required)" };
+  if (!validRows.length) return { error: "errors.imports.no_valid_rows" };
 
   // Create import record
   const { data: importRecord } = await supabase
@@ -273,7 +273,7 @@ export async function updateStudyCard(
   updates: { front?: string; back?: string; tags?: string[]; is_flagged?: boolean }
 ) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
   const { data, error } = await supabase
@@ -294,7 +294,7 @@ export async function updateStudyCard(
 
 export async function suspendStudyCard(cardId: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
   const { error } = await supabase
@@ -309,7 +309,7 @@ export async function suspendStudyCard(cardId: string) {
 
 export async function unsuspendStudyCard(cardId: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
 
@@ -321,7 +321,7 @@ export async function unsuspendStudyCard(cardId: string) {
     .eq("user_id", user.id)
     .single();
 
-  if (!card) return { error: "Card not found" };
+  if (!card) return { error: "errors.study_decks.card_not_found" };
 
   const restoredState =
     card.repetitions === 0 ? "new" :
@@ -344,7 +344,7 @@ export async function unsuspendStudyCard(cardId: string) {
 
 export async function deleteStudyCard(cardId: string, studyDeckId: string) {
   const user = await getCurrentUser();
-  if (!user) return { error: "Not authenticated" };
+  if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
   const { error } = await supabase

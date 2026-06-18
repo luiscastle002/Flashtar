@@ -9,18 +9,22 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
+import { translateError } from "@/lib/i18n/utils";
 
 export default function ForgotPasswordPage() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const t = useTranslations("auth");
+  const tRoot = useTranslations();
 
   async function handleSubmit(formData: FormData) {
     setLoading(true);
     const result = await resetPassword(formData);
     if (result?.error) {
-      toast.error(result.error);
+      toast.error(translateError(result.error, tRoot));
     } else if (result?.success) {
-      toast.success(result.success);
+      toast.success(t("reset_password_desc_sent"));
       setSent(true);
     }
     setLoading(false);
@@ -34,26 +38,26 @@ export default function ForgotPasswordPage() {
             <Sparkles className="h-6 w-6 text-primary" />
             Flashtar
           </Link>
-          <CardTitle>Reset password</CardTitle>
+          <CardTitle>{t("reset_password_title")}</CardTitle>
           <CardDescription>
-            {sent ? "Check your email for a reset link" : "Enter your email to receive a reset link"}
+            {sent ? t("reset_password_desc_sent") : t("reset_password_desc_enter")}
           </CardDescription>
         </CardHeader>
         <CardContent>
           {!sent && (
             <form action={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t("email")}</Label>
                 <Input id="email" name="email" type="email" placeholder="you@example.com" required />
               </div>
               <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? "Sending..." : "Send reset link"}
+                {loading ? t("sending") : t("send_reset_link")}
               </Button>
             </form>
           )}
           <p className="text-center text-sm text-muted-foreground mt-4">
             <Link href="/login" className="text-primary hover:underline">
-              Back to sign in
+              {t("back_to_sign_in")}
             </Link>
           </p>
         </CardContent>
