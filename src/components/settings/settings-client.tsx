@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { CreditCard, User, Key, Mail, Loader2 } from "lucide-react";
-import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -385,8 +385,7 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
     : (t.raw("pricing.free_features") as string[]);
 
   return (
-    <DashboardShell currentPath="/settings" profile={profile}>
-      <div className="max-w-2xl mx-auto space-y-6">
+    <div className="max-w-2xl mx-auto space-y-6">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold">{t("title")}</h1>
           <p className="text-muted-foreground">{t("subtitle")}</p>
@@ -643,6 +642,5 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
           </CardContent>
         </Card>
       </div>
-    </DashboardShell>
   );
 }

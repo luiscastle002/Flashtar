@@ -28,7 +28,12 @@
     "settings": "設定",
     "admin": "管理",
     "sign_out": "サインアウト",
-    "user_fallback": "ユーザー"
+    "user_fallback": "ユーザー",
+    "toggle_sidebar": "サイドバーを切り替える",
+    "open_navigation": "ナビゲーションメニューを開く",
+    "close_navigation": "ナビゲーションメニューを閉じる",
+    "expand_sidebar": "サイドバーを展開する",
+    "collapse_sidebar": "サイドバーを折りたたむ"
   },
   "language": {
     "english": "英語",

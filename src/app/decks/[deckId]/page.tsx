@@ -2,6 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser, getProfile, getSubscription } from "@/lib/queries/user";
 import { DeckEditor } from "@/components/decks/deck-editor";
+import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import type { Plan } from "@/types";
 
 export default async function DeckPage({ params }: { params: Promise<{ deckId: string }> }) {
@@ -28,11 +29,12 @@ export default async function DeckPage({ params }: { params: Promise<{ deckId: s
     .order("position");
 
   return (
-    <DeckEditor
-      deck={deck}
-      initialCards={cards ?? []}
-      profile={profile}
-      plan={(subscription?.plan ?? "free") as Plan}
-    />
+    <DashboardShell currentPath="/decks" profile={profile}>
+      <DeckEditor
+        deck={deck}
+        initialCards={cards ?? []}
+        plan={(subscription?.plan ?? "free") as Plan}
+      />
+    </DashboardShell>
   );
 }

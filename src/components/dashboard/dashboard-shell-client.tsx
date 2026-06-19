@@ -1,0 +1,116 @@
+"use client";
+
+import * as React from "react";
+import Link from "next/link";
+import { Sparkles } from "lucide-react";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { SpaceBackground } from "@/components/shared/space-background";
+import { LanguageSelector } from "@/components/shared/language-selector";
+import { SidebarProvider } from "@/components/layout/sidebar-provider";
+import { AppSidebar } from "@/components/layout/app-sidebar";
+import { MobileSidebar } from "@/components/layout/mobile-sidebar";
+import { UserMenu } from "@/components/layout/user-menu";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
+import type { Profile } from "@/types";
+
+interface DashboardShellClientProps {
+  children: React.ReactNode;
+  currentPath: string;
+  profile?: Profile | null;
+  defaultCollapsed?: boolean;
+}
+
+export function DashboardShellClient({
+  children,
+  profile,
+  defaultCollapsed = false,
+}: DashboardShellClientProps) {
+  return (
+    <SidebarProvider defaultCollapsed={defaultCollapsed}>
+      <TooltipProvider>
+        <DashboardShellInner profile={profile}>
+          {children}
+        </DashboardShellInner>
+      </TooltipProvider>
+    </SidebarProvider>
+  );
+}
+
+function DashboardShellInner({
+  children,
+  profile,
+}: {
+  children: React.ReactNode;
+  profile?: Profile | null;
+}) {
+  const locale = useLocale();
+  const router = useRouter();
+  const [dueCount, setDueCount] = React.useState<number | null>(null);
+
+  // Synchronize database preferred language to NEXT_LOCALE cookie if they differ
+  React.useEffect(() => {
+    if (!profile) return;
+    const dbLang = profile.preferred_language || "en";
+    if (dbLang !== locale) {
+      document.cookie = `NEXT_LOCALE=${dbLang}; path=/; max-age=31536000; SameSite=Lax`;
+      router.refresh();
+    }
+  }, [profile, locale, router]);
+
+  // Poll for spacing repetition study due counts
+  React.useEffect(() => {
+    if (!profile) return;
+
+    async function fetchDueCount() {
+      try {
+        const res = await fetch("/api/study/due-count");
+        if (res.ok) {
+          const data = await res.json();
+          setDueCount(data.totalDue ?? 0);
+        }
+      } catch (err) {
+        console.error("Error fetching due count:", err);
+      }
+    }
+
+    fetchDueCount();
+    const interval = setInterval(fetchDueCount, 2 * 60 * 1000); // Poll every 2 minutes
+    return () => clearInterval(interval);
+  }, [profile]);
+
+  return (
+    <div className="relative min-h-screen flex">
+      <SpaceBackground />
+      <div className="relative z-10 flex flex-1 min-w-0">
+        
+        {/* Collapsible Left Sidebar (Desktop) */}
+        <AppSidebar profile={profile} dueCount={dueCount} />
+
+        <div className="flex-1 flex flex-col min-w-0">
+          <header className="h-16 border-b flex items-center justify-between px-4 md:px-6">
+            
+            {/* Hamburger Trigger for Mobile Drawer */}
+            <MobileSidebar profile={profile} dueCount={dueCount} />
+            
+            <div className="md:hidden">
+              <Link href="/dashboard" className="flex items-center gap-2 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md">
+                <Sparkles className="h-5 w-5 text-primary" />
+                Flashtar
+              </Link>
+            </div>
+            
+            <div className="flex items-center gap-2 ml-auto">
+              <LanguageSelector />
+              <ThemeToggle />
+              <UserMenu profile={profile} />
+            </div>
+          </header>
+          
+          <main className="flex-1 p-4 md:p-6 overflow-auto">{children}</main>
+        </div>
+      </div>
+    </div>
+  );
+}

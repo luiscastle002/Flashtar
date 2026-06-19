@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Plus, Search, Copy, Trash2, Layers } from "lucide-react";
-import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -26,16 +26,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { createDeck, deleteDeck, duplicateDeck } from "@/actions/decks";
 import { formatDate } from "@/lib/utils";
 import { toast } from "sonner";
-import type { Deck, Profile } from "@/types";
+import type { Deck } from "@/types";
 import { useTranslations } from "next-intl";
 import { translateError } from "@/lib/i18n/utils";
 
 interface DecksPageClientProps {
   decks: Deck[];
-  profile: Profile | null;
 }
 
-export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClientProps) {
+export function DecksPageClient({ decks: initialDecks }: DecksPageClientProps) {
   const t = useTranslations("decks");
   const tCommon = useTranslations("common");
   const tErr = useTranslations("errors");
@@ -100,8 +99,7 @@ export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClien
   }
 
   return (
-    <DashboardShell currentPath="/decks" profile={profile}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold">{t("title")}</h1>
@@ -206,6 +204,5 @@ export function DecksPageClient({ decks: initialDecks, profile }: DecksPageClien
           </div>
         )}
       </div>
-    </DashboardShell>
   );
 }

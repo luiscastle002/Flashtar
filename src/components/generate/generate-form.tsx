@@ -20,7 +20,7 @@ import {
   ChevronDown,
   ChevronRight
 } from "lucide-react";
-import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -679,7 +679,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
   );
 
   return (
-    <DashboardShell currentPath="/generate" profile={profile}>
+    <>
       <div className="max-w-2xl mx-auto space-y-6">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2">
@@ -1303,6 +1303,6 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
           </div>
         </div>
       )}
-    </DashboardShell>
+    </>
   );
 }

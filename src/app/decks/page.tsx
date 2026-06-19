@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser, getProfile } from "@/lib/queries/user";
 import { DecksPageClient } from "@/components/decks/decks-page-client";
+import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { redirect } from "next/navigation";
 
 export default async function DecksPage() {
@@ -32,5 +33,9 @@ export default async function DecksPage() {
     flashcard_count: countMap[deck.id] ?? 0,
   }));
 
-  return <DecksPageClient decks={decksWithCounts} profile={profile} />;
+  return (
+    <DashboardShell currentPath="/decks" profile={profile}>
+      <DecksPageClient decks={decksWithCounts} />
+    </DashboardShell>
+  );
 }

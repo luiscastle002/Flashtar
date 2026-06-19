@@ -21,7 +21,6 @@ import { CSS } from "@dnd-kit/utilities";
 import { GripVertical, Plus, Trash2, Download, Save } from "lucide-react";
 import { RichTextEditor } from "@/components/flashcards/rich-text-editor";
 import { AddToStudyDeckButton } from "@/components/study/add-to-study-deck-button";
-import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -34,7 +33,7 @@ import {
 import { updateDeck } from "@/actions/decks";
 import { downloadCsv, flashcardsToCsv } from "@/lib/export/csv";
 import { toast } from "sonner";
-import type { Deck, Flashcard, Plan, Profile } from "@/types";
+import type { Deck, Flashcard, Plan } from "@/types";
 import { PLAN_LIMITS } from "@/types";
 import { useTranslations } from "next-intl";
 import { translateError } from "@/lib/i18n/utils";
@@ -102,11 +101,10 @@ function SortableCard({ card, index, onUpdate, onDelete }: SortableCardProps) {
 interface DeckEditorProps {
   deck: Deck;
   initialCards: Flashcard[];
-  profile: Profile | null;
   plan: Plan;
 }
 
-export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: DeckEditorProps) {
+export function DeckEditor({ deck: initialDeck, initialCards, plan }: DeckEditorProps) {
   const t = useTranslations("decks");
   const tCommon = useTranslations("common");
   const tErr = useTranslations("errors");
@@ -226,8 +224,7 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
   }
 
   return (
-    <DashboardShell currentPath="/decks" profile={profile}>
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
           <div className="flex-1 space-y-2">
             <Input
@@ -277,6 +274,5 @@ export function DeckEditor({ deck: initialDeck, initialCards, profile, plan }: D
           {t("editor.add_card")}
         </Button>
       </div>
-    </DashboardShell>
   );
 }

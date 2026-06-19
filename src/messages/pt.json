@@ -28,7 +28,12 @@
     "settings": "Configurações",
     "admin": "Administrador",
     "sign_out": "Sair",
-    "user_fallback": "Usuário"
+    "user_fallback": "Usuário",
+    "toggle_sidebar": "Alternar barra lateral",
+    "open_navigation": "Abrir menu de navegação",
+    "close_navigation": "Fechar menu de navegação",
+    "expand_sidebar": "Expandir barra lateral",
+    "collapse_sidebar": "Recolher barra lateral"
   },
   "language": {
     "english": "Inglês",

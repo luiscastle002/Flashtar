@@ -28,7 +28,12 @@
     "settings": "Settings",
     "admin": "Admin",
     "sign_out": "Sign out",
-    "user_fallback": "User"
+    "user_fallback": "User",
+    "toggle_sidebar": "Toggle sidebar",
+    "open_navigation": "Open navigation menu",
+    "close_navigation": "Close navigation menu",
+    "expand_sidebar": "Expand sidebar",
+    "collapse_sidebar": "Collapse sidebar"
   },
   "language": {
     "english": "English",
