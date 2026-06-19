@@ -309,6 +309,7 @@ export function StudySessionClient({
 
   async function handleFinish() {
     const durationMs = Date.now() - sessionStartRef.current;
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     await endStudySession(sessionId, {
       cardsStudied: state.stats.studied,
       cardsAgain: state.stats.again,
@@ -317,7 +318,7 @@ export function StudySessionClient({
       cardsEasy: state.stats.easy,
       newCardsSeen: state.stats.newSeen,
       durationMs,
-    });
+    }, timezone);
     router.push(`/study/${deckId}`);
     router.refresh();
   }
@@ -343,6 +344,7 @@ export function StudySessionClient({
         durationMs={Date.now() - sessionStartRef.current}
         onFinish={handleFinish}
         onStudyMore={handleStudyMore}
+        deckId={deckId}
       />
     );
   }

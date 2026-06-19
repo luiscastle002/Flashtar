@@ -177,7 +177,8 @@ export async function endStudySession(
     cardsEasy: number;
     newCardsSeen: number;
     durationMs: number;
-  }
+  },
+  timezone?: string
 ) {
   const user = await getCurrentUser();
   if (!user) return { error: "errors.auth.not_authenticated" };
@@ -210,31 +211,46 @@ export async function endStudySession(
 
   if (sessionError || !session) return { error: sessionError?.message ?? "errors.study_decks.session_not_found" };
 
-  // Upsert daily stats — global row (study_deck_id = NULL) + per-deck row
-  const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
-  const statRows = [
-    { study_deck_id: null },
-    { study_deck_id: session.study_deck_id },
-  ].map((extra) => ({
-    user_id: user.id,
-    stat_date: today,
-    study_time_ms: stats.durationMs,
-    cards_reviewed: stats.cardsStudied,
-    cards_again: stats.cardsAgain,
-    cards_hard: stats.cardsHard,
-    cards_good: stats.cardsGood,
-    cards_easy: stats.cardsEasy,
-    new_cards_seen: stats.newCardsSeen,
-    retention_pct: retentionPct,
-    ...extra,
-  }));
+  // Determine timezone-adjusted local date
+  let today = new Date().toISOString().split("T")[0];
+  if (timezone) {
+    try {
+      const formatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: timezone,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      });
+      const parts = formatter.formatToParts(new Date());
+      const year = parts.find((p) => p.type === "year")?.value;
+      const month = parts.find((p) => p.type === "month")?.value;
+      const day = parts.find((p) => p.type === "day")?.value;
+      if (year && month && day) {
+        today = `${year}-${month}-${day}`;
+      }
+    } catch (e) {
+      console.error("Error formatting date with timezone:", e);
+    }
+  }
 
-  await supabase
-    .from("user_study_stats")
-    .upsert(statRows, {
-      onConflict: "user_id,stat_date,study_deck_id",
-      ignoreDuplicates: false,
-    });
+  // Call the atomic increment RPC for both global (null) and per-deck stats
+  const calls = [null, session.study_deck_id].map((deckId) =>
+    supabase.rpc("increment_user_study_stats", {
+      p_user_id: user.id,
+      p_stat_date: today,
+      p_study_deck_id: deckId,
+      p_study_time_ms: stats.durationMs,
+      p_cards_reviewed: stats.cardsStudied,
+      p_cards_again: stats.cardsAgain,
+      p_cards_hard: stats.cardsHard,
+      p_cards_good: stats.cardsGood,
+      p_cards_easy: stats.cardsEasy,
+      p_new_cards_seen: stats.newCardsSeen,
+      p_retention_pct: retentionPct,
+    })
+  );
+
+  await Promise.all(calls);
   // Note: upsert errors are non-fatal — stats are best-effort
 
   revalidatePath(`/study/${session.study_deck_id}`);

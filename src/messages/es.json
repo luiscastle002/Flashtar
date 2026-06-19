@@ -25,6 +25,7 @@
     "study": "Estudiar",
     "generate": "Generar",
     "decks": "Barajas",
+    "statistics": "Estadísticas",
     "settings": "Configuración",
     "admin": "Administrador",
     "sign_out": "Cerrar sesión",
@@ -776,6 +777,36 @@
       "meta_desc": "Política de Reembolso de Flashtar — Información sobre reembolsos y cancelaciones.",
       "title": "Política de Reembolso",
       "last_updated": "Última actualización: 15 de junio de 2026"
+    }
+  },
+  "stats": {
+    "title": "Estadísticas de Estudio",
+    "global_stats": "Estadísticas Globales",
+    "all_decks": "Todas las Barajas",
+    "select_deck": "Seleccionar una baraja",
+    "search_decks": "Buscar barajas...",
+    "study_calendar": "Calendario de Estudio",
+    "future_due": "Programación Futura",
+    "streaks": "Rachas",
+    "current_streak": "Racha Actual",
+    "longest_streak": "Racha Más Larga",
+    "retention": "Retención Promedio",
+    "total_studied": "Total Estudiado",
+    "total_time": "Tiempo Total de Estudio",
+    "cards_due": "Tarjetas Pendientes",
+    "last_studied": "Último estudio",
+    "never": "nunca",
+    "heatmap_tooltip": "{count, plural, =0 {Sin repasos} =1 {# repaso} other {# repasos}} el {date}",
+    "future_due_tooltip": "{count, plural, =1 {# tarjeta pendiente} other {# tarjetas pendientes}}",
+    "streak_days": "{count, plural, =1 {# día} other {# días}}",
+    "due_buckets": {
+      "today": "Hoy",
+      "tomorrow": "Mañana",
+      "2_days": "2 Días",
+      "3_days": "3 Días",
+      "4_7_days": "4-7 Días",
+      "8_30_days": "8-30 Días",
+      "30_plus_days": "30+ Días"
     }
   }
 }

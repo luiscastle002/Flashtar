@@ -59,6 +59,20 @@ function DashboardShellInner({
     }
   }, [profile, locale, router]);
 
+  // Synchronize browser timezone to USER_TIMEZONE cookie
+  React.useEffect(() => {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const currentTzCookie = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("USER_TIMEZONE="))
+      ?.split("=")[1];
+
+    if (tz && currentTzCookie !== tz) {
+      document.cookie = `USER_TIMEZONE=${tz}; path=/; max-age=31536000; SameSite=Lax`;
+      router.refresh();
+    }
+  }, [router]);
+
   // Poll for spacing repetition study due counts
   React.useEffect(() => {
     if (!profile) return;

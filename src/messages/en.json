@@ -25,6 +25,7 @@
     "study": "Study",
     "generate": "Generate",
     "decks": "Decks",
+    "statistics": "Statistics",
     "settings": "Settings",
     "admin": "Admin",
     "sign_out": "Sign out",
@@ -776,6 +777,36 @@
       "meta_desc": "Refund Policy for Flashtar — Information on refunds and cancellations.",
       "title": "Refund Policy",
       "last_updated": "Last updated: June 15, 2026"
+    }
+  },
+  "stats": {
+    "title": "Study Statistics",
+    "global_stats": "Global Statistics",
+    "all_decks": "All Decks",
+    "select_deck": "Select a deck",
+    "search_decks": "Search decks...",
+    "study_calendar": "Study Calendar",
+    "future_due": "Future Due",
+    "streaks": "Streaks",
+    "current_streak": "Current Streak",
+    "longest_streak": "Longest Streak",
+    "retention": "Average Retention",
+    "total_studied": "Total Studied",
+    "total_time": "Total Study Time",
+    "cards_due": "Cards Due",
+    "last_studied": "Last studied",
+    "never": "never",
+    "heatmap_tooltip": "{count, plural, =0 {No reviews} =1 {# review} other {# reviews}} on {date}",
+    "future_due_tooltip": "{count, plural, =1 {# card} other {# cards}} due",
+    "streak_days": "{count, plural, =1 {# day} other {# days}}",
+    "due_buckets": {
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "2_days": "2 Days",
+      "3_days": "3 Days",
+      "4_7_days": "4-7 Days",
+      "8_30_days": "8-30 Days",
+      "30_plus_days": "30+ Days"
     }
   }
 }

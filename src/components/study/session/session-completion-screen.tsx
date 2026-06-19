@@ -23,6 +23,7 @@ interface SessionCompletionScreenProps {
   durationMs: number;
   onFinish: () => void;
   onStudyMore: () => Promise<void>;
+  deckId: string;
 }
 
 export function SessionCompletionScreen({
@@ -30,6 +31,7 @@ export function SessionCompletionScreen({
   durationMs,
   onFinish,
   onStudyMore,
+  deckId,
 }: SessionCompletionScreenProps) {
   const t = useTranslations("study.session");
   const tCommon = useTranslations("common");
@@ -165,7 +167,7 @@ export function SessionCompletionScreen({
             {t("finish")}
           </Button>
           <Button variant="ghost" className="w-full text-muted-foreground text-sm" asChild>
-            <Link href={`/stats`}>
+            <Link href={`/stats/${deckId}`}>
               <BarChart2 className="h-4 w-4 mr-1.5" />
               {t("view_stats")}
             </Link>

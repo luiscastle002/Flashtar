@@ -25,6 +25,7 @@
     "study": "学習する",
     "generate": "生成する",
     "decks": "デッキ一覧",
+    "statistics": "統計",
     "settings": "設定",
     "admin": "管理",
     "sign_out": "サインアウト",
@@ -777,6 +778,36 @@
       "meta_desc": "Flashtar返金ポリシー — 返金およびキャンセルに関する情報について。",
       "title": "返金ポリシー",
       "last_updated": "最終更新日: 2026年6月15日"
+    }
+  },
+  "stats": {
+    "title": "学習統計",
+    "global_stats": "全体統計",
+    "all_decks": "すべてのデッキ",
+    "select_deck": "デッキを選択",
+    "search_decks": "デッキを検索...",
+    "study_calendar": "学習カレンダー",
+    "future_due": "今後のスケジュール",
+    "streaks": "連続学習日数",
+    "current_streak": "現在の継続日数",
+    "longest_streak": "最長継続日数",
+    "retention": "平均定着率",
+    "total_studied": "総学習カード数",
+    "total_time": "総学習時間",
+    "cards_due": "期日のカード数",
+    "last_studied": "最終学習日",
+    "never": "未学習",
+    "heatmap_tooltip": "{date}に {count, plural, other {# 回の学習}}",
+    "future_due_tooltip": "{count, plural, other {# 枚}}が期日",
+    "streak_days": "{count, plural, other {# 日}}",
+    "due_buckets": {
+      "today": "今日",
+      "tomorrow": "明日",
+      "2_days": "2日後",
+      "3_days": "3日後",
+      "4_7_days": "4-7日後",
+      "8_30_days": "8-30日後",
+      "30_plus_days": "30日以降"
     }
   }
 }
