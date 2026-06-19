@@ -2,6 +2,7 @@ import { BarChart3, Flame, Clock, Brain } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { getTranslations } from "next-intl/server";
 import { StreakStats, SummaryStats } from "@/actions/stats";
+import { formatStatTime } from "@/lib/utils/stats-format";
 
 interface StatsHeaderProps {
   summary: SummaryStats;
@@ -12,20 +13,7 @@ interface StatsHeaderProps {
 export async function StatsHeader({ summary, streak, deckName }: StatsHeaderProps) {
   const t = await getTranslations("stats");
 
-  // Format study time: Xh Ym or Zm or Ks
-  const totalSecs = Math.round(summary.totalTimeMs / 1000);
-  const minutes = Math.floor(totalSecs / 60);
-  const hours = Math.floor(minutes / 60);
-  const displayMins = minutes % 60;
-
-  let timeString = "0m";
-  if (hours > 0) {
-    timeString = `${hours}h ${displayMins}m`;
-  } else if (minutes > 0) {
-    timeString = `${minutes}m`;
-  } else if (totalSecs > 0) {
-    timeString = `${totalSecs}s`;
-  }
+  const timeString = formatStatTime(summary.totalTimeMs);
 
   return (
     <div className="space-y-6">
@@ -93,12 +81,12 @@ export async function StatsHeader({ summary, streak, deckName }: StatsHeaderProp
             </div>
             <div>
               <p className="text-xs text-muted-foreground">{t("streaks")}</p>
-              <h3 className="text-lg md:text-xl font-bold mt-0.5 tabular-nums flex items-baseline gap-1">
-                {streak.currentStreak}
-                <span className="text-xs text-muted-foreground font-normal">
-                  / {streak.longestStreak} {t("streak_days", { count: streak.longestStreak })}
-                </span>
+              <h3 className="text-lg md:text-xl font-bold mt-0.5 tabular-nums">
+                {t("streak_days", { count: streak.currentStreak })}
               </h3>
+              <p className="text-[10px] text-muted-foreground mt-0.5">
+                {t("longest_streak")}: {t("streak_days", { count: streak.longestStreak })}
+              </p>
             </div>
           </CardContent>
         </Card>

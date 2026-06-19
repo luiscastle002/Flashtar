@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarDay } from "@/actions/stats";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { StatsTooltip } from "@/components/stats/stats-tooltip";
 
 interface StudyCalendarProps {
   data: CalendarDay[];
@@ -17,11 +18,10 @@ export function StudyCalendar({ data }: StudyCalendarProps) {
 
   const [yearOffset, setYearOffset] = React.useState(0);
   const [tooltip, setTooltip] = React.useState<{
-    x: number;
-    y: number;
-    content: string;
+    targetRect: DOMRect | null;
+    content: React.ReactNode;
     visible: boolean;
-  }>({ x: 0, y: 0, content: "", visible: false });
+  }>({ targetRect: null, content: "", visible: false });
 
   // Map dates for quick lookups
   const countMap = React.useMemo(() => {
@@ -110,10 +110,6 @@ export function StudyCalendar({ data }: StudyCalendarProps) {
     count: number
   ) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    
-    // Position tooltip above the cell
-    const x = rect.left + window.scrollX - 70 + rect.width / 2;
-    const y = rect.top + window.scrollY - 38;
 
     const formattedDate = format.dateTime(dateObj, {
       year: "numeric",
@@ -122,8 +118,7 @@ export function StudyCalendar({ data }: StudyCalendarProps) {
     });
 
     setTooltip({
-      x,
-      y,
+      targetRect: rect,
       content: t("heatmap_tooltip", { count, date: formattedDate }),
       visible: true,
     });
@@ -149,7 +144,7 @@ export function StudyCalendar({ data }: StudyCalendarProps) {
             <ChevronLeft className="h-4 w-4" />
           </Button>
           <span className="text-xs font-medium tabular-nums min-w-[70px] text-center">
-            {yearOffset === 0 ? "Past Year" : `${yearOffset} Year(s) Ago`}
+            {yearOffset === 0 ? t("past_year") : t("years_ago", { count: yearOffset })}
           </span>
           <Button
             variant="outline"
@@ -231,14 +226,11 @@ export function StudyCalendar({ data }: StudyCalendarProps) {
         </div>
 
         {/* Dynamic Client Floating Tooltip */}
-        {tooltip.visible && (
-          <div
-            style={{ left: tooltip.x, top: tooltip.y }}
-            className="absolute z-50 bg-popover text-popover-foreground border text-xs px-2 py-1 rounded shadow-lg transition-opacity duration-150 pointer-events-none whitespace-nowrap animate-in fade-in zoom-in-95 duration-100"
-          >
-            {tooltip.content}
-          </div>
-        )}
+        <StatsTooltip
+          targetRect={tooltip.targetRect}
+          visible={tooltip.visible}
+          content={tooltip.content}
+        />
       </CardContent>
     </Card>
   );

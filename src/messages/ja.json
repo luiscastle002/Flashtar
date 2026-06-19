@@ -800,6 +800,8 @@
     "heatmap_tooltip": "{date}に {count, plural, other {# 回の学習}}",
     "future_due_tooltip": "{count, plural, other {# 枚}}が期日",
     "streak_days": "{count, plural, other {# 日}}",
+    "past_year": "過去1年間",
+    "years_ago": "{count}年前",
     "due_buckets": {
       "today": "今日",
       "tomorrow": "明日",

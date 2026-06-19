@@ -4,6 +4,8 @@ import * as React from "react";
 import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FutureDueBucket } from "@/actions/stats";
+import { StatsTooltip } from "@/components/stats/stats-tooltip";
+import { formatCardsDue } from "@/lib/utils/stats-format";
 
 interface FutureDueChartProps {
   data: FutureDueBucket[];
@@ -13,11 +15,10 @@ export function FutureDueChart({ data }: FutureDueChartProps) {
   const t = useTranslations("stats");
 
   const [tooltip, setTooltip] = React.useState<{
-    x: number;
-    y: number;
-    content: string;
+    targetRect: DOMRect | null;
+    content: React.ReactNode;
     visible: boolean;
-  }>({ x: 0, y: 0, content: "", visible: false });
+  }>({ targetRect: null, content: "", visible: false });
 
   // Calculate coordinates and dimensions
   const chartHeight = 180;
@@ -43,13 +44,10 @@ export function FutureDueChart({ data }: FutureDueChartProps) {
     label: string
   ) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = rect.left + window.scrollX - 60 + rect.width / 2;
-    const y = rect.top + window.scrollY - 38;
 
     setTooltip({
-      x,
-      y,
-      content: `${count} ${t("future_due_tooltip", { count })} (${label})`,
+      targetRect: rect,
+      content: `${formatCardsDue(count, t)} (${label})`,
       visible: true,
     });
   };
@@ -160,14 +158,11 @@ export function FutureDueChart({ data }: FutureDueChartProps) {
         </div>
 
         {/* Dynamic Tooltip */}
-        {tooltip.visible && (
-          <div
-            style={{ left: tooltip.x, top: tooltip.y }}
-            className="absolute z-50 bg-popover text-popover-foreground border text-xs px-2 py-1 rounded shadow-lg transition-opacity duration-150 pointer-events-none whitespace-nowrap animate-in fade-in zoom-in-95 duration-100"
-          >
-            {tooltip.content}
-          </div>
-        )}
+        <StatsTooltip
+          targetRect={tooltip.targetRect}
+          visible={tooltip.visible}
+          content={tooltip.content}
+        />
       </CardContent>
     </Card>
   );

@@ -799,6 +799,8 @@
     "heatmap_tooltip": "{count, plural, =0 {Sin repasos} =1 {# repaso} other {# repasos}} el {date}",
     "future_due_tooltip": "{count, plural, =1 {# tarjeta pendiente} other {# tarjetas pendientes}}",
     "streak_days": "{count, plural, =1 {# día} other {# días}}",
+    "past_year": "Último año",
+    "years_ago": "{count, plural, =1 {Hace # año} other {Hace # años}}",
     "due_buckets": {
       "today": "Hoy",
       "tomorrow": "Mañana",

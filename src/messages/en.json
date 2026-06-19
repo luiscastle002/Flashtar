@@ -799,6 +799,8 @@
     "heatmap_tooltip": "{count, plural, =0 {No reviews} =1 {# review} other {# reviews}} on {date}",
     "future_due_tooltip": "{count, plural, =1 {# card} other {# cards}} due",
     "streak_days": "{count, plural, =1 {# day} other {# days}}",
+    "past_year": "Past Year",
+    "years_ago": "{count, plural, =1 {# year ago} other {# years ago}}",
     "due_buckets": {
       "today": "Today",
       "tomorrow": "Tomorrow",
