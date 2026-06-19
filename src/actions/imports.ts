@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser, getSubscription } from "@/lib/queries/user";
 import type { StudyCard } from "@/types";
-import { PLAN_LIMITS, type Plan } from "@/types";
+import type { Plan } from "@/types";
 
 // ---------------------------------------------------------------------------
 // importFromGeneratedDeck
@@ -231,12 +231,8 @@ export async function importFromApkg(
   if (!user) return { error: "errors.auth.not_authenticated" };
   if (!cards.length) return { error: "errors.imports.no_rows" };
 
-  // Pro-only billing gate
   const subscription = await getSubscription(user.id);
   const plan = (subscription?.plan ?? "free") as Plan;
-  if (!PLAN_LIMITS[plan].apkgImport) {
-    return { error: "errors.imports.apkg_pro_required" };
-  }
 
   const supabase = await createClient();
 
@@ -251,9 +247,15 @@ export async function importFromApkg(
   if (!deck) return { error: "errors.study_decks.not_found" };
 
   // Validate rows — only keep cards with non-empty front text
-  const validCards = cards.filter(
+  let validCards = cards.filter(
     (c) => c.front?.trim()
   );
+
+  // Enforce server-side limit for Free tier users (up to 1,000 cards)
+  if (plan === "free" && validCards.length > 1000) {
+    validCards = validCards.slice(0, 1000);
+  }
+
   const skippedCount = cards.length - validCards.length;
 
   if (!validCards.length) return { error: "errors.imports.no_valid_rows" };

@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "lh3.googleusercontent.com" },
     ],
   },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "10mb",
+    },
+  },
   serverExternalPackages: ["sql.js"],
   webpack: (config, { isServer, webpack }) => {
     if (!isServer) {

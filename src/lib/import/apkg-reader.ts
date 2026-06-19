@@ -1,5 +1,7 @@
 "use client";
 
+import type { Plan } from "@/types";
+
 /**
  * Client-side APKG file parser.
  *
@@ -22,6 +24,7 @@ export interface ParsedApkgResult {
   cards: ParsedApkgCard[];
   deckName: string;
   totalNotes: number;
+  limitReached?: boolean;
 }
 
 // Anki model definition (partial — only the fields we need)
@@ -44,15 +47,37 @@ const MAX_UPLOAD_SIZE = 50 * 1024 * 1024; // 50 MB file size limit
 // Main Entry Point
 // ---------------------------------------------------------------------------
 
+function isValidSqlite(data: Uint8Array): boolean {
+  if (data.length < 16) return false;
+  const expected = [0x53, 0x51, 0x4c, 0x69, 0x74, 0x65, 0x20, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x20, 0x33, 0x00];
+  for (let i = 0; i < 16; i++) {
+    if (data[i] !== expected[i]) return false;
+  }
+  return true;
+}
+
+function verifyNotesTableExists(db: import("sql.js").Database): boolean {
+  try {
+    const result = db.exec(
+      "SELECT name FROM sqlite_master WHERE type='table' AND name='notes'"
+    );
+    return result.length > 0 && result[0].values.length > 0;
+  } catch {
+    return false;
+  }
+}
+
 /**
  * Parses an APKG file in the browser and returns extracted front/back cards.
  *
  * @param file - The .apkg File object from the file input
+ * @param plan - The user's subscription plan ('free' | 'pro')
  * @param onProgress - Optional progress callback for UI updates
  * @returns Parsed cards with deck name and note count
  */
 export async function parseApkgFile(
   file: File,
+  plan: Plan,
   onProgress?: (stage: "extracting" | "parsing" | "processing") => void
 ): Promise<ParsedApkgResult> {
   // 1. Validate file basics
@@ -72,19 +97,48 @@ export async function parseApkgFile(
 
   let unzipped: Record<string, Uint8Array>;
   try {
-    unzipped = unzipSync(fileBuffer);
+    // Memory optimization: only extract the SQL databases
+    unzipped = unzipSync(fileBuffer, {
+      filter: (file) =>
+        file.name === "collection.anki2" ||
+        file.name === "collection.anki21" ||
+        file.name === "collection.anki21b",
+    });
   } catch {
     throw new ApkgError("INVALID_FORMAT", "This file is not a valid Anki package.");
   }
 
-  // 4. Find the SQLite database inside the ZIP
-  const dbFile =
-    unzipped["collection.anki2"] ??
-    unzipped["collection.anki21"] ??
-    null;
+  // 4. Resolve file precedence: collection.anki21 -> collection.anki21b -> collection.anki2
+  let dbFile = unzipped["collection.anki21"] ?? null;
+  let isCompressed = false;
+
+  if (!dbFile) {
+    if (unzipped["collection.anki21b"]) {
+      dbFile = unzipped["collection.anki21b"];
+      isCompressed = true;
+    } else if (unzipped["collection.anki2"]) {
+      dbFile = unzipped["collection.anki2"];
+    }
+  }
 
   if (!dbFile) {
     throw new ApkgError("NO_DATABASE", "No Anki database found in file.");
+  }
+
+  // Decompress if compressed (zstd)
+  if (isCompressed) {
+    try {
+      const fzstd = await import("fzstd");
+      dbFile = fzstd.decompress(dbFile);
+    } catch (err) {
+      console.error("Zstd decompression failed:", err);
+      throw new ApkgError("PARSE_FAILED", "Failed to decompress the database file.");
+    }
+  }
+
+  // Verify SQLite file signature
+  if (!isValidSqlite(dbFile)) {
+    throw new ApkgError("INVALID_APKG_DATABASE", "The database file is not a valid SQLite database.");
   }
 
   // Zip bomb guard
@@ -106,13 +160,13 @@ export async function parseApkgFile(
 
     // 7. Extract notes and convert to cards
     onProgress?.("processing");
-    const { cards, deckName, totalNotes } = extractCards(db, models);
+    const { cards, deckName, totalNotes, limitReached } = extractCards(db, models, plan);
 
     if (cards.length === 0) {
       throw new ApkgError("NO_NOTES", "No notes found in this APKG file.");
     }
 
-    return { cards, deckName, totalNotes };
+    return { cards, deckName, totalNotes, limitReached };
   } finally {
     db.close();
   }
@@ -198,44 +252,87 @@ function extractModels(db: import("sql.js").Database): Map<string, AnkiModel> {
 
 function extractCards(
   db: import("sql.js").Database,
-  models: Map<string, AnkiModel>
-): { cards: ParsedApkgCard[]; deckName: string; totalNotes: number } {
-  // Query all notes
-  const notesResult = db.exec("SELECT mid, flds FROM notes");
-  if (!notesResult.length || !notesResult[0].values.length) {
-    return { cards: [], deckName: "Imported Deck", totalNotes: 0 };
+  models: Map<string, AnkiModel>,
+  plan: Plan
+): { cards: ParsedApkgCard[]; deckName: string; totalNotes: number; limitReached: boolean } {
+  // Verify notes table schema exists to avoid generic runtime errors (e.g. "no such table: notes")
+  if (!verifyNotesTableExists(db)) {
+    throw new ApkgError("INVALID_APKG_DATABASE", "The notes table does not exist in the collection database.");
   }
 
   // Try to get the deck name
   const deckName = extractDeckName(db);
 
-  const cards: ParsedApkgCard[] = [];
-  const totalNotes = notesResult[0].values.length;
-
-  for (const row of notesResult[0].values) {
-    const modelId = String(row[0]);
-    const fieldsRaw = String(row[1]);
-    const fields = fieldsRaw.split(FIELD_SEPARATOR);
-
-    const model = models.get(modelId);
-    const isClozeModel = model?.type === 1;
-
-    if (isClozeModel) {
-      // Flatten cloze notes into individual cards
-      const clozeCards = flattenClozeNote(fields[0] ?? "");
-      cards.push(...clozeCards);
-    } else {
-      // Basic note: first field = front, second field = back
-      const front = stripAnkiHtml(fields[0] ?? "");
-      const back = stripAnkiHtml(fields[1] ?? "");
-
-      if (front.trim()) {
-        cards.push({ front, back, isCloze: false });
-      }
+  // Safely count total notes
+  let totalNotes = 0;
+  try {
+    const countResult = db.exec("SELECT count(*) FROM notes");
+    if (countResult.length > 0 && countResult[0].values.length > 0) {
+      totalNotes = Number(countResult[0].values[0][0]);
     }
+  } catch (err) {
+    console.warn("Failed to retrieve total notes count:", err);
   }
 
-  return { cards, deckName, totalNotes };
+  const cards: ParsedApkgCard[] = [];
+  const limit = plan === "free" ? 1000 : Infinity;
+  let limitReached = false;
+
+  // Stream notes row-by-row using a prepared statement to optimize memory footprint
+  const stmt = db.prepare("SELECT mid, flds FROM notes");
+  try {
+    while (stmt.step()) {
+      if (cards.length >= limit) {
+        limitReached = true;
+        break;
+      }
+
+      const row = stmt.get();
+      const modelId = String(row[0]);
+      const fieldsRaw = String(row[1]);
+      const fields = fieldsRaw.split(FIELD_SEPARATOR);
+
+      const model = models.get(modelId);
+      const isClozeModel = model?.type === 1;
+
+      // Filter warning card (placeholder stubs from modern exports)
+      const warningText = "Please update to the latest Anki version, then import the .colpkg/.apkg file again.";
+
+      if (isClozeModel) {
+        // Flatten cloze notes into individual cards
+        const clozeCards = flattenClozeNote(fields[0] ?? "");
+        for (const clozeCard of clozeCards) {
+          if (cards.length >= limit) {
+            limitReached = true;
+            break;
+          }
+          if (clozeCard.front.includes(warningText)) {
+            continue;
+          }
+          cards.push(clozeCard);
+        }
+      } else {
+        // Simplified note mapping:
+        // fields[0] -> front
+        // fields[1] -> back
+        // Acknowledge that this is a simplified model and may not reflect all Anki note types.
+        const front = stripAnkiHtml(fields[0] ?? "");
+        const back = stripAnkiHtml(fields[1] ?? "");
+
+        if (front.includes(warningText)) {
+          continue;
+        }
+
+        if (front.trim()) {
+          cards.push({ front, back, isCloze: false });
+        }
+      }
+    }
+  } finally {
+    stmt.free(); // Crucial to release WASM/Emscripten statement locks
+  }
+
+  return { cards, deckName, totalNotes, limitReached };
 }
 
 // ---------------------------------------------------------------------------
@@ -378,7 +475,8 @@ export type ApkgErrorCode =
   | "TOO_LARGE"
   | "NO_DATABASE"
   | "PARSE_FAILED"
-  | "NO_NOTES";
+  | "NO_NOTES"
+  | "INVALID_APKG_DATABASE";
 
 export class ApkgError extends Error {
   code: ApkgErrorCode;

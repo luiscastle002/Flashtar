@@ -499,7 +499,8 @@
       "apkg_invalid_format": "Invalid APKG file format.",
       "apkg_no_database": "No Anki database found in file.",
       "apkg_parse_failed": "Failed to parse Anki database.",
-      "apkg_too_large": "APKG file exceeds maximum size."
+      "apkg_too_large": "APKG file exceeds maximum size.",
+      "apkg_invalid_database": "The database inside the APKG file is invalid or corrupt."
     },
     "profile": {
       "not_found": "Profile not found",

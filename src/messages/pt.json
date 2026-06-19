@@ -499,7 +499,8 @@
       "apkg_invalid_format": "Formato de arquivo APKG inválido.",
       "apkg_no_database": "Nenhum banco de dados do Anki encontrado no arquivo.",
       "apkg_parse_failed": "Falha ao analisar o banco de dados do Anki.",
-      "apkg_too_large": "O arquivo APKG excede o tamanho máximo."
+      "apkg_too_large": "O arquivo APKG excede o tamanho máximo.",
+      "apkg_invalid_database": "O banco de dados dentro do arquivo APKG é inválido ou está corrompido."
     },
     "profile": {
       "not_found": "Perfil não encontrado",

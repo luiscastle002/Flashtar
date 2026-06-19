@@ -99,7 +99,7 @@ export const PLAN_LIMITS = {
     // Study Mode v2
     studyDecks: 3,
     mediaStorageMb: 0,       // free users: URL-only, no file uploads
-    apkgImport: false,
+    apkgImport: true,
     audioCards: false,
     fullStats: false,
     fsrs: false,

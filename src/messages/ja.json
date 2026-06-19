@@ -500,7 +500,8 @@
       "apkg_invalid_format": "無効なAPKGファイル形式です。",
       "apkg_no_database": "ファイル内にAnkiデータベースが見つかりません。",
       "apkg_parse_failed": "Ankiデータベースの解析に失敗しました。",
-      "apkg_too_large": "APKGファイルが制限サイズを超えています。"
+      "apkg_too_large": "APKGファイルが制限サイズを超えています。",
+      "apkg_invalid_database": "APKGファイル内のデータベースが無効か、または破損しています。"
     },
     "profile": {
       "not_found": "プロフィールが見つかりません",
