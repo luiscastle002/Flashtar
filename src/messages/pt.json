@@ -801,6 +801,8 @@
     "streak_days": "{count, plural, =1 {# dia} other {# dias}}",
     "past_year": "Último ano",
     "years_ago": "{count, plural, =1 {Há # ano} other {Há # anos}}",
+    "scroll_left": "Rolar para a esquerda",
+    "scroll_right": "Rolar para a direita",
     "due_buckets": {
       "today": "Hoje",
       "tomorrow": "Amanhã",
@@ -809,6 +811,15 @@
       "4_7_days": "4-7 Dias",
       "8_30_days": "8-30 Dias",
       "30_plus_days": "30+ Dias"
+    },
+    "due_buckets_short": {
+      "today": "Hoje",
+      "tomorrow": "Aman.",
+      "2_days": "2d",
+      "3_days": "3d",
+      "4_7_days": "4-7d",
+      "8_30_days": "8-30d",
+      "30_plus_days": "30d+"
     }
   }
 }

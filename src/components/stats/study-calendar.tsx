@@ -18,10 +18,20 @@ export function StudyCalendar({ data }: StudyCalendarProps) {
 
   const [yearOffset, setYearOffset] = React.useState(0);
   const [tooltip, setTooltip] = React.useState<{
-    targetRect: DOMRect | null;
+    targetElement: Element | null;
     content: React.ReactNode;
     visible: boolean;
-  }>({ targetRect: null, content: "", visible: false });
+  }>({ targetElement: null, content: "", visible: false });
+
+  // Scroll Container Ref
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  // Scroll State to manage navigation chevrons visibility
+  const [scrollState, setScrollState] = React.useState({
+    canScrollLeft: false,
+    canScrollRight: false,
+    isOverflowing: false,
+  });
 
   // Map dates for quick lookups
   const countMap = React.useMemo(() => {
@@ -109,8 +119,6 @@ export function StudyCalendar({ data }: StudyCalendarProps) {
     dateObj: Date,
     count: number
   ) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-
     const formattedDate = format.dateTime(dateObj, {
       year: "numeric",
       month: "short",
@@ -118,7 +126,7 @@ export function StudyCalendar({ data }: StudyCalendarProps) {
     });
 
     setTooltip({
-      targetRect: rect,
+      targetElement: e.currentTarget,
       content: t("heatmap_tooltip", { count, date: formattedDate }),
       visible: true,
     });
@@ -127,6 +135,59 @@ export function StudyCalendar({ data }: StudyCalendarProps) {
   const handleMouseLeave = () => {
     setTooltip((prev) => ({ ...prev, visible: false }));
   };
+
+  // Check scroll positions and scrollability
+  const checkScroll = React.useCallback(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = el;
+    const isOverflowing = scrollWidth > clientWidth;
+    const canScrollLeft = scrollLeft > 1;
+    const canScrollRight = scrollLeft < scrollWidth - clientWidth - 1;
+
+    setScrollState({
+      canScrollLeft,
+      canScrollRight,
+      isOverflowing,
+    });
+  }, []);
+
+  // Handle smooth scroll clicks
+  const handleScroll = (direction: "left" | "right") => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const scrollAmount = el.clientWidth * 0.6;
+    el.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
+  // Scroll to far right on mount and whenever weeks/yearOffset changes
+  React.useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    // Scroll to the end (latest activity is on the right)
+    el.scrollLeft = el.scrollWidth;
+    checkScroll();
+
+    // Setup ResizeObserver for responsive width checking
+    const observer = new ResizeObserver(() => {
+      checkScroll();
+    });
+    observer.observe(el);
+
+    // Setup scroll event listener
+    el.addEventListener("scroll", checkScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      el.removeEventListener("scroll", checkScroll);
+    };
+  }, [weeks, checkScroll]);
 
   return (
     <Card className="bg-background/40 backdrop-blur-md border-muted/30 relative">
@@ -158,60 +219,98 @@ export function StudyCalendar({ data }: StudyCalendarProps) {
         </div>
       </CardHeader>
       <CardContent>
-        {/* Scroll Container for Mobile Viewports */}
-        <div className="w-full overflow-x-auto scrollbar-none pb-2 pt-1 select-none">
-          <svg
-            width={gridWidth}
-            height={gridHeight}
-            className="overflow-visible mx-auto"
+        {/* Scroll Wrapper to position navigation buttons absolutely */}
+        <div className="relative group/calendar">
+          {/* Scroll Container */}
+          <div
+            ref={containerRef}
+            className="w-full overflow-x-auto scrollbar-none pb-2 pt-1 select-none outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-md"
+            tabIndex={0}
+            aria-label={t("study_calendar")}
           >
-            {/* Month Labels */}
-            {monthLabels.map((label, i) => (
-              <text
-                key={i}
-                x={labelWidth + label.colIndex * (rectSize + rectGap)}
-                y={labelHeight - 4}
-                className="text-[9px] fill-muted-foreground font-medium"
-              >
-                {label.text}
-              </text>
-            ))}
+            <svg
+              width={gridWidth}
+              height={gridHeight}
+              className="overflow-visible mx-auto"
+            >
+              {/* Month Labels */}
+              {monthLabels.map((label, i) => (
+                <text
+                  key={i}
+                  x={labelWidth + label.colIndex * (rectSize + rectGap)}
+                  y={labelHeight - 4}
+                  className="text-[9px] fill-muted-foreground font-medium"
+                >
+                  {label.text}
+                </text>
+              ))}
 
-            {/* Weekday Labels */}
-            {["M", "W", "F"].map((label, idx) => (
-              <text
-                key={idx}
-                x={0}
-                y={labelHeight + (idx * 2 + 1) * (rectSize + rectGap) + 8}
-                className="text-[9px] fill-muted-foreground font-medium"
-              >
-                {label}
-              </text>
-            ))}
+              {/* Weekday Labels */}
+              {["M", "W", "F"].map((label, idx) => (
+                <text
+                  key={idx}
+                  x={0}
+                  y={labelHeight + (idx * 2 + 1) * (rectSize + rectGap) + 8}
+                  className="text-[9px] fill-muted-foreground font-medium"
+                >
+                  {label}
+                </text>
+              ))}
 
-            {/* Heatmap Rectangles */}
-            {weeks.map((week, colIdx) => (
-              <g
-                key={colIdx}
-                transform={`translate(${labelWidth + colIdx * (rectSize + rectGap)}, ${labelHeight})`}
+              {/* Heatmap Rectangles */}
+              {weeks.map((week, colIdx) => (
+                <g
+                  key={colIdx}
+                  transform={`translate(${labelWidth + colIdx * (rectSize + rectGap)}, ${labelHeight})`}
+                >
+                  {week.map((day, rowIdx) => (
+                    <rect
+                      key={rowIdx}
+                      y={rowIdx * (rectSize + rectGap)}
+                      width={rectSize}
+                      height={rectSize}
+                      rx={1.5}
+                      className={`transition-colors duration-150 cursor-pointer outline-none ${getIntensityClass(
+                        day.count
+                      )}`}
+                      onMouseEnter={(e) => handleMouseEnter(e, day.dateObj, day.count)}
+                      onMouseLeave={handleMouseLeave}
+                    />
+                  ))}
+                </g>
+              ))}
+            </svg>
+          </div>
+
+          {/* Left Navigation Overlay/Button */}
+          {scrollState.isOverflowing && scrollState.canScrollLeft && (
+            <div className="absolute left-0 top-0 bottom-2 w-16 bg-gradient-to-r from-background via-background/60 to-transparent flex items-center justify-start pl-1 pointer-events-none">
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-7 w-7 rounded-full shadow-sm border-muted/50 pointer-events-auto bg-background/90 backdrop-blur-sm transition-opacity duration-200"
+                onClick={() => handleScroll("left")}
+                aria-label={t("scroll_left")}
               >
-                {week.map((day, rowIdx) => (
-                  <rect
-                    key={rowIdx}
-                    y={rowIdx * (rectSize + rectGap)}
-                    width={rectSize}
-                    height={rectSize}
-                    rx={1.5}
-                    className={`transition-colors duration-150 cursor-pointer outline-none ${getIntensityClass(
-                      day.count
-                    )}`}
-                    onMouseEnter={(e) => handleMouseEnter(e, day.dateObj, day.count)}
-                    onMouseLeave={handleMouseLeave}
-                  />
-                ))}
-              </g>
-            ))}
-          </svg>
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+            </div>
+          )}
+
+          {/* Right Navigation Overlay/Button */}
+          {scrollState.isOverflowing && scrollState.canScrollRight && (
+            <div className="absolute right-0 top-0 bottom-2 w-16 bg-gradient-to-l from-background via-background/60 to-transparent flex items-center justify-end pr-1 pointer-events-none">
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-7 w-7 rounded-full shadow-sm border-muted/50 pointer-events-auto bg-background/90 backdrop-blur-sm transition-opacity duration-200"
+                onClick={() => handleScroll("right")}
+                aria-label={t("scroll_right")}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
+          )}
         </div>
 
         {/* Legend */}
@@ -227,7 +326,7 @@ export function StudyCalendar({ data }: StudyCalendarProps) {
 
         {/* Dynamic Client Floating Tooltip */}
         <StatsTooltip
-          targetRect={tooltip.targetRect}
+          targetElement={tooltip.targetElement}
           visible={tooltip.visible}
           content={tooltip.content}
         />

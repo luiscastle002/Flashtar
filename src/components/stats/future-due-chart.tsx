@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FutureDueBucket } from "@/actions/stats";
 import { StatsTooltip } from "@/components/stats/stats-tooltip";
 import { formatCardsDue } from "@/lib/utils/stats-format";
+import { useChartLabelStrategy } from "@/hooks/use-chart-label-strategy";
 
 interface FutureDueChartProps {
   data: FutureDueBucket[];
@@ -13,12 +14,13 @@ interface FutureDueChartProps {
 
 export function FutureDueChart({ data }: FutureDueChartProps) {
   const t = useTranslations("stats");
+  const { containerRef, isNarrow } = useChartLabelStrategy({ threshold: 480 });
 
   const [tooltip, setTooltip] = React.useState<{
-    targetRect: DOMRect | null;
+    targetElement: Element | null;
     content: React.ReactNode;
     visible: boolean;
-  }>({ targetRect: null, content: "", visible: false });
+  }>({ targetElement: null, content: "", visible: false });
 
   // Calculate coordinates and dimensions
   const chartHeight = 180;
@@ -43,10 +45,8 @@ export function FutureDueChart({ data }: FutureDueChartProps) {
     count: number,
     label: string
   ) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-
     setTooltip({
-      targetRect: rect,
+      targetElement: e.currentTarget,
       content: `${formatCardsDue(count, t)} (${label})`,
       visible: true,
     });
@@ -64,7 +64,7 @@ export function FutureDueChart({ data }: FutureDueChartProps) {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="w-full relative select-none">
+        <div ref={containerRef} className="w-full relative select-none">
           {/* Responsive SVG viewBox */}
           <svg
             viewBox={`0 0 ${chartWidth + paddingLeft + 20} ${chartHeight + paddingTop + paddingBottom}`}
@@ -101,7 +101,9 @@ export function FutureDueChart({ data }: FutureDueChartProps) {
               const barHeight = (item.count / maxCount) * chartHeight;
               const x = paddingLeft + gap + idx * (barWidth + gap);
               const y = paddingTop + chartHeight - barHeight;
-              const label = t(`due_buckets.${item.bucket}`);
+              
+              const fullLabel = t(`due_buckets.${item.bucket}`);
+              const xAxisLabel = isNarrow ? t(`due_buckets_short.${item.bucket}`) : fullLabel;
 
               return (
                 <g key={idx}>
@@ -113,7 +115,7 @@ export function FutureDueChart({ data }: FutureDueChartProps) {
                     height={chartHeight}
                     fill="transparent"
                     className="cursor-pointer"
-                    onMouseEnter={(e) => handleMouseEnter(e, item.count, label)}
+                    onMouseEnter={(e) => handleMouseEnter(e, item.count, fullLabel)}
                     onMouseLeave={handleMouseLeave}
                   />
 
@@ -129,7 +131,7 @@ export function FutureDueChart({ data }: FutureDueChartProps) {
                         ? "fill-primary/80 hover:fill-primary"
                         : "fill-muted/20 hover:fill-muted/30"
                     }`}
-                    onMouseEnter={(e) => handleMouseEnter(e, item.count, label)}
+                    onMouseEnter={(e) => handleMouseEnter(e, item.count, fullLabel)}
                     onMouseLeave={handleMouseLeave}
                   />
 
@@ -138,9 +140,9 @@ export function FutureDueChart({ data }: FutureDueChartProps) {
                     x={x + barWidth / 2}
                     y={paddingTop + chartHeight + 16}
                     textAnchor="middle"
-                    className="text-[10px] fill-muted-foreground font-medium rotate-[-25deg] md:rotate-0 origin-center"
+                    className="text-[10px] fill-muted-foreground font-medium"
                   >
-                    {label}
+                    {xAxisLabel}
                   </text>
                 </g>
               );
@@ -159,7 +161,7 @@ export function FutureDueChart({ data }: FutureDueChartProps) {
 
         {/* Dynamic Tooltip */}
         <StatsTooltip
-          targetRect={tooltip.targetRect}
+          targetElement={tooltip.targetElement}
           visible={tooltip.visible}
           content={tooltip.content}
         />

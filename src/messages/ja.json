@@ -802,6 +802,8 @@
     "streak_days": "{count, plural, other {# 日}}",
     "past_year": "過去1年間",
     "years_ago": "{count}年前",
+    "scroll_left": "左にスクロール",
+    "scroll_right": "右にスクロール",
     "due_buckets": {
       "today": "今日",
       "tomorrow": "明日",
@@ -810,6 +812,15 @@
       "4_7_days": "4-7日後",
       "8_30_days": "8-30日後",
       "30_plus_days": "30日以降"
+    },
+    "due_buckets_short": {
+      "today": "今日",
+      "tomorrow": "明日",
+      "2_days": "2日",
+      "3_days": "3日",
+      "4_7_days": "4-7日",
+      "8_30_days": "8-30日",
+      "30_plus_days": "30日+"
     }
   }
 }
