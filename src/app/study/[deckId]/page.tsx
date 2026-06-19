@@ -5,15 +5,16 @@ import { Play, Settings } from "lucide-react";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { getCurrentUser, getProfile } from "@/lib/queries/user";
+import { getCurrentUser, getProfile, getSubscription } from "@/lib/queries/user";
 import { getStudyDeckWithSettings, getDeckDueCounts } from "@/actions/study-decks";
 import { getStudyCards } from "@/actions/imports";
 import { ImportToStudyDeckButton } from "@/components/study/import-to-study-deck-button";
 import { ImportCsvButton } from "@/components/study/import-csv-button";
+import { ImportApkgButton } from "@/components/study/import-apkg-button";
 import { StudyCardListManager } from "@/components/study/study-card-list-manager";
 import { ToggleCardVisibilityButton } from "@/components/study/toggle-card-visibility-button";
 import { RelativeTimeFormatter } from "@/components/study/relative-time-formatter";
-import type { DeckStudySettings, StudyCard } from "@/types";
+import type { DeckStudySettings, StudyCard, Plan } from "@/types";
 import { getDeckIconUrl } from "@/lib/utils/image";
 import { getTranslations, getFormatter } from "next-intl/server";
 
@@ -44,14 +45,17 @@ export default async function StudyDeckPage({ params, searchParams }: StudyDeckP
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
-  const [profile, deckData, dueCounts, t, tCard, format] = await Promise.all([
+  const [profile, deckData, dueCounts, subscription, t, tCard, format] = await Promise.all([
     getProfile(),
     getStudyDeckWithSettings(deckId),
     getDeckDueCounts(deckId),
+    getSubscription(user.id),
     getTranslations("study"),
     getTranslations("study.card"),
     getFormatter(),
   ]);
+
+  const plan = (subscription?.plan ?? "free") as Plan;
 
   if (!deckData) notFound();
 
@@ -179,6 +183,7 @@ export default async function StudyDeckPage({ params, searchParams }: StudyDeckP
         <div className="flex gap-2 flex-wrap">
           <ImportToStudyDeckButton deckId={deckId} />
           <ImportCsvButton deckId={deckId} />
+          <ImportApkgButton deckId={deckId} plan={plan} />
         </div>
 
         {/* Cards list */}

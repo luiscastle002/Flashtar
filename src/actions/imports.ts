@@ -2,8 +2,9 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
-import { getCurrentUser } from "@/lib/queries/user";
+import { getCurrentUser, getSubscription } from "@/lib/queries/user";
 import type { StudyCard } from "@/types";
+import { PLAN_LIMITS, type Plan } from "@/types";
 
 // ---------------------------------------------------------------------------
 // importFromGeneratedDeck
@@ -210,6 +211,109 @@ export async function importFromCsv(
 
   return {
     imported: validRows.length,
+    skipped: skippedCount,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// importFromApkg
+// Receives client-parsed APKG cards and bulk-inserts them. Pro-only feature.
+// ---------------------------------------------------------------------------
+
+const APKG_BATCH_SIZE = 500;
+
+export async function importFromApkg(
+  studyDeckId: string,
+  cards: Array<{ front: string; back: string }>,
+  sourceFileName: string
+) {
+  const user = await getCurrentUser();
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!cards.length) return { error: "errors.imports.no_rows" };
+
+  // Pro-only billing gate
+  const subscription = await getSubscription(user.id);
+  const plan = (subscription?.plan ?? "free") as Plan;
+  if (!PLAN_LIMITS[plan].apkgImport) {
+    return { error: "errors.imports.apkg_pro_required" };
+  }
+
+  const supabase = await createClient();
+
+  // Verify deck belongs to user
+  const { data: deck } = await supabase
+    .from("study_decks")
+    .select("id, card_count")
+    .eq("id", studyDeckId)
+    .eq("user_id", user.id)
+    .single();
+
+  if (!deck) return { error: "errors.study_decks.not_found" };
+
+  // Validate rows — only keep cards with non-empty front text
+  const validCards = cards.filter(
+    (c) => c.front?.trim()
+  );
+  const skippedCount = cards.length - validCards.length;
+
+  if (!validCards.length) return { error: "errors.imports.no_valid_rows" };
+
+  // Create import record
+  const { data: importRecord } = await supabase
+    .from("imports")
+    .insert({
+      user_id: user.id,
+      study_deck_id: studyDeckId,
+      source_type: "apkg",
+      source_file_name: sourceFileName,
+      status: "processing",
+      total_cards: cards.length,
+      started_at: new Date().toISOString(),
+    })
+    .select("id")
+    .single();
+
+  // Build study card rows
+  const studyCards = validCards.map((card, i) => ({
+    study_deck_id: studyDeckId,
+    user_id: user.id,
+    front: card.front.trim(),
+    back: (card.back ?? "").trim(),
+    import_id: importRecord?.id ?? null,
+    position: (deck.card_count ?? 0) + i,
+    state: "new",
+  }));
+
+  // Batch insert to handle large Pro imports
+  let insertError: { message: string } | null = null;
+  for (let i = 0; i < studyCards.length; i += APKG_BATCH_SIZE) {
+    const batch = studyCards.slice(i, i + APKG_BATCH_SIZE);
+    const { error } = await supabase.from("study_cards").insert(batch);
+    if (error) {
+      insertError = error;
+      break;
+    }
+  }
+
+  // Update import record with result
+  await supabase
+    .from("imports")
+    .update({
+      status: insertError ? "failed" : "completed",
+      imported_cards: insertError ? 0 : validCards.length,
+      skipped_cards: skippedCount,
+      error_message: insertError?.message ?? null,
+      completed_at: new Date().toISOString(),
+    })
+    .eq("id", importRecord?.id ?? "");
+
+  if (insertError) return { error: insertError.message };
+
+  revalidatePath(`/study/${studyDeckId}`);
+  revalidatePath("/study");
+
+  return {
+    imported: validCards.length,
     skipped: skippedCount,
   };
 }

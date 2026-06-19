@@ -286,6 +286,29 @@
       "confirm_button": "Confirmar importação",
       "toast_success": "Importado {count} {count, plural, =1 {cartão} other {cartões}} com sucesso!"
     },
+    "apkg": {
+      "button": "Importar APKG",
+      "title": "Importar de APKG",
+      "description": "Faça o upload de um arquivo .apkg do Anki. Apenas o texto da frente/verso será importado. Mídia, agendamento e estilos serão ignorados.",
+      "upload_drag": "Clique para carregar ou arraste e solte",
+      "support_format": "Formato suportado: APKG (máx. 50MB)",
+      "change_file": "Alterar arquivo",
+      "unsupported_format": "Apenas arquivos .apkg são suportados.",
+      "read_failed": "Falha ao ler o arquivo.",
+      "invalid_apkg": "Este arquivo não é um pacote do Anki válido.",
+      "no_notes": "Nenhuma nota encontrada neste arquivo APKG.",
+      "extracting": "Extraindo cartões...",
+      "parsing": "Analisando o banco de dados do Anki...",
+      "preview_title": "Pré-visualização (Primeiros 5 cartões):",
+      "table_front": "Frente",
+      "table_back": "Verso",
+      "cards_found": "{count, plural, =1 {# cartão encontrado} other {# cartões encontrados}}",
+      "confirm_button": "Confirmar importação",
+      "toast_success": "Importado {count} {count, plural, =1 {cartão} other {cartões}} do APKG com sucesso!",
+      "toast_failed": "Falha ao importar o arquivo APKG.",
+      "upgrade_pro": "Upgrade para Pro",
+      "pro_badge": "Pro"
+    },
     "card": {
       "state": {
         "new": "Novo",
@@ -465,7 +488,12 @@
       "target_decks_not_found": "Baralhos de destino não encontrados",
       "source_deck_empty": "O baralho de origem não possui flashcards",
       "no_rows": "Nenhuma linha para importar",
-      "no_valid_rows": "Nenhuma linha válida encontrada (frente e verso são obrigatórios)"
+      "no_valid_rows": "Nenhuma linha válida encontrada (frente e verso são obrigatórios)",
+      "apkg_pro_required": "A importação APKG requer uma assinatura Pro.",
+      "apkg_invalid_format": "Formato de arquivo APKG inválido.",
+      "apkg_no_database": "Nenhum banco de dados do Anki encontrado no arquivo.",
+      "apkg_parse_failed": "Falha ao analisar o banco de dados do Anki.",
+      "apkg_too_large": "O arquivo APKG excede o tamanho máximo."
     },
     "profile": {
       "not_found": "Perfil não encontrado",

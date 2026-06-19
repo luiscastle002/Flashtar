@@ -286,6 +286,29 @@
       "confirm_button": "Confirm Import",
       "toast_success": "Imported {count} {count, plural, =1 {card} other {cards}} successfully!"
     },
+    "apkg": {
+      "button": "Import APKG",
+      "title": "Import from APKG",
+      "description": "Upload an Anki .apkg file. Only front/back text will be imported. Media, scheduling, and styling are ignored.",
+      "upload_drag": "Click to upload or drag & drop",
+      "support_format": "Supported format: APKG (max 50MB)",
+      "change_file": "Change File",
+      "unsupported_format": "Only .apkg files are supported.",
+      "read_failed": "Failed to read file.",
+      "invalid_apkg": "This file is not a valid Anki package.",
+      "no_notes": "No notes found in this APKG file.",
+      "extracting": "Extracting cards...",
+      "parsing": "Parsing Anki database...",
+      "preview_title": "Preview (First 5 cards):",
+      "table_front": "Front",
+      "table_back": "Back",
+      "cards_found": "{count, plural, =1 {# card found} other {# cards found}}",
+      "confirm_button": "Confirm Import",
+      "toast_success": "Imported {count} {count, plural, =1 {card} other {cards}} from APKG!",
+      "toast_failed": "Failed to import APKG file.",
+      "upgrade_pro": "Upgrade to Pro",
+      "pro_badge": "Pro"
+    },
     "card": {
       "state": {
         "new": "New",
@@ -465,7 +488,12 @@
       "target_decks_not_found": "Target decks not found",
       "source_deck_empty": "Source deck has no flashcards",
       "no_rows": "No rows to import",
-      "no_valid_rows": "No valid rows found (front and back are required)"
+      "no_valid_rows": "No valid rows found (front and back are required)",
+      "apkg_pro_required": "APKG import requires a Pro subscription.",
+      "apkg_invalid_format": "Invalid APKG file format.",
+      "apkg_no_database": "No Anki database found in file.",
+      "apkg_parse_failed": "Failed to parse Anki database.",
+      "apkg_too_large": "APKG file exceeds maximum size."
     },
     "profile": {
       "not_found": "Profile not found",

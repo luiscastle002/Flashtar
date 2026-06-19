@@ -287,6 +287,29 @@
       "confirm_button": "インポート確定",
       "toast_success": "{count}枚のカードを正常にインポートしました！"
     },
+    "apkg": {
+      "button": "APKGインポート",
+      "title": "APKGからインポート",
+      "description": "Ankiの .apkg ファイルをアップロードします。問題面と解答面のテキストのみインポートされ、メディアやスケジュール情報、スタイルは無視されます。",
+      "upload_drag": "クリックしてアップロード、またはドラッグ＆ドロップ",
+      "support_format": "対応形式: APKG（最大50MB）",
+      "change_file": "ファイルを変更",
+      "unsupported_format": "APKGファイルのみ対応しています。",
+      "read_failed": "ファイルの読み込みに失敗しました。",
+      "invalid_apkg": "このファイルは有効なAnkiパッケージではありません。",
+      "no_notes": "このAPKGファイルにカードが見つかりませんでした。",
+      "extracting": "カードを抽出中...",
+      "parsing": "Ankiデータベースを解析中...",
+      "preview_title": "プレビュー（最初の5枚）:",
+      "table_front": "問題面",
+      "table_back": "解答面",
+      "cards_found": "{count, plural, other {カードが #枚 見つかりました}}",
+      "confirm_button": "インポート確定",
+      "toast_success": "{count}枚のカードをAPKGから正常にインポートしました！",
+      "toast_failed": "APKGファイルのインポートに失敗しました。",
+      "upgrade_pro": "Proにアップグレード",
+      "pro_badge": "Pro"
+    },
     "card": {
       "state": {
         "new": "新規",
@@ -466,7 +489,12 @@
       "target_decks_not_found": "インポート先のデッキが見つかりません",
       "source_deck_empty": "インポート元のデッキにカードがありません",
       "no_rows": "インポートする行がありません",
-      "no_valid_rows": "有効な行が見つかりませんでした (FrontおよびBackは必須です)"
+      "no_valid_rows": "有効な行が見つかりませんでした (FrontおよびBackは必須です)",
+      "apkg_pro_required": "APKGインポートにはProサブスクリプションが必要です。",
+      "apkg_invalid_format": "無効なAPKGファイル形式です。",
+      "apkg_no_database": "ファイル内にAnkiデータベースが見つかりません。",
+      "apkg_parse_failed": "Ankiデータベースの解析に失敗しました。",
+      "apkg_too_large": "APKGファイルが制限サイズを超えています。"
     },
     "profile": {
       "not_found": "プロフィールが見つかりません",
