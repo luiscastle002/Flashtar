@@ -212,7 +212,7 @@
     },
     "session": {
       "show_answer": "解答を表示",
-      "keyboard_help": "ショートカット: {space}で裏返す · {keys}で評価",
+      "keyboard_help": "ショートカット: <space>スペース</space>で裏返す · <keys>1-4</keys>で評価",
       "keyboard_space": "スペース",
       "reveal_hint": "クリックまたはスペースキーで解答表示",
       "flag": "フラグ",
@@ -384,7 +384,7 @@
     "generating": "生成中...",
     "import_files_title": "ファイルをインポート",
     "import_files_desc": "書類、テキストファイル、または画像をアップロードすると、AIが自動でカードを生成します。",
-    "drag_drop_files": "ここにファイルをドラッグ＆ドロップ、または{browse}",
+    "drag_drop_files": "ここにファイルをドラッグ＆ドロップ、または<browse>ファイルを選択</browse>",
     "click_browse": "クリックして選択",
     "supported_formats": "対応形式: PDF, Word, Excel, PowerPoint, 画像, テキスト (.txt)",
     "uploading_files": "ファイルをアップロード中 ({percent}%)...",
@@ -512,6 +512,20 @@
       "failed": "デッキの生成に失敗しました",
       "network_error": "ネットワークエラーが発生しました",
       "parse_failed": "レスポンスの解析に失敗しました"
+    },
+    "youtube": {
+      "invalid_url": "入力されたURLは有効なYouTubeリンクではありません。",
+      "video_not_found": "このYouTube動画が見つかりませんでした。非公開にするか、削除された可能性があります。",
+      "no_captions_available": "この動画には字幕が利用できません。",
+      "region_restricted": "この動画はお住まいの地域では再生できません。",
+      "age_restricted": "この動画は年齢制限が設定されており、ログインが必要です。",
+      "rate_limit": "YouTubeへの接続が一時的に制限されています。しばらく時間をおいてから再試行してください。",
+      "youtube_rate_limit": "YouTubeへの接続が一時的に制限されています。しばらく時間をおいてから再試行してください。",
+      "bot_detected": "YouTubeのセキュリティシステムによってリクエストが検出されました。しばらく時間をおいてから再試行してください。",
+      "consent_required": "この動画にアクセスするには、クッキーの確認または同意ページの承認が必要です。",
+      "login_required_unknown": "この動画を視聴するにはログインが必要です。メンバー限定または視聴不可の可能性があります。",
+      "timeout": "文字起こしデータの取得がタイムアウトしました。もう一度お試しください。",
+      "provider_error": "字幕の解析中に予期しないエラーが発生しました。"
     }
   },
   "landing": {

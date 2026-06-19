@@ -418,7 +418,7 @@ export function StudySessionClient({
             )}
             <p className="text-center text-xs text-muted-foreground mt-3">
               {t.rich("keyboard_help", {
-                space: () => <kbd className="font-mono bg-muted px-1 rounded">{t("keyboard_space")}</kbd>,
+                space: (chunks) => <kbd className="font-mono bg-muted px-1 rounded">{chunks}</kbd>,
                 keys: () => (
                   <>
                     <kbd className="font-mono bg-muted px-1 rounded">1</kbd>{" "}

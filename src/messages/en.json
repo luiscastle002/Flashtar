@@ -211,7 +211,7 @@
     },
     "session": {
       "show_answer": "Show Answer",
-      "keyboard_help": "Keyboard: {space} to flip · {keys} to rate",
+      "keyboard_help": "Keyboard: <space>Space</space> to flip · <keys>1-4</keys> to rate",
       "keyboard_space": "Space",
       "reveal_hint": "Click or press Space to reveal",
       "flag": "Flag",
@@ -383,7 +383,7 @@
     "generating": "Generating...",
     "import_files_title": "Import Files",
     "import_files_desc": "Upload documents, text files, or images and AI will generate flashcards automatically.",
-    "drag_drop_files": "Drag and drop files here or {browse}",
+    "drag_drop_files": "Drag and drop files here or <browse>browse</browse>",
     "click_browse": "click to browse",
     "supported_formats": "Supported formats: PDF, Word, Excel, PowerPoint, Images, Text (.txt)",
     "uploading_files": "Uploading files ({percent}%)...",
@@ -511,6 +511,20 @@
       "failed": "Generation failed",
       "network_error": "Network error occurred",
       "parse_failed": "Failed to parse response"
+    },
+    "youtube": {
+      "invalid_url": "The provided URL is not a valid YouTube link.",
+      "video_not_found": "This YouTube video could not be found. It may be private or deleted.",
+      "no_captions_available": "No subtitles or captions are available for this video.",
+      "region_restricted": "This video is restricted in our server's region.",
+      "age_restricted": "This video is age-restricted and requires signing in.",
+      "rate_limit": "Our connection to YouTube is temporarily rate-limited. Please try again shortly.",
+      "youtube_rate_limit": "Our connection to YouTube is temporarily rate-limited. Please try again shortly.",
+      "bot_detected": "Our request was flagged by YouTube's security system. Please try again later.",
+      "consent_required": "Access to this video requires verifying cookies or consent page approval.",
+      "login_required_unknown": "This video requires signing in. It may be members-only or unavailable.",
+      "timeout": "Retrieving the transcript timed out. Please try again.",
+      "provider_error": "An unexpected error occurred while parsing the subtitles."
     }
   },
   "landing": {

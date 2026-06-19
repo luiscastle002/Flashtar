@@ -2,7 +2,9 @@ import { getDocumentProxy, extractText } from "unpdf";
 import mammoth from "mammoth";
 import officeParser from "officeparser";
 import * as XLSX from "xlsx";
-import { YoutubeTranscript } from "youtube-transcript";
+import { isYouTubeUrl, getYouTubeVideoId } from "./youtube-parser";
+import { TranscriptService, YoutubeImportError } from "./youtube-providers";
+import { getCachedTranscript, saveCachedTranscript, logYoutubeImportAnalytics } from "./youtube-cache";
 import * as cheerio from "cheerio";
 import OpenAI from "openai";
 import { isSafeUrl } from "./ssrf-validator";
@@ -172,9 +174,112 @@ async function extractTextWithGPTVision(buffer: Buffer, mimeType: string): Promi
 }
 
 /**
+ * Downsamples text to fit within a maximum character limit by keeping the introduction,
+ * outro, and uniformly sampling the sentences in between.
+ */
+export function downsampleText(text: string, maxChars: number = 45000): string {
+  if (text.length <= maxChars) {
+    return text;
+  }
+
+  const sentences = text.match(/[^.!?]+[.!?]+(\s|$)/g) || text.split(/(?<=[.!?])\s+/);
+  if (!sentences || sentences.length === 0) {
+    return text.slice(0, maxChars);
+  }
+
+  const totalLength = text.length;
+  const ratio = maxChars / totalLength;
+  const everyN = Math.max(1, Math.floor(1 / ratio));
+
+  const selectedSentences: string[] = [];
+  let currentLength = 0;
+
+  for (let i = 0; i < sentences.length; i++) {
+    // Keep intro (first 5 sentences), outro (last 5 sentences), and sample in between
+    if (i < 5 || i > sentences.length - 6 || i % everyN === 0) {
+      const sentence = sentences[i];
+      if (currentLength + sentence.length > maxChars) {
+        break;
+      }
+      selectedSentences.push(sentence);
+      currentLength += sentence.length;
+    }
+  }
+
+  return selectedSentences.join(" ").trim();
+}
+
+/**
+ * Retrieves the YouTube transcript, downsamples it if too long, and registers it.
+ */
+async function extractYouTubeTranscript(
+  videoId: string,
+  languageCode?: string,
+  userId?: string
+): Promise<string> {
+  const startTime = Date.now();
+  const targetLang = languageCode || "en";
+  let success = false;
+  let providerUsed = "None";
+  let errorCode: string | null = null;
+  const attempts = 1;
+  let rawTranscript = "";
+
+  try {
+    // 1. Check cache first
+    const cached = await getCachedTranscript(videoId, targetLang);
+    if (cached) {
+      success = true;
+      providerUsed = "DatabaseCache";
+      rawTranscript = cached.content;
+      return downsampleText(rawTranscript, 45000);
+    }
+
+    // 2. Fetch using provider service
+    const service = new TranscriptService();
+    const result = await service.fetchTranscript(videoId, targetLang);
+
+    success = true;
+    providerUsed = result.provider;
+    rawTranscript = result.content;
+
+    // 3. Save full transcript to cache
+    await saveCachedTranscript(videoId, targetLang, result.content, result.segments);
+    
+    return downsampleText(rawTranscript, 45000);
+  } catch (err) {
+    if (err instanceof YoutubeImportError) {
+      errorCode = err.code;
+      throw new Error(`errors.youtube.${err.code.toLowerCase()}`);
+    } else {
+      errorCode = "UNKNOWN";
+      console.error("extractYouTubeTranscript unknown error:", err);
+      throw new Error("errors.youtube.provider_error");
+    }
+  } finally {
+    const durationMs = Date.now() - startTime;
+    if (userId) {
+      logYoutubeImportAnalytics({
+        videoId,
+        userId,
+        provider: providerUsed,
+        attempts,
+        success,
+        durationMs,
+        errorCode,
+      }).catch((logErr) => console.error("[text-extractor] Failed logging analytics:", logErr));
+    }
+  }
+}
+
+/**
  * Extracts content from a URL or YouTube transcript in-memory.
  */
-export async function extractTextFromUrl(url: string): Promise<{ title: string; content: string }> {
+export async function extractTextFromUrl(
+  url: string,
+  languageCode?: string,
+  userId?: string
+): Promise<{ title: string; content: string }> {
   // 1. SSRF check
   const isSafe = await isSafeUrl(url);
   if (!isSafe) {
@@ -184,9 +289,9 @@ export async function extractTextFromUrl(url: string): Promise<{ title: string; 
   if (isYouTubeUrl(url)) {
     const videoId = getYouTubeVideoId(url);
     if (!videoId) {
-      throw new Error("Invalid YouTube URL.");
+      throw new Error("errors.youtube.invalid_url");
     }
-    const transcript = await extractYouTubeTranscript(videoId);
+    const transcript = await extractYouTubeTranscript(videoId, languageCode, userId);
     return {
       title: "YouTube Video",
       content: transcript,
@@ -237,40 +342,4 @@ export async function extractTextFromUrl(url: string): Promise<{ title: string; 
     title,
     content: cleanedContent.slice(0, 50000), // Max 50,000 characters
   };
-}
-
-function isYouTubeUrl(urlStr: string): boolean {
-  try {
-    const url = new URL(urlStr);
-    return (
-      url.hostname === "youtube.com" ||
-      url.hostname === "www.youtube.com" ||
-      url.hostname === "youtu.be"
-    );
-  } catch {
-    return false;
-  }
-}
-
-function getYouTubeVideoId(urlStr: string): string | null {
-  try {
-    const url = new URL(urlStr);
-    if (url.hostname === "youtu.be") {
-      return url.pathname.slice(1);
-    }
-    return url.searchParams.get("v");
-  } catch {
-    return null;
-  }
-}
-
-async function extractYouTubeTranscript(videoId: string): Promise<string> {
-  try {
-    const transcriptItems = await YoutubeTranscript.fetchTranscript(videoId);
-    const transcript = transcriptItems.map((item) => item.text).join(" ");
-    return transcript.slice(0, 50000); // Max 50,000 characters
-  } catch (err) {
-    console.error("YOUTUBE_TRANSCRIPT_FETCH_ERROR:", err);
-    throw new Error("Failed to fetch transcripts for this YouTube video. Please ensure subtitles are enabled.");
-  }
 }

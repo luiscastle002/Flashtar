@@ -211,7 +211,7 @@
     },
     "session": {
       "show_answer": "Mostrar Resposta",
-      "keyboard_help": "Teclado: {space} para virar · {keys} para classificar",
+      "keyboard_help": "Teclado: <space>Espaço</space> para virar · <keys>1-4</keys> para classificar",
       "keyboard_space": "Espaço",
       "reveal_hint": "Clique ou pressione Espaço para revelar",
       "flag": "Sinalizar",
@@ -383,7 +383,7 @@
     "generating": "Gerando...",
     "import_files_title": "Importar Arquivos",
     "import_files_desc": "Carregue documentos, arquivos de texto ou imagens e a IA gerará flashcards automaticamente.",
-    "drag_drop_files": "Arraste e solte arquivos aqui ou {browse}",
+    "drag_drop_files": "Arraste e solte arquivos aqui ou <browse>procurar</browse>",
     "click_browse": "clique para procurar",
     "supported_formats": "Formatos suportados: PDF, Word, Excel, PowerPoint, Imagens, Texto (.txt)",
     "uploading_files": "Enviando arquivos ({percent}%)...",
@@ -511,6 +511,20 @@
       "failed": "Falha na geração do baralho",
       "network_error": "Ocorreu um erro de rede",
       "parse_failed": "Falha ao analisar a resposta"
+    },
+    "youtube": {
+      "invalid_url": "O URL fornecido não é um link válido do YouTube.",
+      "video_not_found": "Este vídeo do YouTube não pôde ser encontrado. Pode ser privado ou ter sido excluído.",
+      "no_captions_available": "Não há legendas disponíveis para este vídeo.",
+      "region_restricted": "Este vídeo está restrito na nossa região.",
+      "age_restricted": "Este vídeo possui restrição de idade e exige login.",
+      "rate_limit": "A nossa ligação ao YouTube está temporariamente limitada. Por favor, tente novamente em breve.",
+      "youtube_rate_limit": "A nossa ligação ao YouTube está temporariamente limitada. Por favor, tente novamente em breve.",
+      "bot_detected": "A nossa solicitação foi sinalizada pelo sistema de segurança do YouTube. Por favor, tente novamente mais tarde.",
+      "consent_required": "O acesso a este vídeo exige a verificação de cookies ou a aprovação da página de consentimento.",
+      "login_required_unknown": "Este vídeo exige login. Pode ser exclusivo para membros ou estar indisponível.",
+      "timeout": "A solicitação para obter a transcrição expirou. Por favor, tente novamente.",
+      "provider_error": "Ocorreu um erro inesperado ao analisar as legendas."
     }
   },
   "landing": {

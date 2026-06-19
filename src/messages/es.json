@@ -211,7 +211,7 @@
     },
     "session": {
       "show_answer": "Mostrar Respuesta",
-      "keyboard_help": "Teclado: {space} para voltear · {keys} para calificar",
+      "keyboard_help": "Teclado: <space>Espacio</space> para voltear · <keys>1-4</keys> para calificar",
       "keyboard_space": "Espacio",
       "reveal_hint": "Haz clic o presiona Espacio para revelar",
       "flag": "Marcar",
@@ -383,7 +383,7 @@
     "generating": "Generando...",
     "import_files_title": "Importar Archivos",
     "import_files_desc": "Sube documentos, archivos de texto o imágenes y la IA generará tarjetas automáticamente.",
-    "drag_drop_files": "Arrastra y suelta archivos aquí o {browse}",
+    "drag_drop_files": "Arrastra y suelta archivos aquí o <browse>buscar</browse>",
     "click_browse": "haz clic para explorar",
     "supported_formats": "Formatos admitidos: PDF, Word, Excel, PowerPoint, Imágenes, Texto (.txt)",
     "uploading_files": "Subiendo archivos ({percent}%)...",
@@ -511,6 +511,20 @@
       "failed": "Error al generar la baraja",
       "network_error": "Ocurrió un error de red",
       "parse_failed": "Error al procesar la respuesta"
+    },
+    "youtube": {
+      "invalid_url": "La URL proporcionada no es un enlace de YouTube válido.",
+      "video_not_found": "No se pudo encontrar este video de YouTube. Puede ser privado o haber sido eliminado.",
+      "no_captions_available": "No hay subtítulos disponibles para este video.",
+      "region_restricted": "Este video está restringido en nuestra región.",
+      "age_restricted": "Este video tiene restricción de edad y requiere iniciar sesión.",
+      "rate_limit": "Nuestra conexión a YouTube está temporalmente limitada. Por favor, inténtelo de nuevo más tarde.",
+      "youtube_rate_limit": "Nuestra conexión a YouTube está temporalmente limitada. Por favor, inténtelo de nuevo más tarde.",
+      "bot_detected": "Nuestra solicitud fue marcada por el sistema de seguridad de YouTube. Por favor, inténtelo de nuevo más tarde.",
+      "consent_required": "El acceso a este video requiere verificar cookies o aprobar la página de consentimiento.",
+      "login_required_unknown": "Este video requiere iniciar sesión. Puede ser exclusivo para miembros o no estar disponible.",
+      "timeout": "Se agotó el tiempo de espera para obtener la transcripción. Por favor, inténtelo de nuevo.",
+      "provider_error": "Ocurrió un error inesperado al analizar los subtítulos."
     }
   },
   "landing": {

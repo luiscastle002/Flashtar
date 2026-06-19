@@ -12,7 +12,6 @@ import {
   FileSpreadsheet,
   FileImage,
   File,
-  Link as LinkIcon,
   SlidersHorizontal,
   Trash2,
   Star,
@@ -707,7 +706,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
         )}
 
         {/* Tab Selector */}
-        <div className="flex p-1 bg-card/70 backdrop-blur-md rounded-xl border border-border/50 max-w-md shadow-md">
+        <div className="flex p-1 bg-card/70 backdrop-blur-md rounded-xl border border-border/50 w-full shadow-md">
           <button
             type="button"
             onClick={() => setMode("prompt")}
@@ -733,19 +732,6 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
           >
             <Folder className="h-4 w-4" />
             {t("files_tab")}
-          </button>
-          <button
-            type="button"
-            onClick={() => setMode("url")}
-            className={cn(
-              "flex-1 flex items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-lg transition-all duration-200 cursor-pointer select-none",
-              mode === "url"
-                ? "bg-primary text-primary-foreground shadow-md"
-                : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
-            )}
-          >
-            <LinkIcon className="h-4 w-4" />
-            {t("url_tab")}
           </button>
         </div>
 
@@ -851,8 +837,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                     <div>
                       <p className="text-sm font-medium">
                         {t.rich("drag_drop_files", {
-                          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                          browse: (_chunks) => <span className="text-primary hover:underline">{t("click_browse")}</span>
+                          browse: (chunks) => <span className="text-primary hover:underline">{chunks}</span>
                         })}
                       </p>
                       <p id="file-upload-formats" className="text-xs text-muted-foreground mt-1">

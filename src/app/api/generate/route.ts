@@ -29,6 +29,14 @@ const generateSchema = z.object({
 
 const ALLOWED_EXTENSIONS = ["pdf", "docx", "pptx", "xlsx", "txt", "png", "jpg", "jpeg", "webp"];
 
+function getLanguageCode(language: string): string {
+  const lang = language.toLowerCase();
+  if (lang.includes("spanish") || lang === "es") return "es";
+  if (lang.includes("portuguese") || lang === "pt") return "pt";
+  if (lang.includes("japanese") || lang === "ja") return "ja";
+  return "en";
+}
+
 export async function POST(request: Request) {
   logStep(1, "Request received", { contentType: request.headers.get("content-type") });
   const supabase = await createClient();
@@ -166,7 +174,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Please enter a valid URL." }, { status: 400 });
     }
     try {
-      const scraped = await extractTextFromUrl(url);
+      const langCode = getLanguageCode(language);
+      const scraped = await extractTextFromUrl(url, langCode, user.id);
       extractedContent = scraped.content;
       sourceName = scraped.title;
       sourceUrlForDb = url;
