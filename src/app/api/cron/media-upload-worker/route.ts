@@ -50,11 +50,11 @@ export async function GET(request: Request) {
       const arrayBuffer = await fileBlob.arrayBuffer();
       const fileBuffer = Buffer.from(arrayBuffer);
 
-      // 2. Fetch active access token for user
-      const accessToken = await getGoogleAccessTokenForUser(userId);
+      // 2. Fetch active access token for user (pass admin client to bypass RLS)
+      const accessToken = await getGoogleAccessTokenForUser(userId, supabase);
 
-      // 3. Upload to Google Drive (handles folder recovery auto-magically)
-      const uploadRes = await uploadAudioFileToDrive(userId, accessToken, origName, fileBuffer);
+      // 3. Upload to Google Drive (handles folder recovery auto-magically; pass admin client)
+      const uploadRes = await uploadAudioFileToDrive(userId, accessToken, origName, fileBuffer, supabase);
       const googleFileId = uploadRes.fileId;
 
       console.log("[Audio] Worker uploaded media to drive:", googleFileId);

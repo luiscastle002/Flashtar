@@ -2,7 +2,7 @@
 
 import { createClient } from "@/lib/supabase/server";
 import { getTtsProvider, generateAudioHash, type TtsOptions } from "@/lib/tts/tts";
-import { getGoogleAccessTokenForUser, uploadAudioFileToDrive } from "@/lib/integrations/google";
+import { getGoogleAccessTokenForUser, uploadAudioFileToDrive, waitForDriveFileReady, deleteAudioFileFromDrive } from "@/lib/integrations/google";
 import { getCurrentUser } from "@/lib/queries/user";
 import type { CardAudio } from "@/types";
 
@@ -39,6 +39,8 @@ export async function generateCardAudioAction({
   const cleanText = stripHtml(text);
   if (!cleanText) return { success: false, reason: "Text is empty" };
 
+  console.log("[Audio] generateCardAudioAction: starting", { flashcardId, side, provider: providerId, voice: voiceId, textLength: cleanText.length });
+
   const supabase = await createClient();
 
   // 1. Get Google Drive connection info
@@ -49,7 +51,7 @@ export async function generateCardAudioAction({
     .single();
 
   if (!connection || connection.connection_status !== "connected") {
-    console.error("[Audio Error] Google Drive is not connected or status is not connected.");
+    console.error("[Audio Error] generateCardAudioAction: Drive not connected. Status:", connection?.connection_status ?? "no record");
     return { error: "Google Drive is not connected or requires reconnection." };
   }
 
@@ -66,6 +68,7 @@ export async function generateCardAudioAction({
 
   if (existingFile) {
     // Cache HIT: Link this card side to the existing audio file
+    console.log("[Audio] generateCardAudioAction: CAS cache HIT", { flashcardId, side, existingFileId: existingFile.id });
     const { error: refError } = await supabase
       .from("card_audios")
       .insert({
@@ -77,7 +80,7 @@ export async function generateCardAudioAction({
       });
 
     if (refError) {
-      console.error("[Audio Error] Cache hit reference mapping failed:", refError);
+      console.error("[Audio Error] generateCardAudioAction: cache hit reference mapping failed:", refError);
       return { error: refError.message };
     }
 
@@ -95,28 +98,21 @@ export async function generateCardAudioAction({
 
   // Cache MISS: Generate audio, deduct credits, and upload
   const charCount = cleanText.length;
+  console.log("[Audio] generateCardAudioAction: CAS cache MISS — will generate TTS", { flashcardId, side, charCount });
 
-  // 4. JIT Quota Credit Check
-  const { data: usage } = await supabase
-    .from("audio_usage")
-    .select("used_this_month, monthly_limit")
-    .eq("user_id", user.id)
-    .single();
+  // 4. Idempotency Key Formulation
+  const idempotencyKey = `${flashcardId}:${side}:${voiceId}`;
 
-  if (usage && usage.used_this_month + charCount > usage.monthly_limit) {
-    console.error("[Audio Error] Character credits quota exceeded.");
-    return { error: "quota_exceeded" };
-  }
-
-  // 5. Atomic credit deduction
-  const { error: deductError } = await supabase.rpc("increment_audio_usage", {
+  // 5. Atomic Credit Reservation
+  const { data: reserved, error: reserveError } = await supabase.rpc("reserve_audio_credits", {
     p_user_id: user.id,
-    p_chars: charCount
+    p_chars: charCount,
+    p_idempotency_key: idempotencyKey
   });
 
-  if (deductError) {
-    console.error("[Audio Error] Character credits deduction failed:", deductError);
-    return { error: `Failed to deduct character credits: ${deductError.message}` };
+  if (reserveError || !reserved) {
+    console.error("[Audio Error] Character credits reservation failed:", reserveError);
+    return { error: reserveError ? reserveError.message : "quota_exceeded" };
   }
 
   let audioBuffer: Buffer;
@@ -143,18 +139,19 @@ export async function generateCardAudioAction({
     });
   } catch (ttsErr: unknown) {
     console.error("[Audio Error] TTS Generation failed:", ttsErr);
-    // Rollback credit deduction on failure
-    await supabase.rpc("decrement_audio_usage", {
+    // Release credit reservation on failure
+    await supabase.rpc("release_audio_credits", {
       p_user_id: user.id,
-      p_chars: charCount
+      p_idempotency_key: idempotencyKey
     });
     return { error: `TTS Generation failed: ${ttsErr instanceof Error ? ttsErr.message : String(ttsErr)}` };
   }
 
   // 7. Get access token and upload to Google Drive
   let fileId = "";
+  let accessToken = "";
   try {
-    const accessToken = await getGoogleAccessTokenForUser(user.id);
+    accessToken = await getGoogleAccessTokenForUser(user.id);
     const uploadRes = await uploadAudioFileToDrive(user.id, accessToken, `${audioHash}.mp3`, audioBuffer);
     fileId = uploadRes.fileId;
 
@@ -168,10 +165,10 @@ export async function generateCardAudioAction({
     });
   } catch (uploadErr: unknown) {
     console.error("[Audio Error] Google Drive upload failed:", uploadErr);
-    // Rollback credit deduction
-    await supabase.rpc("decrement_audio_usage", {
+    // Release credit reservation
+    await supabase.rpc("release_audio_credits", {
       p_user_id: user.id,
-      p_chars: charCount
+      p_idempotency_key: idempotencyKey
     });
 
     if (uploadErr instanceof Error && uploadErr.message === "GOOGLE_DRIVE_QUOTA_EXCEEDED") {
@@ -181,7 +178,23 @@ export async function generateCardAudioAction({
     return { error: `Google Drive upload failed: ${uploadErr instanceof Error ? uploadErr.message : String(uploadErr)}` };
   }
 
-  // 8. Save audio file metadata
+  // 8. Google Drive File Verification Check (Step 3)
+  const isReady = await waitForDriveFileReady(accessToken, fileId, 3, 500);
+  if (!isReady) {
+    console.error(`[Audio Error] Google Drive file ${fileId} not ready after upload.`);
+    try {
+      await deleteAudioFileFromDrive(accessToken, fileId);
+    } catch (cleanupErr) {
+      console.error("[Audio Error] Failed to delete file on readiness failure:", cleanupErr);
+    }
+    await supabase.rpc("release_audio_credits", {
+      p_user_id: user.id,
+      p_idempotency_key: idempotencyKey
+    });
+    return { error: "Google Drive upload verification failed (file not accessible)." };
+  }
+
+  // 9. Save audio file metadata (Step 2 Rollback on DB failure)
   const { data: newFile, error: fileSaveError } = await supabase
     .from("audio_files")
     .insert({
@@ -199,15 +212,20 @@ export async function generateCardAudioAction({
 
   if (fileSaveError || !newFile) {
     console.error("[Audio Error] Failed to save audio file metadata:", fileSaveError);
-    // Rollback credits anyway
-    await supabase.rpc("decrement_audio_usage", {
+    // Cleanup Drive file and release credits
+    try {
+      await deleteAudioFileFromDrive(accessToken, fileId);
+    } catch (cleanupErr) {
+      console.error("[Audio Error] Failed to delete file on DB metadata save failure:", cleanupErr);
+    }
+    await supabase.rpc("release_audio_credits", {
       p_user_id: user.id,
-      p_chars: charCount
+      p_idempotency_key: idempotencyKey
     });
     return { error: `Failed to save audio file metadata: ${fileSaveError?.message}` };
   }
 
-  // 9. Insert card audio reference
+  // 10. Insert card audio reference (Step 2 Rollback on DB failure)
   const { error: refError } = await supabase
     .from("card_audios")
     .insert({
@@ -220,10 +238,31 @@ export async function generateCardAudioAction({
 
   if (refError) {
     console.error("[Audio Error] Failed to create card audio reference:", refError);
+    // Cleanup Drive file, delete audio_files record, and release credits
+    await supabase.from("audio_files").delete().eq("id", newFile.id);
+    try {
+      await deleteAudioFileFromDrive(accessToken, fileId);
+    } catch (cleanupErr) {
+      console.error("[Audio Error] Failed to delete file on DB mapping failure:", cleanupErr);
+    }
+    await supabase.rpc("release_audio_credits", {
+      p_user_id: user.id,
+      p_idempotency_key: idempotencyKey
+    });
     return { error: `Failed to create card audio reference: ${refError.message}` };
   }
 
-  // 10. Audit in usage history
+  // 11. Commit Audio Credits (Move from reserved to committed)
+  const { error: commitError } = await supabase.rpc("commit_audio_credits", {
+    p_user_id: user.id,
+    p_idempotency_key: idempotencyKey
+  });
+
+  if (commitError) {
+    console.error("[Audio Error] Failed to commit audio credits reservation:", commitError);
+  }
+
+  // 12. Audit in usage history
   await supabase.from("audio_usage_history").insert({
     user_id: user.id,
     characters_consumed: charCount,

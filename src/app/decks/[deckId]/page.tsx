@@ -54,6 +54,7 @@ export default async function DeckPage({ params }: { params: Promise<{ deckId: s
 
     if (cardAudios) {
       const casted = cardAudios as unknown as Array<{ flashcard_id: string } & CardAudio>;
+      console.log("[Audio] DeckPage: found", casted.length, "card_audio rows for", flashcardIds.length, "flashcard IDs");
       const audiosMap: Record<string, CardAudio[]> = {};
       for (const audio of casted) {
         if (!audiosMap[audio.flashcard_id]) {
@@ -64,6 +65,7 @@ export default async function DeckPage({ params }: { params: Promise<{ deckId: s
       for (const card of cardsWithAudios) {
         card.audios = audiosMap[card.id] || [];
       }
+      console.log("[Audio] DeckPage: cards with audio:", cardsWithAudios.filter(c => c.audios.length > 0).length, "/", cardsWithAudios.length);
     }
   }
 

@@ -1,5 +1,6 @@
 import { decryptToken } from "../utils/crypto";
 import { createClient } from "../supabase/server";
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 interface TokenRefreshResponse {
   accessToken: string;
@@ -143,9 +144,19 @@ export async function createFolderInDrive(accessToken: string, folderName: strin
 /**
  * High-level helper: Fetches active access token for a user.
  * Automatically refreshes it if expired (and updates connection).
+ *
+ * @param userId - The user's UUID.
+ * @param supabaseClient - Optional pre-built Supabase client. Pass `createAdminClient()`
+ *   when calling from a background worker that has no authenticated session (RLS bypass).
+ *   Defaults to the cookie-based user client.
  */
-export async function getGoogleAccessTokenForUser(userId: string): Promise<string> {
-  const supabase = await createClient();
+export async function getGoogleAccessTokenForUser(
+  userId: string,
+  supabaseClient?: SupabaseClient
+): Promise<string> {
+  // Use provided client or fall back to the cookie-based user client.
+  const supabase = supabaseClient ?? (await createClient());
+
   const { data: connection, error } = await supabase
     .from("user_google_drive_connections")
     .select("*")
@@ -160,23 +171,21 @@ export async function getGoogleAccessTokenForUser(userId: string): Promise<strin
     throw new Error("GOOGLE_DRIVE_CONNECTION_INVALID");
   }
 
-  // Check if we need to refresh. We refresh if we don't have a temporary session token 
-  // or if we always refresh on server operations for safety.
-  // Since we don't store access_token in DB (we only store encrypted_refresh_token), 
-  // we always exchange the decrypted refresh token for a fresh short-lived access token.
+  // Since we only store the encrypted_refresh_token (never the short-lived access_token),
+  // we always exchange it for a fresh access token on every server-side call.
   try {
     const decryptedRefresh = decryptToken(connection.encrypted_refresh_token);
     const refreshed = await refreshGoogleAccessToken(decryptedRefresh);
     return refreshed.accessToken;
   } catch (refreshErr) {
-    console.error("Failed to retrieve Google token during operation:", refreshErr);
-    
-    // Mark connection status
+    console.error("[Google] Failed to refresh access token for user:", userId, refreshErr);
+
+    // Mark the connection as requiring reconnection so the user is prompted.
     await supabase
       .from("user_google_drive_connections")
       .update({ connection_status: "reconnect_required" })
       .eq("user_id", userId);
-      
+
     throw new Error("GOOGLE_DRIVE_REFRESH_FAILED");
   }
 }
@@ -237,9 +246,11 @@ export async function uploadAudioFileToDrive(
   userId: string,
   accessToken: string,
   fileName: string,
-  audioBuffer: Buffer
+  audioBuffer: Buffer,
+  supabaseClient?: SupabaseClient
 ): Promise<UploadFileResponse> {
-  const supabase = await createClient();
+  const supabase = supabaseClient ?? (await createClient());
+
   const { data: connection } = await supabase
     .from("user_google_drive_connections")
     .select("*")
@@ -330,3 +341,56 @@ export async function uploadAudioFileToDrive(
     throw err;
   }
 }
+
+/**
+ * Polls Google Drive API to verify the file is ready and accessible.
+ * Returns true if ready, false if it times out.
+ */
+export async function waitForDriveFileReady(
+  accessToken: string,
+  fileId: string,
+  retries = 3,
+  delayMs = 500
+): Promise<boolean> {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/drive/v3/files/${fileId}?fields=id`,
+        {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        }
+      );
+      if (response.ok) {
+        return true;
+      }
+      console.warn(`[Audio] Drive file ${fileId} not ready yet (status ${response.status}). Retrying...`);
+    } catch (err) {
+      console.warn(`[Audio] Drive file readiness check error:`, err);
+    }
+    await new Promise((resolve) => setTimeout(resolve, delayMs));
+  }
+  return false;
+}
+
+/**
+ * Deletes a file from Google Drive by its fileId.
+ */
+export async function deleteAudioFileFromDrive(
+  accessToken: string,
+  fileId: string
+): Promise<void> {
+  const response = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+
+  if (!response.ok) {
+    const errText = await response.text();
+    console.error(`[Google Error] Failed to delete file ${fileId} from Drive: ${response.status}`, errText);
+    throw new Error("Failed to delete file from Google Drive.");
+  }
+}
+
+

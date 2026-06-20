@@ -3,8 +3,9 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser, getSubscription } from "@/lib/queries/user";
-import type { StudyCard } from "@/types";
+import type { StudyCard, CardAudio } from "@/types";
 import type { Plan } from "@/types";
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 // ---------------------------------------------------------------------------
 // importFromGeneratedDeck
@@ -601,8 +602,11 @@ export async function getStudyCards(
       ? Buffer.from(JSON.stringify(prevCursorObj)).toString("base64")
       : null;
 
+    console.log("[Audio] getStudyCards (keyset): attaching audios for", cards.length, "cards");
+    const cardsWithAudios = await attachAudiosToStudyCards(supabase, cards);
+
     return {
-      cards,
+      cards: cardsWithAudios,
       count: count ?? 0,
       useKeyset: true,
       nextCursor,
@@ -636,14 +640,72 @@ export async function getStudyCards(
       .range(offset, offset + limit - 1);
 
     const { data, count } = await query;
+    console.log("[Audio] getStudyCards (offset): attaching audios for", (data ?? []).length, "cards");
+    const cardsWithAudios = await attachAudiosToStudyCards(supabase, (data ?? []) as StudyCard[]);
     return {
-      cards: (data ?? []) as StudyCard[],
+      cards: cardsWithAudios,
       count: count ?? 0,
       useKeyset: false,
       nextCursor: null,
       prevCursor: null,
     };
   }
+}
+
+// ---------------------------------------------------------------------------
+// attachAudiosToStudyCards — shared helper
+// Joins card_audios + audio_files onto study cards via source_flashcard_id.
+// ---------------------------------------------------------------------------
+async function attachAudiosToStudyCards(
+  supabase: SupabaseClient,
+  cards: StudyCard[]
+): Promise<StudyCard[]> {
+  if (!cards || cards.length === 0) return [];
+
+  const flashcardIds = cards
+    .map((c) => c.source_flashcard_id)
+    .filter(Boolean) as string[];
+
+  const audiosMap: Record<string, CardAudio[]> = {};
+
+  if (flashcardIds.length > 0) {
+    const { data: cardAudios, error: audioError } = await supabase
+      .from("card_audios")
+      .select(`
+        flashcard_id,
+        side,
+        original_filename,
+        normalized_filename,
+        audio_files (
+          file_id,
+          provider,
+          voice_id,
+          language,
+          duration_seconds
+        )
+      `)
+      .in("flashcard_id", flashcardIds);
+
+    if (audioError) {
+      console.error("[Audio Error] attachAudiosToStudyCards failed:", audioError.message);
+    } else if (cardAudios) {
+      const casted = cardAudios as unknown as Array<{ flashcard_id: string } & CardAudio>;
+      console.log("[Audio] attachAudiosToStudyCards: found", casted.length, "audio records for", flashcardIds.length, "flashcard IDs");
+      for (const audio of casted) {
+        if (!audiosMap[audio.flashcard_id]) {
+          audiosMap[audio.flashcard_id] = [];
+        }
+        audiosMap[audio.flashcard_id].push(audio);
+      }
+    }
+  } else {
+    console.log("[Audio] attachAudiosToStudyCards: no source_flashcard_ids found — skipping audio join");
+  }
+
+  return cards.map((card) => ({
+    ...card,
+    audios: card.source_flashcard_id ? (audiosMap[card.source_flashcard_id] || []) : [],
+  })) as StudyCard[];
 }
 
 // ---------------------------------------------------------------------------

@@ -287,10 +287,14 @@ export async function POST(request: Request) {
     if (cardsError || !insertedCards) throw new Error(cardsError?.message ?? "Failed to save flashcards");
 
     // 4. Generate TTS Audio if enabled
+    let audioStatus: "none" | "success" | "partial_success" | "failed" = "none";
+    let failedCount = 0;
+    let successCount = 0;
+
     if (audioEnabled && insertedCards && insertedCards.length > 0) {
       logStep(11, "Triggering TTS generation for cards", { count: insertedCards.length });
       
-      const audioPromises = [];
+      const audioTasks: Array<{ cardId: string; side: "front" | "back"; text: string }> = [];
       for (const card of insertedCards) {
         console.log("[Audio] API generated card:", card.id);
         const sides: Array<"front" | "back"> = [];
@@ -303,29 +307,60 @@ export async function POST(request: Request) {
         
         for (const side of sides) {
           const textToSynthesize = side === "front" ? card.front : card.back;
-          console.log("[Audio] Triggering audio generation for card:", card.id, "side:", side);
-          
-          audioPromises.push(
-            generateCardAudioAction({
-              flashcardId: card.id,
-              side,
-              text: textToSynthesize,
-              providerId: audioProvider || "openai",
-              voiceId: audioVoice || "alloy",
-              language: language,
-            }).then((res) => {
-              if ("error" in res && res.error) {
-                console.error("[Audio Error] API audio generation failed for card:", card.id, "side:", side, "error:", res.error);
-              }
-            }).catch((err) => {
-              console.error("[Audio Error] API audio generation promise failed for card:", card.id, "side:", side, "error:", err);
-            })
-          );
+          audioTasks.push({
+            cardId: card.id,
+            side,
+            text: textToSynthesize,
+          });
         }
       }
-      
-      await Promise.all(audioPromises);
-      logStep(12, "Audio generation complete");
+
+      // Process in batches of 5 to avoid overloading Google Drive and TTS APIs
+      const concurrencyLimit = 5;
+      for (let i = 0; i < audioTasks.length; i += concurrencyLimit) {
+        const batch = audioTasks.slice(i, i + concurrencyLimit);
+        const results = await Promise.all(
+          batch.map(async (task) => {
+            try {
+              console.log("[Audio] Triggering audio generation for card:", task.cardId, "side:", task.side);
+              const res = await generateCardAudioAction({
+                flashcardId: task.cardId,
+                side: task.side,
+                text: task.text,
+                providerId: audioProvider || "openai",
+                voiceId: audioVoice || "alloy",
+                language: language,
+              });
+              if ("error" in res && res.error) {
+                console.error("[Audio Error] API audio generation failed for card:", task.cardId, "side:", task.side, "error:", res.error);
+                return { success: false };
+              }
+              return { success: true };
+            } catch (err) {
+              console.error("[Audio Error] API audio generation exception for card:", task.cardId, "side:", task.side, "error:", err);
+              return { success: false };
+            }
+          })
+        );
+
+        for (const res of results) {
+          if (res.success) {
+            successCount++;
+          } else {
+            failedCount++;
+          }
+        }
+      }
+
+      if (successCount > 0 && failedCount > 0) {
+        audioStatus = "partial_success";
+      } else if (successCount > 0 && failedCount === 0) {
+        audioStatus = "success";
+      } else if (successCount === 0 && failedCount > 0) {
+        audioStatus = "failed";
+      }
+
+      logStep(12, "Audio generation complete", { successCount, failedCount, audioStatus });
     }
 
     const { error: updateError } = await supabase
@@ -346,12 +381,14 @@ export async function POST(request: Request) {
       });
     }
 
-    logStep(13, "Returning response", { deckId: savedDeck.id });
+    logStep(13, "Returning response", { deckId: savedDeck.id, audioStatus });
 
     return NextResponse.json({
       deck: savedDeck,
       cardCount: deck.cards.length,
       generationId: generation.id,
+      audioStatus,
+      audioErrorsCount: failedCount,
     });
   } catch (error) {
     const { error: updateError } = await supabase
