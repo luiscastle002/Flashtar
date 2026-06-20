@@ -5,6 +5,7 @@ import { generateDeckFromText } from "@/lib/openai/generate-deck";
 import { rateLimit } from "@/lib/rate-limit";
 import { canGenerateDeck } from "@/lib/queries/user";
 import { extractTextFromFile, extractTextFromUrl } from "@/lib/ingest/text-extractor";
+import { generateCardAudioAction } from "@/actions/audio";
 
 function logStep(stepNum: number, stepText: string, extra: Record<string, unknown> = {}) {
   const mem = process.memoryUsage();
@@ -25,6 +26,10 @@ const generateSchema = z.object({
   cardCount: z.number().int().min(1).max(50), // Cap at 50 max cards per request
   cardType: z.enum(["basic", "cloze", "mixed"]),
   customInstructions: z.string().max(2000).optional(),
+  audioEnabled: z.boolean().default(false),
+  audioVoice: z.string().optional(),
+  audioPlacement: z.enum(["front", "back", "both"]).default("back"),
+  audioProvider: z.string().optional(),
 });
 
 const ALLOWED_EXTENSIONS = ["pdf", "docx", "pptx", "xlsx", "txt", "png", "jpg", "jpeg", "webp"];
@@ -63,6 +68,10 @@ export async function POST(request: Request) {
   let cardCount = 20;
   let cardType: "basic" | "cloze" | "mixed" = "basic";
   let customInstructions: string | undefined;
+  let audioEnabled = false;
+  let audioVoice: string | undefined;
+  let audioPlacement: "front" | "back" | "both" = "back";
+  let audioProvider: string | undefined;
 
   const contentType = request.headers.get("content-type") || "";
 
@@ -78,6 +87,10 @@ export async function POST(request: Request) {
       cardCount = parseInt(formData.get("cardCount") as string || "20", 10);
       cardType = (formData.get("cardType") as "basic" | "cloze" | "mixed") || "basic";
       customInstructions = formData.get("customInstructions") as string || undefined;
+      audioEnabled = formData.get("audioEnabled") === "true";
+      audioVoice = formData.get("audioVoice") as string || undefined;
+      audioPlacement = (formData.get("audioPlacement") as "front" | "back" | "both") || "back";
+      audioProvider = formData.get("audioProvider") as string || undefined;
     } else {
       const body = await request.json();
       const parsed = generateSchema.parse(body);
@@ -89,6 +102,10 @@ export async function POST(request: Request) {
       cardCount = parsed.cardCount;
       cardType = parsed.cardType;
       customInstructions = parsed.customInstructions;
+      audioEnabled = parsed.audioEnabled;
+      audioVoice = parsed.audioVoice;
+      audioPlacement = parsed.audioPlacement;
+      audioProvider = parsed.audioProvider;
     }
   } catch {
     return NextResponse.json({ error: "Invalid request payload format." }, { status: 400 });
@@ -106,6 +123,10 @@ export async function POST(request: Request) {
     cardCount,
     cardType,
     customInstructions,
+    audioEnabled,
+    audioVoice,
+    audioPlacement,
+    audioProvider,
   });
 
   if (!validation.success) {
@@ -258,8 +279,54 @@ export async function POST(request: Request) {
       position: index,
     }));
 
-    const { error: cardsError } = await supabase.from("flashcards").insert(flashcards);
-    if (cardsError) throw new Error(cardsError.message);
+    const { data: insertedCards, error: cardsError } = await supabase
+      .from("flashcards")
+      .insert(flashcards)
+      .select("id, front, back, position");
+
+    if (cardsError || !insertedCards) throw new Error(cardsError?.message ?? "Failed to save flashcards");
+
+    // 4. Generate TTS Audio if enabled
+    if (audioEnabled && insertedCards && insertedCards.length > 0) {
+      logStep(11, "Triggering TTS generation for cards", { count: insertedCards.length });
+      
+      const audioPromises = [];
+      for (const card of insertedCards) {
+        console.log("[Audio] API generated card:", card.id);
+        const sides: Array<"front" | "back"> = [];
+        if (audioPlacement === "front" || audioPlacement === "both") {
+          sides.push("front");
+        }
+        if (audioPlacement === "back" || audioPlacement === "both") {
+          sides.push("back");
+        }
+        
+        for (const side of sides) {
+          const textToSynthesize = side === "front" ? card.front : card.back;
+          console.log("[Audio] Triggering audio generation for card:", card.id, "side:", side);
+          
+          audioPromises.push(
+            generateCardAudioAction({
+              flashcardId: card.id,
+              side,
+              text: textToSynthesize,
+              providerId: audioProvider || "openai",
+              voiceId: audioVoice || "alloy",
+              language: language,
+            }).then((res) => {
+              if ("error" in res && res.error) {
+                console.error("[Audio Error] API audio generation failed for card:", card.id, "side:", side, "error:", res.error);
+              }
+            }).catch((err) => {
+              console.error("[Audio Error] API audio generation promise failed for card:", card.id, "side:", side, "error:", err);
+            })
+          );
+        }
+      }
+      
+      await Promise.all(audioPromises);
+      logStep(12, "Audio generation complete");
+    }
 
     const { error: updateError } = await supabase
       .from("ai_generations")
@@ -279,7 +346,7 @@ export async function POST(request: Request) {
       });
     }
 
-    logStep(11, "Returning response", { deckId: savedDeck.id });
+    logStep(13, "Returning response", { deckId: savedDeck.id });
 
     return NextResponse.json({
       deck: savedDeck,

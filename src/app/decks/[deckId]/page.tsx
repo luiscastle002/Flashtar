@@ -3,7 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser, getProfile, getSubscription } from "@/lib/queries/user";
 import { DeckEditor } from "@/components/decks/deck-editor";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
-import type { Plan } from "@/types";
+import type { Plan, CardAudio } from "@/types";
 
 export default async function DeckPage({ params }: { params: Promise<{ deckId: string }> }) {
   const { deckId } = await params;
@@ -28,11 +28,50 @@ export default async function DeckPage({ params }: { params: Promise<{ deckId: s
     .eq("deck_id", deckId)
     .order("position");
 
+  const cardsWithAudios = (cards ?? []).map(card => ({
+    ...card,
+    audios: [] as CardAudio[]
+  }));
+
+  if (cards && cards.length > 0) {
+    const flashcardIds = cards.map(c => c.id);
+    const { data: cardAudios } = await supabase
+      .from("card_audios")
+      .select(`
+        flashcard_id,
+        side,
+        original_filename,
+        normalized_filename,
+        audio_files (
+          file_id,
+          provider,
+          voice_id,
+          language,
+          duration_seconds
+        )
+      `)
+      .in("flashcard_id", flashcardIds);
+
+    if (cardAudios) {
+      const casted = cardAudios as unknown as Array<{ flashcard_id: string } & CardAudio>;
+      const audiosMap: Record<string, CardAudio[]> = {};
+      for (const audio of casted) {
+        if (!audiosMap[audio.flashcard_id]) {
+          audiosMap[audio.flashcard_id] = [];
+        }
+        audiosMap[audio.flashcard_id].push(audio);
+      }
+      for (const card of cardsWithAudios) {
+        card.audios = audiosMap[card.id] || [];
+      }
+    }
+  }
+
   return (
     <DashboardShell currentPath="/decks" profile={profile}>
       <DeckEditor
         deck={deck}
-        initialCards={cards ?? []}
+        initialCards={cardsWithAudios}
         plan={(subscription?.plan ?? "free") as Plan}
       />
     </DashboardShell>

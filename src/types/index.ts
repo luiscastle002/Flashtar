@@ -56,6 +56,7 @@ export interface Flashcard {
   position: number;
   created_at: string;
   updated_at: string;
+  audios?: CardAudio[];
 }
 
 export interface AiGeneration {

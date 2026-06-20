@@ -15,6 +15,11 @@ interface StudyCardListItemProps {
   showCheckbox?: boolean;
 }
 
+function stripSoundTags(html: string): string {
+  if (!html) return "";
+  return html.replace(/\[sound:[^\]]*\]/gi, "");
+}
+
 export function StudyCardListItem({
   card,
   checked = false,
@@ -56,11 +61,11 @@ export function StudyCardListItem({
       <div className="flex-1 min-w-0">
         <p
           className="text-sm font-medium line-clamp-1"
-          dangerouslySetInnerHTML={{ __html: card.front }}
+          dangerouslySetInnerHTML={{ __html: stripSoundTags(card.front) }}
         />
         <p
           className="text-xs text-muted-foreground mt-0.5 line-clamp-1"
-          dangerouslySetInnerHTML={{ __html: card.back }}
+          dangerouslySetInnerHTML={{ __html: stripSoundTags(card.back) }}
         />
       </div>
 

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/server";
 import { getGoogleAccessTokenForUser, uploadAudioFileToDrive } from "@/lib/integrations/google";
 
 export const maxDuration = 60; // Allow Vercel execution up to 60 seconds (requires Pro, otherwise Hobby fallback)
@@ -11,7 +11,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const supabase = await createClient();
+  const supabase = createAdminClient();
 
   // 1. Claim a batch of eligible queue items atomically
   const batchSize = 10;
@@ -44,6 +44,8 @@ export async function GET(request: Request) {
         throw new Error(`Supabase storage download failed: ${downloadError?.message || "Empty blob"}`);
       }
 
+      console.log("[Audio] Worker downloaded media for queue item:", queueItemId);
+
       // Convert Blob to Buffer for Google API compatibility
       const arrayBuffer = await fileBlob.arrayBuffer();
       const fileBuffer = Buffer.from(arrayBuffer);
@@ -54,6 +56,8 @@ export async function GET(request: Request) {
       // 3. Upload to Google Drive (handles folder recovery auto-magically)
       const uploadRes = await uploadAudioFileToDrive(userId, accessToken, origName, fileBuffer);
       const googleFileId = uploadRes.fileId;
+
+      console.log("[Audio] Worker uploaded media to drive:", googleFileId);
 
       // 4. Determine flashcard sides containing this sound tag
       const { data: flashcard } = await supabase
@@ -127,11 +131,21 @@ export async function GET(request: Request) {
 
         if (refError) {
           console.error(`Ref mapping error for side ${side} of flashcard ${flashcardId}:`, refError.message);
+          throw new Error(`Failed to map audio to card side ${side}: ${refError.message}`);
         }
       }
 
       // 7. Success Cleanup: delete temporary staging object from Supabase bucket
       await supabase.storage.from("temp-media-imports").remove([tempPath]);
+
+      console.log("[Audio]", {
+        cardId: flashcardId,
+        generated: false,
+        uploaded: true,
+        driveFileId: googleFileId,
+        audioFileId: audioFileId,
+        mapped: true
+      });
 
       // 8. Update queue item status
       await supabase
@@ -148,7 +162,7 @@ export async function GET(request: Request) {
 
       results.push({ id: queueItemId, status: "completed" });
     } catch (err: unknown) {
-      console.error(`Error processing queue item ${queueItemId}:`, err);
+      console.error("[Audio Error] Worker failed for queue item:", queueItemId, err);
 
       const errorMessage = err instanceof Error ? err.message : String(err);
       const isRateLimit = errorMessage.includes("rateLimitExceeded") || errorMessage.includes("429");

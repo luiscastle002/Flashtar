@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { getTtsProvider, generateAudioHash, type TtsOptions } from "@/lib/tts/tts";
 import { getGoogleAccessTokenForUser, uploadAudioFileToDrive } from "@/lib/integrations/google";
 import { getCurrentUser } from "@/lib/queries/user";
+import type { CardAudio } from "@/types";
 
 export interface GenerateCardAudioParams {
   flashcardId: string;
@@ -13,6 +14,10 @@ export interface GenerateCardAudioParams {
   voiceId: string;
   language: string;
   options?: TtsOptions;
+}
+
+function stripHtml(html: string): string {
+  return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
 }
 
 /**
@@ -31,7 +36,7 @@ export async function generateCardAudioAction({
   const user = await getCurrentUser();
   if (!user) return { error: "errors.auth.not_authenticated" };
 
-  const cleanText = text.trim();
+  const cleanText = stripHtml(text);
   if (!cleanText) return { success: false, reason: "Text is empty" };
 
   const supabase = await createClient();
@@ -44,6 +49,7 @@ export async function generateCardAudioAction({
     .single();
 
   if (!connection || connection.connection_status !== "connected") {
+    console.error("[Audio Error] Google Drive is not connected or status is not connected.");
     return { error: "Google Drive is not connected or requires reconnection." };
   }
 
@@ -71,8 +77,18 @@ export async function generateCardAudioAction({
       });
 
     if (refError) {
+      console.error("[Audio Error] Cache hit reference mapping failed:", refError);
       return { error: refError.message };
     }
+
+    console.log("[Audio]", {
+      cardId: flashcardId,
+      generated: false,
+      uploaded: false,
+      driveFileId: null,
+      audioFileId: existingFile.id,
+      mapped: true
+    });
 
     return { success: true, cached: true };
   }
@@ -88,6 +104,7 @@ export async function generateCardAudioAction({
     .single();
 
   if (usage && usage.used_this_month + charCount > usage.monthly_limit) {
+    console.error("[Audio Error] Character credits quota exceeded.");
     return { error: "quota_exceeded" };
   }
 
@@ -98,6 +115,7 @@ export async function generateCardAudioAction({
   });
 
   if (deductError) {
+    console.error("[Audio Error] Character credits deduction failed:", deductError);
     return { error: `Failed to deduct character credits: ${deductError.message}` };
   }
 
@@ -112,18 +130,25 @@ export async function generateCardAudioAction({
     audioBuffer = ttsRes.audioBuffer;
     fileSize = audioBuffer.length;
     
-    // Estimate duration: Average bit rate for TTS is ~32kbps (4000 bytes/sec) or standard MP3 bit rate.
-    // Let's use a standard estimate: 128kbps = 16000 bytes/sec. Let's do a conservative 32kbps = 4000 bytes/sec.
-    // Or we can assume duration = characters / 15 characters per second as a fallback.
+    // Estimate duration
     durationSeconds = parseFloat((fileSize / 4000).toFixed(2));
+
+    console.log("[Audio]", {
+      cardId: flashcardId,
+      generated: true,
+      uploaded: false,
+      driveFileId: null,
+      audioFileId: null,
+      mapped: false
+    });
   } catch (ttsErr: unknown) {
-    const errorMsg = ttsErr instanceof Error ? ttsErr.message : String(ttsErr);
+    console.error("[Audio Error] TTS Generation failed:", ttsErr);
     // Rollback credit deduction on failure
     await supabase.rpc("decrement_audio_usage", {
       p_user_id: user.id,
       p_chars: charCount
     });
-    return { error: `TTS Generation failed: ${errorMsg}` };
+    return { error: `TTS Generation failed: ${ttsErr instanceof Error ? ttsErr.message : String(ttsErr)}` };
   }
 
   // 7. Get access token and upload to Google Drive
@@ -132,20 +157,28 @@ export async function generateCardAudioAction({
     const accessToken = await getGoogleAccessTokenForUser(user.id);
     const uploadRes = await uploadAudioFileToDrive(user.id, accessToken, `${audioHash}.mp3`, audioBuffer);
     fileId = uploadRes.fileId;
+
+    console.log("[Audio]", {
+      cardId: flashcardId,
+      generated: true,
+      uploaded: true,
+      driveFileId: fileId,
+      audioFileId: null,
+      mapped: false
+    });
   } catch (uploadErr: unknown) {
-    const errorMsg = uploadErr instanceof Error ? uploadErr.message : String(uploadErr);
+    console.error("[Audio Error] Google Drive upload failed:", uploadErr);
     // Rollback credit deduction
     await supabase.rpc("decrement_audio_usage", {
       p_user_id: user.id,
       p_chars: charCount
     });
 
-    if (errorMsg === "GOOGLE_DRIVE_QUOTA_EXCEEDED") {
-      // Mark background jobs as quota_exceeded
+    if (uploadErr instanceof Error && uploadErr.message === "GOOGLE_DRIVE_QUOTA_EXCEEDED") {
       return { error: "quota_exceeded" };
     }
 
-    return { error: `Google Drive upload failed: ${errorMsg}` };
+    return { error: `Google Drive upload failed: ${uploadErr instanceof Error ? uploadErr.message : String(uploadErr)}` };
   }
 
   // 8. Save audio file metadata
@@ -165,7 +198,7 @@ export async function generateCardAudioAction({
     .single();
 
   if (fileSaveError || !newFile) {
-    // Delete file from Google Drive if saving metadata fails?
+    console.error("[Audio Error] Failed to save audio file metadata:", fileSaveError);
     // Rollback credits anyway
     await supabase.rpc("decrement_audio_usage", {
       p_user_id: user.id,
@@ -186,6 +219,7 @@ export async function generateCardAudioAction({
     });
 
   if (refError) {
+    console.error("[Audio Error] Failed to create card audio reference:", refError);
     return { error: `Failed to create card audio reference: ${refError.message}` };
   }
 
@@ -201,6 +235,15 @@ export async function generateCardAudioAction({
       voice: voiceId,
       language
     }
+  });
+
+  console.log("[Audio]", {
+    cardId: flashcardId,
+    generated: true,
+    uploaded: true,
+    driveFileId: fileId,
+    audioFileId: newFile.id,
+    mapped: true
   });
 
   return { success: true, cached: false, audioFileId: newFile.id };
@@ -260,6 +303,7 @@ export async function mapGoogleDriveAudioAction({
       .single();
 
     if (fileSaveError || !newFile) {
+      console.error("[Audio Error] Manual mapping failed to save audio file metadata:", fileSaveError);
       return { error: `Failed to save audio file metadata: ${fileSaveError?.message}` };
     }
     fileRecordId = newFile.id;
@@ -274,9 +318,11 @@ export async function mapGoogleDriveAudioAction({
     .eq("audio_file_id", fileRecordId)
     .single();
 
+  let returnedRef = null;
+
   if (!existingRef) {
     const normalized = filename.trim().toLowerCase().normalize("NFC");
-    const { error: refError } = await supabase
+    const { data: insertedRef, error: refError } = await supabase
       .from("card_audios")
       .insert({
         flashcard_id: flashcardId,
@@ -284,12 +330,59 @@ export async function mapGoogleDriveAudioAction({
         audio_file_id: fileRecordId,
         original_filename: filename,
         normalized_filename: normalized
-      });
+      })
+      .select(`
+        side,
+        original_filename,
+        normalized_filename,
+        audio_files (
+          file_id,
+          provider,
+          voice_id,
+          language,
+          duration_seconds
+        )
+      `)
+      .single();
 
     if (refError) {
+      console.error("[Audio Error] Manual mapping failed to create card audio reference:", refError);
       return { error: `Failed to create card audio reference: ${refError.message}` };
     }
+    returnedRef = insertedRef;
+  } else {
+    // If it exists, fetch it so we can return the joined details
+    const { data: fetchedRef } = await supabase
+      .from("card_audios")
+      .select(`
+        side,
+        original_filename,
+        normalized_filename,
+        audio_files (
+          file_id,
+          provider,
+          voice_id,
+          language,
+          duration_seconds
+        )
+      `)
+      .eq("id", existingRef.id)
+      .single();
+    returnedRef = fetchedRef;
   }
 
-  return { success: true, normalizedName: filename.trim().normalize("NFC") };
+  console.log("[Audio]", {
+    cardId: flashcardId,
+    generated: false,
+    uploaded: true,
+    driveFileId: fileId,
+    audioFileId: fileRecordId,
+    mapped: true,
+  });
+
+  return { 
+    success: true, 
+    normalizedName: filename.trim().normalize("NFC"),
+    audioRef: returnedRef as unknown as CardAudio
+  };
 }
