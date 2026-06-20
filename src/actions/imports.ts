@@ -224,7 +224,7 @@ const APKG_BATCH_SIZE = 500;
 
 export async function importFromApkg(
   studyDeckId: string,
-  cards: Array<{ front: string; back: string }>,
+  cards: Array<{ front: string; back: string; card_type?: "basic" | "cloze" }>,
   sourceFileName: string
 ) {
   const user = await getCurrentUser();
@@ -281,6 +281,7 @@ export async function importFromApkg(
     user_id: user.id,
     front: card.front.trim(),
     back: (card.back ?? "").trim(),
+    card_type: card.card_type ?? "basic",
     import_id: importRecord?.id ?? null,
     position: (deck.card_count ?? 0) + i,
     state: "new",
@@ -589,6 +590,108 @@ export async function bulkUnsuspendStudyCards(ids: string[], studyDeckId: string
   const results = await Promise.all(updates);
   const errorResult = results.find((r) => r.error);
   if (errorResult) return { error: errorResult.error?.message };
+
+  revalidatePath(`/study/${studyDeckId}`);
+  return { success: true };
+}
+
+// ---------------------------------------------------------------------------
+// bulkUpdateStudyCards
+// ---------------------------------------------------------------------------
+
+export async function bulkUpdateStudyCards(
+  ids: string[],
+  studyDeckId: string,
+  updates: {
+    front?: string;
+    back?: string;
+    addTags?: string[];
+    removeTags?: string[];
+    isFlagged?: boolean;
+  }
+) {
+  const user = await getCurrentUser();
+  if (!user) return { error: "errors.auth.not_authenticated" };
+  if (!ids.length) return { error: "errors.imports.no_rows" };
+
+  const supabase = await createClient();
+
+  if (ids.length === 1) {
+    // Single card edit: allows front, back, and direct tags overwrite
+    const cardId = ids[0];
+    const up: {
+      front?: string;
+      back?: string;
+      tags?: string[];
+      is_flagged?: boolean;
+    } = {};
+    if (updates.front !== undefined) up.front = updates.front.trim();
+    if (updates.back !== undefined) up.back = updates.back.trim();
+    if (updates.isFlagged !== undefined) up.is_flagged = updates.isFlagged;
+    if (updates.addTags !== undefined) {
+      up.tags = updates.addTags; // Overwrite tags direct
+    }
+
+    const { error } = await supabase
+      .from("study_cards")
+      .update(up)
+      .eq("id", cardId)
+      .eq("study_deck_id", studyDeckId)
+      .eq("user_id", user.id);
+
+    if (error) return { error: error.message };
+  } else {
+    // Multi-card edit: applies flag status and modifies tags (add/remove)
+    // 1. Fetch selected cards to inspect current tags
+    const { data: cards, error: fetchError } = await supabase
+      .from("study_cards")
+      .select("id, tags")
+      .in("id", ids)
+      .eq("study_deck_id", studyDeckId)
+      .eq("user_id", user.id);
+
+    if (fetchError || !cards) {
+      return { error: fetchError?.message ?? "errors.study_decks.card_not_found" };
+    }
+
+    // 2. Perform updates in parallel
+    const updatesPromises = cards.map((card) => {
+      const up: {
+        is_flagged?: boolean;
+        tags?: string[];
+      } = {};
+      if (updates.isFlagged !== undefined) {
+        up.is_flagged = updates.isFlagged;
+      }
+
+      if (updates.addTags !== undefined || updates.removeTags !== undefined) {
+        let newTags = [...(card.tags || [])];
+        if (updates.addTags && updates.addTags.length > 0) {
+          updates.addTags.forEach((tag) => {
+            const t = tag.trim();
+            if (t && !newTags.includes(t)) {
+              newTags.push(t);
+            }
+          });
+        }
+        if (updates.removeTags && updates.removeTags.length > 0) {
+          const toRemove = updates.removeTags.map((t) => t.trim());
+          newTags = newTags.filter((t) => !toRemove.includes(t));
+        }
+        up.tags = newTags;
+      }
+
+      return supabase
+        .from("study_cards")
+        .update(up)
+        .eq("id", card.id)
+        .eq("user_id", user.id);
+    });
+
+    const results = await Promise.all(updatesPromises);
+    const errorResult = results.find((r) => r.error);
+    if (errorResult) return { error: errorResult.error?.message };
+  }
 
   revalidatePath(`/study/${studyDeckId}`);
   return { success: true };

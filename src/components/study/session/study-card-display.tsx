@@ -43,11 +43,16 @@ export function StudyCardDisplay({ card, isFlipped, onFlip }: StudyCardDisplayPr
         >
           {/* Front face */}
           <div className="absolute inset-0 rounded-2xl border bg-card shadow-sm flex flex-col [backface-visibility:hidden]">
-            <div className="flex-1 flex items-center justify-center p-8">
-              <div
-                className="text-center text-lg md:text-xl font-medium leading-relaxed max-w-prose"
-                dangerouslySetInnerHTML={{ __html: card.front }}
-              />
+            <div 
+              className="flex-1 overflow-y-auto px-6 py-4 flex flex-col"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="my-auto w-full text-center">
+                <div
+                  className="text-center text-lg md:text-xl font-medium leading-relaxed max-w-prose whitespace-pre-wrap break-words mx-auto"
+                  dangerouslySetInnerHTML={{ __html: card.front }}
+                />
+              </div>
             </div>
             <div className="flex items-center justify-between px-5 py-3 border-t text-xs text-muted-foreground">
               <Badge variant="outline" className="capitalize text-xs">
@@ -67,11 +72,16 @@ export function StudyCardDisplay({ card, isFlipped, onFlip }: StudyCardDisplayPr
               />
             </div>
             {/* Answer */}
-            <div className="flex-1 flex items-center justify-center p-8">
-              <div
-                className="text-center text-lg md:text-xl leading-relaxed max-w-prose"
-                dangerouslySetInnerHTML={{ __html: card.back }}
-              />
+            <div 
+              className="flex-1 overflow-y-auto px-6 py-4 flex flex-col"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="my-auto w-full text-center">
+                <div
+                  className="text-center text-lg md:text-xl leading-relaxed max-w-prose whitespace-pre-wrap break-words mx-auto"
+                  dangerouslySetInnerHTML={{ __html: card.back }}
+                />
+              </div>
             </div>
             <div className="flex items-center justify-between px-5 py-3 border-t text-xs text-muted-foreground">
               <div className="flex items-center gap-2">

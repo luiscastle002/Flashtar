@@ -146,6 +146,7 @@ export function ImportApkgButton({ deckId, plan }: ImportApkgButtonProps) {
     const cardsToImport = parsedCards.map((c) => ({
       front: c.front,
       back: c.back,
+      card_type: (c.isCloze ? "cloze" : "basic") as "cloze" | "basic",
     }));
 
     startTransition(async () => {

@@ -13,6 +13,9 @@
     "remove": "Remove",
     "no_data": "No data available.",
     "optional": "optional",
+    "edit_modal_front": "Front text",
+    "edit_modal_back": "Back text",
+    "tags": "Tags (comma-separated)",
     "file_size": {
       "bytes": "Bytes",
       "kb": "KB",
@@ -358,7 +361,19 @@
         "suspend_confirm_title": "Suspend selected cards?",
         "suspend_confirm_desc": "Are you sure you want to suspend {count} selected {count, plural, =1 {card} other {cards}}? They will be excluded from all study sessions.",
         "unsuspend_confirm_title": "Unsuspend selected cards?",
-        "unsuspend_confirm_desc": "Are you sure you want to unsuspend {count} selected {count, plural, =1 {card} other {cards}}? They will return to their previous study states."
+        "unsuspend_confirm_desc": "Are you sure you want to unsuspend {count} selected {count, plural, =1 {card} other {cards}}? They will return to their previous study states.",
+        "edit_button": "Edit",
+        "edit_title_single": "Edit Card",
+        "edit_title_plural": "Bulk Edit Cards",
+        "edit_desc_single": "Modify the content and tags of this card.",
+        "edit_desc_plural": "Apply tag and flag modifications to {count} selected cards.",
+        "edit_add_tags": "Add Tags (comma-separated)",
+        "edit_remove_tags": "Remove Tags (comma-separated)",
+        "edit_flag_action": "Flag Status",
+        "flag_no_change": "Keep unchanged",
+        "flag_add": "Flag all selected",
+        "flag_remove": "Unflag all selected",
+        "toast_edit_success": "Successfully updated {count} {count, plural, =1 {card} other {cards}}."
       }
     }
   },

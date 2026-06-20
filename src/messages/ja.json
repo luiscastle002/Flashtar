@@ -13,6 +13,9 @@
     "remove": "削除",
     "no_data": "データがありません。",
     "optional": "任意",
+    "edit_modal_front": "表面のテキスト",
+    "edit_modal_back": "裏面のテキスト",
+    "tags": "タグ（カンマ区切り）",
     "file_size": {
       "bytes": "バイト",
       "kb": "KB",
@@ -359,7 +362,19 @@
         "suspend_confirm_title": "選択したカードを保留にしますか？",
         "suspend_confirm_desc": "選択した {count}枚のカードを本当に保留にしますか？保留にされたカードは、今後の学習セッションから除外されます。",
         "unsuspend_confirm_title": "選択したカードの保留を解除しますか？",
-        "unsuspend_confirm_desc": "選択した {count}枚のカードの保留を本当に解除しますか？カードは元の学習状態に戻ります。"
+        "unsuspend_confirm_desc": "選択した {count}枚のカードの保留を本当に解除しますか？カードは元の学習状態に戻ります。",
+        "edit_button": "編集",
+        "edit_title_single": "カードを編集",
+        "edit_title_plural": "カードを一括編集",
+        "edit_desc_single": "このカードの内容とタグを変更します。",
+        "edit_desc_plural": "選択した {count}枚のカードにタグとフラグの変更を適用します。",
+        "edit_add_tags": "追加するタグ（カンマ区切り）",
+        "edit_remove_tags": "削除するタグ（カンマ区切り）",
+        "edit_flag_action": "フラグの状態",
+        "flag_no_change": "変更しない",
+        "flag_add": "選択したすべてにフラグを付ける",
+        "flag_remove": "選択したすべてのフラグを外す",
+        "toast_edit_success": "{count}枚のカードを正常に更新しました。"
       }
     }
   },

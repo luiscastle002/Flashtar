@@ -13,6 +13,9 @@
     "remove": "Quitar",
     "no_data": "No hay datos disponibles.",
     "optional": "opcional",
+    "edit_modal_front": "Texto frontal",
+    "edit_modal_back": "Texto posterior",
+    "tags": "Etiquetas (separadas por comas)",
     "file_size": {
       "bytes": "Bytes",
       "kb": "KB",
@@ -358,7 +361,19 @@
         "suspend_confirm_title": "¿Suspender tarjetas seleccionadas?",
         "suspend_confirm_desc": "¿Estás seguro de que deseas suspender las {count} {count, plural, =1 {tarjeta seleccionada} other {tarjetas seleccionadas}}? Se excluirán de todas las sesiones de estudio.",
         "unsuspend_confirm_title": "¿Reactivar tarjetas seleccionadas?",
-        "unsuspend_confirm_desc": "¿Estás seguro de que deseas reactivar las {count} {count, plural, =1 {tarjeta seleccionada} other {tarjetas seleccionadas}}? Volverán a sus estados de estudio anteriores."
+        "unsuspend_confirm_desc": "¿Estás seguro de que deseas reactivar las {count} {count, plural, =1 {tarjeta seleccionada} other {tarjetas seleccionadas}}? Volverán a sus estados de estudio anteriores.",
+        "edit_button": "Editar",
+        "edit_title_single": "Editar Tarjeta",
+        "edit_title_plural": "Editar Tarjetas en Lote",
+        "edit_desc_single": "Modifica el contenido y las etiquetas de esta tarjeta.",
+        "edit_desc_plural": "Aplica modificaciones de etiquetas y marcas a las {count} tarjetas seleccionadas.",
+        "edit_add_tags": "Añadir Etiquetas (separadas por comas)",
+        "edit_remove_tags": "Quitar Etiquetas (separadas por comas)",
+        "edit_flag_action": "Estado de la Marca",
+        "flag_no_change": "Mantener sin cambios",
+        "flag_add": "Marcar todas las seleccionadas",
+        "flag_remove": "Desmarcar todas las seleccionadas",
+        "toast_edit_success": "Se actualizaron {count} {count, plural, =1 {tarjeta} other {tarjetas}} con éxito."
       }
     }
   },

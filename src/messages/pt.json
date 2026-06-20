@@ -13,6 +13,9 @@
     "remove": "Remover",
     "no_data": "Sem dados disponíveis.",
     "optional": "opcional",
+    "edit_modal_front": "Texto frontal",
+    "edit_modal_back": "Texto no verso",
+    "tags": "Tags (separadas por vírgula)",
     "file_size": {
       "bytes": "Bytes",
       "kb": "KB",
@@ -358,7 +361,19 @@
         "suspend_confirm_title": "Suspender cartões selecionados?",
         "suspend_confirm_desc": "Tem certeza de que deseja suspender os {count} {count, plural, =1 {cartão selecionado} other {cartões selecionados}}? Eles serão excluídos de todas as sessões de estudo.",
         "unsuspend_confirm_title": "Reativar cartões selecionados?",
-        "unsuspend_confirm_desc": "Tem certeza de que deseja reativar os {count} {count, plural, =1 {cartão selecionado} other {cartões selecionados}}? Eles voltarão aos seus estados de estudo anteriores."
+        "unsuspend_confirm_desc": "Tem certeza de que deseja reativar os {count} {count, plural, =1 {cartão selecionado} other {cartões selecionados}}? Eles voltarão aos seus estados de estudo anteriores.",
+        "edit_button": "Editar",
+        "edit_title_single": "Editar Cartão",
+        "edit_title_plural": "Editar Cartões em Lote",
+        "edit_desc_single": "Modifique o conteúdo e as etiquetas deste cartão.",
+        "edit_desc_plural": "Aplique modificações de etiquetas e marcadores aos {count} cartões selecionados.",
+        "edit_add_tags": "Adicionar Etiquetas (separadas por vírgulas)",
+        "edit_remove_tags": "Remover Etiquetas (separadas por vírgulas)",
+        "edit_flag_action": "Status da Bandeira",
+        "flag_no_change": "Manter inalterado",
+        "flag_add": "Sinalizar todos os selecionados",
+        "flag_remove": "Remover sinalização de todos os selecionados",
+        "toast_edit_success": "Atualizado {count} {count, plural, =1 {cartão} other {cartões}} com sucesso."
       }
     }
   },

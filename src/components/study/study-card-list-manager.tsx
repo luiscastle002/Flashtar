@@ -2,16 +2,18 @@
 
 import React, { useState, useEffect, useTransition } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import { Search, ChevronLeft, ChevronRight, Trash2, ShieldAlert, Loader2 } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight, Trash2, ShieldAlert, Loader2, Ban, Play, Pencil } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { StudyCardListItem } from "./study-card-list-item";
-import { bulkDeleteStudyCards, bulkSuspendStudyCards, bulkUnsuspendStudyCards } from "@/actions/imports";
+import { bulkDeleteStudyCards, bulkSuspendStudyCards, bulkUnsuspendStudyCards, bulkUpdateStudyCards } from "@/actions/imports";
 import type { StudyCard } from "@/types";
 
 interface StudyCardListManagerProps {
@@ -49,7 +51,16 @@ export function StudyCardListManager({
   const [confirmDeleteOpen, setConfirmDeleteOpen] = useState(false);
   const [confirmSuspendOpen, setConfirmSuspendOpen] = useState(false);
   const [confirmUnsuspendOpen, setConfirmUnsuspendOpen] = useState(false);
+  const [editOpen, setEditOpen] = useState(false);
   const [isMutating, setIsMutating] = useState(false);
+
+  // Edit fields state
+  const [editFront, setEditFront] = useState("");
+  const [editBack, setEditBack] = useState("");
+  const [editTags, setEditTags] = useState("");
+  const [bulkAddTags, setBulkAddTags] = useState("");
+  const [bulkRemoveTags, setBulkRemoveTags] = useState("");
+  const [bulkFlagAction, setBulkFlagAction] = useState<"no_change" | "flag" | "unflag">("no_change");
 
   const currentPage = Number(searchParams.get("page") ?? "1");
   const currentSort = searchParams.get("sort") ?? "created_desc";
@@ -227,6 +238,77 @@ export function StudyCardListManager({
     }
   };
 
+  const handleOpenEdit = () => {
+    const ids = Array.from(selectedIds);
+    if (ids.length === 1) {
+      const card = initialCards.find((c) => c.id === ids[0]);
+      if (card) {
+        setEditFront(card.front);
+        setEditBack(card.back);
+        setEditTags(card.tags?.join(", ") ?? "");
+      }
+    } else {
+      setBulkAddTags("");
+      setBulkRemoveTags("");
+      setBulkFlagAction("no_change");
+    }
+    setEditOpen(true);
+  };
+
+  const executeBulkUpdate = async () => {
+    setIsMutating(true);
+    try {
+      const ids = Array.from(selectedIds);
+      let updates: {
+        front?: string;
+        back?: string;
+        addTags?: string[];
+        removeTags?: string[];
+        isFlagged?: boolean;
+      } = {};
+      if (ids.length === 1) {
+        updates = {
+          front: editFront,
+          back: editBack,
+          addTags: editTags
+            .split(",")
+            .map((t) => t.trim())
+            .filter(Boolean),
+        };
+      } else {
+        updates = {
+          addTags: bulkAddTags
+            .split(",")
+            .map((t) => t.trim())
+            .filter(Boolean),
+          removeTags: bulkRemoveTags
+            .split(",")
+            .map((t) => t.trim())
+            .filter(Boolean),
+        };
+        if (bulkFlagAction === "flag") {
+          updates.isFlagged = true;
+        } else if (bulkFlagAction === "unflag") {
+          updates.isFlagged = false;
+        }
+      }
+
+      const res = await bulkUpdateStudyCards(ids, deckId, updates);
+      if (res.error) {
+        toast.error(res.error);
+      } else {
+        toast.success(t("bulk_actions.toast_edit_success", { count: ids.length }));
+        setSelectedIds(new Set());
+        router.refresh();
+      }
+    } catch {
+      toast.error(tCommon("toast_save_failed"));
+    } finally {
+      setIsMutating(false);
+      setEditOpen(false);
+    }
+  };
+
   const totalPages = Math.ceil(totalCount / 100);
 
   // Disable Prev controls
@@ -292,6 +374,16 @@ export function StudyCardListManager({
             </span>
           </div>
           <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-8 border-indigo-300 text-indigo-700 hover:bg-indigo-100 dark:text-indigo-300"
+              onClick={handleOpenEdit}
+              disabled={isMutating}
+            >
+              <Pencil className="h-3.5 w-3.5 mr-1" />
+              {t("bulk_actions.edit_button")}
+            </Button>
             {currentSuspended === "suspended_only" ? (
               <Button
                 variant="outline"
@@ -300,6 +392,7 @@ export function StudyCardListManager({
                 onClick={() => setConfirmUnsuspendOpen(true)}
                 disabled={isMutating}
               >
+                <Play className="h-3.5 w-3.5 mr-1" />
                 {t("bulk_actions.unsuspend_button")}
               </Button>
             ) : (
@@ -310,6 +403,7 @@ export function StudyCardListManager({
                 onClick={() => setConfirmSuspendOpen(true)}
                 disabled={isMutating}
               >
+                <Ban className="h-3.5 w-3.5 mr-1" />
                 {t("bulk_actions.suspend_button")}
               </Button>
             )}
@@ -459,6 +553,99 @@ export function StudyCardListManager({
             <Button onClick={executeBulkUnsuspend} disabled={isMutating}>
               {isMutating && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
               {t("bulk_actions.unsuspend_button")}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Edit Card(s) Dialog */}
+      <Dialog open={editOpen} onOpenChange={setEditOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>
+              {selectedIds.size === 1 ? t("bulk_actions.edit_title_single") : t("bulk_actions.edit_title_plural")}
+            </DialogTitle>
+            <DialogDescription>
+              {selectedIds.size === 1 ? t("bulk_actions.edit_desc_single") : t("bulk_actions.edit_desc_plural", { count: selectedIds.size })}
+            </DialogDescription>
+          </DialogHeader>
+
+          {selectedIds.size === 1 ? (
+            // Single Edit fields
+            <div className="space-y-4 py-2">
+              <div className="space-y-1.5">
+                <Label htmlFor="front">{tCommon("edit_modal_front", { defaultValue: "Front text" })}</Label>
+                <Input
+                  id="front"
+                  value={editFront}
+                  onChange={(e) => setEditFront(e.target.value)}
+                  placeholder="Front content..."
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="back">{tCommon("edit_modal_back", { defaultValue: "Back text" })}</Label>
+                <Textarea
+                  id="back"
+                  value={editBack}
+                  onChange={(e) => setEditBack(e.target.value)}
+                  placeholder="Back content..."
+                  rows={4}
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="tags">{tCommon("tags", { defaultValue: "Tags (comma-separated)" })}</Label>
+                <Input
+                  id="tags"
+                  value={editTags}
+                  onChange={(e) => setEditTags(e.target.value)}
+                  placeholder="tag1, tag2..."
+                />
+              </div>
+            </div>
+          ) : (
+            // Bulk Edit fields
+            <div className="space-y-4 py-2">
+              <div className="space-y-1.5">
+                <Label htmlFor="bulkAddTags">{t("bulk_actions.edit_add_tags")}</Label>
+                <Input
+                  id="bulkAddTags"
+                  value={bulkAddTags}
+                  onChange={(e) => setBulkAddTags(e.target.value)}
+                  placeholder="tag1, tag2..."
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="bulkRemoveTags">{t("bulk_actions.edit_remove_tags")}</Label>
+                <Input
+                  id="bulkRemoveTags"
+                  value={bulkRemoveTags}
+                  onChange={(e) => setBulkRemoveTags(e.target.value)}
+                  placeholder="tag3, tag4..."
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="bulkFlag">{t("bulk_actions.edit_flag_action")}</Label>
+                <Select value={bulkFlagAction} onValueChange={(val: string) => setBulkFlagAction(val as "no_change" | "flag" | "unflag")}>
+                  <SelectTrigger id="bulkFlag" className="bg-background">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="no_change">{t("bulk_actions.flag_no_change")}</SelectItem>
+                    <SelectItem value="flag">{t("bulk_actions.flag_add")}</SelectItem>
+                    <SelectItem value="unflag">{t("bulk_actions.flag_remove")}</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+          )}
+
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setEditOpen(false)} disabled={isMutating}>
+              {tCommon("cancel")}
+            </Button>
+            <Button onClick={executeBulkUpdate} disabled={isMutating || (selectedIds.size === 1 && !editFront.trim())}>
+              {isMutating && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+              {tCommon("save")}
             </Button>
           </DialogFooter>
         </DialogContent>
