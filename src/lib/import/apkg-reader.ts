@@ -25,6 +25,7 @@ export interface ParsedApkgResult {
   deckName: string;
   totalNotes: number;
   limitReached?: boolean;
+  mediaFiles?: Record<string, Uint8Array>;
 }
 
 // Anki model definition (partial — only the fields we need)
@@ -99,10 +100,12 @@ export async function parseApkgFile(
   try {
     // Memory optimization: only extract the SQL databases
     unzipped = unzipSync(fileBuffer, {
-      filter: (file) =>
-        file.name === "collection.anki2" ||
-        file.name === "collection.anki21" ||
-        file.name === "collection.anki21b",
+      filter: (f) =>
+        f.name === "collection.anki2" ||
+        f.name === "collection.anki21" ||
+        f.name === "collection.anki21b" ||
+        f.name === "media" ||
+        /^\d+$/.test(f.name),
     });
   } catch {
     throw new ApkgError("INVALID_FORMAT", "This file is not a valid Anki package.");
@@ -166,7 +169,24 @@ export async function parseApkgFile(
       throw new ApkgError("NO_NOTES", "No notes found in this APKG file.");
     }
 
-    return { cards, deckName, totalNotes, limitReached };
+    const mediaFiles: Record<string, Uint8Array> = {};
+    if (unzipped["media"]) {
+      try {
+        const mediaMapText = new TextDecoder().decode(unzipped["media"]);
+        const mediaMap = JSON.parse(mediaMapText) as Record<string, string>;
+
+        for (const [numStr, origName] of Object.entries(mediaMap)) {
+          const isAudio = /\.(mp3|wav|ogg|m4a|aac)$/i.test(origName);
+          if (isAudio && unzipped[numStr]) {
+            mediaFiles[origName] = unzipped[numStr];
+          }
+        }
+      } catch (mediaErr) {
+        console.warn("Failed to parse media map inside APKG:", mediaErr);
+      }
+    }
+
+    return { cards, deckName, totalNotes, limitReached, mediaFiles };
   } finally {
     db.close();
   }

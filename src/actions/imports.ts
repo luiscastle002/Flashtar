@@ -149,7 +149,7 @@ export async function importFromCsv(
   // Verify deck belongs to user
   const { data: deck } = await supabase
     .from("study_decks")
-    .select("id, card_count")
+    .select("id, card_count, deck_id")
     .eq("id", studyDeckId)
     .eq("user_id", user.id)
     .single();
@@ -178,6 +178,37 @@ export async function importFromCsv(
     .select("id")
     .single();
 
+  // 1. Create master flashcards
+  const flashcardRows = validRows.map((row, i) => ({
+    deck_id: deck.deck_id,
+    front: row.front.trim(),
+    back: row.back.trim(),
+    card_type: "basic" as const,
+    position: (deck.card_count ?? 0) + i,
+  }));
+
+  const { data: insertedFlashcards, error: flashcardsError } = await supabase
+    .from("flashcards")
+    .insert(flashcardRows)
+    .select("id, position")
+    .order("position");
+
+  if (flashcardsError || !insertedFlashcards) {
+    await supabase
+      .from("imports")
+      .update({
+        status: "failed",
+        error_message: flashcardsError?.message ?? "Failed to create master flashcards",
+        completed_at: new Date().toISOString(),
+      })
+      .eq("id", importRecord?.id ?? "");
+    return { error: flashcardsError?.message || "Failed to create master flashcards" };
+  }
+
+  // Sort by position to align with validRows
+  insertedFlashcards.sort((a, b) => a.position - b.position);
+
+  // 2. Create study cards
   const studyCards = validRows.map((row, i) => ({
     study_deck_id: studyDeckId,
     user_id: user.id,
@@ -185,6 +216,8 @@ export async function importFromCsv(
     back: row.back.trim(),
     tags: row.tags ?? [],
     import_id: importRecord?.id ?? null,
+    source_flashcard_id: insertedFlashcards[i]?.id ?? null,
+    source_deck_id: deck.deck_id,
     position: (deck.card_count ?? 0) + i,
     state: "new",
   }));
@@ -225,7 +258,8 @@ const APKG_BATCH_SIZE = 500;
 export async function importFromApkg(
   studyDeckId: string,
   cards: Array<{ front: string; back: string; card_type?: "basic" | "cloze" }>,
-  sourceFileName: string
+  sourceFileName: string,
+  mediaMappings: Array<{ original_filename: string; temp_storage_path: string }> = []
 ) {
   const user = await getCurrentUser();
   if (!user) return { error: "errors.auth.not_authenticated" };
@@ -239,7 +273,7 @@ export async function importFromApkg(
   // Verify deck belongs to user
   const { data: deck } = await supabase
     .from("study_decks")
-    .select("id, card_count")
+    .select("id, card_count, deck_id")
     .eq("id", studyDeckId)
     .eq("user_id", user.id)
     .single();
@@ -275,7 +309,50 @@ export async function importFromApkg(
     .select("id")
     .single();
 
-  // Build study card rows
+  // 1. Create master flashcards in batches
+  const flashcardRows = validCards.map((card, i) => ({
+    deck_id: deck.deck_id,
+    front: card.front.trim(),
+    back: (card.back ?? "").trim(),
+    card_type: card.card_type ?? "basic",
+    position: (deck.card_count ?? 0) + i,
+  }));
+
+  let insertedFlashcards: Array<{ id: string; position: number }> = [];
+  let insertError: { message: string } | null = null;
+
+  for (let i = 0; i < flashcardRows.length; i += APKG_BATCH_SIZE) {
+    const batch = flashcardRows.slice(i, i + APKG_BATCH_SIZE);
+    const { data, error } = await supabase
+      .from("flashcards")
+      .insert(batch)
+      .select("id, position");
+    
+    if (error) {
+      insertError = error;
+      break;
+    }
+    if (data) {
+      insertedFlashcards = [...insertedFlashcards, ...data];
+    }
+  }
+
+  if (insertError) {
+    await supabase
+      .from("imports")
+      .update({
+        status: "failed",
+        error_message: insertError.message,
+        completed_at: new Date().toISOString(),
+      })
+      .eq("id", importRecord?.id ?? "");
+    return { error: insertError.message };
+  }
+
+  // Sort inserted flashcards by position to align with validCards
+  insertedFlashcards.sort((a, b) => a.position - b.position);
+
+  // 2. Build study card rows referencing master flashcard IDs
   const studyCards = validCards.map((card, i) => ({
     study_deck_id: studyDeckId,
     user_id: user.id,
@@ -283,12 +360,13 @@ export async function importFromApkg(
     back: (card.back ?? "").trim(),
     card_type: card.card_type ?? "basic",
     import_id: importRecord?.id ?? null,
+    source_flashcard_id: insertedFlashcards[i]?.id ?? null,
+    source_deck_id: deck.deck_id,
     position: (deck.card_count ?? 0) + i,
     state: "new",
   }));
 
-  // Batch insert to handle large Pro imports
-  let insertError: { message: string } | null = null;
+  // Batch insert study cards
   for (let i = 0; i < studyCards.length; i += APKG_BATCH_SIZE) {
     const batch = studyCards.slice(i, i + APKG_BATCH_SIZE);
     const { error } = await supabase.from("study_cards").insert(batch);
@@ -298,7 +376,7 @@ export async function importFromApkg(
     }
   }
 
-  // Update import record with result
+  // 3. Update import record with result status
   await supabase
     .from("imports")
     .update({
@@ -311,6 +389,64 @@ export async function importFromApkg(
     .eq("id", importRecord?.id ?? "");
 
   if (insertError) return { error: insertError.message };
+
+  // 4. Queue media upload items in media_upload_queue
+  if (mediaMappings.length > 0) {
+    interface QueueItemInput {
+      user_id: string;
+      deck_id: string;
+      flashcard_id: string;
+      original_filename: string;
+      normalized_filename: string;
+      temp_storage_path: string;
+      status: "pending";
+      retry_count: number;
+      google_rate_limited: boolean;
+    }
+    const queueItems: QueueItemInput[] = [];
+    const soundRegex = /\[sound:([^\]]+)\]/g;
+    const mediaLookup = new Map(
+      mediaMappings.map((m) => [m.original_filename.trim().toLowerCase().normalize("NFC"), m.temp_storage_path])
+    );
+
+    validCards.forEach((card, i) => {
+      const flashcardId = insertedFlashcards[i]?.id;
+      if (!flashcardId) return;
+
+      const combinedText = `${card.front} ${card.back ?? ""}`;
+      let match;
+      const seenOnCard = new Set<string>();
+
+      while ((match = soundRegex.exec(combinedText)) !== null) {
+        const rawFilename = match[1];
+        const normalizedName = rawFilename.trim().toLowerCase().normalize("NFC");
+
+        if (mediaLookup.has(normalizedName) && !seenOnCard.has(normalizedName)) {
+          seenOnCard.add(normalizedName);
+          queueItems.push({
+            user_id: user.id,
+            deck_id: deck.deck_id,
+            flashcard_id: flashcardId,
+            original_filename: rawFilename,
+            normalized_filename: normalizedName,
+            temp_storage_path: mediaLookup.get(normalizedName)!,
+            status: "pending",
+            retry_count: 0,
+            google_rate_limited: false,
+          });
+        }
+      }
+    });
+
+    if (queueItems.length > 0) {
+      const { error: queueError } = await supabase
+        .from("media_upload_queue")
+        .insert(queueItems);
+      if (queueError) {
+        console.error("Failed to insert media upload queue items:", queueError.message);
+      }
+    }
+  }
 
   revalidatePath(`/study/${studyDeckId}`);
   revalidatePath("/study");

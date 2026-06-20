@@ -19,6 +19,10 @@ const serverEnvSchema = clientEnvSchema.extend({
   PADDLE_API_KEY: z.string().min(1).optional(),
   PADDLE_WEBHOOK_SECRET_KEY: z.string().min(1).optional(),
   ADMIN_EMAILS: z.string().optional(),
+  GOOGLE_CLIENT_ID: z.string().min(1).optional(),
+  GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
+  DRIVE_TOKEN_ENCRYPTION_KEY: z.string().min(1).optional(),
+  GOOGLE_CLOUD_API_KEY: z.string().min(1).optional(),
 });
 
 export type ClientEnv = z.infer<typeof clientEnvSchema>;
@@ -59,6 +63,10 @@ export function getServerEnv(): ServerEnv {
     PADDLE_API_KEY: process.env.PADDLE_API_KEY,
     PADDLE_WEBHOOK_SECRET_KEY: process.env.PADDLE_WEBHOOK_SECRET_KEY,
     ADMIN_EMAILS: process.env.ADMIN_EMAILS,
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    DRIVE_TOKEN_ENCRYPTION_KEY: process.env.DRIVE_TOKEN_ENCRYPTION_KEY,
+    GOOGLE_CLOUD_API_KEY: process.env.GOOGLE_CLOUD_API_KEY,
   });
 }
 

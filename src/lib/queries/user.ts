@@ -281,3 +281,128 @@ export async function canAccessFullStats(): Promise<boolean> {
   const plan = (subscription?.plan ?? "free") as Plan;
   return PLAN_LIMITS[plan].fullStats;
 }
+
+/**
+ * Retrieves the Google Drive connection status for a user.
+ */
+export async function getGoogleDriveConnection(userId: string) {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("user_google_drive_connections")
+    .select("google_email, connection_status, root_folder_id, audio_folder_id")
+    .eq("user_id", userId)
+    .single();
+  return data;
+}
+
+/**
+ * Retrieves or initializes the character credit usage summary for a user.
+ * Implements JIT lazy period resets.
+ */
+export async function getOrCreateAudioUsage(userId: string) {
+  const supabase = await createClient();
+  
+  const { data: usage } = await supabase
+    .from("audio_usage")
+    .select("*")
+    .eq("user_id", userId)
+    .single();
+
+  if (usage) {
+    const now = new Date();
+    const periodEnd = new Date(usage.period_end);
+    if (now >= periodEnd) {
+      const newPeriodStart = periodEnd;
+      const newPeriodEnd = new Date(periodEnd);
+      newPeriodEnd.setMonth(newPeriodEnd.getMonth() + 1);
+
+      const sub = await getSubscription(userId);
+      const plan = sub?.plan ?? "free";
+      const limit = plan === "pro" ? 3000000 : 100000;
+
+      const { data: resetUsage } = await supabase
+        .from("audio_usage")
+        .update({
+          used_this_month: 0,
+          monthly_limit: limit,
+          period_start: newPeriodStart.toISOString(),
+          period_end: newPeriodEnd.toISOString(),
+          last_updated: now.toISOString(),
+        })
+        .eq("user_id", userId)
+        .select()
+        .single();
+        
+      if (resetUsage) {
+        await supabase.from("audio_usage_history").insert({
+          user_id: userId,
+          characters_consumed: 0,
+          action_type: "monthly_grant",
+          source_details: { limit },
+        });
+        return resetUsage;
+      }
+    }
+    return usage;
+  }
+
+  const sub = await getSubscription(userId);
+  const plan = sub?.plan ?? "free";
+  const limit = plan === "pro" ? 3000000 : 100000;
+
+  const now = new Date();
+  const periodEnd = new Date();
+  periodEnd.setMonth(periodEnd.getMonth() + 1);
+
+  const { data: newUsage } = await supabase
+    .from("audio_usage")
+    .insert({
+      user_id: userId,
+      monthly_limit: limit,
+      used_this_month: 0,
+      period_start: now.toISOString(),
+      period_end: periodEnd.toISOString(),
+      last_updated: now.toISOString(),
+    })
+    .select()
+    .single();
+
+  if (newUsage) {
+    await supabase.from("audio_usage_history").insert({
+      user_id: userId,
+      characters_consumed: 0,
+      action_type: "monthly_grant",
+      source_details: { limit },
+    });
+  }
+
+  return newUsage;
+}
+
+/**
+ * Retrieves the recent credit transaction logs for a user.
+ */
+export async function getAudioUsageHistory(userId: string, limit = 10) {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("audio_usage_history")
+    .select("*")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  return data || [];
+}
+
+/**
+ * Checks if the user has any quota_exceeded jobs in the upload queue.
+ */
+export async function hasQuotaExceededJobs(userId: string): Promise<boolean> {
+  const supabase = await createClient();
+  const { count } = await supabase
+    .from("media_upload_queue")
+    .select("id", { count: "exact", head: true })
+    .eq("user_id", userId)
+    .eq("status", "quota_exceeded");
+  return (count ?? 0) > 0;
+}
+

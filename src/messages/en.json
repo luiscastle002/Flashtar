@@ -180,6 +180,10 @@
       "display": "Display",
       "show_confidence": "Show confidence bar",
       "show_confidence_desc": "Use the gradient confidence bar instead of Again / Hard / Good / Easy buttons.",
+      "autoplay_front": "Autoplay Front Audio",
+      "autoplay_front_desc": "Automatically play audio when the card question is shown.",
+      "autoplay_back": "Autoplay Back Audio",
+      "autoplay_back_desc": "Automatically play audio when the card answer is shown.",
       "save_settings": "Save Settings",
       "saving": "Saving...",
       "toast_saved": "Settings saved",
@@ -461,6 +465,18 @@
       "organizing": "📚 Preparing your deck...",
       "finalizing": "🚀 Finalizing deck configuration...",
       "opening_deck": "📚 Opening your deck..."
+    },
+    "audio": {
+      "title": "Text-to-Speech (TTS)",
+      "toggle_label": "Enable Audio Generation",
+      "toggle_desc": "Automatically synthesize pronunciation audio for generated cards and upload to Google Drive.",
+      "provider_label": "TTS Provider",
+      "voice_label": "TTS Voice",
+      "placement_label": "Side Placement",
+      "placement_front": "Front Side Only",
+      "placement_back": "Back Side Only",
+      "placement_both": "Both Sides",
+      "not_connected_warning": "Google Drive is not connected. Audio generation requires Bring-Your-Own-Storage. Connect in Settings first."
     }
   },
   "errors": {
@@ -754,6 +770,38 @@
         "APKG export",
         "Advanced AI options"
       ]
+    },
+    "google_drive": {
+      "title": "Google Drive Storage (BYOS)",
+      "description": "Bring Your Own Storage. Connect your Google account to automatically store generated Text-to-Speech audio files and media in your private Google Drive under 'Flashtar/Audio'.",
+      "status_connected": "Connected",
+      "status_disconnected": "Disconnected",
+      "status_error": "Connection Expired / Revoked",
+      "connect_button": "Connect Google Drive",
+      "disconnect_button": "Disconnect Drive",
+      "reconnect_button": "Reconnect",
+      "email_label": "Google Account Email",
+      "folder_label": "Storage Folder ID",
+      "folder_name": "Flashtar/Audio",
+      "toast_disconnected": "Successfully disconnected Google Drive.",
+      "toast_disconnect_failed": "Failed to disconnect: {error}",
+      "toast_connect_failed": "Failed to connect Google Drive."
+    },
+    "audio_usage": {
+      "title": "Audio Character Credits",
+      "description": "Generating text-to-speech audio consumes character credits. Your credits reset monthly based on your subscription.",
+      "credits_remaining": "{used, number} / {limit, number} characters used this month",
+      "period_ends": "Next reset on {date}",
+      "history_title": "Audio Generation Log",
+      "no_history": "No recent generation logs.",
+      "action": {
+        "monthly_grant": "Monthly Credit Grant",
+        "tts_generation": "Text-to-Speech Generation",
+        "rollback_failed_upload": "Failed Upload Rollback",
+        "manual_deduction": "Manual Deduction",
+        "unknown": "Action"
+      },
+      "characters": "{count, plural, =1 {# character} other {# characters}}"
     }
   },
   "editor": {

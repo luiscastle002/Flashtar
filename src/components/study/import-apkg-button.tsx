@@ -19,6 +19,7 @@ import { useTranslations } from "next-intl";
 import { translateError } from "@/lib/i18n/utils";
 import type { ParsedApkgCard } from "@/lib/import/apkg-reader";
 import type { Plan } from "@/types";
+import { createClient } from "@/lib/supabase/client";
 
 interface ImportApkgButtonProps {
   deckId: string;
@@ -35,6 +36,7 @@ export function ImportApkgButton({ deckId, plan }: ImportApkgButtonProps) {
   const [open, setOpen] = useState(false);
   const [fileName, setFileName] = useState("");
   const [parsedCards, setParsedCards] = useState<ParsedApkgCard[]>([]);
+  const [mediaFiles, setMediaFiles] = useState<Record<string, Uint8Array>>({});
   const [deckName, setDeckName] = useState("");
   const [dragActive, setDragActive] = useState(false);
   const [parseError, setParseError] = useState("");
@@ -47,6 +49,7 @@ export function ImportApkgButton({ deckId, plan }: ImportApkgButtonProps) {
   function resetState() {
     setFileName("");
     setParsedCards([]);
+    setMediaFiles({});
     setDeckName("");
     setParseError("");
     setParseStage("idle");
@@ -81,6 +84,11 @@ export function ImportApkgButton({ deckId, plan }: ImportApkgButtonProps) {
       setParsedCards(result.cards);
       setDeckName(result.deckName);
       setLimitReached(!!result.limitReached);
+      if (result.mediaFiles) {
+        setMediaFiles(result.mediaFiles);
+      } else {
+        setMediaFiles({});
+      }
       setParseStage("ready");
     } catch (err) {
       console.error("APKG parse error:", err);
@@ -150,7 +158,40 @@ export function ImportApkgButton({ deckId, plan }: ImportApkgButtonProps) {
     }));
 
     startTransition(async () => {
-      const result = await importFromApkg(deckId, cardsToImport, fileName);
+      const supabase = createClient();
+      const mediaMappings: Array<{ original_filename: string; temp_storage_path: string }> = [];
+
+      const mediaEntries = Object.entries(mediaFiles);
+      if (mediaEntries.length > 0) {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) {
+          toast.error(tRoot("errors.auth.not_authenticated"));
+          return;
+        }
+
+        const batchId = crypto.randomUUID();
+        for (const [origName, bytes] of mediaEntries) {
+          const path = `${user.id}/${batchId}/${origName}`;
+          const fileBlob = new Blob([bytes as unknown as BlobPart], { type: "audio/mpeg" });
+          const { error: uploadError } = await supabase.storage
+            .from("temp-media-imports")
+            .upload(path, fileBlob, {
+              contentType: "audio/mpeg",
+              upsert: true,
+            });
+
+          if (!uploadError) {
+            mediaMappings.push({
+              original_filename: origName,
+              temp_storage_path: path,
+            });
+          } else {
+            console.error(`Failed to upload media ${origName}:`, uploadError.message);
+          }
+        }
+      }
+
+      const result = await importFromApkg(deckId, cardsToImport, fileName, mediaMappings);
       if ("error" in result && result.error) {
         toast.error(translateError(result.error, tRoot));
         return;

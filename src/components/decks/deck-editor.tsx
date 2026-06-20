@@ -18,11 +18,13 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { GripVertical, Plus, Trash2, Download, Save } from "lucide-react";
+import { GripVertical, Plus, Trash2, Download, Save, Volume2, Loader2 } from "lucide-react";
 import { RichTextEditor } from "@/components/flashcards/rich-text-editor";
 import { AddToStudyDeckButton } from "@/components/study/add-to-study-deck-button";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getGooglePickerConfig } from "@/actions/integrations";
+import { mapGoogleDriveAudioAction } from "@/actions/audio";
 import { Input } from "@/components/ui/input";
 import {
   createFlashcard,
@@ -43,6 +45,150 @@ interface SortableCardProps {
   index: number;
   onUpdate: (id: string, field: "front" | "back", value: string) => void;
   onDelete: (id: string) => void;
+}
+
+type GoogleSdk = {
+  gapi: {
+    load: (name: string, opts: { callback: () => void }) => void;
+  };
+  google: {
+    picker: {
+      DocsView: new (viewId: string) => {
+        setMimeTypes: (types: string) => {
+          setParent: (id: string) => unknown;
+        };
+      };
+      ViewId: {
+        DOCS: string;
+      };
+      PickerBuilder: new () => {
+        addView: (view: unknown) => {
+          setOAuthToken: (token: string) => {
+            setDeveloperKey: (key: string) => {
+              setCallback: (cb: (data: { action: string; docs: Array<{ id: string; name: string; sizeBytes?: number }> }) => Promise<void>) => {
+                build: () => {
+                  setVisible: (visible: boolean) => void;
+                };
+              };
+            };
+          };
+        };
+      };
+      Action: {
+        PICKED: string;
+      };
+    };
+  };
+};
+
+function GooglePickerButton({
+  flashcardId,
+  side,
+  onAudioMapped,
+}: {
+  flashcardId: string;
+  side: "front" | "back";
+  onAudioMapped: (filename: string) => void;
+}) {
+  const [loading, setLoading] = useState(false);
+
+  const handlePick = async () => {
+    setLoading(true);
+    try {
+      const config = await getGooglePickerConfig();
+      if ("error" in config) {
+        toast.error(config.error);
+        setLoading(false);
+        return;
+      }
+
+      const { accessToken, audioFolderId } = config;
+
+      const showPicker = () => {
+        const win = window as unknown as GoogleSdk;
+        if (!win.gapi || !win.google) {
+          toast.error("Google Picker SDK failed to load.");
+          return;
+        }
+        win.gapi.load("picker", {
+          callback: () => {
+            const view = new win.google.picker.DocsView(win.google.picker.ViewId.DOCS)
+              .setMimeTypes("audio/mpeg,audio/mp3,audio/wav,audio/x-wav,audio/ogg")
+              .setParent(audioFolderId);
+
+            const picker = new win.google.picker.PickerBuilder()
+              .addView(view)
+              .setOAuthToken(accessToken)
+              .setDeveloperKey("") // We don't need a dev key for drive.file scope when restricted by folder
+              .setCallback(async (data: { action: string; docs: Array<{ id: string; name: string; sizeBytes?: number }> }) => {
+                if (data.action === win.google.picker.Action.PICKED) {
+                  const doc = data.docs[0];
+                  const res = await mapGoogleDriveAudioAction({
+                    flashcardId,
+                    side,
+                    fileId: doc.id,
+                    filename: doc.name,
+                    fileSize: doc.sizeBytes,
+                  });
+
+                  if ("error" in res && res.error) {
+                    toast.error(res.error);
+                  } else if (res.normalizedName) {
+                    onAudioMapped(res.normalizedName);
+                    toast.success("Audio file mapped successfully!");
+                  }
+                }
+              })
+              .build();
+            picker.setVisible(true);
+          },
+        });
+      };
+
+      const win = window as unknown as GoogleSdk;
+      if (!win.gapi) {
+        const script = document.createElement("script");
+        script.src = "https://apis.google.com/js/api.js";
+        script.onload = () => {
+          const winG = window as unknown as GoogleSdk;
+          if (!winG.google) {
+            const gisScript = document.createElement("script");
+            gisScript.src = "https://accounts.google.com/gsi/client";
+            gisScript.onload = () => showPicker();
+            document.body.appendChild(gisScript);
+          } else {
+            showPicker();
+          }
+        };
+        document.body.appendChild(script);
+      } else {
+        showPicker();
+      }
+    } catch (err: unknown) {
+      const errMsg = err instanceof Error ? err.message : String(err);
+      toast.error(errMsg || "Failed to load Google Picker");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <Button
+      type="button"
+      variant="ghost"
+      size="sm"
+      className="h-6 px-1.5 text-[11px] text-primary hover:text-primary hover:bg-primary/10 flex items-center gap-1"
+      onClick={handlePick}
+      disabled={loading}
+    >
+      {loading ? (
+        <Loader2 className="h-3 w-3 animate-spin" />
+      ) : (
+        <Volume2 className="h-3 w-3" />
+      )}
+      Audio
+    </Button>
+  );
 }
 
 function SortableCard({ card, index, onUpdate, onDelete }: SortableCardProps) {
@@ -78,7 +224,16 @@ function SortableCard({ card, index, onUpdate, onDelete }: SortableCardProps) {
       </CardHeader>
       <CardContent className="space-y-3 pb-4">
         <div>
-          <p className="text-xs text-muted-foreground mb-1">{t("editor.front")}</p>
+          <div className="flex justify-between items-center mb-1">
+            <p className="text-xs text-muted-foreground">{t("editor.front")}</p>
+            <GooglePickerButton 
+              flashcardId={card.id}
+              side="front"
+              onAudioMapped={(filename) => {
+                onUpdate(card.id, "front", card.front + `<p>[sound:${filename}]</p>`);
+              }}
+            />
+          </div>
           <RichTextEditor
             content={card.front}
             onChange={(html) => onUpdate(card.id, "front", html)}
@@ -86,7 +241,16 @@ function SortableCard({ card, index, onUpdate, onDelete }: SortableCardProps) {
           />
         </div>
         <div>
-          <p className="text-xs text-muted-foreground mb-1">{t("editor.back")}</p>
+          <div className="flex justify-between items-center mb-1">
+            <p className="text-xs text-muted-foreground">{t("editor.back")}</p>
+            <GooglePickerButton 
+              flashcardId={card.id}
+              side="back"
+              onAudioMapped={(filename) => {
+                onUpdate(card.id, "back", card.back + `<p>[sound:${filename}]</p>`);
+              }}
+            />
+          </div>
           <RichTextEditor
             content={card.back}
             onChange={(html) => onUpdate(card.id, "back", html)}

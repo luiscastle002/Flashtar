@@ -79,6 +79,8 @@ export default async function StudySessionPage({ params }: SessionPageProps) {
   // Determine whether to show confidence bar or classic buttons
   const deck = deckData as typeof deckData & { deck_study_settings: DeckStudySettings | null };
   const showConfidenceBar = deck.deck_study_settings?.show_confidence_bar ?? true;
+  const autoplayAudioFront = deck.deck_study_settings?.autoplay_audio_front ?? false;
+  const autoplayAudioBack = deck.deck_study_settings?.autoplay_audio_back ?? false;
 
   return (
     <DashboardShell currentPath="/study" profile={profile}>
@@ -88,6 +90,8 @@ export default async function StudySessionPage({ params }: SessionPageProps) {
         deckId={deckId}
         deckName={deck.name}
         showConfidenceBar={showConfidenceBar}
+        autoplayAudioFront={autoplayAudioFront}
+        autoplayAudioBack={autoplayAudioBack}
       />
     </DashboardShell>
   );

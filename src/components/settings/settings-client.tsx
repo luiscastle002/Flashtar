@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { CreditCard, User, Key, Mail, Loader2 } from "lucide-react";
+import { CreditCard, User, Key, Mail, Loader2, HardDrive, RefreshCw, AlertCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -27,18 +27,74 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { translateError } from "@/lib/i18n/utils";
+import { getGoogleAuthUrl, disconnectGoogleDrive, reSyncFailedUploads } from "@/actions/integrations";
 
 
 interface SettingsClientProps {
   profile: Profile | null;
   subscription: Subscription | null;
+  googleConnection: {
+    google_email: string;
+    connection_status: string;
+    root_folder_id: string;
+    audio_folder_id: string;
+  } | null;
+  audioUsage: {
+    monthly_limit: number;
+    used_this_month: number;
+    period_start: string;
+    period_end: string;
+  } | null;
+  audioHistory: Array<{
+    id: string;
+    characters_consumed: number;
+    action_type: string;
+    created_at: string;
+    source_details?: unknown;
+  }>;
+  hasQuotaExceeded: boolean;
 }
 
-export function SettingsClient({ profile, subscription }: SettingsClientProps) {
+export function SettingsClient({ 
+  profile, 
+  subscription,
+  googleConnection,
+  audioUsage,
+  audioHistory,
+  hasQuotaExceeded
+}: SettingsClientProps) {
   const t = useTranslations("settings");
   const tRoot = useTranslations();
+  const locale = useLocale();
+
+  const formatDate = (dateStr: string) => {
+    try {
+      return new Intl.DateTimeFormat(locale, {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+      }).format(new Date(dateStr));
+    } catch {
+      return dateStr;
+    }
+  };
+
+  const formatDateTime = (dateStr: string) => {
+    try {
+      return new Intl.DateTimeFormat(locale, {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+      }).format(new Date(dateStr));
+    } catch {
+      return dateStr;
+    }
+  };
 
   const [loading, setLoading] = useState<"checkout" | "portal" | null>(null);
   const [paddle, setPaddle] = useState<Paddle | null>(null);
@@ -380,6 +436,63 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
     }
   }
 
+  const [googleLoading, setGoogleLoading] = useState<"connect" | "disconnect" | "re-sync" | null>(null);
+
+  async function handleGoogleConnect() {
+    setGoogleLoading("connect");
+    try {
+      const res = await getGoogleAuthUrl();
+      if (res.error) {
+        toast.error(translateError(res.error, tRoot));
+      } else if (res.url) {
+        window.location.href = res.url;
+      } else {
+        toast.error(t("google_drive.toast_connect_failed"));
+      }
+    } catch {
+      toast.error(t("google_drive.toast_connect_failed"));
+    } finally {
+      setGoogleLoading(null);
+    }
+  }
+
+  async function handleGoogleDisconnect() {
+    if (!window.confirm(tRoot("common.delete") + "?")) return;
+    setGoogleLoading("disconnect");
+    try {
+      const res = await disconnectGoogleDrive();
+      if (res.error) {
+        toast.error(t("google_drive.toast_disconnect_failed", { error: res.error }));
+      } else {
+        toast.success(t("google_drive.toast_disconnected"));
+        router.refresh();
+      }
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : String(err);
+      toast.error(t("google_drive.toast_disconnect_failed", { error: errMsg }));
+    } finally {
+      setGoogleLoading(null);
+    }
+  }
+
+  async function handleGoogleReSync() {
+    setGoogleLoading("re-sync");
+    try {
+      const res = await reSyncFailedUploads();
+      if (res.error) {
+        toast.error(res.error);
+      } else {
+        toast.success(tRoot("common.save"));
+        router.refresh();
+      }
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : "Failed to re-sync";
+      toast.error(errMsg);
+    } finally {
+      setGoogleLoading(null);
+    }
+  }
+
   const localizedFeatures = plan === "pro"
     ? (t.raw("pricing.pro_features") as string[])
     : (t.raw("pricing.free_features") as string[]);
@@ -506,6 +619,224 @@ export function SettingsClient({ profile, subscription }: SettingsClientProps) {
                 </SelectContent>
               </Select>
             </div>
+          </CardContent>
+        </Card>
+        
+        {/* Google Drive Storage (BYOS) Card */}
+        <Card className="overflow-hidden border-primary/10 shadow-lg transition-all duration-300 hover:shadow-xl">
+          <div className="h-1.5 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500" />
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-xl">
+              <HardDrive className="h-5 w-5 text-blue-500" />
+              {t("google_drive.title")}
+            </CardTitle>
+            <CardDescription className="text-sm">
+              {t("google_drive.description")}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {googleConnection ? (
+              <div className="rounded-xl bg-muted/40 p-4 border border-border space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <div className={`h-2.5 w-2.5 rounded-full ${
+                        googleConnection.connection_status === "connected" 
+                          ? "bg-green-500 animate-pulse" 
+                          : "bg-destructive"
+                      }`} />
+                      <span className="font-semibold text-sm capitalize">
+                        {googleConnection.connection_status === "connected" 
+                          ? t("google_drive.status_connected") 
+                          : t("google_drive.status_error")}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      {googleConnection.google_email}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {googleConnection.connection_status !== "connected" && (
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        onClick={handleGoogleConnect} 
+                        disabled={googleLoading !== null}
+                        className="gap-2 border-primary/20 hover:bg-primary/5 hover:text-primary transition-all"
+                      >
+                        <RefreshCw className={`h-4 w-4 ${googleLoading === "connect" ? "animate-spin" : ""}`} />
+                        {t("google_drive.reconnect_button")}
+                      </Button>
+                    )}
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={handleGoogleDisconnect} 
+                      disabled={googleLoading !== null}
+                      className="text-destructive hover:bg-destructive/10 hover:text-destructive hover:border-destructive/20 transition-all"
+                    >
+                      {googleLoading === "disconnect" ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        t("google_drive.disconnect_button")
+                      )}
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="border-t border-border/60 pt-3 flex flex-col gap-1.5 text-xs text-muted-foreground">
+                  <div className="flex justify-between">
+                    <span>{t("google_drive.email_label")}:</span>
+                    <span className="font-mono text-foreground/80">{googleConnection.google_email}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>{t("google_drive.folder_label")}:</span>
+                    <span className="font-mono text-foreground/80">{googleConnection.audio_folder_id || googleConnection.root_folder_id || "N/A"}</span>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="rounded-xl border border-dashed border-border/80 p-6 text-center space-y-4 bg-muted/10">
+                <div className="mx-auto w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
+                  <HardDrive className="h-6 w-6" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="font-semibold text-sm">{t("google_drive.title")}</h3>
+                  <p className="text-xs text-muted-foreground max-w-sm mx-auto">
+                    {t("google_drive.description")}
+                  </p>
+                </div>
+                <Button 
+                  onClick={handleGoogleConnect} 
+                  disabled={googleLoading !== null}
+                  className="bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-md shadow-blue-500/20 transition-all gap-2"
+                >
+                  {googleLoading === "connect" ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <HardDrive className="h-4 w-4" />
+                  )}
+                  {t("google_drive.connect_button")}
+                </Button>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Audio Usage & Credits Card */}
+        <Card className="overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-xl">
+              <CreditCard className="h-5 w-5 text-indigo-500" />
+              {t("audio_usage.title")}
+            </CardTitle>
+            <CardDescription className="text-sm">
+              {t("audio_usage.description")}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {audioUsage ? (
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <div className="flex justify-between items-end text-sm">
+                    <span className="font-medium text-muted-foreground">
+                      {t("audio_usage.credits_remaining", { 
+                        used: audioUsage.used_this_month, 
+                        limit: audioUsage.monthly_limit 
+                      })}
+                    </span>
+                    <span className="text-xs font-semibold text-foreground">
+                      {Math.max(0, 100 - Math.round((audioUsage.used_this_month / audioUsage.monthly_limit) * 100))}% remaining
+                    </span>
+                  </div>
+                  <div className="w-full h-3 rounded-full bg-muted overflow-hidden border border-border/50">
+                    <div 
+                      className={`h-full rounded-full transition-all duration-500 ${
+                        audioUsage.used_this_month >= audioUsage.monthly_limit 
+                          ? "bg-destructive" 
+                          : audioUsage.used_this_month / audioUsage.monthly_limit > 0.8 
+                            ? "bg-yellow-500" 
+                            : "bg-gradient-to-r from-indigo-500 to-purple-500"
+                      }`}
+                      style={{ width: `${Math.min(100, Math.max(0, (audioUsage.used_this_month / audioUsage.monthly_limit) * 100))}%` }}
+                    />
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    {t("audio_usage.period_ends", { date: formatDate(audioUsage.period_end) })}
+                  </p>
+                </div>
+
+                {/* Quota Exceeded Warning Banner & Re-sync */}
+                {hasQuotaExceeded && (
+                  <div className="rounded-xl border border-destructive/20 bg-destructive/5 p-4 space-y-3">
+                    <div className="flex items-start gap-2.5">
+                      <AlertCircle className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
+                      <div className="space-y-1">
+                        <h4 className="text-sm font-semibold text-destructive text-left">Google Drive Quota Exceeded</h4>
+                        <p className="text-xs text-muted-foreground text-left leading-relaxed">
+                          Your Google Drive has run out of space, which has paused background audio uploads. Once you free up space in your Google Drive, click below to re-sync.
+                        </p>
+                      </div>
+                    </div>
+                    <Button 
+                      onClick={handleGoogleReSync} 
+                      disabled={googleLoading === "re-sync"}
+                      variant="destructive"
+                      size="sm"
+                      className="w-full gap-2 transition-all shadow-sm"
+                    >
+                      {googleLoading === "re-sync" ? (
+                        <RefreshCw className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <RefreshCw className="h-4 w-4" />
+                      )}
+                      Re-sync failed uploads
+                    </Button>
+                  </div>
+                )}
+
+                {/* Credit Usage History Logs */}
+                <div className="space-y-3 pt-2">
+                  <h4 className="text-sm font-semibold flex items-center gap-1.5">
+                    <RefreshCw className="h-4 w-4 text-muted-foreground" />
+                    {t("audio_usage.history_title")}
+                  </h4>
+                  {audioHistory.length > 0 ? (
+                    <div className="border border-border rounded-xl divide-y divide-border overflow-hidden bg-muted/10 max-h-[220px] overflow-y-auto custom-scrollbar">
+                      {audioHistory.map((item) => (
+                        <div key={item.id} className="flex justify-between items-center p-3 text-xs hover:bg-muted/30 transition-all duration-200">
+                          <div className="space-y-1 text-left">
+                            <p className="font-medium">
+                              {t(`audio_usage.action.${item.action_type}`, { defaultValue: item.action_type })}
+                            </p>
+                            <p className="text-[10px] text-muted-foreground">
+                              {formatDateTime(item.created_at)}
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <span className={`font-mono font-semibold ${
+                              item.characters_consumed > 0 
+                                ? "text-amber-500 dark:text-amber-400" 
+                                : item.characters_consumed < 0 
+                                  ? "text-green-500 dark:text-green-400"
+                                  : "text-muted-foreground"
+                            }`}>
+                              {item.characters_consumed > 0 ? `-${item.characters_consumed}` : item.characters_consumed < 0 ? `+${Math.abs(item.characters_consumed)}` : "0"} {t("audio_usage.characters", { count: Math.abs(item.characters_consumed) })}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-xs text-muted-foreground italic text-center py-4 bg-muted/20 border border-dashed border-border rounded-xl">
+                      {t("audio_usage.no_history")}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <p className="text-sm text-muted-foreground animate-pulse">Loading usage credits...</p>
+            )}
           </CardContent>
         </Card>
 

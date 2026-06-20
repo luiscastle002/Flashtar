@@ -163,6 +163,8 @@ export interface DeckStudySettings {
   new_card_order: "due" | "random";
   show_confidence_bar: boolean;
   show_card_preview: boolean;
+  autoplay_audio_front?: boolean;
+  autoplay_audio_back?: boolean;
   created_at: string;
   updated_at: string;
 }
@@ -200,6 +202,7 @@ export interface StudyCard {
   position: number;
   created_at: string;
   updated_at: string;
+  audios?: CardAudio[];
 }
 
 export interface ReviewLog {
@@ -322,4 +325,17 @@ export interface SavedPrompt {
   is_system?: boolean;
   created_at: string;
   updated_at: string;
+}
+
+export interface CardAudio {
+  side: "front" | "back";
+  original_filename: string | null;
+  normalized_filename: string | null;
+  audio_files: {
+    file_id: string;
+    provider: string;
+    voice_id: string;
+    language: string;
+    duration_seconds: number | null;
+  } | null;
 }

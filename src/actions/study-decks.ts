@@ -32,6 +32,8 @@ const settingsSchema = z.object({
   new_card_order: z.enum(["due", "random"]),
   show_confidence_bar: z.boolean(),
   show_card_preview: z.boolean().optional(),
+  autoplay_audio_front: z.boolean().optional(),
+  autoplay_audio_back: z.boolean().optional(),
 });
 
 // ---------------------------------------------------------------------------

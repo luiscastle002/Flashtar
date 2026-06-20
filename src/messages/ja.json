@@ -181,6 +181,10 @@
       "display": "表示設定",
       "show_confidence": "習得度調整バーを表示",
       "show_confidence_desc": "「もう一度/難しい/普通/簡単」ボタンの代わりにグラデーションのバーを使用します。",
+      "autoplay_front": "表面オーディオ自動再生",
+      "autoplay_front_desc": "カードの質問が表示されたときに自動的に音声を再生します。",
+      "autoplay_back": "裏面オーディオ自動再生",
+      "autoplay_back_desc": "カードの解答が表示されたときに自動的に音声を再生します。",
       "save_settings": "設定を保存",
       "saving": "保存中...",
       "toast_saved": "設定を保存しました",
@@ -462,6 +466,18 @@
       "organizing": "📚 デッキを準備中...",
       "finalizing": "🚀 デッキ設定を完了中...",
       "opening_deck": "📚 デッキを開いています..."
+    },
+    "audio": {
+      "title": "音声合成 (TTS)",
+      "toggle_label": "音声生成を有効にする",
+      "toggle_desc": "生成されたカードの発音音声を自動合成し、Google ドライブにアップロードします。",
+      "provider_label": "音声合成プロバイダー",
+      "voice_label": "音声ボイス",
+      "placement_label": "再生する面",
+      "placement_front": "問題面のみ",
+      "placement_back": "解答面のみ",
+      "placement_both": "両面",
+      "not_connected_warning": "Google ドライブが接続されていません。音声生成には個人用ストレージ (BYOS) の接続が必要です。先に設定画面で接続してください。"
     }
   },
   "errors": {
@@ -755,6 +771,38 @@
         "APKGエクスポート",
         "高度なAI設定オプション"
       ]
+    },
+    "google_drive": {
+      "title": "Google ドライブストレージ (BYOS)",
+      "description": "個人ストレージの持ち込み (BYOS)。Google アカウントを接続すると、生成された音声合成 (TTS) ファイルやメディアファイルを、個人用 Google ドライブの 'Flashtar/Audio' フォルダ内に自動保存します。",
+      "status_connected": "接続済み",
+      "status_disconnected": "未接続",
+      "status_error": "接続の期限切れ / 取り消し",
+      "connect_button": "Google ドライブを接続",
+      "disconnect_button": "接続を解除",
+      "reconnect_button": "再接続",
+      "email_label": "Google アカウントのメール",
+      "folder_label": "保存先フォルダ ID",
+      "folder_name": "Flashtar/Audio",
+      "toast_disconnected": "Google ドライブの接続を解除しました。",
+      "toast_disconnect_failed": "接続解除に失敗しました: {error}",
+      "toast_connect_failed": "Google ドライブへの接続開始に失敗しました。"
+    },
+    "audio_usage": {
+      "title": "音声キャラクタークレジット",
+      "description": "音声合成 (TTS) を生成すると、文字数クレジットが消費されます。クレジットはプランに応じて毎月リセットされます。",
+      "credits_remaining": "今月の使用量: {used, number} / {limit, number} 文字",
+      "period_ends": "次回リセット日: {date}",
+      "history_title": "音声生成ログ",
+      "no_history": "最近の生成ログはありません。",
+      "action": {
+        "monthly_grant": "月間クレジット付y",
+        "tts_generation": "音声合成生成",
+        "rollback_failed_upload": "アップロード失敗によるロールバック",
+        "manual_deduction": "手動減算",
+        "unknown": "アクション"
+      },
+      "characters": "{count, plural, other {# 文字}}"
     }
   },
   "editor": {

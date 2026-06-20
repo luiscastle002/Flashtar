@@ -180,6 +180,10 @@
       "display": "Exibição",
       "show_confidence": "Mostrar barra de confiança",
       "show_confidence_desc": "Use a barra de confiança em gradiente em vez dos botões Novamente / Difícil / Bom / Fácil.",
+      "autoplay_front": "Reprodução automática de áudio frontal",
+      "autoplay_front_desc": "Reproduzir o áudio automaticamente quando a pergunta do cartão for exibida.",
+      "autoplay_back": "Reprodução automática de áudio traseiro",
+      "autoplay_back_desc": "Reproduzir o áudio automaticamente quando a resposta do cartão for exibida.",
       "save_settings": "Salvar Configurações",
       "saving": "Salvando...",
       "toast_saved": "Configurações salvas",
@@ -461,6 +465,18 @@
       "organizing": "📚 Preparando seu baralho...",
       "finalizing": "🚀 Finalizando a configuração do baralho...",
       "opening_deck": "📚 Abrindo seu baralho..."
+    },
+    "audio": {
+      "title": "Conversão de Texto em Voz (TTS)",
+      "toggle_label": "Ativar Geração de Áudio",
+      "toggle_desc": "Sintetizar áudio de pronúncia automaticamente para os cartões gerados e fazer upload para o Google Drive.",
+      "provider_label": "Provedor TTS",
+      "voice_label": "Voz do TTS",
+      "placement_label": "Posicionamento do Lado",
+      "placement_front": "Apenas na Frente",
+      "placement_back": "Apenas no Verso",
+      "placement_both": "Em Ambos os Lados",
+      "not_connected_warning": "O Google Drive não está conectado. A geração de áudio requer armazenamento próprio (BYOS). Conecte-se nas Configurações primeiro."
     }
   },
   "errors": {
@@ -754,6 +770,38 @@
         "Exportação para APKG",
         "Opções avançadas de IA"
       ]
+    },
+    "google_drive": {
+      "title": "Armazenamento do Google Drive (BYOS)",
+      "description": "Traga seu próprio armazenamento (BYOS). Conecte sua conta do Google para salvar automaticamente arquivos de áudio de Conversão de Texto em Voz (TTS) e mídia gerada em seu próprio Google Drive privado em 'Flashtar/Audio'.",
+      "status_connected": "Conectado",
+      "status_disconnected": "Desconectado",
+      "status_error": "Conexão Expirada / Revogada",
+      "connect_button": "Conectar Google Drive",
+      "disconnect_button": "Desconectar Drive",
+      "reconnect_button": "Reconectar",
+      "email_label": "E-mail da Conta do Google",
+      "folder_label": "ID da Pasta de Armazenamento",
+      "folder_name": "Flashtar/Audio",
+      "toast_disconnected": "Google Drive desconectado com sucesso.",
+      "toast_disconnect_failed": "Falha ao desconectar: {error}",
+      "toast_connect_failed": "Falha ao conectar ao Google Drive."
+    },
+    "audio_usage": {
+      "title": "Créditos de Caracteres de Áudio",
+      "description": "A geração de áudio de conversão de texto em voz consome créditos de caracteres. Seus créditos são redefinidos mensalmente com base na sua assinatura.",
+      "credits_remaining": "{used, number} / {limit, number} caracteres usados este mês",
+      "period_ends": "Próxima redefinição em {date}",
+      "history_title": "Histórico de Geração de Áudio",
+      "no_history": "Sem registros de geração recentes.",
+      "action": {
+        "monthly_grant": "Concessão Mensual de Créditos",
+        "tts_generation": "Geração de Texto em Voz",
+        "rollback_failed_upload": "Estorno por Falha no Upload",
+        "manual_deduction": "Dedução Manual",
+        "unknown": "Ação"
+      },
+      "characters": "{count, plural, =1 {# caractere} other {# caracteres}}"
     }
   },
   "editor": {

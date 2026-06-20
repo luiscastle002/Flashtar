@@ -3,8 +3,9 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser } from "@/lib/queries/user";
-import type { StudyCard, DeckStudySettings } from "@/types";
+import type { StudyCard, DeckStudySettings, CardAudio } from "@/types";
 import { scheduleCard, confidenceToRating } from "@/lib/scheduling/sm2";
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 // ---------------------------------------------------------------------------
 // startStudySession
@@ -74,7 +75,9 @@ export async function getSessionQueue(deckId: string) {
     (a, b) => (orderMap.get(a.id) as number) - (orderMap.get(b.id) as number)
   );
 
-  return { cards: sorted as StudyCard[] };
+  const cardsWithAudios = await attachAudiosToCards(supabase, sorted);
+
+  return { cards: cardsWithAudios };
 }
 
 // ---------------------------------------------------------------------------
@@ -291,5 +294,52 @@ export async function addMoreNewCards(deckId: string) {
     .limit(limit);
 
   if (error) return { error: error.message, cards: [] };
-  return { cards: (cards ?? []) as StudyCard[] };
+  const cardsWithAudios = await attachAudiosToCards(supabase, cards ?? []);
+  return { cards: cardsWithAudios };
+}
+
+// ---------------------------------------------------------------------------
+// Helper function to attach audios to study cards
+// ---------------------------------------------------------------------------
+async function attachAudiosToCards(supabase: SupabaseClient, cards: StudyCard[]): Promise<StudyCard[]> {
+  if (!cards || cards.length === 0) return [];
+
+  const flashcardIds = cards
+    .map((c) => c.source_flashcard_id)
+    .filter(Boolean) as string[];
+
+  const audiosMap: Record<string, CardAudio[]> = {};
+  if (flashcardIds.length > 0) {
+    const { data: cardAudios } = await supabase
+      .from("card_audios")
+      .select(`
+        flashcard_id,
+        side,
+        original_filename,
+        normalized_filename,
+        audio_files (
+          file_id,
+          provider,
+          voice_id,
+          language,
+          duration_seconds
+        )
+      `)
+      .in("flashcard_id", flashcardIds);
+
+    if (cardAudios) {
+      const casted = cardAudios as unknown as Array<{ flashcard_id: string } & CardAudio>;
+      for (const audio of casted) {
+        if (!audiosMap[audio.flashcard_id]) {
+          audiosMap[audio.flashcard_id] = [];
+        }
+        audiosMap[audio.flashcard_id].push(audio);
+      }
+    }
+  }
+
+  return cards.map((card) => ({
+    ...card,
+    audios: card.source_flashcard_id ? (audiosMap[card.source_flashcard_id] || []) : [],
+  })) as StudyCard[];
 }

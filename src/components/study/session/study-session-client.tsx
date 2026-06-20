@@ -26,6 +26,8 @@ interface StudySessionClientProps {
   deckId: string;
   deckName: string;
   showConfidenceBar: boolean;
+  autoplayAudioFront?: boolean;
+  autoplayAudioBack?: boolean;
 }
 
 interface SessionStats {
@@ -136,6 +138,8 @@ export function StudySessionClient({
   deckId,
   deckName,
   showConfidenceBar,
+  autoplayAudioFront = false,
+  autoplayAudioBack = false,
 }: StudySessionClientProps) {
   const router = useRouter();
   const t = useTranslations("study.session");
@@ -403,6 +407,8 @@ export function StudySessionClient({
           card={currentCard}
           isFlipped={state.isFlipped}
           onFlip={handleFlip}
+          autoplayAudioFront={autoplayAudioFront}
+          autoplayAudioBack={autoplayAudioBack}
         />
 
         {/* Answer controls — only shown after flip */}

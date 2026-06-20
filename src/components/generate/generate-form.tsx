@@ -17,7 +17,8 @@ import {
   Star,
   Pin,
   ChevronDown,
-  ChevronRight
+  ChevronRight,
+  Volume2
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -60,6 +61,7 @@ interface GeneratePageProps {
   monthlyGenerations: number;
   profile: Profile | null;
   initialPrompts: SavedPrompt[];
+  googleConnected: boolean;
 }
 
 type GenerateMode = "prompt" | "import" | "url";
@@ -151,7 +153,7 @@ function getFileIcon(fileName: string) {
   return File;
 }
 
-export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts }: GeneratePageProps) {
+export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts, googleConnected }: GeneratePageProps) {
   const router = useRouter();
   const t = useTranslations("generate");
   const tCommon = useTranslations("common");
@@ -190,6 +192,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
   const [difficulty, setDifficulty] = useState("intermediate");
   const [cardCount, setCardCount] = useState(20);
   const [cardType, setCardType] = useState("basic");
+
+  // Audio generation settings
+  const [audioEnabled, setAudioEnabled] = useState(false);
+  const [audioVoice, setAudioVoice] = useState("alloy");
+  const [audioPlacement, setAudioPlacement] = useState<"front" | "back" | "both">("back");
+  const [audioProvider, setAudioProvider] = useState("openai");
 
   // Custom instructions & Configuration Dialog states
   const [customInstructions, setCustomInstructions] = useState("");
@@ -413,7 +421,18 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt, language, difficulty, cardCount, cardType, customInstructions }),
+        body: JSON.stringify({ 
+          prompt, 
+          language, 
+          difficulty, 
+          cardCount, 
+          cardType, 
+          customInstructions,
+          audioEnabled,
+          audioVoice,
+          audioPlacement,
+          audioProvider
+        }),
       });
 
       const data = await response.json();
@@ -477,6 +496,10 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       if (customInstructions) {
         formData.append("customInstructions", customInstructions);
       }
+      formData.append("audioEnabled", audioEnabled.toString());
+      formData.append("audioVoice", audioVoice);
+      formData.append("audioPlacement", audioPlacement);
+      formData.append("audioProvider", audioProvider);
 
       const data = await uploadWithProgress("/api/generate", formData, (percent) => {
         setProgress(percent);
@@ -527,6 +550,10 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       if (customInstructions) {
         formData.append("customInstructions", customInstructions);
       }
+      formData.append("audioEnabled", audioEnabled.toString());
+      formData.append("audioVoice", audioVoice);
+      formData.append("audioPlacement", audioPlacement);
+      formData.append("audioProvider", audioProvider);
 
       const response = await fetch("/api/generate", {
         method: "POST",
@@ -1070,6 +1097,98 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                   </SelectContent>
                 </Select>
               </div>
+            </div>
+
+            {/* Text-to-Speech (TTS) Settings */}
+            <div className="border-t pt-4 space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="space-y-0.5 text-left">
+                  <Label className="text-base flex items-center gap-1.5">
+                    <Volume2 className="h-4.5 w-4.5 text-indigo-500" />
+                    {t("audio.title")}
+                  </Label>
+                  <p className="text-xs text-muted-foreground">
+                    {t("audio.toggle_desc")}
+                  </p>
+                </div>
+                <input
+                  type="checkbox"
+                  id="audio-enabled"
+                  checked={audioEnabled}
+                  disabled={!googleConnected}
+                  onChange={(e) => setAudioEnabled(e.target.checked)}
+                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer disabled:opacity-50"
+                />
+              </div>
+
+              {!googleConnected && (
+                <div className="rounded-lg bg-amber-500/10 border border-amber-500/20 p-3 text-xs text-amber-600 dark:text-amber-500 text-left">
+                  {t("audio.not_connected_warning")}
+                </div>
+              )}
+
+              {audioEnabled && googleConnected && (
+                <div className="grid grid-cols-2 gap-4 animate-in fade-in-50 duration-200">
+                  <div className="space-y-2 text-left">
+                    <Label>{t("audio.provider_label")}</Label>
+                    <Select value={audioProvider} onValueChange={(val) => {
+                      setAudioProvider(val);
+                      setAudioVoice(val === "openai" ? "alloy" : "en-US-Neural2-F");
+                    }}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="openai">OpenAI TTS</SelectItem>
+                        <SelectItem value="google-cloud">Google Cloud TTS</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2 text-left">
+                    <Label>{t("audio.voice_label")}</Label>
+                    <Select value={audioVoice} onValueChange={setAudioVoice}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {audioProvider === "openai" ? (
+                          <>
+                            <SelectItem value="alloy">Alloy (Neutral)</SelectItem>
+                            <SelectItem value="echo">Echo (Male)</SelectItem>
+                            <SelectItem value="fable">Fable (Narrator)</SelectItem>
+                            <SelectItem value="onyx">Onyx (Deep Male)</SelectItem>
+                            <SelectItem value="nova">Nova (Energetic Female)</SelectItem>
+                            <SelectItem value="shimmer">Shimmer (Professional)</SelectItem>
+                          </>
+                        ) : (
+                          <>
+                            <SelectItem value="en-US-Neural2-F">English (Female - Neural2)</SelectItem>
+                            <SelectItem value="en-US-Neural2-H">English (Male - Neural2)</SelectItem>
+                            <SelectItem value="es-ES-Neural2-F">Spanish (Female - Neural2)</SelectItem>
+                            <SelectItem value="pt-BR-Neural2-A">Portuguese (Female - Neural2)</SelectItem>
+                            <SelectItem value="ja-JP-Neural2-F">Japanese (Female - Neural2)</SelectItem>
+                          </>
+                        )}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2 col-span-2 text-left">
+                    <Label>{t("audio.placement_label")}</Label>
+                    <Select value={audioPlacement} onValueChange={(val: string) => setAudioPlacement(val as "front" | "back" | "both")}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="front">{t("audio.placement_front")}</SelectItem>
+                        <SelectItem value="back">{t("audio.placement_back")}</SelectItem>
+                        <SelectItem value="both">{t("audio.placement_both")}</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* System Templates (Onboarding Examples) */}

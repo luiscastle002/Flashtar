@@ -85,6 +85,8 @@ export function DeckSettingsForm({
   );
   const [leechThreshold, setLeechThreshold] = useState(settings?.leech_threshold ?? 8);
   const [showConfidenceBar, setShowConfidenceBar] = useState(settings?.show_confidence_bar ?? true);
+  const [autoplayAudioFront, setAutoplayAudioFront] = useState(settings?.autoplay_audio_front ?? false);
+  const [autoplayAudioBack, setAutoplayAudioBack] = useState(settings?.autoplay_audio_back ?? false);
 
   const [isArchivedState, setIsArchivedState] = useState(isArchived);
   const [archivePending, startArchiveTransition] = useTransition();
@@ -197,6 +199,8 @@ export function DeckSettingsForm({
         relearning_steps: parseSteps(relearningSteps),
         leech_threshold: leechThreshold,
         show_confidence_bar: showConfidenceBar,
+        autoplay_audio_front: autoplayAudioFront,
+        autoplay_audio_back: autoplayAudioBack,
       });
 
       if ("error" in settingsResult && settingsResult.error) {
@@ -506,7 +510,7 @@ export function DeckSettingsForm({
         <CardHeader className="pb-4">
           <CardTitle className="text-base">{t("display")}</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="space-y-4">
           <label className="flex items-center gap-3 cursor-pointer">
             <input
               type="checkbox"
@@ -518,6 +522,36 @@ export function DeckSettingsForm({
               <p className="text-sm font-medium">{t("show_confidence")}</p>
               <p className="text-xs text-muted-foreground">
                 {t("show_confidence_desc")}
+              </p>
+            </div>
+          </label>
+
+          <label className="flex items-center gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              className="w-4 h-4 rounded accent-primary"
+              checked={autoplayAudioFront}
+              onChange={(e) => setAutoplayAudioFront(e.target.checked)}
+            />
+            <div>
+              <p className="text-sm font-medium">{t("autoplay_front")}</p>
+              <p className="text-xs text-muted-foreground">
+                {t("autoplay_front_desc")}
+              </p>
+            </div>
+          </label>
+
+          <label className="flex items-center gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              className="w-4 h-4 rounded accent-primary"
+              checked={autoplayAudioBack}
+              onChange={(e) => setAutoplayAudioBack(e.target.checked)}
+            />
+            <div>
+              <p className="text-sm font-medium">{t("autoplay_back")}</p>
+              <p className="text-xs text-muted-foreground">
+                {t("autoplay_back_desc")}
               </p>
             </div>
           </label>
