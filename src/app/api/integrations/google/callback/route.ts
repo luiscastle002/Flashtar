@@ -12,36 +12,58 @@ export async function GET(request: Request) {
   const code = searchParams.get("code");
   const error = searchParams.get("error");
 
+  // 1. Check for Google OAuth Consent Screen errors
   if (error) {
-    console.error("Google OAuth error callback:", error);
-    return NextResponse.redirect(new URL("/settings?google_drive=error", request.url));
+    console.error("[Google OAuth Callback] Error parameter received from Google:", error);
+    return NextResponse.redirect(new URL(`/settings?google_drive=error&code=oauth_denied&details=${encodeURIComponent(error)}`, request.url));
   }
 
   if (!code) {
-    return NextResponse.json({ error: "Missing authorization code" }, { status: 400 });
+    console.error("[Google OAuth Callback] Code parameter is missing.");
+    return NextResponse.redirect(new URL("/settings?google_drive=error&code=missing_code", request.url));
   }
 
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+  // 2. Validate Environment Variables before proceeding
+  const clientId = process.env.GOOGLE_CLIENT_ID;
+  const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+  const encryptionKey = process.env.DRIVE_TOKEN_ENCRYPTION_KEY;
 
-  if (!user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!clientId || !clientSecret) {
+    console.error("[Google OAuth Callback] Missing GOOGLE_CLIENT_ID or GOOGLE_CLIENT_SECRET env variables.");
+    return NextResponse.redirect(new URL("/settings?google_drive=error&code=missing_credentials", request.url));
+  }
+
+  if (!encryptionKey) {
+    console.error("[Google OAuth Callback] Missing DRIVE_TOKEN_ENCRYPTION_KEY env variable.");
+    return NextResponse.redirect(new URL("/settings?google_drive=error&code=missing_encryption_key", request.url));
+  }
+
+  // 3. Authenticate Supabase User
+  const supabase = await createClient();
+  const { data: { user }, error: userError } = await supabase.auth.getUser();
+
+  if (userError || !user) {
+    console.error("[Google OAuth Callback] Supabase user authentication failed:", userError?.message || "No user session");
+    return NextResponse.redirect(new URL("/settings?google_drive=error&code=unauthorized", request.url));
   }
 
   try {
-    // 1. Exchange authorization code for tokens
-    // The redirect URI must exactly match the one configured in the Google Cloud Console
-    const redirectUri = `${new URL(request.url).origin}/api/integrations/google/callback`;
+    // 4. Exchange Auth Code (Enforcing static production APP_URL match)
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || new URL(request.url).origin;
+    // Strip trailing slash if present to avoid redirect_uri mismatch
+    const normalizedAppUrl = appUrl.endsWith("/") ? appUrl.slice(0, -1) : appUrl;
+    const redirectUri = `${normalizedAppUrl}/api/integrations/google/callback`;
+    
+    console.log(`[Google OAuth Callback] Exchanging code. redirectUri: ${redirectUri}`);
+    
     const tokens = await exchangeAuthCodeForTokens(code, redirectUri);
     const { access_token, refresh_token } = tokens;
 
-    if (!refresh_token) {
-      // In some cases, Google does not return a refresh token if the app was already authorized.
-      // E.g., user is reconnecting. We should prompt them to reconnect or ensure we have prompt=consent.
-      console.warn("No refresh token returned by Google OAuth. The user may need to revoke access or prompt=consent was missed.");
+    if (!access_token) {
+      throw new Error("Google token response did not contain an access_token.");
     }
 
-    // 2. Retrieve user's Google email to display on Settings
+    // 5. Retrieve Google User Email
     const userinfoResp = await fetch("https://www.googleapis.com/oauth2/v2/userinfo", {
       headers: { Authorization: `Bearer ${access_token}` },
     });
@@ -52,30 +74,31 @@ export async function GET(request: Request) {
       if (userinfo.email) {
         googleEmail = userinfo.email;
       }
+    } else {
+      console.warn("[Google OAuth Callback] Failed to fetch Google userinfo profile, using fallback email.");
     }
 
-    // 3. Encrypt the refresh token
-    // If we didn't get a refresh token, check if we already have one stored
+    // 6. Handle Encrypted Refresh Token
     let encryptedRefreshToken = "";
     if (refresh_token) {
       encryptedRefreshToken = encryptToken(refresh_token);
     } else {
+      console.warn("[Google OAuth Callback] No refresh token returned. Checking existing database connections...");
       const { data: existingConn } = await supabase
         .from("user_google_drive_connections")
         .select("encrypted_refresh_token")
         .eq("user_id", user.id)
         .single();
       
-      if (existingConn) {
+      if (existingConn?.encrypted_refresh_token) {
         encryptedRefreshToken = existingConn.encrypted_refresh_token;
       } else {
-        // We absolutely need a refresh token for background operations
-        console.error("No refresh token returned and no existing token found in database.");
+        console.error("[Google OAuth Callback] No refresh token returned and no existing connection found.");
         return NextResponse.redirect(new URL("/settings?google_drive=consent_required", request.url));
       }
     }
 
-    // 4. Initialize Folder hierarchy on user's Google Drive
+    // 7. Setup Directory Structure
     let rootFolderId = await findFolderInDrive(access_token, "Flashtar");
     if (!rootFolderId) {
       rootFolderId = await createFolderInDrive(access_token, "Flashtar");
@@ -86,7 +109,7 @@ export async function GET(request: Request) {
       audioFolderId = await createFolderInDrive(access_token, "Audio", rootFolderId);
     }
 
-    // 5. Save/upsert connection metadata to user_google_drive_connections table
+    // 8. Upsert connection metadata
     const { error: upsertError } = await supabase
       .from("user_google_drive_connections")
       .upsert({
@@ -100,14 +123,18 @@ export async function GET(request: Request) {
       });
 
     if (upsertError) {
-      console.error("Failed to save Google Drive connection in database:", upsertError);
-      throw upsertError;
+      console.error("[Google OAuth Callback] Supabase upsert error:", upsertError.message);
+      return NextResponse.redirect(new URL(`/settings?google_drive=error&code=database_error&details=${encodeURIComponent(upsertError.message)}`, request.url));
     }
 
-    // 6. Redirect back to settings page with connected status
+    console.log(`[Google OAuth Callback] Successfully connected user ${user.id} to Google Drive.`);
     return NextResponse.redirect(new URL("/settings?google_drive=connected", request.url));
   } catch (err) {
-    console.error("Google OAuth Callback Handler crash:", err);
-    return NextResponse.redirect(new URL("/settings?google_drive=error", request.url));
+    const errorObj = err as Error;
+    console.error("[Google OAuth Callback] Integration crash details:", {
+      message: errorObj.message,
+      stack: errorObj.stack,
+    });
+    return NextResponse.redirect(new URL(`/settings?google_drive=error&code=callback_crash&details=${encodeURIComponent(errorObj.message)}`, request.url));
   }
 }

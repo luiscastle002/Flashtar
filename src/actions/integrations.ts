@@ -51,7 +51,8 @@ export async function getGoogleAuthUrl() {
   
   // Enforce correct redirection domain matching current host or app url fallback
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-  const redirectUri = `${appUrl}/api/integrations/google/callback`;
+  const normalizedAppUrl = appUrl.endsWith("/") ? appUrl.slice(0, -1) : appUrl;
+  const redirectUri = `${normalizedAppUrl}/api/integrations/google/callback`;
   
   if (!clientId) {
     return { error: "Google OAuth Client ID is not configured." };
