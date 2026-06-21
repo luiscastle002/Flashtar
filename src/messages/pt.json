@@ -106,7 +106,7 @@
       "card_index": "Cartão {index}",
       "front": "Frente",
       "back": "Verso",
-      "front_placeholder": "Pergunta ou texto cloze (use {{c1::termo}} para omitir)",
+      "front_placeholder": "Pergunta ou texto cloze (use '{'{'c1::termo'}'}' para omitir)",
       "back_placeholder": "Resposta"
     }
   },
@@ -812,6 +812,7 @@
     "text_color": "Cor do texto",
     "bullet_list": "Lista com marcadores",
     "insert_image": "Inserir imagem",
+    "insert_audio": "Inserir áudio",
     "clear_formatting": "Limpar formatação",
     "reset_default": "Restaurar padrão",
     "colors": {

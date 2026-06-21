@@ -106,7 +106,7 @@
       "card_index": "カード {index}",
       "front": "問題面",
       "back": "解答面",
-      "front_placeholder": "問題文または穴埋め文（{{c1::キーワード}} を使って穴埋め問題を作成）",
+      "front_placeholder": "問題文または穴埋め文（'{'{'c1::キーワード'}'}' を使って穴埋め問題を作成）",
       "back_placeholder": "解答"
     }
   },
@@ -813,6 +813,7 @@
     "text_color": "文字色",
     "bullet_list": "箇条書きリスト",
     "insert_image": "画像を挿入",
+    "insert_audio": "音声の挿入",
     "clear_formatting": "書式をクリア",
     "reset_default": "デフォルトに戻す",
     "colors": {

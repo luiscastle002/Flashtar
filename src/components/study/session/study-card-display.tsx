@@ -65,12 +65,35 @@ export function StudyCardDisplay({
     await updateStudyCard(card.id, { is_flagged: newValue });
   }
 
-  // Parse [sound:filename.mp3] tags into inline audio buttons
+  // Parse both span[data-type="audio"] and legacy [sound:filename.mp3] tags into inline audio buttons
   const processHtml = (html: string, side: "front" | "back") => {
     if (!html) return "";
     
-    const regex = /\[sound:([^\]]+)\]/g;
-    return html.replace(regex, (match, filename) => {
+    // 1. Process new format: <span data-type="audio" data-audio-id="UUID"></span>
+    const spanRegex = /<span\s+[^>]*data-type="audio"[^>]*data-audio-id="([^"]+)"[^>]*>([\s\S]*?)<\/span>/g;
+    let processed = html.replace(spanRegex, (match, audioId) => {
+      const matchedAudio = card.audios?.find((a) => a.id === audioId);
+      if (matchedAudio?.audio_files?.file_id) {
+        const fileId = matchedAudio.audio_files.file_id;
+        const cacheBuster = new Date(card.updated_at).getTime();
+        const url = `/api/integrations/google/audio/${fileId}?v=${cacheBuster}`;
+        const filename = matchedAudio.original_filename || "audio";
+        
+        return `<button 
+          class="inline-flex items-center justify-center p-1.5 rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition mx-1 align-middle cursor-pointer" 
+          onclick="event.stopPropagation(); const a = new Audio('${url}'); a.play().catch(e => console.error(e))" 
+          title="Play ${filename}"
+          type="button"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        </button>`;
+      }
+      return "";
+    });
+
+    // 2. Process legacy format: [sound:filename.mp3]
+    const legacyRegex = /\[sound:([^\]]+)\]/g;
+    processed = processed.replace(legacyRegex, (match, filename) => {
       const normalized = filename.trim().toLowerCase().normalize("NFC");
       const matchedAudio = card.audios?.find(
         (a) => a.side === side && (a.normalized_filename === normalized || a.original_filename === normalized)
@@ -91,9 +114,10 @@ export function StudyCardDisplay({
         </button>`;
       }
       
-      // Hide unmatched sound tags to keep the UI clean
       return "";
     });
+
+    return processed;
   };
 
   // Render a replay button for TTS / general audio when no sound tags exist
@@ -102,7 +126,7 @@ export function StudyCardDisplay({
     if (sideAudios.length === 0) return null;
     
     const html = side === "front" ? card.front : card.back;
-    if (html.includes("[sound:")) return null;
+    if (html.includes("[sound:") || html.includes('data-type="audio"')) return null;
     
     const fileId = sideAudios[0].audio_files?.file_id;
     if (!fileId) return null;
@@ -171,7 +195,7 @@ export function StudyCardDisplay({
                 className="text-sm text-muted-foreground text-center line-clamp-2 flex-1"
                 dangerouslySetInnerHTML={{ __html: processHtml(card.front, "front") }}
               />
-              {!card.front.includes("[sound:") && card.audios?.some((a) => a.side === "front") && (
+              {!card.front.includes("[sound:") && !card.front.includes('data-type="audio"') && card.audios?.some((a) => a.side === "front") && (
                 <Button
                   variant="ghost"
                   size="icon"

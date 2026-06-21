@@ -5,9 +5,8 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, MoreVertical, Edit, Pause, Trash2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import type { Editor } from "@tiptap/react";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 import { StudyCardDisplay } from "./study-card-display";
@@ -15,10 +14,47 @@ import { ConfidenceBar } from "./confidence-bar";
 import { SessionCompletionScreen } from "./session-completion-screen";
 import { submitReview, endStudySession, addMoreNewCards } from "@/actions/study-sessions";
 import { updateStudyCard, suspendStudyCard, deleteStudyCard } from "@/actions/imports";
+import { getGooglePickerConfig } from "@/actions/integrations";
+import { mapGoogleDriveAudioAction } from "@/actions/audio";
+import { RichTextEditor } from "@/components/flashcards/rich-text-editor";
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
 import { translateError } from "@/lib/i18n/utils";
-import type { StudyCard, ConfidenceRating } from "@/types";
+import type { StudyCard, ConfidenceRating, CardAudio } from "@/types";
+
+type GoogleSdk = {
+  gapi: {
+    load: (name: string, opts: { callback: () => void }) => void;
+  };
+  google: {
+    picker: {
+      DocsView: new (viewId: string) => {
+        setMimeTypes: (types: string) => {
+          setParent: (id: string) => unknown;
+        };
+      };
+      ViewId: {
+        DOCS: string;
+      };
+      PickerBuilder: new () => {
+        addView: (view: unknown) => {
+          setOAuthToken: (token: string) => {
+            setDeveloperKey: (key: string) => {
+              setCallback: (cb: (data: { action: string; docs: Array<{ id: string; name: string; sizeBytes?: number }> }) => Promise<void>) => {
+                build: () => {
+                  setVisible: (visible: boolean) => void;
+                };
+              };
+            };
+          };
+        };
+      };
+      Action: {
+        PICKED: string;
+      };
+    };
+  };
+};
 
 interface StudySessionClientProps {
   initialCards: StudyCard[];
@@ -155,6 +191,8 @@ export function StudySessionClient({
     stats: { studied: 0, again: 0, hard: 0, good: 0, easy: 0, newSeen: 0 },
   });
 
+  const currentCard = state.cards[state.currentIndex];
+
   // Dialog and dropdown states
   const [editOpen, setEditOpen] = useState(false);
   const [editFront, setEditFront] = useState("");
@@ -163,10 +201,119 @@ export function StudySessionClient({
   const [confirmDeleteOpen, setConfirmDeleteOpen] = useState(false);
   const [isActionPending, setIsActionPending] = useState(false);
 
+  const [deletedAudioIds, setDeletedAudioIds] = useState<string[]>([]);
+  const frontEditorRef = useRef<Editor | null>(null);
+  const backEditorRef = useRef<Editor | null>(null);
+
+  const handleDeleteAudio = useCallback((audioId: string) => {
+    setDeletedAudioIds((prev) => [...prev, audioId]);
+  }, []);
+
+  const handleUpdateAudio = useCallback((audioRef: CardAudio) => {
+    if (currentCard) {
+      const currentAudios = currentCard.audios || [];
+      const exists = currentAudios.some(
+        (a) =>
+          a.side === audioRef.side &&
+          a.audio_files?.file_id === audioRef.audio_files?.file_id
+      );
+      if (!exists) {
+        currentCard.audios = [...currentAudios, audioRef];
+      }
+    }
+  }, [currentCard]);
+
+  const handleAudioPick = async (side: "front" | "back", editorInstance: Editor) => {
+    if (!currentCard) return;
+    try {
+      const config = await getGooglePickerConfig();
+      if ("error" in config) {
+        toast.error(config.error);
+        return;
+      }
+
+      const { accessToken, audioFolderId } = config;
+
+      const showPicker = () => {
+        const win = window as unknown as GoogleSdk;
+        if (!win.gapi || !win.google) {
+          toast.error("Google Picker SDK failed to load.");
+          return;
+        }
+        win.gapi.load("picker", {
+          callback: () => {
+            const view = new win.google.picker.DocsView(win.google.picker.ViewId.DOCS)
+              .setMimeTypes("audio/mpeg,audio/mp3,audio/wav,audio/x-wav,audio/ogg")
+              .setParent(audioFolderId);
+
+            const picker = new win.google.picker.PickerBuilder()
+              .addView(view)
+              .setOAuthToken(accessToken)
+              .setDeveloperKey("")
+              .setCallback(async (data: { action: string; docs: Array<{ id: string; name: string; sizeBytes?: number }> }) => {
+                if (data.action === win.google.picker.Action.PICKED) {
+                  const doc = data.docs[0];
+                  if (!currentCard.source_flashcard_id) {
+                    toast.error("Cannot map audio to a card without a source flashcard.");
+                    return;
+                  }
+                  const res = await mapGoogleDriveAudioAction({
+                    flashcardId: currentCard.source_flashcard_id,
+                    side,
+                    fileId: doc.id,
+                    filename: doc.name,
+                    fileSize: doc.sizeBytes,
+                  });
+
+                  if ("error" in res && res.error) {
+                    toast.error(res.error);
+                  } else if (res.normalizedName && res.audioRef) {
+                    handleUpdateAudio(res.audioRef);
+                    // Focus and insert content
+                    editorInstance.chain().focus().insertContent({
+                      type: "audio",
+                      attrs: {
+                        audioId: res.audioRef.id,
+                      },
+                    }).run();
+                    toast.success("Audio file inserted!");
+                  }
+                }
+              })
+              .build();
+            picker.setVisible(true);
+          },
+        });
+      };
+
+      const win = window as unknown as GoogleSdk;
+      if (!win.gapi) {
+        const script = document.createElement("script");
+        script.src = "https://apis.google.com/js/api.js";
+        script.onload = () => {
+          const winG = window as unknown as GoogleSdk;
+          if (!winG.google) {
+            const gisScript = document.createElement("script");
+            gisScript.src = "https://accounts.google.com/gsi/client";
+            gisScript.onload = () => showPicker();
+            document.body.appendChild(gisScript);
+          } else {
+            showPicker();
+          }
+        };
+        document.body.appendChild(script);
+      } else {
+        showPicker();
+      }
+    } catch (err: unknown) {
+      const errMsg = err instanceof Error ? err.message : String(err);
+      toast.error(errMsg || "Failed to load Google Picker");
+    }
+  };
+
   const cardStartRef = useRef<number>(Date.now());
   const sessionStartRef = useRef<number>(Date.now());
 
-  const currentCard = state.cards[state.currentIndex];
   const progress = state.cards.length > 0
     ? Math.round((state.currentIndex / state.cards.length) * 100)
     : 100;
@@ -251,7 +398,7 @@ export function StudySessionClient({
       const res = await updateStudyCard(currentCard.id, {
         front: editFront,
         back: editBack,
-      });
+      }, deletedAudioIds);
       if ("error" in res && res.error) {
         toast.error(res.error);
       } else {
@@ -262,6 +409,7 @@ export function StudySessionClient({
           back: editBack,
         });
         toast.success(t("toast_edit_success"));
+        setDeletedAudioIds([]);
         setEditOpen(false);
       }
     } catch {
@@ -455,28 +603,51 @@ export function StudySessionClient({
 
       {/* Edit Flashcard Dialog */}
       <Dialog open={editOpen} onOpenChange={setEditOpen}>
-        <DialogContent>
+        <DialogContent onInteractOutside={(e) => e.preventDefault()}>
           <DialogHeader>
             <DialogTitle>{t("edit_modal_title")}</DialogTitle>
           </DialogHeader>
           <div className="space-y-4 py-2">
             <div className="space-y-1.5">
               <Label htmlFor="front">{t("edit_modal_front")}</Label>
-              <Input
-                id="front"
-                value={editFront}
-                onChange={(e) => setEditFront(e.target.value)}
+              <RichTextEditor
+                content={editFront}
+                onChange={setEditFront}
                 placeholder="Front content..."
+                audios={currentCard?.audios}
+                onAudioClick={(editor) => handleAudioPick("front", editor)}
+                onMoveSide={(audioId, deleteNode) => {
+                  deleteNode();
+                  if (backEditorRef.current) {
+                    backEditorRef.current.chain().focus().insertContent({
+                      type: "audio",
+                      attrs: { audioId }
+                    }).run();
+                  }
+                }}
+                onDelete={handleDeleteAudio}
+                editorRef={frontEditorRef}
               />
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="back">{t("edit_modal_back")}</Label>
-              <Textarea
-                id="back"
-                value={editBack}
-                onChange={(e) => setEditBack(e.target.value)}
+              <RichTextEditor
+                content={editBack}
+                onChange={setEditBack}
                 placeholder="Back content..."
-                rows={4}
+                audios={currentCard?.audios}
+                onAudioClick={(editor) => handleAudioPick("back", editor)}
+                onMoveSide={(audioId, deleteNode) => {
+                  deleteNode();
+                  if (frontEditorRef.current) {
+                    frontEditorRef.current.chain().focus().insertContent({
+                      type: "audio",
+                      attrs: { audioId }
+                    }).run();
+                  }
+                }}
+                onDelete={handleDeleteAudio}
+                editorRef={backEditorRef}
               />
             </div>
           </div>

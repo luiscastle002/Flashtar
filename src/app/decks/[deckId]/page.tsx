@@ -38,6 +38,7 @@ export default async function DeckPage({ params }: { params: Promise<{ deckId: s
     const { data: cardAudios } = await supabase
       .from("card_audios")
       .select(`
+        id,
         flashcard_id,
         side,
         original_filename,

@@ -313,6 +313,7 @@ async function attachAudiosToCards(supabase: SupabaseClient, cards: StudyCard[])
     const { data: cardAudios } = await supabase
       .from("card_audios")
       .select(`
+        id,
         flashcard_id,
         side,
         original_filename,

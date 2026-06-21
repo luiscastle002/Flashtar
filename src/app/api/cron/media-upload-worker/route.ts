@@ -60,21 +60,23 @@ export async function GET(request: Request) {
       console.log("[Audio] Worker uploaded media to drive:", googleFileId);
 
       // 4. Determine flashcard sides containing this sound tag
-      const { data: flashcard } = await supabase
+      const { data: flashcard, error: flashcardError } = await supabase
         .from("flashcards")
         .select("front, back")
         .eq("id", flashcardId)
         .single();
 
+      if (flashcardError || !flashcard) {
+        throw new Error(`Flashcard with ID ${flashcardId} not found or query failed: ${flashcardError?.message}`);
+      }
+
       const sides: Array<"front" | "back"> = [];
-      if (flashcard) {
-        const normSearch = `[sound:${origName.toLowerCase()}]`;
-        if (flashcard.front.toLowerCase().includes(normSearch)) {
-          sides.push("front");
-        }
-        if (flashcard.back.toLowerCase().includes(normSearch)) {
-          sides.push("back");
-        }
+      const normSearch = `[sound:${origName.toLowerCase()}]`;
+      if (flashcard.front.toLowerCase().includes(normSearch)) {
+        sides.push("front");
+      }
+      if (flashcard.back.toLowerCase().includes(normSearch)) {
+        sides.push("back");
       }
       
       // Fallback if not found directly in front/back tags
@@ -119,7 +121,7 @@ export async function GET(request: Request) {
 
       // 6. Map to card_audios
       for (const side of sides) {
-        const { error: refError } = await supabase
+        const { data: newCardAudio, error: refError } = await supabase
           .from("card_audios")
           .insert({
             flashcard_id: flashcardId,
@@ -127,11 +129,34 @@ export async function GET(request: Request) {
             audio_file_id: audioFileId,
             original_filename: origName,
             normalized_filename: normName
-          });
+          })
+          .select("id")
+          .single();
 
-        if (refError) {
-          console.error(`Ref mapping error for side ${side} of flashcard ${flashcardId}:`, refError.message);
-          throw new Error(`Failed to map audio to card side ${side}: ${refError.message}`);
+        if (refError || !newCardAudio) {
+          console.error(`Ref mapping error for side ${side} of flashcard ${flashcardId}:`, refError?.message);
+          throw new Error(`Failed to map audio to card side ${side}: ${refError?.message}`);
+        }
+
+        // Now, update flashcard HTML: replace [sound:origName] with <span data-type="audio" data-audio-id="id"></span>
+        const targetHtml = side === "front" ? flashcard.front : flashcard.back;
+        const newSpan = `<span data-type="audio" data-audio-id="${newCardAudio.id}"></span>`;
+        
+        const soundRegex = new RegExp(`\\[sound:${origName.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\]`, 'gi');
+        const updatedHtml = targetHtml.replace(soundRegex, newSpan);
+
+        if (updatedHtml !== targetHtml) {
+          // Update master flashcard
+          await supabase
+            .from("flashcards")
+            .update({ [side]: updatedHtml })
+            .eq("id", flashcardId);
+
+          // Update corresponding study card if it exists
+          await supabase
+            .from("study_cards")
+            .update({ [side]: updatedHtml })
+            .eq("source_flashcard_id", flashcardId);
         }
       }
 

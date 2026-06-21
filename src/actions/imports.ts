@@ -6,6 +6,7 @@ import { getCurrentUser, getSubscription } from "@/lib/queries/user";
 import type { StudyCard, CardAudio } from "@/types";
 import type { Plan } from "@/types";
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { cleanOrphanedCardAudios } from "./audio";
 
 // ---------------------------------------------------------------------------
 // importFromGeneratedDeck
@@ -672,6 +673,7 @@ async function attachAudiosToStudyCards(
     const { data: cardAudios, error: audioError } = await supabase
       .from("card_audios")
       .select(`
+        id,
         flashcard_id,
         side,
         original_filename,
@@ -806,7 +808,8 @@ export async function bulkUpdateStudyCards(
     addTags?: string[];
     removeTags?: string[];
     isFlagged?: boolean;
-  }
+  },
+  deletedAudioIds?: string[]
 ) {
   const user = await getCurrentUser();
   if (!user) return { error: "errors.auth.not_authenticated" };
@@ -817,6 +820,16 @@ export async function bulkUpdateStudyCards(
   if (ids.length === 1) {
     // Single card edit: allows front, back, and direct tags overwrite
     const cardId = ids[0];
+
+    // Fetch card to get source_flashcard_id and current content
+    const { data: currentCard } = await supabase
+      .from("study_cards")
+      .select("source_flashcard_id, front, back")
+      .eq("id", cardId)
+      .eq("study_deck_id", studyDeckId)
+      .eq("user_id", user.id)
+      .single();
+
     const up: {
       front?: string;
       back?: string;
@@ -838,6 +851,20 @@ export async function bulkUpdateStudyCards(
       .eq("user_id", user.id);
 
     if (error) return { error: error.message };
+
+    // Clean up audio references & update master flashcard
+    if (currentCard && currentCard.source_flashcard_id) {
+      const front = up.front !== undefined ? up.front : currentCard.front;
+      const back = up.back !== undefined ? up.back : currentCard.back;
+
+      // Update master flashcard
+      await supabase
+        .from("flashcards")
+        .update({ front, back })
+        .eq("id", currentCard.source_flashcard_id);
+
+      await cleanOrphanedCardAudios(supabase, currentCard.source_flashcard_id, front, back, deletedAudioIds);
+    }
   } else {
     // Multi-card edit: applies flag status and modifies tags (add/remove)
     // 1. Fetch selected cards to inspect current tags
@@ -901,12 +928,27 @@ export async function bulkUpdateStudyCards(
 
 export async function updateStudyCard(
   cardId: string,
-  updates: { front?: string; back?: string; tags?: string[]; is_flagged?: boolean }
+  updates: { front?: string; back?: string; tags?: string[]; is_flagged?: boolean },
+  deletedAudioIds?: string[]
 ) {
   const user = await getCurrentUser();
   if (!user) return { error: "errors.auth.not_authenticated" };
 
   const supabase = await createClient();
+
+  // 1. Fetch study card to get source_flashcard_id and its current contents
+  const { data: currentCard, error: fetchError } = await supabase
+    .from("study_cards")
+    .select("source_flashcard_id, front, back")
+    .eq("id", cardId)
+    .eq("user_id", user.id)
+    .single();
+
+  if (fetchError || !currentCard) {
+    return { error: fetchError?.message ?? "errors.study_decks.card_not_found" };
+  }
+
+  // 2. Perform update on study_cards table
   const { data, error } = await supabase
     .from("study_cards")
     .update(updates)
@@ -916,6 +958,22 @@ export async function updateStudyCard(
     .single();
 
   if (error) return { error: error.message };
+
+  // 3. Propagate changes to master flashcard if source_flashcard_id exists
+  if (currentCard.source_flashcard_id) {
+    const front = updates.front !== undefined ? updates.front : currentCard.front;
+    const back = updates.back !== undefined ? updates.back : currentCard.back;
+
+    // Update master flashcard
+    await supabase
+      .from("flashcards")
+      .update({ front, back })
+      .eq("id", currentCard.source_flashcard_id);
+
+    // Run cheerio-based diffing / pruning on the master flashcard ID
+    await cleanOrphanedCardAudios(supabase, currentCard.source_flashcard_id, front, back, deletedAudioIds);
+  }
+
   return { data };
 }
 

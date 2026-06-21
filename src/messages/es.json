@@ -106,7 +106,7 @@
       "card_index": "Tarjeta {index}",
       "front": "Anverso",
       "back": "Reverso",
-      "front_placeholder": "Pregunta o texto de relleno (usa {{c1::respuesta}} para cloze)",
+      "front_placeholder": "Pregunta o texto de relleno (usa '{'{'c1::respuesta'}'}' para cloze)",
       "back_placeholder": "Respuesta"
     }
   },
@@ -812,6 +812,7 @@
     "text_color": "Color del texto",
     "bullet_list": "Lista con viñetas",
     "insert_image": "Insertar imagen",
+    "insert_audio": "Insertar audio",
     "clear_formatting": "Limpiar formato",
     "reset_default": "Restablecer valores",
     "colors": {

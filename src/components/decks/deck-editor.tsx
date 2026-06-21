@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import {
   DndContext,
   closestCenter,
@@ -18,7 +18,8 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { GripVertical, Plus, Trash2, Download, Save, Volume2, Loader2 } from "lucide-react";
+import { GripVertical, Plus, Trash2, Download, Save } from "lucide-react";
+import type { Editor } from "@tiptap/react";
 import { RichTextEditor } from "@/components/flashcards/rich-text-editor";
 import { AddToStudyDeckButton } from "@/components/study/add-to-study-deck-button";
 import { Button } from "@/components/ui/button";
@@ -45,6 +46,7 @@ interface SortableCardProps {
   index: number;
   onUpdate: (id: string, field: "front" | "back", value: string) => void;
   onUpdateAudio: (id: string, audioRef: CardAudio) => void;
+  onDeleteAudio: (audioId: string) => void;
   onDelete: (id: string) => void;
 }
 
@@ -82,24 +84,26 @@ type GoogleSdk = {
   };
 };
 
-function GooglePickerButton({
-  flashcardId,
-  side,
-  onAudioMapped,
-}: {
-  flashcardId: string;
-  side: "front" | "back";
-  onAudioMapped: (filename: string, audioRef: CardAudio) => void;
-}) {
-  const [loading, setLoading] = useState(false);
+function SortableCard({ card, index, onUpdate, onUpdateAudio, onDeleteAudio, onDelete }: SortableCardProps) {
+  const t = useTranslations("decks");
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id: card.id,
+  });
 
-  const handlePick = async () => {
-    setLoading(true);
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  const frontEditorRef = useRef<Editor | null>(null);
+  const backEditorRef = useRef<Editor | null>(null);
+
+  const handleAudioPick = async (side: "front" | "back", editorInstance: Editor) => {
     try {
       const config = await getGooglePickerConfig();
       if ("error" in config) {
         toast.error(config.error);
-        setLoading(false);
         return;
       }
 
@@ -120,12 +124,12 @@ function GooglePickerButton({
             const picker = new win.google.picker.PickerBuilder()
               .addView(view)
               .setOAuthToken(accessToken)
-              .setDeveloperKey("") // We don't need a dev key for drive.file scope when restricted by folder
+              .setDeveloperKey("")
               .setCallback(async (data: { action: string; docs: Array<{ id: string; name: string; sizeBytes?: number }> }) => {
                 if (data.action === win.google.picker.Action.PICKED) {
                   const doc = data.docs[0];
                   const res = await mapGoogleDriveAudioAction({
-                    flashcardId,
+                    flashcardId: card.id,
                     side,
                     fileId: doc.id,
                     filename: doc.name,
@@ -135,8 +139,15 @@ function GooglePickerButton({
                   if ("error" in res && res.error) {
                     toast.error(res.error);
                   } else if (res.normalizedName && res.audioRef) {
-                    onAudioMapped(res.normalizedName, res.audioRef);
-                    toast.success("Audio file mapped successfully!");
+                    onUpdateAudio(card.id, res.audioRef);
+                    // Insert node in Tiptap
+                    editorInstance.chain().focus().insertContent({
+                      type: "audio",
+                      attrs: {
+                        audioId: res.audioRef.id,
+                      },
+                    }).run();
+                    toast.success("Audio file inserted!");
                   }
                 }
               })
@@ -168,40 +179,7 @@ function GooglePickerButton({
     } catch (err: unknown) {
       const errMsg = err instanceof Error ? err.message : String(err);
       toast.error(errMsg || "Failed to load Google Picker");
-    } finally {
-      setLoading(false);
     }
-  };
-
-  return (
-    <Button
-      type="button"
-      variant="ghost"
-      size="sm"
-      className="h-6 px-1.5 text-[11px] text-primary hover:text-primary hover:bg-primary/10 flex items-center gap-1"
-      onClick={handlePick}
-      disabled={loading}
-    >
-      {loading ? (
-        <Loader2 className="h-3 w-3 animate-spin" />
-      ) : (
-        <Volume2 className="h-3 w-3" />
-      )}
-      Audio
-    </Button>
-  );
-}
-
-function SortableCard({ card, index, onUpdate, onUpdateAudio, onDelete }: SortableCardProps) {
-  const t = useTranslations("decks");
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
-    id: card.id,
-  });
-
-  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-    opacity: isDragging ? 0.5 : 1,
   };
 
   return (
@@ -227,75 +205,47 @@ function SortableCard({ card, index, onUpdate, onUpdateAudio, onDelete }: Sortab
         <div>
           <div className="flex justify-between items-center mb-1">
             <p className="text-xs text-muted-foreground">{t("editor.front")}</p>
-            <div className="flex items-center gap-1">
-              {card.audios?.some((a) => a.side === "front") && (
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="icon"
-                  className="h-6 w-6 rounded-full hover:bg-muted text-primary"
-                  onClick={() => {
-                    const sideAudios = card.audios?.filter((a) => a.side === "front") || [];
-                    if (sideAudios[0]?.audio_files?.file_id) {
-                      const audio = new Audio(`/api/integrations/google/audio/${sideAudios[0].audio_files.file_id}?v=${new Date().getTime()}`);
-                      audio.play().catch((err) => console.error(err));
-                    }
-                  }}
-                >
-                  <Volume2 className="h-3.5 w-3.5" />
-                </Button>
-              )}
-              <GooglePickerButton 
-                flashcardId={card.id}
-                side="front"
-                onAudioMapped={(filename, audioRef) => {
-                  onUpdate(card.id, "front", card.front + `<p>[sound:${filename}]</p>`);
-                  onUpdateAudio(card.id, audioRef);
-                }}
-              />
-            </div>
           </div>
           <RichTextEditor
             content={card.front}
             onChange={(html) => onUpdate(card.id, "front", html)}
             placeholder={t("editor.front_placeholder")}
+            audios={card.audios}
+            onAudioClick={(editor) => handleAudioPick("front", editor)}
+            onMoveSide={(audioId, deleteNode) => {
+              deleteNode();
+              if (backEditorRef.current) {
+                backEditorRef.current.chain().focus().insertContent({
+                  type: "audio",
+                  attrs: { audioId }
+                }).run();
+              }
+            }}
+            onDelete={onDeleteAudio}
+            editorRef={frontEditorRef}
           />
         </div>
         <div>
           <div className="flex justify-between items-center mb-1">
             <p className="text-xs text-muted-foreground">{t("editor.back")}</p>
-            <div className="flex items-center gap-1">
-              {card.audios?.some((a) => a.side === "back") && (
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="icon"
-                  className="h-6 w-6 rounded-full hover:bg-muted text-primary"
-                  onClick={() => {
-                    const sideAudios = card.audios?.filter((a) => a.side === "back") || [];
-                    if (sideAudios[0]?.audio_files?.file_id) {
-                      const audio = new Audio(`/api/integrations/google/audio/${sideAudios[0].audio_files.file_id}?v=${new Date().getTime()}`);
-                      audio.play().catch((err) => console.error(err));
-                    }
-                  }}
-                >
-                  <Volume2 className="h-3.5 w-3.5" />
-                </Button>
-              )}
-              <GooglePickerButton 
-                flashcardId={card.id}
-                side="back"
-                onAudioMapped={(filename, audioRef) => {
-                  onUpdate(card.id, "back", card.back + `<p>[sound:${filename}]</p>`);
-                  onUpdateAudio(card.id, audioRef);
-                }}
-              />
-            </div>
           </div>
           <RichTextEditor
             content={card.back}
             onChange={(html) => onUpdate(card.id, "back", html)}
             placeholder={t("editor.back_placeholder")}
+            audios={card.audios}
+            onAudioClick={(editor) => handleAudioPick("back", editor)}
+            onMoveSide={(audioId, deleteNode) => {
+              deleteNode();
+              if (frontEditorRef.current) {
+                frontEditorRef.current.chain().focus().insertContent({
+                  type: "audio",
+                  attrs: { audioId }
+                }).run();
+              }
+            }}
+            onDelete={onDeleteAudio}
+            editorRef={backEditorRef}
           />
         </div>
       </CardContent>
@@ -319,6 +269,7 @@ export function DeckEditor({ deck: initialDeck, initialCards, plan }: DeckEditor
   const [deckName, setDeckName] = useState(deck.name);
   const [saving, setSaving] = useState(false);
   const [exporting, setExporting] = useState(false);
+  const [deletedAudioIds, setDeletedAudioIds] = useState<string[]>([]);
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -345,6 +296,10 @@ export function DeckEditor({ deck: initialDeck, initialCards, plan }: DeckEditor
         return c;
       })
     );
+  }, []);
+
+  const handleDeleteAudio = useCallback((audioId: string) => {
+    setDeletedAudioIds((prev) => [...prev, audioId]);
   }, []);
 
   async function handleDragEnd(event: DragEndEvent) {
@@ -392,7 +347,8 @@ export function DeckEditor({ deck: initialDeck, initialCards, plan }: DeckEditor
       updateDeck(deck.id, { name: deckName }),
       bulkUpdateFlashcards(
         deck.id,
-        cards.map((c) => ({ id: c.id, front: c.front, back: c.back, card_type: c.card_type }))
+        cards.map((c) => ({ id: c.id, front: c.front, back: c.back, card_type: c.card_type })),
+        deletedAudioIds
       ),
     ]);
     setSaving(false);
@@ -406,6 +362,7 @@ export function DeckEditor({ deck: initialDeck, initialCards, plan }: DeckEditor
     }
 
     if (deckResult.data) setDeck(deckResult.data);
+    setDeletedAudioIds([]);
     toast.success(t("editor.toast_saved"));
   }
 
@@ -486,6 +443,7 @@ export function DeckEditor({ deck: initialDeck, initialCards, plan }: DeckEditor
                   index={index}
                   onUpdate={handleUpdate}
                   onUpdateAudio={handleUpdateAudio}
+                  onDeleteAudio={handleDeleteAudio}
                   onDelete={handleDeleteCard}
                 />
               ))}

@@ -5,6 +5,8 @@ import { getTtsProvider, generateAudioHash, type TtsOptions } from "@/lib/tts/tt
 import { getGoogleAccessTokenForUser, uploadAudioFileToDrive, waitForDriveFileReady, deleteAudioFileFromDrive } from "@/lib/integrations/google";
 import { getCurrentUser } from "@/lib/queries/user";
 import type { CardAudio } from "@/types";
+import * as cheerio from "cheerio";
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 export interface GenerateCardAudioParams {
   flashcardId: string;
@@ -18,6 +20,49 @@ export interface GenerateCardAudioParams {
 
 function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
+}
+
+async function appendAudioSpanToCardHtml(
+  supabase: SupabaseClient,
+  flashcardId: string,
+  side: "front" | "back",
+  cardAudioId: string
+) {
+  const { data: card } = await supabase
+    .from("flashcards")
+    .select("front, back")
+    .eq("id", flashcardId)
+    .single();
+
+  if (card) {
+    const targetHtml = side === "front" ? card.front : card.back;
+    
+    // Check if already contains the audio span
+    if (targetHtml.includes(`data-audio-id="${cardAudioId}"`)) {
+      return;
+    }
+
+    const newSpan = `<span data-type="audio" data-audio-id="${cardAudioId}"></span>`;
+    
+    let updatedHtml = targetHtml;
+    if (targetHtml.endsWith("</p>")) {
+      updatedHtml = targetHtml.replace(/<\/p>$/, `${newSpan}</p>`);
+    } else {
+      updatedHtml = `${targetHtml}${newSpan}`;
+    }
+
+    // Save to flashcards
+    await supabase
+      .from("flashcards")
+      .update({ [side]: updatedHtml })
+      .eq("id", flashcardId);
+
+    // Sync to study_cards if it exists
+    await supabase
+      .from("study_cards")
+      .update({ [side]: updatedHtml })
+      .eq("source_flashcard_id", flashcardId);
+  }
 }
 
 /**
@@ -80,7 +125,7 @@ export async function generateCardAudioAction({
   if (existingFile) {
     // Cache HIT: Link this card side to the existing audio file
     console.log("[Audio] generateCardAudioAction: CAS cache HIT", { flashcardId, side, existingFileId: existingFile.id });
-    const { error: refError } = await supabase
+    const { data: newCardAudio, error: refError } = await supabase
       .from("card_audios")
       .insert({
         flashcard_id: flashcardId,
@@ -88,12 +133,16 @@ export async function generateCardAudioAction({
         audio_file_id: existingFile.id,
         original_filename: `${audioHash}.mp3`,
         normalized_filename: `${audioHash}.mp3`
-      });
+      })
+      .select("id")
+      .single();
 
-    if (refError) {
+    if (refError || !newCardAudio) {
       console.error("[Audio Error] generateCardAudioAction: cache hit reference mapping failed:", refError);
-      return { error: refError.message };
+      return { error: refError?.message || "Failed to create card audio reference" };
     }
+
+    await appendAudioSpanToCardHtml(supabase, flashcardId, side, newCardAudio.id);
 
     console.log("[Audio]", {
       cardId: flashcardId,
@@ -104,7 +153,7 @@ export async function generateCardAudioAction({
       mapped: true
     });
 
-    return { success: true, cached: true };
+    return { success: true, cached: true, audioFileId: existingFile.id };
   }
 
   // Cache MISS: Generate audio, deduct credits, and upload
@@ -237,7 +286,7 @@ export async function generateCardAudioAction({
   }
 
   // 10. Insert card audio reference (Step 2 Rollback on DB failure)
-  const { error: refError } = await supabase
+  const { data: newCardAudio, error: refError } = await supabase
     .from("card_audios")
     .insert({
       flashcard_id: flashcardId,
@@ -245,9 +294,11 @@ export async function generateCardAudioAction({
       audio_file_id: newFile.id,
       original_filename: `${audioHash}.mp3`,
       normalized_filename: `${audioHash}.mp3`
-    });
+    })
+    .select("id")
+    .single();
 
-  if (refError) {
+  if (refError || !newCardAudio) {
     console.error("[Audio Error] Failed to create card audio reference:", refError);
     // Cleanup Drive file, delete audio_files record, and release credits
     await supabase.from("audio_files").delete().eq("id", newFile.id);
@@ -260,8 +311,10 @@ export async function generateCardAudioAction({
       p_user_id: user.id,
       p_idempotency_key: idempotencyKey
     });
-    return { error: `Failed to create card audio reference: ${refError.message}` };
+    return { error: `Failed to create card audio reference: ${refError?.message || "Unknown error"}` };
   }
+
+  await appendAudioSpanToCardHtml(supabase, flashcardId, side, newCardAudio.id);
 
   // 11. Commit Audio Credits (Move from reserved to committed)
   const { error: commitError } = await supabase.rpc("commit_audio_credits", {
@@ -383,6 +436,7 @@ export async function mapGoogleDriveAudioAction({
         normalized_filename: normalized
       })
       .select(`
+        id,
         side,
         original_filename,
         normalized_filename,
@@ -406,6 +460,7 @@ export async function mapGoogleDriveAudioAction({
     const { data: fetchedRef } = await supabase
       .from("card_audios")
       .select(`
+        id,
         side,
         original_filename,
         normalized_filename,
@@ -437,3 +492,123 @@ export async function mapGoogleDriveAudioAction({
     audioRef: returnedRef as unknown as CardAudio
   };
 }
+
+/**
+ * Unmaps an audio reference from a flashcard side.
+ */
+export async function unmapCardAudioAction(cardAudioId: string) {
+  const user = await getCurrentUser();
+  if (!user) return { error: "errors.auth.not_authenticated" };
+
+  const supabase = await createClient();
+
+  // Verify ownership of the deck/card that contains this card_audio
+  const { data: audioRef, error: fetchError } = await supabase
+    .from("card_audios")
+    .select(`
+      id,
+      flashcard_id,
+      flashcards (
+        deck_id,
+        decks (
+          user_id
+        )
+      )
+    `)
+    .eq("id", cardAudioId)
+    .single();
+
+  if (fetchError || !audioRef) {
+    return { error: "errors.audio.ref_not_found" };
+  }
+
+  const flashcards = audioRef.flashcards as unknown as {
+    deck_id: string;
+    decks: {
+      user_id: string;
+    } | null;
+  } | null;
+  const ownerId = flashcards?.decks?.user_id;
+  if (ownerId !== user.id) {
+    return { error: "errors.auth.unauthorized" };
+  }
+
+  const { error: deleteError } = await supabase
+    .from("card_audios")
+    .delete()
+    .eq("id", cardAudioId);
+
+  if (deleteError) {
+    console.error("[Audio Error] unmapCardAudioAction failed:", deleteError);
+    return { error: deleteError.message };
+  }
+
+  return { success: true };
+}
+
+function extractAudioIdsFromHtml(html: string): string[] {
+  if (!html) return [];
+  const $ = cheerio.load(html);
+  const ids: string[] = [];
+  $('span[data-type="audio"]').each((_, elem) => {
+    const id = $(elem).attr("data-audio-id");
+    if (id) {
+      ids.push(id);
+    }
+  });
+  return ids;
+}
+
+export async function cleanOrphanedCardAudios(
+  supabase: SupabaseClient,
+  flashcardId: string,
+  frontHtml: string,
+  backHtml: string,
+  deletedAudioIds?: string[]
+) {
+  // 1. If explicit deleted IDs are provided, delete them immediately
+  if (deletedAudioIds && deletedAudioIds.length > 0) {
+    await supabase
+      .from("card_audios")
+      .delete()
+      .eq("flashcard_id", flashcardId)
+      .in("id", deletedAudioIds);
+  }
+
+  // 2. Parse all referenced IDs in the front and back HTML
+  const frontIds = extractAudioIdsFromHtml(frontHtml);
+  const backIds = extractAudioIdsFromHtml(backHtml);
+  const referencedIds = [...frontIds, ...backIds];
+
+  // 3. Delete any card_audios associated with this flashcard that are NOT in the referenced list
+  if (referencedIds.length > 0) {
+    await supabase
+      .from("card_audios")
+      .delete()
+      .eq("flashcard_id", flashcardId)
+      .not("id", "in", `(${referencedIds.join(",")})`);
+  } else {
+    // If no audio is referenced, delete all audio references for this card
+    await supabase
+      .from("card_audios")
+      .delete()
+      .eq("flashcard_id", flashcardId);
+  }
+
+  // 4. Update side for the remaining referenced audios
+  if (frontIds.length > 0) {
+    await supabase
+      .from("card_audios")
+      .update({ side: "front" })
+      .eq("flashcard_id", flashcardId)
+      .in("id", frontIds);
+  }
+  if (backIds.length > 0) {
+    await supabase
+      .from("card_audios")
+      .update({ side: "back" })
+      .eq("flashcard_id", flashcardId)
+      .in("id", backIds);
+  }
+}
+

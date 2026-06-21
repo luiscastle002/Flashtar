@@ -106,7 +106,7 @@
       "card_index": "Card {index}",
       "front": "Front",
       "back": "Back",
-      "front_placeholder": "Question or cloze text (use {{c1::answer}} for cloze)",
+      "front_placeholder": "Question or cloze text (use '{'{'c1::answer'}'}' for cloze)",
       "back_placeholder": "Answer"
     }
   },
@@ -812,6 +812,7 @@
     "text_color": "Text Color",
     "bullet_list": "Bullet List",
     "insert_image": "Insert Image",
+    "insert_audio": "Insert Audio",
     "clear_formatting": "Clear Formatting",
     "reset_default": "Reset to Default",
     "colors": {

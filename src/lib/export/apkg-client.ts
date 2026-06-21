@@ -1,4 +1,17 @@
-import type { Flashcard } from "@/types";
+import type { Flashcard, CardAudio } from "@/types";
+
+function translateAudioSpansToAnkiSoundTags(html: string, audios?: CardAudio[]): string {
+  if (!html) return "";
+  // Match <span data-type="audio" data-audio-id="UUID"></span>
+  const spanRegex = /<span\s+[^>]*data-type="audio"[^>]*data-audio-id="([^"]+)"[^>]*>([\s\S]*?)<\/span>/g;
+  return html.replace(spanRegex, (match, audioId) => {
+    const matchedAudio = audios?.find((a) => a.id === audioId);
+    if (matchedAudio && matchedAudio.original_filename) {
+      return `[sound:${matchedAudio.original_filename}]`;
+    }
+    return "";
+  });
+}
 
 /**
  * Generates an Anki APKG file on the client side using ankipack and sql.js WASM loaded from CDN.
@@ -36,7 +49,10 @@ export async function buildApkgClient(deckName: string, cards: Flashcard[]): Pro
         model,
         // For basic: fields[0] is Front, fields[1] is Back
         // For cloze: fields[0] is Text, fields[1] is Extra
-        fields: [card.front, card.back],
+        fields: [
+          translateAudioSpansToAnkiSoundTags(card.front, card.audios),
+          translateAudioSpansToAnkiSoundTags(card.back, card.audios),
+        ],
       })
     );
   }

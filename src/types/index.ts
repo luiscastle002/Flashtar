@@ -329,6 +329,7 @@ export interface SavedPrompt {
 }
 
 export interface CardAudio {
+  id?: string;
   side: "front" | "back";
   original_filename: string | null;
   normalized_filename: string | null;

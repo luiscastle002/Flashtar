@@ -1,6 +1,6 @@
 "use client";
 
-import { useEditor, EditorContent } from "@tiptap/react";
+import { useEditor, EditorContent, Editor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
 import Image from "@tiptap/extension-image";
@@ -15,6 +15,7 @@ import {
   Underline as UnderlineIcon,
   Palette,
   Eraser,
+  Volume2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,12 +25,21 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
+import { AudioExtension } from "./audio-extension";
+import type { CardAudio } from "@/types";
+import { AudioContext } from "./audio-context";
 
 interface RichTextEditorProps {
   content: string;
   onChange: (html: string) => void;
   placeholder?: string;
   className?: string;
+  audios?: CardAudio[];
+  onAudioClick?: (editor: Editor) => void;
+  onMoveSide?: (audioId: string, deleteNode: () => void) => void;
+  onDelete?: (audioId: string) => void;
+  editorRef?: React.MutableRefObject<Editor | null>;
 }
 
 const PREDEFINED_COLORS = [
@@ -43,7 +53,17 @@ const PREDEFINED_COLORS = [
 
 type ColorKey = "colors.black" | "colors.red" | "colors.blue" | "colors.green" | "colors.yellow" | "colors.purple";
 
-export function RichTextEditor({ content, onChange, placeholder, className }: RichTextEditorProps) {
+export function RichTextEditor({
+  content,
+  onChange,
+  placeholder,
+  className,
+  audios,
+  onAudioClick,
+  onMoveSide,
+  onDelete,
+  editorRef
+}: RichTextEditorProps) {
   const t = useTranslations("editor");
 
   const editor = useEditor({
@@ -54,6 +74,7 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
       Underline,
       TextStyle,
       Color,
+      AudioExtension,
     ],
     content,
     immediatelyRender: false,
@@ -66,6 +87,13 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
       },
     },
   });
+
+
+  useEffect(() => {
+    if (editorRef && editor) {
+      editorRef.current = editor;
+    }
+  }, [editor, editorRef]);
 
   function addImage() {
     const url = window.prompt(t("enter_image_url"));
@@ -206,6 +234,21 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
           <ImageIcon className="h-3.5 w-3.5" />
         </Button>
 
+        {/* 7. Audio link */}
+        {onAudioClick && (
+          <Button 
+            type="button" 
+            variant="ghost" 
+            size="icon" 
+            className="h-7 w-7" 
+            onClick={() => onAudioClick(editor)}
+            title={t("insert_audio")}
+            aria-label={t("insert_audio")}
+          >
+            <Volume2 className="h-3.5 w-3.5" />
+          </Button>
+        )}
+
         {/* 7. Clear Formatting */}
         <Button
           type="button"
@@ -219,7 +262,9 @@ export function RichTextEditor({ content, onChange, placeholder, className }: Ri
           <Eraser className="h-3.5 w-3.5" />
         </Button>
       </div>
-      <EditorContent editor={editor} />
+      <AudioContext.Provider value={{ audios: audios ?? [], onMoveSide, onDelete }}>
+        <EditorContent editor={editor} />
+      </AudioContext.Provider>
     </div>
   );
 }

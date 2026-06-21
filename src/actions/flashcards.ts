@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser } from "@/lib/queries/user";
+import { cleanOrphanedCardAudios } from "./audio";
 
 const flashcardSchema = z.object({
   front: z.string().min(1),
@@ -116,13 +117,22 @@ export async function reorderFlashcards(
 
 export async function bulkUpdateFlashcards(
   deckId: string,
-  cards: Array<{ id: string; front: string; back: string; card_type?: string }>
+  cards: Array<{ id: string; front: string; back: string; card_type?: string }>,
+  deletedAudioIds?: string[]
 ) {
   const user = await getCurrentUser();
   if (!user) return { error: "errors.auth.not_authenticated" };
   if (!(await verifyDeckOwnership(deckId, user.id))) return { error: "errors.decks.not_found" };
 
   const supabase = await createClient();
+
+  // 1. Process cleanOrphanedCardAudios for each card
+  const cleanupPromises = cards.map((card) =>
+    cleanOrphanedCardAudios(supabase, card.id, card.front, card.back, deletedAudioIds)
+  );
+  await Promise.all(cleanupPromises);
+
+  // 2. Perform updates to flashcards table
   const updates = cards.map((card, index) =>
     supabase
       .from("flashcards")
