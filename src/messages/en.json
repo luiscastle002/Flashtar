@@ -471,6 +471,7 @@
       "toggle_label": "Enable Audio Generation",
       "toggle_desc": "Automatically synthesize pronunciation audio for generated cards and upload to Google Drive.",
       "provider_label": "TTS Provider",
+      "provider_openai_only": "OpenAI TTS only",
       "voice_label": "TTS Voice",
       "placement_label": "Side Placement",
       "placement_front": "Front Side Only",

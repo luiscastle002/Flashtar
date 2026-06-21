@@ -472,6 +472,7 @@
       "toggle_label": "音声生成を有効にする",
       "toggle_desc": "生成されたカードの発音音声を自動合成し、Google ドライブにアップロードします。",
       "provider_label": "音声合成プロバイダー",
+      "provider_openai_only": "OpenAI TTS のみ",
       "voice_label": "音声ボイス",
       "placement_label": "再生する面",
       "placement_front": "問題面のみ",

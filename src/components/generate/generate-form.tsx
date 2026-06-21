@@ -197,7 +197,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
   const [audioEnabled, setAudioEnabled] = useState(false);
   const [audioVoice, setAudioVoice] = useState("alloy");
   const [audioPlacement, setAudioPlacement] = useState<"front" | "back" | "both">("back");
-  const [audioProvider, setAudioProvider] = useState("openai");
+  const [audioProvider] = useState("openai");
 
   // Custom instructions & Configuration Dialog states
   const [customInstructions, setCustomInstructions] = useState("");
@@ -1131,18 +1131,9 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                 <div className="grid grid-cols-2 gap-4 animate-in fade-in-50 duration-200">
                   <div className="space-y-2 text-left">
                     <Label>{t("audio.provider_label")}</Label>
-                    <Select value={audioProvider} onValueChange={(val) => {
-                      setAudioProvider(val);
-                      setAudioVoice(val === "openai" ? "alloy" : "en-US-Neural2-F");
-                    }}>
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="openai">OpenAI TTS</SelectItem>
-                        <SelectItem value="google-cloud">Google Cloud TTS</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <div className="h-10 w-full rounded-md border border-input bg-muted/50 px-3 py-2 text-sm text-muted-foreground flex items-center select-none font-medium">
+                      {t("audio.provider_openai_only")}
+                    </div>
                   </div>
 
                   <div className="space-y-2 text-left">
@@ -1152,24 +1143,12 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        {audioProvider === "openai" ? (
-                          <>
-                            <SelectItem value="alloy">Alloy (Neutral)</SelectItem>
-                            <SelectItem value="echo">Echo (Male)</SelectItem>
-                            <SelectItem value="fable">Fable (Narrator)</SelectItem>
-                            <SelectItem value="onyx">Onyx (Deep Male)</SelectItem>
-                            <SelectItem value="nova">Nova (Energetic Female)</SelectItem>
-                            <SelectItem value="shimmer">Shimmer (Professional)</SelectItem>
-                          </>
-                        ) : (
-                          <>
-                            <SelectItem value="en-US-Neural2-F">English (Female - Neural2)</SelectItem>
-                            <SelectItem value="en-US-Neural2-H">English (Male - Neural2)</SelectItem>
-                            <SelectItem value="es-ES-Neural2-F">Spanish (Female - Neural2)</SelectItem>
-                            <SelectItem value="pt-BR-Neural2-A">Portuguese (Female - Neural2)</SelectItem>
-                            <SelectItem value="ja-JP-Neural2-F">Japanese (Female - Neural2)</SelectItem>
-                          </>
-                        )}
+                        <SelectItem value="alloy">Alloy (Neutral)</SelectItem>
+                        <SelectItem value="echo">Echo (Male)</SelectItem>
+                        <SelectItem value="fable">Fable (Narrator)</SelectItem>
+                        <SelectItem value="onyx">Onyx (Deep Male)</SelectItem>
+                        <SelectItem value="nova">Nova (Energetic Female)</SelectItem>
+                        <SelectItem value="shimmer">Shimmer (Professional)</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>

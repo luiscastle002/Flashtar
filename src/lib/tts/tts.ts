@@ -76,91 +76,10 @@ export class OpenAiTtsProvider implements TtsProvider {
 }
 
 /**
- * GoogleCloudTtsProvider: Lightweight REST client for Google Cloud Text-to-Speech API.
- */
-export class GoogleCloudTtsProvider implements TtsProvider {
-  id = "google-cloud";
-
-  async generateAudio(
-    text: string,
-    voiceId: string,
-    language: string,
-    options?: TtsOptions
-  ): Promise<TtsResponse> {
-    const env = getServerEnv();
-    const apiKey = env.GOOGLE_CLOUD_API_KEY;
-    if (!apiKey) {
-      throw new Error("GOOGLE_CLOUD_API_KEY is not configured");
-    }
-
-    // Determine languageCode from voiceId (e.g. en-US-Neural2-F -> en-US)
-    let languageCode = language;
-    if (voiceId.includes("-")) {
-      const parts = voiceId.split("-");
-      if (parts.length >= 2) {
-        languageCode = `${parts[0]}-${parts[1]}`;
-      }
-    }
-
-    const inputPayload: Record<string, string> = {};
-    if (options?.useSsml) {
-      inputPayload.ssml = text.startsWith("<speak>") ? text : `<speak>${text}</speak>`;
-    } else {
-      inputPayload.text = text;
-    }
-
-    const audioEncoding = options?.audioFormat === "ogg" ? "OGG_OPUS" : "MP3";
-
-    const body = {
-      input: inputPayload,
-      voice: {
-        languageCode,
-        name: voiceId,
-      },
-      audioConfig: {
-        audioEncoding,
-        speakingRate: options?.speed ?? 1.0,
-        pitch: options?.pitch ?? 0.0,
-        sampleRateHertz: options?.sampleRate ?? 24000,
-      },
-    };
-
-    const response = await fetch(
-      `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      }
-    );
-
-    if (!response.ok) {
-      const err = await response.json();
-      console.error("Google Cloud TTS Error:", err);
-      throw new Error(err.error?.message || "Google Cloud TTS synthesis failed.");
-    }
-
-    const data = await response.json();
-    if (!data.audioContent) {
-      throw new Error("No audioContent returned by Google Cloud TTS API");
-    }
-
-    const buffer = Buffer.from(data.audioContent, "base64");
-    return {
-      audioBuffer: buffer,
-      format: options?.audioFormat || "mp3",
-      charactersCount: text.length,
-    };
-  }
-}
-
-/**
  * Factory getter for TTS Providers.
  */
 export function getTtsProvider(providerId: string): TtsProvider {
-  if (providerId === "google-cloud") {
-    return new GoogleCloudTtsProvider();
-  }
+  void providerId;
   return new OpenAiTtsProvider();
 }
 

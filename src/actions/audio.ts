@@ -10,7 +10,7 @@ export interface GenerateCardAudioParams {
   flashcardId: string;
   side: "front" | "back";
   text: string;
-  providerId: string; // "openai" | "google-cloud"
+  providerId: string; // "openai" only (Google Cloud TTS disabled)
   voiceId: string;
   language: string;
   options?: TtsOptions;
@@ -36,10 +36,21 @@ export async function generateCardAudioAction({
   const user = await getCurrentUser();
   if (!user) return { error: "errors.auth.not_authenticated" };
 
+  void providerId;
+
   const cleanText = stripHtml(text);
   if (!cleanText) return { success: false, reason: "Text is empty" };
 
-  console.log("[Audio] generateCardAudioAction: starting", { flashcardId, side, provider: providerId, voice: voiceId, textLength: cleanText.length });
+  // Enforce OpenAI TTS only
+  const effectiveProviderId = "openai";
+
+  console.log("[Audio] generateCardAudioAction: starting", { 
+    flashcardId, 
+    side, 
+    provider: "openai-tts", 
+    voice: voiceId, 
+    textLength: cleanText.length 
+  });
 
   const supabase = await createClient();
 
@@ -56,7 +67,7 @@ export async function generateCardAudioAction({
   }
 
   // 2. Generate cache hash for Content-Addressable Storage (CAS) check
-  const audioHash = generateAudioHash(cleanText, providerId, voiceId, language, options);
+  const audioHash = generateAudioHash(cleanText, effectiveProviderId, voiceId, language, options);
 
   // 3. Cache Check (Deduplication)
   const { data: existingFile } = await supabase
@@ -121,7 +132,7 @@ export async function generateCardAudioAction({
 
   // 6. Generate TTS Audio
   try {
-    const tts = getTtsProvider(providerId);
+    const tts = getTtsProvider(effectiveProviderId);
     const ttsRes = await tts.generateAudio(cleanText, voiceId, language, options);
     audioBuffer = ttsRes.audioBuffer;
     fileSize = audioBuffer.length;
@@ -270,7 +281,7 @@ export async function generateCardAudioAction({
     source_details: {
       flashcard_id: flashcardId,
       side,
-      provider: providerId,
+      provider: "openai-tts",
       voice: voiceId,
       language
     }
@@ -282,7 +293,8 @@ export async function generateCardAudioAction({
     uploaded: true,
     driveFileId: fileId,
     audioFileId: newFile.id,
-    mapped: true
+    mapped: true,
+    provider: "openai-tts"
   });
 
   return { success: true, cached: false, audioFileId: newFile.id };
