@@ -169,8 +169,8 @@ export function StudyCardListManager({
                     toast.error(res.error);
                   } else if (res.normalizedName && res.audioRef) {
                     handleUpdateAudio(editingCard.id, res.audioRef);
-                    // Focus and insert content
-                    editorInstance.chain().focus().insertContent({
+                    // Focus and insert content at end
+                    editorInstance.chain().focus().insertContentAt(editorInstance.state.doc.content.size, {
                       type: "audio",
                       attrs: {
                         audioId: res.audioRef.id,
@@ -736,7 +736,7 @@ export function StudyCardListManager({
                   onMoveSide={(audioId, deleteNode) => {
                     deleteNode();
                     if (backEditorRef.current) {
-                      backEditorRef.current.chain().focus().insertContent({
+                      backEditorRef.current.chain().focus().insertContentAt(backEditorRef.current.state.doc.content.size, {
                         type: "audio",
                         attrs: { audioId }
                       }).run();
@@ -757,7 +757,7 @@ export function StudyCardListManager({
                   onMoveSide={(audioId, deleteNode) => {
                     deleteNode();
                     if (frontEditorRef.current) {
-                      frontEditorRef.current.chain().focus().insertContent({
+                      frontEditorRef.current.chain().focus().insertContentAt(frontEditorRef.current.state.doc.content.size, {
                         type: "audio",
                         attrs: { audioId }
                       }).run();

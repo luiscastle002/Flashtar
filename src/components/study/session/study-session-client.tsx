@@ -87,7 +87,7 @@ interface SessionState {
 type SessionAction =
   | { type: "SET_FLIPPED"; isFlipped: boolean }
   | { type: "SET_SUBMITTING"; isSubmitting: boolean }
-  | { type: "EDIT_CARD"; cardId: string; front: string; back: string }
+  | { type: "EDIT_CARD"; cardId: string; front: string; back: string; audios?: CardAudio[] }
   | { type: "REMOVE_CARD"; cardId: string }
   | { type: "APPEND_CARDS"; cards: StudyCard[] }
   | { type: "RATE_CARD_SUCCESS"; rating: ConfidenceRating; isNewCard: boolean }
@@ -103,7 +103,7 @@ function sessionReducer(state: SessionState, action: SessionAction): SessionStat
       return {
         ...state,
         cards: state.cards.map((c) =>
-          c.id === action.cardId ? { ...c, front: action.front, back: action.back } : c
+          c.id === action.cardId ? { ...c, front: action.front, back: action.back, audios: action.audios ?? c.audios } : c
         ),
       };
     case "REMOVE_CARD": {
@@ -269,8 +269,8 @@ export function StudySessionClient({
                     toast.error(res.error);
                   } else if (res.normalizedName && res.audioRef) {
                     handleUpdateAudio(res.audioRef);
-                    // Focus and insert content
-                    editorInstance.chain().focus().insertContent({
+                    // Focus and insert content at end
+                    editorInstance.chain().focus().insertContentAt(editorInstance.state.doc.content.size, {
                       type: "audio",
                       attrs: {
                         audioId: res.audioRef.id,
@@ -363,11 +363,13 @@ export function StudySessionClient({
     const durationMs = Date.now() - cardStartRef.current;
 
     try {
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       const result = await submitReview({
         sessionId,
         cardId: currentCard.id,
         confidencePct,
         durationMs,
+        timezone,
       });
 
       if ("error" in result && result.error) {
@@ -407,6 +409,7 @@ export function StudySessionClient({
           cardId: currentCard.id,
           front: editFront,
           back: editBack,
+          audios: res.data?.audios,
         });
         toast.success(t("toast_edit_success"));
         setDeletedAudioIds([]);
@@ -461,7 +464,6 @@ export function StudySessionClient({
 
   async function handleFinish() {
     const durationMs = Date.now() - sessionStartRef.current;
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     await endStudySession(sessionId, {
       cardsStudied: state.stats.studied,
       cardsAgain: state.stats.again,
@@ -470,7 +472,7 @@ export function StudySessionClient({
       cardsEasy: state.stats.easy,
       newCardsSeen: state.stats.newSeen,
       durationMs,
-    }, timezone);
+    });
     router.push(`/study/${deckId}`);
     router.refresh();
   }
@@ -619,7 +621,7 @@ export function StudySessionClient({
                 onMoveSide={(audioId, deleteNode) => {
                   deleteNode();
                   if (backEditorRef.current) {
-                    backEditorRef.current.chain().focus().insertContent({
+                    backEditorRef.current.chain().focus().insertContentAt(backEditorRef.current.state.doc.content.size, {
                       type: "audio",
                       attrs: { audioId }
                     }).run();
@@ -640,7 +642,7 @@ export function StudySessionClient({
                 onMoveSide={(audioId, deleteNode) => {
                   deleteNode();
                   if (frontEditorRef.current) {
-                    frontEditorRef.current.chain().focus().insertContent({
+                    frontEditorRef.current.chain().focus().insertContentAt(frontEditorRef.current.state.doc.content.size, {
                       type: "audio",
                       attrs: { audioId }
                     }).run();

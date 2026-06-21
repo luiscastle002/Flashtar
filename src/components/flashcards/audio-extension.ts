@@ -13,7 +13,7 @@ export const AudioExtension = Node.create({
   group: "inline",
   inline: true,
   selectable: true,
-  draggable: true,
+  draggable: false,
   atom: true,
 
   addAttributes() {

@@ -960,6 +960,7 @@ export async function updateStudyCard(
   if (error) return { error: error.message };
 
   // 3. Propagate changes to master flashcard if source_flashcard_id exists
+  let updatedAudios: CardAudio[] = [];
   if (currentCard.source_flashcard_id) {
     const front = updates.front !== undefined ? updates.front : currentCard.front;
     const back = updates.back !== undefined ? updates.back : currentCard.back;
@@ -972,9 +973,31 @@ export async function updateStudyCard(
 
     // Run cheerio-based diffing / pruning on the master flashcard ID
     await cleanOrphanedCardAudios(supabase, currentCard.source_flashcard_id, front, back, deletedAudioIds);
+
+    // Fetch updated audio list
+    const { data: audios } = await supabase
+      .from("card_audios")
+      .select(`
+        id,
+        flashcard_id,
+        side,
+        original_filename,
+        normalized_filename,
+        audio_files (
+          file_id,
+          provider,
+          voice_id,
+          language,
+          duration_seconds
+        )
+      `)
+      .eq("flashcard_id", currentCard.source_flashcard_id);
+    if (audios) {
+      updatedAudios = audios as unknown as CardAudio[];
+    }
   }
 
-  return { data };
+  return { data: { ...data, audios: updatedAudios } };
 }
 
 // ---------------------------------------------------------------------------

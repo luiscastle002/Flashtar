@@ -140,8 +140,8 @@ function SortableCard({ card, index, onUpdate, onUpdateAudio, onDeleteAudio, onD
                     toast.error(res.error);
                   } else if (res.normalizedName && res.audioRef) {
                     onUpdateAudio(card.id, res.audioRef);
-                    // Insert node in Tiptap
-                    editorInstance.chain().focus().insertContent({
+                    // Insert node in Tiptap at end of content
+                    editorInstance.chain().focus().insertContentAt(editorInstance.state.doc.content.size, {
                       type: "audio",
                       attrs: {
                         audioId: res.audioRef.id,
@@ -215,7 +215,7 @@ function SortableCard({ card, index, onUpdate, onUpdateAudio, onDeleteAudio, onD
             onMoveSide={(audioId, deleteNode) => {
               deleteNode();
               if (backEditorRef.current) {
-                backEditorRef.current.chain().focus().insertContent({
+                backEditorRef.current.chain().focus().insertContentAt(backEditorRef.current.state.doc.content.size, {
                   type: "audio",
                   attrs: { audioId }
                 }).run();
@@ -238,7 +238,7 @@ function SortableCard({ card, index, onUpdate, onUpdateAudio, onDeleteAudio, onD
             onMoveSide={(audioId, deleteNode) => {
               deleteNode();
               if (frontEditorRef.current) {
-                frontEditorRef.current.chain().focus().insertContent({
+                frontEditorRef.current.chain().focus().insertContentAt(frontEditorRef.current.state.doc.content.size, {
                   type: "audio",
                   attrs: { audioId }
                 }).run();

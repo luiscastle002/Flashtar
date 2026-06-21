@@ -89,11 +89,13 @@ export async function submitReview({
   cardId,
   confidencePct,
   durationMs,
+  timezone,
 }: {
   sessionId: string;
   cardId: string;
   confidencePct: number;  // 0–100 from confidence bar
   durationMs: number;     // how long user spent on the card
+  timezone?: string;
 }) {
   const user = await getCurrentUser();
   if (!user) return { error: "errors.auth.not_authenticated" };
@@ -125,43 +127,130 @@ export async function submitReview({
   // Calculate new scheduling state (pure function — no DB)
   const result = scheduleCard(card as StudyCard, rating, settings);
 
-  // Persist: update study_card + insert review_log in parallel
-  const [updateResult, logResult] = await Promise.all([
-    supabase
-      .from("study_cards")
-      .update({
-        state: result.state,
-        due_at: result.due_at.toISOString(),
-        last_reviewed_at: new Date().toISOString(),
-        ease_factor: result.ease_factor,
-        interval_days: result.interval_days,
-        repetitions: result.repetitions,
-        lapse_count: result.lapse_count,
-        learning_step_index: result.learning_step_index,
+  // Fetch current session stats to update incrementally
+  const { data: session } = await supabase
+    .from("study_sessions")
+    .select("cards_studied, cards_again, cards_hard, cards_good, cards_easy, new_cards_seen, duration_ms")
+    .eq("id", sessionId)
+    .eq("user_id", user.id)
+    .single();
+
+  // Determine timezone-adjusted local date
+  let today = new Date().toISOString().split("T")[0];
+  if (timezone) {
+    try {
+      const formatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: timezone,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      });
+      const parts = formatter.formatToParts(new Date());
+      const year = parts.find((p) => p.type === "year")?.value;
+      const month = parts.find((p) => p.type === "month")?.value;
+      const day = parts.find((p) => p.type === "day")?.value;
+      if (year && month && day) {
+        today = `${year}-${month}-${day}`;
+      }
+    } catch (e) {
+      console.error("Error formatting date with timezone:", e);
+    }
+  }
+
+  const isNew = card.state === "new";
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const promises: Promise<any>[] = [
+    // 1. Update the study card
+    Promise.resolve(
+      supabase
+        .from("study_cards")
+        .update({
+          state: result.state,
+          due_at: result.due_at.toISOString(),
+          last_reviewed_at: new Date().toISOString(),
+          ease_factor: result.ease_factor,
+          interval_days: result.interval_days,
+          repetitions: result.repetitions,
+          lapse_count: result.lapse_count,
+          learning_step_index: result.learning_step_index,
+        })
+        .eq("id", cardId)
+        .eq("user_id", user.id)
+    ),
+
+    // 2. Insert the review log
+    Promise.resolve(
+      supabase.from("review_logs").insert({
+        study_card_id: cardId,
+        study_deck_id: card.study_deck_id,
+        user_id: user.id,
+        session_id: sessionId,
+        confidence_pct: confidencePct,
+        rating,
+        state_before: card.state,
+        state_after: result.state,
+        interval_before: card.interval_days,
+        interval_after: result.interval_days,
+        ease_before: card.ease_factor,
+        ease_after: result.ease_factor,
+        review_duration_ms: durationMs,
+        reviewed_at: new Date().toISOString(),
       })
-      .eq("id", cardId)
-      .eq("user_id", user.id),
+    ),
+  ];
 
-    supabase.from("review_logs").insert({
-      study_card_id: cardId,
-      study_deck_id: card.study_deck_id,
-      user_id: user.id,
-      session_id: sessionId,
-      confidence_pct: confidencePct,
-      rating,
-      state_before: card.state,
-      state_after: result.state,
-      interval_before: card.interval_days,
-      interval_after: result.interval_days,
-      ease_before: card.ease_factor,
-      ease_after: result.ease_factor,
-      review_duration_ms: durationMs,
-      reviewed_at: new Date().toISOString(),
-    }),
-  ]);
+  // 3. Update active session incrementally
+  if (session) {
+    const totalStudied = (session.cards_studied || 0) + 1;
+    const totalGood = (session.cards_good || 0) + (rating === "good" ? 1 : 0);
+    const totalEasy = (session.cards_easy || 0) + (rating === "easy" ? 1 : 0);
+    const retentionPct = Math.round(((totalGood + totalEasy) / totalStudied) * 100);
 
-  if (updateResult.error) return { error: updateResult.error.message };
-  if (logResult.error) return { error: logResult.error.message };
+    promises.push(
+      Promise.resolve(
+        supabase
+          .from("study_sessions")
+          .update({
+            cards_studied: totalStudied,
+            cards_again: (session.cards_again || 0) + (rating === "again" ? 1 : 0),
+            cards_hard: (session.cards_hard || 0) + (rating === "hard" ? 1 : 0),
+            cards_good: totalGood,
+            cards_easy: totalEasy,
+            new_cards_seen: (session.new_cards_seen || 0) + (isNew ? 1 : 0),
+            duration_ms: (session.duration_ms || 0) + durationMs,
+            retention_pct: retentionPct,
+          })
+          .eq("id", sessionId)
+          .eq("user_id", user.id)
+      )
+    );
+  }
+
+  // 4. Update daily statistics aggregates (Global and per-deck)
+  const statsCalls = [null, card.study_deck_id].map((deckId) =>
+    Promise.resolve(
+      supabase.rpc("increment_user_study_stats", {
+        p_user_id: user.id,
+        p_stat_date: today,
+        p_study_deck_id: deckId,
+        p_study_time_ms: durationMs,
+        p_cards_reviewed: 1,
+        p_cards_again: rating === "again" ? 1 : 0,
+        p_cards_hard: rating === "hard" ? 1 : 0,
+        p_cards_good: rating === "good" ? 1 : 0,
+        p_cards_easy: rating === "easy" ? 1 : 0,
+        p_new_cards_seen: isNew ? 1 : 0,
+        p_retention_pct: rating === "good" || rating === "easy" ? 100 : 0,
+      })
+    )
+  );
+
+  promises.push(...statsCalls);
+
+  const results = await Promise.all(promises);
+
+  if (results[0].error) return { error: results[0].error.message };
+  if (results[1].error) return { error: results[1].error.message };
 
   return { data: { rating, result } };
 }
@@ -180,8 +269,7 @@ export async function endStudySession(
     cardsEasy: number;
     newCardsSeen: number;
     durationMs: number;
-  },
-  timezone?: string
+  }
 ) {
   const user = await getCurrentUser();
   if (!user) return { error: "errors.auth.not_authenticated" };
@@ -213,48 +301,6 @@ export async function endStudySession(
     .single();
 
   if (sessionError || !session) return { error: sessionError?.message ?? "errors.study_decks.session_not_found" };
-
-  // Determine timezone-adjusted local date
-  let today = new Date().toISOString().split("T")[0];
-  if (timezone) {
-    try {
-      const formatter = new Intl.DateTimeFormat("en-US", {
-        timeZone: timezone,
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-      });
-      const parts = formatter.formatToParts(new Date());
-      const year = parts.find((p) => p.type === "year")?.value;
-      const month = parts.find((p) => p.type === "month")?.value;
-      const day = parts.find((p) => p.type === "day")?.value;
-      if (year && month && day) {
-        today = `${year}-${month}-${day}`;
-      }
-    } catch (e) {
-      console.error("Error formatting date with timezone:", e);
-    }
-  }
-
-  // Call the atomic increment RPC for both global (null) and per-deck stats
-  const calls = [null, session.study_deck_id].map((deckId) =>
-    supabase.rpc("increment_user_study_stats", {
-      p_user_id: user.id,
-      p_stat_date: today,
-      p_study_deck_id: deckId,
-      p_study_time_ms: stats.durationMs,
-      p_cards_reviewed: stats.cardsStudied,
-      p_cards_again: stats.cardsAgain,
-      p_cards_hard: stats.cardsHard,
-      p_cards_good: stats.cardsGood,
-      p_cards_easy: stats.cardsEasy,
-      p_new_cards_seen: stats.newCardsSeen,
-      p_retention_pct: retentionPct,
-    })
-  );
-
-  await Promise.all(calls);
-  // Note: upsert errors are non-fatal — stats are best-effort
 
   revalidatePath(`/study/${session.study_deck_id}`);
   revalidatePath("/study");
