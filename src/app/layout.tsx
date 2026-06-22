@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Changa } from "next/font/google";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { SpaceBackgroundProvider } from "@/components/shared/space-background-context";
@@ -9,6 +9,11 @@ import { getLocale, getMessages } from "next-intl/server";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const changa = Changa({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +39,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased relative min-h-screen`}>
+      <body className={`${inter.variable} ${changa.variable} font-sans antialiased relative min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages} now={now}>
           <ThemeProvider
             attribute="class"

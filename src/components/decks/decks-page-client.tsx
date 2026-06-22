@@ -102,8 +102,8 @@ export function DecksPageClient({ decks: initialDecks }: DecksPageClientProps) {
     <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold">{t("title")}</h1>
-            <p className="text-muted-foreground">{t("count_plural", { count: decks.length })}</p>
+            <h1 className="text-2xl md:text-3xl font-bold font-display uppercase tracking-wider">{t("title")}</h1>
+            <p className="text-xs text-muted-foreground font-display uppercase tracking-wider font-semibold">{t("count_plural", { count: decks.length })}</p>
           </div>
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
             <DialogTrigger asChild>
@@ -114,7 +114,7 @@ export function DecksPageClient({ decks: initialDecks }: DecksPageClientProps) {
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>{t("create_title")}</DialogTitle>
+                <DialogTitle className="font-display uppercase tracking-wider">{t("create_title")}</DialogTitle>
               </DialogHeader>
               <form action={handleCreate} className="space-y-4">
                 <div className="space-y-2">
@@ -172,9 +172,12 @@ export function DecksPageClient({ decks: initialDecks }: DecksPageClientProps) {
                 <Link href={`/decks/${deck.id}`}>
                   <CardHeader>
                     <CardTitle className="line-clamp-1">{deck.name}</CardTitle>
-                    <CardDescription>
-                      {t("editor.cards_count", { count: deck.flashcard_count ?? 0 })} ·{" "}
-                      {formatDate(deck.updated_at)}
+                    <CardDescription className="flex items-center gap-1.5 flex-wrap">
+                      <span className="font-display uppercase tracking-wider text-[10px] font-semibold">
+                        {t("editor.cards_count", { count: deck.flashcard_count ?? 0 })}
+                      </span>
+                      <span className="text-muted-foreground/60">·</span>
+                      <span>{formatDate(deck.updated_at)}</span>
                     </CardDescription>
                     {deck.description && (
                       <p className="text-sm text-muted-foreground line-clamp-2">{deck.description}</p>

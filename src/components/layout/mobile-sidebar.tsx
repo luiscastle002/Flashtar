@@ -40,7 +40,7 @@ export function MobileSidebar({ profile, dueCount }: MobileSidebarProps) {
       <Sheet open={isMobileOpen} onOpenChange={setMobileOpen}>
         <SheetContent side="left" className="w-[280px] p-6 flex flex-col gap-4">
           <SheetHeader className="text-left border-b pb-4">
-            <SheetTitle className="flex items-center gap-2 font-bold text-foreground">
+            <SheetTitle className="flex items-center gap-2 font-display uppercase tracking-widest font-extrabold text-foreground">
               <Sparkles className="h-5 w-5 text-primary" />
               Flashtar
             </SheetTitle>

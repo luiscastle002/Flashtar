@@ -25,34 +25,34 @@ export default async function DashboardPage() {
     <DashboardShell currentPath="/dashboard" profile={profile}>
       <div className="space-y-8">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold">{t("title")}</h1>
+          <h1 className="text-2xl md:text-3xl font-bold font-display uppercase tracking-wider">{t("title")}</h1>
           <p className="text-muted-foreground">{t("welcome")}</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <Card>
             <CardHeader className="pb-2">
-              <CardDescription className="flex items-center gap-2">
-                <Layers className="h-4 w-4" /> {t("total_decks")}
+              <CardDescription className="flex items-center gap-2 font-display uppercase tracking-wider text-[10px] font-semibold">
+                <Layers className="h-4 w-4 text-primary" /> {t("total_decks")}
               </CardDescription>
-              <CardTitle className="text-3xl">{stats?.totalDecks ?? 0}</CardTitle>
+              <CardTitle className="text-3xl font-display font-extrabold">{stats?.totalDecks ?? 0}</CardTitle>
             </CardHeader>
           </Card>
           <Card>
             <CardHeader className="pb-2">
-              <CardDescription className="flex items-center gap-2">
-                <Sparkles className="h-4 w-4" /> {t("total_cards")}
+              <CardDescription className="flex items-center gap-2 font-display uppercase tracking-wider text-[10px] font-semibold">
+                <Sparkles className="h-4 w-4 text-primary" /> {t("total_cards")}
               </CardDescription>
-              <CardTitle className="text-3xl">{stats?.totalFlashcards ?? 0}</CardTitle>
+              <CardTitle className="text-3xl font-display font-extrabold">{stats?.totalFlashcards ?? 0}</CardTitle>
             </CardHeader>
           </Card>
           <Card>
             <CardHeader className="pb-2">
-              <CardDescription>{t("ai_usage")}</CardDescription>
-              <CardTitle className="text-3xl">
+              <CardDescription className="font-display uppercase tracking-wider text-[10px] font-semibold">{t("ai_usage")}</CardDescription>
+              <CardTitle className="text-3xl font-display font-extrabold">
                 {stats?.monthlyGenerations ?? 0}
                 {stats?.generationLimit !== Infinity && (
-                  <span className="text-lg text-muted-foreground font-normal">
+                  <span className="text-lg text-muted-foreground font-display font-normal">
                     /{stats?.generationLimit}
                   </span>
                 )}
@@ -66,10 +66,10 @@ export default async function DashboardPage() {
           </Card>
           <Card>
             <CardHeader className="pb-2">
-              <CardDescription className="flex items-center gap-2">
-                <CreditCard className="h-4 w-4" /> {t("plan")}
+              <CardDescription className="flex items-center gap-2 font-display uppercase tracking-wider text-[10px] font-semibold">
+                <CreditCard className="h-4 w-4 text-primary" /> {t("plan")}
               </CardDescription>
-              <CardTitle className="text-3xl capitalize">{stats?.plan ?? "free"}</CardTitle>
+              <CardTitle className="text-3xl capitalize font-display font-extrabold">{stats?.plan ?? "free"}</CardTitle>
             </CardHeader>
             {stats?.plan === "free" && (
               <CardContent>
@@ -95,7 +95,7 @@ export default async function DashboardPage() {
 
         <div>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold">{t("recent_decks")}</h2>
+            <h2 className="text-xl font-semibold font-display uppercase tracking-wider">{t("recent_decks")}</h2>
             <Button variant="ghost" size="sm" asChild>
               <Link href="/decks">
                 {t("view_all_link")} <ArrowRight className="ml-1 h-4 w-4" />

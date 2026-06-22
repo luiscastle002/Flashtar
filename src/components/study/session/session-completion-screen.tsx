@@ -78,8 +78,8 @@ export function SessionCompletionScreen({
         </div>
 
         <div>
-          <h1 className="text-2xl font-bold">{t("complete_title")}</h1>
-          <p className="text-muted-foreground mt-1 text-sm">
+          <h1 className="text-2xl font-bold font-display uppercase tracking-wider">{t("complete_title")}</h1>
+          <p className="text-xs text-muted-foreground mt-1 font-display uppercase tracking-wider font-semibold">
             {t("complete_subtitle", { count: stats.studied })}
           </p>
         </div>
@@ -199,10 +199,10 @@ function StatCard({
         highlight && "text-green-600 dark:text-green-400"
       )}>
         {icon}
-        <span className="text-xs font-medium">{label}</span>
+        <span className="text-[10px] font-display uppercase tracking-wider font-semibold">{label}</span>
       </div>
       <p className={cn(
-        "text-xl font-bold",
+        "text-xl font-bold font-display tracking-tight",
         highlight && "text-green-600 dark:text-green-400"
       )}>
         {value}

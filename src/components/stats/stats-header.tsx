@@ -19,7 +19,7 @@ export async function StatsHeader({ summary, streak, deckName }: StatsHeaderProp
     <div className="space-y-6">
       {/* Scope Title */}
       <div>
-        <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-3">
+        <h1 className="text-2xl md:text-3xl font-bold font-display uppercase tracking-wider flex items-center gap-3">
           <BarChart3 className="h-7 w-7 text-primary" />
           {deckName ? deckName : t("global_stats")}
         </h1>
@@ -35,8 +35,8 @@ export async function StatsHeader({ summary, streak, deckName }: StatsHeaderProp
               <Brain className="h-5 w-5" />
             </div>
             <div>
-              <p className="text-xs text-muted-foreground">{t("total_studied")}</p>
-              <h3 className="text-lg md:text-xl font-bold mt-0.5 tabular-nums">
+              <p className="text-[10px] text-muted-foreground font-display uppercase tracking-wider font-semibold">{t("total_studied")}</p>
+              <h3 className="text-lg md:text-xl font-bold font-display tracking-tight mt-0.5 tabular-nums">
                 {summary.totalStudied}
               </h3>
             </div>
@@ -50,8 +50,8 @@ export async function StatsHeader({ summary, streak, deckName }: StatsHeaderProp
               <Clock className="h-5 w-5" />
             </div>
             <div>
-              <p className="text-xs text-muted-foreground">{t("total_time")}</p>
-              <h3 className="text-lg md:text-xl font-bold mt-0.5 tabular-nums">
+              <p className="text-[10px] text-muted-foreground font-display uppercase tracking-wider font-semibold">{t("total_time")}</p>
+              <h3 className="text-lg md:text-xl font-bold font-display tracking-tight mt-0.5 tabular-nums">
                 {timeString}
               </h3>
             </div>
@@ -65,8 +65,8 @@ export async function StatsHeader({ summary, streak, deckName }: StatsHeaderProp
               <Brain className="h-5 w-5 text-blue-500" />
             </div>
             <div>
-              <p className="text-xs text-muted-foreground">{t("retention")}</p>
-              <h3 className="text-lg md:text-xl font-bold mt-0.5 tabular-nums">
+              <p className="text-[10px] text-muted-foreground font-display uppercase tracking-wider font-semibold">{t("retention")}</p>
+              <h3 className="text-lg md:text-xl font-bold font-display tracking-tight mt-0.5 tabular-nums">
                 {summary.averageRetention}%
               </h3>
             </div>
@@ -80,11 +80,11 @@ export async function StatsHeader({ summary, streak, deckName }: StatsHeaderProp
               <Flame className="h-5 w-5 animate-pulse" />
             </div>
             <div>
-              <p className="text-xs text-muted-foreground">{t("streaks")}</p>
-              <h3 className="text-lg md:text-xl font-bold mt-0.5 tabular-nums">
+              <p className="text-[10px] text-muted-foreground font-display uppercase tracking-wider font-semibold">{t("streaks")}</p>
+              <h3 className="text-lg md:text-xl font-bold font-display tracking-tight mt-0.5 tabular-nums">
                 {t("streak_days", { count: streak.currentStreak })}
               </h3>
-              <p className="text-[10px] text-muted-foreground mt-0.5">
+              <p className="text-[9px] text-muted-foreground/80 font-display uppercase tracking-wider font-semibold mt-0.5">
                 {t("longest_streak")}: {t("streak_days", { count: streak.longestStreak })}
               </p>
             </div>

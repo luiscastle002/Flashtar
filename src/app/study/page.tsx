@@ -48,11 +48,11 @@ export default async function StudyPage() {
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-3">
+            <h1 className="text-2xl md:text-3xl font-bold font-display uppercase tracking-wider flex items-center gap-3">
               <BookOpen className="h-7 w-7 text-primary" />
               {t("title")}
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-xs text-muted-foreground mt-1 font-display uppercase tracking-wider font-semibold">
               {totalDue > 0
                 ? t("due_count_plural", { count: totalDue })
                 : t("all_caught_up")}
@@ -111,7 +111,7 @@ function EmptyState({
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mb-5">
           <BookOpen className="h-8 w-8 text-primary" />
         </div>
-        <h2 className="text-xl font-semibold mb-2">{t("no_decks_title")}</h2>
+        <h2 className="text-xl font-semibold font-display uppercase tracking-wider mb-2">{t("no_decks_title")}</h2>
         <p className="text-muted-foreground mb-6 max-w-sm mx-auto">
           {t("no_decks_desc")}
         </p>

@@ -745,7 +745,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
     <>
       <div className="max-w-2xl mx-auto space-y-6">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2">
+          <h1 className="text-2xl md:text-3xl font-bold font-display uppercase tracking-wider flex items-center gap-2">
             <Sparkles className="h-7 w-7 text-primary" />
             {t("title")}
           </h1>

@@ -47,7 +47,7 @@ export function StudyDeckCard({ deck }: StudyDeckCardProps) {
               )}
               <div className="min-w-0">
                 <p className="font-semibold leading-tight truncate">{deck.name}</p>
-                <p className="text-xs text-muted-foreground mt-0.5">
+                <p className="text-[10px] text-muted-foreground mt-0.5 font-display uppercase tracking-wider font-semibold">
                   {t("count_plural", { count: deck.card_count })}
                 </p>
               </div>
@@ -56,7 +56,7 @@ export function StudyDeckCard({ deck }: StudyDeckCardProps) {
             {hasDue ? (
               <Badge
                 variant="default"
-                className="shrink-0 text-xs font-bold min-w-[1.75rem] text-center"
+                className="shrink-0 text-xs font-bold font-display min-w-[1.75rem] text-center"
                 style={{ backgroundColor: deck.color, border: "none" }}
               >
                 {deck.due_count}
@@ -72,17 +72,17 @@ export function StudyDeckCard({ deck }: StudyDeckCardProps) {
           <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               {(deck.new_count ?? 0) > 0 && (
-                <span className="text-xs text-muted-foreground">
-                  {t("new_count", { count: deck.new_count ?? 0 })}
-                </span>
+                  <span className="text-[10px] text-muted-foreground font-display uppercase tracking-wider font-semibold">
+                    {t("new_count", { count: deck.new_count ?? 0 })}
+                  </span>
               )}
             </div>
             <Button
               size="sm"
-              variant={hasDue ? "default" : "ghost"}
+              variant={hasDue ? "default" : "outline"}
               className={cn(
                 "h-7 px-3 text-xs transition-all",
-                hasDue ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                hasDue ? "text-white hover:text-white" : "border-muted-foreground/30 text-muted-foreground hover:text-foreground"
               )}
               style={hasDue ? { backgroundColor: deck.color, border: "none" } : {}}
               onClick={(e) => {

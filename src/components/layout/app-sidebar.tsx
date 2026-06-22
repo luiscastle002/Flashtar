@@ -30,7 +30,7 @@ export function AppSidebar({ profile, dueCount }: AppSidebarProps) {
           isCollapsed ? "justify-center px-0" : "justify-start"
         )}
       >
-        <Link href="/dashboard" className="flex items-center gap-2 font-bold select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md">
+        <Link href="/dashboard" className="flex items-center gap-2 font-display uppercase tracking-widest font-extrabold select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md">
           <Sparkles className="h-5 w-5 text-primary shrink-0" />
           {!isCollapsed && (
             <span className="animate-in fade-in duration-300">Flashtar</span>
