@@ -67,7 +67,7 @@ function buildSystemPrompt(
 
 ${sourceContext}
 
-Generate exactly ${options.cardCount} high-quality flashcards.
+${options.cardCount === 0 ? "Generate a suitable number of high-quality flashcards based on the depth of the content, typically between 10 and 25 cards (do not exceed 35 cards)." : `Generate exactly ${options.cardCount} high-quality flashcards.`}
 
 Language: ${options.language}
 Difficulty: ${options.difficulty}

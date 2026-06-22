@@ -134,6 +134,8 @@
       "never_studied": "Never studied",
       "show_cards": "Show Cards",
       "hide_cards": "Hide Cards",
+      "auto_audio_on": "Auto Audio: ON",
+      "auto_audio_off": "Auto Audio: OFF",
       "cards_hidden_title": "🔒 Cards are hidden",
       "cards_hidden_desc": "Study this deck to reveal its content."
     },
@@ -395,6 +397,9 @@
     "mixed_type": "Mixed",
     "number_of_cards": "Number of Cards",
     "max_cards_plan": "Max {max} on your plan",
+    "let_ai_decide": "Let AI Decide",
+    "specify_number": "Specify Number",
+    "ai_decide_hint": "The AI will dynamically generate a suitable number of cards (up to {max}) based on the depth of your content.",
     "prompt_label": "Prompt",
     "prompt_placeholder": "Create a deck of 50 flashcards about JavaScript closures...",
     "configuration": "Configuration",

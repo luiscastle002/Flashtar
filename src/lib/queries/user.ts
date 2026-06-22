@@ -129,7 +129,8 @@ export async function canGenerateDeck(cardCount: number): Promise<{
   const plan = (subscription?.plan ?? "free") as Plan;
   const limits = PLAN_LIMITS[plan];
 
-  if (cardCount > limits.maxCardsPerDeck) {
+  const checkCount = cardCount === 0 ? 30 : cardCount;
+  if (checkCount > limits.maxCardsPerDeck) {
     return {
       allowed: false,
       reason: `Your ${plan} plan allows up to ${limits.maxCardsPerDeck} cards per deck.`,

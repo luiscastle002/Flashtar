@@ -13,6 +13,7 @@ import { ImportCsvButton } from "@/components/study/import-csv-button";
 import { ImportApkgButton } from "@/components/study/import-apkg-button";
 import { StudyCardListManager } from "@/components/study/study-card-list-manager";
 import { ToggleCardVisibilityButton } from "@/components/study/toggle-card-visibility-button";
+import { ToggleAutoAudioButton } from "@/components/study/toggle-auto-audio-button";
 import { RelativeTimeFormatter } from "@/components/study/relative-time-formatter";
 import type { DeckStudySettings, StudyCard, Plan } from "@/types";
 import { getDeckIconUrl } from "@/lib/utils/image";
@@ -77,6 +78,8 @@ export default async function StudyDeckPage({ params, searchParams }: StudyDeckP
   };
 
   const showCardPreview = deck.deck_study_settings?.show_card_preview ?? true;
+  const autoplayAudioFront = deck.deck_study_settings?.autoplay_audio_front ?? true;
+  const autoplayAudioBack = deck.deck_study_settings?.autoplay_audio_back ?? true;
 
   let cards: StudyCard[] = [];
   let totalCards = deck.card_count;
@@ -154,6 +157,11 @@ export default async function StudyDeckPage({ params, searchParams }: StudyDeckP
           </div>
           <div className="flex gap-2 items-center">
             <ToggleCardVisibilityButton deckId={deckId} currentVisible={showCardPreview} />
+            <ToggleAutoAudioButton
+              deckId={deckId}
+              autoplayAudioFront={autoplayAudioFront}
+              autoplayAudioBack={autoplayAudioBack}
+            />
             <Button variant="outline" size="sm" asChild>
               <Link href={`/study/${deckId}/settings`}>
                 <Settings className="h-4 w-4" />

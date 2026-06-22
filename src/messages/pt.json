@@ -134,6 +134,8 @@
       "never_studied": "Nunca estudado",
       "show_cards": "Mostrar Cartões",
       "hide_cards": "Ocultar Cartões",
+      "auto_audio_on": "Áudio Automático: LIGADO",
+      "auto_audio_off": "Áudio Automático: DESLIGADO",
       "cards_hidden_title": "🔒 Os cartões estão ocultos",
       "cards_hidden_desc": "Estude este baralho para revelar seu conteúdo."
     },
@@ -395,6 +397,9 @@
     "mixed_type": "Misto",
     "number_of_cards": "Número de Cartões",
     "max_cards_plan": "Máx. {max} no seu plano",
+    "let_ai_decide": "Deixar a IA decidir",
+    "specify_number": "Especificar número",
+    "ai_decide_hint": "A IA gerará dinamicamente um número adequado de cartões (até {max}) com base na profundidade do seu conteúdo.",
     "prompt_label": "Prompt",
     "prompt_placeholder": "Crie um baralho de 50 flashcards sobre closures no JavaScript...",
     "configuration": "Configuração",

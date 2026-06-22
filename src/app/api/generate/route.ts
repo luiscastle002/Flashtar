@@ -23,7 +23,7 @@ const generateSchema = z.object({
   url: z.string().url().max(2000).optional(),
   language: z.string().default("English"),
   difficulty: z.enum(["beginner", "intermediate", "advanced"]),
-  cardCount: z.number().int().min(1).max(50), // Cap at 50 max cards per request
+  cardCount: z.number().int().min(0).max(50), // Cap at 50 max cards per request, 0 = Let AI Decide
   cardType: z.enum(["basic", "cloze", "mixed"]),
   customInstructions: z.string().max(2000).optional(),
   audioEnabled: z.boolean().default(false),
@@ -84,7 +84,8 @@ export async function POST(request: Request) {
       files = formData.getAll("files") as File[];
       language = formData.get("language") as string || "English";
       difficulty = (formData.get("difficulty") as "beginner" | "intermediate" | "advanced") || "intermediate";
-      cardCount = parseInt(formData.get("cardCount") as string || "20", 10);
+      const rawCardCount = formData.get("cardCount") as string | null;
+      cardCount = rawCardCount === "auto" ? 0 : parseInt(rawCardCount || "0", 10);
       cardType = (formData.get("cardType") as "basic" | "cloze" | "mixed") || "basic";
       customInstructions = formData.get("customInstructions") as string || undefined;
       audioEnabled = formData.get("audioEnabled") === "true";

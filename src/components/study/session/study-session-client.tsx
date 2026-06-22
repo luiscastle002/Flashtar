@@ -554,6 +554,7 @@ export function StudySessionClient({
       {/* Card display */}
       <div className="flex-1 flex flex-col">
         <StudyCardDisplay
+          key={currentCard.id}
           card={currentCard}
           isFlipped={state.isFlipped}
           onFlip={handleFlip}

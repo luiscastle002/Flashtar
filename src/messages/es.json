@@ -134,6 +134,8 @@
       "never_studied": "Nunca estudiado",
       "show_cards": "Mostrar Tarjetas",
       "hide_cards": "Ocultar Tarjetas",
+      "auto_audio_on": "Audio automático: SÍ",
+      "auto_audio_off": "Audio automático: NO",
       "cards_hidden_title": "🔒 Las tarjetas están ocultas",
       "cards_hidden_desc": "Estudia esta baraja para revelar su contenido."
     },
@@ -395,6 +397,9 @@
     "mixed_type": "Mixta",
     "number_of_cards": "Número de Tarjetas",
     "max_cards_plan": "Máx. {max} en tu plan",
+    "let_ai_decide": "Dejar que la IA decida",
+    "specify_number": "Especificar número",
+    "ai_decide_hint": "La IA generará dinámicamente un número adecuado de tarjetas (hasta {max}) según la profundidad de tu contenido.",
     "prompt_label": "Indicación",
     "prompt_placeholder": "Crea una baraja de 50 tarjetas sobre closures en JavaScript...",
     "configuration": "Configuración",

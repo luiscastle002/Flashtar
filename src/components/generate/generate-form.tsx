@@ -190,7 +190,8 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
   const [url, setUrl] = useState("");
   const [language, setLanguage] = useState("English");
   const [difficulty, setDifficulty] = useState("intermediate");
-  const [cardCount, setCardCount] = useState(20);
+  const [specifyCardCount, setSpecifyCardCount] = useState(false);
+  const [customCardCount, setCustomCardCount] = useState(20);
   const [cardType, setCardType] = useState("basic");
 
   // Audio generation settings
@@ -404,8 +405,9 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       return;
     }
 
+    const currentCardCountValue = specifyCardCount ? customCardCount : 0;
     const maxCards = Math.min(limits.maxCardsPerDeck, 50);
-    if (cardCount > maxCards) {
+    if (specifyCardCount && customCardCount > maxCards) {
       toast.error(t("toast_plan_limit", { max: maxCards }));
       return;
     }
@@ -425,7 +427,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
           prompt, 
           language, 
           difficulty, 
-          cardCount, 
+          cardCount: currentCardCountValue, 
           cardType, 
           customInstructions,
           audioEnabled,
@@ -469,8 +471,9 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       return;
     }
 
+    const currentCardCountValue = specifyCardCount ? customCardCount : 0;
     const maxCards = Math.min(limits.maxCardsPerDeck, 50);
-    if (cardCount > maxCards) {
+    if (specifyCardCount && customCardCount > maxCards) {
       toast.error(t("toast_plan_limit", { max: maxCards }));
       return;
     }
@@ -491,7 +494,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       });
       formData.append("language", language);
       formData.append("difficulty", difficulty);
-      formData.append("cardCount", cardCount.toString());
+      formData.append("cardCount", currentCardCountValue.toString());
       formData.append("cardType", cardType);
       if (customInstructions) {
         formData.append("customInstructions", customInstructions);
@@ -526,8 +529,9 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       return;
     }
 
+    const currentCardCountValue = specifyCardCount ? customCardCount : 0;
     const maxCards = Math.min(limits.maxCardsPerDeck, 50);
-    if (cardCount > maxCards) {
+    if (specifyCardCount && customCardCount > maxCards) {
       toast.error(t("toast_plan_limit", { max: maxCards }));
       return;
     }
@@ -545,7 +549,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       formData.append("url", url);
       formData.append("language", language);
       formData.append("difficulty", difficulty);
-      formData.append("cardCount", cardCount.toString());
+      formData.append("cardCount", currentCardCountValue.toString());
       formData.append("cardType", cardType);
       if (customInstructions) {
         formData.append("customInstructions", customInstructions);
@@ -689,17 +693,50 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="cardCount">{t("number_of_cards")}</Label>
-        <Input
-          id="cardCount"
-          type="number"
-          min={1}
-          max={limits.maxCardsPerDeck}
-          value={cardCount}
-          onChange={(e) => setCardCount(Number(e.target.value))}
-          disabled={loading}
-        />
-        <p className="text-xs text-muted-foreground">{t("max_cards_plan", { max: limits.maxCardsPerDeck })}</p>
+        <Label>{t("number_of_cards")}</Label>
+        <div className="flex gap-4 items-center h-10">
+          <label className="flex items-center gap-2 text-sm font-medium cursor-pointer">
+            <input
+              type="radio"
+              name="cardCountType"
+              checked={!specifyCardCount}
+              onChange={() => setSpecifyCardCount(false)}
+              disabled={loading}
+              className="h-4 w-4 text-primary accent-primary border-border focus:ring-primary cursor-pointer"
+            />
+            {t("let_ai_decide")}
+          </label>
+          <label className="flex items-center gap-2 text-sm font-medium cursor-pointer">
+            <input
+              type="radio"
+              name="cardCountType"
+              checked={specifyCardCount}
+              onChange={() => setSpecifyCardCount(true)}
+              disabled={loading}
+              className="h-4 w-4 text-primary accent-primary border-border focus:ring-primary cursor-pointer"
+            />
+            {t("specify_number")}
+          </label>
+        </div>
+        {specifyCardCount ? (
+          <div className="pt-1 space-y-1.5 animate-in fade-in slide-in-from-top-1 duration-200">
+            <Input
+              id="cardCount"
+              type="number"
+              min={1}
+              max={limits.maxCardsPerDeck}
+              value={customCardCount}
+              onChange={(e) => setCustomCardCount(Number(e.target.value))}
+              disabled={loading}
+              className="max-w-[120px]"
+            />
+            <p className="text-xs text-muted-foreground">{t("max_cards_plan", { max: limits.maxCardsPerDeck })}</p>
+          </div>
+        ) : (
+          <p className="text-xs text-muted-foreground pt-1.5 leading-relaxed">
+            {t("ai_decide_hint", { max: Math.min(limits.maxCardsPerDeck, 35) })}
+          </p>
+        )}
       </div>
     </div>
   );

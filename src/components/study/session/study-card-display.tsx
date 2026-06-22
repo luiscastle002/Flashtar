@@ -1,13 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Flag, Volume2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { updateStudyCard } from "@/actions/imports";
-import type { StudyCard } from "@/types";
+import type { StudyCard, CardAudio } from "@/types";
 import { cn } from "@/lib/utils";
+
+interface CustomWindow extends Window {
+  playFlashtarAudio?: (url: string) => void;
+}
 
 interface StudyCardDisplayProps {
   card: StudyCard;
@@ -33,31 +37,85 @@ export function StudyCardDisplay({
     setFlagged(card.is_flagged);
   }, [card.is_flagged]);
 
+  const activeAudioRef = useRef<HTMLAudioElement | null>(null);
+
+  const playAudioSequence = (audios: CardAudio[]) => {
+    // Stop currently playing
+    if (activeAudioRef.current) {
+      activeAudioRef.current.pause();
+      activeAudioRef.current = null;
+    }
+    
+    const playNext = (index: number) => {
+      if (index >= audios.length) return;
+      const fileId = audios[index].audio_files?.file_id;
+      if (!fileId) {
+        playNext(index + 1);
+        return;
+      }
+      const url = `/api/integrations/google/audio/${fileId}?v=${new Date(card.updated_at).getTime()}`;
+      const audio = new Audio(url);
+      activeAudioRef.current = audio;
+      audio.play().then(() => {
+        audio.onended = () => playNext(index + 1);
+      }).catch(e => {
+        console.error("Autoplay failed:", e);
+        playNext(index + 1);
+      });
+    };
+    playNext(0);
+  };
+
+  const handleManualPlay = (url: string) => {
+    if ((window as CustomWindow).playFlashtarAudio) {
+      (window as CustomWindow).playFlashtarAudio!(url);
+    } else {
+      if (activeAudioRef.current) {
+        activeAudioRef.current.pause();
+        activeAudioRef.current = null;
+      }
+      const audio = new Audio(url);
+      activeAudioRef.current = audio;
+      audio.play().catch((err) => console.error("Error playing audio:", err));
+    }
+  };
+
+  // Setup window hook to capture manual play events and ensure they stop autoplays/previous audios
+  useEffect(() => {
+    (window as CustomWindow).playFlashtarAudio = (url: string) => {
+      if (activeAudioRef.current) {
+        activeAudioRef.current.pause();
+        activeAudioRef.current = null;
+      }
+      const audio = new Audio(url);
+      activeAudioRef.current = audio;
+      audio.play().catch((e) => console.error("Manual play failed:", e));
+    };
+
+    return () => {
+      if (activeAudioRef.current) {
+        activeAudioRef.current.pause();
+        activeAudioRef.current = null;
+      }
+      delete (window as CustomWindow).playFlashtarAudio;
+    };
+  }, []);
+
   // Autoplay front audio when card changes
   useEffect(() => {
     if (!autoplayAudioFront) return;
-    
     const frontAudios = card.audios?.filter((a) => a.side === "front") || [];
-    if (frontAudios.length > 0 && frontAudios[0].audio_files?.file_id) {
-      const fileId = frontAudios[0].audio_files.file_id;
-      const url = `/api/integrations/google/audio/${fileId}?v=${new Date(card.updated_at).getTime()}`;
-      const audio = new Audio(url);
-      audio.play().catch((e) => console.error("Autoplay front audio failed:", e));
-    }
-  }, [card.id, autoplayAudioFront, card.updated_at, card.audios]);
+    playAudioSequence(frontAudios);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [card.id, autoplayAudioFront]);
 
   // Autoplay back audio when card is flipped
   useEffect(() => {
     if (!isFlipped || !autoplayAudioBack) return;
-    
     const backAudios = card.audios?.filter((a) => a.side === "back") || [];
-    if (backAudios.length > 0 && backAudios[0].audio_files?.file_id) {
-      const fileId = backAudios[0].audio_files.file_id;
-      const url = `/api/integrations/google/audio/${fileId}?v=${new Date(card.updated_at).getTime()}`;
-      const audio = new Audio(url);
-      audio.play().catch((e) => console.error("Autoplay back audio failed:", e));
-    }
-  }, [card.id, isFlipped, autoplayAudioBack, card.updated_at, card.audios]);
+    playAudioSequence(backAudios);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [card.id, isFlipped, autoplayAudioBack]);
 
   async function handleFlag() {
     const newValue = !flagged;
@@ -81,7 +139,7 @@ export function StudyCardDisplay({
         
         return `<button 
           class="inline-flex items-center justify-center p-1.5 rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition mx-1 align-middle cursor-pointer" 
-          onclick="event.stopPropagation(); const a = new Audio('${url}'); a.play().catch(e => console.error(e))" 
+          onclick="event.stopPropagation(); if (window.playFlashtarAudio) { window.playFlashtarAudio('${url}'); } else { new Audio('${url}').play().catch(e => console.error(e)); }" 
           title="Play ${filename}"
           type="button"
         >
@@ -106,7 +164,7 @@ export function StudyCardDisplay({
         
         return `<button 
           class="inline-flex items-center justify-center p-1.5 rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition mx-1 align-middle cursor-pointer" 
-          onclick="event.stopPropagation(); const a = new Audio('${url}'); a.play().catch(e => console.error(e))" 
+          onclick="event.stopPropagation(); if (window.playFlashtarAudio) { window.playFlashtarAudio('${url}'); } else { new Audio('${url}').play().catch(e => console.error(e)); }" 
           title="Play ${filename}"
           type="button"
         >
@@ -140,8 +198,7 @@ export function StudyCardDisplay({
         className="h-8 w-8 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition mx-auto mt-4"
         onClick={(e) => {
           e.stopPropagation();
-          const audio = new Audio(url);
-          audio.play().catch((err) => console.error("Error playing audio:", err));
+          handleManualPlay(url);
         }}
         type="button"
       >
@@ -204,8 +261,8 @@ export function StudyCardDisplay({
                     e.stopPropagation();
                     const frontAudios = card.audios?.filter((a) => a.side === "front") || [];
                     if (frontAudios[0]?.audio_files?.file_id) {
-                      const audio = new Audio(`/api/integrations/google/audio/${frontAudios[0].audio_files.file_id}?v=${new Date(card.updated_at).getTime()}`);
-                      audio.play().catch((err) => console.error(err));
+                      const url = `/api/integrations/google/audio/${frontAudios[0].audio_files.file_id}?v=${new Date(card.updated_at).getTime()}`;
+                      handleManualPlay(url);
                     }
                   }}
                   type="button"

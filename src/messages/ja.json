@@ -134,6 +134,8 @@
       "never_studied": "未学習",
       "show_cards": "カードを表示",
       "hide_cards": "カードを非表示",
+      "auto_audio_on": "音声自動再生: ON",
+      "auto_audio_off": "音声自動再生: OFF",
       "cards_hidden_title": "🔒 カードは非表示です",
       "cards_hidden_desc": "このデックを学習してコンテンツを表示します。"
     },
@@ -396,6 +398,9 @@
     "mixed_type": "混合形式",
     "number_of_cards": "カード枚数",
     "max_cards_plan": "現在のプランの上限: {max}枚",
+    "let_ai_decide": "AIに任せる",
+    "specify_number": "枚数を指定する",
+    "ai_decide_hint": "コンテンツの深さに応じて、AIが自動的に適切な枚数のカードを生成します（最大{max}枚）。",
     "prompt_label": "プロンプト",
     "prompt_placeholder": "JavaScriptのクロージャに関する暗記カードを50枚作成して...",
     "configuration": "詳細設定",
