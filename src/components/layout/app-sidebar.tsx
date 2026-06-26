@@ -20,17 +20,20 @@ export function AppSidebar({ profile, dueCount }: AppSidebarProps) {
     <aside
       className={cn(
         "hidden md:flex flex-col border-r bg-card/85 backdrop-blur-sm transition-all duration-300 ease-in-out shrink-0 select-none",
-        isCollapsed ? "w-16" : "w-64"
+        isCollapsed ? "w-16" : "w-64",
       )}
     >
       {/* Sidebar Header (Logo) */}
       <div
         className={cn(
           "h-16 flex items-center border-b px-6 transition-all duration-300",
-          isCollapsed ? "justify-center px-0" : "justify-start"
+          isCollapsed ? "justify-center px-0" : "justify-start",
         )}
       >
-        <Link href="/dashboard" className="flex items-center gap-2 font-display uppercase tracking-widest font-extrabold select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md">
+        <Link
+          href="/dashboard"
+          className="flex items-center gap-2 font-display uppercase tracking-widest font-extrabold select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
+        >
           <Sparkles className="h-5 w-5 text-primary shrink-0" />
           {!isCollapsed && (
             <span className="animate-in fade-in duration-300">Flashtar</span>
@@ -47,12 +50,12 @@ export function AppSidebar({ profile, dueCount }: AppSidebarProps) {
       <div
         className={cn(
           "p-3 border-t flex transition-all duration-300",
-          isCollapsed ? "justify-center" : "justify-between items-center"
+          isCollapsed ? "justify-center" : "justify-between items-center",
         )}
       >
         {!isCollapsed && (
           <span className="text-[10px] text-muted-foreground/60 select-none animate-in fade-in duration-300">
-            Flashtar v0.1.0
+            Flashtar v1.0.0
           </span>
         )}
         <SidebarToggle className="h-8 w-8" />
