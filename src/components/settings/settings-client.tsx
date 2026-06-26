@@ -10,12 +10,10 @@ import { Label } from "@/components/ui/label";
 import { PLANS } from "@/lib/stripe";
 import { toast } from "sonner";
 import type { Profile, Subscription } from "@/types";
-import { env } from "@/lib/env";
-import { initializePaddle, type Paddle } from "@paddle/paddle-js";
-import { getPaddleUpdateTx, cancelPaddleSubscription } from "@/actions/paddle";
 import { createClient } from "@/lib/supabase/client";
 import { changePassword, changeEmail } from "@/actions/auth";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { compressToIcon, getProfileAvatarDisplayUrl } from "@/lib/utils/image";
 import { updateProfileAvatar, resetToGoogleAvatar, getGoogleAvatar, updatePreferredLanguage } from "@/actions/profile";
@@ -96,8 +94,6 @@ export function SettingsClient({
     }
   };
 
-  const [loading, setLoading] = useState<"checkout" | "portal" | null>(null);
-  const [paddle, setPaddle] = useState<Paddle | null>(null);
   const plan = subscription?.plan ?? "free";
   const planInfo = PLANS[plan];
 
@@ -238,6 +234,8 @@ export function SettingsClient({
   }
 
   useEffect(() => {
+    // Paddle SDK initialization commented out to hide Paddle scripts from settings UI
+    /*
     if (env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN) {
       initializePaddle({
         environment: env.NEXT_PUBLIC_PADDLE_ENV,
@@ -246,6 +244,7 @@ export function SettingsClient({
         if (p) setPaddle(p);
       });
     }
+    */
 
     const supabase = createClient();
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -256,104 +255,6 @@ export function SettingsClient({
       setCheckingUser(false);
     });
   }, []);
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async function handleCheckout() {
-    setLoading("checkout");
-    try {
-      const res = await fetch("/api/stripe/checkout", { method: "POST" });
-      const data = await res.json();
-      if (data.url) window.location.href = data.url;
-      else toast.error(translateError(data.error, tRoot) || t("toast.stripe_checkout_failed"));
-    } catch {
-      toast.error(t("toast.stripe_checkout_failed"));
-    } finally {
-      setLoading(null);
-    }
-  }
-
-  async function handlePaddleCheckout() {
-    if (!paddle) {
-      toast.error(t("toast.billing_initializing"));
-      return;
-    }
-    if (!env.NEXT_PUBLIC_PADDLE_PRICE_ID) {
-      toast.error(t("toast.paddle_missing_price"));
-      return;
-    }
-    setLoading("checkout");
-    try {
-      paddle.Checkout.open({
-        items: [{ priceId: env.NEXT_PUBLIC_PADDLE_PRICE_ID, quantity: 1 }],
-        customData: { userId: profile?.id },
-      });
-    } catch (error) {
-      console.error("Paddle checkout failed:", error);
-      toast.error(t("toast.paddle_checkout_failed"));
-    } finally {
-      setLoading(null);
-    }
-  }
-
-  async function handlePortal() {
-    setLoading("portal");
-    try {
-      const res = await fetch("/api/stripe/portal", { method: "POST" });
-      const data = await res.json();
-      if (data.url) window.location.href = data.url;
-      else toast.error(translateError(data.error, tRoot) || t("toast.stripe_portal_failed"));
-    } catch {
-      toast.error(t("toast.stripe_portal_failed"));
-    } finally {
-      setLoading(null);
-    }
-  }
-
-  const [canceling, setCanceling] = useState(false);
-
-  async function handlePaddleCancel() {
-    if (!window.confirm(t("toast.cancel_confirm"))) return;
-    setCanceling(true);
-    try {
-      const res = await cancelPaddleSubscription();
-      if (res.error) {
-        toast.error(translateError(res.error, tRoot));
-      } else {
-        toast.success(t("toast.cancel_success"));
-      }
-    } catch {
-      toast.error(tRoot("errors.billing.cancel_failed"));
-    } finally {
-      setCanceling(false);
-    }
-  }
-
-  async function handlePaddlePortal() {
-    if (!paddle) {
-      toast.error(t("toast.billing_initializing"));
-      return;
-    }
-    setLoading("portal");
-    try {
-      const res = await getPaddleUpdateTx();
-      if (res.error) {
-        toast.error(translateError(res.error, tRoot));
-        return;
-      }
-      if (res.transactionId) {
-        paddle.Checkout.open({
-          transactionId: res.transactionId,
-        });
-      } else {
-        toast.error(t("toast.stripe_portal_failed"));
-      }
-    } catch (error) {
-      console.error("Paddle portal failed:", error);
-      toast.error(t("toast.stripe_portal_failed"));
-    } finally {
-      setLoading(null);
-    }
-  }
 
   async function handleEmailChange(e: React.FormEvent) {
     e.preventDefault();
@@ -947,28 +848,13 @@ export function SettingsClient({
               ))}
             </ul>
             {plan === "free" ? (
-              <div className="flex flex-wrap gap-2">
-                <Button onClick={handlePaddleCheckout} disabled={loading === "checkout"}>
-                  {loading === "checkout" ? tRoot("common.loading") : t("upgrade_pro_button", { price: 12 })}
-                </Button>
-              </div>
+              <Button asChild>
+                <Link href="/plan">{tRoot("dashboard.upgrade_pro")}</Link>
+              </Button>
             ) : (
-              <div className="flex flex-col gap-2">
-                {subscription?.billing_provider === "paddle" ? (
-                  <>
-                    <Button onClick={handlePaddlePortal} disabled={loading === "portal"}>
-                      {loading === "portal" ? tRoot("common.loading") : t("update_payment_paddle")}
-                    </Button>
-                    <Button variant="destructive" onClick={handlePaddleCancel} disabled={canceling}>
-                      {canceling ? tRoot("common.deleting") : t("cancel_subscription")}
-                    </Button>
-                  </>
-                ) : (
-                  <Button variant="outline" onClick={handlePortal} disabled={loading === "portal"}>
-                    {loading === "portal" ? tRoot("common.loading") : t("manage_subscription_stripe")}
-                  </Button>
-                )}
-              </div>
+              <Button variant="outline" asChild>
+                <Link href="/plan">{t("manage_subscription")}</Link>
+              </Button>
             )}
           </CardContent>
         </Card>

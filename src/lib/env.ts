@@ -7,6 +7,9 @@ const clientEnvSchema = z.object({
   NEXT_PUBLIC_PADDLE_CLIENT_TOKEN: z.string().optional(),
   NEXT_PUBLIC_PADDLE_PRICE_ID: z.string().optional(),
   NEXT_PUBLIC_PADDLE_ENV: z.enum(["sandbox", "production"]).default("sandbox"),
+  NEXT_PUBLIC_PAYPAL_CLIENT_ID: z.string().optional(),
+  NEXT_PUBLIC_PAYPAL_PRO_PLAN_ID: z.string().optional(),
+  NEXT_PUBLIC_PAYPAL_ENV: z.enum(["sandbox", "production"]).default("sandbox"),
   NEXT_PUBLIC_APP_URL: z.string().url().default("http://localhost:3000"),
 });
 
@@ -16,8 +19,16 @@ const serverEnvSchema = clientEnvSchema.extend({
   STRIPE_SECRET_KEY: z.string().min(1).optional(),
   STRIPE_WEBHOOK_SECRET: z.string().min(1).optional(),
   STRIPE_PRO_PRICE_ID: z.string().min(1).optional(),
+  STRIPE_PRO_MONTHLY_PRICE_ID: z.string().min(1).optional(),
+  STRIPE_PRO_ANNUAL_PRICE_ID: z.string().min(1).optional(),
   PADDLE_API_KEY: z.string().min(1).optional(),
   PADDLE_WEBHOOK_SECRET_KEY: z.string().min(1).optional(),
+  PADDLE_PRO_MONTHLY_PRICE_ID: z.string().min(1).optional(),
+  PADDLE_PRO_ANNUAL_PRICE_ID: z.string().min(1).optional(),
+  PAYPAL_CLIENT_SECRET: z.string().min(1).optional(),
+  PAYPAL_WEBHOOK_ID: z.string().min(1).optional(),
+  PAYPAL_PRO_MONTHLY_PLAN_ID: z.string().min(1).optional(),
+  PAYPAL_PRO_ANNUAL_PLAN_ID: z.string().min(1).optional(),
   ADMIN_EMAILS: z.string().optional(),
   GOOGLE_CLIENT_ID: z.string().min(1).optional(),
   GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
@@ -30,14 +41,15 @@ export type ServerEnv = z.infer<typeof serverEnvSchema>;
 
 function parseClientEnv(): ClientEnv {
   const values = {
-    NEXT_PUBLIC_SUPABASE_URL:
-      process.env.NEXT_PUBLIC_SUPABASE_URL ?? "https://placeholder.supabase.co",
-    NEXT_PUBLIC_SUPABASE_ANON_KEY:
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "placeholder-anon-key",
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
     NEXT_PUBLIC_PADDLE_CLIENT_TOKEN: process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN,
     NEXT_PUBLIC_PADDLE_PRICE_ID: process.env.NEXT_PUBLIC_PADDLE_PRICE_ID,
     NEXT_PUBLIC_PADDLE_ENV: process.env.NEXT_PUBLIC_PADDLE_ENV,
+    NEXT_PUBLIC_PAYPAL_CLIENT_ID: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+    NEXT_PUBLIC_PAYPAL_PRO_PLAN_ID: process.env.NEXT_PUBLIC_PAYPAL_PRO_PLAN_ID,
+    NEXT_PUBLIC_PAYPAL_ENV: process.env.NEXT_PUBLIC_PAYPAL_ENV,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
   };
 
@@ -60,8 +72,16 @@ export function getServerEnv(): ServerEnv {
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
     STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
     STRIPE_PRO_PRICE_ID: process.env.STRIPE_PRO_PRICE_ID,
+    STRIPE_PRO_MONTHLY_PRICE_ID: process.env.STRIPE_PRO_MONTHLY_PRICE_ID,
+    STRIPE_PRO_ANNUAL_PRICE_ID: process.env.STRIPE_PRO_ANNUAL_PRICE_ID,
     PADDLE_API_KEY: process.env.PADDLE_API_KEY,
     PADDLE_WEBHOOK_SECRET_KEY: process.env.PADDLE_WEBHOOK_SECRET_KEY,
+    PADDLE_PRO_MONTHLY_PRICE_ID: process.env.PADDLE_PRO_MONTHLY_PRICE_ID,
+    PADDLE_PRO_ANNUAL_PRICE_ID: process.env.PADDLE_PRO_ANNUAL_PRICE_ID,
+    PAYPAL_CLIENT_SECRET: process.env.PAYPAL_CLIENT_SECRET,
+    PAYPAL_WEBHOOK_ID: process.env.PAYPAL_WEBHOOK_ID,
+    PAYPAL_PRO_MONTHLY_PLAN_ID: process.env.PAYPAL_PRO_MONTHLY_PLAN_ID,
+    PAYPAL_PRO_ANNUAL_PLAN_ID: process.env.PAYPAL_PRO_ANNUAL_PLAN_ID,
     ADMIN_EMAILS: process.env.ADMIN_EMAILS,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,

@@ -64,12 +64,16 @@ export async function POST(request: Request) {
         subscription.items.data[0]?.current_period_end ??
         subscription.billing_cycle_anchor;
 
+      const stripeInterval = subscription.items.data[0]?.plan?.interval;
+      const billingInterval = stripeInterval === "year" ? "annual" : "monthly";
+
       await supabase
         .from("subscriptions")
         .update({
           stripe_subscription_id: subscription.id,
           plan: isActive ? "pro" : "free",
           status: subscription.status as "active" | "canceled" | "past_due" | "trialing" | "inactive",
+          billing_interval: billingInterval,
           current_period_end: periodEnd
             ? new Date(periodEnd * 1000).toISOString()
             : null,

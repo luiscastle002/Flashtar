@@ -86,7 +86,7 @@ export default async function StudyPage() {
             </CardHeader>
             <CardContent>
               <Button size="sm" asChild>
-                <Link href="/settings">
+                <Link href="/plan">
                   {t("upgrade_pro")} <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
                 </Link>
               </Button>

@@ -1,5 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
-import type { DashboardStats, Plan, SubscriptionStatus } from "@/types";
+import type { DashboardStats, Plan, SubscriptionStatus, Subscription } from "@/types";
 import { PLAN_LIMITS } from "@/types";
 
 export async function getCurrentUser() {
@@ -53,12 +53,32 @@ export async function getSubscription(userId: string) {
   return data;
 }
 
+export async function getBillingCycleBoundaries(userId: string, subscription?: Subscription | null) {
+  const sub = subscription || await getSubscription(userId);
+  const plan = sub?.plan ?? "free";
+
+  if (plan === "free" || !sub?.current_period_start || !sub?.current_period_end) {
+    const now = new Date();
+    const periodStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
+    const periodEnd = new Date(now.getFullYear(), now.getMonth() + 1, 1).toISOString();
+    return { periodStart, periodEnd };
+  }
+
+  return {
+    periodStart: new Date(sub.current_period_start).toISOString(),
+    periodEnd: new Date(sub.current_period_end).toISOString(),
+  };
+}
+
 export async function getDashboardStats(): Promise<DashboardStats | null> {
   const supabase = await createClient();
   const user = await getCurrentUser();
   if (!user) return null;
 
-  const [decksResult, flashcardsResult, generationsResult, subscription] = await Promise.all([
+  const subscription = await getSubscription(user.id);
+  const { periodStart, periodEnd } = await getBillingCycleBoundaries(user.id, subscription);
+
+  const [decksResult, flashcardsResult, generationsResult] = await Promise.all([
     supabase.from("decks").select("id", { count: "exact", head: true }).eq("user_id", user.id),
     supabase
       .from("flashcards")
@@ -69,8 +89,8 @@ export async function getDashboardStats(): Promise<DashboardStats | null> {
       .select("id", { count: "exact", head: true })
       .eq("user_id", user.id)
       .eq("status", "completed")
-      .gte("created_at", new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString()),
-    getSubscription(user.id),
+      .gte("created_at", periodStart)
+      .lte("created_at", periodEnd),
   ]);
 
   const plan = (subscription?.plan ?? "free") as Plan;
@@ -139,13 +159,15 @@ export async function canGenerateDeck(cardCount: number): Promise<{
   }
 
   if (plan === "free") {
+    const { periodStart, periodEnd } = await getBillingCycleBoundaries(user.id, subscription);
     const supabase = await createClient();
     const { count } = await supabase
       .from("ai_generations")
       .select("id", { count: "exact", head: true })
       .eq("user_id", user.id)
       .eq("status", "completed")
-      .gte("created_at", new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString());
+      .gte("created_at", periodStart)
+      .lte("created_at", periodEnd);
 
     if ((count ?? 0) >= limits.monthlyGenerations) {
       return {
@@ -302,6 +324,9 @@ export async function getGoogleDriveConnection(userId: string) {
  */
 export async function getOrCreateAudioUsage(userId: string) {
   const supabase = await createClient();
+  const sub = await getSubscription(userId);
+  const plan = sub?.plan ?? "free";
+  const limit = plan === "pro" ? 3000000 : 100000;
   
   const { data: usage } = await supabase
     .from("audio_usage")
@@ -309,25 +334,51 @@ export async function getOrCreateAudioUsage(userId: string) {
     .eq("user_id", userId)
     .single();
 
+  const now = new Date();
+
+  // Determine target period boundaries based on subscription or calendar month
+  let targetStart: string;
+  let targetEnd: string;
+
+  if (plan === "pro" && sub?.current_period_start && sub?.current_period_end) {
+    targetStart = new Date(sub.current_period_start).toISOString();
+    targetEnd = new Date(sub.current_period_end).toISOString();
+  } else {
+    // If usage exists, we can keep the existing cycle or advance it by 1 month if past due
+    if (usage) {
+      const periodEnd = new Date(usage.period_end);
+      if (now >= periodEnd) {
+        const newPeriodStart = periodEnd;
+        const newPeriodEnd = new Date(periodEnd);
+        newPeriodEnd.setMonth(newPeriodEnd.getMonth() + 1);
+        targetStart = newPeriodStart.toISOString();
+        targetEnd = newPeriodEnd.toISOString();
+      } else {
+        targetStart = new Date(usage.period_start).toISOString();
+        targetEnd = new Date(usage.period_end).toISOString();
+      }
+    } else {
+      const periodEnd = new Date();
+      periodEnd.setMonth(periodEnd.getMonth() + 1);
+      targetStart = now.toISOString();
+      targetEnd = periodEnd.toISOString();
+    }
+  }
+
   if (usage) {
-    const now = new Date();
-    const periodEnd = new Date(usage.period_end);
-    if (now >= periodEnd) {
-      const newPeriodStart = periodEnd;
-      const newPeriodEnd = new Date(periodEnd);
-      newPeriodEnd.setMonth(newPeriodEnd.getMonth() + 1);
+    // Perform JIT reset if the target end period doesn't match the current usage end period
+    // OR if target ends is in the past (e.g. for free users where we advanced the period)
+    const currentEndStr = new Date(usage.period_end).toISOString();
+    const targetEndStr = new Date(targetEnd).toISOString();
 
-      const sub = await getSubscription(userId);
-      const plan = sub?.plan ?? "free";
-      const limit = plan === "pro" ? 3000000 : 100000;
-
+    if (currentEndStr !== targetEndStr || (plan === "free" && now >= new Date(usage.period_end))) {
       const { data: resetUsage } = await supabase
         .from("audio_usage")
         .update({
           used_this_month: 0,
           monthly_limit: limit,
-          period_start: newPeriodStart.toISOString(),
-          period_end: newPeriodEnd.toISOString(),
+          period_start: targetStart,
+          period_end: targetEnd,
           last_updated: now.toISOString(),
         })
         .eq("user_id", userId)
@@ -344,25 +395,33 @@ export async function getOrCreateAudioUsage(userId: string) {
         return resetUsage;
       }
     }
+    
+    // If the plan changed but the period is same, we might need to update the limit
+    if (usage.monthly_limit !== limit) {
+      const { data: updatedLimitUsage } = await supabase
+        .from("audio_usage")
+        .update({
+          monthly_limit: limit,
+          last_updated: now.toISOString(),
+        })
+        .eq("user_id", userId)
+        .select()
+        .single();
+      if (updatedLimitUsage) return updatedLimitUsage;
+    }
+
     return usage;
   }
 
-  const sub = await getSubscription(userId);
-  const plan = sub?.plan ?? "free";
-  const limit = plan === "pro" ? 3000000 : 100000;
-
-  const now = new Date();
-  const periodEnd = new Date();
-  periodEnd.setMonth(periodEnd.getMonth() + 1);
-
+  // Create new record
   const { data: newUsage } = await supabase
     .from("audio_usage")
     .insert({
       user_id: userId,
       monthly_limit: limit,
       used_this_month: 0,
-      period_start: now.toISOString(),
-      period_end: periodEnd.toISOString(),
+      period_start: targetStart,
+      period_end: targetEnd,
       last_updated: now.toISOString(),
     })
     .select()

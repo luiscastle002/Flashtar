@@ -10,11 +10,10 @@ import {
 } from "@/components/ui/accordion";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { SpaceBackground } from "@/components/shared/space-background";
-import { PLANS } from "@/lib/stripe";
 import { createClient } from "@/lib/supabase/server";
 import { LanguageSelector } from "@/components/shared/language-selector";
+import { PricingSection } from "@/components/landing/pricing-section";
 import { getTranslations } from "next-intl/server";
-import { cn } from "@/lib/utils";
 
 const features = [
   {
@@ -243,45 +242,7 @@ export default async function HomePage() {
             <h2 className="text-3xl md:text-4xl font-bold font-display uppercase tracking-widest mb-4">{tLanding("pricing.title")}</h2>
             <p className="text-muted-foreground text-lg">{tLanding("pricing.subtitle")}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {(["free", "pro"] as const).map((planKey) => {
-              const plan = PLANS[planKey];
-              const localizedFeatures = planKey === "pro" 
-                ? (tLanding.raw("pricing.pro_features") as string[])
-                : (tLanding.raw("pricing.free_features") as string[]);
-              return (
-                <Card key={planKey} className={cn("flex flex-col h-full", planKey === "pro" ? "border-primary shadow-lg relative" : "")}>
-                  {planKey === "pro" && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[10px] font-display uppercase tracking-widest px-3 py-1 rounded-full">
-                      {tLanding("pricing.most_popular")}
-                    </div>
-                  )}
-                  <CardHeader>
-                    <CardTitle className="text-2xl font-display uppercase tracking-wider">{plan.name}</CardTitle>
-                    <div className="mt-2">
-                      <span className="text-4xl font-bold">${plan.price}</span>
-                      {plan.price > 0 && <span className="text-muted-foreground">{tLanding("pricing.per_month")}</span>}
-                    </div>
-                  </CardHeader>
-                  <CardContent className="flex-1 flex flex-col pt-0 justify-between gap-6">
-                    <ul className="space-y-2 flex-1">
-                      {localizedFeatures.map((f) => (
-                        <li key={f} className="flex items-center gap-2 text-sm">
-                          <Sparkles className="h-4 w-4 text-primary shrink-0" />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                    <Button className="w-full" variant={planKey === "pro" ? "default" : "outline"} asChild>
-                      <Link href={user ? (planKey === "pro" ? "/settings" : "/generate") : "/signup"}>
-                        {planKey === "pro" ? tLanding("pricing.upgrade") : tLanding("pricing.get_started_free")}
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
+          <PricingSection user={user} />
         </div>
       </section>
 

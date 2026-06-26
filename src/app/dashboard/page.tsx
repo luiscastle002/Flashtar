@@ -74,7 +74,7 @@ export default async function DashboardPage() {
             {stats?.plan === "free" && (
               <CardContent>
                 <Button size="sm" asChild>
-                  <Link href="/settings">{t("upgrade_pro")}</Link>
+                  <Link href="/plan">{t("upgrade_pro")}</Link>
                 </Button>
               </CardContent>
             )}

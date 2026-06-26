@@ -84,6 +84,8 @@ export async function POST(request: Request) {
       const subscriptionId = data.id;
       const status = mapSubscriptionStatus(data.status);
       const isActive = data.status === "active" || data.status === "trialing";
+      const isAnnual = data.billingCycle?.interval === "year";
+      const billingInterval = isAnnual ? "annual" : "monthly";
 
       if (userId) {
         console.log("[Paddle Webhook] subscription.created payload:", { userId, customerId, subscriptionId, status, isActive });
@@ -97,6 +99,7 @@ export async function POST(request: Request) {
               paddle_subscription_id: subscriptionId,
               status,
               plan: (isActive ? "pro" : "free") as Plan,
+              billing_interval: billingInterval,
               current_period_end: data.currentBillingPeriod?.endsAt
                 ? new Date(data.currentBillingPeriod.endsAt).toISOString()
                 : null,
@@ -118,6 +121,8 @@ export async function POST(request: Request) {
       const customerId = data.customerId;
       const subscriptionId = data.id;
       const periodEnd = data.currentBillingPeriod?.endsAt;
+      const isAnnual = data.billingCycle?.interval === "year";
+      const billingInterval = isAnnual ? "annual" : "monthly";
 
       if (userId) {
         console.log("[Paddle Webhook] subscription.activated payload:", { userId, customerId, subscriptionId, periodEnd });
@@ -131,6 +136,7 @@ export async function POST(request: Request) {
               paddle_subscription_id: subscriptionId,
               plan: "pro",
               status: "active",
+              billing_interval: billingInterval,
               current_period_end: periodEnd ? new Date(periodEnd).toISOString() : null,
             },
             { onConflict: "user_id" }
@@ -148,6 +154,7 @@ export async function POST(request: Request) {
           .update({
             plan: "pro",
             status: "active",
+            billing_interval: billingInterval,
             current_period_end: periodEnd ? new Date(periodEnd).toISOString() : null,
           })
           .eq("paddle_subscription_id", subscriptionId);
@@ -166,12 +173,15 @@ export async function POST(request: Request) {
       const periodEnd = data.currentBillingPeriod?.endsAt;
       const status = mapSubscriptionStatus(data.status);
       const isActive = data.status === "active" || data.status === "trialing";
+      const isAnnual = data.billingCycle?.interval === "year";
+      const billingInterval = isAnnual ? "annual" : "monthly";
 
       await supabase
         .from("subscriptions")
         .update({
           plan: (isActive ? "pro" : "free") as Plan,
           status,
+          billing_interval: billingInterval,
           current_period_end: periodEnd ? new Date(periodEnd).toISOString() : null,
         })
         .eq("paddle_subscription_id", subscriptionId);

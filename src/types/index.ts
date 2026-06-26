@@ -26,9 +26,13 @@ export interface Subscription {
   stripe_subscription_id: string | null;
   paddle_customer_id: string | null;
   paddle_subscription_id: string | null;
-  billing_provider: 'stripe' | 'paddle';
+  paypal_customer_id: string | null;
+  paypal_subscription_id: string | null;
+  billing_provider: 'stripe' | 'paddle' | 'paypal';
   status: SubscriptionStatus;
   plan: Plan;
+  billing_interval?: 'monthly' | 'annual' | null;
+  current_period_start: string | null;
   current_period_end: string | null;
   created_at: string;
   updated_at: string;
