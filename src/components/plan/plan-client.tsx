@@ -1,14 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Check, X, Sparkles, CreditCard, AlertCircle, RefreshCw } from "lucide-react";
+import { Check, X, Sparkles, CreditCard, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import { env } from "@/lib/env";
 import { cancelPayPalSubscription } from "@/actions/paypal";
+import { initiatePaddleCheckout, cancelPaddleSubscription } from "@/actions/paddle";
 import { toast } from "sonner";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations, useFormatter } from "next-intl";
 import { translateError } from "@/lib/i18n/utils";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -22,8 +21,10 @@ export function PlanClient({ subscription }: PlanClientProps) {
   const t = useTranslations("plan_page");
   const tRoot = useTranslations();
   const router = useRouter();
+  const locale = useLocale();
+  const format = useFormatter();
   const [canceling, setCanceling] = useState(false);
-  const [showPaypal, setShowPaypal] = useState(false);
+  const [loadingCheckout, setLoadingCheckout] = useState(false);
 
   const plan = subscription?.plan ?? "free";
   const status = subscription?.status ?? "inactive";
@@ -32,21 +33,44 @@ export function PlanClient({ subscription }: PlanClientProps) {
   const isProCanceled = plan === "pro" && status === "canceled";
 
   async function handleCancel() {
-    if (!window.confirm(tRoot("toast.cancel_confirm"))) return;
+    if (!window.confirm(tRoot("settings.toast.cancel_confirm") || "Are you sure you want to cancel your subscription?")) return;
     setCanceling(true);
     try {
-      const res = await cancelPayPalSubscription();
-      if (res.error) {
-        toast.error(translateError(res.error, tRoot) || tRoot("toast.paypal_cancel_failed"));
+      let res;
+      if (subscription?.billing_provider === "paypal") {
+        res = await cancelPayPalSubscription();
       } else {
-        toast.success(tRoot("toast.paypal_cancel_success"));
+        res = await cancelPaddleSubscription();
+      }
+
+      if (res.error) {
+        toast.error(translateError(res.error, tRoot) || "Failed to cancel subscription.");
+      } else {
+        toast.success(tRoot("settings.toast.cancel_success") || "Subscription cancelled successfully.");
         router.refresh();
       }
     } catch (error) {
-      console.error("PayPal cancellation failed:", error);
-      toast.error(tRoot("toast.paypal_cancel_failed"));
+      console.error("Cancellation failed:", error);
+      toast.error("An error occurred during cancellation.");
     } finally {
       setCanceling(false);
+    }
+  }
+
+  async function handlePaddleCheckout() {
+    setLoadingCheckout(true);
+    try {
+      const res = await initiatePaddleCheckout(activeInterval, locale);
+      if (res.error) {
+        toast.error(translateError(res.error, tRoot) || tRoot("settings.toast.paddle_checkout_failed"));
+      } else if (res.checkoutUrl) {
+        window.location.href = res.checkoutUrl;
+      }
+    } catch (error) {
+      console.error("Paddle checkout initiation failed:", error);
+      toast.error(tRoot("settings.toast.paddle_checkout_failed"));
+    } finally {
+      setLoadingCheckout(false);
     }
   }
 
@@ -143,7 +167,11 @@ export function PlanClient({ subscription }: PlanClientProps) {
                     Subscription canceled. You retain Pro access until{" "}
                     <strong className="font-sans">
                       {subscription?.current_period_end
-                        ? new Date(subscription!.current_period_end).toLocaleDateString()
+                        ? format.dateTime(new Date(subscription.current_period_end), {
+                            year: "numeric",
+                            month: "numeric",
+                            day: "numeric",
+                          })
                         : "period end"}
                     </strong>.
                   </p>
@@ -152,13 +180,17 @@ export function PlanClient({ subscription }: PlanClientProps) {
                     Next billing date:{" "}
                     <strong className="font-sans">
                       {subscription?.current_period_end
-                        ? new Date(subscription!.current_period_end).toLocaleDateString()
+                        ? format.dateTime(new Date(subscription.current_period_end), {
+                            year: "numeric",
+                            month: "numeric",
+                            day: "numeric",
+                          })
                         : "N/A"}
                     </strong>.
                   </p>
                 )}
               </div>
-              {!isProCanceled && subscription?.billing_provider === "paypal" && (
+              {!isProCanceled && (subscription?.billing_provider === "paypal" || subscription?.billing_provider === "paddle") && (
                 <Button
                   variant="destructive"
                   size="sm"
@@ -176,11 +208,11 @@ export function PlanClient({ subscription }: PlanClientProps) {
                   )}
                 </Button>
               )}
-              {subscription?.billing_provider && subscription.billing_provider !== "paypal" && (
+              {subscription?.billing_provider && subscription.billing_provider !== "paypal" && subscription.billing_provider !== "paddle" && (
                 <div className="flex flex-col gap-2 p-3 rounded-lg border border-yellow-500/20 bg-yellow-500/5 max-w-md">
                   <p className="text-xs text-yellow-600 dark:text-yellow-400">
                     {t("legacy_notice", {
-                      provider: subscription.billing_provider === "paddle" ? "Paddle" : "Stripe",
+                      provider: subscription.billing_provider === "stripe" ? "Stripe" : subscription.billing_provider,
                     })}
                   </p>
                 </div>
@@ -301,77 +333,20 @@ export function PlanClient({ subscription }: PlanClientProps) {
             </ul>
 
             {plan === "free" ? (
-              <div className="space-y-4">
-                {!showPaypal ? (
-                  <Button className="w-full" onClick={() => setShowPaypal(true)}>
-                    {t("unlock_pro_cta")}
-                  </Button>
+              <Button
+                className="w-full"
+                onClick={handlePaddleCheckout}
+                disabled={loadingCheckout}
+              >
+                {loadingCheckout ? (
+                  <>
+                    <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
+                    {tRoot("common.loading") || "Loading..."}
+                  </>
                 ) : (
-                  <div className="space-y-3 pt-2">
-                    {env.NEXT_PUBLIC_PAYPAL_CLIENT_ID ? (
-                      <PayPalScriptProvider
-                        options={{
-                          clientId: env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
-                          vault: true,
-                          intent: "subscription",
-                          components: "buttons",
-                        }}
-                      >
-                        <div className="relative z-0">
-                          <PayPalButtons
-                            key={activeInterval}
-                            style={{
-                              layout: "vertical",
-                              label: "subscribe",
-                              shape: "rect",
-                              color: "gold",
-                              tagline: false,
-                            }}
-                            createSubscription={async () => {
-                              try {
-                                const res = await fetch("/api/paypal/create-subscription", {
-                                  method: "POST",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                  },
-                                  body: JSON.stringify({ interval: activeInterval }),
-                                });
-                                const data = await res.json();
-                                if (data.subscriptionId) {
-                                  return data.subscriptionId;
-                                } else {
-                                  const errMsg = translateError(data.error, tRoot) || tRoot("toast.paypal_checkout_failed");
-                                  toast.error(errMsg);
-                                  throw new Error(errMsg);
-                                }
-                              } catch (error) {
-                                console.error("PayPal subscription creation failed:", error);
-                                throw error;
-                              }
-                            }}
-                            onApprove={async () => {
-                              toast.success(tRoot("toast.paypal_checkout_success") || "Subscription created successfully! Syncing status...");
-                              window.location.href = "/plan?checkout=success";
-                            }}
-                            onError={(err) => {
-                              console.error("PayPal checkout error:", err);
-                              toast.error(tRoot("toast.paypal_checkout_failed"));
-                            }}
-                          />
-                        </div>
-                      </PayPalScriptProvider>
-                    ) : (
-                      <div className="flex items-center gap-2 text-xs text-red-500 bg-red-500/10 p-3 rounded-lg border border-red-500/20">
-                        <AlertCircle className="h-4 w-4" />
-                        <span>PayPal is not fully configured.</span>
-                      </div>
-                    )}
-                    <Button variant="ghost" size="sm" className="w-full text-xs text-muted-foreground" onClick={() => setShowPaypal(false)}>
-                      Cancel Checkout
-                    </Button>
-                  </div>
+                  t("unlock_pro_cta") || "Unlock Pro Access"
                 )}
-              </div>
+              </Button>
             ) : (
               <Button className="w-full" disabled variant="secondary">
                 {t("current_plan_btn")}

@@ -11,6 +11,7 @@ const clientEnvSchema = z.object({
   NEXT_PUBLIC_PAYPAL_PRO_PLAN_ID: z.string().optional(),
   NEXT_PUBLIC_PAYPAL_ENV: z.enum(["sandbox", "production"]).default("sandbox"),
   NEXT_PUBLIC_APP_URL: z.string().url().default("http://localhost:3000"),
+  NEXT_PUBLIC_PADDLE_CHECKOUT_DOMAIN: z.string().url().optional(),
 });
 
 const serverEnvSchema = clientEnvSchema.extend({
@@ -51,6 +52,7 @@ function parseClientEnv(): ClientEnv {
     NEXT_PUBLIC_PAYPAL_PRO_PLAN_ID: process.env.NEXT_PUBLIC_PAYPAL_PRO_PLAN_ID,
     NEXT_PUBLIC_PAYPAL_ENV: process.env.NEXT_PUBLIC_PAYPAL_ENV,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
+    NEXT_PUBLIC_PADDLE_CHECKOUT_DOMAIN: process.env.NEXT_PUBLIC_PADDLE_CHECKOUT_DOMAIN,
   };
 
   const result = clientEnvSchema.safeParse(values);

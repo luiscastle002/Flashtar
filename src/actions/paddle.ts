@@ -4,6 +4,7 @@ import { getPaddle } from "@/lib/paddle";
 import { getCurrentUser, getSubscription } from "@/lib/queries/user";
 import { createServiceClient } from "@/lib/supabase/admin";
 import { revalidatePath } from "next/cache";
+import { getServerEnv } from "@/lib/env";
 
 /**
  * Cancels an active Paddle subscription at the end of the billing period
@@ -70,3 +71,38 @@ export async function getPaddleUpdateTx() {
     return { error: message };
   }
 }
+
+/**
+ * Initiates cross-domain Paddle checkout by generating a single-use database session
+ */
+export async function initiatePaddleCheckout(interval: "monthly" | "annual", locale: string) {
+  const user = await getCurrentUser();
+  if (!user) return { error: "errors.auth.not_authenticated" };
+
+  try {
+    const supabase = createServiceClient();
+    const { data: session, error } = await supabase
+      .from("paddle_checkout_sessions")
+      .insert({
+        user_id: user.id,
+        billing_interval: interval,
+      })
+      .select()
+      .single();
+
+    if (error || !session) {
+      console.error("Failed to create temporary paddle checkout session:", error);
+      return { error: "errors.billing.paddle_checkout_failed" };
+    }
+
+    const envObj = getServerEnv();
+    const checkoutDomain = envObj.NEXT_PUBLIC_PADDLE_CHECKOUT_DOMAIN || envObj.NEXT_PUBLIC_APP_URL;
+    const checkoutUrl = `${checkoutDomain}/api/checkout/initiate?session_id=${session.id}&locale=${locale}`;
+
+    return { checkoutUrl };
+  } catch (error) {
+    console.error("Failed to initiate Paddle checkout:", error);
+    return { error: "errors.billing.paddle_checkout_failed" };
+  }
+}
+

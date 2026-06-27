@@ -27,7 +27,7 @@ import { createDeck, deleteDeck, duplicateDeck } from "@/actions/decks";
 import { formatDate } from "@/lib/utils";
 import { toast } from "sonner";
 import type { Deck } from "@/types";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { translateError } from "@/lib/i18n/utils";
 
 interface DecksPageClientProps {
@@ -38,6 +38,7 @@ export function DecksPageClient({ decks: initialDecks }: DecksPageClientProps) {
   const t = useTranslations("decks");
   const tCommon = useTranslations("common");
   const tErr = useTranslations("errors");
+  const locale = useLocale();
 
   const [decks, setDecks] = useState(initialDecks);
   const [search, setSearch] = useState("");
@@ -177,7 +178,7 @@ export function DecksPageClient({ decks: initialDecks }: DecksPageClientProps) {
                         {t("editor.cards_count", { count: deck.flashcard_count ?? 0 })}
                       </span>
                       <span className="text-muted-foreground/60">·</span>
-                      <span>{formatDate(deck.updated_at)}</span>
+                      <span>{formatDate(deck.updated_at, locale)}</span>
                     </CardDescription>
                     {deck.description && (
                       <p className="text-sm text-muted-foreground line-clamp-2">{deck.description}</p>

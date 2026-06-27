@@ -6,14 +6,15 @@ import { getDashboardStats, getRecentDecks, getProfile } from "@/lib/queries/use
 import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 import { Layers, Sparkles, CreditCard, ArrowRight } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 
 export default async function DashboardPage() {
-  const [stats, recentDecks, profile, t] = await Promise.all([
+  const [stats, recentDecks, profile, t, locale] = await Promise.all([
     getDashboardStats(),
     getRecentDecks(),
     getProfile(),
     getTranslations("dashboard"),
+    getLocale(),
   ]);
 
   const usagePercent =
@@ -120,7 +121,7 @@ export default async function DashboardPage() {
                     <CardHeader>
                       <CardTitle className="line-clamp-1">{deck.name}</CardTitle>
                       <CardDescription>
-                        {t("cards_plural", { count: deck.flashcard_count ?? 0 })} · {t("updated", { date: formatDate(deck.updated_at) })}
+                        {t("cards_plural", { count: deck.flashcard_count ?? 0 })} · {t("updated", { date: formatDate(deck.updated_at, locale) })}
                       </CardDescription>
                     </CardHeader>
                   </Card>
