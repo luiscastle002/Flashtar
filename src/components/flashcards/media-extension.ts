@@ -1,6 +1,6 @@
 import { Node, mergeAttributes } from "@tiptap/core";
 import { ReactNodeViewRenderer } from "@tiptap/react";
-import { MediaNodeView } from "./media-node-view";
+import { MediaNodeView } from "@/components/flashcards/media-node-view";
 
 declare module "@tiptap/core" {
   interface AllExtensions {

@@ -55,7 +55,7 @@ export function AppSidebar({ profile, dueCount }: AppSidebarProps) {
       >
         {!isCollapsed && (
           <span className="text-[10px] text-muted-foreground/60 select-none animate-in fade-in duration-300">
-            Flashtar v1.0.0
+            Flashtar v1.0.1
           </span>
         )}
         <SidebarToggle className="h-8 w-8" />
