@@ -712,8 +712,8 @@ export function StudyCardListManager({
 
       {/* Edit Card(s) Dialog */}
       <Dialog open={editOpen} onOpenChange={setEditOpen}>
-        <DialogContent onInteractOutside={(e) => e.preventDefault()}>
-          <DialogHeader>
+        <DialogContent onInteractOutside={(e) => e.preventDefault()} className="max-h-[90vh] overflow-y-auto md:max-w-2xl w-full flex flex-col scrollbar-thin">
+          <DialogHeader className="shrink-0">
             <DialogTitle>
               {selectedIds.size === 1 ? t("bulk_actions.edit_title_single") : t("bulk_actions.edit_title_plural")}
             </DialogTitle>
@@ -814,7 +814,7 @@ export function StudyCardListManager({
             </div>
           )}
 
-          <DialogFooter>
+          <DialogFooter className="shrink-0 pt-2">
             <Button variant="outline" onClick={() => setEditOpen(false)} disabled={isMutating}>
               {tCommon("cancel")}
             </Button>

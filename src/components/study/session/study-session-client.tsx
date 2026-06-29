@@ -606,8 +606,8 @@ export function StudySessionClient({
 
       {/* Edit Flashcard Dialog */}
       <Dialog open={editOpen} onOpenChange={setEditOpen}>
-        <DialogContent onInteractOutside={(e) => e.preventDefault()}>
-          <DialogHeader>
+        <DialogContent onInteractOutside={(e) => e.preventDefault()} className="max-h-[90vh] overflow-y-auto md:max-w-2xl w-full flex flex-col scrollbar-thin">
+          <DialogHeader className="shrink-0">
             <DialogTitle>{t("edit_modal_title")}</DialogTitle>
           </DialogHeader>
           <div className="space-y-4 py-2">
@@ -654,7 +654,7 @@ export function StudySessionClient({
               />
             </div>
           </div>
-          <DialogFooter>
+          <DialogFooter className="shrink-0 pt-2">
             <Button variant="outline" onClick={() => setEditOpen(false)} disabled={isActionPending}>
               {tCommon("cancel")}
             </Button>

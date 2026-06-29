@@ -3,7 +3,6 @@
 import { useEditor, EditorContent, Editor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
-import Image from "@tiptap/extension-image";
 import Underline from "@tiptap/extension-underline";
 import TextStyle from "@tiptap/extension-text-style";
 import Color from "@tiptap/extension-color";
@@ -16,6 +15,7 @@ import {
   Palette,
   Eraser,
   Volume2,
+  Loader2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,10 +23,21 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AudioExtension } from "./audio-extension";
+import { MediaExtension } from "./media-extension";
+import { MediaContext } from "./media-context";
 import type { CardAudio } from "@/types";
 import { AudioContext } from "./audio-context";
 
@@ -66,11 +77,16 @@ export function RichTextEditor({
 }: RichTextEditorProps) {
   const t = useTranslations("editor");
 
+  const [insertOpen, setInsertOpen] = useState(false);
+  const [mediaUrl, setMediaUrl] = useState("");
+  const [overrideType, setOverrideType] = useState<"auto" | "image" | "audio" | "video" | "embed">("auto");
+  const [isProbing, setIsProbing] = useState(false);
+
   const editor = useEditor({
     extensions: [
       StarterKit,
       Placeholder.configure({ placeholder: placeholder ?? t("placeholder") }),
-      Image.configure({ inline: true }),
+      MediaExtension,
       Underline,
       TextStyle,
       Color,
@@ -88,23 +104,90 @@ export function RichTextEditor({
     },
   });
 
-
   useEffect(() => {
     if (editorRef && editor) {
       editorRef.current = editor;
     }
   }, [editor, editorRef]);
 
-  function addImage() {
-    const url = window.prompt(t("enter_image_url"));
-    if (url && editor) {
-      editor.chain().focus().setImage({ src: url }).run();
-    }
-  }
-
   if (!editor) return null;
 
   const activeColor = editor.getAttributes("textStyle").color;
+
+  const detectMediaType = (url: string): "image" | "audio" | "video" | "embed" | "link" => {
+    const cleanUrl = url.trim().toLowerCase();
+    
+    // YouTube / Vimeo embeds check
+    if (
+      cleanUrl.includes("youtube.com") ||
+      cleanUrl.includes("youtu.be") ||
+      cleanUrl.includes("vimeo.com")
+    ) {
+      return "embed";
+    }
+
+    // Common file extension checks
+    if (cleanUrl.match(/\.(jpeg|jpg|gif|png|webp|svg|bmp)$/i)) return "image";
+    if (cleanUrl.match(/\.(mp3|wav|ogg|m4a|aac|flac)$/i)) return "audio";
+    if (cleanUrl.match(/\.(mp4|webm|ogv|mov|m4v)$/i)) return "video";
+
+    return "link";
+  };
+
+  const insertMedia = (url: string, type: "image" | "audio" | "video" | "embed" | "link") => {
+    if (!editor) return;
+    editor
+      .chain()
+      .focus()
+      .insertContentAt(editor.state.doc.content.size, {
+        type: "media",
+        attrs: {
+          src: url,
+          mediaType: type,
+          alignment: "center",
+          width: "100%",
+          fit: "contain",
+        },
+      })
+      .run();
+  };
+
+  const handleInsertMedia = async () => {
+    if (!mediaUrl.trim()) return;
+    const url = mediaUrl.trim();
+
+    if (overrideType !== "auto") {
+      insertMedia(url, overrideType);
+      setInsertOpen(false);
+      return;
+    }
+
+    // Attempt client-side regex check first to speed up typical entries
+    const clientDetected = detectMediaType(url);
+    if (clientDetected !== "link") {
+      insertMedia(url, clientDetected);
+      setInsertOpen(false);
+      return;
+    }
+
+    // Fall back to server probing to resolve redirects/dynamic URLs
+    setIsProbing(true);
+    try {
+      const response = await fetch(`/api/media/probe?url=${encodeURIComponent(url)}`);
+      if (response.ok) {
+        const data = await response.json();
+        insertMedia(url, data.detectedType || "link");
+      } else {
+        insertMedia(url, "link");
+      }
+    } catch (err) {
+      console.error("[Media Probe client error]:", err);
+      insertMedia(url, "link");
+    } finally {
+      setIsProbing(false);
+      setInsertOpen(false);
+    }
+  };
 
   return (
     <div className={cn("rounded-md border bg-background", className)}>
@@ -221,15 +304,19 @@ export function RichTextEditor({
           <List className="h-3.5 w-3.5" />
         </Button>
 
-        {/* 6. Image link */}
+        {/* 6. Universal Media Link */}
         <Button 
           type="button" 
           variant="ghost" 
           size="icon" 
           className="h-7 w-7" 
-          onClick={addImage}
-          title={t("insert_image")}
-          aria-label={t("insert_image")}
+          onClick={() => {
+            setMediaUrl("");
+            setOverrideType("auto");
+            setInsertOpen(true);
+          }}
+          title="Insert Universal Media URL"
+          aria-label="Insert Universal Media URL"
         >
           <ImageIcon className="h-3.5 w-3.5" />
         </Button>
@@ -249,7 +336,7 @@ export function RichTextEditor({
           </Button>
         )}
 
-        {/* 7. Clear Formatting */}
+        {/* 8. Clear Formatting */}
         <Button
           type="button"
           variant="ghost"
@@ -262,9 +349,59 @@ export function RichTextEditor({
           <Eraser className="h-3.5 w-3.5" />
         </Button>
       </div>
-      <AudioContext.Provider value={{ audios: audios ?? [], onMoveSide, onDelete }}>
-        <EditorContent editor={editor} />
-      </AudioContext.Provider>
+
+      <MediaContext.Provider value={{}}>
+        <AudioContext.Provider value={{ audios: audios ?? [], onMoveSide, onDelete }}>
+          <EditorContent editor={editor} />
+        </AudioContext.Provider>
+      </MediaContext.Provider>
+
+      {/* Insert Universal Media Dialog */}
+      <Dialog open={insertOpen} onOpenChange={setInsertOpen}>
+        <DialogContent className="max-w-md w-full" onInteractOutside={(e) => e.preventDefault()}>
+          <DialogHeader>
+            <DialogTitle>Insert Media URL</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 py-2">
+            <div className="space-y-1.5">
+              <Label htmlFor="media-url">Paste Media URL</Label>
+              <Input
+                id="media-url"
+                value={mediaUrl}
+                onChange={(e) => setMediaUrl(e.target.value)}
+                placeholder="https://example.com/media.mp3, image.png, youtube.com/..."
+                disabled={isProbing}
+              />
+            </div>
+            <div className="space-y-1.5">
+              <Label>Override Media Type (Optional)</Label>
+              <div className="grid grid-cols-5 gap-1">
+                {(["auto", "image", "audio", "video", "embed"] as const).map((type) => (
+                  <Button
+                    key={type}
+                    type="button"
+                    variant={overrideType === type ? "default" : "outline"}
+                    className="text-[10px] h-7 px-1 capitalize"
+                    onClick={() => setOverrideType(type)}
+                    disabled={isProbing}
+                  >
+                    {type}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setInsertOpen(false)} disabled={isProbing}>
+              Cancel
+            </Button>
+            <Button onClick={handleInsertMedia} disabled={isProbing || !mediaUrl.trim()}>
+              {isProbing && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+              Insert Media
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

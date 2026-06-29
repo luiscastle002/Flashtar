@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { updateStudyCard } from "@/actions/imports";
 import type { StudyCard, CardAudio } from "@/types";
 import { cn } from "@/lib/utils";
+import { parseHtmlContent } from "@/lib/media/html-parser";
 
 interface CustomWindow extends Window {
   playFlashtarAudio?: (url: string) => void;
@@ -37,27 +38,85 @@ export function StudyCardDisplay({
     setFlagged(card.is_flagged);
   }, [card.is_flagged]);
 
-  const activeAudioRef = useRef<HTMLAudioElement | null>(null);
+  const sharedAudioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    sharedAudioRef.current = new Audio();
+    return () => {
+      if (sharedAudioRef.current) {
+        sharedAudioRef.current.pause();
+        sharedAudioRef.current = null;
+      }
+    };
+  }, []);
+
+  const resolvePlayableAudios = (side: "front" | "back"): CardAudio[] => {
+    const dbAudios = card.audios?.filter((a) => a.side === side) || [];
+    const htmlContent = side === "front" ? card.front : card.back;
+    
+    // Parse out any remote media attachments of type audio
+    const remoteAudios: CardAudio[] = [];
+    if (htmlContent) {
+      const mediaRegex = /<div\s+([^>]*data-type="media-attachment"[^>]*)>([\s\S]*?)<\/div>/g;
+      let match;
+      while ((match = mediaRegex.exec(htmlContent)) !== null) {
+        const attributesStr = match[1];
+        
+        const getAttr = (name: string) => {
+          const matchAttr = attributesStr.match(new RegExp(`data-${name}="([^"]*)"`)) || 
+                            attributesStr.match(new RegExp(`${name}="([^"]*)"`));
+          return matchAttr ? matchAttr[1] : "";
+        };
+
+        const src = getAttr("src");
+        const mediaType = getAttr("media-type") || "image";
+
+        if (mediaType === "audio" && src) {
+          remoteAudios.push({
+            side,
+            original_filename: src.split("/").pop() || "Remote Audio",
+            normalized_filename: null,
+            audio_files: {
+              file_id: src,
+              provider: "url",
+              voice_id: "",
+              language: "",
+              duration_seconds: null
+            }
+          });
+        }
+      }
+    }
+
+    return [...dbAudios, ...remoteAudios];
+  };
 
   const playAudioSequence = (audios: CardAudio[]) => {
-    // Stop currently playing
-    if (activeAudioRef.current) {
-      activeAudioRef.current.pause();
-      activeAudioRef.current = null;
-    }
+    if (!sharedAudioRef.current) return;
+    sharedAudioRef.current.pause();
     
     const playNext = (index: number) => {
-      if (index >= audios.length) return;
+      if (index >= audios.length || !sharedAudioRef.current) return;
       const fileId = audios[index].audio_files?.file_id;
       if (!fileId) {
         playNext(index + 1);
         return;
       }
-      const url = `/api/integrations/google/audio/${fileId}?v=${new Date(card.updated_at).getTime()}`;
-      const audio = new Audio(url);
-      activeAudioRef.current = audio;
-      audio.play().then(() => {
-        audio.onended = () => playNext(index + 1);
+      
+      const provider = audios[index].audio_files?.provider;
+      let url = "";
+      if (provider === "url") {
+        url = `/api/media/proxy?url=${encodeURIComponent(fileId)}`;
+      } else {
+        url = `/api/integrations/google/audio/${fileId}?v=${new Date(card.updated_at).getTime()}`;
+      }
+      
+      sharedAudioRef.current.src = url;
+      sharedAudioRef.current.load();
+      sharedAudioRef.current.play().then(() => {
+        if (sharedAudioRef.current) {
+          sharedAudioRef.current.onended = () => playNext(index + 1);
+        }
       }).catch(e => {
         console.error("Autoplay failed:", e);
         playNext(index + 1);
@@ -69,34 +128,26 @@ export function StudyCardDisplay({
   const handleManualPlay = (url: string) => {
     if ((window as CustomWindow).playFlashtarAudio) {
       (window as CustomWindow).playFlashtarAudio!(url);
-    } else {
-      if (activeAudioRef.current) {
-        activeAudioRef.current.pause();
-        activeAudioRef.current = null;
-      }
-      const audio = new Audio(url);
-      activeAudioRef.current = audio;
-      audio.play().catch((err) => console.error("Error playing audio:", err));
+    } else if (sharedAudioRef.current) {
+      sharedAudioRef.current.pause();
+      sharedAudioRef.current.src = url;
+      sharedAudioRef.current.load();
+      sharedAudioRef.current.play().catch((err) => console.error("Error playing audio:", err));
     }
   };
 
   // Setup window hook to capture manual play events and ensure they stop autoplays/previous audios
   useEffect(() => {
     (window as CustomWindow).playFlashtarAudio = (url: string) => {
-      if (activeAudioRef.current) {
-        activeAudioRef.current.pause();
-        activeAudioRef.current = null;
+      if (sharedAudioRef.current) {
+        sharedAudioRef.current.pause();
+        sharedAudioRef.current.src = url;
+        sharedAudioRef.current.load();
+        sharedAudioRef.current.play().catch((e) => console.error("Manual play failed:", e));
       }
-      const audio = new Audio(url);
-      activeAudioRef.current = audio;
-      audio.play().catch((e) => console.error("Manual play failed:", e));
     };
 
     return () => {
-      if (activeAudioRef.current) {
-        activeAudioRef.current.pause();
-        activeAudioRef.current = null;
-      }
       delete (window as CustomWindow).playFlashtarAudio;
     };
   }, []);
@@ -104,7 +155,7 @@ export function StudyCardDisplay({
   // Autoplay front audio when card changes
   useEffect(() => {
     if (!autoplayAudioFront) return;
-    const frontAudios = card.audios?.filter((a) => a.side === "front") || [];
+    const frontAudios = resolvePlayableAudios("front");
     playAudioSequence(frontAudios);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [card.id, autoplayAudioFront]);
@@ -112,7 +163,7 @@ export function StudyCardDisplay({
   // Autoplay back audio when card is flipped
   useEffect(() => {
     if (!isFlipped || !autoplayAudioBack) return;
-    const backAudios = card.audios?.filter((a) => a.side === "back") || [];
+    const backAudios = resolvePlayableAudios("back");
     playAudioSequence(backAudios);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [card.id, isFlipped, autoplayAudioBack]);
@@ -122,6 +173,17 @@ export function StudyCardDisplay({
     setFlagged(newValue);
     await updateStudyCard(card.id, { is_flagged: newValue });
   }
+
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    setIsAnimating(true);
+    const timer = setTimeout(() => setIsAnimating(false), 500); // matches duration-500
+    return () => clearTimeout(timer);
+  }, [isFlipped, card.id]);
+
+  const showFront = !isFlipped || isAnimating;
+  const showBack = isFlipped || isAnimating;
 
   // Parse both span[data-type="audio"] and legacy [sound:filename.mp3] tags into inline audio buttons
   const processHtml = (html: string, side: "front" | "back") => {
@@ -223,92 +285,123 @@ export function StudyCardDisplay({
           )}
         >
           {/* Front face */}
-          <div className="absolute inset-0 rounded-2xl border bg-card shadow-sm flex flex-col [backface-visibility:hidden]">
-            <div 
-              className="flex-1 overflow-y-auto px-6 py-4 flex flex-col"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="my-auto w-full text-center flex flex-col justify-center items-center">
-                <div
-                  className="text-center text-lg md:text-xl font-medium leading-relaxed max-w-prose whitespace-pre-wrap break-words mx-auto"
-                  dangerouslySetInnerHTML={{ __html: processHtml(card.front, "front") }}
-                />
-                {renderPlayButton("front")}
-              </div>
-            </div>
-            <div className="flex items-center justify-between px-5 py-3 border-t text-xs text-muted-foreground">
-              <Badge variant="outline" className="capitalize text-xs">
-                {tCard(`state.${card.state}` as Parameters<typeof tCard>[0])}
-              </Badge>
-              <span className="opacity-60">{t("reveal_hint")}</span>
-            </div>
+          <div 
+            className={cn(
+              "absolute inset-0 rounded-2xl border bg-card shadow-sm flex flex-col",
+              !isFlipped ? "pointer-events-auto z-10" : "pointer-events-none z-0"
+            )}
+            style={{
+              WebkitBackfaceVisibility: "hidden",
+              backfaceVisibility: "hidden",
+              transform: "rotateY(0deg) translateZ(1px)",
+            }}
+          >
+            {showFront && (
+              <>
+                <div 
+                  className={cn(
+                    "flex-1 px-6 py-4 flex flex-col",
+                    isAnimating ? "overflow-hidden" : "overflow-y-auto"
+                  )}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="my-auto w-full text-center flex flex-col justify-center items-center">
+                    <div className="text-center text-lg md:text-xl font-medium leading-relaxed max-w-prose whitespace-pre-wrap break-words mx-auto">
+                      {parseHtmlContent(processHtml(card.front, "front"))}
+                    </div>
+                    {renderPlayButton("front")}
+                  </div>
+                </div>
+                <div className="flex items-center justify-between px-5 py-3 border-t text-xs text-muted-foreground">
+                  <Badge variant="outline" className="capitalize text-xs">
+                    {tCard(`state.${card.state}` as Parameters<typeof tCard>[0])}
+                  </Badge>
+                  <span className="opacity-60">{t("reveal_hint")}</span>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Back face */}
-          <div className="absolute inset-0 rounded-2xl border bg-card shadow-sm flex flex-col [backface-visibility:hidden] [transform:rotateY(180deg)]">
-            {/* Front content (small) with option to replay audio */}
-            <div className="px-5 py-3 border-b bg-muted/40 rounded-t-2xl flex items-center justify-between">
-              <div
-                className="text-sm text-muted-foreground text-center line-clamp-2 flex-1"
-                dangerouslySetInnerHTML={{ __html: processHtml(card.front, "front") }}
-              />
-              {!card.front.includes("[sound:") && !card.front.includes('data-type="audio"') && card.audios?.some((a) => a.side === "front") && (
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-6 w-6 rounded-full hover:bg-muted text-muted-foreground ml-2 shrink-0"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    const frontAudios = card.audios?.filter((a) => a.side === "front") || [];
-                    if (frontAudios[0]?.audio_files?.file_id) {
-                      const url = `/api/integrations/google/audio/${frontAudios[0].audio_files.file_id}?v=${new Date(card.updated_at).getTime()}`;
-                      handleManualPlay(url);
-                    }
-                  }}
-                  type="button"
+          <div 
+            className={cn(
+              "absolute inset-0 rounded-2xl border bg-card shadow-sm flex flex-col",
+              isFlipped ? "pointer-events-auto z-10" : "pointer-events-none z-0"
+            )}
+            style={{
+              WebkitBackfaceVisibility: "hidden",
+              backfaceVisibility: "hidden",
+              transform: "rotateY(180deg) translateZ(1px)",
+            }}
+          >
+            {showBack && (
+              <>
+                {/* Front content (small) with option to replay audio */}
+                <div className="px-5 py-3 border-b bg-muted/40 rounded-t-2xl flex items-center justify-between">
+                  <div className="text-sm text-muted-foreground text-center line-clamp-2 flex-1">
+                    {parseHtmlContent(processHtml(card.front, "front"), { isPreview: true })}
+                  </div>
+                  {!card.front.includes("[sound:") && !card.front.includes('data-type="audio"') && card.audios?.some((a) => a.side === "front") && (
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-6 w-6 rounded-full hover:bg-muted text-muted-foreground ml-2 shrink-0"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        const frontAudios = card.audios?.filter((a) => a.side === "front") || [];
+                        if (frontAudios[0]?.audio_files?.file_id) {
+                          const url = `/api/integrations/google/audio/${frontAudios[0].audio_files.file_id}?v=${new Date(card.updated_at).getTime()}`;
+                          handleManualPlay(url);
+                        }
+                      }}
+                      type="button"
+                    >
+                      <Volume2 className="h-3.5 w-3.5" />
+                    </Button>
+                  )}
+                </div>
+                {/* Answer */}
+                <div 
+                  className={cn(
+                    "flex-1 px-6 py-4 flex flex-col",
+                    isAnimating ? "overflow-hidden" : "overflow-y-auto"
+                  )}
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  <Volume2 className="h-3.5 w-3.5" />
-                </Button>
-              )}
-            </div>
-            {/* Answer */}
-            <div 
-              className="flex-1 overflow-y-auto px-6 py-4 flex flex-col"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="my-auto w-full text-center flex flex-col justify-center items-center">
-                <div
-                  className="text-center text-lg md:text-xl leading-relaxed max-w-prose whitespace-pre-wrap break-words mx-auto"
-                  dangerouslySetInnerHTML={{ __html: processHtml(card.back, "back") }}
-                />
-                {renderPlayButton("back")}
-              </div>
-            </div>
-            <div className="flex items-center justify-between px-5 py-3 border-t text-xs text-muted-foreground">
-              <div className="flex items-center gap-2">
-                {card.tags.length > 0 && (
-                  card.tags.slice(0, 3).map((tag) => (
-                    <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
-                  ))
-                )}
-              </div>
-              <Button
-                variant="ghost"
-                size="sm"
-                className={cn(
-                  "h-6 px-2 text-xs",
-                  flagged ? "text-amber-500" : "text-muted-foreground"
-                )}
-                onClick={(e) => {
-                  e.stopPropagation(); // don't flip again
-                  handleFlag();
-                }}
-                type="button"
-              >
-                <Flag className={cn("h-3 w-3 mr-1", flagged && "fill-amber-500")} />
-                {flagged ? t("flagged") : t("flag")}
-              </Button>
-            </div>
+                  <div className="my-auto w-full text-center flex flex-col justify-center items-center">
+                    <div className="text-center text-lg md:text-xl leading-relaxed max-w-prose whitespace-pre-wrap break-words mx-auto">
+                      {parseHtmlContent(processHtml(card.back, "back"))}
+                    </div>
+                    {renderPlayButton("back")}
+                  </div>
+                </div>
+                <div className="flex items-center justify-between px-5 py-3 border-t text-xs text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    {card.tags.length > 0 && (
+                      card.tags.slice(0, 3).map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
+                      ))
+                    )}
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className={cn(
+                      "h-6 px-2 text-xs",
+                      flagged ? "text-amber-500" : "text-muted-foreground"
+                    )}
+                    onClick={(e) => {
+                      e.stopPropagation(); // don't flip again
+                      handleFlag();
+                    }}
+                    type="button"
+                  >
+                    <Flag className={cn("h-3 w-3 mr-1", flagged && "fill-amber-500")} />
+                    {flagged ? t("flagged") : t("flag")}
+                  </Button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
