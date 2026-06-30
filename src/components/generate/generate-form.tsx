@@ -197,7 +197,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
   // Audio generation settings
   const [audioEnabled, setAudioEnabled] = useState(false);
   const [audioVoice, setAudioVoice] = useState("alloy");
-  const [audioPlacement, setAudioPlacement] = useState<"front" | "back" | "both">("back");
+  const [audioPlacement, setAudioPlacement] = useState<"front" | "back" | "both" | "front_on_back">("back");
   const [audioProvider] = useState("openai");
 
   // Custom instructions & Configuration Dialog states
@@ -1192,7 +1192,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
 
                   <div className="space-y-2 col-span-2 text-left">
                     <Label>{t("audio.placement_label")}</Label>
-                    <Select value={audioPlacement} onValueChange={(val: string) => setAudioPlacement(val as "front" | "back" | "both")}>
+                    <Select value={audioPlacement} onValueChange={(val: string) => setAudioPlacement(val as "front" | "back" | "both" | "front_on_back")}>
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
@@ -1200,6 +1200,7 @@ export function GenerateForm({ plan, monthlyGenerations, profile, initialPrompts
                         <SelectItem value="front">{t("audio.placement_front")}</SelectItem>
                         <SelectItem value="back">{t("audio.placement_back")}</SelectItem>
                         <SelectItem value="both">{t("audio.placement_both")}</SelectItem>
+                        <SelectItem value="front_on_back">{t("audio.placement_front_on_back")}</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>

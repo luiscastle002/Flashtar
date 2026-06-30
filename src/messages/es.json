@@ -483,6 +483,7 @@
       "placement_front": "Solo Anverso",
       "placement_back": "Solo Reverso",
       "placement_both": "Ambos Lados",
+      "placement_front_on_back": "Texto del Anverso en el Reverso",
       "not_connected_warning": "Google Drive no está conectado. La generación de audio requiere tu propio almacenamiento (BYOS). Conéctalo en Configuración primero."
     }
   },

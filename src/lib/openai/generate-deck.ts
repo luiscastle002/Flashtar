@@ -85,6 +85,15 @@ Rules:
     systemPrompt += `\n\nUser Custom Instructions:\n${options.customInstructions}`;
   }
 
+  const isJapanese = options.language.toLowerCase() === "japanese" || options.language.toLowerCase() === "ja";
+  if (isJapanese) {
+    systemPrompt += `\n\nJapanese Language Formatting Rules:
+- All Japanese Kanji characters on the front and back of cards (including inside cloze deletions) MUST be wrapped in HTML ruby tags for furigana (pronunciation readings in Hiragana).
+- Example: Use '<ruby>漢字<rt>かんじ</rt></ruby>' instead of just '漢字'.
+- For compound words or sentences, wrap each Kanji or Kanji compound with its reading.
+- Ensure punctuation and particles remain outside ruby tags.`;
+  }
+
   return systemPrompt;
 }
 

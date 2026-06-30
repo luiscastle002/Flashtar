@@ -483,6 +483,7 @@
       "placement_front": "Apenas na Frente",
       "placement_back": "Apenas no Verso",
       "placement_both": "Em Ambos os Lados",
+      "placement_front_on_back": "Texto da Frente no Verso",
       "not_connected_warning": "O Google Drive não está conectado. A geração de áudio requer armazenamento próprio (BYOS). Conecte-se nas Configurações primeiro."
     }
   },

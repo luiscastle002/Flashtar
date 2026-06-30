@@ -483,6 +483,7 @@
       "placement_front": "Front Side Only",
       "placement_back": "Back Side Only",
       "placement_both": "Both Sides",
+      "placement_front_on_back": "Front Text on Back Side",
       "not_connected_warning": "Google Drive is not connected. Audio generation requires Bring-Your-Own-Storage. Connect in Settings first."
     }
   },

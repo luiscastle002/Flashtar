@@ -484,6 +484,7 @@
       "placement_front": "問題面のみ",
       "placement_back": "解答面のみ",
       "placement_both": "両面",
+      "placement_front_on_back": "問題面の音声を解答面に添付",
       "not_connected_warning": "Google ドライブが接続されていません。音声生成には個人用ストレージ (BYOS) の接続が必要です。先に設定画面で接続してください。"
     }
   },

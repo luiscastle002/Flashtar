@@ -28,7 +28,7 @@ const generateSchema = z.object({
   customInstructions: z.string().max(2000).optional(),
   audioEnabled: z.boolean().default(false),
   audioVoice: z.string().optional(),
-  audioPlacement: z.enum(["front", "back", "both"]).default("back"),
+  audioPlacement: z.enum(["front", "back", "both", "front_on_back"]).default("back"),
   audioProvider: z.string().optional(),
 });
 
@@ -70,7 +70,7 @@ export async function POST(request: Request) {
   let customInstructions: string | undefined;
   let audioEnabled = false;
   let audioVoice: string | undefined;
-  let audioPlacement: "front" | "back" | "both" = "back";
+  let audioPlacement: "front" | "back" | "both" | "front_on_back" = "back";
   let audioProvider: string | undefined;
 
   const contentType = request.headers.get("content-type") || "";
@@ -90,7 +90,7 @@ export async function POST(request: Request) {
       customInstructions = formData.get("customInstructions") as string || undefined;
       audioEnabled = formData.get("audioEnabled") === "true";
       audioVoice = formData.get("audioVoice") as string || undefined;
-      audioPlacement = (formData.get("audioPlacement") as "front" | "back" | "both") || "back";
+      audioPlacement = (formData.get("audioPlacement") as "front" | "back" | "both" | "front_on_back") || "back";
       audioProvider = formData.get("audioProvider") as string || undefined;
     } else {
       const body = await request.json();
@@ -295,23 +295,49 @@ export async function POST(request: Request) {
     if (audioEnabled && insertedCards && insertedCards.length > 0) {
       logStep(11, "Triggering TTS generation for cards", { count: insertedCards.length });
       
-      const audioTasks: Array<{ cardId: string; side: "front" | "back"; text: string }> = [];
+      const audioTasks: Array<{
+        cardId: string;
+        side: "front" | "back";
+        text: string;
+        sourceSide: "front" | "back";
+      }> = [];
+
       for (const card of insertedCards) {
         console.log("[Audio] API generated card:", card.id);
-        const sides: Array<"front" | "back"> = [];
-        if (audioPlacement === "front" || audioPlacement === "both") {
-          sides.push("front");
-        }
-        if (audioPlacement === "back" || audioPlacement === "both") {
-          sides.push("back");
-        }
         
-        for (const side of sides) {
-          const textToSynthesize = side === "front" ? card.front : card.back;
+        if (audioPlacement === "front") {
           audioTasks.push({
             cardId: card.id,
-            side,
-            text: textToSynthesize,
+            side: "front",
+            text: card.front,
+            sourceSide: "front",
+          });
+        } else if (audioPlacement === "back") {
+          audioTasks.push({
+            cardId: card.id,
+            side: "back",
+            text: card.back,
+            sourceSide: "back",
+          });
+        } else if (audioPlacement === "both") {
+          audioTasks.push({
+            cardId: card.id,
+            side: "front",
+            text: card.front,
+            sourceSide: "front",
+          });
+          audioTasks.push({
+            cardId: card.id,
+            side: "back",
+            text: card.back,
+            sourceSide: "back",
+          });
+        } else if (audioPlacement === "front_on_back") {
+          audioTasks.push({
+            cardId: card.id,
+            side: "back",
+            text: card.front,
+            sourceSide: "front",
           });
         }
       }
@@ -323,7 +349,7 @@ export async function POST(request: Request) {
         const results = await Promise.all(
           batch.map(async (task) => {
             try {
-              console.log("[Audio] Triggering audio generation for card:", task.cardId, "side:", task.side);
+              console.log("[Audio] Triggering audio generation for card:", task.cardId, "side:", task.side, "sourceSide:", task.sourceSide);
               const res = await generateCardAudioAction({
                 flashcardId: task.cardId,
                 side: task.side,
@@ -331,6 +357,7 @@ export async function POST(request: Request) {
                 providerId: audioProvider || "openai",
                 voiceId: audioVoice || "alloy",
                 language: language,
+                sourceSide: task.sourceSide,
               });
               if ("error" in res && res.error) {
                 console.error("[Audio Error] API audio generation failed for card:", task.cardId, "side:", task.side, "error:", res.error);

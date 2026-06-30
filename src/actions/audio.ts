@@ -7,6 +7,7 @@ import { getCurrentUser } from "@/lib/queries/user";
 import type { CardAudio } from "@/types";
 import * as cheerio from "cheerio";
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { preprocessTextForAudio } from "@/lib/tts/preprocessor";
 
 export interface GenerateCardAudioParams {
   flashcardId: string;
@@ -16,10 +17,7 @@ export interface GenerateCardAudioParams {
   voiceId: string;
   language: string;
   options?: TtsOptions;
-}
-
-function stripHtml(html: string): string {
-  return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
+  sourceSide?: "front" | "back" | "custom";
 }
 
 async function appendAudioSpanToCardHtml(
@@ -76,14 +74,15 @@ export async function generateCardAudioAction({
   providerId,
   voiceId,
   language,
-  options
+  options,
+  sourceSide
 }: GenerateCardAudioParams) {
   const user = await getCurrentUser();
   if (!user) return { error: "errors.auth.not_authenticated" };
 
   void providerId;
 
-  const cleanText = stripHtml(text);
+  const cleanText = await preprocessTextForAudio(text, language);
   if (!cleanText) return { success: false, reason: "Text is empty" };
 
   // Enforce OpenAI TTS only
@@ -132,7 +131,8 @@ export async function generateCardAudioAction({
         side,
         audio_file_id: existingFile.id,
         original_filename: `${audioHash}.mp3`,
-        normalized_filename: `${audioHash}.mp3`
+        normalized_filename: `${audioHash}.mp3`,
+        source_type: sourceSide || side
       })
       .select("id")
       .single();
@@ -293,7 +293,8 @@ export async function generateCardAudioAction({
       side,
       audio_file_id: newFile.id,
       original_filename: `${audioHash}.mp3`,
-      normalized_filename: `${audioHash}.mp3`
+      normalized_filename: `${audioHash}.mp3`,
+      source_type: sourceSide || side
     })
     .select("id")
     .single();
