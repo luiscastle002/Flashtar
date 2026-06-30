@@ -107,7 +107,7 @@
       "card_index": "Card {index}",
       "front": "Front",
       "back": "Back",
-      "front_placeholder": "Question or cloze text (use '{'{'c1::answer'}'}' for cloze)",
+      "front_placeholder": "Question or cloze text (use '{{'c1::answer'}}' for cloze)",
       "back_placeholder": "Answer"
     }
   },

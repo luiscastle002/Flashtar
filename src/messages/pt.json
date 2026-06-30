@@ -107,7 +107,7 @@
       "card_index": "Cartão {index}",
       "front": "Frente",
       "back": "Verso",
-      "front_placeholder": "Pergunta ou texto cloze (use '{'{'c1::termo'}'}' para omitir)",
+      "front_placeholder": "Pergunta ou texto cloze (use '{{'c1::termo'}}' para omitir)",
       "back_placeholder": "Resposta"
     }
   },

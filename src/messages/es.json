@@ -107,7 +107,7 @@
       "card_index": "Tarjeta {index}",
       "front": "Anverso",
       "back": "Reverso",
-      "front_placeholder": "Pregunta o texto de relleno (usa '{'{'c1::respuesta'}'}' para cloze)",
+      "front_placeholder": "Pregunta o texto de relleno (usa '{{'c1::respuesta'}}' para cloze)",
       "back_placeholder": "Respuesta"
     }
   },
