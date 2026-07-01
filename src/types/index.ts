@@ -147,6 +147,7 @@ export interface StudyDeck {
   created_at: string;
   updated_at: string;
   last_studied_at: string | null;
+  deck_id?: string | null;
   // Joined fields (not in DB — computed by queries)
   due_count?: number;
   new_count?: number;

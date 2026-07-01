@@ -151,12 +151,41 @@ export async function importFromCsv(
   // Verify deck belongs to user
   const { data: deck } = await supabase
     .from("study_decks")
-    .select("id, card_count, deck_id")
+    .select("id, name, description, card_count, deck_id")
     .eq("id", studyDeckId)
     .eq("user_id", user.id)
     .single();
 
   if (!deck) return { error: "errors.study_decks.not_found" };
+
+  // If no master deck exists for this study deck, create one dynamically
+  if (!deck.deck_id) {
+    const { data: newMasterDeck, error: masterDeckError } = await supabase
+      .from("decks")
+      .insert({
+        user_id: user.id,
+        name: deck.name,
+        description: deck.description || `Imported cards for ${deck.name}`,
+        language: "en",
+      })
+      .select("id")
+      .single();
+
+    if (masterDeckError || !newMasterDeck) {
+      return { error: masterDeckError?.message ?? "Failed to create master deck" };
+    }
+
+    const { error: updateDeckError } = await supabase
+      .from("study_decks")
+      .update({ deck_id: newMasterDeck.id })
+      .eq("id", studyDeckId);
+
+    if (updateDeckError) {
+      return { error: updateDeckError.message };
+    }
+
+    deck.deck_id = newMasterDeck.id;
+  }
 
   // Validate rows
   const validRows = rows.filter(
@@ -275,12 +304,41 @@ export async function importFromApkg(
   // Verify deck belongs to user
   const { data: deck } = await supabase
     .from("study_decks")
-    .select("id, card_count, deck_id")
+    .select("id, name, description, card_count, deck_id")
     .eq("id", studyDeckId)
     .eq("user_id", user.id)
     .single();
 
   if (!deck) return { error: "errors.study_decks.not_found" };
+
+  // If no master deck exists for this study deck, create one dynamically
+  if (!deck.deck_id) {
+    const { data: newMasterDeck, error: masterDeckError } = await supabase
+      .from("decks")
+      .insert({
+        user_id: user.id,
+        name: deck.name,
+        description: deck.description || `Imported cards for ${deck.name}`,
+        language: "en",
+      })
+      .select("id")
+      .single();
+
+    if (masterDeckError || !newMasterDeck) {
+      return { error: masterDeckError?.message ?? "Failed to create master deck" };
+    }
+
+    const { error: updateDeckError } = await supabase
+      .from("study_decks")
+      .update({ deck_id: newMasterDeck.id })
+      .eq("id", studyDeckId);
+
+    if (updateDeckError) {
+      return { error: updateDeckError.message };
+    }
+
+    deck.deck_id = newMasterDeck.id;
+  }
 
   // Validate rows — only keep cards with non-empty front text
   let validCards = cards.filter(
