@@ -11,9 +11,14 @@ import type { Profile } from "@/types";
 interface AppSidebarProps {
   profile?: Profile | null;
   dueCount?: number | null;
+  coursesDueCount?: number | null;
 }
 
-export function AppSidebar({ profile, dueCount }: AppSidebarProps) {
+export function AppSidebar({
+  profile,
+  dueCount,
+  coursesDueCount,
+}: AppSidebarProps) {
   const { isCollapsed } = useSidebar();
 
   return (
@@ -43,7 +48,11 @@ export function AppSidebar({ profile, dueCount }: AppSidebarProps) {
 
       {/* Navigation Content */}
       <div className="flex-1 overflow-y-auto p-4 space-y-1 scrollbar-thin">
-        <SidebarContent profile={profile} dueCount={dueCount} />
+        <SidebarContent
+          profile={profile}
+          dueCount={dueCount}
+          coursesDueCount={coursesDueCount}
+        />
       </div>
 
       {/* Sidebar Footer (Toggle) */}
@@ -55,7 +64,7 @@ export function AppSidebar({ profile, dueCount }: AppSidebarProps) {
       >
         {!isCollapsed && (
           <span className="text-[10px] text-muted-foreground/60 select-none animate-in fade-in duration-300">
-            Flashtar v1.0.2
+            Flashtar v1.0.3
           </span>
         )}
         <SidebarToggle className="h-8 w-8" />

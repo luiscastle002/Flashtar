@@ -221,6 +221,7 @@ export async function getStudyDecks(includeArchived = false) {
     .from("study_decks")
     .select("*")
     .eq("user_id", user.id)
+    .is("shared_deck_id", null)
     .order("updated_at", { ascending: false });
 
   if (!includeArchived) {
@@ -250,15 +251,94 @@ export async function getStudyDeckWithSettings(deckId: string) {
   return data;
 }
 
-// ---------------------------------------------------------------------------
-// getDeckDueCounts — calls Postgres RPC
-// ---------------------------------------------------------------------------
-
 export async function getDeckDueCounts(deckId: string) {
   const user = await getCurrentUser();
   if (!user) return null;
 
   const supabase = await createClient();
+
+  // Fetch the deck metadata to check if it's a Course deck
+  const { data: deck } = await supabase
+    .from("study_decks")
+    .select("shared_deck_id")
+    .eq("id", deckId)
+    .eq("user_id", user.id)
+    .single();
+
+  if (deck?.shared_deck_id) {
+    // Course deck: compute overlay due count
+    const { data: settings } = await supabase
+      .from("deck_study_settings")
+      .select("new_cards_per_day")
+      .eq("study_deck_id", deckId)
+      .single();
+
+    const limit = settings?.new_cards_per_day ?? 20;
+
+    const todayStart = new Date();
+    todayStart.setUTCHours(0, 0, 0, 0);
+
+    // Count new reviews done today
+    const { count: newToday } = await supabase
+      .from("review_logs")
+      .select("id", { count: "exact", head: true })
+      .eq("study_deck_id", deckId)
+      .eq("user_id", user.id)
+      .eq("state_before", "new")
+      .gte("reviewed_at", todayStart.toISOString());
+
+    const newDone = newToday ?? 0;
+    const remainingNewLimit = Math.max(0, limit - newDone);
+
+    // Count total cards in shared_cards
+    const { count: totalSharedCount } = await supabase
+      .from("shared_cards")
+      .select("id", { count: "exact", head: true })
+      .eq("shared_deck_id", deck.shared_deck_id);
+
+    // Count cards in study_cards (progress started)
+    const { count: totalStartedCount } = await supabase
+      .from("study_cards")
+      .select("id", { count: "exact", head: true })
+      .eq("study_deck_id", deckId)
+      .eq("user_id", user.id);
+
+    const remainingSharedCards = Math.max(0, (totalSharedCount ?? 0) - (totalStartedCount ?? 0));
+    const dueNew = Math.min(remainingSharedCards, remainingNewLimit);
+
+    // Fetch due counts for started cards in study_cards
+    const { data: progressDue } = await supabase
+      .from("study_cards")
+      .select("state, due_at")
+      .eq("study_deck_id", deckId)
+      .eq("user_id", user.id);
+
+    let learnCount = 0;
+    let reviewCount = 0;
+    const nowStr = new Date().toISOString();
+    const tomorrowStart = new Date(todayStart);
+    tomorrowStart.setUTCDate(tomorrowStart.getUTCDate() + 1);
+    const tomorrowStr = tomorrowStart.toISOString();
+
+    for (const card of progressDue ?? []) {
+      if (card.state === "learn" && card.due_at <= nowStr) {
+        learnCount++;
+      } else if (card.state === "review" && card.due_at < tomorrowStr) {
+        reviewCount++;
+      }
+    }
+
+    const totalDue = dueNew + learnCount + reviewCount;
+
+    return {
+      new_count: dueNew,
+      learn_count: learnCount,
+      review_count: reviewCount,
+      total_due: totalDue
+    };
+  }
+
+  // Personal deck (original database-backed RPC path)
   const { data } = await supabase.rpc("get_study_deck_due_counts", {
     p_deck_id: deckId,
     p_user_id: user.id,

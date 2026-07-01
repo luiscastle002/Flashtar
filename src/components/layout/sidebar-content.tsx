@@ -13,6 +13,7 @@ import type { Profile } from "@/types";
 interface SidebarContentProps {
   profile?: Profile | null;
   dueCount?: number | null;
+  coursesDueCount?: number | null;
   forceExpanded?: boolean;
   onItemClick?: () => void;
 }
@@ -20,6 +21,7 @@ interface SidebarContentProps {
 export function SidebarContent({
   profile,
   dueCount,
+  coursesDueCount,
   forceExpanded = false,
   onItemClick,
 }: SidebarContentProps) {
@@ -29,9 +31,20 @@ export function SidebarContent({
 
   const showCollapsed = isCollapsed && !forceExpanded;
 
-  const renderLink = (href: string, labelKey: string, icon: React.ComponentType<{ className?: string }>, isStudy = false) => {
-    const isActive = pathname.startsWith(href);
+  const renderLink = (
+    href: string,
+    labelKey: string,
+    icon: React.ComponentType<{ className?: string }>,
+    key: string
+  ) => {
+    // Exact match for dashboard/study, prefix check for others
+    const isActive = href === "/dashboard" || href === "/study"
+      ? pathname === href
+      : pathname.startsWith(href);
     const Icon = icon;
+
+    const badgeCount = key === "study" ? dueCount : (key === "courses" ? coursesDueCount : null);
+    const hasBadge = typeof badgeCount === "number" && badgeCount > 0;
 
     const linkEl = (
       <Link
@@ -53,12 +66,12 @@ export function SidebarContent({
           )}
         </div>
         
-        {isStudy && typeof dueCount === "number" && dueCount > 0 && !showCollapsed && (
+        {hasBadge && !showCollapsed && (
           <span className="ml-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-semibold text-white shrink-0">
-            {dueCount}
+            {badgeCount}
           </span>
         )}
-        {isStudy && typeof dueCount === "number" && dueCount > 0 && showCollapsed && (
+        {hasBadge && showCollapsed && (
           <span className="absolute top-1.5 right-1.5 flex h-2 w-2 rounded-full bg-red-500" />
         )}
       </Link>
@@ -72,9 +85,9 @@ export function SidebarContent({
           </TooltipTrigger>
           <TooltipContent side="right" className="flex items-center gap-2">
             {t(labelKey)}
-            {isStudy && typeof dueCount === "number" && dueCount > 0 && (
+            {hasBadge && (
               <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500/20 text-red-300 px-1 text-[9px] font-bold">
-                {dueCount}
+                {badgeCount}
               </span>
             )}
           </TooltipContent>
@@ -88,12 +101,12 @@ export function SidebarContent({
   return (
     <div className="space-y-1 w-full">
       {navigationItems.map((item) =>
-        renderLink(item.href, item.key, item.icon, item.href === "/study")
+        renderLink(item.href, item.key, item.icon, item.key)
       )}
       
       {profile?.is_admin && (
         <>
-          {renderLink("/admin", "admin", Shield)}
+          {renderLink("/admin", "admin", Shield, "admin")}
         </>
       )}
     </div>

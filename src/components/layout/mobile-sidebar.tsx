@@ -13,9 +13,10 @@ import type { Profile } from "@/types";
 interface MobileSidebarProps {
   profile?: Profile | null;
   dueCount?: number | null;
+  coursesDueCount?: number | null;
 }
 
-export function MobileSidebar({ profile, dueCount }: MobileSidebarProps) {
+export function MobileSidebar({ profile, dueCount, coursesDueCount }: MobileSidebarProps) {
   const t = useTranslations("navigation");
   const pathname = usePathname();
   const { isMobileOpen, setMobileOpen } = useSidebar();
@@ -53,6 +54,7 @@ export function MobileSidebar({ profile, dueCount }: MobileSidebarProps) {
             <SidebarContent
               profile={profile}
               dueCount={dueCount}
+              coursesDueCount={coursesDueCount}
               forceExpanded={true}
               onItemClick={() => setMobileOpen(false)}
             />

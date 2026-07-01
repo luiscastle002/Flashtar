@@ -187,6 +187,7 @@ export interface StudyCard {
   source_flashcard_id: string | null;
   source_deck_id: string | null;
   import_id: string | null;
+  shared_card_id: string | null;
   // Scheduling state
   state: CardStudyState;
   due_at: string;

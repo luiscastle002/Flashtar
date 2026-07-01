@@ -20,6 +20,24 @@ interface StudyCardDisplayProps {
   onFlip: () => void;
   autoplayAudioFront?: boolean;
   autoplayAudioBack?: boolean;
+  /** When true (course mode): suppresses audio play button on the front face */
+  isCourse?: boolean;
+}
+
+function getAudioUrl(audio: CardAudio, cardUpdatedAt: string): string {
+  const fileId = audio.audio_files?.file_id;
+  if (!fileId) return "";
+
+  const provider = audio.audio_files?.provider;
+  if (provider === "url") {
+    if (fileId.startsWith("/")) {
+      return fileId;
+    }
+    return `/api/media/proxy?url=${encodeURIComponent(fileId)}`;
+  }
+
+  const cacheBuster = new Date(cardUpdatedAt).getTime();
+  return `/api/integrations/google/audio/${fileId}?v=${cacheBuster}`;
 }
 
 export function StudyCardDisplay({
@@ -28,6 +46,7 @@ export function StudyCardDisplay({
   onFlip,
   autoplayAudioFront = false,
   autoplayAudioBack = false,
+  isCourse = false,
 }: StudyCardDisplayProps) {
   const [flagged, setFlagged] = useState(card.is_flagged);
   const t = useTranslations("study.session");
@@ -97,18 +116,10 @@ export function StudyCardDisplay({
     
     const playNext = (index: number) => {
       if (index >= audios.length || !sharedAudioRef.current) return;
-      const fileId = audios[index].audio_files?.file_id;
-      if (!fileId) {
+      const url = getAudioUrl(audios[index], card.updated_at);
+      if (!url) {
         playNext(index + 1);
         return;
-      }
-      
-      const provider = audios[index].audio_files?.provider;
-      let url = "";
-      if (provider === "url") {
-        url = `/api/media/proxy?url=${encodeURIComponent(fileId)}`;
-      } else {
-        url = `/api/integrations/google/audio/${fileId}?v=${new Date(card.updated_at).getTime()}`;
       }
       
       sharedAudioRef.current.src = url;
@@ -193,10 +204,9 @@ export function StudyCardDisplay({
     const spanRegex = /<span\s+[^>]*data-type="audio"[^>]*data-audio-id="([^"]+)"[^>]*>([\s\S]*?)<\/span>/g;
     let processed = html.replace(spanRegex, (match, audioId) => {
       const matchedAudio = card.audios?.find((a) => a.id === audioId);
-      if (matchedAudio?.audio_files?.file_id) {
-        const fileId = matchedAudio.audio_files.file_id;
-        const cacheBuster = new Date(card.updated_at).getTime();
-        const url = `/api/integrations/google/audio/${fileId}?v=${cacheBuster}`;
+      if (matchedAudio) {
+        const url = getAudioUrl(matchedAudio, card.updated_at);
+        if (!url) return "";
         const filename = matchedAudio.original_filename || "audio";
         
         return `<button 
@@ -219,10 +229,9 @@ export function StudyCardDisplay({
         (a) => a.side === side && (a.normalized_filename === normalized || a.original_filename === normalized)
       );
       
-      if (matchedAudio?.audio_files?.file_id) {
-        const fileId = matchedAudio.audio_files.file_id;
-        const cacheBuster = new Date(card.updated_at).getTime();
-        const url = `/api/integrations/google/audio/${fileId}?v=${cacheBuster}`;
+      if (matchedAudio) {
+        const url = getAudioUrl(matchedAudio, card.updated_at);
+        if (!url) return "";
         
         return `<button 
           class="inline-flex items-center justify-center p-1.5 rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition mx-1 align-middle cursor-pointer" 
@@ -248,10 +257,8 @@ export function StudyCardDisplay({
     const html = side === "front" ? card.front : card.back;
     if (html.includes("[sound:") || html.includes('data-type="audio"')) return null;
     
-    const fileId = sideAudios[0].audio_files?.file_id;
-    if (!fileId) return null;
-    
-    const url = `/api/integrations/google/audio/${fileId}?v=${new Date(card.updated_at).getTime()}`;
+    const url = getAudioUrl(sideAudios[0], card.updated_at);
+    if (!url) return null;
     
     return (
       <Button
@@ -309,7 +316,8 @@ export function StudyCardDisplay({
                     <div className="text-center text-lg md:text-xl font-medium leading-relaxed max-w-prose whitespace-pre-wrap break-words mx-auto">
                       {parseHtmlContent(processHtml(card.front, "front"))}
                     </div>
-                    {renderPlayButton("front")}
+                    {/* In course mode the pronunciation plays on the back — suppress front audio button */}
+                    {!isCourse && renderPlayButton("front")}
                   </div>
                 </div>
                 <div className="flex items-center justify-between px-5 py-3 border-t text-xs text-muted-foreground">
@@ -349,9 +357,9 @@ export function StudyCardDisplay({
                       onClick={(e) => {
                         e.stopPropagation();
                         const frontAudios = card.audios?.filter((a) => a.side === "front") || [];
-                        if (frontAudios[0]?.audio_files?.file_id) {
-                          const url = `/api/integrations/google/audio/${frontAudios[0].audio_files.file_id}?v=${new Date(card.updated_at).getTime()}`;
-                          handleManualPlay(url);
+                        if (frontAudios[0]) {
+                          const url = getAudioUrl(frontAudios[0], card.updated_at);
+                          if (url) handleManualPlay(url);
                         }
                       }}
                       type="button"

@@ -25,7 +25,8 @@
   },
   "navigation": {
     "dashboard": "ダッシュボード",
-    "study": "学習する",
+    "study": "自己学習",
+    "courses": "コース",
     "generate": "生成する",
     "decks": "デッキ一覧",
     "statistics": "統計",
@@ -528,6 +529,10 @@
       "cancel_failed": "サブスクリプションの解約に失敗しました",
       "update_link_failed": "更新リンクの生成に失敗しました"
     },
+    "courses": {
+      "not_found": "コースが見つかりません",
+      "enroll_failed": "コースへの登録に失敗しました"
+    },
     "imports": {
       "no_target_decks": "インポート先の学習デッキが選択されていません",
       "source_deck_not_found": "インポート元のデッキが見つかりません",
@@ -948,5 +953,40 @@
     "feature_title_decks": "学習用デッキの制限",
     "legacy_notice": "現在、従来のプロバイダー（{provider}）を介して購読しています。請求を管理するにはサポートにお問い合わせください。",
     "cancel_subscription": "サブスクリプションを解約"
+  },
+  "courses": {
+    "title": "コース",
+    "difficulty": {
+      "beginner": "初級",
+      "intermediate": "中級",
+      "advanced": "上級"
+    },
+    "categories": {
+      "japanese": {
+        "name": "日本語",
+        "desc": "日本語の文字（ひらがな・カタカナ）と言語の基礎をマスターします。",
+        "emoji": "🇯🇵"
+      }
+    },
+    "decks": {
+      "hiragana": {
+        "name": "ひらがな",
+        "desc": "主要な日本語の表音文字（基本の46文字）をマスターします。"
+      },
+      "katakana": {
+        "name": "カタカナ",
+        "desc": "外来語の表記に使用される日本語の表音文字（基本の46文字）をマスターします。"
+      }
+    },
+    "actions": {
+      "start_learning": "学習を開始する",
+      "reset_progress": "進捗をリセットする",
+      "reset_progress_title": "コースの進捗をリセットしますか？",
+      "reset_progress_desc": "このコース of 学習進捗をリセットしてもよろしいですか？ これにより、このコースのすべての学習履歴とレビューログが削除されます。この操作は取り消せません。",
+      "status": {
+        "not_started": "未開始",
+        "in_progress": "学習中"
+      }
+    }
   }
 }

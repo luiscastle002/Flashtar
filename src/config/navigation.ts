@@ -1,8 +1,8 @@
-import { LayoutDashboard, BookOpen, Sparkles, Layers, BarChart3, Settings, CreditCard, type LucideIcon } from "lucide-react";
+import { LayoutDashboard, BookOpen, GraduationCap, Sparkles, Layers, BarChart3, Settings, CreditCard, type LucideIcon } from "lucide-react";
 
 export interface NavItem {
   href: string;
-  key: "dashboard" | "study" | "generate" | "decks" | "statistics" | "settings" | "plan";
+  key: "dashboard" | "study" | "courses" | "generate" | "decks" | "statistics" | "settings" | "plan";
   icon: LucideIcon;
   adminOnly?: boolean;
 }
@@ -10,6 +10,7 @@ export interface NavItem {
 export const navigationItems: NavItem[] = [
   { href: "/dashboard", key: "dashboard", icon: LayoutDashboard },
   { href: "/study",     key: "study",     icon: BookOpen },
+  { href: "/study/courses", key: "courses", icon: GraduationCap },
   { href: "/generate",  key: "generate",  icon: Sparkles },
   { href: "/decks",     key: "decks",     icon: Layers },
   { href: "/stats",     key: "statistics",icon: BarChart3 },

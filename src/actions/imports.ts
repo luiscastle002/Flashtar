@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentUser, getSubscription } from "@/lib/queries/user";
-import type { StudyCard, CardAudio } from "@/types";
+import type { StudyCard, CardAudio, CardStudyState } from "@/types";
 import type { Plan } from "@/types";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { cleanOrphanedCardAudios } from "./audio";
@@ -516,19 +516,125 @@ export async function getStudyCards(
     .maybeSingle();
   const plan = sub?.plan ?? "free";
 
-  // 2. Fetch the deck's card count
+  // 2. Fetch the deck's metadata to check if it's a Course deck
   const { data: deck } = await supabase
     .from("study_decks")
-    .select("card_count")
+    .select("card_count, shared_deck_id")
     .eq("id", studyDeckId)
     .eq("user_id", user.id)
     .single();
+
   const totalCards = deck?.card_count ?? 0;
-
-  // 3. Determine pagination strategy
   const limit = options.limit ?? 100;
-  const useKeyset = plan === "pro" && totalCards >= 5000;
 
+  // ---------------------------------------------------------------------------
+  // COURSE DECK PATH (Lazy Progress Overlay)
+  // ---------------------------------------------------------------------------
+  if (deck?.shared_deck_id) {
+    const page = options.page ?? 1;
+    const offset = options.offset ?? (page - 1) * limit;
+    const search = options.search;
+
+    // Fetch all user progress cards for this deck
+    const { data: progressRows } = await supabase
+      .from("study_cards")
+      .select("*")
+      .eq("study_deck_id", studyDeckId)
+      .eq("user_id", user.id);
+
+    const progressMap = new Map((progressRows ?? []).map((row) => [row.shared_card_id, row]));
+
+    // Query shared cards for the course
+    let query = supabase
+      .from("shared_cards")
+      .select("*", { count: "exact" })
+      .eq("shared_deck_id", deck.shared_deck_id);
+
+    if (search) {
+      query = query.or(`front.ilike.%${search}%,back.ilike.%${search}%`);
+    }
+
+    // Always sort courses by position ascending
+    query = query
+      .order("position", { ascending: true })
+      .range(offset, offset + limit - 1);
+
+    const { data: sharedCards, count } = await query;
+
+    const cards: StudyCard[] = (sharedCards ?? []).map((sc) => {
+      const progress = progressMap.get(sc.id);
+      return {
+        id: progress?.id ?? sc.id, // Use progress ID if studied, else shared_card_id
+        study_deck_id: studyDeckId,
+        user_id: user.id,
+        front: sc.front,
+        back: sc.back,
+        card_type: sc.card_type,
+        media_refs: [],
+        source_flashcard_id: null,
+        source_deck_id: null,
+        import_id: null,
+        shared_card_id: sc.id,
+        state: (progress?.state ?? "new") as CardStudyState,
+        due_at: progress?.due_at ?? new Date().toISOString(),
+        last_reviewed_at: progress?.last_reviewed_at ?? null,
+        ease_factor: progress?.ease_factor ?? 2.5,
+        interval_days: progress?.interval_days ?? 0,
+        repetitions: progress?.repetitions ?? 0,
+        lapse_count: progress?.lapse_count ?? 0,
+        learning_step_index: progress?.learning_step_index ?? 0,
+        fsrs_stability: null,
+        fsrs_difficulty: null,
+        fsrs_retrievability: null,
+        tags: [],
+        is_flagged: progress?.is_flagged ?? false,
+        position: sc.position,
+        created_at: sc.created_at,
+        updated_at: sc.updated_at,
+        audios: [
+          ...(sc.front_audio_url ? [{
+            id: `shared-${sc.id}-front`,
+            side: "front" as const,
+            original_filename: "front_pronunciation",
+            normalized_filename: "front_pronunciation",
+            audio_files: {
+              file_id: sc.front_audio_url,
+              provider: "url",
+              voice_id: "system",
+              language: "ja",
+              duration_seconds: null
+            }
+          }] : []),
+          ...(sc.back_audio_url ? [{
+            id: `shared-${sc.id}-back`,
+            side: "back" as const,
+            original_filename: "back_pronunciation",
+            normalized_filename: "back_pronunciation",
+            audio_files: {
+              file_id: sc.back_audio_url,
+              provider: "url",
+              voice_id: "system",
+              language: "ja",
+              duration_seconds: null
+            }
+          }] : [])
+        ]
+      };
+    });
+
+    return {
+      cards,
+      count: count ?? 0,
+      useKeyset: false,
+      nextCursor: null,
+      prevCursor: null,
+    };
+  }
+
+  // ---------------------------------------------------------------------------
+  // PERSONAL DECK PATH (Original Keyset / Offset Pagination)
+  // ---------------------------------------------------------------------------
+  const useKeyset = plan === "pro" && totalCards >= 5000;
   const sort = options.sort ?? "created_desc";
   const suspended = options.suspended ?? "all";
   const search = options.search;
@@ -537,7 +643,6 @@ export async function getStudyCards(
   const isAsc = (sort === "name_asc" || sort === "created_asc");
 
   if (useKeyset) {
-    // Keyset (Cursor-based) Pagination
     const direction = options.direction ?? "next";
     const queryForward = direction === "next";
     const queryAsc = queryForward ? isAsc : !isAsc;
@@ -557,17 +662,14 @@ export async function getStudyCards(
       .eq("study_deck_id", studyDeckId)
       .eq("user_id", user.id);
 
-    // Apply suspended filters
     if (suspended === "suspended_only") {
       query = query.eq("state", "suspended");
     }
 
-    // Apply trigram search
     if (search) {
       query = query.ilike("search_text", `%${search}%`);
     }
 
-    // Apply keyset comparisons
     if (cursorObj) {
       const val = cursorObj.sortValue;
       const cid = cursorObj.id;
@@ -575,7 +677,6 @@ export async function getStudyCards(
       query = query.or(`${sortCol}.${operator}."${val}",and(${sortCol}.eq."${val}",id.${operator}."${cid}")`);
     }
 
-    // Database sorting & limit
     query = query
       .order(sortCol, { ascending: queryAsc })
       .order("id", { ascending: queryAsc })
@@ -584,7 +685,6 @@ export async function getStudyCards(
     const { data, count } = await query;
     let cards = (data ?? []) as StudyCard[];
 
-    // If querying backward, reverse results to restore sorting order
     if (!queryForward) {
       cards = cards.reverse();
     }
@@ -614,7 +714,6 @@ export async function getStudyCards(
       prevCursor,
     };
   } else {
-    // Offset-based Pagination
     const page = options.page ?? 1;
     const offset = options.offset ?? (page - 1) * limit;
 
@@ -624,17 +723,14 @@ export async function getStudyCards(
       .eq("study_deck_id", studyDeckId)
       .eq("user_id", user.id);
 
-    // Apply suspended filters
     if (suspended === "suspended_only") {
       query = query.eq("state", "suspended");
     }
 
-    // Apply trigram search
     if (search) {
       query = query.ilike("search_text", `%${search}%`);
     }
 
-    // Sorting
     query = query
       .order(sortCol, { ascending: isAsc })
       .order("id", { ascending: isAsc })
@@ -706,7 +802,9 @@ async function attachAudiosToStudyCards(
 
   return cards.map((card) => ({
     ...card,
-    audios: card.source_flashcard_id ? (audiosMap[card.source_flashcard_id] || []) : [],
+    audios: card.source_flashcard_id 
+      ? (audiosMap[card.source_flashcard_id] || []) 
+      : (card.audios || []),
   })) as StudyCard[];
 }
 

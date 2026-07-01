@@ -25,7 +25,8 @@
   },
   "navigation": {
     "dashboard": "Painel",
-    "study": "Estudar",
+    "study": "Autoestudo",
+    "courses": "Cursos",
     "generate": "Gerar",
     "decks": "Baralhos",
     "statistics": "Estatísticas",
@@ -527,6 +528,10 @@
       "cancel_failed": "Falha ao cancelar assinatura",
       "update_link_failed": "Falha ao gerar link de atualização"
     },
+    "courses": {
+      "not_found": "Curso não encontrado",
+      "enroll_failed": "Falha ao se inscrever no curso"
+    },
     "imports": {
       "no_target_decks": "Nenhum baralho de destino selecionado",
       "source_deck_not_found": "Baralho de origem não encontrado",
@@ -947,5 +952,40 @@
     "feature_title_decks": "Limite de baralhos de estudo",
     "legacy_notice": "Atualmente você está inscrito através de um provedor herdado ({provider}). Entre em contato com o suporte para gerenciar seu faturamento.",
     "cancel_subscription": "Cancelar assinatura"
+  },
+  "courses": {
+    "title": "Cursos",
+    "difficulty": {
+      "beginner": "Iniciante",
+      "intermediate": "Intermediário",
+      "advanced": "Avançado"
+    },
+    "categories": {
+      "japanese": {
+        "name": "Japonês",
+        "desc": "Domine os caracteres japoneses (Hiragana e Katakana) e os aspectos básicos do idioma.",
+        "emoji": "🇯🇵"
+      }
+    },
+    "decks": {
+      "hiragana": {
+        "name": "Hiragana",
+        "desc": "Domine o alfabeto fonético japonês primário (46 caracteres básicos)."
+      },
+      "katakana": {
+        "name": "Katakana",
+        "desc": "Domine o alfabeto fonético japonês usado para palavras estrangeiras (46 caracteres básicos)."
+      }
+    },
+    "actions": {
+      "start_learning": "Começar a aprender",
+      "reset_progress": "Redefinir progresso",
+      "reset_progress_title": "Redefinir progresso do curso?",
+      "reset_progress_desc": "Tem certeza de que deseja redefinir seu progresso de estudo para este curso? Isso excluirá todo o seu histórico de estudo e registros de revisão para este curso. Esta ação é irreversível.",
+      "status": {
+        "not_started": "Não iniciado",
+        "in_progress": "Em progresso"
+      }
+    }
   }
 }

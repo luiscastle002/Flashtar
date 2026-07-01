@@ -25,7 +25,8 @@
   },
   "navigation": {
     "dashboard": "Dashboard",
-    "study": "Study",
+    "study": "Self Study",
+    "courses": "Courses",
     "generate": "Generate",
     "decks": "Decks",
     "statistics": "Statistics",
@@ -527,6 +528,10 @@
       "cancel_failed": "Failed to cancel subscription",
       "update_link_failed": "Failed to generate update link"
     },
+    "courses": {
+      "not_found": "Course not found",
+      "enroll_failed": "Failed to enroll in course"
+    },
     "imports": {
       "no_target_decks": "No target decks selected",
       "source_deck_not_found": "Source deck not found",
@@ -947,5 +952,40 @@
     "feature_title_decks": "Study decks limit",
     "legacy_notice": "You are currently subscribed via a legacy provider ({provider}). Please contact support to manage your billing.",
     "cancel_subscription": "Cancel Subscription"
+  },
+  "courses": {
+    "title": "Courses",
+    "difficulty": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "categories": {
+      "japanese": {
+        "name": "Japanese",
+        "desc": "Master Japanese characters (Hiragana and Katakana) and language basics.",
+        "emoji": "🇯🇵"
+      }
+    },
+    "decks": {
+      "hiragana": {
+        "name": "Hiragana",
+        "desc": "Master the primary Japanese phonetic script (46 basic characters)."
+      },
+      "katakana": {
+        "name": "Katakana",
+        "desc": "Master the Japanese phonetic script used for foreign loanwords (46 basic characters)."
+      }
+    },
+    "actions": {
+      "start_learning": "Start Learning",
+      "reset_progress": "Reset Progress",
+      "reset_progress_title": "Reset Course Progress?",
+      "reset_progress_desc": "Are you sure you want to reset your study progress for this course? This will delete all your study history and review logs for this course. This action is irreversible.",
+      "status": {
+        "not_started": "Not Started",
+        "in_progress": "In Progress"
+      }
+    }
   }
 }

@@ -61,6 +61,7 @@ function DashboardShellInner({
   const router = useRouter();
   const tDashboard = useTranslations("dashboard");
   const [dueCount, setDueCount] = React.useState<number | null>(null);
+  const [coursesDueCount, setCoursesDueCount] = React.useState<number | null>(null);
 
   // Synchronize database preferred language to NEXT_LOCALE cookie if they differ
   React.useEffect(() => {
@@ -95,7 +96,8 @@ function DashboardShellInner({
         const res = await fetch("/api/study/due-count");
         if (res.ok) {
           const data = await res.json();
-          setDueCount(data.totalDue ?? 0);
+          setDueCount(data.selfStudyDue ?? 0);
+          setCoursesDueCount(data.coursesDue ?? 0);
         }
       } catch (err) {
         console.error("Error fetching due count:", err);
@@ -113,13 +115,13 @@ function DashboardShellInner({
       <div className="relative z-10 flex flex-1 min-w-0">
         
         {/* Collapsible Left Sidebar (Desktop) */}
-        <AppSidebar profile={profile} dueCount={dueCount} />
+        <AppSidebar profile={profile} dueCount={dueCount} coursesDueCount={coursesDueCount} />
 
         <div className="flex-1 flex flex-col min-w-0">
           <header className="h-16 border-b flex items-center justify-between px-4 md:px-6">
             
             {/* Hamburger Trigger for Mobile Drawer */}
-            <MobileSidebar profile={profile} dueCount={dueCount} />
+            <MobileSidebar profile={profile} dueCount={dueCount} coursesDueCount={coursesDueCount} />
             
             <div className="md:hidden">
               <Link href="/dashboard" className="flex items-center gap-2 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md">

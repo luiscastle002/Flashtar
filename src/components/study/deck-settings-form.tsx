@@ -85,8 +85,8 @@ export function DeckSettingsForm({
   );
   const [leechThreshold, setLeechThreshold] = useState(settings?.leech_threshold ?? 8);
   const [showConfidenceBar, setShowConfidenceBar] = useState(settings?.show_confidence_bar ?? true);
-  const [autoplayAudioFront, setAutoplayAudioFront] = useState(settings?.autoplay_audio_front ?? false);
-  const [autoplayAudioBack, setAutoplayAudioBack] = useState(settings?.autoplay_audio_back ?? false);
+  const [autoplayAudioFront, setAutoplayAudioFront] = useState(settings?.autoplay_audio_front ?? true);
+  const [autoplayAudioBack, setAutoplayAudioBack] = useState(settings?.autoplay_audio_back ?? true);
 
   const [isArchivedState, setIsArchivedState] = useState(isArchived);
   const [archivePending, startArchiveTransition] = useTransition();

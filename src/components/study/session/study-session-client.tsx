@@ -64,6 +64,9 @@ interface StudySessionClientProps {
   showConfidenceBar: boolean;
   autoplayAudioFront?: boolean;
   autoplayAudioBack?: boolean;
+  isCourse?: boolean;
+  /** When isCourse=true, the URL to navigate to after finishing (the category page) */
+  courseBackUrl?: string;
 }
 
 interface SessionStats {
@@ -176,6 +179,8 @@ export function StudySessionClient({
   showConfidenceBar,
   autoplayAudioFront = false,
   autoplayAudioBack = false,
+  isCourse = false,
+  courseBackUrl,
 }: StudySessionClientProps) {
   const router = useRouter();
   const t = useTranslations("study.session");
@@ -473,7 +478,8 @@ export function StudySessionClient({
       newCardsSeen: state.stats.newSeen,
       durationMs,
     });
-    router.push(`/study/${deckId}`);
+    // For course sessions, return to the category page instead of the self-study deck editor
+    router.push(isCourse && courseBackUrl ? courseBackUrl : `/study/${deckId}`);
     router.refresh();
   }
 
@@ -524,7 +530,7 @@ export function StudySessionClient({
         <span className="text-sm text-muted-foreground tabular-nums shrink-0">
           {state.currentIndex + 1}/{state.cards.length}
         </span>
-        {state.isFlipped && (
+        {state.isFlipped && !isCourse && (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground shrink-0">
@@ -560,6 +566,7 @@ export function StudySessionClient({
           onFlip={handleFlip}
           autoplayAudioFront={autoplayAudioFront}
           autoplayAudioBack={autoplayAudioBack}
+          isCourse={isCourse}
         />
 
         {/* Answer controls — only shown after flip */}

@@ -185,16 +185,14 @@ export async function canGenerateDeck(cardCount: number): Promise<{
 // Study Mode v2 — Billing Gate Helpers
 // ---------------------------------------------------------------------------
 
-/**
- * Returns the number of active (non-archived) study decks for a user.
- */
 export async function getStudyDeckCount(userId: string): Promise<number> {
   const supabase = await createClient();
   const { count } = await supabase
     .from("study_decks")
     .select("id", { count: "exact", head: true })
     .eq("user_id", userId)
-    .eq("is_archived", false);
+    .eq("is_archived", false)
+    .is("shared_deck_id", null);
   return count ?? 0;
 }
 

@@ -25,7 +25,8 @@
   },
   "navigation": {
     "dashboard": "Panel",
-    "study": "Estudiar",
+    "study": "Autoestudio",
+    "courses": "Cursos",
     "generate": "Generar",
     "decks": "Barajas",
     "statistics": "Estadísticas",
@@ -527,6 +528,10 @@
       "cancel_failed": "Error al cancelar la suscripción",
       "update_link_failed": "Error al generar el enlace de actualización"
     },
+    "courses": {
+      "not_found": "Curso no encontrado",
+      "enroll_failed": "Error al inscribirse en el curso"
+    },
     "imports": {
       "no_target_decks": "No se han seleccionado barajas de destino",
       "source_deck_not_found": "Baraja de origen no encontrada",
@@ -947,5 +952,40 @@
     "feature_title_decks": "Límite de barajas de estudio",
     "legacy_notice": "Actualmente estás suscrito a través de un proveedor heredado ({provider}). Ponte en contacto con el soporte técnico para gestionar tu facturación.",
     "cancel_subscription": "Cancelar suscripción"
+  },
+  "courses": {
+    "title": "Cursos",
+    "difficulty": {
+      "beginner": "Principiante",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado"
+    },
+    "categories": {
+      "japanese": {
+        "name": "Japonés",
+        "desc": "Domina los caracteres japoneses (Hiragana y Katakana) y los aspectos básicos del idioma.",
+        "emoji": "🇯🇵"
+      }
+    },
+    "decks": {
+      "hiragana": {
+        "name": "Hiragana",
+        "desc": "Domina el alfabeto fonético japonés principal (46 caracteres básicos)."
+      },
+      "katakana": {
+        "name": "Katakana",
+        "desc": "Domina el alfabeto fonético japonés utilizado para palabras extranjeras (46 caracteres básicos)."
+      }
+    },
+    "actions": {
+      "start_learning": "Empezar a aprender",
+      "reset_progress": "Restablecer progreso",
+      "reset_progress_title": "¿Restablecer progreso del curso?",
+      "reset_progress_desc": "¿Estás seguro de que quieres restablecer tu progreso de estudio para este curso? Esto eliminará todo tu historial de estudio y registros de revisión para este curso. Esta acción es irreversible.",
+      "status": {
+        "not_started": "Sin iniciar",
+        "in_progress": "En progreso"
+      }
+    }
   }
 }
