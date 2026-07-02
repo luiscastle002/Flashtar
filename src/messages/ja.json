@@ -978,6 +978,10 @@
         "desc": "外来語の表記に使用される日本語の表音文字（基本の46文字）をマスターします。"
       }
     },
+    "course_count_plural": "{count, plural, =1 {# コース} other {# コース}}",
+    "progress_complete": "{percent}% 完了",
+    "no_categories": "現在利用可能なカテゴリーはありません。",
+    "open": "開く",
     "actions": {
       "start_learning": "学習を開始する",
       "reset_progress": "進捗をリセットする",

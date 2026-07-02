@@ -977,6 +977,10 @@
         "desc": "Domine o alfabeto fonético japonês usado para palavras estrangeiras (46 caracteres básicos)."
       }
     },
+    "course_count_plural": "{count, plural, =1 {# Curso} other {# Cursos}}",
+    "progress_complete": "{percent}% concluído",
+    "no_categories": "Nenhuma categoria disponível no momento.",
+    "open": "Abrir",
     "actions": {
       "start_learning": "Começar a aprender",
       "reset_progress": "Redefinir progresso",

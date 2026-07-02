@@ -977,6 +977,10 @@
         "desc": "Master the Japanese phonetic script used for foreign loanwords (46 basic characters)."
       }
     },
+    "course_count_plural": "{count, plural, =1 {# Course} other {# Courses}}",
+    "progress_complete": "{percent}% Complete",
+    "no_categories": "No categories available at this time.",
+    "open": "Open",
     "actions": {
       "start_learning": "Start Learning",
       "reset_progress": "Reset Progress",

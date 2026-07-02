@@ -42,7 +42,7 @@ export default async function CategoryPage(props: CategoryPageProps) {
 
   return (
     <DashboardShell currentPath="/study/courses" profile={profile}>
-      <div className="space-y-8 max-w-5xl">
+      <div className="space-y-8 max-w-7xl mx-auto w-full">
         {/* Breadcrumb Back Navigation */}
         <div>
           <Button variant="ghost" size="sm" asChild className="mb-2 -ml-2 rounded-xl text-muted-foreground hover:text-foreground">
