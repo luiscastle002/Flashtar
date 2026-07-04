@@ -965,6 +965,16 @@
         "name": "Japonês",
         "desc": "Domine os caracteres japoneses (Hiragana e Katakana) e os aspectos básicos do idioma.",
         "emoji": "🇯🇵"
+      },
+      "english": {
+        "name": "Inglês",
+        "desc": "Desenvolva habilidades padrão de leitura, escrita e conversação em inglês.",
+        "emoji": "🇬🇧"
+      },
+      "spanish": {
+        "name": "Espanhol",
+        "desc": "Aprenda espanhol conversacional e domine a gramática fundamental.",
+        "emoji": "🇪🇸"
       }
     },
     "decks": {
@@ -975,6 +985,18 @@
       "katakana": {
         "name": "Katakana",
         "desc": "Domine o alfabeto fonético japonês usado para palavras estrangeiras (46 caracteres básicos)."
+      },
+      "jlpt_n5": {
+        "name": "JLPT N5",
+        "desc": "Domine o vocabulário básico, kanji e gramática para o nível JLPT N5."
+      },
+      "english_a1": {
+        "name": "CEFR A1",
+        "desc": "Cursos de inglês para iniciantes focados no vocabulário essencial do dia a dia."
+      },
+      "spanish_a1": {
+        "name": "CEFR A1",
+        "desc": "Cursos de espanhol para iniciantes focados no vocabulário essencial do dia a dia."
       }
     },
     "course_count_plural": "{count, plural, =1 {# Curso} other {# Cursos}}",

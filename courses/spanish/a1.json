@@ -1,0 +1,379 @@
+{
+  "category": {
+    "id": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
+    "name_key": "spanish",
+    "position": 2
+  },
+  "deck": {
+    "id": "92827161-0000-0000-0000-000000000004",
+    "name_key": "spanish_a1",
+    "description_key": "spanish_a1",
+    "emoji": "🇪🇸",
+    "color": "#f59e0b",
+    "difficulty": "beginner",
+    "language": "es",
+    "position": 0
+  },
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000001",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hola</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hello / Hi</div>",
+      "position": 0
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000002",
+      "front": "<div class=\"text-5xl font-bold text-center\">Buenos días</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Good morning</div>",
+      "position": 1
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000003",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿Cómo estás?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>How are you?</div>",
+      "position": 2
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000004",
+      "front": "<div class=\"text-5xl font-bold text-center\">Me llamo...</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>My name is...</div>",
+      "position": 3
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000005",
+      "front": "<div class=\"text-5xl font-bold text-center\">Mucho gusto</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Nice to meet you</div>",
+      "position": 4
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000006",
+      "front": "<div class=\"text-5xl font-bold text-center\">Por favor</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Please</div>",
+      "position": 5
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000007",
+      "front": "<div class=\"text-5xl font-bold text-center\">Gracias</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Thank you</div>",
+      "position": 6
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000008",
+      "front": "<div class=\"text-5xl font-bold text-center\">Sí / No</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Yes / No</div>",
+      "position": 7
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000009",
+      "front": "<div class=\"text-5xl font-bold text-center\">Adiós</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Goodbye</div>",
+      "position": 8
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000010",
+      "front": "<div class=\"text-5xl font-bold text-center\">Uno, Dos, Tres</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>One, Two, Three (1, 2, 3)</div>",
+      "position": 9
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000011",
+      "front": "<div class=\"text-5xl font-bold text-center\">Cuatro, Cinco, Seis</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Four, Five, Six (4, 5, 6)</div>",
+      "position": 10
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000012",
+      "front": "<div class=\"text-5xl font-bold text-center\">Siete, Ocho, Nueve, Diez</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Seven, Eight, Nine, Ten (7, 8, 9, 10)</div>",
+      "position": 11
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000013",
+      "front": "<div class=\"text-5xl font-bold text-center\">Rojo, Azul, Verde</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Red, Blue, Green</div>",
+      "position": 12
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000014",
+      "front": "<div class=\"text-5xl font-bold text-center\">Negro, Blanco, Amarillo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Black, White, Yellow</div>",
+      "position": 13
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000015",
+      "front": "<div class=\"text-5xl font-bold text-center\">Yo / Tú</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I / You (subject pronouns)</div>",
+      "position": 14
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000016",
+      "front": "<div class=\"text-5xl font-bold text-center\">Él / Ella / Eso</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>He / She / It</div>",
+      "position": 15
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000017",
+      "front": "<div class=\"text-5xl font-bold text-center\">Nosotros / Ellos</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>We / They</div>",
+      "position": 16
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000018",
+      "front": "<div class=\"text-5xl font-bold text-center\">Padre / Madre</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Father / Mother</div>",
+      "position": 17
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000019",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hermano / Hermana</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Brother / Sister</div>",
+      "position": 18
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000020",
+      "front": "<div class=\"text-5xl font-bold text-center\">Amigo / Familia</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Friend / Family</div>",
+      "position": 19
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000021",
+      "front": "<div class=\"text-5xl font-bold text-center\">Agua / Beber</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Water / To drink</div>",
+      "position": 20
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000022",
+      "front": "<div class=\"text-5xl font-bold text-center\">Comida / Comer</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Food / To eat</div>",
+      "position": 21
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000023",
+      "front": "<div class=\"text-5xl font-bold text-center\">Casa / Hogar</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>House / Home</div>",
+      "position": 22
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000024",
+      "front": "<div class=\"text-5xl font-bold text-center\">Escuela / Aprender</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>School / To learn</div>",
+      "position": 23
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000025",
+      "front": "<div class=\"text-5xl font-bold text-center\">Ciudad / Calle</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>City / Street</div>",
+      "position": 24
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000026",
+      "front": "<div class=\"text-5xl font-bold text-center\">Coche / Bicicleta</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Car / Bicycle</div>",
+      "position": 25
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000027",
+      "front": "<div class=\"text-5xl font-bold text-center\">Teléfono / Móvil</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Telephone / Phone</div>",
+      "position": 26
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000028",
+      "front": "<div class=\"text-5xl font-bold text-center\">Tiempo / Hora</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Time / Hour</div>",
+      "position": 27
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000029",
+      "front": "<div class=\"text-5xl font-bold text-center\">Qué / Quién</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>What / Who (question words)</div>",
+      "position": 28
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000030",
+      "front": "<div class=\"text-5xl font-bold text-center\">Dónde / Cuándo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Where / When</div>",
+      "position": 29
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000031",
+      "front": "<div class=\"text-5xl font-bold text-center\">Por qué / Cómo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Why / How</div>",
+      "position": 30
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000032",
+      "front": "<div class=\"text-5xl font-bold text-center\">Ser / Estar</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To be (permanent identity vs. temporary state/location)</div>",
+      "position": 31
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000033",
+      "front": "<div class=\"text-5xl font-bold text-center\">Tener</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To have</div>",
+      "position": 32
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000034",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hacer</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To do / To make</div>",
+      "position": 33
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000035",
+      "front": "<div class=\"text-5xl font-bold text-center\">Ir</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To go</div>",
+      "position": 34
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000036",
+      "front": "<div class=\"text-5xl font-bold text-center\">Gustar / Querer</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To like, and to want / love</div>",
+      "position": 35
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000037",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hablar</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To speak / talk</div>",
+      "position": 36
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000038",
+      "front": "<div class=\"text-5xl font-bold text-center\">Grande / Pequeño</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Big / Small</div>",
+      "position": 37
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000039",
+      "front": "<div class=\"text-5xl font-bold text-center\">Feliz / Triste</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Happy / Sad</div>",
+      "position": 38
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000040",
+      "front": "<div class=\"text-5xl font-bold text-center\">Bueno / Malo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Good / Bad</div>",
+      "position": 39
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000041",
+      "front": "<div class=\"text-5xl font-bold text-center\">Fácil / Difícil</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Easy / Difficult</div>",
+      "position": 40
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000042",
+      "front": "<div class=\"text-5xl font-bold text-center\">Caliente / Frío</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hot / Cold</div>",
+      "position": 41
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000043",
+      "front": "<div class=\"text-5xl font-bold text-center\">Nuevo / Viejo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>New / Old</div>",
+      "position": 42
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000044",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hoy / Mañana</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Today / Tomorrow</div>",
+      "position": 43
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000045",
+      "front": "<div class=\"text-5xl font-bold text-center\">Ayer / Día</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Yesterday / Day</div>",
+      "position": 44
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000046",
+      "front": "<div class=\"text-5xl font-bold text-center\">Semana / Mes / Año</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Week / Month / Year</div>",
+      "position": 45
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000047",
+      "front": "<div class=\"text-5xl font-bold text-center\">Lunes a Miércoles</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Monday to Wednesday</div>",
+      "position": 46
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000048",
+      "front": "<div class=\"text-5xl font-bold text-center\">Jueves a Domingo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Thursday to Sunday</div>",
+      "position": 47
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000049",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿Cuánto cuesta esto?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>How much is this?</div>",
+      "position": 48
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000050",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿Dónde está el baño?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Where is the bathroom?</div>",
+      "position": 49
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000051",
+      "front": "<div class=\"text-5xl font-bold text-center\">No entiendo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I don't understand</div>",
+      "position": 50
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000052",
+      "front": "<div class=\"text-5xl font-bold text-center\">Disculpe / Perdón</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Excuse me / Sorry</div>",
+      "position": 51
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000053",
+      "front": "<div class=\"text-5xl font-bold text-center\">Necesito ayuda</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I need help</div>",
+      "position": 52
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000054",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿Qué hora es?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>What time is it?</div>",
+      "position": 53
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000055",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hablo un poco de español</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I speak a little Spanish</div>",
+      "position": 54
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000056",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿Puede repetir eso?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Can you repeat that?</div>",
+      "position": 55
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000057",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿De dónde eres?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Where are you from?</div>",
+      "position": 56
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000058",
+      "front": "<div class=\"text-5xl font-bold text-center\">Soy de...</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I am from...</div>",
+      "position": 57
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000059",
+      "front": "<div class=\"text-5xl font-bold text-center\">Que tenga un buen día</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Have a nice day</div>",
+      "position": 58
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000060",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hasta luego</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>See you later</div>",
+      "position": 59
+    }
+  ]
+}

@@ -965,6 +965,16 @@
         "name": "Japanese",
         "desc": "Master Japanese characters (Hiragana and Katakana) and language basics.",
         "emoji": "🇯🇵"
+      },
+      "english": {
+        "name": "English",
+        "desc": "Develop standard English reading, writing, and speaking skills.",
+        "emoji": "🇬🇧"
+      },
+      "spanish": {
+        "name": "Spanish",
+        "desc": "Learn conversational Spanish and master foundational grammar.",
+        "emoji": "🇪🇸"
       }
     },
     "decks": {
@@ -975,6 +985,18 @@
       "katakana": {
         "name": "Katakana",
         "desc": "Master the Japanese phonetic script used for foreign loanwords (46 basic characters)."
+      },
+      "jlpt_n5": {
+        "name": "JLPT N5",
+        "desc": "Master basic Japanese vocabulary, Kanji, and grammar for the JLPT N5 level."
+      },
+      "english_a1": {
+        "name": "CEFR A1",
+        "desc": "Beginner English courses focusing on essential everyday vocabulary."
+      },
+      "spanish_a1": {
+        "name": "CEFR A1",
+        "desc": "Beginner Spanish courses focusing on essential everyday vocabulary."
       }
     },
     "course_count_plural": "{count, plural, =1 {# Course} other {# Courses}}",

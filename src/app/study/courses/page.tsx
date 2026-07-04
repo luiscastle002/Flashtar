@@ -20,6 +20,8 @@ export async function generateMetadata() {
 
 const CATEGORY_BANNERS: Record<string, string> = {
   japanese: "/images/jp_banner_course.png",
+  english: "/images/us_banner_course.png",
+  spanish: "/images/es_banner_course.png",
 };
 
 export default async function CoursesPage() {

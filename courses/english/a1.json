@@ -1,0 +1,379 @@
+{
+  "category": {
+    "id": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+    "name_key": "english",
+    "position": 1
+  },
+  "deck": {
+    "id": "92827161-0000-0000-0000-000000000003",
+    "name_key": "english_a1",
+    "description_key": "english_a1",
+    "emoji": "🇬🇧",
+    "color": "#3b82f6",
+    "difficulty": "beginner",
+    "language": "en",
+    "position": 0
+  },
+  "cards": [
+    {
+      "id": "b0000000-0000-0000-0000-000000000001",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hello</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A polite greeting used to begin a conversation.</div>",
+      "position": 0
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000002",
+      "front": "<div class=\"text-5xl font-bold text-center\">Good morning</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Greeting used in the morning (before noon).</div>",
+      "position": 1
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000003",
+      "front": "<div class=\"text-5xl font-bold text-center\">How are you?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A common question to ask about someone's well-being.</div>",
+      "position": 2
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000004",
+      "front": "<div class=\"text-5xl font-bold text-center\">My name is...</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to introduce yourself to others.</div>",
+      "position": 3
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000005",
+      "front": "<div class=\"text-5xl font-bold text-center\">Nice to meet you</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite expression said when meeting someone for the first time.</div>",
+      "position": 4
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000006",
+      "front": "<div class=\"text-5xl font-bold text-center\">Please</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to make a request polite.</div>",
+      "position": 5
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000007",
+      "front": "<div class=\"text-5xl font-bold text-center\">Thank you</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite expression of gratitude.</div>",
+      "position": 6
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000008",
+      "front": "<div class=\"text-5xl font-bold text-center\">Yes / No</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Standard words used for affirmation and negation.</div>",
+      "position": 7
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000009",
+      "front": "<div class=\"text-5xl font-bold text-center\">Goodbye</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Saying farewell when leaving.</div>",
+      "position": 8
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000010",
+      "front": "<div class=\"text-5xl font-bold text-center\">One, Two, Three</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The numbers 1, 2, and 3.</div>",
+      "position": 9
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000011",
+      "front": "<div class=\"text-5xl font-bold text-center\">Four, Five, Six</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The numbers 4, 5, and 6.</div>",
+      "position": 10
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000012",
+      "front": "<div class=\"text-5xl font-bold text-center\">Seven, Eight, Nine, Ten</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The numbers 7, 8, 9, and 10.</div>",
+      "position": 11
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000013",
+      "front": "<div class=\"text-5xl font-bold text-center\">Red, Blue, Green</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Three primary colors.</div>",
+      "position": 12
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000014",
+      "front": "<div class=\"text-5xl font-bold text-center\">Black, White, Yellow</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Common colors.</div>",
+      "position": 13
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000015",
+      "front": "<div class=\"text-5xl font-bold text-center\">I / You</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>First-person singular (speaker) and second-person singular (listener) pronouns.</div>",
+      "position": 14
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000016",
+      "front": "<div class=\"text-5xl font-bold text-center\">He / She / It</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Third-person singular pronouns (male, female, object).</div>",
+      "position": 15
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000017",
+      "front": "<div class=\"text-5xl font-bold text-center\">We / They</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>First-person plural and third-person plural pronouns.</div>",
+      "position": 16
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000018",
+      "front": "<div class=\"text-5xl font-bold text-center\">Father / Mother</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Male parent and female parent.</div>",
+      "position": 17
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000019",
+      "front": "<div class=\"text-5xl font-bold text-center\">Brother / Sister</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Male sibling and female sibling.</div>",
+      "position": 18
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000020",
+      "front": "<div class=\"text-5xl font-bold text-center\">Friend / Family</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person you know well, and the group of people related to you.</div>",
+      "position": 19
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000021",
+      "front": "<div class=\"text-5xl font-bold text-center\">Water / Drink</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Essential liquid, and the act of consuming liquids.</div>",
+      "position": 20
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000022",
+      "front": "<div class=\"text-5xl font-bold text-center\">Food / Eat</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Nutritious substance, and the act of consuming solid food.</div>",
+      "position": 21
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000023",
+      "front": "<div class=\"text-5xl font-bold text-center\">House / Home</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The building you live in, and the place where you feel you belong.</div>",
+      "position": 22
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000024",
+      "front": "<div class=\"text-5xl font-bold text-center\">School / Learn</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Institution of education, and the act of acquiring knowledge.</div>",
+      "position": 23
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000025",
+      "front": "<div class=\"text-5xl font-bold text-center\">City / Street</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Large town, and a public road in a city or town.</div>",
+      "position": 24
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000026",
+      "front": "<div class=\"text-5xl font-bold text-center\">Car / Bicycle</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Road vehicle with four wheels, and a vehicle with two wheels.</div>",
+      "position": 25
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000027",
+      "front": "<div class=\"text-5xl font-bold text-center\">Telephone / Phone</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Electronic device used to speak to someone far away.</div>",
+      "position": 26
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000028",
+      "front": "<div class=\"text-5xl font-bold text-center\">Time / Hour</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ongoing progression of existence, and a period of 60 minutes.</div>",
+      "position": 27
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000029",
+      "front": "<div class=\"text-5xl font-bold text-center\">What / Who</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Question words used to ask about things, and to ask about people.</div>",
+      "position": 28
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000030",
+      "front": "<div class=\"text-5xl font-bold text-center\">Where / When</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Question words used to ask about location, and to ask about time.</div>",
+      "position": 29
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000031",
+      "front": "<div class=\"text-5xl font-bold text-center\">Why / How</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Question words used to ask about reasons, and to ask about methods or status.</div>",
+      "position": 30
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000032",
+      "front": "<div class=\"text-5xl font-bold text-center\">To be (am, is, are)</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>State of existence or identity (e.g. \"I am a student\").</div>",
+      "position": 31
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000033",
+      "front": "<div class=\"text-5xl font-bold text-center\">To have (has)</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To possess or own (e.g. \"I have a book\").</div>",
+      "position": 32
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000034",
+      "front": "<div class=\"text-5xl font-bold text-center\">To do (does)</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To perform an action or activity.</div>",
+      "position": 33
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000035",
+      "front": "<div class=\"text-5xl font-bold text-center\">To go (goes)</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To move from one place to another.</div>",
+      "position": 34
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000036",
+      "front": "<div class=\"text-5xl font-bold text-center\">To like / To want</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To find something agreeable, and to have a desire for something.</div>",
+      "position": 35
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000037",
+      "front": "<div class=\"text-5xl font-bold text-center\">To speak / To talk</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To communicate using spoken words.</div>",
+      "position": 36
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000038",
+      "front": "<div class=\"text-5xl font-bold text-center\">Big / Small</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Large in size, and little in size.</div>",
+      "position": 37
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000039",
+      "front": "<div class=\"text-5xl font-bold text-center\">Happy / Sad</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling joy, and feeling sorrow.</div>",
+      "position": 38
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000040",
+      "front": "<div class=\"text-5xl font-bold text-center\">Good / Bad</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Having positive qualities, and having negative qualities.</div>",
+      "position": 39
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000041",
+      "front": "<div class=\"text-5xl font-bold text-center\">Easy / Difficult</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Requiring little effort, and requiring great effort.</div>",
+      "position": 40
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000042",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hot / Cold</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>High temperature, and low temperature.</div>",
+      "position": 41
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000043",
+      "front": "<div class=\"text-5xl font-bold text-center\">New / Old</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Recently created or acquired, and having existed for a long time.</div>",
+      "position": 42
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000044",
+      "front": "<div class=\"text-5xl font-bold text-center\">Today / Tomorrow</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The present day, and the day after today.</div>",
+      "position": 43
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000045",
+      "front": "<div class=\"text-5xl font-bold text-center\">Yesterday / Day</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The day before today, and the period of light between sunrise and sunset.</div>",
+      "position": 44
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000046",
+      "front": "<div class=\"text-5xl font-bold text-center\">Week / Month / Year</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A period of 7 days, ~30 days, and 365 days.</div>",
+      "position": 45
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000047",
+      "front": "<div class=\"text-5xl font-bold text-center\">Monday to Wednesday</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The first three working days of the week.</div>",
+      "position": 46
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000048",
+      "front": "<div class=\"text-5xl font-bold text-center\">Thursday to Sunday</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The rest of the week, including the weekend.</div>",
+      "position": 47
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000049",
+      "front": "<div class=\"text-5xl font-bold text-center\">How much is this?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask about the price of an item.</div>",
+      "position": 48
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000050",
+      "front": "<div class=\"text-5xl font-bold text-center\">Where is the bathroom?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask for the location of the toilet.</div>",
+      "position": 49
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000051",
+      "front": "<div class=\"text-5xl font-bold text-center\">I don't understand</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used when you do not comprehend what someone said.</div>",
+      "position": 50
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000052",
+      "front": "<div class=\"text-5xl font-bold text-center\">Excuse me</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to get someone's attention or politely apologize.</div>",
+      "position": 51
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000053",
+      "front": "<div class=\"text-5xl font-bold text-center\">I need help</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to request assistance.</div>",
+      "position": 52
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000054",
+      "front": "<div class=\"text-5xl font-bold text-center\">What time is it?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask for the current time.</div>",
+      "position": 53
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000055",
+      "front": "<div class=\"text-5xl font-bold text-center\">I speak a little English</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to describe your basic proficiency in English.</div>",
+      "position": 54
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000056",
+      "front": "<div class=\"text-5xl font-bold text-center\">Can you repeat that?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask someone to say something again.</div>",
+      "position": 55
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000057",
+      "front": "<div class=\"text-5xl font-bold text-center\">Where are you from?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask about someone's origin or country.</div>",
+      "position": 56
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000058",
+      "front": "<div class=\"text-5xl font-bold text-center\">I am from...</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to state your country of origin.</div>",
+      "position": 57
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000059",
+      "front": "<div class=\"text-5xl font-bold text-center\">Have a nice day</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A polite parting wish.</div>",
+      "position": 58
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000060",
+      "front": "<div class=\"text-5xl font-bold text-center\">See you later</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A casual farewell phrase meaning goodbye for now.</div>",
+      "position": 59
+    }
+  ]
+}
