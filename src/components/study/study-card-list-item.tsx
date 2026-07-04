@@ -153,12 +153,12 @@ export const StudyCardListItem = memo(function StudyCardListItem({
         </div>
       )}
       {/* Front preview */}
-      <div className="flex-1 min-w-0">
-        <p
+      <div className="flex-1 min-w-0 pointer-events-none">
+        <div
           className="text-sm font-medium line-clamp-1"
           dangerouslySetInnerHTML={{ __html: stripSoundTags(card.front) }}
         />
-        <p
+        <div
           className="text-xs text-muted-foreground mt-0.5 line-clamp-1"
           dangerouslySetInnerHTML={{ __html: stripSoundTags(card.back) }}
         />
