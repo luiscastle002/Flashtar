@@ -64,7 +64,7 @@ export function AppSidebar({
       >
         {!isCollapsed && (
           <span className="text-[10px] text-muted-foreground/60 select-none animate-in fade-in duration-300">
-            Flashtar v1.0.4
+            Flashtar v1.0.5
           </span>
         )}
         <SidebarToggle className="h-8 w-8" />

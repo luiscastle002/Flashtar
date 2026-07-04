@@ -11,6 +11,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Label } from "@/components/ui/label";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
+import { cn } from "@/lib/utils";
 import { StudyCardListItem } from "./study-card-list-item";
 import { bulkDeleteStudyCards, bulkSuspendStudyCards, bulkUnsuspendStudyCards, bulkUpdateStudyCards } from "@/actions/imports";
 import { getGooglePickerConfig } from "@/actions/integrations";
@@ -104,6 +105,7 @@ export function StudyCardListManager({
 
   const frontEditorRef = useRef<Editor | null>(null);
   const backEditorRef = useRef<Editor | null>(null);
+  const lastFocusedCardId = useRef<string | null>(null);
 
   const handleDeleteAudio = useCallback((audioId: string) => {
     setDeletedAudioIds((prev) => [...prev, audioId]);
@@ -240,6 +242,20 @@ export function StudyCardListManager({
     return () => clearTimeout(timer);
   }, [searchVal, pathname, router]);
 
+  // Focus restoration on closing the edit modal
+  const [prevEditOpen, setPrevEditOpen] = useState(editOpen);
+  useEffect(() => {
+    if (prevEditOpen && !editOpen) {
+      if (lastFocusedCardId.current) {
+        const el = document.getElementById(`card-row-${lastFocusedCardId.current}`);
+        if (el) {
+          el.focus();
+        }
+      }
+    }
+    setPrevEditOpen(editOpen);
+  }, [editOpen, prevEditOpen]);
+
   const allPageIds = initialCards.map((c) => c.id);
   const isAllSelected = allPageIds.length > 0 && allPageIds.every((id) => selectedIds.has(id));
 
@@ -255,7 +271,7 @@ export function StudyCardListManager({
     });
   };
 
-  const handleToggleSelectCard = (cardId: string) => {
+  const handleToggleSelectCard = useCallback((cardId: string) => {
     setSelectedIds((prev) => {
       const next = new Set(prev);
       if (next.has(cardId)) {
@@ -265,7 +281,17 @@ export function StudyCardListManager({
       }
       return next;
     });
-  };
+  }, []);
+
+  const handleDoubleClickCard = useCallback((card: StudyCard) => {
+    setEditingCard(card);
+    setDeletedAudioIds([]);
+    setEditFront(card.front);
+    setEditBack(card.back);
+    setEditTags(card.tags?.join(", ") ?? "");
+    lastFocusedCardId.current = card.id;
+    setEditOpen(true);
+  }, []);
 
   const handleSortChange = (value: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -397,11 +423,13 @@ export function StudyCardListManager({
         setEditFront(card.front);
         setEditBack(card.back);
         setEditTags(card.tags?.join(", ") ?? "");
+        lastFocusedCardId.current = card.id;
       }
-    } else {
+    } else if (ids.length > 1) {
       setBulkAddTags("");
       setBulkRemoveTags("");
       setBulkFlagAction("no_change");
+      lastFocusedCardId.current = ids[0];
     }
     setEditOpen(true);
   };
@@ -409,7 +437,7 @@ export function StudyCardListManager({
   const executeBulkUpdate = async () => {
     setIsMutating(true);
     try {
-      const ids = Array.from(selectedIds);
+      const ids = editingCard ? [editingCard.id] : Array.from(selectedIds);
       let updates: {
         front?: string;
         back?: string;
@@ -449,7 +477,9 @@ export function StudyCardListManager({
         toast.error(res.error);
       } else {
         toast.success(t("bulk_actions.toast_edit_success", { count: ids.length }));
-        setSelectedIds(new Set());
+        if (!editingCard) {
+          setSelectedIds(new Set());
+        }
         setDeletedAudioIds([]);
         router.refresh();
       }
@@ -458,6 +488,34 @@ export function StudyCardListManager({
     } finally {
       setIsMutating(false);
       setEditOpen(false);
+    }
+  };
+
+  const handleListKeyDown = (e: React.KeyboardEvent) => {
+    // If a modal or editor is open, do not handle list keys
+    if (editOpen || confirmDeleteOpen || confirmSuspendOpen || confirmUnsuspendOpen) {
+      return;
+    }
+
+    // Ignore if typing in text inputs or editable elements
+    const activeEl = document.activeElement;
+    if (
+      activeEl &&
+      (activeEl.tagName === "INPUT" ||
+        activeEl.tagName === "TEXTAREA" ||
+        activeEl.getAttribute("contenteditable") === "true")
+    ) {
+      return;
+    }
+
+    if (e.key === "Escape" && selectedIds.size > 0) {
+      e.preventDefault();
+      setSelectedIds(new Set());
+    }
+
+    if ((e.key === "Delete" || e.key === "Backspace") && selectedIds.size > 0) {
+      e.preventDefault();
+      setConfirmDeleteOpen(true);
     }
   };
 
@@ -474,7 +532,7 @@ export function StudyCardListManager({
     : (currentPage >= totalPages);
 
   return (
-    <div className="space-y-4">
+    <div className={cn("space-y-4", selectedIds.size > 0 && "pb-24")}>
       {/* Controls: Search, Filter, Sort */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         {/* Search */}
@@ -518,7 +576,7 @@ export function StudyCardListManager({
 
       {/* Bulk actions status panel */}
       {selectedIds.size > 0 && (
-        <div className="flex items-center justify-between px-4 py-3 bg-indigo-50 dark:bg-indigo-950/20 border border-indigo-200 dark:border-indigo-900/50 rounded-lg animate-in fade-in slide-in-from-top-1 duration-200">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-2xl flex items-center justify-between px-4 py-3 bg-indigo-50/95 dark:bg-indigo-950/95 backdrop-blur-md border border-indigo-200 dark:border-indigo-900/50 rounded-xl shadow-lg shadow-indigo-500/10 animate-in fade-in slide-in-from-bottom-4 duration-300">
           <div className="flex items-center gap-3">
             <ShieldAlert className="h-4 w-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
             <span className="text-sm font-medium text-indigo-800 dark:text-indigo-300">
@@ -574,7 +632,10 @@ export function StudyCardListManager({
       )}
 
       {/* Cards list */}
-      <div className="rounded-lg border bg-card overflow-hidden">
+      <div 
+        className="rounded-lg border bg-card overflow-hidden"
+        onKeyDown={handleListKeyDown}
+      >
         {/* Table Header with Select All */}
         <div className="flex items-center gap-4 px-4 py-3 bg-muted/40 border-b border-border">
           <div className="flex items-center h-5 shrink-0">
@@ -609,7 +670,9 @@ export function StudyCardListManager({
                 card={card}
                 showCheckbox={true}
                 checked={selectedIds.has(card.id)}
-                onCheckedChange={() => handleToggleSelectCard(card.id)}
+                onCheckedChange={handleToggleSelectCard}
+                onDoubleClick={handleDoubleClickCard}
+                id={`card-row-${card.id}`}
               />
             ))}
           </div>
@@ -711,18 +774,23 @@ export function StudyCardListManager({
       </Dialog>
 
       {/* Edit Card(s) Dialog */}
-      <Dialog open={editOpen} onOpenChange={setEditOpen}>
+      <Dialog open={editOpen} onOpenChange={(open) => {
+        setEditOpen(open);
+        if (!open) {
+          setEditingCard(null);
+        }
+      }}>
         <DialogContent onInteractOutside={(e) => e.preventDefault()} className="max-h-[90vh] overflow-y-auto md:max-w-2xl w-full flex flex-col scrollbar-thin">
           <DialogHeader className="shrink-0">
             <DialogTitle>
-              {selectedIds.size === 1 ? t("bulk_actions.edit_title_single") : t("bulk_actions.edit_title_plural")}
+              {editingCard ? t("bulk_actions.edit_title_single") : t("bulk_actions.edit_title_plural")}
             </DialogTitle>
             <DialogDescription>
-              {selectedIds.size === 1 ? t("bulk_actions.edit_desc_single") : t("bulk_actions.edit_desc_plural", { count: selectedIds.size })}
+              {editingCard ? t("bulk_actions.edit_desc_single") : t("bulk_actions.edit_desc_plural", { count: selectedIds.size })}
             </DialogDescription>
           </DialogHeader>
 
-          {selectedIds.size === 1 ? (
+          {editingCard ? (
             // Single Edit fields
             <div className="space-y-4 py-2">
               <div className="space-y-1.5">
@@ -818,7 +886,7 @@ export function StudyCardListManager({
             <Button variant="outline" onClick={() => setEditOpen(false)} disabled={isMutating}>
               {tCommon("cancel")}
             </Button>
-            <Button onClick={executeBulkUpdate} disabled={isMutating || (selectedIds.size === 1 && !editFront.trim())}>
+            <Button onClick={executeBulkUpdate} disabled={isMutating || (!!editingCard && !editFront.trim())}>
               {isMutating && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
               {tCommon("save")}
             </Button>
