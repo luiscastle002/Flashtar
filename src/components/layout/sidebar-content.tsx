@@ -60,7 +60,7 @@ export function SidebarContent({
         <div className={cn("flex items-center w-full", showCollapsed ? "justify-center" : "gap-3")}>
           <Icon className="h-4 w-4 shrink-0" />
           {!showCollapsed && (
-            <span className="truncate font-display uppercase tracking-wider text-xs font-semibold">
+            <span className="truncate font-display text-sm font-medium">
               {t(labelKey)}
             </span>
           )}

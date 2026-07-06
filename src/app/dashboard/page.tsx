@@ -26,7 +26,7 @@ export default async function DashboardPage() {
     <DashboardShell currentPath="/dashboard" profile={profile}>
       <div className="space-y-8">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold font-display uppercase tracking-wider">{t("title")}</h1>
+          <h1 className="text-2xl md:text-3xl font-semibold font-display tracking-tight">{t("title")}</h1>
           <p className="text-muted-foreground">{t("welcome")}</p>
         </div>
 
@@ -96,7 +96,7 @@ export default async function DashboardPage() {
 
         <div>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold font-display uppercase tracking-wider">{t("recent_decks")}</h2>
+            <h2 className="text-xl font-semibold font-display tracking-tight">{t("recent_decks")}</h2>
             <Button variant="ghost" size="sm" asChild>
               <Link href="/decks">
                 {t("view_all_link")} <ArrowRight className="ml-1 h-4 w-4" />

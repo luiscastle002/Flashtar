@@ -61,7 +61,7 @@ export function PricingSection({ user }: PricingSectionProps) {
         {/* Free Plan Card */}
         <Card className="flex flex-col h-full bg-card/45 backdrop-blur-md border border-border shadow-sm">
           <CardHeader className="pb-4">
-            <CardTitle className="text-xl font-display uppercase tracking-widest font-bold">
+            <CardTitle className="text-xl font-display font-semibold tracking-tight">
               {t("free_title")}
             </CardTitle>
             <CardDescription className="text-xs">
@@ -105,7 +105,7 @@ export function PricingSection({ user }: PricingSectionProps) {
             Recommended
           </div>
           <CardHeader className="pb-4">
-            <CardTitle className="text-xl font-display uppercase tracking-widest font-bold flex items-center gap-2">
+            <CardTitle className="text-xl font-display font-semibold tracking-tight flex items-center gap-2">
               {t("pro_title")}
               <Sparkles className="h-5 w-5 text-primary fill-primary/10" />
             </CardTitle>
@@ -119,7 +119,7 @@ export function PricingSection({ user }: PricingSectionProps) {
                 variant={activeInterval === "monthly" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveInterval("monthly")}
-                className="font-display uppercase tracking-wider text-[10px] h-7 px-2.5"
+                className="font-display text-[10px] h-7 px-2.5 font-semibold"
               >
                 {t("billing_interval_monthly")}
               </Button>
@@ -127,7 +127,7 @@ export function PricingSection({ user }: PricingSectionProps) {
                 variant={activeInterval === "annual" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveInterval("annual")}
-                className="font-display uppercase tracking-wider text-[10px] h-7 px-2.5"
+                className="font-display text-[10px] h-7 px-2.5 font-semibold"
               >
                 {t("billing_interval_annual")}
               </Button>
@@ -178,7 +178,7 @@ export function PricingSection({ user }: PricingSectionProps) {
       {/* Comparison Table */}
       <Card className="border border-border bg-card/45 backdrop-blur-md shadow-sm">
         <CardHeader>
-          <CardTitle className="font-display text-lg uppercase tracking-wider">
+          <CardTitle className="font-display text-lg tracking-tight">
             {t("features_title")}
           </CardTitle>
         </CardHeader>

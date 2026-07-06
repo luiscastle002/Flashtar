@@ -37,7 +37,7 @@ export function AppSidebar({
       >
         <Link
           href="/dashboard"
-          className="flex items-center gap-2 font-display uppercase tracking-widest font-extrabold select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
+          className="flex items-center gap-2 font-display uppercase tracking-widest font-semibold select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
         >
           <Sparkles className="h-5 w-5 text-primary shrink-0" />
           {!isCollapsed && (

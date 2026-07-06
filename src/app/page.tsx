@@ -111,7 +111,7 @@ export default async function HomePage() {
       {/* Header */}
       <header className="relative z-10 sticky top-0 z-50 border-b bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link href="/" className="flex items-center gap-2 font-display uppercase tracking-widest text-xl font-extrabold">
+          <Link href="/" className="flex items-center gap-2 font-display text-xl font-semibold select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md">
             <Sparkles className="h-6 w-6 text-primary" />
             Flashtar
           </Link>
@@ -150,7 +150,7 @@ export default async function HomePage() {
             <Sparkles className="h-4 w-4 text-primary" />
             {tLanding("hero.badge")}
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold font-display uppercase tracking-widest leading-tight">
+          <h1 className="text-4xl md:text-6xl font-semibold font-display tracking-tight leading-tight">
             {tLanding("hero.title_prefix")}
             <span className="gradient-text">{tLanding("hero.title_highlight")}</span>
             {tLanding("hero.title_suffix")}
@@ -175,7 +175,7 @@ export default async function HomePage() {
       <section id="features" className="border-t bg-muted/30 py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-display uppercase tracking-widest mb-4">{tLanding("features.title")}</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold font-display tracking-tight mb-4">{tLanding("features.title")}</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               {tLanding("features.subtitle")}
             </p>
@@ -198,7 +198,7 @@ export default async function HomePage() {
       <section id="how-it-works" className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-display uppercase tracking-widest mb-4">{tLanding("steps.title")}</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold font-display tracking-tight mb-4">{tLanding("steps.title")}</h2>
             <p className="text-muted-foreground text-lg">{tLanding("steps.subtitle")}</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -218,7 +218,7 @@ export default async function HomePage() {
       {/* Testimonials */}
       <section className="border-t bg-muted/30 py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold font-display uppercase tracking-widest text-center mb-16">{tLanding("testimonials.title")}</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold font-display tracking-tight text-center mb-16">{tLanding("testimonials.title")}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
               <Card key={t.author} className="border-0 shadow-sm">
@@ -239,7 +239,7 @@ export default async function HomePage() {
       <section id="pricing" className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-display uppercase tracking-widest mb-4">{tLanding("pricing.title")}</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold font-display tracking-tight mb-4">{tLanding("pricing.title")}</h2>
             <p className="text-muted-foreground text-lg">{tLanding("pricing.subtitle")}</p>
           </div>
           <PricingSection user={user} />
@@ -249,7 +249,7 @@ export default async function HomePage() {
       {/* FAQ */}
       <section id="faq" className="border-t bg-muted/30 py-24">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-display uppercase tracking-widest text-center mb-16">{tLanding("faq.title")}</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold font-display tracking-tight text-center mb-16">{tLanding("faq.title")}</h2>
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`item-${i}`}>
@@ -267,7 +267,7 @@ export default async function HomePage() {
       <footer className="relative z-10 border-t py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-2 font-display uppercase tracking-widest font-extrabold">
+            <div className="flex items-center gap-2 font-display text-xl font-semibold">
               <Sparkles className="h-5 w-5 text-primary" />
               Flashtar
             </div>

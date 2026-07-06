@@ -52,10 +52,10 @@ export default async function CategoryPage(props: CategoryPageProps) {
             </Link>
           </Button>
 
-          <h1 className="text-2xl md:text-3xl font-bold font-display uppercase tracking-wider flex items-center gap-3">
+          <h1 className="text-2xl md:text-3xl font-semibold font-display tracking-tight flex items-center gap-3">
             {categoryName}
           </h1>
-          <p className="text-xs text-muted-foreground mt-1 font-display uppercase tracking-wider font-semibold">
+          <p className="text-sm text-muted-foreground mt-1">
             Choose a course to begin your learning path
           </p>
         </div>
@@ -111,7 +111,7 @@ export default async function CategoryPage(props: CategoryPageProps) {
                       </div>
                     </div>
 
-                    <CardTitle className="text-xl font-bold font-display uppercase tracking-wide mt-3 group-hover:text-primary transition-colors">
+                    <CardTitle className="text-xl font-semibold font-display tracking-tight mt-3 group-hover:text-primary transition-colors">
                       {t(`decks.${rawDeckKey}.name` as Parameters<typeof t>[0], { defaultValue: rawDeckKey })}
                     </CardTitle>
                     <CardDescription className="line-clamp-2 text-sm text-muted-foreground/80 mt-1 min-h-[40px]">

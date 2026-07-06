@@ -116,7 +116,7 @@ export function PlanClient({ subscription }: PlanClientProps) {
     <div className="space-y-8 max-w-5xl mx-auto">
       {/* Page Title */}
       <div className="flex flex-col space-y-2">
-        <h1 className="text-3xl font-bold font-display uppercase tracking-widest gradient-text self-start">
+        <h1 className="text-3xl font-semibold font-display tracking-tight gradient-text self-start">
           {t("title")}
         </h1>
         <p className="text-muted-foreground text-sm max-w-xl">
@@ -128,7 +128,7 @@ export function PlanClient({ subscription }: PlanClientProps) {
       <Card className="border-primary/20 bg-card/45 backdrop-blur-md shadow-lg">
         <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4">
           <div className="space-y-1">
-            <CardTitle className="flex items-center gap-2 font-display text-lg uppercase tracking-wider">
+            <CardTitle className="flex items-center gap-2 font-display text-lg tracking-tight">
               <CreditCard className="h-5 w-5 text-primary" />
               {t("current_plan_badge")}
             </CardTitle>
@@ -226,7 +226,7 @@ export function PlanClient({ subscription }: PlanClientProps) {
         {/* Free Plan Card */}
         <Card className={cn("flex flex-col h-full bg-card/45 backdrop-blur-md border border-border shadow-sm")}>
           <CardHeader className="pb-4">
-            <CardTitle className="text-xl font-display uppercase tracking-widest font-bold">
+            <CardTitle className="text-xl font-display font-semibold tracking-tight">
               {t("free_title")}
             </CardTitle>
             <CardDescription className="text-xs">
@@ -273,7 +273,7 @@ export function PlanClient({ subscription }: PlanClientProps) {
             </div>
           )}
           <CardHeader className="pb-4">
-            <CardTitle className="text-xl font-display uppercase tracking-widest font-bold flex items-center gap-2">
+            <CardTitle className="text-xl font-display font-semibold tracking-tight flex items-center gap-2">
               {t("pro_title")}
               {plan !== "pro" && <Sparkles className="h-5 w-5 text-primary fill-primary/10" />}
             </CardTitle>
@@ -286,7 +286,7 @@ export function PlanClient({ subscription }: PlanClientProps) {
                 variant={activeInterval === "monthly" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveInterval("monthly")}
-                className="font-display uppercase tracking-wider text-[10px] h-7 px-2.5"
+                className="font-display text-[10px] h-7 px-2.5 font-semibold"
               >
                 {t("billing_interval_monthly")}
               </Button>
@@ -294,7 +294,7 @@ export function PlanClient({ subscription }: PlanClientProps) {
                 variant={activeInterval === "annual" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveInterval("annual")}
-                className="font-display uppercase tracking-wider text-[10px] h-7 px-2.5"
+                className="font-display text-[10px] h-7 px-2.5 font-semibold"
               >
                 {t("billing_interval_annual")}
               </Button>
@@ -359,7 +359,7 @@ export function PlanClient({ subscription }: PlanClientProps) {
       {/* Comparison Table */}
       <Card className="border border-border bg-card/45 backdrop-blur-md shadow-sm">
         <CardHeader>
-          <CardTitle className="font-display text-lg uppercase tracking-wider">
+          <CardTitle className="font-display text-lg tracking-tight">
             {t("features_title")}
           </CardTitle>
         </CardHeader>

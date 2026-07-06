@@ -78,7 +78,7 @@ export function SessionCompletionScreen({
         </div>
 
         <div>
-          <h1 className="text-2xl font-bold font-display uppercase tracking-wider">{t("complete_title")}</h1>
+          <h1 className="text-2xl font-semibold font-display tracking-tight">{t("complete_title")}</h1>
           <p className="text-xs text-muted-foreground mt-1 font-display uppercase tracking-wider font-semibold">
             {t("complete_subtitle", { count: stats.studied })}
           </p>

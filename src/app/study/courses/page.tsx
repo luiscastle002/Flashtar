@@ -39,11 +39,11 @@ export default async function CoursesPage() {
       <div className="space-y-8 max-w-7xl mx-auto w-full">
         {/* Header */}
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold font-display uppercase tracking-wider flex items-center gap-3">
+          <h1 className="text-2xl md:text-3xl font-semibold font-display tracking-tight flex items-center gap-3">
             <GraduationCap className="h-8 w-8 text-primary" />
             {t("title")}
           </h1>
-          <p className="text-xs text-muted-foreground mt-1 font-display uppercase tracking-wider font-semibold">
+          <p className="text-sm text-muted-foreground mt-1">
             Official structured paths designed to help you master new subjects
           </p>
         </div>
@@ -102,7 +102,7 @@ export default async function CoursesPage() {
                     <div className="w-full md:w-2/3 lg:w-1/2 flex flex-col justify-between text-left md:text-right space-y-4 md:space-y-6">
                       {/* Identity & Description */}
                       <div className="space-y-2">
-                        <h2 className="text-2xl md:text-3xl font-extrabold font-display uppercase tracking-wider text-foreground group-hover:text-primary transition-colors flex items-center justify-start md:justify-end gap-3">
+                        <h2 className="text-2xl md:text-3xl font-semibold font-display tracking-tight text-foreground group-hover:text-primary transition-colors flex items-center justify-start md:justify-end gap-3">
                           {catName}
                           <span className="text-2xl" role="img" aria-label="Category emoji">
                             {catEmoji}

@@ -85,7 +85,7 @@ export function CheckoutClient({
       {status === "loading" && (
         <>
           <Loader2 className="h-10 w-10 text-primary animate-spin" />
-          <h2 className="text-lg font-display uppercase tracking-wider font-semibold">
+          <h2 className="text-lg font-display tracking-tight font-semibold">
             Connecting to Paddle
           </h2>
           <p className="text-xs text-muted-foreground leading-relaxed">
@@ -97,7 +97,7 @@ export function CheckoutClient({
       {status === "initialized" && (
         <>
           <RefreshCw className="h-10 w-10 text-primary animate-spin" />
-          <h2 className="text-lg font-display uppercase tracking-wider font-semibold">
+          <h2 className="text-lg font-display tracking-tight font-semibold">
             Opening Checkout
           </h2>
           <p className="text-xs text-muted-foreground leading-relaxed">
@@ -117,7 +117,7 @@ export function CheckoutClient({
                 });
               }
             }}
-            className="mt-2 w-full px-4 py-2 text-xs font-display uppercase tracking-widest font-bold rounded-lg border border-primary/20 bg-primary/10 hover:bg-primary/20 text-primary transition-all duration-300"
+            className="mt-2 w-full px-4 py-2 text-xs font-display font-semibold rounded-lg border border-primary/20 bg-primary/10 hover:bg-primary/20 text-primary transition-all duration-300"
           >
             Launch Overlay
           </button>
@@ -129,7 +129,7 @@ export function CheckoutClient({
           <div className="h-10 w-10 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-sm">
             X
           </div>
-          <h2 className="text-lg font-display uppercase tracking-wider font-semibold text-destructive">
+          <h2 className="text-lg font-display tracking-tight font-semibold text-destructive">
             Connection Failed
           </h2>
           <p className="text-xs text-muted-foreground leading-relaxed">

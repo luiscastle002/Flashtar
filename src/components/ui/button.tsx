@@ -8,10 +8,10 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "font-display uppercase tracking-wider bg-primary/10 border border-primary/30 text-primary backdrop-blur-md shadow-[0_0_12px_rgba(99,102,241,0.15)] hover:bg-foreground hover:text-background hover:border-foreground hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(var(--foreground),0.3)] transition-all duration-300",
+        default: "font-display bg-primary/10 border border-primary/30 text-primary backdrop-blur-md shadow-[0_0_12px_rgba(99,102,241,0.15)] hover:bg-foreground hover:text-background hover:border-foreground hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(var(--foreground),0.3)] transition-all duration-300",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
-        outline: "font-display uppercase tracking-wider border border-border bg-background shadow-sm hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 transition-all duration-300",
-        secondary: "font-display uppercase tracking-wider bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 hover:-translate-y-0.5 transition-all duration-300",
+        outline: "font-display border border-border bg-background shadow-sm hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 transition-all duration-300",
+        secondary: "font-display bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 hover:-translate-y-0.5 transition-all duration-300",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
