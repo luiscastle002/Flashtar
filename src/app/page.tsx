@@ -116,10 +116,10 @@ export default async function HomePage() {
             Flashtar
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors font-display uppercase tracking-wider text-xs font-semibold">{tLanding("nav.features")}</Link>
-            <Link href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors font-display uppercase tracking-wider text-xs font-semibold">{tLanding("nav.how_it_works")}</Link>
-            <Link href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors font-display uppercase tracking-wider text-xs font-semibold">{tLanding("nav.pricing")}</Link>
-            <Link href="#faq" className="text-muted-foreground hover:text-foreground transition-colors font-display uppercase tracking-wider text-xs font-semibold">{tLanding("nav.faq")}</Link>
+            <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors font-display font-medium">{tLanding("nav.features")}</Link>
+            <Link href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors font-display font-medium">{tLanding("nav.how_it_works")}</Link>
+            <Link href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors font-display font-medium">{tLanding("nav.pricing")}</Link>
+            <Link href="#faq" className="text-muted-foreground hover:text-foreground transition-colors font-display font-medium">{tLanding("nav.faq")}</Link>
           </nav>
           <div className="flex items-center gap-2">
             <LanguageSelector />
