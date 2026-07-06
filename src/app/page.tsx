@@ -13,6 +13,7 @@ import { SpaceBackground } from "@/components/shared/space-background";
 import { createClient } from "@/lib/supabase/server";
 import { LanguageSelector } from "@/components/shared/language-selector";
 import { PricingSection } from "@/components/landing/pricing-section";
+import { FooterSocials } from "@/components/landing/footer-socials";
 import { getTranslations } from "next-intl/server";
 
 const features = [
@@ -283,6 +284,8 @@ export default async function HomePage() {
                 <Link href="/privacy" className="hover:text-foreground transition-colors">{tLanding("footer.privacy")}</Link>
                 <Link href="/refund" className="hover:text-foreground transition-colors">{tLanding("footer.refunds")}</Link>
               </div>
+              <span className="hidden sm:inline text-border">|</span>
+              <FooterSocials />
             </div>
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Flashtar. {tLanding("footer.all_rights_reserved")}
