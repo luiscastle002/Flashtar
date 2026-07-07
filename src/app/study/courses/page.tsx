@@ -69,7 +69,7 @@ export default async function CoursesPage() {
               return (
                 <div
                   key={cat.id}
-                  className="relative overflow-hidden group rounded-xl border border-zinc-800 bg-zinc-950/40 hover:border-primary/40 transition-all duration-300 flex flex-col md:flex-row items-stretch shadow-md hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.6)] min-h-[220px]"
+                  className="relative overflow-hidden group rounded-xl border border-zinc-800 bg-zinc-950/40 hover:border-primary/40 transition-all duration-300 flex flex-col md:flex-row items-stretch shadow-md hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.6)] min-h-[240px] md:min-h-0 md:aspect-[1640/664] w-full"
                 >
                   {/* Background Artwork */}
                   {bannerUrl ? (
@@ -95,7 +95,7 @@ export default async function CoursesPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent md:bg-gradient-to-r md:from-transparent md:via-background/50 md:to-background z-10" />
 
                   {/* Content Container */}
-                  <div className="relative z-20 w-full flex flex-col md:flex-row items-stretch justify-between p-6 md:p-8 min-h-[220px] gap-6">
+                  <div className="relative z-20 w-full flex flex-col md:flex-row items-stretch justify-between p-6 md:p-8 min-h-[240px] md:min-h-0 md:h-full gap-6">
                     {/* Left Spacer - leaves space for the visible artwork on desktop */}
                     <div className="hidden md:block md:w-1/3 lg:w-1/2 pointer-events-none" />
 
@@ -108,7 +108,7 @@ export default async function CoursesPage() {
                           <CountryFlag value={rawCatKey} className="h-5 w-6.5 shadow-sm rounded-sm" alt={catName} />
 
                         </h2>
-                        <p className="text-sm text-muted-foreground/90 max-w-md mr-auto md:ml-auto leading-relaxed">
+                        <p className="text-sm text-muted-foreground/90 max-w-md mr-auto md:mr-0 md:ml-auto leading-relaxed">
                           {catDesc}
                         </p>
                       </div>
