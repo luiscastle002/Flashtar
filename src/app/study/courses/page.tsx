@@ -9,6 +9,8 @@ import { getCoursesCategories } from "@/actions/courses";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { CountryFlag } from "@/components/shared/country-flag";
+
 
 export async function generateMetadata() {
   const t = await getTranslations("courses");
@@ -104,9 +106,8 @@ export default async function CoursesPage() {
                       <div className="space-y-2">
                         <h2 className="text-2xl md:text-3xl font-semibold font-display tracking-tight text-foreground group-hover:text-primary transition-colors flex items-center justify-start md:justify-end gap-3">
                           {catName}
-                          <span className="text-2xl" role="img" aria-label="Category emoji">
-                            {catEmoji}
-                          </span>
+                          <CountryFlag value={rawCatKey} className="h-5 w-6.5 shadow-sm rounded-sm" alt={catName} />
+
                         </h2>
                         <p className="text-sm text-muted-foreground/90 max-w-md mr-auto md:ml-auto leading-relaxed">
                           {catDesc}

@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { updatePreferredLanguage } from "@/actions/profile";
 import type { Locale } from "@/lib/i18n/config";
+import { CountryFlag } from "@/components/shared/country-flag";
+
 
 const languages = [
   { code: "en", name: "English", flag: "🇺🇸" },
@@ -69,7 +71,8 @@ export function LanguageSelector() {
             <span className={locale === lang.code ? "font-semibold text-primary" : ""}>
               {lang.name}
             </span>
-            <span className="text-sm">{lang.flag}</span>
+            <CountryFlag value={lang.code} className="h-3.5 w-5 rounded-xs" alt={lang.name} />
+
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CourseEnrollButton } from "@/components/courses/course-enroll-button";
+import { CountryFlag } from "@/components/shared/country-flag";
+
 
 interface CategoryPageProps {
   params: Promise<{ categoryId: string }>;
@@ -88,9 +90,8 @@ export default async function CategoryPage(props: CategoryPageProps) {
 
                   <CardHeader className="pb-4 pl-6">
                     <div className="flex justify-between items-start">
-                      <span className="text-3xl" role="img" aria-label="Deck emoji">
-                        {deck.emoji || "📚"}
-                      </span>
+                      <CountryFlag value={deck.emoji || "📚"} className="text-3xl h-6 w-8 rounded-sm" alt="Deck flag" />
+
                       <div className="flex gap-2">
                         {isEnrolled ? (
                           <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-500 border-emerald-500/20 text-[10px] font-semibold flex items-center gap-1 uppercase tracking-wider font-display">

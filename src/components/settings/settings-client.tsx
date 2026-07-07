@@ -18,6 +18,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { compressToIcon, getProfileAvatarDisplayUrl } from "@/lib/utils/image";
 import { updateProfileAvatar, resetToGoogleAvatar, getGoogleAvatar, updatePreferredLanguage } from "@/actions/profile";
 import type { Locale } from "@/lib/i18n/config";
+import { CountryFlag } from "@/components/shared/country-flag";
+
 import {
   Select,
   SelectContent,
@@ -513,10 +515,27 @@ export function SettingsClient({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="en">English 🇺🇸</SelectItem>
-                  <SelectItem value="es">Español 🇪🇸</SelectItem>
-                  <SelectItem value="pt">Português 🇧🇷</SelectItem>
-                  <SelectItem value="ja">日本語 🇯🇵</SelectItem>
+                  <SelectItem value="en">
+                    <span className="flex items-center gap-2">
+                      English <CountryFlag value="en" className="h-3.5 w-5 rounded-xs" />
+                    </span>
+                  </SelectItem>
+                  <SelectItem value="es">
+                    <span className="flex items-center gap-2">
+                      Español <CountryFlag value="es" className="h-3.5 w-5 rounded-xs" />
+                    </span>
+                  </SelectItem>
+                  <SelectItem value="pt">
+                    <span className="flex items-center gap-2">
+                      Português <CountryFlag value="pt" className="h-3.5 w-5 rounded-xs" />
+                    </span>
+                  </SelectItem>
+                  <SelectItem value="ja">
+                    <span className="flex items-center gap-2">
+                      日本語 <CountryFlag value="ja" className="h-3.5 w-5 rounded-xs" />
+                    </span>
+                  </SelectItem>
+
                 </SelectContent>
               </Select>
             </div>
