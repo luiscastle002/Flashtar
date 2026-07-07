@@ -18,6 +18,8 @@ import { RelativeTimeFormatter } from "@/components/study/relative-time-formatte
 import type { DeckStudySettings, StudyCard, Plan } from "@/types";
 import { getDeckIconUrl } from "@/lib/utils/image";
 import { getTranslations, getFormatter } from "next-intl/server";
+import { CountryFlag } from "@/components/shared/country-flag";
+
 
 interface StudyDeckPageProps {
   params: Promise<{ deckId: string }>;
@@ -130,7 +132,7 @@ export default async function StudyDeckPage({ params, searchParams }: StudyDeckP
                   <Image src={customIconUrl} alt={deck.name} fill className="object-cover" />
                 </span>
               ) : (
-                <span className="text-2xl">{deck.emoji ?? "📚"}</span>
+                <CountryFlag value={deck.emoji ?? "📚"} className="text-2xl h-6 w-8 rounded-sm" alt="Deck icon" />
               )}
               <h1 className="text-2xl font-bold">{deck.name}</h1>
             </div>

@@ -4,21 +4,41 @@ import gb from "flag-icons/flags/4x3/gb.svg";
 import es from "flag-icons/flags/4x3/es.svg";
 import br from "flag-icons/flags/4x3/br.svg";
 import us from "flag-icons/flags/4x3/us.svg";
+import cnFlag from "flag-icons/flags/4x3/cn.svg";
+import kr from "flag-icons/flags/4x3/kr.svg";
+import fr from "flag-icons/flags/4x3/fr.svg";
+import de from "flag-icons/flags/4x3/de.svg";
+import it from "flag-icons/flags/4x3/it.svg";
+import ru from "flag-icons/flags/4x3/ru.svg";
 import { cn } from "@/lib/utils";
 
 // Map various input formats to the statically imported SVGs
-const FLAG_MAP: Record<string, any> = {
-  // Categories
+const FLAG_MAP: Record<string, string | { src: string }> = {
+  // Categories / Languages
   japanese: jp,
   english: gb,
   spanish: es,
   portuguese: br,
+  chinese: cnFlag,
+  korean: kr,
+  french: fr,
+  german: de,
+  italian: it,
+  russian: ru,
   
   // Locales
   ja: jp,
   en: gb,
   es: es,
   pt: br,
+  zh: cnFlag,
+  ko: kr,
+  fr: fr,
+  de: de,
+  it: it,
+  ru: ru,
+  cn: cnFlag,
+  kr: kr,
   
   // Unicode Emojis
   "🇯🇵": jp,
@@ -26,6 +46,12 @@ const FLAG_MAP: Record<string, any> = {
   "🇪🇸": es,
   "🇧🇷": br,
   "🇺🇸": us,
+  "🇨🇳": cnFlag,
+  "🇰🇷": kr,
+  "🇫🇷": fr,
+  "🇩🇪": de,
+  "🇮🇹": it,
+  "🇷🇺": ru,
 };
 
 interface CountryFlagProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -47,6 +73,7 @@ export function CountryFlag({ value, className, alt = "Flag", ...props }: Countr
     : flagAsset;
 
   return (
+    /* eslint-disable-next-line @next/next/no-img-element */
     <img
       src={srcUrl}
       alt={alt}

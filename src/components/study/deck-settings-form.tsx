@@ -24,8 +24,13 @@ import {
 } from "@/components/ui/dialog";
 import { useTranslations } from "next-intl";
 import { translateError } from "@/lib/i18n/utils";
+import { CountryFlag } from "@/components/shared/country-flag";
 
-const EMOJI_PRESETS = ["📚", "🇯🇵", "🧬", "💻", "🎸", "🏛️", "✏️", "🔬", "🌍", "📐", "🎯", "🧠"];
+
+const EMOJI_PRESETS = [
+  "📚", "🇯🇵", "🇬🇧", "🇪🇸", "🇧🇷", "🇨🇳", "🇰🇷", "🇫🇷", "🇩🇪", "🇮🇹", "🇷🇺",
+  "🧬", "💻", "🎸", "🏛️", "✏️", "🔬", "🌍", "📐", "🎯", "🧠"
+];
 const COLOR_PRESETS = [
   "#6366f1", "#8b5cf6", "#ec4899", "#f43f5e",
   "#f97316", "#eab308", "#22c55e", "#14b8a6",
@@ -289,7 +294,8 @@ export function DeckSettingsForm({
                         : "hover:bg-accent"
                     )}
                   >
-                    {emoji}
+                    <CountryFlag value={emoji} className="w-6 h-4.5 text-xl flex items-center justify-center" alt={emoji} />
+
                   </button>
                 ))}
               </div>

@@ -11,6 +11,8 @@ import type { StudyDeck } from "@/types";
 import { cn } from "@/lib/utils";
 import { getDeckIconUrl } from "@/lib/utils/image";
 import { useTranslations } from "next-intl";
+import { CountryFlag } from "@/components/shared/country-flag";
+
 
 interface StudyDeckCardProps {
   deck: StudyDeck & { due_count?: number; new_count?: number };
@@ -43,8 +45,9 @@ export function StudyDeckCard({ deck }: StudyDeckCardProps) {
                   <Image src={customIconUrl} alt={deck.name} fill className="object-cover" />
                 </span>
               ) : (
-                <span className="text-2xl shrink-0">{deck.emoji ?? "📚"}</span>
+                <CountryFlag value={deck.emoji ?? "📚"} className="text-2xl shrink-0 h-6 w-8 rounded-sm" alt="Deck icon" />
               )}
+
               <div className="min-w-0">
                 <p className="font-semibold leading-tight truncate">{deck.name}</p>
                 <p className="text-[10px] text-muted-foreground mt-0.5 font-display uppercase tracking-wider font-semibold">

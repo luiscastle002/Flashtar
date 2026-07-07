@@ -7,6 +7,8 @@ import { DeckSettingsForm } from "@/components/study/deck-settings-form";
 import type { DeckStudySettings } from "@/types";
 import { getDeckIconUrl } from "@/lib/utils/image";
 import { getTranslations } from "next-intl/server";
+import { CountryFlag } from "@/components/shared/country-flag";
+
 
 interface SettingsPageProps {
   params: Promise<{ deckId: string }>;
@@ -56,7 +58,7 @@ export default async function DeckSettingsPage({ params }: SettingsPageProps) {
                 <Image src={customIconUrl} alt={deck.name} fill className="object-cover" />
               </span>
             ) : (
-              <span className="text-lg">{deck.emoji ?? "📚"}</span>
+              <CountryFlag value={deck.emoji ?? "📚"} className="text-lg h-5 w-6.5 rounded-sm" alt="Deck icon" />
             )}
             <p className="text-sm text-muted-foreground font-medium">
               {deck.name}

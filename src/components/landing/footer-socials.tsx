@@ -20,7 +20,7 @@ export function FooterSocials() {
     try {
       await navigator.clipboard.writeText("support@flashtar.app");
       toast.success("Support email copied to clipboard");
-    } catch (err) {
+    } catch {
       toast.error("Failed to copy email address");
     }
   };

@@ -62,7 +62,6 @@ export default async function CoursesPage() {
             {categories.map((cat) => {
               // Extract raw key: strip qualified prefix if DB still has old values (e.g. "courses.categories.japanese" → "japanese")
               const rawCatKey = cat.name_key.split(".").pop() ?? cat.name_key;
-              const catEmoji = t(`categories.${rawCatKey}.emoji` as Parameters<typeof t>[0], { defaultValue: "📚" });
               const catName = t(`categories.${rawCatKey}.name` as Parameters<typeof t>[0], { defaultValue: rawCatKey });
               const catDesc = t(`categories.${rawCatKey}.desc` as Parameters<typeof t>[0], { defaultValue: "" });
               const bannerUrl = CATEGORY_BANNERS[rawCatKey];
