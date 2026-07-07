@@ -1,0 +1,23 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "travel_transport",
+  "title": "Travel & Transportation",
+  "description": "Vehicles, roads, and cities.",
+  "difficulty": "beginner",
+  "position": 8,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000025",
+      "front": "<div class=\"text-5xl font-bold text-center\">Ciudad / Calle</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>City / Street</div>",
+      "position": 0
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000026",
+      "front": "<div class=\"text-5xl font-bold text-center\">Coche / Bicicleta</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Car / Bicycle</div>",
+      "position": 1
+    }
+  ]
+}

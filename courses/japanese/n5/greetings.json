@@ -1,0 +1,41 @@
+{
+  "course": "japanese",
+  "level": "n5",
+  "chapter": "greetings",
+  "title": "Greetings & Polite Expressions",
+  "description": "Learn basic Japanese greetings and polite phrases used in daily life.",
+  "difficulty": "beginner",
+  "position": 1,
+  "cards": [
+    {
+      "id": "a0000000-0000-0000-0000-000000000056",
+      "front": "<div class=\"text-6xl font-bold text-center\">こんにちは</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hello / Good afternoon</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こんにちは (Konnichiwa)</div>",
+      "position": 0
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000057",
+      "front": "<div class=\"text-6xl font-bold text-center\">ありがとう</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Thank you (informal)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ありがとう (Arigatou)</div>",
+      "position": 1
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000058",
+      "front": "<div class=\"text-6xl font-bold text-center\">すみません</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Excuse me / I'm sorry</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">すみません (Sumimasen)</div>",
+      "position": 2
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000059",
+      "front": "<div class=\"text-6xl font-bold text-center\">はい / いいえ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Yes / No</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はい / いいえ (Hai / Iie)</div>",
+      "position": 3
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000060",
+      "front": "<div class=\"text-6xl font-bold text-center\">さようなら</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Goodbye</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さようなら (Sayounara)</div>",
+      "position": 4
+    }
+  ]
+}

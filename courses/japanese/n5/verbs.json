@@ -1,0 +1,71 @@
+{
+  "course": "japanese",
+  "level": "n5",
+  "chapter": "verbs",
+  "title": "Basic Verbs",
+  "description": "Essential action verbs in Japanese.",
+  "difficulty": "beginner",
+  "position": 14,
+  "cards": [
+    {
+      "id": "a0000000-0000-0000-0000-000000000033",
+      "front": "<div class=\"text-6xl font-bold text-center\">行く</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To go</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いく (Iku)</div>",
+      "position": 0
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000034",
+      "front": "<div class=\"text-6xl font-bold text-center\">来る</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To come</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">くる (Kuru)</div>",
+      "position": 1
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000035",
+      "front": "<div class=\"text-6xl font-bold text-center\">食べる</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To eat</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たべる (Taberu)</div>",
+      "position": 2
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000036",
+      "front": "<div class=\"text-6xl font-bold text-center\">飲む</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To drink</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">のむ (Nomu)</div>",
+      "position": 3
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000037",
+      "front": "<div class=\"text-6xl font-bold text-center\">見る</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To see / watch / look</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">みる (Miru)</div>",
+      "position": 4
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000038",
+      "front": "<div class=\"text-6xl font-bold text-center\">話す</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To speak / talk</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はなす (Hanasu)</div>",
+      "position": 5
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000039",
+      "front": "<div class=\"text-6xl font-bold text-center\">書く</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To write</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かく (Kaku)</div>",
+      "position": 6
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000040",
+      "front": "<div class=\"text-6xl font-bold text-center\">読む</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To read</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">よむ (Yomu)</div>",
+      "position": 7
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000041",
+      "front": "<div class=\"text-6xl font-bold text-center\">買う</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To buy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かう (Kau)</div>",
+      "position": 8
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000042",
+      "front": "<div class=\"text-6xl font-bold text-center\">勉強する</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To study</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">べんきょうする (Benkyou suru)</div>",
+      "position": 9
+    }
+  ]
+}

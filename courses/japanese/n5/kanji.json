@@ -1,0 +1,10 @@
+{
+  "course": "japanese",
+  "level": "n5",
+  "chapter": "kanji",
+  "title": "Basic Kanji",
+  "description": "Introductory Kanji characters and stroke orders.",
+  "difficulty": "beginner",
+  "position": 17,
+  "cards": []
+}

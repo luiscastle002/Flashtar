@@ -1,0 +1,53 @@
+{
+  "course": "english",
+  "level": "a1",
+  "chapter": "time_weather",
+  "title": "Time & Dates",
+  "description": "Tell time, days, months, and years.",
+  "difficulty": "beginner",
+  "position": 9,
+  "cards": [
+    {
+      "id": "b0000000-0000-0000-0000-000000000028",
+      "front": "<div class=\"text-5xl font-bold text-center\">Time / Hour</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ongoing progression of existence, and a period of 60 minutes.</div>",
+      "position": 0
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000044",
+      "front": "<div class=\"text-5xl font-bold text-center\">Today / Tomorrow</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The present day, and the day after today.</div>",
+      "position": 1
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000045",
+      "front": "<div class=\"text-5xl font-bold text-center\">Yesterday / Day</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The day before today, and the period of light between sunrise and sunset.</div>",
+      "position": 2
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000046",
+      "front": "<div class=\"text-5xl font-bold text-center\">Week / Month / Year</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A period of 7 days, ~30 days, and 365 days.</div>",
+      "position": 3
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000047",
+      "front": "<div class=\"text-5xl font-bold text-center\">Monday to Wednesday</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The first three working days of the week.</div>",
+      "position": 4
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000048",
+      "front": "<div class=\"text-5xl font-bold text-center\">Thursday to Sunday</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The rest of the week, including the weekend.</div>",
+      "position": 5
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000054",
+      "front": "<div class=\"text-5xl font-bold text-center\">What time is it?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask for the current time.</div>",
+      "position": 6
+    }
+  ]
+}

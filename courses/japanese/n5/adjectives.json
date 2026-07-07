@@ -1,0 +1,59 @@
+{
+  "course": "japanese",
+  "level": "n5",
+  "chapter": "adjectives",
+  "title": "Basic Adjectives",
+  "description": "Primary adjectives to describe people, objects, and weather.",
+  "difficulty": "beginner",
+  "position": 15,
+  "cards": [
+    {
+      "id": "a0000000-0000-0000-0000-000000000043",
+      "front": "<div class=\"text-6xl font-bold text-center\">大きい</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Big / Large</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おおきい (Ookii)</div>",
+      "position": 0
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000044",
+      "front": "<div class=\"text-6xl font-bold text-center\">小さい</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Small / Little</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちいさい (Chiisai)</div>",
+      "position": 1
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000045",
+      "front": "<div class=\"text-6xl font-bold text-center\">新しい</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>New</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あたらしい (Atarashii)</div>",
+      "position": 2
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000046",
+      "front": "<div class=\"text-6xl font-bold text-center\">古い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Old (not for people)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふるい (Furui)</div>",
+      "position": 3
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000047",
+      "front": "<div class=\"text-6xl font-bold text-center\">良い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Good</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いい / よい (Ii / Yoi)</div>",
+      "position": 4
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000048",
+      "front": "<div class=\"text-6xl font-bold text-center\">悪い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Bad</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">わるい (Warui)</div>",
+      "position": 5
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000049",
+      "front": "<div class=\"text-6xl font-bold text-center\">暑い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hot (weather)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あつい (Atsui)</div>",
+      "position": 6
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000050",
+      "front": "<div class=\"text-6xl font-bold text-center\">寒い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cold (weather)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さむい (Samui)</div>",
+      "position": 7
+    }
+  ]
+}

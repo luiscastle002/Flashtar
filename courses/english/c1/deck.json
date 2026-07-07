@@ -1,0 +1,17 @@
+{
+  "category": {
+    "id": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+    "name_key": "english",
+    "position": 1
+  },
+  "deck": {
+    "id": "92827161-0000-0000-0000-000000000008",
+    "name_key": "english_c1",
+    "description_key": "english_c1",
+    "emoji": "🇬🇧",
+    "color": "#3b82f6",
+    "difficulty": "advanced",
+    "language": "en",
+    "position": 4
+  }
+}

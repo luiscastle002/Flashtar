@@ -1,0 +1,65 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "useful_phrases",
+  "title": "Useful Phrases",
+  "description": "Practical phrases for everyday survival and conversations.",
+  "difficulty": "beginner",
+  "position": 10,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000027",
+      "front": "<div class=\"text-5xl font-bold text-center\">Teléfono / Móvil</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Telephone / Phone</div>",
+      "position": 0
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000049",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿Cuánto cuesta esto?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>How much is this?</div>",
+      "position": 1
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000050",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿Dónde está el baño?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Where is the bathroom?</div>",
+      "position": 2
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000051",
+      "front": "<div class=\"text-5xl font-bold text-center\">No entiendo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I don't understand</div>",
+      "position": 3
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000053",
+      "front": "<div class=\"text-5xl font-bold text-center\">Necesito ayuda</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I need help</div>",
+      "position": 4
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000055",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hablo un poco de español</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I speak a little Spanish</div>",
+      "position": 5
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000056",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿Puede repetir eso?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Can you repeat that?</div>",
+      "position": 6
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000057",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿De dónde eres?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Where are you from?</div>",
+      "position": 7
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000058",
+      "front": "<div class=\"text-5xl font-bold text-center\">Soy de...</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I am from...</div>",
+      "position": 8
+    }
+  ]
+}

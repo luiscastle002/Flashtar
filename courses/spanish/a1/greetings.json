@@ -1,0 +1,83 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "greetings",
+  "title": "Greetings & Polite Expressions",
+  "description": "Learn basic greetings and polite expressions.",
+  "difficulty": "beginner",
+  "position": 1,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000001",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hola</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hello / Hi</div>",
+      "position": 0
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000002",
+      "front": "<div class=\"text-5xl font-bold text-center\">Buenos días</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Good morning</div>",
+      "position": 1
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000003",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿Cómo estás?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>How are you?</div>",
+      "position": 2
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000004",
+      "front": "<div class=\"text-5xl font-bold text-center\">Me llamo...</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>My name is...</div>",
+      "position": 3
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000005",
+      "front": "<div class=\"text-5xl font-bold text-center\">Mucho gusto</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Nice to meet you</div>",
+      "position": 4
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000006",
+      "front": "<div class=\"text-5xl font-bold text-center\">Por favor</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Please</div>",
+      "position": 5
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000007",
+      "front": "<div class=\"text-5xl font-bold text-center\">Gracias</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Thank you</div>",
+      "position": 6
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000008",
+      "front": "<div class=\"text-5xl font-bold text-center\">Sí / No</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Yes / No</div>",
+      "position": 7
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000009",
+      "front": "<div class=\"text-5xl font-bold text-center\">Adiós</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Goodbye</div>",
+      "position": 8
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000052",
+      "front": "<div class=\"text-5xl font-bold text-center\">Disculpe / Perdón</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Excuse me / Sorry</div>",
+      "position": 9
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000059",
+      "front": "<div class=\"text-5xl font-bold text-center\">Que tenga un buen día</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Have a nice day</div>",
+      "position": 10
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000060",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hasta luego</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>See you later</div>",
+      "position": 11
+    }
+  ]
+}

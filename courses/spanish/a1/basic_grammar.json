@@ -1,0 +1,47 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "basic_grammar",
+  "title": "Basic Grammar & Pronouns",
+  "description": "Personal pronouns and basic question words.",
+  "difficulty": "beginner",
+  "position": 11,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000015",
+      "front": "<div class=\"text-5xl font-bold text-center\">Yo / Tú</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I / You (subject pronouns)</div>",
+      "position": 0
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000016",
+      "front": "<div class=\"text-5xl font-bold text-center\">Él / Ella / Eso</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>He / She / It</div>",
+      "position": 1
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000017",
+      "front": "<div class=\"text-5xl font-bold text-center\">Nosotros / Ellos</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>We / They</div>",
+      "position": 2
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000029",
+      "front": "<div class=\"text-5xl font-bold text-center\">Qué / Quién</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>What / Who (question words)</div>",
+      "position": 3
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000030",
+      "front": "<div class=\"text-5xl font-bold text-center\">Dónde / Cuándo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Where / When</div>",
+      "position": 4
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000031",
+      "front": "<div class=\"text-5xl font-bold text-center\">Por qué / Cómo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Why / How</div>",
+      "position": 5
+    }
+  ]
+}

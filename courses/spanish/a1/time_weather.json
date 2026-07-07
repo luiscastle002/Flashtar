@@ -1,0 +1,53 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "time_weather",
+  "title": "Time & Dates",
+  "description": "Tell time, days, months, and years.",
+  "difficulty": "beginner",
+  "position": 9,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000028",
+      "front": "<div class=\"text-5xl font-bold text-center\">Tiempo / Hora</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Time / Hour</div>",
+      "position": 0
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000044",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hoy / Mañana</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Today / Tomorrow</div>",
+      "position": 1
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000045",
+      "front": "<div class=\"text-5xl font-bold text-center\">Ayer / Día</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Yesterday / Day</div>",
+      "position": 2
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000046",
+      "front": "<div class=\"text-5xl font-bold text-center\">Semana / Mes / Año</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Week / Month / Year</div>",
+      "position": 3
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000047",
+      "front": "<div class=\"text-5xl font-bold text-center\">Lunes a Miércoles</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Monday to Wednesday</div>",
+      "position": 4
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000048",
+      "front": "<div class=\"text-5xl font-bold text-center\">Jueves a Domingo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Thursday to Sunday</div>",
+      "position": 5
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000054",
+      "front": "<div class=\"text-5xl font-bold text-center\">¿Qué hora es?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>What time is it?</div>",
+      "position": 6
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "basic_adjectives",
+  "title": "Basic Adjectives",
+  "description": "Common adjectives to describe objects and feelings.",
+  "difficulty": "beginner",
+  "position": 13,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000038",
+      "front": "<div class=\"text-5xl font-bold text-center\">Grande / Pequeño</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Big / Small</div>",
+      "position": 0
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000039",
+      "front": "<div class=\"text-5xl font-bold text-center\">Feliz / Triste</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Happy / Sad</div>",
+      "position": 1
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000040",
+      "front": "<div class=\"text-5xl font-bold text-center\">Bueno / Malo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Good / Bad</div>",
+      "position": 2
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000041",
+      "front": "<div class=\"text-5xl font-bold text-center\">Fácil / Difícil</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Easy / Difficult</div>",
+      "position": 3
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000042",
+      "front": "<div class=\"text-5xl font-bold text-center\">Caliente / Frío</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hot / Cold</div>",
+      "position": 4
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000043",
+      "front": "<div class=\"text-5xl font-bold text-center\">Nuevo / Viejo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>New / Old</div>",
+      "position": 5
+    }
+  ]
+}

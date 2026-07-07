@@ -1,0 +1,23 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "colors",
+  "title": "Colors",
+  "description": "Learn basic colors to describe objects.",
+  "difficulty": "beginner",
+  "position": 3,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000013",
+      "front": "<div class=\"text-5xl font-bold text-center\">Rojo, Azul, Verde</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Red, Blue, Green</div>",
+      "position": 0
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000014",
+      "front": "<div class=\"text-5xl font-bold text-center\">Negro, Blanco, Amarillo</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Black, White, Yellow</div>",
+      "position": 1
+    }
+  ]
+}

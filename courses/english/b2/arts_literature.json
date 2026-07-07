@@ -1,0 +1,10 @@
+{
+  "course": "english",
+  "level": "b2",
+  "chapter": "arts_literature",
+  "title": "Arts & Literature",
+  "description": "Performing arts, writing, and museums.",
+  "difficulty": "intermediate",
+  "position": 5,
+  "cards": []
+}

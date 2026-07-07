@@ -1,0 +1,17 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "school_jobs",
+  "title": "School & Learning",
+  "description": "Terms related to education and learning.",
+  "difficulty": "beginner",
+  "position": 7,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000024",
+      "front": "<div class=\"text-5xl font-bold text-center\">Escuela / Aprender</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>School / To learn</div>",
+      "position": 0
+    }
+  ]
+}

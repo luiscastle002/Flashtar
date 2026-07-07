@@ -1,0 +1,89 @@
+{
+  "course": "japanese",
+  "level": "n5",
+  "chapter": "numbers",
+  "title": "Numbers",
+  "description": "Master Japanese numbers from 1 to 10,000.",
+  "difficulty": "beginner",
+  "position": 3,
+  "cards": [
+    {
+      "id": "a0000000-0000-0000-0000-000000000011",
+      "front": "<div class=\"text-6xl font-bold text-center\">一</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>One (1)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いち (Ichi)</div>",
+      "position": 0
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000012",
+      "front": "<div class=\"text-6xl font-bold text-center\">二</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Two (2)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">に (Ni)</div>",
+      "position": 1
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000013",
+      "front": "<div class=\"text-6xl font-bold text-center\">三</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Three (3)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さん (San)</div>",
+      "position": 2
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000014",
+      "front": "<div class=\"text-6xl font-bold text-center\">四</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Four (4)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">よん / し (Yon / Shi)</div>",
+      "position": 3
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000015",
+      "front": "<div class=\"text-6xl font-bold text-center\">五</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Five (5)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ご (Go)</div>",
+      "position": 4
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000016",
+      "front": "<div class=\"text-6xl font-bold text-center\">六</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Six (6)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ろく (Roku)</div>",
+      "position": 5
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000017",
+      "front": "<div class=\"text-6xl font-bold text-center\">七</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Seven (7)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">なな / しち (Nana / Shichi)</div>",
+      "position": 6
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000018",
+      "front": "<div class=\"text-6xl font-bold text-center\">八</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Eight (8)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はち (Hachi)</div>",
+      "position": 7
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000019",
+      "front": "<div class=\"text-6xl font-bold text-center\">九</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Nine (9)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きゅう / く (Kyuu / Ku)</div>",
+      "position": 8
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000020",
+      "front": "<div class=\"text-6xl font-bold text-center\">十</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ten (10)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じゅう (Juu)</div>",
+      "position": 9
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000021",
+      "front": "<div class=\"text-6xl font-bold text-center\">百</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>One Hundred (100)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひゃく (Hyaku)</div>",
+      "position": 10
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000022",
+      "front": "<div class=\"text-6xl font-bold text-center\">千</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>One Thousand (1,000)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せん (Sen)</div>",
+      "position": 11
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000023",
+      "front": "<div class=\"text-6xl font-bold text-center\">万</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ten Thousand (10,000)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まん (Man)</div>",
+      "position": 12
+    }
+  ]
+}

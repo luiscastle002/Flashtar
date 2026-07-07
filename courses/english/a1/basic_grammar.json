@@ -1,0 +1,47 @@
+{
+  "course": "english",
+  "level": "a1",
+  "chapter": "basic_grammar",
+  "title": "Basic Grammar & Pronouns",
+  "description": "Personal pronouns and basic question words.",
+  "difficulty": "beginner",
+  "position": 11,
+  "cards": [
+    {
+      "id": "b0000000-0000-0000-0000-000000000015",
+      "front": "<div class=\"text-5xl font-bold text-center\">I / You</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>First-person singular (speaker) and second-person singular (listener) pronouns.</div>",
+      "position": 0
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000016",
+      "front": "<div class=\"text-5xl font-bold text-center\">He / She / It</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Third-person singular pronouns (male, female, object).</div>",
+      "position": 1
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000017",
+      "front": "<div class=\"text-5xl font-bold text-center\">We / They</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>First-person plural and third-person plural pronouns.</div>",
+      "position": 2
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000029",
+      "front": "<div class=\"text-5xl font-bold text-center\">What / Who</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Question words used to ask about things, and to ask about people.</div>",
+      "position": 3
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000030",
+      "front": "<div class=\"text-5xl font-bold text-center\">Where / When</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Question words used to ask about location, and to ask about time.</div>",
+      "position": 4
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000031",
+      "front": "<div class=\"text-5xl font-bold text-center\">Why / How</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Question words used to ask about reasons, and to ask about methods or status.</div>",
+      "position": 5
+    }
+  ]
+}

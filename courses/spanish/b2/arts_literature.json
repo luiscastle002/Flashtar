@@ -1,0 +1,10 @@
+{
+  "course": "spanish",
+  "level": "b2",
+  "chapter": "arts_literature",
+  "title": "Artes y Literatura",
+  "description": "Artes escénicas, escritura y museos.",
+  "difficulty": "intermediate",
+  "position": 5,
+  "cards": []
+}

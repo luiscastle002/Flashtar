@@ -1,0 +1,65 @@
+{
+  "course": "english",
+  "level": "a1",
+  "chapter": "useful_phrases",
+  "title": "Useful Phrases",
+  "description": "Practical phrases for everyday survival and conversations.",
+  "difficulty": "beginner",
+  "position": 10,
+  "cards": [
+    {
+      "id": "b0000000-0000-0000-0000-000000000027",
+      "front": "<div class=\"text-5xl font-bold text-center\">Telephone / Phone</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Electronic device used to speak to someone far away.</div>",
+      "position": 0
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000049",
+      "front": "<div class=\"text-5xl font-bold text-center\">How much is this?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask about the price of an item.</div>",
+      "position": 1
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000050",
+      "front": "<div class=\"text-5xl font-bold text-center\">Where is the bathroom?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask for the location of the toilet.</div>",
+      "position": 2
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000051",
+      "front": "<div class=\"text-5xl font-bold text-center\">I don't understand</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used when you do not comprehend what someone said.</div>",
+      "position": 3
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000053",
+      "front": "<div class=\"text-5xl font-bold text-center\">I need help</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to request assistance.</div>",
+      "position": 4
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000055",
+      "front": "<div class=\"text-5xl font-bold text-center\">I speak a little English</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to describe your basic proficiency in English.</div>",
+      "position": 5
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000056",
+      "front": "<div class=\"text-5xl font-bold text-center\">Can you repeat that?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask someone to say something again.</div>",
+      "position": 6
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000057",
+      "front": "<div class=\"text-5xl font-bold text-center\">Where are you from?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask about someone's origin or country.</div>",
+      "position": 7
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000058",
+      "front": "<div class=\"text-5xl font-bold text-center\">I am from...</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to state your country of origin.</div>",
+      "position": 8
+    }
+  ]
+}

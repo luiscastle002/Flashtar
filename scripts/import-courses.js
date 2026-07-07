@@ -47,49 +47,114 @@ async function syncCourses() {
     process.exit(1);
   }
 
-  // Find all JSON files in the courses directory structure
-  const jsonFiles = [];
-  function scanDir(dir) {
+  // Reorganize JSON scanning to support multi-file (chapter-based) decks using deck.json
+  const courseDecks = [];
+
+  function scanForDecks(dir) {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-      if (entry.isDirectory()) {
-        scanDir(fullPath);
-      } else if (entry.isFile() && entry.name.endsWith('.json')) {
-        jsonFiles.push(fullPath);
+    
+    // Check if deck.json exists in this directory
+    const hasDeckJson = entries.some(e => e.isFile() && e.name === 'deck.json');
+    
+    if (hasDeckJson) {
+      // 1. Multi-file deck: load deck and category metadata from deck.json
+      const deckJsonPath = path.join(dir, 'deck.json');
+      let deckMetadata;
+      try {
+        deckMetadata = JSON.parse(fs.readFileSync(deckJsonPath, 'utf8'));
+      } catch (err) {
+        console.error(`Failed to parse deck.json in ${dir}:`, err.message);
+        return;
+      }
+      
+      const { category, deck } = deckMetadata;
+      if (!category || !deck) {
+        console.error(`Invalid deck.json in ${dir}: missing category or deck metadata.`);
+        return;
+      }
+      
+      // Load and sort all chapter files in this directory (exclude deck.json itself)
+      const cards = [];
+      const parsedChapters = [];
+      
+      for (const entry of entries) {
+        if (entry.isFile() && entry.name.endsWith('.json') && entry.name !== 'deck.json') {
+          const chapPath = path.join(dir, entry.name);
+          try {
+            const chapData = JSON.parse(fs.readFileSync(chapPath, 'utf8'));
+            parsedChapters.push({ file: entry.name, data: chapData });
+          } catch (err) {
+            console.error(`Failed to parse chapter file ${entry.name} in ${dir}:`, err.message);
+          }
+        }
+      }
+      
+      // Sort chapters by their defined position
+      parsedChapters.sort((a, b) => (a.data.position ?? 0) - (b.data.position ?? 0));
+      
+      // Combine cards from all chapters and assign global positions
+      let globalPosition = 0;
+      for (const chap of parsedChapters) {
+        if (chap.data.cards && Array.isArray(chap.data.cards)) {
+          const sortedCards = [...chap.data.cards].sort((a, b) => (a.position ?? 0) - (b.position ?? 0));
+          for (const card of sortedCards) {
+            cards.push({
+              ...card,
+              position: globalPosition++
+            });
+          }
+        }
+      }
+      
+      const relPath = path.relative(coursesDir, dir);
+      courseDecks.push({
+        relativePath: relPath,
+        category,
+        deck,
+        cards
+      });
+      
+      // Recurse into subdirectories if they exist
+      for (const entry of entries) {
+        if (entry.isDirectory()) {
+          scanForDecks(path.join(dir, entry.name));
+        }
+      }
+    } else {
+      // 2. Standalone deck files or intermediate category folders
+      for (const entry of entries) {
+        const fullPath = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          scanForDecks(fullPath);
+        } else if (entry.isFile() && entry.name.endsWith('.json') && entry.name !== 'deck.json') {
+          let data;
+          try {
+            data = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+          } catch (err) {
+            console.error(`Failed to parse standalone JSON file ${fullPath}:`, err.message);
+            continue;
+          }
+          
+          const { category, deck, cards } = data;
+          if (category && deck && cards) {
+            courseDecks.push({
+              relativePath: path.relative(coursesDir, fullPath),
+              category,
+              deck,
+              cards
+            });
+          }
+        }
       }
     }
   }
-  scanDir(coursesDir);
 
-  console.log(`Found ${jsonFiles.length} course data files to import.\n`);
+  scanForDecks(coursesDir);
 
-  for (const filePath of jsonFiles) {
-    const relativePath = path.relative(path.join(__dirname, '..'), filePath);
-    console.log(`=== Processing: ${relativePath} ===`);
+  console.log(`Found ${courseDecks.length} decks to sync.\n`);
 
-    let data;
-    try {
-      data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    } catch (err) {
-      console.error(`Failed to parse JSON file ${filePath}:`, err.message);
-      continue;
-    }
-
-    const { category, deck, cards } = data;
-
-    if (!category || !category.id || !category.name_key) {
-      console.error(`Skipping ${relativePath}: Missing category metadata.`);
-      continue;
-    }
-    if (!deck || !deck.id || !deck.name_key) {
-      console.error(`Skipping ${relativePath}: Missing deck metadata.`);
-      continue;
-    }
-    if (!cards || !Array.isArray(cards)) {
-      console.error(`Skipping ${relativePath}: Missing cards array.`);
-      continue;
-    }
+  for (const { relativePath, category, deck, cards } of courseDecks) {
+    console.log(`=== Processing: ${relativePath} (${cards.length} cards) ===`);
 
     // 1. Upsert Category
     console.log(`Upserting category: "${category.name_key}" (${category.id})`);

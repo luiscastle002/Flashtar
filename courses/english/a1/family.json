@@ -1,0 +1,29 @@
+{
+  "course": "english",
+  "level": "a1",
+  "chapter": "family",
+  "title": "Family & Friends",
+  "description": "Vocabulary for family members and friends.",
+  "difficulty": "beginner",
+  "position": 4,
+  "cards": [
+    {
+      "id": "b0000000-0000-0000-0000-000000000018",
+      "front": "<div class=\"text-5xl font-bold text-center\">Father / Mother</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Male parent and female parent.</div>",
+      "position": 0
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000019",
+      "front": "<div class=\"text-5xl font-bold text-center\">Brother / Sister</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Male sibling and female sibling.</div>",
+      "position": 1
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000020",
+      "front": "<div class=\"text-5xl font-bold text-center\">Friend / Family</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person you know well, and the group of people related to you.</div>",
+      "position": 2
+    }
+  ]
+}

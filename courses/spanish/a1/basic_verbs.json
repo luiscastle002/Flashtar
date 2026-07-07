@@ -1,0 +1,47 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "basic_verbs",
+  "title": "Basic Verbs",
+  "description": "Core verbs for action and state of being.",
+  "difficulty": "beginner",
+  "position": 12,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000032",
+      "front": "<div class=\"text-5xl font-bold text-center\">Ser / Estar</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To be (permanent identity vs. temporary state/location)</div>",
+      "position": 0
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000033",
+      "front": "<div class=\"text-5xl font-bold text-center\">Tener</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To have</div>",
+      "position": 1
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000034",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hacer</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To do / To make</div>",
+      "position": 2
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000035",
+      "front": "<div class=\"text-5xl font-bold text-center\">Ir</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To go</div>",
+      "position": 3
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000036",
+      "front": "<div class=\"text-5xl font-bold text-center\">Gustar / Querer</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To like, and to want / love</div>",
+      "position": 4
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000037",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hablar</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To speak / talk</div>",
+      "position": 5
+    }
+  ]
+}

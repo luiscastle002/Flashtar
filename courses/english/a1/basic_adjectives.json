@@ -1,0 +1,47 @@
+{
+  "course": "english",
+  "level": "a1",
+  "chapter": "basic_adjectives",
+  "title": "Basic Adjectives",
+  "description": "Common adjectives to describe objects and feelings.",
+  "difficulty": "beginner",
+  "position": 13,
+  "cards": [
+    {
+      "id": "b0000000-0000-0000-0000-000000000038",
+      "front": "<div class=\"text-5xl font-bold text-center\">Big / Small</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Large in size, and little in size.</div>",
+      "position": 0
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000039",
+      "front": "<div class=\"text-5xl font-bold text-center\">Happy / Sad</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling joy, and feeling sorrow.</div>",
+      "position": 1
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000040",
+      "front": "<div class=\"text-5xl font-bold text-center\">Good / Bad</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Having positive qualities, and having negative qualities.</div>",
+      "position": 2
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000041",
+      "front": "<div class=\"text-5xl font-bold text-center\">Easy / Difficult</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Requiring little effort, and requiring great effort.</div>",
+      "position": 3
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000042",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hot / Cold</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>High temperature, and low temperature.</div>",
+      "position": 4
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000043",
+      "front": "<div class=\"text-5xl font-bold text-center\">New / Old</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Recently created or acquired, and having existed for a long time.</div>",
+      "position": 5
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "course": "japanese",
+  "level": "hiragana",
+  "chapter": "hiragana_chars",
+  "title": "Hiragana Characters",
+  "description": "Learn to read and write the 46 basic Hiragana characters.",
+  "difficulty": "beginner",
+  "position": 1,
+  "cards": [
+    {
+      "id": "ad48945c-14b3-4e6d-9fb9-447d2bf7047f",
+      "front": "<div class=\"text-6xl font-bold text-center\">あ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>a</div>",
+      "position": 0
+    },
+    {
+      "id": "ebcf62ac-2b82-4f28-abca-054fc4b50687",
+      "front": "<div class=\"text-6xl font-bold text-center\">い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>i</div>",
+      "position": 1
+    },
+    {
+      "id": "5933c83a-d428-4904-9f06-2d7260e0eebb",
+      "front": "<div class=\"text-6xl font-bold text-center\">う</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>u</div>",
+      "position": 2
+    },
+    {
+      "id": "6a813caf-3ed6-40dd-aafe-ca4a5f6039a3",
+      "front": "<div class=\"text-6xl font-bold text-center\">え</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>e</div>",
+      "position": 3
+    },
+    {
+      "id": "298d22fb-e0c8-4425-b7a4-72addf86b165",
+      "front": "<div class=\"text-6xl font-bold text-center\">お</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>o</div>",
+      "position": 4
+    },
+    {
+      "id": "eae2410c-caa2-42a2-9457-c6384017a374",
+      "front": "<div class=\"text-6xl font-bold text-center\">か</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ka</div>",
+      "position": 5
+    },
+    {
+      "id": "61195c2e-4749-4554-aa90-d184941bec5f",
+      "front": "<div class=\"text-6xl font-bold text-center\">き</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ki</div>",
+      "position": 6
+    },
+    {
+      "id": "c1f665be-c8f0-4f63-a1e1-80c6064d2232",
+      "front": "<div class=\"text-6xl font-bold text-center\">く</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ku</div>",
+      "position": 7
+    },
+    {
+      "id": "8b755459-74b2-4dfb-806e-7cd957563865",
+      "front": "<div class=\"text-6xl font-bold text-center\">け</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ke</div>",
+      "position": 8
+    },
+    {
+      "id": "f844afc1-9af7-4721-94ae-222c68658351",
+      "front": "<div class=\"text-6xl font-bold text-center\">こ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ko</div>",
+      "position": 9
+    },
+    {
+      "id": "43467274-2cde-4c14-9165-f8a2f5214221",
+      "front": "<div class=\"text-6xl font-bold text-center\">さ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>sa</div>",
+      "position": 10
+    },
+    {
+      "id": "237ab7ca-a55c-4b48-9f1c-0df65ff7a9eb",
+      "front": "<div class=\"text-6xl font-bold text-center\">し</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>shi</div>",
+      "position": 11
+    },
+    {
+      "id": "bd53cadf-f839-4822-8fef-5d142466b446",
+      "front": "<div class=\"text-6xl font-bold text-center\">す</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>su</div>",
+      "position": 12
+    },
+    {
+      "id": "e42590bf-61b5-4984-8d87-771fbd1723d0",
+      "front": "<div class=\"text-6xl font-bold text-center\">せ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>se</div>",
+      "position": 13
+    },
+    {
+      "id": "c08644b6-14c7-4cef-9ead-809be2cc620d",
+      "front": "<div class=\"text-6xl font-bold text-center\">そ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>so</div>",
+      "position": 14
+    },
+    {
+      "id": "c82a0743-7385-4b23-8286-929e7987a586",
+      "front": "<div class=\"text-6xl font-bold text-center\">た</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ta</div>",
+      "position": 15
+    },
+    {
+      "id": "a045acfe-d05f-49b8-918c-b5cbc46c9fe9",
+      "front": "<div class=\"text-6xl font-bold text-center\">ち</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>chi</div>",
+      "position": 16
+    },
+    {
+      "id": "60d5e90a-48be-4fbc-a182-f8eafe6d520a",
+      "front": "<div class=\"text-6xl font-bold text-center\">つ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>tsu</div>",
+      "position": 17
+    },
+    {
+      "id": "1120aecd-68fa-47b0-99e6-4c6711326abf",
+      "front": "<div class=\"text-6xl font-bold text-center\">て</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>te</div>",
+      "position": 18
+    },
+    {
+      "id": "d3862c97-8cfb-4095-a41a-cbb863969605",
+      "front": "<div class=\"text-6xl font-bold text-center\">と</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>to</div>",
+      "position": 19
+    },
+    {
+      "id": "33d5b3da-9d50-49f4-b3d9-9b51544278e4",
+      "front": "<div class=\"text-6xl font-bold text-center\">な</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>na</div>",
+      "position": 20
+    },
+    {
+      "id": "75c9afd1-8ca9-4dab-935c-883691256ce3",
+      "front": "<div class=\"text-6xl font-bold text-center\">に</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ni</div>",
+      "position": 21
+    },
+    {
+      "id": "652e83e5-64a5-465d-b392-86ead8acfe15",
+      "front": "<div class=\"text-6xl font-bold text-center\">ぬ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>nu</div>",
+      "position": 22
+    },
+    {
+      "id": "78d29b0d-b333-4777-af73-1318488c9bba",
+      "front": "<div class=\"text-6xl font-bold text-center\">ね</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ne</div>",
+      "position": 23
+    },
+    {
+      "id": "cfbe272c-e21b-48ce-bbff-2005caf33b76",
+      "front": "<div class=\"text-6xl font-bold text-center\">の</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>no</div>",
+      "position": 24
+    },
+    {
+      "id": "0ebd2ab5-4262-4850-82da-c61f6d747760",
+      "front": "<div class=\"text-6xl font-bold text-center\">は</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ha</div>",
+      "position": 25
+    },
+    {
+      "id": "ce328edc-a514-4ff5-9f47-e3b480eac9da",
+      "front": "<div class=\"text-6xl font-bold text-center\">ひ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>hi</div>",
+      "position": 26
+    },
+    {
+      "id": "da9dfaf4-21cb-4621-a8fa-118da16ed17d",
+      "front": "<div class=\"text-6xl font-bold text-center\">ふ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>fu</div>",
+      "position": 27
+    },
+    {
+      "id": "b6a1736b-58fd-4f35-804c-5533e29baa9e",
+      "front": "<div class=\"text-6xl font-bold text-center\">へ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>he</div>",
+      "position": 28
+    },
+    {
+      "id": "9da64b66-b3ff-4a4f-a9bf-fdded8d2e295",
+      "front": "<div class=\"text-6xl font-bold text-center\">ほ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ho</div>",
+      "position": 29
+    },
+    {
+      "id": "eee98c3a-e00b-475a-b568-5babeb0b14e4",
+      "front": "<div class=\"text-6xl font-bold text-center\">ま</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ma</div>",
+      "position": 30
+    },
+    {
+      "id": "0f7e4921-810b-4862-9be4-27a79a3218e0",
+      "front": "<div class=\"text-6xl font-bold text-center\">み</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>mi</div>",
+      "position": 31
+    },
+    {
+      "id": "56c0eae6-0a27-42f7-8578-ef852efb9682",
+      "front": "<div class=\"text-6xl font-bold text-center\">む</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>mu</div>",
+      "position": 32
+    },
+    {
+      "id": "4f34ba8a-0b8e-449d-ab7c-1a70cccba266",
+      "front": "<div class=\"text-6xl font-bold text-center\">め</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>me</div>",
+      "position": 33
+    },
+    {
+      "id": "df8cd552-62aa-4d40-848d-2faf9d5c7e3f",
+      "front": "<div class=\"text-6xl font-bold text-center\">も</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>mo</div>",
+      "position": 34
+    },
+    {
+      "id": "081b61d2-361d-4d06-813d-702ea3664978",
+      "front": "<div class=\"text-6xl font-bold text-center\">や</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ya</div>",
+      "position": 35
+    },
+    {
+      "id": "c9cbbc2e-def9-4cfb-938d-59f81c5eca78",
+      "front": "<div class=\"text-6xl font-bold text-center\">ゆ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>yu</div>",
+      "position": 36
+    },
+    {
+      "id": "8cc76af8-2a94-4d7c-aa16-92d6b43176ae",
+      "front": "<div class=\"text-6xl font-bold text-center\">よ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>yo</div>",
+      "position": 37
+    },
+    {
+      "id": "ffadc410-9faa-4e10-8b27-a8f424bedd34",
+      "front": "<div class=\"text-6xl font-bold text-center\">ら</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ra</div>",
+      "position": 38
+    },
+    {
+      "id": "28c674f5-0fc7-4b09-bda8-6d525145fe6d",
+      "front": "<div class=\"text-6xl font-bold text-center\">り</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ri</div>",
+      "position": 39
+    },
+    {
+      "id": "66ec4cb0-e31a-45a9-bda3-b6ab3d7c041f",
+      "front": "<div class=\"text-6xl font-bold text-center\">る</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ru</div>",
+      "position": 40
+    },
+    {
+      "id": "eefb76fa-372a-45d2-bb02-51d482f8966f",
+      "front": "<div class=\"text-6xl font-bold text-center\">れ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>re</div>",
+      "position": 41
+    },
+    {
+      "id": "0af421c1-c721-4f82-8cf6-220f2d37c369",
+      "front": "<div class=\"text-6xl font-bold text-center\">ろ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>ro</div>",
+      "position": 42
+    },
+    {
+      "id": "1b32d971-c3ec-468e-a07a-7a6222dd7344",
+      "front": "<div class=\"text-6xl font-bold text-center\">わ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>wa</div>",
+      "position": 43
+    },
+    {
+      "id": "6ce93a4e-564e-4e6e-a219-e522967a2be6",
+      "front": "<div class=\"text-6xl font-bold text-center\">を</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>wo</div>",
+      "position": 44
+    },
+    {
+      "id": "3e9022f2-8eb6-4647-8fb5-dcbd0ea76692",
+      "front": "<div class=\"text-6xl font-bold text-center\">ん</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Romaji</span>n</div>",
+      "position": 45
+    }
+  ]
+}

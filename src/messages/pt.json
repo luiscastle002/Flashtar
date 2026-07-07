@@ -994,9 +994,65 @@
         "name": "CEFR A1",
         "desc": "Cursos de inglês para iniciantes focados no vocabulário essencial do dia a dia."
       },
+      "english_a2": {
+        "name": "CEFR A2",
+        "desc": "Cursos de inglês pré-intermediário focados em interações sociais e tarefas diárias."
+      },
+      "english_b1": {
+        "name": "CEFR B1",
+        "desc": "Cursos de inglês intermediário focados em trabalho, escola e experiências de viagem."
+      },
+      "english_b2": {
+        "name": "CEFR B2",
+        "desc": "Cursos de inglês pós-intermediário focados em tópicos complexos e opiniões."
+      },
+      "english_c1": {
+        "name": "CEFR C1",
+        "desc": "Cursos de inglês avançado focados em discurso acadêmico, profissional e idiomático."
+      },
+      "english_c2": {
+        "name": "CEFR C2",
+        "desc": "Cursos de nível de maestria em inglês focados em nuances complexas e discussões filosóficas."
+      },
       "spanish_a1": {
         "name": "CEFR A1",
         "desc": "Cursos de espanhol para iniciantes focados no vocabulário essencial do dia a dia."
+      },
+      "spanish_a2": {
+        "name": "CEFR A2",
+        "desc": "Cursos de espanhol pré-intermediário focados em interações sociais e tarefas diárias."
+      },
+      "spanish_b1": {
+        "name": "CEFR B1",
+        "desc": "Cursos de espanhol intermediário focados em trabalho, escola e experiências de viagem."
+      },
+      "spanish_b2": {
+        "name": "CEFR B2",
+        "desc": "Cursos de espanhol pós-intermediário focados em tópicos complexos e opiniões."
+      },
+      "spanish_c1": {
+        "name": "CEFR C1",
+        "desc": "Cursos de espanhol avançado focados em discurso acadêmico, profissional e idiomático."
+      },
+      "spanish_c2": {
+        "name": "CEFR C2",
+        "desc": "Cursos de nível de maestria em espanhol focados em nuances complexas e discussões filosóficas."
+      },
+      "jlpt_n4": {
+        "name": "JLPT N4",
+        "desc": "Domine o vocabulário, kanji e gramática pré-intermediários para o nível JLPT N4."
+      },
+      "jlpt_n3": {
+        "name": "JLPT N3",
+        "desc": "Domine o vocabulário, kanji e gramática intermediários para o nível JLPT N3."
+      },
+      "jlpt_n2": {
+        "name": "JLPT N2",
+        "desc": "Domine o vocabulário, kanji e gramática pós-intermediários para o nível JLPT N2."
+      },
+      "jlpt_n1": {
+        "name": "JLPT N1",
+        "desc": "Domine o vocabulário, kanji e gramática avançados para o nível JLPT N1."
       }
     },
     "course_count_plural": "{count, plural, =1 {# Curso} other {# Cursos}}",

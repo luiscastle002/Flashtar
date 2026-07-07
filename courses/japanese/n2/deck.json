@@ -1,0 +1,17 @@
+{
+  "category": {
+    "id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+    "name_key": "japanese",
+    "position": 0
+  },
+  "deck": {
+    "id": "92827161-0000-0000-0000-000000000017",
+    "name_key": "jlpt_n2",
+    "description_key": "jlpt_n2",
+    "emoji": "⛩️",
+    "color": "#10b981",
+    "difficulty": "intermediate",
+    "language": "ja",
+    "position": 5
+  }
+}

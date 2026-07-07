@@ -1,0 +1,23 @@
+{
+  "course": "japanese",
+  "level": "n5",
+  "chapter": "animals",
+  "title": "Animals",
+  "description": "Common household pets and wild animals.",
+  "difficulty": "beginner",
+  "position": 13,
+  "cards": [
+    {
+      "id": "a0000000-0000-0000-0000-000000000007",
+      "front": "<div class=\"text-6xl font-bold text-center\">猫</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cat</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ねこ (Neko)</div>",
+      "position": 0
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000008",
+      "front": "<div class=\"text-6xl font-bold text-center\">犬</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Dog</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いぬ (Inu)</div>",
+      "position": 1
+    }
+  ]
+}

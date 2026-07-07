@@ -1,0 +1,83 @@
+{
+  "course": "english",
+  "level": "a1",
+  "chapter": "greetings",
+  "title": "Greetings & Polite Expressions",
+  "description": "Learn basic greetings and polite expressions.",
+  "difficulty": "beginner",
+  "position": 1,
+  "cards": [
+    {
+      "id": "b0000000-0000-0000-0000-000000000001",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hello</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A polite greeting used to begin a conversation.</div>",
+      "position": 0
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000002",
+      "front": "<div class=\"text-5xl font-bold text-center\">Good morning</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Greeting used in the morning (before noon).</div>",
+      "position": 1
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000003",
+      "front": "<div class=\"text-5xl font-bold text-center\">How are you?</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A common question to ask about someone's well-being.</div>",
+      "position": 2
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000004",
+      "front": "<div class=\"text-5xl font-bold text-center\">My name is...</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to introduce yourself to others.</div>",
+      "position": 3
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000005",
+      "front": "<div class=\"text-5xl font-bold text-center\">Nice to meet you</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite expression said when meeting someone for the first time.</div>",
+      "position": 4
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000006",
+      "front": "<div class=\"text-5xl font-bold text-center\">Please</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to make a request polite.</div>",
+      "position": 5
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000007",
+      "front": "<div class=\"text-5xl font-bold text-center\">Thank you</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite expression of gratitude.</div>",
+      "position": 6
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000008",
+      "front": "<div class=\"text-5xl font-bold text-center\">Yes / No</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Standard words used for affirmation and negation.</div>",
+      "position": 7
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000009",
+      "front": "<div class=\"text-5xl font-bold text-center\">Goodbye</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Saying farewell when leaving.</div>",
+      "position": 8
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000052",
+      "front": "<div class=\"text-5xl font-bold text-center\">Excuse me</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to get someone's attention or politely apologize.</div>",
+      "position": 9
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000059",
+      "front": "<div class=\"text-5xl font-bold text-center\">Have a nice day</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A polite parting wish.</div>",
+      "position": 10
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000060",
+      "front": "<div class=\"text-5xl font-bold text-center\">See you later</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A casual farewell phrase meaning goodbye for now.</div>",
+      "position": 11
+    }
+  ]
+}

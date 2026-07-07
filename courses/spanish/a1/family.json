@@ -1,0 +1,29 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "family",
+  "title": "Family & Friends",
+  "description": "Vocabulary for family members and friends.",
+  "difficulty": "beginner",
+  "position": 4,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000018",
+      "front": "<div class=\"text-5xl font-bold text-center\">Padre / Madre</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Father / Mother</div>",
+      "position": 0
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000019",
+      "front": "<div class=\"text-5xl font-bold text-center\">Hermano / Hermana</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Brother / Sister</div>",
+      "position": 1
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000020",
+      "front": "<div class=\"text-5xl font-bold text-center\">Amigo / Familia</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Friend / Family</div>",
+      "position": 2
+    }
+  ]
+}

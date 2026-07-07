@@ -1,0 +1,23 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "food_drinks",
+  "title": "Food & Drinks",
+  "description": "Essential vocabulary for eating and drinking.",
+  "difficulty": "beginner",
+  "position": 5,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000021",
+      "front": "<div class=\"text-5xl font-bold text-center\">Agua / Beber</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Water / To drink</div>",
+      "position": 0
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000022",
+      "front": "<div class=\"text-5xl font-bold text-center\">Comida / Comer</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Food / To eat</div>",
+      "position": 1
+    }
+  ]
+}

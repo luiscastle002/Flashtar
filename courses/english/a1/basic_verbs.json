@@ -1,0 +1,47 @@
+{
+  "course": "english",
+  "level": "a1",
+  "chapter": "basic_verbs",
+  "title": "Basic Verbs",
+  "description": "Core verbs for action and state of being.",
+  "difficulty": "beginner",
+  "position": 12,
+  "cards": [
+    {
+      "id": "b0000000-0000-0000-0000-000000000032",
+      "front": "<div class=\"text-5xl font-bold text-center\">To be (am, is, are)</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>State of existence or identity (e.g. \"I am a student\").</div>",
+      "position": 0
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000033",
+      "front": "<div class=\"text-5xl font-bold text-center\">To have (has)</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To possess or own (e.g. \"I have a book\").</div>",
+      "position": 1
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000034",
+      "front": "<div class=\"text-5xl font-bold text-center\">To do (does)</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To perform an action or activity.</div>",
+      "position": 2
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000035",
+      "front": "<div class=\"text-5xl font-bold text-center\">To go (goes)</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To move from one place to another.</div>",
+      "position": 3
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000036",
+      "front": "<div class=\"text-5xl font-bold text-center\">To like / To want</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To find something agreeable, and to have a desire for something.</div>",
+      "position": 4
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000037",
+      "front": "<div class=\"text-5xl font-bold text-center\">To speak / To talk</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To communicate using spoken words.</div>",
+      "position": 5
+    }
+  ]
+}

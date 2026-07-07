@@ -994,9 +994,65 @@
         "name": "CEFR A1",
         "desc": "Beginner English courses focusing on essential everyday vocabulary."
       },
+      "english_a2": {
+        "name": "CEFR A2",
+        "desc": "Pre-intermediate English courses focusing on social interactions and daily tasks."
+      },
+      "english_b1": {
+        "name": "CEFR B1",
+        "desc": "Intermediate English courses focusing on work, school, and travel experiences."
+      },
+      "english_b2": {
+        "name": "CEFR B2",
+        "desc": "Upper-intermediate English courses focusing on complex topics and opinions."
+      },
+      "english_c1": {
+        "name": "CEFR C1",
+        "desc": "Advanced English courses focusing on academic, professional, and idiomatic speech."
+      },
+      "english_c2": {
+        "name": "CEFR C2",
+        "desc": "Mastery level English courses focusing on complex nuances and philosophical discussions."
+      },
       "spanish_a1": {
         "name": "CEFR A1",
         "desc": "Beginner Spanish courses focusing on essential everyday vocabulary."
+      },
+      "spanish_a2": {
+        "name": "CEFR A2",
+        "desc": "Pre-intermediate Spanish courses focusing on social interactions and daily tasks."
+      },
+      "spanish_b1": {
+        "name": "CEFR B1",
+        "desc": "Intermediate Spanish courses focusing on work, school, and travel experiences."
+      },
+      "spanish_b2": {
+        "name": "CEFR B2",
+        "desc": "Upper-intermediate Spanish courses focusing on complex topics and opinions."
+      },
+      "spanish_c1": {
+        "name": "CEFR C1",
+        "desc": "Advanced Spanish courses focusing on academic, professional, and idiomatic speech."
+      },
+      "spanish_c2": {
+        "name": "CEFR C2",
+        "desc": "Mastery level Spanish courses focusing on complex nuances and philosophical discussions."
+      },
+      "jlpt_n4": {
+        "name": "JLPT N4",
+        "desc": "Master pre-intermediate Japanese vocabulary, Kanji, and grammar for the JLPT N4 level."
+      },
+      "jlpt_n3": {
+        "name": "JLPT N3",
+        "desc": "Master intermediate Japanese vocabulary, Kanji, and grammar for the JLPT N3 level."
+      },
+      "jlpt_n2": {
+        "name": "JLPT N2",
+        "desc": "Master upper-intermediate Japanese vocabulary, Kanji, and grammar for the JLPT N2 level."
+      },
+      "jlpt_n1": {
+        "name": "JLPT N1",
+        "desc": "Master advanced Japanese vocabulary, Kanji, and grammar for the JLPT N1 level."
       }
     },
     "course_count_plural": "{count, plural, =1 {# Course} other {# Courses}}",

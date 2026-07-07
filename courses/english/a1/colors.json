@@ -1,0 +1,23 @@
+{
+  "course": "english",
+  "level": "a1",
+  "chapter": "colors",
+  "title": "Colors",
+  "description": "Learn basic colors to describe objects.",
+  "difficulty": "beginner",
+  "position": 3,
+  "cards": [
+    {
+      "id": "b0000000-0000-0000-0000-000000000013",
+      "front": "<div class=\"text-5xl font-bold text-center\">Red, Blue, Green</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Three primary colors.</div>",
+      "position": 0
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000014",
+      "front": "<div class=\"text-5xl font-bold text-center\">Black, White, Yellow</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Common colors.</div>",
+      "position": 1
+    }
+  ]
+}

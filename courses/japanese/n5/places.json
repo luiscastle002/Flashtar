@@ -1,0 +1,17 @@
+{
+  "course": "japanese",
+  "level": "n5",
+  "chapter": "places",
+  "title": "Places & Countries",
+  "description": "Countries, cities, and locations around town.",
+  "difficulty": "beginner",
+  "position": 10,
+  "cards": [
+    {
+      "id": "a0000000-0000-0000-0000-000000000001",
+      "front": "<div class=\"text-6xl font-bold text-center\">日本</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Japan</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">にほん (Nihon)</div>",
+      "position": 0
+    }
+  ]
+}

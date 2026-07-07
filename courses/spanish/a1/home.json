@@ -1,0 +1,17 @@
+{
+  "course": "spanish",
+  "level": "a1",
+  "chapter": "home",
+  "title": "Home & Daily Objects",
+  "description": "Objects around the house and rooms.",
+  "difficulty": "beginner",
+  "position": 6,
+  "cards": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000023",
+      "front": "<div class=\"text-5xl font-bold text-center\">Casa / Hogar</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>House / Home</div>",
+      "position": 0
+    }
+  ]
+}

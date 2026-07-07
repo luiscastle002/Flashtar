@@ -1,0 +1,65 @@
+{
+  "course": "japanese",
+  "level": "n5",
+  "chapter": "introductions",
+  "title": "Introductions & Pronouns",
+  "description": "Introduce yourself and learn essential pronouns and question words.",
+  "difficulty": "beginner",
+  "position": 2,
+  "cards": [
+    {
+      "id": "a0000000-0000-0000-0000-000000000024",
+      "front": "<div class=\"text-6xl font-bold text-center\">私</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I / Me</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">わたし (Watashi)</div>",
+      "position": 0
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000025",
+      "front": "<div class=\"text-6xl font-bold text-center\">あなた</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>You</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あなた (Anata)</div>",
+      "position": 1
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000026",
+      "front": "<div class=\"text-6xl font-bold text-center\">これ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>This (object near the speaker)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">これ (Kore)</div>",
+      "position": 2
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000027",
+      "front": "<div class=\"text-6xl font-bold text-center\">それ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>That (object near the listener)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">それ (Sore)</div>",
+      "position": 3
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000028",
+      "front": "<div class=\"text-6xl font-bold text-center\">あれ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>That over there (object far from both)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あれ (Are)</div>",
+      "position": 4
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000029",
+      "front": "<div class=\"text-6xl font-bold text-center\">何</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>What</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">なに / なん (Nani / Nan)</div>",
+      "position": 5
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000030",
+      "front": "<div class=\"text-6xl font-bold text-center\">どこ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Where</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">どこ (Doko)</div>",
+      "position": 6
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000031",
+      "front": "<div class=\"text-6xl font-bold text-center\">誰</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Who</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">だれ (Dare)</div>",
+      "position": 7
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000032",
+      "front": "<div class=\"text-6xl font-bold text-center\">いつ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>When</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いつ (Itsu)</div>",
+      "position": 8
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "course": "english",
+  "level": "a1",
+  "chapter": "food_drinks",
+  "title": "Food & Drinks",
+  "description": "Essential vocabulary for eating and drinking.",
+  "difficulty": "beginner",
+  "position": 5,
+  "cards": [
+    {
+      "id": "b0000000-0000-0000-0000-000000000021",
+      "front": "<div class=\"text-5xl font-bold text-center\">Water / Drink</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Essential liquid, and the act of consuming liquids.</div>",
+      "position": 0
+    },
+    {
+      "id": "b0000000-0000-0000-0000-000000000022",
+      "front": "<div class=\"text-5xl font-bold text-center\">Food / Eat</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Nutritious substance, and the act of consuming solid food.</div>",
+      "position": 1
+    }
+  ]
+}
