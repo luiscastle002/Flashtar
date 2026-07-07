@@ -1013,5 +1013,31 @@
         "in_progress": "In Progress"
       }
     }
+  },
+  "companion": {
+    "title": "Black Hole Companion",
+    "textarea_placeholder_1": "Share your feedback",
+    "textarea_placeholder_2": "Any recommendation ?",
+    "textarea_placeholder_3": "How can I help you?",
+    "textarea_placeholder_4": "What should I absorb next?",
+    "textarea_placeholder_5": "Is there a bug I should devour?",
+    "textarea_placeholder_6": "Send your ideas into the void...",
+    "textarea_placeholder_7": "What feature are you wishing for?",
+    "textarea_placeholder_8": "How can we make your studies stellar?",
+    "button_send": "Send",
+    "button_sending": "Absorbing...",
+    "thought_general_1": "Help make Flashtar better.",
+    "thought_general_2": "Your feedback shapes future updates.",
+    "thought_general_3": "What would save you time?",
+    "prompt_study": "Is studying feeling smooth?",
+    "prompt_courses": "Missing a course?",
+    "prompt_settings": "Is something difficult to configure?",
+    "prompt_dashboard": "What would you improve first?",
+    "success_msg_1": "Thanks. I'll keep this safe.",
+    "success_msg_2": "Your idea has entered the universe.",
+    "error_not_authenticated": "You must be logged in to submit feedback.",
+    "error_empty": "Please enter your message before sending.",
+    "error_too_long": "Your message is too long (maximum 1000 characters).",
+    "error_failed": "Failed to absorb feedback. Please try again."
   }
 }

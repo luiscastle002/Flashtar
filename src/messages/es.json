@@ -1013,5 +1013,31 @@
         "in_progress": "En progreso"
       }
     }
+  },
+  "companion": {
+    "title": "Compañero Agujero Negro",
+    "textarea_placeholder_1": "Comparte tus comentarios",
+    "textarea_placeholder_2": "¿Alguna recomendación?",
+    "textarea_placeholder_3": "¿Cómo puedo ayudarte?",
+    "textarea_placeholder_4": "¿Qué debería absorber ahora?",
+    "textarea_placeholder_5": "¿Hay algún error que deba devorar?",
+    "textarea_placeholder_6": "Envía tus ideas al vacío...",
+    "textarea_placeholder_7": "¿Qué función estás deseando tener?",
+    "textarea_placeholder_8": "¿Cómo podemos hacer estelares tus estudios?",
+    "button_send": "Enviar",
+    "button_sending": "Absorbiendo...",
+    "thought_general_1": "Ayuda a mejorar Flashtar.",
+    "thought_general_2": "Tus comentarios dan forma a futuras actualizaciones.",
+    "thought_general_3": "¿Qué te ahorraría más tiempo?",
+    "prompt_study": "¿Sientes que el estudio va fluido?",
+    "prompt_courses": "¿Falta algún curso?",
+    "prompt_settings": "¿Algo te resulta difícil de configurar?",
+    "prompt_dashboard": "¿Qué mejorarías primero?",
+    "success_msg_1": "Gracias. Lo mantendré a salvo.",
+    "success_msg_2": "Tu idea ha entrado en el universo.",
+    "error_not_authenticated": "Debes iniciar sesión para enviar comentarios.",
+    "error_empty": "Por favor, escribe tu mensaje antes de enviar.",
+    "error_too_long": "Tu mensaje es demasiado largo (máximo 1000 caracteres).",
+    "error_failed": "No se pudo absorber el comentario. Por favor, inténtalo de nuevo."
   }
 }

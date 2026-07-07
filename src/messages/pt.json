@@ -1013,5 +1013,31 @@
         "in_progress": "Em progresso"
       }
     }
+  },
+  "companion": {
+    "title": "Companheiro Buraco Negro",
+    "textarea_placeholder_1": "Compartilhe seus comentários",
+    "textarea_placeholder_2": "Alguma recomendação?",
+    "textarea_placeholder_3": "Como posso ajudar você?",
+    "textarea_placeholder_4": "O que devo absorver a seguir?",
+    "textarea_placeholder_5": "Existe algum bug que eu deva devorar?",
+    "textarea_placeholder_6": "Envie suas ideias para o vazio...",
+    "textarea_placeholder_7": "Qual funcionalidade você gostaria de ter?",
+    "textarea_placeholder_8": "Como podemos tornar seus estudos estelares?",
+    "button_send": "Enviar",
+    "button_sending": "Absorvendo...",
+    "thought_general_1": "Ajude a tornar o Flashtar melhor.",
+    "thought_general_2": "Seus comentários moldam futuras atualizações.",
+    "thought_general_3": "O que economizaria mais seu tempo?",
+    "prompt_study": "O estudo está fluindo bem?",
+    "prompt_courses": "Falta algum curso?",
+    "prompt_settings": "Algo está difícil de configurar?",
+    "prompt_dashboard": "O que você melhoraria primeiro?",
+    "success_msg_1": "Obrigado. Vou manter isso seguro.",
+    "success_msg_2": "Sua ideia entrou no universo.",
+    "error_not_authenticated": "Você precisa estar conectado para enviar comentários.",
+    "error_empty": "Por favor, digite sua mensagem antes de enviar.",
+    "error_too_long": "Sua mensagem é muito longa (máximo 1000 caracteres).",
+    "error_failed": "Falha ao absorver o comentário. Por favor, tente novamente."
   }
 }

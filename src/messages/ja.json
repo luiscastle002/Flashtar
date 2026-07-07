@@ -1014,5 +1014,31 @@
         "in_progress": "学習中"
       }
     }
+  },
+  "companion": {
+    "title": "ブラックホール・コンパニオン",
+    "textarea_placeholder_1": "フィードバックを共有する",
+    "textarea_placeholder_2": "何かお勧めはありますか？",
+    "textarea_placeholder_3": "どのようなお手伝いができますか？",
+    "textarea_placeholder_4": "次は何を吸収しましょうか？",
+    "textarea_placeholder_5": "退治すべきバグはありますか？",
+    "textarea_placeholder_6": "あなたのアイデアをボイド（虚空）へ送りましょう...",
+    "textarea_placeholder_7": "どんな機能が欲しいですか？",
+    "textarea_placeholder_8": "学習体験をより輝かせるにはどうすればよいですか？",
+    "button_send": "送信",
+    "button_sending": "吸収中...",
+    "thought_general_1": "Flashtarの改善にご協力ください。",
+    "thought_general_2": "あなたのフィードバックが今後のアップデートを作ります。",
+    "thought_general_3": "どのような機能があれば時間を節約できますか？",
+    "prompt_study": "学習はスムーズに進んでいますか？",
+    "prompt_courses": "見つからないコースはありますか？",
+    "prompt_settings": "設定で分かりにくい部分はありますか？",
+    "prompt_dashboard": "最初にどこを改善したいですか？",
+    "success_msg_1": "ありがとう。安全に保管しておきます。",
+    "success_msg_2": "あなたのアイデアが宇宙へ旅立ちました。",
+    "error_not_authenticated": "フィードバックを送信するにはログインが必要です。",
+    "error_empty": "送信する前にメッセージを入力してください。",
+    "error_too_long": "メッセージが長すぎます（最大1000文字）。",
+    "error_failed": "フィードバックの吸収に失敗しました。もう一度お試しください。"
   }
 }

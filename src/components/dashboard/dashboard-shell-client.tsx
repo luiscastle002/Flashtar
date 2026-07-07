@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { SpaceBackground } from "@/components/shared/space-background";
+import { BlackHoleCompanion } from "@/components/shared/black-hole-companion";
 import { LanguageSelector } from "@/components/shared/language-selector";
 import { SidebarProvider } from "@/components/layout/sidebar-provider";
 import { AppSidebar } from "@/components/layout/app-sidebar";
@@ -150,6 +151,7 @@ function DashboardShellInner({
           <main className="flex-1 p-4 md:p-6 overflow-auto">{children}</main>
         </div>
       </div>
+      <BlackHoleCompanion />
     </div>
   );
 }
