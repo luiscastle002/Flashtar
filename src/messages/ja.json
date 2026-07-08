@@ -21,6 +21,11 @@
       "kb": "KB",
       "mb": "MB",
       "gb": "GB"
+    },
+    "pagination": {
+      "previous": "前へ",
+      "next": "次へ",
+      "showing": "{total}枚中 {start}〜{end}枚を表示"
     }
   },
   "navigation": {

@@ -21,6 +21,11 @@
       "kb": "KB",
       "mb": "MB",
       "gb": "GB"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "showing": "Mostrando {start}–{end} de {total} {total, plural, =1 {tarjeta} other {tarjetas}}"
     }
   },
   "navigation": {

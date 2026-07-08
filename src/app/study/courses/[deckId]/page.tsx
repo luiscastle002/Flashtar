@@ -8,11 +8,14 @@ import { createClient } from "@/lib/supabase/server";
 
 export default async function CourseDeckPage(props: {
   params: Promise<{ deckId: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
   const { deckId } = await props.params;
+  const searchParams = await props.searchParams;
+  const page = Number(typeof searchParams?.page === "string" ? searchParams.page : "1") || 1;
 
   const [profile, deckData] = await Promise.all([
     getProfile(),
@@ -38,7 +41,7 @@ export default async function CourseDeckPage(props: {
 
   // Fetch syllabus cards and due counts
   const [cardData, dueCounts] = await Promise.all([
-    getStudyCards(deckId, { limit: 100 }),
+    getStudyCards(deckId, { limit: 100, page }),
     getDeckDueCounts(deckId),
   ]);
 
@@ -51,6 +54,7 @@ export default async function CourseDeckPage(props: {
           dueCounts={dueCounts}
           totalCards={deckData.card_count}
           categoryId={categoryId}
+          currentPage={page}
         />
       </div>
     </DashboardShell>

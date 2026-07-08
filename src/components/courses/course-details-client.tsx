@@ -8,6 +8,7 @@ import { Play, RotateCcw, Settings, Volume2, BookOpen, Check, ChevronLeft, Spark
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { Pagination } from "@/components/shared/pagination";
 import {
   Dialog,
   DialogContent,
@@ -45,6 +46,7 @@ interface CourseDetailsClientProps {
   } | null;
   totalCards: number;
   categoryId?: string;
+  currentPage?: number;
 }
 
 export function CourseDetailsClient({
@@ -53,6 +55,7 @@ export function CourseDetailsClient({
   dueCounts,
   totalCards,
   categoryId,
+  currentPage = 1,
 }: CourseDetailsClientProps) {
   const router = useRouter();
   const t = useTranslations("courses");
@@ -437,6 +440,13 @@ export function CourseDetailsClient({
                 );
               })}
             </div>
+
+            <Pagination
+              currentPage={currentPage}
+              totalItems={totalCards}
+              pageSize={100}
+              basePath={`/study/courses/${deck.id}`}
+            />
           </div>
         )}
       </div>

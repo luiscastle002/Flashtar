@@ -6,5 +6,126 @@
   "description": "Discuss seasons, temperature, and daily weather conditions.",
   "difficulty": "beginner",
   "position": 11,
-  "cards": []
+  "cards": [
+    {
+      "id": "a0000000-0000-0000-0000-000000000061",
+      "front": "<div class=\"text-6xl font-bold text-center\">晴れ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sunny / Clear weather</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はれ (Hare)</div>",
+      "position": 0
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000062",
+      "front": "<div class=\"text-6xl font-bold text-center\">雨</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Rain</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あめ (Ame)</div>",
+      "position": 1
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000063",
+      "front": "<div class=\"text-6xl font-bold text-center\">雪</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Snow</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆき (Yuki)</div>",
+      "position": 2
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000064",
+      "front": "<div class=\"text-6xl font-bold text-center\">曇り</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cloudy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">くもり (Kumori)</div>",
+      "position": 3
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000065",
+      "front": "<div class=\"text-6xl font-bold text-center\">風</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Wind</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かぜ (Kaze)</div>",
+      "position": 4
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000066",
+      "front": "<div class=\"text-6xl font-bold text-center\">暑い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hot (weather)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あつい (Atsui)</div>",
+      "position": 5
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000067",
+      "front": "<div class=\"text-6xl font-bold text-center\">寒い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cold (weather)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さむい (Samui)</div>",
+      "position": 6
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000068",
+      "front": "<div class=\"text-6xl font-bold text-center\">暖かい</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Warm</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あたたかい (Atatakai)</div>",
+      "position": 7
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000069",
+      "front": "<div class=\"text-6xl font-bold text-center\">台風</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Typhoon</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たいふう (Taifū)</div>",
+      "position": 8
+    },
+    {
+      "id": "a0000000-0000-0000-0000-000000000070",
+      "front": "<div class=\"text-6xl font-bold text-center\">天気</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Weather</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">てんき (Tenki)</div>",
+      "position": 9
+    },
+    {
+      "id": "faee1730-4081-43dd-8871-ed1f072ad5bd",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 10
+    },
+    {
+      "id": "bf366247-b020-4f07-bb08-bdaa956baf0d",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 11
+    },
+    {
+      "id": "917ba23d-cfbb-4fa2-a155-914d02493f88",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 12
+    },
+    {
+      "id": "d2623b8c-9430-4363-bda3-d25fee5d86b0",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 13
+    },
+    {
+      "id": "6dbb4677-edcc-490d-ba31-9fdd268d4be8",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 14
+    },
+    {
+      "id": "9c883eb2-ee20-4912-8eef-772a913837ae",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 15
+    },
+    {
+      "id": "5a85cbca-89d9-4909-986b-a2a269c9a6cf",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 16
+    },
+    {
+      "id": "2d8c7a34-f87c-44b5-8304-7bed0039e15b",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 17
+    },
+    {
+      "id": "5e373415-8771-4a88-8783-909d1f3ab551",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 18
+    },
+    {
+      "id": "71a84853-7414-404d-b1b9-d069704f62a7",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 19
+    }
+  ]
 }
