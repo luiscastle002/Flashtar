@@ -39,6 +39,23 @@ const supabase = createClient(supabaseUrl, supabaseServiceKey, {
   }
 });
 
+const AUDIO_EXTENSIONS = [".mp3", ".wav", ".ogg"];
+
+/**
+ * Resolves the path of the official course audio.
+ * Future-proofed for CDN/Supabase Storage redirection.
+ */
+function resolveOfficialAudio(course, level, cardId, existingAudioUrl) {
+  for (const ext of AUDIO_EXTENSIONS) {
+    const localRelPath = `public/audio/courses/${course}/${level}/${cardId}${ext}`;
+    const localAbsPath = path.join(__dirname, '..', localRelPath);
+    if (fs.existsSync(localAbsPath)) {
+      return `/audio/courses/${course}/${level}/${cardId}${ext}`;
+    }
+  }
+  return existingAudioUrl || null;
+}
+
 // 2. Main sync runner
 async function syncCourses() {
   const coursesDir = path.join(__dirname, '..', 'courses');
@@ -46,6 +63,12 @@ async function syncCourses() {
     console.error("Error: courses/ directory not found!");
     process.exit(1);
   }
+
+  let grandTotalCards = 0;
+  let grandTotalLinked = 0;
+  let grandTotalMissing = 0;
+  const deckStats = [];
+  const missingDetails = [];
 
   // Reorganize JSON scanning to support multi-file (chapter-based) decks using deck.json
   const courseDecks = [];
@@ -156,6 +179,14 @@ async function syncCourses() {
   for (const { relativePath, category, deck, cards } of courseDecks) {
     console.log(`=== Processing: ${relativePath} (${cards.length} cards) ===`);
 
+    const normalizedPath = relativePath.replace(/\\/g, '/');
+    const pathParts = normalizedPath.split('/');
+    const course = pathParts[0];
+    const level = pathParts[1];
+
+    let deckFoundCount = 0;
+    let deckTotalCount = cards.length;
+
     // 1. Upsert Category
     console.log(`Upserting category: "${category.name_key}" (${category.id})`);
     const { error: catError } = await supabase
@@ -242,13 +273,25 @@ async function syncCourses() {
     // 5. Build cards upsert payload with preserved audios
     const cardRows = cards.map(card => {
       const existingAudio = audioMap.get(card.id) || {};
+      const frontAudioUrl = resolveOfficialAudio(course, level, card.id, existingAudio.front_audio_url);
+
+      if (frontAudioUrl) {
+        deckFoundCount++;
+      } else {
+        missingDetails.push({
+          deckName: deck.name_key,
+          cardId: card.id,
+          front: card.front
+        });
+      }
+
       return {
         id: card.id,
         shared_deck_id: deck.id,
         front: card.front,
         back: card.back,
         position: card.position,
-        front_audio_url: existingAudio.front_audio_url || null,
+        front_audio_url: frontAudioUrl,
         back_audio_url: existingAudio.back_audio_url || null
       };
     });
@@ -265,6 +308,51 @@ async function syncCourses() {
     }
 
     console.log(`Successfully synchronized "${deck.name_key}" with ${cardRows.length} cards.\n`);
+
+    deckStats.push({
+      deckName: deck.name_key,
+      found: deckFoundCount,
+      total: deckTotalCount
+    });
+
+    grandTotalCards += deckTotalCount;
+    grandTotalLinked += deckFoundCount;
+    grandTotalMissing += (deckTotalCount - deckFoundCount);
+  }
+
+  console.log("\n===============================================");
+  console.log("Official Audio Scan Report");
+  console.log("===============================================\n");
+
+  deckStats.forEach(stat => {
+    console.log(`${stat.deckName}:`);
+    console.log(`  ${stat.found} / ${stat.total} audio files found\n`);
+  });
+
+  console.log("-----------------------------------------------");
+  console.log(`Total cards:   ${grandTotalCards}`);
+  console.log(`Audio linked:  ${grandTotalLinked}`);
+  console.log(`Missing audio: ${grandTotalMissing}`);
+  console.log("-----------------------------------------------\n");
+
+  if (missingDetails.length > 0) {
+    console.log("Warning: Missing Audio Details:");
+    const groupedMissing = {};
+    missingDetails.forEach(m => {
+      if (!groupedMissing[m.deckName]) {
+        groupedMissing[m.deckName] = [];
+      }
+      groupedMissing[m.deckName].push(m);
+    });
+
+    for (const [deckName, list] of Object.entries(groupedMissing)) {
+      console.log(`\nDeck: ${deckName}`);
+      list.forEach(m => {
+        const cleanFront = m.front.replace(/<[^>]*>/g, '');
+        console.log(`  - Card ID: ${m.cardId} ("${cleanFront}")`);
+      });
+    }
+    console.log("");
   }
 
   console.log("=== All courses synchronized successfully! ===");
