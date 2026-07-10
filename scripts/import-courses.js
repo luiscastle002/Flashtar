@@ -50,7 +50,7 @@ function resolveOfficialAudio(course, level, cardId, existingAudioUrl) {
     const localRelPath = `public/audio/courses/${course}/${level}/${cardId}${ext}`;
     const localAbsPath = path.join(__dirname, '..', localRelPath);
     if (fs.existsSync(localAbsPath)) {
-      return `/audio/courses/${course}/${level}/${cardId}${ext}`;
+      return `audio/${course}/${level}/${cardId}${ext}`;
     }
   }
   return existingAudioUrl || null;

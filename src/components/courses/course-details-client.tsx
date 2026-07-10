@@ -23,6 +23,7 @@ import { Label } from "@/components/ui/label";
 import { resetCourseProgress } from "@/actions/courses";
 import { updateDeckSettings } from "@/actions/study-decks";
 import { toast } from "sonner";
+import { resolveAudioUrl } from "@/lib/media/audio-resolver";
 import type { StudyCard, CardStudyState } from "@/types";
 
 interface CourseDetailsClientProps {
@@ -135,7 +136,8 @@ export function CourseDetailsClient({
     e.stopPropagation();
     const audioFile = card.audios?.[0]?.audio_files?.file_id;
     if (audioFile) {
-      const audio = new Audio(audioFile);
+      const resolvedUrl = resolveAudioUrl(audioFile);
+      const audio = new Audio(resolvedUrl);
       audio.play().catch((err) => console.error("Error playing audio:", err));
     } else {
       toast.info("Audio pronunciation not available.");

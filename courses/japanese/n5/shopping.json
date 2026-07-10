@@ -9,182 +9,182 @@
   "cards": [
     {
       "id": "33f791cc-e1fe-4453-8607-18df188a6f64",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">店</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Shop / Store</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">みせ (Mise)</div>",
       "position": 0
     },
     {
       "id": "03b682de-ce67-4981-9829-e75e894626ef",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">買い物</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Shopping</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かいもの (Kaimono)</div>",
       "position": 1
     },
     {
       "id": "b06620c6-7651-4e81-a35e-c357ee575f98",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">お金</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Money</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おかね (Okane)</div>",
       "position": 2
     },
     {
       "id": "ea1088d0-e79d-423d-9460-773886014ba3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">円</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Yen</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">えん (En)</div>",
       "position": 3
     },
     {
       "id": "611fd3da-1622-4a6b-ab35-5565eb3ca7d4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">値段</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Price</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ねだん (Nedan)</div>",
       "position": 4
     },
     {
       "id": "79aa7fd6-e056-47ab-85a4-3d5a6f3ef26d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">高い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Expensive</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たかい (Takai)</div>",
       "position": 5
     },
     {
       "id": "a9b09527-ad2c-4f16-8def-cccf16018656",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">安い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cheap / Inexpensive</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やすい (Yasui)</div>",
       "position": 6
     },
     {
       "id": "9475d6c4-dcc4-4ead-9a27-907abba68ccf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">いくら</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>How much?</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いくら (Ikura)</div>",
       "position": 7
     },
     {
       "id": "8889fb50-eba8-4308-9f77-c59eb30731a0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">売る</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To sell</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">うる (Uru)</div>",
       "position": 8
     },
     {
       "id": "ac2ce0bd-e9d1-48ba-b0e7-0614c13ada4a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">買う</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To buy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かう (Kau)</div>",
       "position": 9
     },
     {
       "id": "17df1eff-304a-44e6-9dfc-2e673eee104f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">財布</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Wallet</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さいふ (Saifu)</div>",
       "position": 10
     },
     {
       "id": "c19face4-1a78-475d-889f-f30e3eefddc5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">現金</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cash</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">げんきん (Genkin)</div>",
       "position": 11
     },
     {
       "id": "3f98e220-c070-46b7-a15a-6037c485ed75",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">お釣り</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Change (money)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おつり (Otsuri)</div>",
       "position": 12
     },
     {
       "id": "8337ca49-04ba-4221-9720-89ad684a580e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">レシート</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Receipt</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">レシート (Reshīto)</div>",
       "position": 13
     },
     {
       "id": "c84b0070-3689-4c43-94cd-ad8131a80923",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">品物</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Goods / Item</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しなもの (Shinamono)</div>",
       "position": 14
     },
     {
       "id": "0ec85ec4-7aed-4688-a18b-e67681adf15d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">服</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Clothes</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふく (Fuku)</div>",
       "position": 15
     },
     {
       "id": "2e7d6820-0bb5-4032-9d05-b43d72d97926",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">靴</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Shoes</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">くつ (Kutsu)</div>",
       "position": 16
     },
     {
       "id": "0945354d-6fa6-42ac-b703-4ef0d188aa25",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">かばん</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Bag</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かばん (Kaban)</div>",
       "position": 17
     },
     {
       "id": "e46efb6b-f95a-47ef-86c1-30df5fb5128d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">本</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Book</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ほん (Hon)</div>",
       "position": 18
     },
     {
       "id": "59d4cb36-291d-4a5d-9d00-f6b0994bc264",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">お土産</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Souvenir</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おみやげ (Omiyage)</div>",
       "position": 19
     },
     {
       "id": "035381a9-b6ef-4b52-a7b7-2a6a120217c9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">ください</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Please (when requesting an item)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ください (Kudasai)</div>",
       "position": 20
     },
     {
       "id": "3654ea52-9815-40b4-bbcd-1b2897ef46eb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">見せる</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To show</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">みせる (Miseru)</div>",
       "position": 21
     },
     {
       "id": "1ba5337b-1333-4dfc-8c0e-af32646b796a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">選ぶ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To choose</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">えらぶ (Erabu)</div>",
       "position": 22
     },
     {
       "id": "3068e734-abb0-4a81-9875-1121d815b5c6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">サイズ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Size</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">サイズ (Saizu)</div>",
       "position": 23
     },
     {
       "id": "35d99ff7-d5cd-4353-a212-e9b907c56111",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">大きい</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Large</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おおきい (Ōkii)</div>",
       "position": 24
     },
     {
       "id": "d4f8eb31-ebcd-4f15-8324-ebf74a358aa7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">小さい</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Small</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちいさい (Chiisai)</div>",
       "position": 25
     },
     {
       "id": "36dd0721-e4cc-4ce5-8e59-f9cdf7e89564",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">新しい</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>New</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あたらしい (Atarashii)</div>",
       "position": 26
     },
     {
       "id": "ee02c0d8-1003-4bc3-9e0a-3557d19ed291",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">古い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Old (thing)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふるい (Furui)</div>",
       "position": 27
     },
     {
       "id": "a5c1ce33-b7f5-4ea2-859c-0b62404eda94",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">色</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Color</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いろ (Iro)</div>",
       "position": 28
     },
     {
       "id": "c0fa3431-53f8-411e-b266-1c386fda0f57",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">デパート</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Department store</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">デパート (Depāto)</div>",
       "position": 29
     }
   ]

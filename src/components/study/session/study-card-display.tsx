@@ -9,6 +9,7 @@ import { updateStudyCard } from "@/actions/imports";
 import type { StudyCard, CardAudio } from "@/types";
 import { cn } from "@/lib/utils";
 import { parseHtmlContent } from "@/lib/media/html-parser";
+import { resolveAudioUrl } from "@/lib/media/audio-resolver";
 
 interface CustomWindow extends Window {
   playFlashtarAudio?: (url: string) => void;
@@ -30,6 +31,9 @@ function getAudioUrl(audio: CardAudio, cardUpdatedAt: string): string {
 
   const provider = audio.audio_files?.provider;
   if (provider === "url") {
+    if (fileId.startsWith("audio/") || fileId.startsWith("http://") || fileId.startsWith("https://")) {
+      return resolveAudioUrl(fileId);
+    }
     if (fileId.startsWith("/")) {
       return fileId;
     }

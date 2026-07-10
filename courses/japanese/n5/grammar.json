@@ -9,332 +9,332 @@
   "cards": [
     {
       "id": "35f83138-aae8-454f-adf7-716e8dc33fb5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">は</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Topic particle</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">は (wa)</div>",
       "position": 0
     },
     {
       "id": "a552d6e9-0bcf-4074-a555-8018305bd712",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">が</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Subject particle</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">が (ga)</div>",
       "position": 1
     },
     {
       "id": "09a5d8ec-8300-456b-9983-7b3e8d2beb4e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">を</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Direct object particle</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">を (o)</div>",
       "position": 2
     },
     {
       "id": "7b8b8ecf-7fa1-47ca-9e15-edbd243ac7a3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">に</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To / At / On / Time particle</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">に (ni)</div>",
       "position": 3
     },
     {
       "id": "ceeb56c0-65af-4981-b2a2-b494fac8aded",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">へ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Toward / To (direction)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">へ (e)</div>",
       "position": 4
     },
     {
       "id": "f53da462-fa83-4f71-b689-92ac612c11b1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">で</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>At / In (location of action)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">で (de)</div>",
       "position": 5
     },
     {
       "id": "a5f02bb9-80eb-4e1a-8d8b-1607f1568015",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">と</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>And / With</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">と (to)</div>",
       "position": 6
     },
     {
       "id": "99ee0ee2-956e-4afe-a1e7-050cb91ea867",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">も</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Also / Too</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">も (mo)</div>",
       "position": 7
     },
     {
       "id": "31cf0e30-8adc-4c88-86ad-990eb218dfb1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">の</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Possession / Of</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">の (no)</div>",
       "position": 8
     },
     {
       "id": "943e1399-7eeb-432f-aa6f-814e75743d6a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">や</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>And (non-exhaustive list)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">や (ya)</div>",
       "position": 9
     },
     {
       "id": "27c423e8-dc44-47c1-bbeb-6d4a8d67f848",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">か</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Question marker / Or</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">か (ka)</div>",
       "position": 10
     },
     {
       "id": "cd72f385-e84a-4390-99fc-ce48765b7945",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">から</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>From / Because</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">から (kara)</div>",
       "position": 11
     },
     {
       "id": "094c1b4f-eb59-4ddd-bdf1-0a19005a807f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">まで</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Until / To</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まで (made)</div>",
       "position": 12
     },
     {
       "id": "2633ebee-397b-4d4c-9952-9e90c490cf35",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">です</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite copula (to be)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">です (desu)</div>",
       "position": 13
     },
     {
       "id": "7f90d430-9fb4-4811-84af-ef2e59a86a10",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">ではありません</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Is not (polite)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ではありません (dewa arimasen)</div>",
       "position": 14
     },
     {
       "id": "c64f32a9-d97e-48a2-840b-698d2b2e7108",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">でした</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Was (polite)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">でした (deshita)</div>",
       "position": 15
     },
     {
       "id": "c0f5cb03-6034-4e1b-a181-6d03e78c2eb9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">ではありませんでした</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Was not (polite)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ではありませんでした (dewa arimasen deshita)</div>",
       "position": 16
     },
     {
       "id": "77282d10-c14b-47a4-990c-c47bbb47368b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">あります</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>There is (inanimate)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あります (arimasu)</div>",
       "position": 17
     },
     {
       "id": "fd83ddc0-5b05-4253-babd-1707d2349d95",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">います</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>There is (animate)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">います (imasu)</div>",
       "position": 18
     },
     {
       "id": "24bc1b8a-a38d-4168-b717-c479d499485b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜ます</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite verb ending</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜ます (-masu)</div>",
       "position": 19
     },
     {
       "id": "f9ae5e5d-07cd-4299-8be9-5191d49d4c53",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜ません</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite negative verb ending</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜ません (-masen)</div>",
       "position": 20
     },
     {
       "id": "f2e69cb9-bd02-4671-8003-0a39fb9ddfb4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜ました</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite past verb ending</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜ました (-mashita)</div>",
       "position": 21
     },
     {
       "id": "ef39ec63-db85-4108-9b2f-3146d11bac9f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜ませんでした</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite past negative verb ending</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜ませんでした (-masen deshita)</div>",
       "position": 22
     },
     {
       "id": "345cfda8-7a6c-41f5-aba3-75943475aec3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜たい</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Want to do</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜たい (-tai)</div>",
       "position": 23
     },
     {
       "id": "b328b242-d4a7-4b12-a2ee-e38e6cfaa975",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜ましょう</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Let's...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜ましょう (-mashou)</div>",
       "position": 24
     },
     {
       "id": "a90968b9-a7e0-480f-9554-387d5ca1e303",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜て</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Te-form (connect verbs / requests / progressive)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜て (-te)</div>",
       "position": 25
     },
     {
       "id": "29e65c03-0e22-4661-8d14-154dc2ee1ba1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜てください</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Please do...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜てください (-te kudasai)</div>",
       "position": 26
     },
     {
       "id": "9e838a0b-a2b2-48ad-aee1-df78d63be611",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜てもいいです</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>May do / It's okay to...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜てもいいです (-te mo ii desu)</div>",
       "position": 27
     },
     {
       "id": "8d5edb0b-6544-47a8-81a1-6a5c30a0e0ed",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜てはいけません</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Must not / Don't...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜てはいけません (-te wa ikemasen)</div>",
       "position": 28
     },
     {
       "id": "28981060-1a23-425c-8bff-dfbe323a6be6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜ています</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Is doing / Ongoing state</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜ています (-te imasu)</div>",
       "position": 29
     },
     {
       "id": "96207d19-c565-4da6-8362-493cc2e884dd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜に行きます</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Go to do...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜にいきます (-ni ikimasu)</div>",
       "position": 30
     },
     {
       "id": "ce810fc2-37a2-48e7-95bd-19baaec1d406",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜たいです</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Want to...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜たいです (-tai desu)</div>",
       "position": 31
     },
     {
       "id": "69067284-4ea4-414b-b8fe-875279c1fcec",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜たり〜たりします</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Do things like...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜たり〜たりします (-tari -tari shimasu)</div>",
       "position": 32
     },
     {
       "id": "807c650d-dc61-496c-8cf2-b512c3421a3a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜たり</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Among other actions</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜たり (-tari)</div>",
       "position": 33
     },
     {
       "id": "8c32639d-f31a-443f-9c28-6820e9db099e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜前に</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Before...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜まえに (〜mae ni)</div>",
       "position": 34
     },
     {
       "id": "94b8a4a5-b494-4f0e-9c19-9cea18d6ef03",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜後で</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>After...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜あとで (〜ato de)</div>",
       "position": 35
     },
     {
       "id": "0f1b5c72-ca49-4950-a8ed-70d6ee4a00d8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜ながら</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>While doing...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜ながら (-nagara)</div>",
       "position": 36
     },
     {
       "id": "b758d84b-7f66-4342-85b2-459f94a159b8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜こと</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Nominalizer / The act of...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こと (koto)</div>",
       "position": 37
     },
     {
       "id": "617c3735-5e81-44a1-a08c-f86a3b100d1f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜の</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Nominalizer / Explanation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">の (no)</div>",
       "position": 38
     },
     {
       "id": "9fef1fc6-7aba-4b18-b0c0-5f8eddb2f65c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜から</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Because...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜から (kara)</div>",
       "position": 39
     },
     {
       "id": "5e174497-c7db-46e8-a5f5-3ba80b4fbe20",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜ので</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Because... (softer)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜ので (node)</div>",
       "position": 40
     },
     {
       "id": "87ae47af-274b-4d86-b5fe-827bc19d8320",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜けど</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>But / Although</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜けど (kedo)</div>",
       "position": 41
     },
     {
       "id": "501515dc-ba76-4fc9-8f9e-98ecea2a7ae5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜し</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>And / Moreover</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜し (shi)</div>",
       "position": 42
     },
     {
       "id": "10507e3d-3f48-4a3d-830a-47b75db8f2b6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜と思います</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I think...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜とおもいます (-to omoimasu)</div>",
       "position": 43
     },
     {
       "id": "0ae38384-fe01-49b6-b57d-198bbda94f63",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜と言います</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Say that...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜といいます (-to iimasu)</div>",
       "position": 44
     },
     {
       "id": "beb3de70-acec-426e-ac48-df5ed2fea5a9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜そうです</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I heard that...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜そうです (sou desu)</div>",
       "position": 45
     },
     {
       "id": "af242a78-a2cb-4a68-97f1-87973631ef98",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜より</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Than (comparison)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜より (yori)</div>",
       "position": 46
     },
     {
       "id": "91a28251-1623-47f7-bd62-0533f934c131",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">〜ほど</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>As... as / Degree</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">〜ほど (hodo)</div>",
       "position": 47
     },
     {
       "id": "0cd0ef79-ee04-4226-9798-dc6c2f141a74",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">一番</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The most / Number one</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いちばん (Ichiban)</div>",
       "position": 48
     },
     {
       "id": "3b21bd9d-f82e-4264-9dd1-805d08c710ac",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">まだ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Still / Not yet</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まだ (Mada)</div>",
       "position": 49
     },
     {
       "id": "34af13be-32e4-4ba4-82f8-3c2067717a1c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 51</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">もう</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Already / Anymore</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">もう (Mou)</div>",
       "position": 50
     },
     {
       "id": "4e05a575-4956-4c1f-95b3-e18b1d3405d9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 52</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">いつも</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Always</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いつも (Itsumo)</div>",
       "position": 51
     },
     {
       "id": "cf98f2b5-2fe7-42fa-99cc-82c03ab1e231",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 53</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">よく</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Often / Well</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">よく (Yoku)</div>",
       "position": 52
     },
     {
       "id": "cec2b0c5-1089-4cc9-8ab0-3d83728619d2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 54</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">あまり〜ません</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Not very...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あまり〜ません (amari...masen)</div>",
       "position": 53
     },
     {
       "id": "7d05ec9b-5cd5-46f2-b7f7-91da37d49c5e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 55</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">全然〜ません</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Not at all...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぜんぜん〜ません (zenzen...masen)</div>",
       "position": 54
     }
   ]

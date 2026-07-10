@@ -39,122 +39,122 @@
     },
     {
       "id": "503d39a8-3fe3-48d8-95c5-c97b388a87ad",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">教室</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Classroom</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうしつ (Kyoushitsu)</div>",
       "position": 5
     },
     {
       "id": "8038b716-a93d-4d89-b214-fe82e2bdd39d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">机</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Desk</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つくえ (Tsukue)</div>",
       "position": 6
     },
     {
       "id": "fcfe757d-7da8-4581-9a66-59b22526c011",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">椅子</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Chair</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いす (Isu)</div>",
       "position": 7
     },
     {
       "id": "f930ec19-61ba-494a-b4ed-1dec8ca72508",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">ノート</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Notebook</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ノート (Nōto)</div>",
       "position": 8
     },
     {
       "id": "bfc98985-e637-464b-98d6-cf7f2ae04d48",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">鉛筆</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Pencil</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">えんぴつ (Enpitsu)</div>",
       "position": 9
     },
     {
       "id": "4623bbc2-19a8-4454-8768-4b8e1173ee33",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">消しゴム</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Eraser</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けしゴム (Keshi gomu)</div>",
       "position": 10
     },
     {
       "id": "d622a11d-4cc4-4b60-b143-e1ac0999f7ae",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">ペン</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Pen</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ペン (Pen)</div>",
       "position": 11
     },
     {
       "id": "dbf83b4f-d31d-4db1-ae71-d0f31bf7d7b5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">辞書</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Dictionary</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じしょ (Jisho)</div>",
       "position": 12
     },
     {
       "id": "48d68333-b042-41bb-b955-d11c920861d7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">宿題</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Homework</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しゅくだい (Shukudai)</div>",
       "position": 13
     },
     {
       "id": "d1bc4118-0cb4-4b0c-ad5c-e7426918c334",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">試験</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Exam / Test</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しけん (Shiken)</div>",
       "position": 14
     },
     {
       "id": "6a254c8d-2124-4eba-a1ca-d683e91c5de1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">授業</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Class / Lesson</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じゅぎょう (Jugyō)</div>",
       "position": 15
     },
     {
       "id": "36043ad6-748b-4191-9e30-9ce34207083b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">黒板</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Blackboard</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こくばん (Kokuban)</div>",
       "position": 16
     },
     {
       "id": "cc0eaa25-4f7f-4248-9bc1-236b112ac7b0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">質問</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Question</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しつもん (Shitsumon)</div>",
       "position": 17
     },
     {
       "id": "6fb27ff5-04cc-4cb8-9544-063366ac6aa1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">答え</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Answer</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こたえ (Kotae)</div>",
       "position": 18
     },
     {
       "id": "335b8592-7240-4bea-b07d-78329d7b2ca8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">漢字</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Kanji</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんじ (Kanji)</div>",
       "position": 19
     },
     {
       "id": "0b7bb259-c787-466f-958d-2bbd079b64dd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">ひらがな</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hiragana</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひらがな (Hiragana)</div>",
       "position": 20
     },
     {
       "id": "be046305-6aae-43af-8932-c1bfdd0b840a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">カタカナ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Katakana</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">カタカナ (Katakana)</div>",
       "position": 21
     },
     {
       "id": "2d4b8d73-7482-4dee-bd1c-db9b97ab0fdf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">作文</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Composition / Essay</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さくぶん (Sakubun)</div>",
       "position": 22
     },
     {
       "id": "a57ebc52-657a-49b1-800d-93a95e3635d5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">教科書</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Textbook</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうかしょ (Kyōkasho)</div>",
       "position": 23
     },
     {
       "id": "8811072b-eb9d-4b62-919a-bc001b12c997",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">図書館</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Library</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">としょかん (Toshokan)</div>",
       "position": 24
     }
   ]

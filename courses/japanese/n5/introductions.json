@@ -63,68 +63,68 @@
     },
     {
       "id": "083aef37-6787-4f8e-a992-2f2fef9f11f2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">なぜ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Why</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">なぜ (Naze)</div>",
       "position": 9
     },
     {
       "id": "17493fbf-17ad-491c-850a-3aba17b33780",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">どう</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>How</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">どう (Dō)</div>",
       "position": 10
     },
     {
       "id": "2a93ebb2-bbb7-42e1-97a2-ced98ba34fbe",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">いくら</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>How much</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いくら (Ikura)</div>",
       "position": 11
     },
     {
       "id": "4c726649-d6d5-4401-9cc4-f7b42788eff5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">いくつ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>How many / How old</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いくつ (Ikutsu)</div>",
       "position": 12
     },
     {
       "id": "40e6eb47-a9a2-4d1e-87d2-51f5d760811c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">どれ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Which one</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">どれ (Dore)</div>",
       "position": 13
     },
     {
       "id": "a4afff01-d6dc-4e54-9f99-6bd3182efbc5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">どの</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Which</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">どの (Dono)</div>",
       "position": 14
     },
     {
       "id": "46055d04-47e3-4947-b9fd-b61e607c5472",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">ここ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Here</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ここ (Koko)</div>",
       "position": 15
     },
     {
       "id": "b313684a-9692-483b-8070-04a6b3050947",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">そこ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>There (near the listener)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そこ (Soko)</div>",
       "position": 16
     },
     {
       "id": "7f89d583-20c5-46cf-a40e-1643510def1f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">あそこ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Over there</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あそこ (Asoko)</div>",
       "position": 17
     },
     {
       "id": "84fa4cd4-4002-4dcd-9a8c-137341a41859",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">こちら</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>This way / Here (polite)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こちら (Kochira)</div>",
       "position": 18
     },
     {
       "id": "90ca278c-b17c-408b-99a5-d2a74633a98e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">そちら</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>That way / There (polite)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そちら (Sochira)</div>",
       "position": 19
     }
   ]

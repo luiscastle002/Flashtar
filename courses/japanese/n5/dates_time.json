@@ -39,182 +39,182 @@
     },
     {
       "id": "208f0d23-9c38-4013-9236-bc60104fe54a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">分</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Minute</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふん / ぷん (Fun / Pun)</div>",
       "position": 5
     },
     {
       "id": "d6827589-62f0-4176-990c-f6e178a7e8d4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">半</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Half</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はん (Han)</div>",
       "position": 6
     },
     {
       "id": "3efc702e-7ab6-4895-a26d-40413eccd5d0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">朝</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Morning</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あさ (Asa)</div>",
       "position": 7
     },
     {
       "id": "24cc21a0-9802-46bf-a4ae-a72f115008f6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">昼</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Noon / Daytime</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひる (Hiru)</div>",
       "position": 8
     },
     {
       "id": "771b982f-bbbb-4782-b48a-2375f0c06c8f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">夜</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Night</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">よる (Yoru)</div>",
       "position": 9
     },
     {
       "id": "a62a047d-a4fd-476d-9467-03253bd4bcc0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">毎日</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Every day</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まいにち (Mainichi)</div>",
       "position": 10
     },
     {
       "id": "56583956-4947-4bff-b306-3188c7683b75",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">毎週</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Every week</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まいしゅう (Maishuu)</div>",
       "position": 11
     },
     {
       "id": "a487b787-dff8-40fb-a3e9-f9b602baa4d1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">毎月</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Every month</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まいつき / まいげつ (Maitsuki / Maigetsu)</div>",
       "position": 12
     },
     {
       "id": "c2368d47-47a1-4035-ba1f-f5548cdacb67",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">毎年</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Every year</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まいとし / まいねん (Maitoshi / Mainen)</div>",
       "position": 13
     },
     {
       "id": "0177ff77-939c-4de0-9d3b-491ca7292039",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">今週</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>This week</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こんしゅう (Konshuu)</div>",
       "position": 14
     },
     {
       "id": "a67df167-6a19-4bcd-a9f6-3224ac3f4c6f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">来週</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Next week</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">らいしゅう (Raishuu)</div>",
       "position": 15
     },
     {
       "id": "21336cec-9c9b-48b1-ad4c-26642f7e802c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">先週</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Last week</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せんしゅう (Senshuu)</div>",
       "position": 16
     },
     {
       "id": "fb5d246a-8488-41a5-af32-dc5155699f65",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">今月</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>This month</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こんげつ (Kongetsu)</div>",
       "position": 17
     },
     {
       "id": "41485b97-3bb3-48ef-afdb-474cdf4aa9ac",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">来月</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Next month</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">らいげつ (Raigetsu)</div>",
       "position": 18
     },
     {
       "id": "0fae2b38-74f2-41ed-ba4c-5f9b1e5b299a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">先月</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Last month</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せんげつ (Sengetsu)</div>",
       "position": 19
     },
     {
       "id": "5025b17d-faf7-45f3-8076-1bf34d40faf7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">今年</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>This year</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ことし (Kotoshi)</div>",
       "position": 20
     },
     {
       "id": "eb2fd7fc-d687-4ef3-9fe7-17f4960e1efc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">来年</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Next year</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">らいねん (Rainen)</div>",
       "position": 21
     },
     {
       "id": "56e8c233-fa56-4ce2-801c-3aea45aae4ba",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">去年</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Last year</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょねん (Kyonen)</div>",
       "position": 22
     },
     {
       "id": "29602be2-7a10-4c23-8428-0237fdaae439",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">月曜日</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Monday</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">げつようび (Getsuyoubi)</div>",
       "position": 23
     },
     {
       "id": "bc70ccd2-e5f7-4724-bb2f-82eba4cd34a1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">火曜日</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Tuesday</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かようび (Kayoubi)</div>",
       "position": 24
     },
     {
       "id": "d610fd38-0546-4b58-ae1e-bccaa7876511",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">水曜日</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Wednesday</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">すいようび (Suiyoubi)</div>",
       "position": 25
     },
     {
       "id": "6ccac001-5ed0-4b2c-8304-7a375ff21910",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">木曜日</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Thursday</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">もくようび (Mokuyoubi)</div>",
       "position": 26
     },
     {
       "id": "3ba6ffbd-2950-4a78-abe6-43a5f6d6eeed",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">金曜日</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Friday</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きんようび (Kinyoubi)</div>",
       "position": 27
     },
     {
       "id": "09b7e95a-b4d8-4ce4-b50c-3d834779eb8f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">土曜日</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Saturday</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">どようび (Doyoubi)</div>",
       "position": 28
     },
     {
       "id": "bf8906d6-3f7a-4993-9c8d-b99fdcd89c8b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">日曜日</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sunday</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">にちようび (Nichiyoubi)</div>",
       "position": 29
     },
     {
       "id": "ff504cd1-dffd-4a12-80db-9a535baaf6c8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">午前</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>AM / Morning</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ごぜん (Gozen)</div>",
       "position": 30
     },
     {
       "id": "4c217254-1654-4fa8-b151-4b9b0f029bf4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">午後</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>PM / Afternoon</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ごご (Gogo)</div>",
       "position": 31
     },
     {
       "id": "0b9f4114-d476-4612-961f-71967ef999de",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">週</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Week</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しゅう (Shuu)</div>",
       "position": 32
     },
     {
       "id": "6632b494-2482-4e9e-acab-79d7967c6620",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">月</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Month / Moon</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つき / げつ (Tsuki / Getsu)</div>",
       "position": 33
     },
     {
       "id": "a87f5b6c-b8c2-40d9-bc30-3a8273d1a0fc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">年</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Year</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">とし / ねん (Toshi / Nen)</div>",
       "position": 34
     }
   ]

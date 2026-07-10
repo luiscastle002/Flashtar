@@ -9,122 +9,122 @@
   "cards": [
     {
       "id": "74946093-b38d-4ad7-8653-b0b5614c7e82",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">赤</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Red</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あか (Aka)</div>",
       "position": 0
     },
     {
       "id": "54d66b96-2081-46d8-affa-843bac5d914f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">青</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Blue</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あお (Ao)</div>",
       "position": 1
     },
     {
       "id": "b696f444-de65-4d4a-be60-dd45b596e69b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">白</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>White</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しろ (Shiro)</div>",
       "position": 2
     },
     {
       "id": "2b8a7f76-aed3-4f7c-aebd-9b7118fc95cf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">黒</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Black</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">くろ (Kuro)</div>",
       "position": 3
     },
     {
       "id": "53035843-0587-4a57-93b4-4f6079809eca",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">黄</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Yellow</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きいろ (Kiiro)</div>",
       "position": 4
     },
     {
       "id": "2f8be907-6f32-46dd-9e7e-e7c8547ad22d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">茶</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Brown / Tea</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちゃ / ちゃいろ (Cha / Chairo)</div>",
       "position": 5
     },
     {
       "id": "41708dab-afb8-4383-bf3d-c46780bbce42",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">色</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Color</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いろ (Iro)</div>",
       "position": 6
     },
     {
       "id": "dc71b100-3462-4d8d-b6b7-4c3adabfdb6f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">金</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Gold</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きん (Kin)</div>",
       "position": 7
     },
     {
       "id": "b62ddd5c-edc6-4e40-b6ca-a3d3a02644eb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">銀</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Silver</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぎん (Gin)</div>",
       "position": 8
     },
     {
       "id": "a3c73b17-1671-4c4d-9a14-37c3f8ad4f70",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">空</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sky</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そら (Sora)</div>",
       "position": 9
     },
     {
       "id": "4287e72f-bc79-40e5-bf48-31ff404a1489",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">花</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Flower</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はな (Hana)</div>",
       "position": 10
     },
     {
       "id": "6e4f8719-6019-4674-880f-80d2b7843d65",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">山</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Mountain</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やま (Yama)</div>",
       "position": 11
     },
     {
       "id": "c4aae2ff-f1e3-40fa-b4bc-231268c4fec9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">海</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sea / Ocean</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">うみ (Umi)</div>",
       "position": 12
     },
     {
       "id": "d3ff6aaf-6d96-4625-ae71-ee3d083df8aa",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">雨</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Rain</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あめ (Ame)</div>",
       "position": 13
     },
     {
       "id": "cd232164-ef52-4798-a7b1-e91512302891",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">雪</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Snow</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆき (Yuki)</div>",
       "position": 14
     },
     {
       "id": "d03f5ade-5ed5-4c1d-a3ae-ccc088866ea9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">光</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Light</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひかり (Hikari)</div>",
       "position": 15
     },
     {
       "id": "cc84b58b-c0a2-4b80-bda3-4a5246764fca",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">夕日</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sunset</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆうひ (Yuuhi)</div>",
       "position": 16
     },
     {
       "id": "e0412386-0635-4cac-98e4-41022f2eaf70",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">緑</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Green</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">みどり (Midori)</div>",
       "position": 17
     },
     {
       "id": "01f6bf07-ce79-4372-b2c7-dc7570f00273",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">紫</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Purple</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">むらさき (Murasaki)</div>",
       "position": 18
     },
     {
       "id": "dd867ee6-751f-47a0-98a1-07d8b86b11bf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">灰色</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Gray</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はいいろ (Haiiro)</div>",
       "position": 19
     }
   ]

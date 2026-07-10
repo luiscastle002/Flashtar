@@ -15,206 +15,206 @@
     },
     {
       "id": "07a656d2-e511-4854-9ebb-9839b91e9eb1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">お茶</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Tea</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おちゃ (Ocha)</div>",
       "position": 1
     },
     {
       "id": "7dfdf3eb-1e5b-4210-904d-ca5ca1ca7dad",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">ご飯</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cooked rice / Meal</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ごはん (Gohan)</div>",
       "position": 2
     },
     {
       "id": "55972c0c-f511-4716-ab51-36b25319b131",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">パン</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Bread</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">パン (Pan)</div>",
       "position": 3
     },
     {
       "id": "af7b1e94-7d14-4862-8b0c-a03b5b9f28ab",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">肉</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Meat</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">にく (Niku)</div>",
       "position": 4
     },
     {
       "id": "e2b4f8bb-ce4b-4dc7-a2cd-d3b98007874a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">魚</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fish</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さかな (Sakana)</div>",
       "position": 5
     },
     {
       "id": "60dc673a-af96-4d54-856b-08b33eb4d56b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">卵</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Egg</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たまご (Tamago)</div>",
       "position": 6
     },
     {
       "id": "a9d505fb-c6a7-41f6-923e-9625e5c5b6b1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">牛乳</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Milk</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぎゅうにゅう (Gyuunyuu)</div>",
       "position": 7
     },
     {
       "id": "01aa435e-895a-4fb0-b6d2-522444b397df",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">野菜</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Vegetables</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やさい (Yasai)</div>",
       "position": 8
     },
     {
       "id": "72f29e8c-9810-480c-81e1-c62b8a37ee38",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">果物</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fruit</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">くだもの (Kudamono)</div>",
       "position": 9
     },
     {
       "id": "6d0476b1-2408-411b-8f69-95409e593aaa",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">林檎</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Apple</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">りんご (Ringo)</div>",
       "position": 10
     },
     {
       "id": "5f39eb11-9a0e-456d-a63c-d8c29bb4c0e6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">日本酒</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Japanese sake</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">にほんしゅ (Nihonshu)</div>",
       "position": 11
     },
     {
       "id": "4f1c0f92-04b7-4774-87e2-b0eb6b637046",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">食べる</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To eat</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たべる (Taberu)</div>",
       "position": 12
     },
     {
       "id": "9218e8fa-93b1-4a24-88f6-82100aafe9cc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">飲む</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To drink</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">のむ (Nomu)</div>",
       "position": 13
     },
     {
       "id": "9ed1e26d-24c9-4819-91b0-45e8e4aba12f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">朝ご飯</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Breakfast</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あさごはん (Asagohan)</div>",
       "position": 14
     },
     {
       "id": "be94b6a3-c523-43ca-a67a-de4f2916c87f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">昼ご飯</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Lunch</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひるごはん (Hirugohan)</div>",
       "position": 15
     },
     {
       "id": "8e1bf717-85d1-42d8-a655-67c6748492a9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">晩ご飯</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Dinner</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ばんごはん (Bangohan)</div>",
       "position": 16
     },
     {
       "id": "d07f40ac-c457-487f-96c2-68ddbde1355d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">料理</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cooking / Cuisine</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">りょうり (Ryouri)</div>",
       "position": 17
     },
     {
       "id": "24ade3de-4d8b-4db7-a8d7-fbba76e4b077",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">食堂</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cafeteria / Dining hall</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょくどう (Shokudou)</div>",
       "position": 18
     },
     {
       "id": "bc8fecbf-f27f-4560-95d9-735d2da56532",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">店</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Shop / Store</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">みせ (Mise)</div>",
       "position": 19
     },
     {
       "id": "80507380-1d4d-4f56-94c5-e6f63f62b4e1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">円</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Yen</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">えん (En)</div>",
       "position": 20
     },
     {
       "id": "71686c29-2e3f-4a05-8fc0-218d1ef4ebb2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">高い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Expensive / High</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たかい (Takai)</div>",
       "position": 21
     },
     {
       "id": "4cbad581-6be5-42e0-b233-e4645618f513",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">安い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cheap</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やすい (Yasui)</div>",
       "position": 22
     },
     {
       "id": "4130e316-86a6-44d4-9804-8e53f869e104",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">美味しい</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Delicious</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おいしい (Oishii)</div>",
       "position": 23
     },
     {
       "id": "66f6f1c7-f30d-44ef-b175-5a44e667dac8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">注文</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Order (at a restaurant)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちゅうもん (Chuumon)</div>",
       "position": 24
     },
     {
       "id": "0b318459-ed34-4d01-88f5-28a067cc3d67",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">朝食</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Breakfast</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちょうしょく (Chōshoku)</div>",
       "position": 25
     },
     {
       "id": "7da4dada-dbd1-45cd-b909-5a8c35941f0e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">昼食</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Lunch</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちゅうしょく (Chūshoku)</div>",
       "position": 26
     },
     {
       "id": "89bd68e4-1d72-4dfa-99f3-3dbedf2ccd4c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">夕食</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Dinner</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆうしょく (Yūshoku)</div>",
       "position": 27
     },
     {
       "id": "4e8b3e7f-5757-4610-b444-33f2f7a8bab0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">食堂</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cafeteria / Dining hall</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょくどう (Shokudō)</div>",
       "position": 28
     },
     {
       "id": "b4526367-a3cb-4f41-9747-c759b9ee07a6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">食事</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Meal</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょくじ (Shokuji)</div>",
       "position": 29
     },
     {
       "id": "8e0d06fe-a115-4591-8c74-1da105ee6790",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">野菜</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Vegetables</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やさい (Yasai)</div>",
       "position": 30
     },
     {
       "id": "4c6e7e6e-3276-41e2-8fc4-a818d270b1cb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">果物</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fruit</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">くだもの (Kudamono)</div>",
       "position": 31
     },
     {
       "id": "d9e71754-af9e-4863-b5e1-b80a872004eb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">飲み物</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Drink / Beverage</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">のみもの (Nomimono)</div>",
       "position": 32
     },
     {
       "id": "f4145a7d-78e5-48ee-acaa-aace29d67a09",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">料理</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cooking / Cuisine / Dish</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">りょうり (Ryōri)</div>",
       "position": 33
     },
     {
       "id": "a4b73e0d-829a-420c-af30-cc2872c068a0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">牛乳</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Milk</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぎゅうにゅう (Gyūnyū)</div>",
       "position": 34
     }
   ]

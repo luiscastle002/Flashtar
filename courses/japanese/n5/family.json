@@ -9,152 +9,152 @@
   "cards": [
     {
       "id": "934026aa-ff0f-40d7-ae8d-ce396c1e0383",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">家族</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Family</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かぞく (Kazoku)</div>",
       "position": 0
     },
     {
       "id": "abc6978f-be59-40f0-90d9-0fc48db24709",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">父</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Father (my father)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちち (Chichi)</div>",
       "position": 1
     },
     {
       "id": "61315808-02f0-441d-8851-b546b64b8513",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">母</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Mother (my mother)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はは (Haha)</div>",
       "position": 2
     },
     {
       "id": "ad9e5f3d-7594-4c9a-9957-caa419bec0ea",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">兄</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Older brother</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あに (Ani)</div>",
       "position": 3
     },
     {
       "id": "0cf4b410-01c7-47f0-a073-ca5ee034578a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">姉</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Older sister</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あね (Ane)</div>",
       "position": 4
     },
     {
       "id": "dcf23c8a-a3e6-4ae1-bf1a-8f7e72b226c8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">弟</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Younger brother</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おとうと (Otōto)</div>",
       "position": 5
     },
     {
       "id": "c416d18d-8164-434b-af59-6ecdc7b96783",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">妹</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Younger sister</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いもうと (Imōto)</div>",
       "position": 6
     },
     {
       "id": "7888bc1a-dec8-4222-8bcb-a5ec3de53d09",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">両親</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Parents</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">りょうしん (Ryōshin)</div>",
       "position": 7
     },
     {
       "id": "93d0a1b9-7f83-458f-851b-c57b3ced6d7c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">夫</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Husband</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おっと (Otto)</div>",
       "position": 8
     },
     {
       "id": "6d652ed5-57bb-4eae-b670-6706b585d1a4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">妻</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Wife</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つま (Tsuma)</div>",
       "position": 9
     },
     {
       "id": "573847e0-b68e-43e2-b79b-552d6341138b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">子</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Child</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こ (Ko)</div>",
       "position": 10
     },
     {
       "id": "653868f3-b59d-406d-b694-e40747892364",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">息子</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Son</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">むすこ (Musuko)</div>",
       "position": 11
     },
     {
       "id": "a0d5e4f4-f830-4b3b-ac88-67660da097cb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">娘</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Daughter</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">むすめ (Musume)</div>",
       "position": 12
     },
     {
       "id": "0eb04806-cf64-4c91-a70a-0e0878f6a63b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">祖父</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Grandfather</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そふ (Sofu)</div>",
       "position": 13
     },
     {
       "id": "ccefc5ea-9d3f-4df7-8565-9d90b014228f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">祖母</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Grandmother</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そぼ (Sobo)</div>",
       "position": 14
     },
     {
       "id": "6f06bf8e-4853-4285-b73e-97844fe1a510",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">親</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Parent</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おや (Oya)</div>",
       "position": 15
     },
     {
       "id": "9107c138-3a7c-41bb-a240-66244f38c0a9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">主人</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>My husband (polite)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しゅじん (Shujin)</div>",
       "position": 16
     },
     {
       "id": "6db8947c-0bb5-41b0-9413-568a01ee2daa",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">家内</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>My wife (humble)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かない (Kanai)</div>",
       "position": 17
     },
     {
       "id": "e45286ab-43f0-49c2-a9e5-716788df4cd0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">一人子</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Only child</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひとりご (Hitorigo)</div>",
       "position": 18
     },
     {
       "id": "03c8b5b9-2d6c-4f71-a309-6da1ad2aad77",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">兄弟</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Siblings / Brothers</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうだい (Kyōdai)</div>",
       "position": 19
     },
     {
       "id": "3aa3496f-4c99-4a97-9675-147098aae52c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">姉妹</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sisters</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しまい (Shimai)</div>",
       "position": 20
     },
     {
       "id": "c999e133-1e7f-4789-829c-52714128d6a8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">家</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Home / House</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いえ (Ie)</div>",
       "position": 21
     },
     {
       "id": "0cd1f134-cf4b-41d3-a756-cd67d9b85ba0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">家庭</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Household / Home</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かてい (Katei)</div>",
       "position": 22
     },
     {
       "id": "2b581bbc-4195-4758-a2d8-74618ccdb85d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">夫婦</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Married couple</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふうふ (Fūfu)</div>",
       "position": 23
     },
     {
       "id": "c3015c12-3d79-4217-91bf-e7a315802c91",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">名字</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Family name / Surname</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">みょうじ (Myōji)</div>",
       "position": 24
     }
   ]
