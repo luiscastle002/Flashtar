@@ -6,5 +6,306 @@
   "description": "Clothing items, sizes, and styles.",
   "difficulty": "beginner",
   "position": 6,
-  "cards": []
+  "cards": [
+    {
+      "id": "79780828-4f40-4fde-9b84-9513470fa547",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 0
+    },
+    {
+      "id": "4aafe579-f9ac-4018-a12e-b3e7d9043552",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 1
+    },
+    {
+      "id": "d48bbde1-1c06-4f2f-b600-5c5a5b390cdf",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 2
+    },
+    {
+      "id": "e042c2d8-d5be-450d-8afb-542c7e1668a9",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 3
+    },
+    {
+      "id": "84a44507-76a3-4d1a-a4d9-2e356ed89796",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 4
+    },
+    {
+      "id": "befc5e80-2443-43d0-99d6-748ffa36ebfa",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 5
+    },
+    {
+      "id": "adff273e-0b0f-4550-a035-d9b22d99d63d",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 6
+    },
+    {
+      "id": "9995f7d3-9376-46bf-8e42-094f7ee4244e",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 7
+    },
+    {
+      "id": "0a1f8149-36cc-4db3-a01b-0c98583e87a6",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 8
+    },
+    {
+      "id": "71beba8c-f684-4278-90c1-48c24345423e",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 9
+    },
+    {
+      "id": "2d78f4ae-a951-4d66-9d4e-186d578c8166",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 10
+    },
+    {
+      "id": "2601db74-3fde-4c61-9cc6-b3a1043e9973",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 11
+    },
+    {
+      "id": "08c51daf-0406-4e73-b817-73bbe89cec27",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 12
+    },
+    {
+      "id": "b357e29c-50c3-47bd-a04e-631691bc996f",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 13
+    },
+    {
+      "id": "666429c4-c85a-4189-a896-2074e832423b",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 14
+    },
+    {
+      "id": "32c1378d-dff1-43b9-b1b2-94853230e0a9",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 15
+    },
+    {
+      "id": "b4fb8b65-1e45-4cd7-af62-25a028c4e372",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 16
+    },
+    {
+      "id": "24caceed-4664-4970-8b01-88ba20d383a3",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 17
+    },
+    {
+      "id": "70a8cac4-08cd-4076-bb3a-8957bfd40b3d",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 18
+    },
+    {
+      "id": "edc8e377-b136-4c5b-ae26-4ae61b965dc1",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 19
+    },
+    {
+      "id": "a22cf24d-622a-4add-82f7-00283eaa1d8d",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 20
+    },
+    {
+      "id": "8d36cad5-6657-4b5c-8b94-a9b37df1f763",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 21
+    },
+    {
+      "id": "00787b72-b35c-4857-ac8b-c92400d186c9",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 22
+    },
+    {
+      "id": "dc65e502-48f1-4c0e-9c8e-5613538aa147",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 23
+    },
+    {
+      "id": "b9e9df09-f26d-49aa-b976-cdec088257a4",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 24
+    },
+    {
+      "id": "42648c13-8eb4-468d-ad9f-160414610997",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 25
+    },
+    {
+      "id": "7b52a881-5c4a-4407-af43-947c81c806d4",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 26
+    },
+    {
+      "id": "eb836782-2055-4396-80c0-7ad892bb5c42",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 27
+    },
+    {
+      "id": "ed4a7503-afcd-42d3-bdff-81e96404dca3",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 28
+    },
+    {
+      "id": "fa4737d3-2353-447b-97ec-810608cefe20",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 29
+    },
+    {
+      "id": "b540674e-610d-4c00-b8c0-7cffe8294910",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 30
+    },
+    {
+      "id": "d6dc6053-de6d-4a3b-b0ad-0959be1d6f0a",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 31
+    },
+    {
+      "id": "a5c85608-87fd-490a-83a8-3d7603d1d9ce",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 32
+    },
+    {
+      "id": "1801e003-766f-4c5d-83d5-fc172e815d82",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 33
+    },
+    {
+      "id": "2c6e5d7f-1b11-4c41-8564-fbfb997f790b",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 34
+    },
+    {
+      "id": "59e4e4ff-76e7-4d96-8aaa-3e5b60a85a89",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 35
+    },
+    {
+      "id": "7c65e5d7-6ad8-48d9-8af6-bf0ec676ea07",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 36
+    },
+    {
+      "id": "08d4f5fd-90ac-4d38-a2a0-cdfd5571da30",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 37
+    },
+    {
+      "id": "02d75604-3c9d-40aa-a305-b46f407e87c8",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 38
+    },
+    {
+      "id": "9c80957f-27af-4e80-81fb-cf5f00b1c352",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 39
+    },
+    {
+      "id": "97b222e2-7da0-4087-b8a5-ecc73af1e0be",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 40
+    },
+    {
+      "id": "b2e806f7-9b51-447e-bc01-d788e5019608",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 41
+    },
+    {
+      "id": "d50e7a6d-b9ca-4760-b63f-9ef97bd117b0",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 42
+    },
+    {
+      "id": "2e45d790-98cb-49e5-8fbe-eea7d8abd590",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 43
+    },
+    {
+      "id": "f93942b5-8bd4-499c-96dc-c77e7afeb943",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 44
+    },
+    {
+      "id": "d7b532bc-64de-4fd7-92f3-16cedfe9a4b4",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 45
+    },
+    {
+      "id": "50ed989e-5330-49be-83e2-15a0741fd90d",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 46
+    },
+    {
+      "id": "abd544c9-2bbf-4862-ab19-e713dcf7eebb",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 47
+    },
+    {
+      "id": "848f2a05-99db-4899-a350-d0cf0704c3bc",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 48
+    },
+    {
+      "id": "1ed1689b-d871-49e3-8237-2001250a614b",
+      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "position": 49
+    }
+  ]
 }

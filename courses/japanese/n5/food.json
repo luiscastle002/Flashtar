@@ -188,34 +188,22 @@
       "position": 29
     },
     {
-      "id": "8e0d06fe-a115-4591-8c74-1da105ee6790",
-      "front": "<div class=\"text-6xl font-bold text-center\">野菜</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Vegetables</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やさい (Yasai)</div>",
-      "position": 30
-    },
-    {
-      "id": "4c6e7e6e-3276-41e2-8fc4-a818d270b1cb",
-      "front": "<div class=\"text-6xl font-bold text-center\">果物</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fruit</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">くだもの (Kudamono)</div>",
-      "position": 31
-    },
-    {
       "id": "d9e71754-af9e-4863-b5e1-b80a872004eb",
       "front": "<div class=\"text-6xl font-bold text-center\">飲み物</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Drink / Beverage</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">のみもの (Nomimono)</div>",
-      "position": 32
+      "position": 30
     },
     {
       "id": "f4145a7d-78e5-48ee-acaa-aace29d67a09",
       "front": "<div class=\"text-6xl font-bold text-center\">料理</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cooking / Cuisine / Dish</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">りょうり (Ryōri)</div>",
-      "position": 33
+      "position": 31
     },
     {
       "id": "a4b73e0d-829a-420c-af30-cc2872c068a0",
       "front": "<div class=\"text-6xl font-bold text-center\">牛乳</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Milk</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぎゅうにゅう (Gyūnyū)</div>",
-      "position": 34
+      "position": 32
     }
   ]
 }

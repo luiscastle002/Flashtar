@@ -176,76 +176,64 @@
       "position": 27
     },
     {
-      "id": "87dfe15b-fdde-47c2-938c-9f1a95d81685",
-      "front": "<div class=\"text-6xl font-bold text-center\">高い</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>High / Tall / Expensive</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たかい (Takai)</div>",
-      "position": 28
-    },
-    {
       "id": "45b589d9-885f-4be7-a2d8-90854eb614de",
       "front": "<div class=\"text-6xl font-bold text-center\">若い</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Young</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">わかい (Wakai)</div>",
-      "position": 29
-    },
-    {
-      "id": "93bcd398-9c01-4b10-8ba2-9267317892c7",
-      "front": "<div class=\"text-6xl font-bold text-center\">忙しい</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Busy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いそがしい (Isogashii)</div>",
-      "position": 30
+      "position": 28
     },
     {
       "id": "b39da4a4-2827-4ace-b496-5d8b20fb3c26",
       "front": "<div class=\"text-6xl font-bold text-center\">暇</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Free / Not busy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひま (Hima)</div>",
-      "position": 31
+      "position": 29
     },
     {
       "id": "7dbe0629-7871-43c2-8a69-2f54f33644e4",
       "front": "<div class=\"text-6xl font-bold text-center\">有名</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Famous</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆうめい (Yuumei)</div>",
-      "position": 32
+      "position": 30
     },
     {
       "id": "3c8f9662-042e-4f48-99c9-a397eb430094",
       "front": "<div class=\"text-6xl font-bold text-center\">便利</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Convenient</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">べんり (Benri)</div>",
-      "position": 33
+      "position": 31
     },
     {
       "id": "a6b4e856-ca01-4237-9528-0d0c958fdf4e",
       "front": "<div class=\"text-6xl font-bold text-center\">不便</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Inconvenient</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふべん (Fuben)</div>",
-      "position": 34
+      "position": 32
     },
     {
       "id": "d23366e0-0a4a-4344-8f30-3675da37eaa8",
       "front": "<div class=\"text-6xl font-bold text-center\">大丈夫</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Okay / All right</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">だいじょうぶ (Daijoubu)</div>",
-      "position": 35
+      "position": 33
     },
     {
       "id": "4c72d287-6d2a-47fd-aa24-dfe8c8c2f3f2",
       "front": "<div class=\"text-6xl font-bold text-center\">元気</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Healthy / Energetic / Well</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">げんき (Genki)</div>",
-      "position": 36
+      "position": 34
     },
     {
       "id": "42a478ea-4e9c-4e08-ad96-43b3bc6ef36b",
       "front": "<div class=\"text-6xl font-bold text-center\">好き</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Liked / Favorite</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">すき (Suki)</div>",
-      "position": 37
+      "position": 35
     },
     {
       "id": "6a29cd6e-8758-4089-b2db-681dd6b98072",
       "front": "<div class=\"text-6xl font-bold text-center\">嫌い</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Disliked / Hated</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きらい (Kirai)</div>",
-      "position": 38
+      "position": 36
     },
     {
       "id": "5b9c7ab0-6218-4f63-b150-21d85593272b",
       "front": "<div class=\"text-6xl font-bold text-center\">上手</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Skillful / Good at</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じょうず (Jouzu)</div>",
-      "position": 39
+      "position": 37
     }
   ]
 }
