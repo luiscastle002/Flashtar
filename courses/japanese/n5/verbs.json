@@ -20,352 +20,316 @@
       "position": 1
     },
     {
-      "id": "a0000000-0000-0000-0000-000000000035",
-      "front": "<div class=\"text-6xl font-bold text-center\">食べる</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To eat</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たべる (Taberu)</div>",
-      "position": 2
-    },
-    {
-      "id": "a0000000-0000-0000-0000-000000000036",
-      "front": "<div class=\"text-6xl font-bold text-center\">飲む</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To drink</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">のむ (Nomu)</div>",
-      "position": 3
-    },
-    {
       "id": "a0000000-0000-0000-0000-000000000037",
       "front": "<div class=\"text-6xl font-bold text-center\">見る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To see / watch / look</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">みる (Miru)</div>",
-      "position": 4
+      "position": 2
     },
     {
       "id": "a0000000-0000-0000-0000-000000000038",
       "front": "<div class=\"text-6xl font-bold text-center\">話す</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To speak / talk</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はなす (Hanasu)</div>",
-      "position": 5
+      "position": 3
     },
     {
       "id": "a0000000-0000-0000-0000-000000000039",
       "front": "<div class=\"text-6xl font-bold text-center\">書く</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To write</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かく (Kaku)</div>",
-      "position": 6
+      "position": 4
     },
     {
       "id": "a0000000-0000-0000-0000-000000000040",
       "front": "<div class=\"text-6xl font-bold text-center\">読む</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To read</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">よむ (Yomu)</div>",
-      "position": 7
-    },
-    {
-      "id": "a0000000-0000-0000-0000-000000000041",
-      "front": "<div class=\"text-6xl font-bold text-center\">買う</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To buy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かう (Kau)</div>",
-      "position": 8
+      "position": 5
     },
     {
       "id": "a0000000-0000-0000-0000-000000000042",
       "front": "<div class=\"text-6xl font-bold text-center\">勉強する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To study</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">べんきょうする (Benkyou suru)</div>",
-      "position": 9
+      "position": 6
     },
     {
       "id": "6f4bd692-fa29-4561-9230-31c63668715b",
       "front": "<div class=\"text-6xl font-bold text-center\">する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To do</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">する (Suru)</div>",
-      "position": 10
+      "position": 7
     },
     {
       "id": "e4e06b67-75a5-4036-8d88-1200bb0f60f1",
       "front": "<div class=\"text-6xl font-bold text-center\">ある</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To exist (inanimate)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ある (Aru)</div>",
-      "position": 11
+      "position": 8
     },
     {
       "id": "d5b65aa1-2948-4c2f-b021-ed9d6c39ecf0",
       "front": "<div class=\"text-6xl font-bold text-center\">いる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To exist (animate)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いる (Iru)</div>",
-      "position": 12
+      "position": 9
     },
     {
       "id": "026f050c-6075-4058-94eb-b0476e296efb",
       "front": "<div class=\"text-6xl font-bold text-center\">起きる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To wake up</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おきる (Okiru)</div>",
-      "position": 13
+      "position": 10
     },
     {
       "id": "ce8f0dcd-26ff-4637-a6e4-917fa4c926dc",
       "front": "<div class=\"text-6xl font-bold text-center\">寝る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To sleep</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ねる (Neru)</div>",
-      "position": 14
+      "position": 11
     },
     {
       "id": "8a575132-30cc-4d0c-b7c6-bf553bac0002",
       "front": "<div class=\"text-6xl font-bold text-center\">立つ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To stand</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たつ (Tatsu)</div>",
-      "position": 15
+      "position": 12
     },
     {
       "id": "cfe3a613-cb72-40d7-a2c3-53b4e8941197",
       "front": "<div class=\"text-6xl font-bold text-center\">座る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To sit</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">すわる (Suwaru)</div>",
-      "position": 16
-    },
-    {
-      "id": "6d5fe2fc-3f45-4b6e-b7a6-00dd630ce206",
-      "front": "<div class=\"text-6xl font-bold text-center\">歩く</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To walk</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あるく (Aruku)</div>",
-      "position": 17
+      "position": 13
     },
     {
       "id": "6e004363-c3f6-4fb7-8325-4109ab5ef57f",
       "front": "<div class=\"text-6xl font-bold text-center\">走る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To run</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はしる (Hashiru)</div>",
-      "position": 18
+      "position": 14
     },
     {
       "id": "1f63e842-104e-4499-aacc-24b7c65741de",
       "front": "<div class=\"text-6xl font-bold text-center\">帰る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To return</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かえる (Kaeru)</div>",
-      "position": 19
+      "position": 15
     },
     {
       "id": "785cc60a-62a0-4283-a47b-693c6b2b4ca4",
       "front": "<div class=\"text-6xl font-bold text-center\">入る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To enter</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はいる (Hairu)</div>",
-      "position": 20
+      "position": 16
     },
     {
       "id": "bc9907fc-2141-4e6b-b8e9-fa60fb441eea",
       "front": "<div class=\"text-6xl font-bold text-center\">出る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To leave</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">でる (Deru)</div>",
-      "position": 21
+      "position": 17
     },
     {
       "id": "7f31f146-a960-463e-8a99-9e7cc6f02784",
       "front": "<div class=\"text-6xl font-bold text-center\">開ける</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To open</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あける (Akeru)</div>",
-      "position": 22
+      "position": 18
     },
     {
       "id": "d05d612e-415c-4e66-86ec-05c96c7eef70",
       "front": "<div class=\"text-6xl font-bold text-center\">閉める</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To close</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しめる (Shimeru)</div>",
-      "position": 23
+      "position": 19
     },
     {
       "id": "e8a69777-5fe0-43e0-a512-ed124bd00b73",
       "front": "<div class=\"text-6xl font-bold text-center\">待つ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To wait</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まつ (Matsu)</div>",
-      "position": 24
+      "position": 20
     },
     {
       "id": "99d79f4e-fd6b-4ff2-9c31-d857680cf8b8",
       "front": "<div class=\"text-6xl font-bold text-center\">使う</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To use</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つかう (Tsukau)</div>",
-      "position": 25
+      "position": 21
     },
     {
       "id": "bc025dad-0585-431d-bfda-9008ad9ba114",
       "front": "<div class=\"text-6xl font-bold text-center\">作る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To make</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つくる (Tsukuru)</div>",
-      "position": 26
+      "position": 22
     },
     {
       "id": "631f9da5-2a06-4918-b947-9383b5c78ba5",
       "front": "<div class=\"text-6xl font-bold text-center\">持つ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To hold</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">もつ (Motsu)</div>",
-      "position": 27
+      "position": 23
     },
     {
       "id": "a35c8966-4afc-4533-9387-0eae2cb8372b",
       "front": "<div class=\"text-6xl font-bold text-center\">置く</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To put</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おく (Oku)</div>",
-      "position": 28
+      "position": 24
     },
     {
       "id": "4614d56a-5e0a-4362-bad9-6b08ceaf78d9",
       "front": "<div class=\"text-6xl font-bold text-center\">取る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To take</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">とる (Toru)</div>",
-      "position": 29
+      "position": 25
     },
     {
       "id": "cec32c71-b012-4be2-8ef0-8989d99a8dde",
       "front": "<div class=\"text-6xl font-bold text-center\">もらう</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To receive</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">もらう (Morau)</div>",
-      "position": 30
+      "position": 26
     },
     {
       "id": "43ea1dd3-dabc-4437-a6f0-47e2db86e2ce",
       "front": "<div class=\"text-6xl font-bold text-center\">あげる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To give</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あげる (Ageru)</div>",
-      "position": 31
+      "position": 27
     },
     {
       "id": "f6a98c3e-0968-4c2c-afdf-d561089b8693",
       "front": "<div class=\"text-6xl font-bold text-center\">借りる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To borrow</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かりる (Kariru)</div>",
-      "position": 32
+      "position": 28
     },
     {
       "id": "a4fa7051-1aab-43df-bceb-b965aef23fb1",
       "front": "<div class=\"text-6xl font-bold text-center\">貸す</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To lend</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かす (Kasu)</div>",
-      "position": 33
+      "position": 29
     },
     {
       "id": "1bcf7dd0-1395-4478-a86d-3a303347cbd2",
       "front": "<div class=\"text-6xl font-bold text-center\">会う</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To meet</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あう (Au)</div>",
-      "position": 34
+      "position": 30
     },
     {
       "id": "25f3a1c5-1155-4496-8010-a124d41e69f1",
       "front": "<div class=\"text-6xl font-bold text-center\">知る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To know</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しる (Shiru)</div>",
-      "position": 35
+      "position": 31
     },
     {
       "id": "f75db69f-85de-4f62-8284-52e417079d04",
       "front": "<div class=\"text-6xl font-bold text-center\">分かる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To understand</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">わかる (Wakaru)</div>",
-      "position": 36
+      "position": 32
     },
     {
       "id": "02fb80b1-f28e-4c14-aece-bbb7c2bf2e29",
       "front": "<div class=\"text-6xl font-bold text-center\">教える</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To teach</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おしえる (Oshieru)</div>",
-      "position": 37
+      "position": 33
     },
     {
       "id": "819a633b-32ad-4952-b4cf-56777060e973",
       "front": "<div class=\"text-6xl font-bold text-center\">習う</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To learn</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ならう (Narau)</div>",
-      "position": 38
+      "position": 34
     },
     {
       "id": "8e74b352-e0d8-41d1-893e-1b11b605a5ea",
       "front": "<div class=\"text-6xl font-bold text-center\">聞く</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To listen</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きく (Kiku)</div>",
-      "position": 39
+      "position": 35
     },
     {
       "id": "f066b915-4775-481b-b66f-b9eb23037af5",
       "front": "<div class=\"text-6xl font-bold text-center\">答える</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To answer</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こたえる (Kotaeru)</div>",
-      "position": 40
+      "position": 36
     },
     {
       "id": "d0b2f006-0806-4e9e-be43-ceb363848fa7",
       "front": "<div class=\"text-6xl font-bold text-center\">働く</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To work</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はたらく (Hataraku)</div>",
-      "position": 41
+      "position": 37
     },
     {
       "id": "bbc61946-7727-4e5f-a87d-fa576481818f",
       "front": "<div class=\"text-6xl font-bold text-center\">休む</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To rest</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やすむ (Yasumu)</div>",
-      "position": 42
+      "position": 38
     },
     {
       "id": "0633cc39-3643-4cac-a117-9febe47a5c25",
       "front": "<div class=\"text-6xl font-bold text-center\">泳ぐ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To swim</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">およぐ (Oyogu)</div>",
-      "position": 43
-    },
-    {
-      "id": "cc103e3c-ffc0-40e3-8566-8e5ed2f4667c",
-      "front": "<div class=\"text-6xl font-bold text-center\">乗る</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To ride</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">のる (Noru)</div>",
-      "position": 44
-    },
-    {
-      "id": "8f5d148b-6c80-4491-8313-79e88a87b980",
-      "front": "<div class=\"text-6xl font-bold text-center\">降りる</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To get off</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おりる (Oriru)</div>",
-      "position": 45
+      "position": 39
     },
     {
       "id": "d20a1575-3c2a-4b95-8f08-0af3bdb231bd",
       "front": "<div class=\"text-6xl font-bold text-center\">歌う</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To sing</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">うたう (Utau)</div>",
-      "position": 46
+      "position": 40
     },
     {
       "id": "e992cb21-9061-4dd3-b2f9-1165f00d1581",
       "front": "<div class=\"text-6xl font-bold text-center\">弾く</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To play (an instrument)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひく (Hiku)</div>",
-      "position": 47
+      "position": 41
     },
     {
       "id": "d4594167-9129-447f-9d68-394dda4a71a2",
       "front": "<div class=\"text-6xl font-bold text-center\">洗う</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To wash</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あらう (Arau)</div>",
-      "position": 48
+      "position": 42
     },
     {
       "id": "090e7bf7-ac24-4f44-9470-a44de776101d",
       "front": "<div class=\"text-6xl font-bold text-center\">着る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To wear</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きる (Kiru)</div>",
-      "position": 49
+      "position": 43
     },
     {
       "id": "d05992d4-e34a-4846-a853-9d7a86675a03",
       "front": "<div class=\"text-6xl font-bold text-center\">脱ぐ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To take off (clothes)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぬぐ (Nugu)</div>",
-      "position": 50
+      "position": 44
     },
     {
       "id": "3c9330bc-c1ac-411e-bb6b-13c5623650b0",
       "front": "<div class=\"text-6xl font-bold text-center\">切る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To cut</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きる (Kiru)</div>",
-      "position": 51
+      "position": 45
     },
     {
       "id": "1f8c653e-e78f-44b6-a678-51f11edab868",
       "front": "<div class=\"text-6xl font-bold text-center\">送る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To send</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おくる (Okuru)</div>",
-      "position": 52
+      "position": 46
     },
     {
       "id": "e3797da3-4be2-4d63-a2f8-491257951f3c",
       "front": "<div class=\"text-6xl font-bold text-center\">住む</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To live (reside)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">すむ (Sumu)</div>",
-      "position": 53
+      "position": 47
     },
     {
       "id": "166633e4-1995-4991-9a1f-6386623c1440",
       "front": "<div class=\"text-6xl font-bold text-center\">結婚する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To marry</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けっこんする (Kekkon suru)</div>",
-      "position": 54
+      "position": 48
     },
     {
       "id": "05a75656-c436-4769-b42e-7807bb11cab2",
       "front": "<div class=\"text-6xl font-bold text-center\">散歩する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To take a walk</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さんぽする (Sanpo suru)</div>",
-      "position": 55
+      "position": 49
     },
     {
       "id": "5a0fe139-c034-495a-9c16-efc74e7b4593",
       "front": "<div class=\"text-6xl font-bold text-center\">始める</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To begin</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はじめる (Hajimeru)</div>",
-      "position": 56
+      "position": 50
     },
     {
       "id": "ed83f5b4-0930-4f09-b094-11961828b3cc",
       "front": "<div class=\"text-6xl font-bold text-center\">終わる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To finish</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おわる (Owaru)</div>",
-      "position": 57
+      "position": 51
     },
     {
       "id": "2c7cb619-25fe-4dbb-b49b-8adfcf401c88",
       "front": "<div class=\"text-6xl font-bold text-center\">手伝う</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To help</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">てつだう (Tetsudau)</div>",
-      "position": 58
+      "position": 52
     },
     {
       "id": "7765c985-337a-4359-9d66-80eb5134eb61",
       "front": "<div class=\"text-6xl font-bold text-center\">忘れる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To forget</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">わすれる (Wasureru)</div>",
-      "position": 59
+      "position": 53
     }
   ]
 }

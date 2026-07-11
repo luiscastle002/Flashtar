@@ -9,302 +9,302 @@
   "cards": [
     {
       "id": "1498533f-f59a-4dae-a1e9-a628492ee3bc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">一心不乱</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>With undivided focus</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">isshin furan</div>",
       "position": 0
     },
     {
       "id": "a8028770-6064-4fda-a4de-bd3e3adbee1f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">千差万別</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Infinite variety</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">sensa banbetsu</div>",
       "position": 1
     },
     {
       "id": "81e0e3ff-344c-416f-a57c-a36d98cc7e19",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">起死回生</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Revival; rising from the ashes</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kishi kaisei</div>",
       "position": 2
     },
     {
       "id": "127080cb-35ae-401d-b82b-778b5773c7c9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">試行錯誤</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Trial and error</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">shikou sakugo</div>",
       "position": 3
     },
     {
       "id": "ccb4a0bf-3e7a-432b-a81a-5882ce694fc4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">半信半疑</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Half in doubt</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">hanshin hangi</div>",
       "position": 4
     },
     {
       "id": "cde627ba-5763-405d-8086-648899877420",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">温故知新</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Learning from the past</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">onko chishin</div>",
       "position": 5
     },
     {
       "id": "88f9a466-988b-4bbc-b278-443f2e37af44",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">十人十色</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To each their own</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">juunin toiro</div>",
       "position": 6
     },
     {
       "id": "ef97dec3-74e5-41e0-ae3c-8dd423e65269",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">自業自得</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>You reap what you sow</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">jigou jitoku</div>",
       "position": 7
     },
     {
       "id": "8dddb4af-30da-4131-9ad2-ba76b52a689c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">本末転倒</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Putting the cart before the horse</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">honmatsu tentou</div>",
       "position": 8
     },
     {
       "id": "7afe4bde-13d6-4482-a494-4a182f56d4d3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">暗雲低迷</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Dark clouds looming</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">an-un teimei</div>",
       "position": 9
     },
     {
       "id": "5676a97d-70c3-4a48-bcfd-69d969505942",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">一日千秋</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Longing for someone/something</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ichinichi senshuu</div>",
       "position": 10
     },
     {
       "id": "4ea31748-bf35-45cf-a03d-ed5e4ac29a6d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">悪戦苦闘</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Uphill battle</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">akusen kutou</div>",
       "position": 11
     },
     {
       "id": "28b98955-a3c4-4584-9228-fd7d425633b2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">晴天霹靂</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A bolt from the blue</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">seiten hekireki</div>",
       "position": 12
     },
     {
       "id": "6fdfd1af-652c-485e-a03d-85a701f6d36b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">疑心暗鬼</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Paranoia; suspicion</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">gishin anki</div>",
       "position": 13
     },
     {
       "id": "3fbddf6d-9fd5-4d57-b192-e62238e8d042",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">画竜点睛</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Finishing touch</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">garyuu tensei</div>",
       "position": 14
     },
     {
       "id": "54b7a693-25f4-440f-9cf0-77c02c75096e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">花鳥風月</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Beauty of nature</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kachou fuugetsu</div>",
       "position": 15
     },
     {
       "id": "8d86053d-f732-41f0-a855-f085e17002da",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">森羅万象</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>All things in nature</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">shinra banshou</div>",
       "position": 16
     },
     {
       "id": "364db8e9-507b-4fb7-837d-642592efb781",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">無我夢中</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Lost in the moment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">muga muchuu</div>",
       "position": 17
     },
     {
       "id": "5f49f6e1-7e96-4edb-af34-1a3dbf8ebe79",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">以心伝心</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Telepathic understanding</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ishin denshin</div>",
       "position": 18
     },
     {
       "id": "1d30a439-4987-44bc-ad3b-79e648fc886a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">多事多難</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Eventful and difficult</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">taji tanan</div>",
       "position": 19
     },
     {
       "id": "197e658f-a746-4df3-b41a-9c775f8d17f4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">支離滅裂</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Incoherent; disorganized</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">shiri metsuretsu</div>",
       "position": 20
     },
     {
       "id": "e7a56438-a2f5-4910-901c-9722928e6ebe",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">不言実行</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Action over words</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">fugen jikkou</div>",
       "position": 21
     },
     {
       "id": "bd1d572e-58cb-420e-a7b9-d0e2751d3e91",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">一期一会</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Once-in-a-lifetime encounter</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ichigo ichie</div>",
       "position": 22
     },
     {
       "id": "902f89cf-bc41-4eb3-a8d2-d4f9dff3e6f7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">唯我独尊</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Self-importance</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">yuiga dokuson</div>",
       "position": 23
     },
     {
       "id": "69a54f37-0282-4cda-89b4-bda8aa16b7c6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">猪突猛進</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Charging ahead recklessly</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">chototsu moushin</div>",
       "position": 24
     },
     {
       "id": "e14c4aa3-b5f1-45b4-af30-0e9b082eae53",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">喜怒哀楽</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Full range of emotions</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kido airaku</div>",
       "position": 25
     },
     {
       "id": "17de778b-0337-4512-bbb8-d0faaccdc073",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">紆余曲折</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Complications; twists and turns</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">uyo kyokusetsu</div>",
       "position": 26
     },
     {
       "id": "dc614544-3b1d-4fe0-96e9-8cecaccb90c0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">七転八倒</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Writhing in pain</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">shichiten battou</div>",
       "position": 27
     },
     {
       "id": "8474e5bb-a8aa-4e78-88c0-4d5ef1276292",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">正々堂々</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fair and square</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">seisei doudou</div>",
       "position": 28
     },
     {
       "id": "7c939c51-5582-4439-a7de-a63bab2f7753",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">心機一転</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fresh start</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">shinki itten</div>",
       "position": 29
     },
     {
       "id": "474718bc-6a3c-4875-b3e6-d2e57b5aa362",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">臨機応変</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Adapting to circumstances</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">rinki ouhen</div>",
       "position": 30
     },
     {
       "id": "d2c5e42b-eb62-4ba3-86f4-cdc830538462",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">一石二鳥</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Killing two birds with one stone</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">isseki nichou</div>",
       "position": 31
     },
     {
       "id": "bfbe8f88-d4e7-49ab-942c-4884277be0d4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">前代未聞</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Unprecedented</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">zendai mimon</div>",
       "position": 32
     },
     {
       "id": "c1ca2c7d-b84d-4f06-b22b-62ea7257370c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">傍若無人</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Arrogant; ignoring others</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">boujaku bujin</div>",
       "position": 33
     },
     {
       "id": "a59ba360-075d-4363-b608-354d8ba5b2d3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">異口同音</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Unanimous; everyone saying the same</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">iku douon</div>",
       "position": 34
     },
     {
       "id": "b8ce10bf-23dd-4a6d-bcef-4a33b8eb7967",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">有言実行</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Walking the talk</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">yuugen jikkou</div>",
       "position": 35
     },
     {
       "id": "59ef636f-ff5a-4550-a7a5-94205e099c7d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">一進一退</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>One step forward, one step back</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">isshin ittai</div>",
       "position": 36
     },
     {
       "id": "9ca71e45-761a-43ce-93ff-c8a49525de30",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">日進月歩</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Steady progress; rapid evolution</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">nisshin geppo</div>",
       "position": 37
     },
     {
       "id": "83e47e6b-6b2a-4be7-8822-51239c55fd94",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">天真爛漫</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Simple and innocent</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">tenshin ranman</div>",
       "position": 38
     },
     {
       "id": "40639f73-1027-49b2-bed1-1e129cf499f6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">満身創痍</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Covered in wounds</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">manshin soui</div>",
       "position": 39
     },
     {
       "id": "e9da4a85-1c8b-4ee2-b5c6-076c6fa4bc58",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">危機一髪</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Narrow escape; critical moment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kiki ippatsu</div>",
       "position": 40
     },
     {
       "id": "8f1df86a-1c4a-49b3-a39d-5ced437906a6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">無知無能</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ignorant and incompetent</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">muchi munou</div>",
       "position": 41
     },
     {
       "id": "f8a043f0-bdda-47de-ab1a-9bb64a40d683",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">平穏無事</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Peaceful; no trouble</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">heion buji</div>",
       "position": 42
     },
     {
       "id": "0e1907c5-142f-4a67-9e81-4b6de8ae4763",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">優柔不断</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Indecisive</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">yuujuu fudan</div>",
       "position": 43
     },
     {
       "id": "b24e25aa-adfb-435d-9a64-9d045ab4e118",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">一喜一憂</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A roller coaster of emotion</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ikki ichiyuu</div>",
       "position": 44
     },
     {
       "id": "48a3bff5-ccb1-4be2-9fe1-2efd12efd124",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">意気揚々</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Triumphant; in high spirits</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">iki youyou</div>",
       "position": 45
     },
     {
       "id": "b7052faa-9451-4f11-98fc-38441db730d1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">完全無欠</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Flawless; perfect</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kanzen muketsu</div>",
       "position": 46
     },
     {
       "id": "c24f49e9-649c-4be7-a5db-c228ad2143ab",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">有終の美</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ending perfectly</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">yuushuu no bi</div>",
       "position": 47
     },
     {
       "id": "a223298e-8446-4975-8f89-f8fde7bcbff1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">大器晩成</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Late bloomer</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">taiki bansei</div>",
       "position": 48
     },
     {
       "id": "39fefdf7-4e06-468d-bf51-f588ca316403",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">我武者羅</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Reckless; headstrong</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">gamushara</div>",
       "position": 49
     }
   ]

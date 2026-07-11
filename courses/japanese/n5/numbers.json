@@ -92,100 +92,88 @@
       "position": 13
     },
     {
-      "id": "4edfda79-2638-4e57-9f57-f1bb0f4b91f8",
-      "front": "<div class=\"text-6xl font-bold text-center\">何</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>What? / How many?</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">なん / なに (Nan / Nani)</div>",
-      "position": 14
-    },
-    {
       "id": "510c01e5-f5d1-4cef-80a8-15488afa3af3",
       "front": "<div class=\"text-6xl font-bold text-center\">一つ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>One thing</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひとつ (Hitotsu)</div>",
-      "position": 15
+      "position": 14
     },
     {
       "id": "2b163944-d3b0-4f07-9741-87cce6f1aa45",
       "front": "<div class=\"text-6xl font-bold text-center\">二つ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Two things</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふたつ (Futatsu)</div>",
-      "position": 16
+      "position": 15
     },
     {
       "id": "9b6a0956-c6a1-4f6c-b279-8014115f188c",
       "front": "<div class=\"text-6xl font-bold text-center\">三つ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Three things</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">みっつ (Mittsu)</div>",
-      "position": 17
+      "position": 16
     },
     {
       "id": "770da8ce-9afa-4874-85d8-ba96bc64c329",
       "front": "<div class=\"text-6xl font-bold text-center\">人</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Person (counter)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">にん (Nin)</div>",
-      "position": 18
+      "position": 17
     },
     {
       "id": "3d3fe798-f406-4083-84e0-db8049feada4",
       "front": "<div class=\"text-6xl font-bold text-center\">一人</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>One person</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひとり (Hitori)</div>",
-      "position": 19
+      "position": 18
     },
     {
       "id": "3ed664c5-7b70-4e8d-a2ab-bbbc7db0c137",
       "front": "<div class=\"text-6xl font-bold text-center\">二人</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Two people</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふたり (Futari)</div>",
-      "position": 20
+      "position": 19
     },
     {
       "id": "471fac1f-6dc7-4bca-9534-2f39eb7e8fb2",
       "front": "<div class=\"text-6xl font-bold text-center\">歳</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Years old (age counter)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さい (Sai)</div>",
-      "position": 21
+      "position": 20
     },
     {
       "id": "56db9e86-4318-4a0c-996b-2ee270b5fbe1",
       "front": "<div class=\"text-6xl font-bold text-center\">時間</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hours (duration)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じかん (Jikan)</div>",
-      "position": 22
+      "position": 21
     },
     {
       "id": "9bf0b97f-1b42-417e-b8a0-7d83b7707c65",
       "front": "<div class=\"text-6xl font-bold text-center\">分</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Minute</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふん / ぷん (Fun / Pun)</div>",
-      "position": 23
+      "position": 22
     },
     {
       "id": "47b71c8f-308c-46c8-aa58-e119365add42",
       "front": "<div class=\"text-6xl font-bold text-center\">半</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Half</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はん (Han)</div>",
-      "position": 24
+      "position": 23
     },
     {
       "id": "5924f4fc-eeb1-4a43-8396-564a9d3a0116",
       "front": "<div class=\"text-6xl font-bold text-center\">番</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Number / Order (counter)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ばん (Ban)</div>",
-      "position": 25
+      "position": 24
     },
     {
       "id": "c8f781ed-2e6f-40c5-900c-959be85ba1c1",
       "front": "<div class=\"text-6xl font-bold text-center\">第〜</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ordinal prefix (first, second...)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">だい〜 (Dai~)</div>",
-      "position": 26
+      "position": 25
     },
     {
       "id": "a51aea87-b0a8-4947-93e8-e6e09b056f47",
       "front": "<div class=\"text-6xl font-bold text-center\">番号</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Number (ID, phone number, etc.)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ばんごう (Bangou)</div>",
-      "position": 27
+      "position": 26
     },
     {
       "id": "e0040d36-fd8a-4083-8b76-fca46c819ab3",
       "front": "<div class=\"text-6xl font-bold text-center\">何歳</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>How old?</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">なんさい (Nansai)</div>",
-      "position": 28
-    },
-    {
-      "id": "d8c6d4e1-8d6a-452b-8e2c-0f28ff8780f9",
-      "front": "<div class=\"text-6xl font-bold text-center\">いくつ</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>How many? / How old?</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いくつ (Ikutsu)</div>",
-      "position": 29
+      "position": 27
     }
   ]
 }

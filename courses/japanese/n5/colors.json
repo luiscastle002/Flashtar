@@ -44,88 +44,64 @@
       "position": 5
     },
     {
-      "id": "41708dab-afb8-4383-bf3d-c46780bbce42",
-      "front": "<div class=\"text-6xl font-bold text-center\">色</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Color</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いろ (Iro)</div>",
-      "position": 6
-    },
-    {
       "id": "dc71b100-3462-4d8d-b6b7-4c3adabfdb6f",
       "front": "<div class=\"text-6xl font-bold text-center\">金</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Gold</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きん (Kin)</div>",
-      "position": 7
+      "position": 6
     },
     {
       "id": "b62ddd5c-edc6-4e40-b6ca-a3d3a02644eb",
       "front": "<div class=\"text-6xl font-bold text-center\">銀</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Silver</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぎん (Gin)</div>",
-      "position": 8
-    },
-    {
-      "id": "a3c73b17-1671-4c4d-9a14-37c3f8ad4f70",
-      "front": "<div class=\"text-6xl font-bold text-center\">空</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sky</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そら (Sora)</div>",
-      "position": 9
+      "position": 7
     },
     {
       "id": "4287e72f-bc79-40e5-bf48-31ff404a1489",
       "front": "<div class=\"text-6xl font-bold text-center\">花</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Flower</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はな (Hana)</div>",
-      "position": 10
+      "position": 8
     },
     {
       "id": "6e4f8719-6019-4674-880f-80d2b7843d65",
       "front": "<div class=\"text-6xl font-bold text-center\">山</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Mountain</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やま (Yama)</div>",
-      "position": 11
+      "position": 9
     },
     {
       "id": "c4aae2ff-f1e3-40fa-b4bc-231268c4fec9",
       "front": "<div class=\"text-6xl font-bold text-center\">海</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sea / Ocean</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">うみ (Umi)</div>",
-      "position": 12
-    },
-    {
-      "id": "d3ff6aaf-6d96-4625-ae71-ee3d083df8aa",
-      "front": "<div class=\"text-6xl font-bold text-center\">雨</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Rain</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あめ (Ame)</div>",
-      "position": 13
-    },
-    {
-      "id": "cd232164-ef52-4798-a7b1-e91512302891",
-      "front": "<div class=\"text-6xl font-bold text-center\">雪</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Snow</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆき (Yuki)</div>",
-      "position": 14
+      "position": 10
     },
     {
       "id": "d03f5ade-5ed5-4c1d-a3ae-ccc088866ea9",
       "front": "<div class=\"text-6xl font-bold text-center\">光</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Light</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひかり (Hikari)</div>",
-      "position": 15
+      "position": 11
     },
     {
       "id": "cc84b58b-c0a2-4b80-bda3-4a5246764fca",
       "front": "<div class=\"text-6xl font-bold text-center\">夕日</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sunset</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆうひ (Yuuhi)</div>",
-      "position": 16
+      "position": 12
     },
     {
       "id": "e0412386-0635-4cac-98e4-41022f2eaf70",
       "front": "<div class=\"text-6xl font-bold text-center\">緑</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Green</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">みどり (Midori)</div>",
-      "position": 17
+      "position": 13
     },
     {
       "id": "01f6bf07-ce79-4372-b2c7-dc7570f00273",
       "front": "<div class=\"text-6xl font-bold text-center\">紫</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Purple</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">むらさき (Murasaki)</div>",
-      "position": 18
+      "position": 14
     },
     {
       "id": "dd867ee6-751f-47a0-98a1-07d8b86b11bf",
       "front": "<div class=\"text-6xl font-bold text-center\">灰色</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Gray</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はいいろ (Haiiro)</div>",
-      "position": 19
+      "position": 15
     }
   ]
 }

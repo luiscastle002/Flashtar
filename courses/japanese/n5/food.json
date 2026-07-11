@@ -176,34 +176,16 @@
       "position": 27
     },
     {
-      "id": "4e8b3e7f-5757-4610-b444-33f2f7a8bab0",
-      "front": "<div class=\"text-6xl font-bold text-center\">食堂</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cafeteria / Dining hall</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょくどう (Shokudō)</div>",
-      "position": 28
-    },
-    {
       "id": "b4526367-a3cb-4f41-9747-c759b9ee07a6",
       "front": "<div class=\"text-6xl font-bold text-center\">食事</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Meal</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょくじ (Shokuji)</div>",
-      "position": 29
+      "position": 28
     },
     {
       "id": "d9e71754-af9e-4863-b5e1-b80a872004eb",
       "front": "<div class=\"text-6xl font-bold text-center\">飲み物</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Drink / Beverage</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">のみもの (Nomimono)</div>",
-      "position": 30
-    },
-    {
-      "id": "f4145a7d-78e5-48ee-acaa-aace29d67a09",
-      "front": "<div class=\"text-6xl font-bold text-center\">料理</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cooking / Cuisine / Dish</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">りょうり (Ryōri)</div>",
-      "position": 31
-    },
-    {
-      "id": "a4b73e0d-829a-420c-af30-cc2872c068a0",
-      "front": "<div class=\"text-6xl font-bold text-center\">牛乳</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Milk</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぎゅうにゅう (Gyūnyū)</div>",
-      "position": 32
+      "position": 29
     }
   ]
 }

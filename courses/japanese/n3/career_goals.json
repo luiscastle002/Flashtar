@@ -9,302 +9,302 @@
   "cards": [
     {
       "id": "61e3a51c-30cf-45c1-bec7-f3f2b545410d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">就職</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Finding employment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しゅうしょく (Shuushoku)</div>",
       "position": 0
     },
     {
       "id": "ed298eca-42c9-40b6-8553-d082c7b7190a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">面接</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Interview</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">めんせつ (Mensetsu)</div>",
       "position": 1
     },
     {
       "id": "c6d2471e-10d2-4420-9d06-2c83da80687e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">採用</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hiring / Adoption</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さいよう (Saiyou)</div>",
       "position": 2
     },
     {
       "id": "919c9c4a-9e60-4723-b39a-5e461ca0e5ab",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">履歴書</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Resume / CV</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">りれきしょ (Rirekisho)</div>",
       "position": 3
     },
     {
       "id": "eb0861f2-a82f-4b07-9ae8-9ce3316a70fc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">目標</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Goal / Target</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">もくひょう (Mokuhyou)</div>",
       "position": 4
     },
     {
       "id": "751c5f78-7cdb-4552-9470-ea8192946471",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">志望</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ambition / Aspiration</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しぼう (Shibou)</div>",
       "position": 5
     },
     {
       "id": "75628363-53f0-4886-8f77-d494ae6b82cb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">応募</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Application</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おうぼ (Oubo)</div>",
       "position": 6
     },
     {
       "id": "691851f8-5579-48b7-b3fd-e50fc33ee67a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">体験</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Experience</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たいけん (Taiken)</div>",
       "position": 7
     },
     {
       "id": "001906f1-80ef-439b-a581-e622f9bb6556",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">専門</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Specialty / Expertise</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せんもん (Senmon)</div>",
       "position": 8
     },
     {
       "id": "f6920945-bce3-4560-bdf0-a6d5775948f5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">将来</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Future</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょうらい (Shourai)</div>",
       "position": 9
     },
     {
       "id": "69578a65-6ff1-4587-b32b-42f67a508b78",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">キャリア</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Career</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きゃりあ (Kyaria)</div>",
       "position": 10
     },
     {
       "id": "bcf5deee-5629-40c3-87e8-36332819815a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">企業</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Enterprise / Company</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きぎょう (Kigyou)</div>",
       "position": 11
     },
     {
       "id": "5dd1f542-97c6-4317-a772-23cda159372c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">能力</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ability</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">のうりょく (Nouryoku)</div>",
       "position": 12
     },
     {
       "id": "f615f72e-895c-4fa8-82f7-f03b0f318f69",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">成長</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Growth</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せいちょう (Seichou)</div>",
       "position": 13
     },
     {
       "id": "0e7e95bb-ad64-450c-b914-2c2b424d88d7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">資格</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Qualification</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しかく (Shikaku)</div>",
       "position": 14
     },
     {
       "id": "06c1efed-43aa-41ab-943b-831a17420cd4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">貢献</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Contribution</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こうけん (Kouken)</div>",
       "position": 15
     },
     {
       "id": "b8130965-973b-47b1-8272-7c1ac1d96ec6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">熱意</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Enthusiasm / Zeal</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ねつい (Netsui)</div>",
       "position": 16
     },
     {
       "id": "53bf089c-cf20-4a04-8b68-e83c4b958951",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">挑戦</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Challenge</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちょうせん (Chousen)</div>",
       "position": 17
     },
     {
       "id": "5cc539c9-0302-4cc0-80c2-4c14be2b3f83",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">成功</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Success</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せいこう (Seikou)</div>",
       "position": 18
     },
     {
       "id": "cf56a2dc-6375-4106-adc3-2a64f9353f92",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">努力</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Effort</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">どりょく (Doryoku)</div>",
       "position": 19
     },
     {
       "id": "db314407-e9a1-4c22-a939-04e736734620",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">役割</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Role / Function</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やくわり (Yakuwari)</div>",
       "position": 20
     },
     {
       "id": "17995970-2f81-491e-a895-27bd1c191971",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">責任</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Responsibility</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せきにん (Sekinin)</div>",
       "position": 21
     },
     {
       "id": "d3c9f3b3-0799-4c31-999f-74ca22c8087a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">適性</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Aptitude</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">てきせい (Tekisei)</div>",
       "position": 22
     },
     {
       "id": "b9e073eb-d37e-4571-ba56-a04fd383d661",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">自己PR</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Self-promotion</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じこぴーあーる (Jiko PR)</div>",
       "position": 23
     },
     {
       "id": "8902a09a-bca8-4908-870b-169fac1d7526",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">貢献度</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Degree of contribution</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こうけんど (Koukendo)</div>",
       "position": 24
     },
     {
       "id": "adef3afd-65f8-4ece-8ffa-5f4e4a09bf19",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">職歴</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Work history</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょくれき (Shokureki)</div>",
       "position": 25
     },
     {
       "id": "7970be1a-8cc8-46d4-9b72-0eaa77d2436d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">適応</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Adaptation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">てきおう (Tekiou)</div>",
       "position": 26
     },
     {
       "id": "a73df8bf-d68b-487b-bc2c-9775de0a194b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">昇進</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Promotion</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょうしん (Shoushin)</div>",
       "position": 27
     },
     {
       "id": "5da03365-23eb-4d69-b0c5-5be04f4247d8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">やりがい</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sense of fulfillment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やりがい (Yarigai)</div>",
       "position": 28
     },
     {
       "id": "35dd3437-adbf-4e5e-ae94-682f123fad80",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">志望動機</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Reason for application</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しぼうどうき (Shibou douki)</div>",
       "position": 29
     },
     {
       "id": "029e3ee6-802e-4e15-90bc-bafc90e60a32",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">キャリアプラン</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Career plan</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きゃりあぷらん (Kyaria puran)</div>",
       "position": 30
     },
     {
       "id": "f06a6cbe-e4f1-4474-876d-28d73de1e01f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">スキルアップ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Skill improvement</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">すきるあっぷ (Sukiru appu)</div>",
       "position": 31
     },
     {
       "id": "b95647e0-acac-470c-ae15-9a76bd8a2cbf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">自己分析</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Self-analysis</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じこぶんせき (Jiko bunseki)</div>",
       "position": 32
     },
     {
       "id": "c77bb931-970f-4b17-a826-8c566549d58e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">強み</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Strength</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つよみ (Tsuyomi)</div>",
       "position": 33
     },
     {
       "id": "e7b1a6db-7fcd-43f3-ae6f-3e178b127427",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">弱み</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Weakness</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">よわみ (Yowami)</div>",
       "position": 34
     },
     {
       "id": "249bd1a5-ab4a-41ea-85b7-7bd7dcc85033",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">適性検査</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Aptitude test</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">てきせいけんさ (Tekisei kensa)</div>",
       "position": 35
     },
     {
       "id": "86317acf-05ab-4516-9d31-53c154716269",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">内定</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Job offer (provisional)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ないてい (Naitei)</div>",
       "position": 36
     },
     {
       "id": "4f64f299-0892-40b8-b08b-4bd85da16129",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">入社</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Joining a company</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">にゅうしゃ (Nyuusha)</div>",
       "position": 37
     },
     {
       "id": "740d0ea8-2000-4a17-9497-2ab9f95a964b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">退職</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Resignation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たいしょく (Taishoku)</div>",
       "position": 38
     },
     {
       "id": "3eb73e64-19f1-4f98-8a93-e422ba1f0ce1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">転職</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Changing jobs</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">てんしょく (Tenshoku)</div>",
       "position": 39
     },
     {
       "id": "dbb79a0f-80b4-470c-ac76-ba435294e8be",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">契約</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Contract</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けいやく (Keiyaku)</div>",
       "position": 40
     },
     {
       "id": "0796cf8d-0c56-4706-a6f0-da84782360f2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">条件</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Conditions / Terms</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じょうけん (Jouken)</div>",
       "position": 41
     },
     {
       "id": "61238460-0015-4196-9bea-03bc79ecf535",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">福利厚生</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Benefits / Welfare</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふくりこうせい (Fukuri kousei)</div>",
       "position": 42
     },
     {
       "id": "8aa20824-7185-4a81-a5e3-3efaaa1f6a60",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">研修</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Training</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けんしゅう (Kenshuu)</div>",
       "position": 43
     },
     {
       "id": "9ab00eaf-6f3b-48ee-9d2b-5de1304c87a4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">実力</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>True ability</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じつりょく (Jitsuryoku)</div>",
       "position": 44
     },
     {
       "id": "87868db1-6c2d-4a7d-b0df-9ee481b3d622",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">競争率</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Competition rate</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうそうりつ (Kyousouritsu)</div>",
       "position": 45
     },
     {
       "id": "d03b7826-9399-43b5-af5a-2f0eda93648e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">書類選考</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Document screening</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょるいせんこう (Shorui senkou)</div>",
       "position": 46
     },
     {
       "id": "83743bf7-c824-4634-a0d9-842869ccbf84",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">面接官</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Interviewer</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">めんせつかん (Mensetsukan)</div>",
       "position": 47
     },
     {
       "id": "0afc4855-5964-4b75-9060-29ca1e2c1482",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">待遇</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Treatment / Compensation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たいぐう (Taiguu)</div>",
       "position": 48
     },
     {
       "id": "c0fbe044-e3b2-42db-80b6-f42b00ec789e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">自己実現</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Self-actualization</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じこじつげん (Jiko jitsugen)</div>",
       "position": 49
     }
   ]

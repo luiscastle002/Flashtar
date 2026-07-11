@@ -26,136 +26,130 @@
       "position": 2
     },
     {
-      "id": "a6a16408-f8b5-49f1-ab2d-679a792764b9",
-      "front": "<div class=\"text-6xl font-bold text-center\">魚</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fish</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さかな (Sakana)</div>",
-      "position": 3
-    },
-    {
       "id": "9e76af65-845e-48a6-9b83-75bd11ddac5a",
       "front": "<div class=\"text-6xl font-bold text-center\">馬</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Horse</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">うま (Uma)</div>",
-      "position": 4
+      "position": 3
     },
     {
       "id": "46f746e4-b4eb-462f-9048-0e00dacefbe7",
       "front": "<div class=\"text-6xl font-bold text-center\">牛</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cow</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">うし (Ushi)</div>",
-      "position": 5
+      "position": 4
     },
     {
       "id": "72502ac9-28d7-4956-9ab9-55bbebeceddf",
       "front": "<div class=\"text-6xl font-bold text-center\">豚</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Pig</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぶた (Buta)</div>",
-      "position": 6
+      "position": 5
     },
     {
       "id": "066ec47d-cd37-4a4c-bacd-52749d14782a",
       "front": "<div class=\"text-6xl font-bold text-center\">羊</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sheep</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひつじ (Hitsuji)</div>",
-      "position": 7
+      "position": 6
     },
     {
       "id": "e4e4cf03-e754-4d24-b1c3-5a7ca5947937",
       "front": "<div class=\"text-6xl font-bold text-center\">猿</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Monkey</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さる (Saru)</div>",
-      "position": 8
+      "position": 7
     },
     {
       "id": "bc7e8b54-af9b-41fb-bf23-77824b8ec61b",
       "front": "<div class=\"text-6xl font-bold text-center\">象</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Elephant</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぞう (Zou)</div>",
-      "position": 9
+      "position": 8
     },
     {
       "id": "15a03a20-7f3b-4ecf-947b-45c31c3ae26c",
       "front": "<div class=\"text-6xl font-bold text-center\">兎</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Rabbit</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">うさぎ (Usagi)</div>",
-      "position": 10
+      "position": 9
     },
     {
       "id": "82a75ba3-f947-47ee-bf2d-6c1e2b5a6b68",
       "front": "<div class=\"text-6xl font-bold text-center\">虫</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Insect</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">むし (Mushi)</div>",
-      "position": 11
+      "position": 10
     },
     {
       "id": "0a8e1b44-999f-429e-a0b2-eb18ed759f8c",
       "front": "<div class=\"text-6xl font-bold text-center\">亀</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Turtle</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かめ (Kame)</div>",
-      "position": 12
+      "position": 11
     },
     {
       "id": "0c01773b-9c48-48c9-a2b9-7c8cf5f9763f",
       "front": "<div class=\"text-6xl font-bold text-center\">熊</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Bear</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">くま (Kuma)</div>",
-      "position": 13
+      "position": 12
     },
     {
       "id": "ee90758f-eba0-4324-b15a-66fddb1c9270",
       "front": "<div class=\"text-6xl font-bold text-center\">虎</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Tiger</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">とら (Tora)</div>",
-      "position": 14
+      "position": 13
     },
     {
       "id": "dd78bea3-c173-4eac-bdef-3026de1b12d4",
       "front": "<div class=\"text-6xl font-bold text-center\">狼</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Wolf</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おおかみ (Ookami)</div>",
-      "position": 15
+      "position": 14
     },
     {
       "id": "aae2e53a-0193-4ffe-99bf-ca7e2e6faaf0",
       "front": "<div class=\"text-6xl font-bold text-center\">鹿</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Deer</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しか (Shika)</div>",
-      "position": 16
+      "position": 15
     },
     {
       "id": "923c96d6-bdff-4a73-9be1-6a7d0e6acc93",
       "front": "<div class=\"text-6xl font-bold text-center\">鶏</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Chicken</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">にわとり (Niwatori)</div>",
-      "position": 17
+      "position": 16
     },
     {
       "id": "121c31b7-862f-4984-89e2-fbc1f9b5d2c8",
       "front": "<div class=\"text-6xl font-bold text-center\">あひる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Duck</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あひる (Ahiru)</div>",
-      "position": 18
+      "position": 17
     },
     {
       "id": "a5e65f5f-0970-440b-8aee-65f7168ed733",
       "front": "<div class=\"text-6xl font-bold text-center\">蛙</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Frog</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かえる (Kaeru)</div>",
-      "position": 19
+      "position": 18
     },
     {
       "id": "f47de987-a6a5-4b88-ab56-4836303c6196",
       "front": "<div class=\"text-6xl font-bold text-center\">動物</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Animal</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">どうぶつ (Doubutsu)</div>",
-      "position": 20
+      "position": 19
     },
     {
       "id": "332b25ee-c43a-42ab-afa6-740ae1699d0c",
       "front": "<div class=\"text-6xl font-bold text-center\">生き物</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Living creature</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いきもの (Ikimono)</div>",
-      "position": 21
+      "position": 20
     },
     {
       "id": "6747a92c-557f-4731-8d10-436853e046db",
       "front": "<div class=\"text-6xl font-bold text-center\">羽</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Wing / Feather</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はね (Hane)</div>",
-      "position": 22
+      "position": 21
     },
     {
       "id": "70448d58-899a-4b50-b336-2d46c6c025aa",
       "front": "<div class=\"text-6xl font-bold text-center\">足</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Leg / Foot</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あし (Ashi)</div>",
-      "position": 23
+      "position": 22
     },
     {
       "id": "d2d99f7a-aa64-448d-9cf9-04b78216344f",
       "front": "<div class=\"text-6xl font-bold text-center\">耳</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ear</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">みみ (Mimi)</div>",
-      "position": 24
+      "position": 23
     }
   ]
 }

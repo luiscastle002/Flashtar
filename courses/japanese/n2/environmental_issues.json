@@ -9,302 +9,302 @@
   "cards": [
     {
       "id": "2e73c575-37ba-4fc4-9ebf-c59cdbcc5bfa",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">地球温暖化</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Global warming</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちきゅうおんだんか (Chikyū ondanka)</div>",
       "position": 0
     },
     {
       "id": "1070d1b9-8fb0-47b5-a560-71377a868a7e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">環境保護</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Environmental protection</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんきょうほご (Kankyō hogo)</div>",
       "position": 1
     },
     {
       "id": "b7f422cc-eb8c-47fe-9f2b-cbabc3568dc8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">再利用</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Reuse / Recycling</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さいりよう (Sairiyō)</div>",
       "position": 2
     },
     {
       "id": "3e0578f6-5f21-4ac1-a22e-7b6ff8235cec",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">生態系</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ecosystem</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せいたいけい (Seitaikei)</div>",
       "position": 3
     },
     {
       "id": "dac92907-400f-46ae-8cfd-a645b9792caf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">温室効果ガス</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Greenhouse gas</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おんしつこうかガス (Onshitsu kōka gasu)</div>",
       "position": 4
     },
     {
       "id": "07c940c3-2775-4fc2-8271-f660aafd3c51",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">汚染</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Pollution / Contamination</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おせん (Osen)</div>",
       "position": 5
     },
     {
       "id": "7f0503b8-e910-416b-9a9d-73ad44e381b8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">絶滅危惧種</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Endangered species</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぜつめつきぐしゅ (Zetsumetsu kigu shu)</div>",
       "position": 6
     },
     {
       "id": "c99b8f1a-2fcc-4150-8f6a-be471e938e60",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">持続可能性</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sustainability</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じぞくかのうせい (Jizoku kanōsei)</div>",
       "position": 7
     },
     {
       "id": "df81b602-00a2-4d93-baa0-116405e39b23",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">廃棄物</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Waste / Garbage</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はいきぶつ (Haikibutsu)</div>",
       "position": 8
     },
     {
       "id": "fb1da7a4-a763-4228-81c1-134bd9f80a0d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">自然保護</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Nature conservation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しぜんほご (Shizen hogo)</div>",
       "position": 9
     },
     {
       "id": "13fd3d8c-da35-4a4d-80ed-88b09e8d6942",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">酸性雨</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Acid rain</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さんせいう (Sanseiu)</div>",
       "position": 10
     },
     {
       "id": "009e9a13-383e-48cf-bf74-f88b73e028fb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">資源</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Resources</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しげん (Shigen)</div>",
       "position": 11
     },
     {
       "id": "76426b27-afeb-468b-9fe8-4bfae057ad4a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">砂漠化</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Desertification</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さばくか (Sabakuka)</div>",
       "position": 12
     },
     {
       "id": "5a0ec6ca-004d-4dda-951d-f5213a97dc55",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">大気汚染</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Air pollution</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たいきおせん (Taiki osen)</div>",
       "position": 13
     },
     {
       "id": "f17fe914-fb37-4e08-aef6-fe94ba05cca7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">森林破壊</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Deforestation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんりんはかい (Shinrin hakai)</div>",
       "position": 14
     },
     {
       "id": "e6ead6b4-614c-4f84-a60a-46347dde6faf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">太陽光発電</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Solar power generation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たいようこうはつでん (Taiyōkō hatsuden)</div>",
       "position": 15
     },
     {
       "id": "79e27e60-7fab-4375-99fa-54807f199a0d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">再生可能エネルギー</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Renewable energy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さいせいかのうエネルギー (Saisei kanō enerugī)</div>",
       "position": 16
     },
     {
       "id": "3ea888ce-fd10-4a41-8746-98cb2779eb56",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">循環型社会</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Recycling-based society</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じゅんかんがたしゃかい (Junkangata shakai)</div>",
       "position": 17
     },
     {
       "id": "a864d224-51fd-4a66-be9b-7f315fccb38e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">生態系破壊</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Destruction of ecosystems</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せいたいけいはかい (Seitaikei hakai)</div>",
       "position": 18
     },
     {
       "id": "ac5630ee-94f4-4e9f-a073-60db51239a8c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">海洋汚染</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Marine pollution</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かいようおせん (Kaiyō osen)</div>",
       "position": 19
     },
     {
       "id": "3ef7b7da-0c69-4eae-a6fc-bf1f237598b9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">化石燃料</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fossil fuels</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かせきねんりょう (Kaseki nenryō)</div>",
       "position": 20
     },
     {
       "id": "eabe966b-813a-4106-8799-939961fa8eb1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">生分解性</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Biodegradability</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せいぶんかいせい (Seibunkaisei)</div>",
       "position": 21
     },
     {
       "id": "fe553b7d-37ac-4b70-9eda-24330d3390d0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">異常気象</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Extreme weather</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いじょうきしょう (Ijō kishō)</div>",
       "position": 22
     },
     {
       "id": "d700468e-7610-45ed-8429-08e7e5a7bfb0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">汚染物質</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Pollutant</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おせんぶっしつ (Osen busshitsu)</div>",
       "position": 23
     },
     {
       "id": "178506d1-045a-405b-9e95-c48ab6d260cd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">二酸化炭素</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Carbon dioxide</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">にさんかたんそ (Nisanka tanso)</div>",
       "position": 24
     },
     {
       "id": "52172c66-4929-4de1-aec4-b5f89121ceb9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">埋立地</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Landfill</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">うめたてち (Umetatechi)</div>",
       "position": 25
     },
     {
       "id": "b6801971-ca38-4ef7-a3dd-d6c229f61aab",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">脱炭素</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Decarbonization</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">だつたんそ (Datsutanso)</div>",
       "position": 26
     },
     {
       "id": "f5047aa2-08ab-4669-984b-990c5a81a914",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">使い捨て</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Disposable / Single-use</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つかいすて (Tsukaisute)</div>",
       "position": 27
     },
     {
       "id": "9889be68-ab9f-4941-9b73-7debaa24c26a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">環境負荷</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Environmental burden</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんきょうふか (Kankyō fuka)</div>",
       "position": 28
     },
     {
       "id": "1b276b82-ac74-41ec-bbb2-b5d3c01e09c0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">排出量</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Emissions volume</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はいしゅつりょう (Haishutsuryō)</div>",
       "position": 29
     },
     {
       "id": "08dcf280-b370-4055-bb64-bac341080cb2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">生物多様性</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Biodiversity</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せいぶつたようせい (Seibutsu tayōsei)</div>",
       "position": 30
     },
     {
       "id": "93087ebf-4786-42fb-961d-444d303717d1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">汚染源</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Pollution source</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おせんげん (Osengen)</div>",
       "position": 31
     },
     {
       "id": "6abf0ee1-984d-4f33-ab1b-be45494674e3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">環境保全</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Environmental conservation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんきょうほぜん (Kankyō hozen)</div>",
       "position": 32
     },
     {
       "id": "26ff42c9-6f27-4b42-b17f-1af903b8b7d8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">風力発電</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Wind power generation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふうりょくはつでん (Fūryoku hatsuden)</div>",
       "position": 33
     },
     {
       "id": "7b62daad-8954-46fd-bb93-fa34fef63d56",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">有害物質</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hazardous substance</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆうがいぶっしつ (Yūgai busshitsu)</div>",
       "position": 34
     },
     {
       "id": "808e3895-76ef-4a5c-aaa6-538b25edefd9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">気候変動</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Climate change</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きこうへんどう (Kikō hendō)</div>",
       "position": 35
     },
     {
       "id": "96d9b87c-c574-45bd-a390-8e33027bafc3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">浄化</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Purification / Cleanup</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じょうか (Jōka)</div>",
       "position": 36
     },
     {
       "id": "6d9e6be6-4660-49e6-bfea-493d5f7e55d1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">絶滅</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Extinction</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぜつめつ (Zetsumetsu)</div>",
       "position": 37
     },
     {
       "id": "007ff1a3-68d1-48d2-96df-863e2dab59b8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">放置</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Neglect / Abandonment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ほうち (Hōchi)</div>",
       "position": 38
     },
     {
       "id": "d3bbc5e8-e7d8-4d56-a41c-294601a6f91b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">汚泥</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sludge / Mud</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おでい (Odei)</div>",
       "position": 39
     },
     {
       "id": "7fe76789-bebf-4b38-af5b-ec55536361a0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">緩和</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Mitigation / Relief</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんわ (Kanwa)</div>",
       "position": 40
     },
     {
       "id": "ad20c090-1f04-4409-a6ae-860e8d27ffa4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">適応</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Adaptation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">てきおう (Tekiō)</div>",
       "position": 41
     },
     {
       "id": "927a80d9-0f10-42c0-b0ca-433f95c383a7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">対策</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Countermeasure</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たいさく (Taisaku)</div>",
       "position": 42
     },
     {
       "id": "76669e14-3cb5-4560-846e-154220d1f16c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">排出</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Emission / Discharge</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はいしゅつ (Haishutsu)</div>",
       "position": 43
     },
     {
       "id": "33c48254-720f-4862-942b-c4dae2f773fa",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">意識</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Awareness / Consciousness</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いしき (Ishiki)</div>",
       "position": 44
     },
     {
       "id": "047e86ac-a04e-412f-8f21-ae3ef5c161af",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">供給</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Supply</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうきゅう (Kyōkyū)</div>",
       "position": 45
     },
     {
       "id": "1eb8cd26-ea3d-4a68-a13b-6654f9a408f8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">影響</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Influence / Impact</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">えいきょう (Eikyō)</div>",
       "position": 46
     },
     {
       "id": "ec76a3b4-d174-459d-9b91-593d53521f45",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">持続</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Continuance / Persistence</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じぞく (Jizoku)</div>",
       "position": 47
     },
     {
       "id": "31daf918-225f-4f25-b13e-54f1d48767cb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">深刻</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Serious / Severe</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんこく (Shinkoku)</div>",
       "position": 48
     },
     {
       "id": "4f0278fc-57ad-4528-938e-29e0e82f1a13",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">深刻化</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Becoming serious / Escalating</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんこくか (Shinkokuka)</div>",
       "position": 49
     }
   ]

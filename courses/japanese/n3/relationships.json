@@ -9,302 +9,302 @@
   "cards": [
     {
       "id": "ea66fab4-2811-432d-be93-a211460448d8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">関係</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Relationship</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんけい (Kankei)</div>",
       "position": 0
     },
     {
       "id": "7ad5a5c4-85e3-49ef-a11b-5b06e2cd0445",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">友人</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Friend</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆうじん (Yuujin)</div>",
       "position": 1
     },
     {
       "id": "8715fa4a-305a-4dfe-942c-13918f49302e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">仲</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Relationship / Intimacy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">なか (Naka)</div>",
       "position": 2
     },
     {
       "id": "59f1227f-faf3-46b5-9a69-7f626077c721",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">親友</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Best friend</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんゆう (Shin'yuu)</div>",
       "position": 3
     },
     {
       "id": "bc176638-35bf-44fe-a7de-8f31ba7d5c57",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">恋人</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Lover / Partner</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こいびと (Koibito)</div>",
       "position": 4
     },
     {
       "id": "3907213d-a47b-41ee-8368-fd376991a06d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">付き合う</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To date / Associate with</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つきあう (Tsukiau)</div>",
       "position": 5
     },
     {
       "id": "912ad7da-19c3-4eda-89b9-5fb8cd276594",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">信頼</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Trust / Confidence</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんらい (Shinrai)</div>",
       "position": 6
     },
     {
       "id": "a6f17e3f-a84c-4351-a516-15088f92874c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">共感</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Empathy / Sympathy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうかん (Kyoukan)</div>",
       "position": 7
     },
     {
       "id": "88c85e67-5220-467e-a32d-2f5907209727",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">絆</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Bond / Tie</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きずな (Kizuna)</div>",
       "position": 8
     },
     {
       "id": "ffbbb745-637c-42b5-aea0-ed51a5eabf1d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">仲直り</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Reconciliation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">なかなおり (Nakanaori)</div>",
       "position": 9
     },
     {
       "id": "eb65c697-c8d4-4136-95f1-3865fd8cf96b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">喧嘩</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Quarrel / Fight</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けんか (Kenka)</div>",
       "position": 10
     },
     {
       "id": "43637265-d198-4603-bcc5-956cd4e3c30d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">誤解</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Misunderstanding</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ごかい (Gokai)</div>",
       "position": 11
     },
     {
       "id": "a4b97f92-5844-4bd5-a861-ed77d80767ce",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">謝る</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To apologize</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あやまる (Ayamaru)</div>",
       "position": 12
     },
     {
       "id": "37c7a51d-b4ae-44e1-80d8-0812f7517945",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">許す</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To forgive</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆるす (Yurusu)</div>",
       "position": 13
     },
     {
       "id": "7afdb7f5-db8b-45eb-9874-e5065694feb9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">別れる</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To part / Break up</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">わかれる (Wakareru)</div>",
       "position": 14
     },
     {
       "id": "bffd9552-01d1-431b-98f0-b2873c8baa3a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">出会う</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To encounter / Meet by chance</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">であう (Deau)</div>",
       "position": 15
     },
     {
       "id": "9cdea9ab-5d4c-4184-88d7-af7271bc87ff",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">紹介する</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To introduce</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょうかいする (Shoukai suru)</div>",
       "position": 16
     },
     {
       "id": "dc0898d1-9d88-48ee-89dc-6fe8010a4c2c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">仲良し</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Close friend</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">なかよし (Nakayoshi)</div>",
       "position": 17
     },
     {
       "id": "d638b513-2ffc-4e21-aef9-a95171144876",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">憧れる</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To long for / Admire</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あこがれる (Akogareru)</div>",
       "position": 18
     },
     {
       "id": "5224de31-d386-4135-ac0c-c6a5305d30c5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">片思い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Unrequited love</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かたおもい (Kataomoi)</div>",
       "position": 19
     },
     {
       "id": "bc0fba5b-718a-4fab-8c55-ad156dc370cc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">デート</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Date</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">でーと (Deeto)</div>",
       "position": 20
     },
     {
       "id": "f79cbc22-98fe-4fb1-adf6-c73d18a7611c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">告白する</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To confess (feelings)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こくはくする (Kokuhaku suru)</div>",
       "position": 21
     },
     {
       "id": "6d572e1b-678e-4d7b-9f1b-1d66daf5a4e4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">約束</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Promise / Appointment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やくそく (Yakusoku)</div>",
       "position": 22
     },
     {
       "id": "5c7dd283-f6af-4684-aff0-51f7652501de",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">守る</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To keep (promise)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まもる (Mamoru)</div>",
       "position": 23
     },
     {
       "id": "822275e0-9650-4e4a-a827-aaed69270230",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">裏切る</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To betray</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">うらぎる (Uragiru)</div>",
       "position": 24
     },
     {
       "id": "5ec558b3-31f2-400d-b52c-6db9da36231f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">励ます</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To encourage</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はげます (Hagemasu)</div>",
       "position": 25
     },
     {
       "id": "7b3d7866-32ff-4e92-9572-c631861bd504",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">支える</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To support</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ささえる (Sasaeru)</div>",
       "position": 26
     },
     {
       "id": "afc58ab6-d23e-4c42-be29-412fe5aebf50",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">頼る</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To rely on</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たよる (Tayoru)</div>",
       "position": 27
     },
     {
       "id": "60d99d24-dea1-4540-baa7-896be0d2d21a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">感謝</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Gratitude</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんしゃ (Kansha)</div>",
       "position": 28
     },
     {
       "id": "888fc6d3-c234-4b9d-b74a-86912a965dde",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">尊敬</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Respect</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そんけい (Sonkei)</div>",
       "position": 29
     },
     {
       "id": "57e815dd-5d93-4c04-8c7c-05a11c58fcdc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">対話</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Dialogue / Conversation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たいわ (Taiwa)</div>",
       "position": 30
     },
     {
       "id": "d3473022-30aa-46e4-b60c-0b9169e6844b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">理解</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Understanding</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">りかい (Rikai)</div>",
       "position": 31
     },
     {
       "id": "ca7d594f-1333-41f8-b408-8926e4e591dd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">付き合い</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Association / Socializing</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つきあい (Tsukiai)</div>",
       "position": 32
     },
     {
       "id": "48d22d71-493a-46aa-90f0-aa2916cb2d90",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">集まり</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Gathering</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あつまり (Atsumari)</div>",
       "position": 33
     },
     {
       "id": "705b2ece-7cbb-4e71-a8cb-d0307a48e37a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">親しみ</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Intimacy / Familiarity</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">したしみ (Shitashimi)</div>",
       "position": 34
     },
     {
       "id": "251bd7bf-99c7-4bc6-ac16-7f6f997e9c09",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">思いやり</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Consideration / Thoughtfulness</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おもいやり (Omoiyari)</div>",
       "position": 35
     },
     {
       "id": "99794507-1f00-4203-8841-a8ff1abdb188",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">親睦</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Friendship / Amity</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんぼく (Shinboku)</div>",
       "position": 36
     },
     {
       "id": "d3d4a36c-17df-42bc-8e97-f45d66f4b0b5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">繋がり</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Connection / Link</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つながり (Tsunagari)</div>",
       "position": 37
     },
     {
       "id": "fc22c8d1-b38c-4bd2-96e9-ea97b62e26a7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">交流</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Exchange / Interaction</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こうりゅう (Kouryuu)</div>",
       "position": 38
     },
     {
       "id": "2398e597-5468-43b8-b069-23d3c1acee1a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">親密</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Intimate / Close</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんみつ (Shinmitsu)</div>",
       "position": 39
     },
     {
       "id": "13db7438-adc8-4873-bf9e-56bf511014cc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">疎遠</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Estranged / Distant</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そえん (Soen)</div>",
       "position": 40
     },
     {
       "id": "4b9c0a60-e68c-4937-b047-2d7670565592",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">絶縁</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Severing ties</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぜつえん (Zetsuen)</div>",
       "position": 41
     },
     {
       "id": "d643c14b-57cb-46c2-a872-7acf3c406ea5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">協調</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cooperation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうちょう (Kyouchou)</div>",
       "position": 42
     },
     {
       "id": "9c997f21-aeab-40da-a9b5-e8ad359c58c3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">和解</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Settlement / Reconciliation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">わかい (Wakai)</div>",
       "position": 43
     },
     {
       "id": "3f25c8ac-dd8d-4c27-b919-2751733d599a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">連帯</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Solidarity</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">れんたい (Rentai)</div>",
       "position": 44
     },
     {
       "id": "e5f944b2-120e-4ec6-920b-952db7b8840a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">親交</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Friendship / Intimacy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんこう (Shinkou)</div>",
       "position": 45
     },
     {
       "id": "34c80a0a-7b05-461f-82c6-2c18fd49a075",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">信頼関係</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Trusting relationship</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんらいかんけい (Shinrai kankei)</div>",
       "position": 46
     },
     {
       "id": "6a154034-71ca-4673-8568-6e51f515a4a9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">心の繋がり</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Emotional connection</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こころのつながり (Kokoro no tsunagari)</div>",
       "position": 47
     },
     {
       "id": "ff298bd1-82bc-4fe6-8194-fa6a4fb3ee11",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">対人関係</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Interpersonal relationship</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たいじんかんけい (Taijin kankei)</div>",
       "position": 48
     },
     {
       "id": "3eb6d839-5344-4078-a554-2f806e104196",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">付き合い方</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Way of socializing</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つきあいかた (Tsukiaikata)</div>",
       "position": 49
     }
   ]

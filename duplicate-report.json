@@ -1,0 +1,2852 @@
+{
+  "duplicatesRemoved": 225,
+  "cardsBefore": 7619,
+  "cardsAfter": 7394,
+  "duplicates": [
+    {
+      "front": "か",
+      "kept": {
+        "file": "japanese/hiragana/hiragana_chars.json",
+        "id": "eae2410c-caa2-42a2-9457-c6384017a374",
+        "position": 5
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/grammar.json",
+          "id": "27c423e8-dc44-47c1-bbeb-6d4a8d67f848",
+          "position": 10
+        }
+      ]
+    },
+    {
+      "front": "と",
+      "kept": {
+        "file": "japanese/hiragana/hiragana_chars.json",
+        "id": "d3862c97-8cfb-4095-a41a-cbb863969605",
+        "position": 19
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/grammar.json",
+          "id": "a5f02bb9-80eb-4e1a-8d8b-1607f1568015",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "front": "に",
+      "kept": {
+        "file": "japanese/hiragana/hiragana_chars.json",
+        "id": "75c9afd1-8ca9-4dab-935c-883691256ce3",
+        "position": 21
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/grammar.json",
+          "id": "7b8b8ecf-7fa1-47ca-9e15-edbd243ac7a3",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "front": "の",
+      "kept": {
+        "file": "japanese/hiragana/hiragana_chars.json",
+        "id": "cfbe272c-e21b-48ce-bbff-2005caf33b76",
+        "position": 24
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/grammar.json",
+          "id": "31cf0e30-8adc-4c88-86ad-990eb218dfb1",
+          "position": 8
+        }
+      ]
+    },
+    {
+      "front": "は",
+      "kept": {
+        "file": "japanese/hiragana/hiragana_chars.json",
+        "id": "0ebd2ab5-4262-4850-82da-c61f6d747760",
+        "position": 25
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/grammar.json",
+          "id": "35f83138-aae8-454f-adf7-716e8dc33fb5",
+          "position": 0
+        }
+      ]
+    },
+    {
+      "front": "へ",
+      "kept": {
+        "file": "japanese/hiragana/hiragana_chars.json",
+        "id": "b6a1736b-58fd-4f35-804c-5533e29baa9e",
+        "position": 28
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/grammar.json",
+          "id": "ceeb56c0-65af-4981-b2a2-b494fac8aded",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "front": "も",
+      "kept": {
+        "file": "japanese/hiragana/hiragana_chars.json",
+        "id": "df8cd552-62aa-4d40-848d-2faf9d5c7e3f",
+        "position": 34
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/grammar.json",
+          "id": "99ee0ee2-956e-4afe-a1e7-050cb91ea867",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "front": "や",
+      "kept": {
+        "file": "japanese/hiragana/hiragana_chars.json",
+        "id": "081b61d2-361d-4d06-813d-702ea3664978",
+        "position": 35
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/grammar.json",
+          "id": "943e1399-7eeb-432f-aa6f-814e75743d6a",
+          "position": 9
+        }
+      ]
+    },
+    {
+      "front": "を",
+      "kept": {
+        "file": "japanese/hiragana/hiragana_chars.json",
+        "id": "6ce93a4e-564e-4e6e-a219-e522967a2be6",
+        "position": 44
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/grammar.json",
+          "id": "09a5d8ec-8300-456b-9983-7b3e8d2beb4e",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "front": "起きる",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "026f050c-6075-4058-94eb-b0476e296efb",
+        "position": 13
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "da535894-f162-4376-b13a-25448bce08b9",
+          "position": 0
+        },
+        {
+          "file": "japanese/n4/home.json",
+          "id": "d66b3ac2-e969-4d6f-90ae-329b13b752b4",
+          "position": 30
+        }
+      ]
+    },
+    {
+      "front": "寝る",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "ce8f0dcd-26ff-4637-a6e4-917fa4c926dc",
+        "position": 14
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "2b84f741-ca37-4a82-a4da-ef7be3195835",
+          "position": 1
+        },
+        {
+          "file": "japanese/n4/home.json",
+          "id": "0fd40fb9-22e9-4c72-abd2-3f2bf3e539ea",
+          "position": 29
+        }
+      ]
+    },
+    {
+      "front": "食べる",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "4f1c0f92-04b7-4774-87e2-b0eb6b637046",
+        "position": 12
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/verbs.json",
+          "id": "a0000000-0000-0000-0000-000000000035",
+          "position": 2
+        },
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "da8deb0a-572a-4b35-a956-96653d795879",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "front": "飲む",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "9218e8fa-93b1-4a24-88f6-82100aafe9cc",
+        "position": 13
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/verbs.json",
+          "id": "a0000000-0000-0000-0000-000000000036",
+          "position": 3
+        },
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "b97e9064-6ef3-47ce-b882-be0ac2999cf7",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "front": "行く",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "a0000000-0000-0000-0000-000000000033",
+        "position": 0
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "9dd2fb6a-6f01-4b48-8343-e538dfb75a56",
+          "position": 4
+        },
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "e7a2c44a-a52b-4f35-8a7c-d4208475924f",
+          "position": 21
+        }
+      ]
+    },
+    {
+      "front": "来る",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "a0000000-0000-0000-0000-000000000034",
+        "position": 1
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "fd66a482-b6ca-4784-8b02-9447d1aa65b5",
+          "position": 5
+        },
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "a6acb2a2-68d1-4e5b-86b4-9cc198c6522b",
+          "position": 20
+        }
+      ]
+    },
+    {
+      "front": "帰る",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "1f63e842-104e-4499-aacc-24b7c65741de",
+        "position": 19
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "b1fce6a2-4b37-4963-8396-33df609d972d",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "front": "働く",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "d0b2f006-0806-4e9e-be43-ceb363848fa7",
+        "position": 41
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "70dccbdb-7b84-4272-94b8-cd55d5823206",
+          "position": 7
+        },
+        {
+          "file": "japanese/n4/work.json",
+          "id": "2ce8dc49-1f6e-40d9-af9e-670b55a3b2b7",
+          "position": 17
+        }
+      ]
+    },
+    {
+      "front": "勉強する",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "a0000000-0000-0000-0000-000000000042",
+        "position": 9
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "17cd4c8e-8f65-4753-b765-7c1af1f2b33c",
+          "position": 8
+        }
+      ]
+    },
+    {
+      "front": "休む",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "bbc61946-7727-4e5f-a87d-fa576481818f",
+        "position": 42
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "514edb02-0d02-4a34-a287-b01dc05bdf98",
+          "position": 9
+        }
+      ]
+    },
+    {
+      "front": "見る",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "a0000000-0000-0000-0000-000000000037",
+        "position": 4
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "bbe68ab8-7a03-4350-bd3e-c238483eeeb5",
+          "position": 11
+        }
+      ]
+    },
+    {
+      "front": "聞く",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "8e74b352-e0d8-41d1-893e-1b11b605a5ea",
+        "position": 39
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "87b756f3-d1ce-45c3-8cea-db3bc330a813",
+          "position": 12
+        }
+      ]
+    },
+    {
+      "front": "話す",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "a0000000-0000-0000-0000-000000000038",
+        "position": 5
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "a258f314-aa60-4b02-a0a5-60a0369dd72c",
+          "position": 13
+        }
+      ]
+    },
+    {
+      "front": "読む",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "a0000000-0000-0000-0000-000000000040",
+        "position": 7
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "85259e68-e154-435b-8ba4-14de5ea3976f",
+          "position": 14
+        }
+      ]
+    },
+    {
+      "front": "書く",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "a0000000-0000-0000-0000-000000000039",
+        "position": 6
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "186e1bca-e488-4384-9901-bc888cf6653a",
+          "position": 15
+        }
+      ]
+    },
+    {
+      "front": "買う",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "ac2ce0bd-e9d1-48ba-b0e7-0614c13ada4a",
+        "position": 9
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/verbs.json",
+          "id": "a0000000-0000-0000-0000-000000000041",
+          "position": 8
+        },
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "7c235360-5811-420d-b8da-4ec02834f562",
+          "position": 16
+        },
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "aa063898-8ebb-4367-943e-758fbadc9352",
+          "position": 28
+        }
+      ]
+    },
+    {
+      "front": "会う",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "1bcf7dd0-1395-4478-a86d-3a303347cbd2",
+        "position": 34
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "75005a31-87ca-403d-a9ac-ed9c1cf2eafd",
+          "position": 18
+        }
+      ]
+    },
+    {
+      "front": "する",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "6f4bd692-fa29-4561-9230-31c63668715b",
+        "position": 10
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "facc5506-0f3f-447b-8b6d-caadd4463454",
+          "position": 19
+        }
+      ]
+    },
+    {
+      "front": "毎日",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "a62a047d-a4fd-476d-9467-03253bd4bcc0",
+        "position": 10
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "b77c1abd-39f3-411b-a3e6-7f5ac014bf47",
+          "position": 22
+        }
+      ]
+    },
+    {
+      "front": "いつも",
+      "kept": {
+        "file": "japanese/n5/grammar.json",
+        "id": "4e05a575-4956-4c1f-95b3-e18b1d3405d9",
+        "position": 51
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "4da43dae-8cb9-4f5f-8169-bc658d6274df",
+          "position": 23
+        }
+      ]
+    },
+    {
+      "front": "よく",
+      "kept": {
+        "file": "japanese/n5/grammar.json",
+        "id": "cf98f2b5-2fe7-42fa-99cc-82c03ab1e231",
+        "position": 52
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "2fc00af7-5f4c-48c7-97a4-42c298e8eb62",
+          "position": 25
+        }
+      ]
+    },
+    {
+      "front": "朝",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "3efc702e-7ab6-4895-a26d-40413eccd5d0",
+        "position": 7
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "456a6bad-d90d-4c5a-8c0b-e9e517debebc",
+          "position": 28
+        }
+      ]
+    },
+    {
+      "front": "昼",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "24cc21a0-9802-46bf-a4ae-a72f115008f6",
+        "position": 8
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "01a08459-7287-43e1-8267-213f7b3d0d1e",
+          "position": 29
+        }
+      ]
+    },
+    {
+      "front": "夜",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "771b982f-bbbb-4782-b48a-2375f0c06c8f",
+        "position": 9
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "6830de92-0fb8-48c3-b70e-83157048b556",
+          "position": 30
+        }
+      ]
+    },
+    {
+      "front": "今日",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "a0000000-0000-0000-0000-000000000051",
+        "position": 0
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "e302e661-658f-48b0-89a5-0e72bc9c942c",
+          "position": 31
+        }
+      ]
+    },
+    {
+      "front": "昨日",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "a0000000-0000-0000-0000-000000000053",
+        "position": 2
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "46ce78f3-8db9-46eb-9045-5c044d07a523",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "front": "明日",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "a0000000-0000-0000-0000-000000000052",
+        "position": 1
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "a5dee3c5-0d3c-4395-ae42-e6846322a8ed",
+          "position": 33
+        }
+      ]
+    },
+    {
+      "front": "今週",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "0177ff77-939c-4de0-9d3b-491ca7292039",
+        "position": 14
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "febb1ac9-7dd2-47ab-9217-8c768dce7b5c",
+          "position": 34
+        }
+      ]
+    },
+    {
+      "front": "先週",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "21336cec-9c9b-48b1-ad4c-26642f7e802c",
+        "position": 16
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "fa12eccc-a18c-4ac8-bc77-11497b57a87c",
+          "position": 35
+        }
+      ]
+    },
+    {
+      "front": "来週",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "a67df167-6a19-4bcd-a9f6-3224ac3f4c6f",
+        "position": 15
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "dd392183-c5bc-43de-9241-b1a391cb5718",
+          "position": 36
+        }
+      ]
+    },
+    {
+      "front": "時",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "a42ef607-cfca-4a56-9f59-0b5db1badf7d",
+        "position": 25
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "2867fb07-6e38-41d8-bd01-32b515ac522e",
+          "position": 37
+        }
+      ]
+    },
+    {
+      "front": "分",
+      "kept": {
+        "file": "japanese/n5/numbers.json",
+        "id": "9bf0b97f-1b42-417e-b8a0-7d83b7707c65",
+        "position": 23
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/dates_time.json",
+          "id": "208f0d23-9c38-4013-9236-bc60104fe54a",
+          "position": 5
+        },
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "c5d4c8aa-f664-4c78-ad7b-92f9d8cb0323",
+          "position": 38
+        }
+      ]
+    },
+    {
+      "front": "半",
+      "kept": {
+        "file": "japanese/n5/numbers.json",
+        "id": "47b71c8f-308c-46c8-aa58-e119365add42",
+        "position": 24
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/dates_time.json",
+          "id": "d6827589-62f0-4176-990c-f6e178a7e8d4",
+          "position": 6
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "37799da4-b712-4b98-93ae-0e6fb2096e9b",
+          "position": 97
+        },
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "dbfb9d60-79e4-4a9e-a57d-df917c12d72c",
+          "position": 39
+        }
+      ]
+    },
+    {
+      "front": "今",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "ecdee4ff-f8be-4bd3-b9dc-a440edcd3b04",
+        "position": 98
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "0ead6263-1a06-4c88-b470-5fd6effb4579",
+          "position": 41
+        }
+      ]
+    },
+    {
+      "front": "午前",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "ff504cd1-dffd-4a12-80db-9a535baaf6c8",
+        "position": 30
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "1efec5bd-a9ad-4fcd-8357-30e63d4e6888",
+          "position": 42
+        }
+      ]
+    },
+    {
+      "front": "午後",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "4c217254-1654-4fa8-b151-4b9b0f029bf4",
+        "position": 31
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "4eaf8d26-aadd-4ce2-bd9b-4a17a72a202e",
+          "position": 43
+        }
+      ]
+    },
+    {
+      "front": "学校",
+      "kept": {
+        "file": "japanese/n5/school.json",
+        "id": "a0000000-0000-0000-0000-000000000010",
+        "position": 4
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "d3e86de3-ed88-42f4-bf2f-d56ce5cac608",
+          "position": 21
+        },
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "d91e0e31-ba35-49cf-be1d-517bc74a2a26",
+          "position": 44
+        }
+      ]
+    },
+    {
+      "front": "会社",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "e7a4c705-bcaf-4b03-a668-d2dd3ef1a727",
+        "position": 22
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "7763cb44-c95a-455e-b18a-8a3536ced79d",
+          "position": 45
+        },
+        {
+          "file": "japanese/n4/work.json",
+          "id": "23252b0a-ff02-40f7-8a60-a0bd699f60a8",
+          "position": 0
+        }
+      ]
+    },
+    {
+      "front": "駅",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "ec47e970-90d7-49b8-9a8b-98a2b2fcaa5f",
+        "position": 8
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "4bbc6d07-ad9b-4cd1-93db-dfe06b515bab",
+          "position": 17
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "33c835a7-7d72-4d90-82a0-16f4020a549d",
+          "position": 44
+        },
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "e4dc74d6-cb19-4811-995a-006b7bbf2796",
+          "position": 46
+        },
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "33aa5db5-97b9-49d0-b306-6961d393b66d",
+          "position": 13
+        }
+      ]
+    },
+    {
+      "front": "店",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "bc8fecbf-f27f-4560-95d9-735d2da56532",
+        "position": 19
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/shopping.json",
+          "id": "33f791cc-e1fe-4453-8607-18df188a6f64",
+          "position": 0
+        },
+        {
+          "file": "japanese/n5/places.json",
+          "id": "ce1c2edd-99bb-4e4e-a4b9-e8471ea657a2",
+          "position": 12
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "317ba49c-8244-41fa-b869-332ea3c56dc1",
+          "position": 54
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "614ec514-a316-4eda-8702-278260873278",
+          "position": 80
+        },
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "2a35704e-5c3c-4dea-ae95-296a0017f398",
+          "position": 47
+        },
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "8b23ad68-9d96-4048-888e-6db8b7d98e9f",
+          "position": 1
+        },
+        {
+          "file": "japanese/n4/intermediate_kanji.json",
+          "id": "8619274c-6189-4439-9770-def1c3c0a60e",
+          "position": 37
+        }
+      ]
+    },
+    {
+      "front": "銀行",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "132c5229-541c-4a30-b404-800dc71d68fa",
+        "position": 14
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "323894cc-75b9-4550-ad60-ac2e476c2ce2",
+          "position": 48
+        }
+      ]
+    },
+    {
+      "front": "郵便局",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "501ac148-b0be-4835-b52a-878e91e740fb",
+        "position": 15
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/daily_life.json",
+          "id": "ca2c9c69-e8e4-4157-91e0-9de101845389",
+          "position": 49
+        }
+      ]
+    },
+    {
+      "front": "目",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "050e0c94-b705-425c-8811-80d340ba1438",
+        "position": 12
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/health.json",
+          "id": "44025bb9-d308-4462-9002-d99e173bb83e",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "front": "耳",
+      "kept": {
+        "file": "japanese/n5/animals.json",
+        "id": "d2d99f7a-aa64-448d-9cf9-04b78216344f",
+        "position": 24
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "45fddc0a-79fd-4e56-b626-f5b28646954d",
+          "position": 13
+        },
+        {
+          "file": "japanese/n4/health.json",
+          "id": "4f5b5e19-74d7-4bb8-8d33-76300725863c",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "front": "口",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "c540201e-d284-46aa-a4d3-456a31ef033a",
+        "position": 11
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/health.json",
+          "id": "02ba82b2-ebe0-457e-9949-7d6a4b0ec629",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "front": "手",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "c60a3fb2-7e62-472d-8d61-fbc5fc350386",
+        "position": 14
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/health.json",
+          "id": "bedf0e84-040a-42a6-be84-b5d773e15e0b",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "front": "足",
+      "kept": {
+        "file": "japanese/n5/animals.json",
+        "id": "70448d58-899a-4b50-b336-2d46c6c025aa",
+        "position": 23
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "ed0c4ad9-825b-460d-8db1-af36f4a15675",
+          "position": 15
+        },
+        {
+          "file": "japanese/n4/health.json",
+          "id": "47037a26-2722-4399-892a-2b04dee226f1",
+          "position": 8
+        }
+      ]
+    },
+    {
+      "front": "病院",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "26e28cb3-af44-4ebe-a9a4-3ca1129599d3",
+        "position": 16
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/health.json",
+          "id": "6749ac92-7a77-4ef8-b472-37036da28a66",
+          "position": 16
+        }
+      ]
+    },
+    {
+      "front": "家",
+      "kept": {
+        "file": "japanese/n5/family.json",
+        "id": "c999e133-1e7f-4789-829c-52714128d6a8",
+        "position": 21
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "ca7fa7db-47fa-4e33-96d5-f7b0f538c00f",
+          "position": 7
+        },
+        {
+          "file": "japanese/n4/home.json",
+          "id": "399de04d-4ea3-4ae0-9088-20760a2b7741",
+          "position": 0
+        }
+      ]
+    },
+    {
+      "front": "部屋",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "6da6d9b4-a684-4f37-ba2d-77f804c04c93",
+        "position": 8
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/home.json",
+          "id": "35e59b0e-f11c-49ef-b831-25cae3893733",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "front": "椅子",
+      "kept": {
+        "file": "japanese/n5/school.json",
+        "id": "fcfe757d-7da8-4581-9a66-59b22526c011",
+        "position": 7
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/home.json",
+          "id": "8803620f-26f4-436e-8478-08a27fe802b9",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "front": "机",
+      "kept": {
+        "file": "japanese/n5/school.json",
+        "id": "8038b716-a93d-4d89-b214-fe82e2bdd39d",
+        "position": 6
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/home.json",
+          "id": "7b8f1232-47e8-4208-b9a0-b8eb5cdd1900",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "front": "座る",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "cfe3a613-cb72-40d7-a2c3-53b4e8941197",
+        "position": 16
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/home.json",
+          "id": "943d313f-e58b-44cd-ac84-c305c34c47b5",
+          "position": 31
+        }
+      ]
+    },
+    {
+      "front": "立つ",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "8a575132-30cc-4d0c-b7c6-bf553bac0002",
+        "position": 15
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/home.json",
+          "id": "6032d26e-c2b9-40bd-9318-2532ef9e9c39",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "front": "置く",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "a35c8966-4afc-4533-9387-0eae2cb8372b",
+        "position": 28
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/home.json",
+          "id": "1f0fc38a-8819-4f81-afc6-9cdea38c66ff",
+          "position": 33
+        }
+      ]
+    },
+    {
+      "front": "入る",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "785cc60a-62a0-4283-a47b-693c6b2b4ca4",
+        "position": 20
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/home.json",
+          "id": "ce79373a-5899-4cbd-8498-5eed39ff5e33",
+          "position": 34
+        }
+      ]
+    },
+    {
+      "front": "便利",
+      "kept": {
+        "file": "japanese/n5/adjectives.json",
+        "id": "3c8f9662-042e-4f48-99c9-a397eb430094",
+        "position": 31
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/home.json",
+          "id": "33786433-ba90-4267-9cae-c5a768870909",
+          "position": 43
+        }
+      ]
+    },
+    {
+      "front": "不便",
+      "kept": {
+        "file": "japanese/n5/adjectives.json",
+        "id": "a6b4e856-ca01-4237-9528-0d0c958fdf4e",
+        "position": 32
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/home.json",
+          "id": "636b0fce-8021-4206-b3f5-f99c756ec10d",
+          "position": 44
+        }
+      ]
+    },
+    {
+      "front": "手伝う",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "2c7cb619-25fe-4dbb-b49b-8adfcf401c88",
+        "position": 58
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/home.json",
+          "id": "2f99ecaa-f0a7-49d9-9549-f2d35837af8c",
+          "position": 48
+        },
+        {
+          "file": "japanese/n4/work.json",
+          "id": "1cdaa354-9918-40dc-a884-ecf2d7c1525a",
+          "position": 33
+        }
+      ]
+    },
+    {
+      "front": "住む",
+      "kept": {
+        "file": "japanese/n5/verbs.json",
+        "id": "e3797da3-4be2-4d63-a2f8-491257951f3c",
+        "position": 53
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/home.json",
+          "id": "ac4e9a81-6729-4694-a470-4e6b79044eed",
+          "position": 49
+        }
+      ]
+    },
+    {
+      "front": "強",
+      "kept": {
+        "file": "japanese/n4/intermediate_kanji.json",
+        "id": "3403cc52-f878-4e6a-9092-99ba322e49c2",
+        "position": 10
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/intermediate_kanji.json",
+          "id": "7d66b095-bd05-49ad-8ff9-d13d69f67ee4",
+          "position": 31
+        }
+      ]
+    },
+    {
+      "front": "兄",
+      "kept": {
+        "file": "japanese/n5/family.json",
+        "id": "ad9e5f3d-7594-4c9a-9957-caa419bec0ea",
+        "position": 3
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "9f8c8bd5-3395-4409-aed7-092a088935e4",
+          "position": 60
+        },
+        {
+          "file": "japanese/n4/intermediate_kanji.json",
+          "id": "e8c03bdb-3749-4216-99fe-0dd6b8494a40",
+          "position": 12
+        }
+      ]
+    },
+    {
+      "front": "弟",
+      "kept": {
+        "file": "japanese/n5/family.json",
+        "id": "dcf23c8a-a3e6-4ae1-bf1a-8f7e72b226c8",
+        "position": 5
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "331d4caa-8466-40ff-870f-9ca8e1d42bdf",
+          "position": 62
+        },
+        {
+          "file": "japanese/n4/intermediate_kanji.json",
+          "id": "f0e80ebd-ef29-4148-a973-35534ca0dc3e",
+          "position": 13
+        }
+      ]
+    },
+    {
+      "front": "姉",
+      "kept": {
+        "file": "japanese/n5/family.json",
+        "id": "0cf4b410-01c7-47f0-a073-ca5ee034578a",
+        "position": 4
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "b8ee63ba-f969-4211-aa91-dbd493842d1b",
+          "position": 61
+        },
+        {
+          "file": "japanese/n4/intermediate_kanji.json",
+          "id": "dd371e96-4a30-4292-a278-a826b13ddbfa",
+          "position": 14
+        }
+      ]
+    },
+    {
+      "front": "妹",
+      "kept": {
+        "file": "japanese/n5/family.json",
+        "id": "c416d18d-8164-434b-af59-6ecdc7b96783",
+        "position": 6
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "42e0f8af-593c-4b8a-b554-84720212edce",
+          "position": 63
+        },
+        {
+          "file": "japanese/n4/intermediate_kanji.json",
+          "id": "21134a17-a285-4408-bf2e-50a5b2438a5a",
+          "position": 15
+        }
+      ]
+    },
+    {
+      "front": "曜",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "711fe4bb-5424-4ef5-8cf5-1ed8e768ea27",
+        "position": 88
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/intermediate_kanji.json",
+          "id": "8775fafb-e121-4288-91fa-2cf7b014d0bf",
+          "position": 18
+        }
+      ]
+    },
+    {
+      "front": "茶",
+      "kept": {
+        "file": "japanese/n5/colors.json",
+        "id": "2f8be907-6f32-46dd-9e7e-e7c8547ad22d",
+        "position": 5
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "ef747078-2216-4000-97db-6c458de6b6ba",
+          "position": 94
+        },
+        {
+          "file": "japanese/n4/intermediate_kanji.json",
+          "id": "fb844072-dc03-4ed4-bf61-1398f62489d8",
+          "position": 26
+        }
+      ]
+    },
+    {
+      "front": "肉",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "af7b1e94-7d14-4862-8b0c-a03b5b9f28ab",
+        "position": 4
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "bf5c1a00-8ec7-44e4-a973-acad994bda61",
+          "position": 89
+        },
+        {
+          "file": "japanese/n4/intermediate_kanji.json",
+          "id": "89f6138c-aa52-42aa-aa5a-4a7acfd3370d",
+          "position": 27
+        }
+      ]
+    },
+    {
+      "front": "魚",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "e2b4f8bb-ce4b-4dc7-a2cd-d3b98007874a",
+        "position": 5
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/animals.json",
+          "id": "a6a16408-f8b5-49f1-ab2d-679a792764b9",
+          "position": 3
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "d88de2bd-0b4c-4e39-8ab4-8a1748dfaa8f",
+          "position": 50
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "d3ae728e-5f71-4c64-a730-67e9a0d883df",
+          "position": 65
+        },
+        {
+          "file": "japanese/n4/intermediate_kanji.json",
+          "id": "2aae230a-9504-45b6-ab10-3d8abb7ca231",
+          "position": 28
+        }
+      ]
+    },
+    {
+      "front": "鳥",
+      "kept": {
+        "file": "japanese/n5/animals.json",
+        "id": "7c9a3bec-2797-41b4-80aa-7a71e810eafb",
+        "position": 2
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "0b63da1b-3948-48ec-ba02-099d550320a1",
+          "position": 66
+        },
+        {
+          "file": "japanese/n4/intermediate_kanji.json",
+          "id": "09eec993-2cea-49a2-9561-6ef11f46889f",
+          "position": 29
+        }
+      ]
+    },
+    {
+      "front": "買い物",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "03b682de-ce67-4981-9829-e75e894626ef",
+        "position": 1
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "b15981ad-5232-4bc5-b6a5-9ce17c4aa066",
+          "position": 0
+        }
+      ]
+    },
+    {
+      "front": "デパート",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "c0fa3431-53f8-411e-b266-1c386fda0f57",
+        "position": 29
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "52cc1ea2-57f5-432f-b5d5-31bec33a8171",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "front": "スーパー",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "2081c6c6-5ab6-49d5-a29a-de861771798f",
+        "position": 13
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "b78c0626-0903-46b8-8f66-d38052fdbed5",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "front": "値段",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "611fd3da-1622-4a6b-ab35-5565eb3ca7d4",
+        "position": 4
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "cb43d0e0-0468-4c7e-ba5e-c08a4df123f5",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "front": "安い",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "4cbad581-6be5-42e0-b233-e4645618f513",
+        "position": 22
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/shopping.json",
+          "id": "a9b09527-ad2c-4f16-8def-cccf16018656",
+          "position": 6
+        },
+        {
+          "file": "japanese/n5/adjectives.json",
+          "id": "304fb453-7cc6-4e5b-affa-0fcd19c75654",
+          "position": 11
+        },
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "631f17f8-bf68-4992-ab42-c379933c4909",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "front": "高い",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "71686c29-2e3f-4a05-8fc0-218d1ef4ebb2",
+        "position": 21
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/shopping.json",
+          "id": "79aa7fd6-e056-47ab-85a4-3d5a6f3ef26d",
+          "position": 5
+        },
+        {
+          "file": "japanese/n5/adjectives.json",
+          "id": "e4fd41f3-7798-47f1-ab32-e7d53e7335df",
+          "position": 10
+        },
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "5e6f52b2-b521-4c0b-80b8-776fb09d0311",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "front": "財布",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "17df1eff-304a-44e6-9dfc-2e673eee104f",
+        "position": 10
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "b4ef8e6a-4357-4fd2-9f2c-1cdec1b9f934",
+          "position": 10
+        }
+      ]
+    },
+    {
+      "front": "お金",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "b06620c6-7651-4e81-a35e-c357ee575f98",
+        "position": 2
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "fae8c45d-a52f-4bca-95ee-7122b6f1659f",
+          "position": 11
+        }
+      ]
+    },
+    {
+      "front": "現金",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "c19face4-1a78-475d-889f-f30e3eefddc5",
+        "position": 11
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "ce214788-6e7c-4c8e-8621-be8a3b031f19",
+          "position": 12
+        }
+      ]
+    },
+    {
+      "front": "サイズ",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "3068e734-abb0-4a81-9875-1121d815b5c6",
+        "position": 23
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "d656a3d8-aa08-4632-992e-070dac8d0d70",
+          "position": 19
+        }
+      ]
+    },
+    {
+      "front": "色",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "a5c1ce33-b7f5-4ea2-859c-0b62404eda94",
+        "position": 28
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/colors.json",
+          "id": "41708dab-afb8-4383-bf3d-c46780bbce42",
+          "position": 6
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "e961130e-66cd-4315-895d-707010545ad0",
+          "position": 95
+        },
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "f0403a0f-67cd-4c3e-8808-64aa1021d4ec",
+          "position": 20
+        }
+      ]
+    },
+    {
+      "front": "品物",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "c84b0070-3689-4c43-94cd-ad8131a80923",
+        "position": 14
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "65c6b6c8-e6c3-4f35-b1c8-c189607ab84d",
+          "position": 21
+        }
+      ]
+    },
+    {
+      "front": "選ぶ",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "1ba5337b-1333-4dfc-8c0e-af32646b796a",
+        "position": 22
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "0d90a34b-aaa9-4d20-86a3-ad2fb1da8215",
+          "position": 27
+        }
+      ]
+    },
+    {
+      "front": "売る",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "8889fb50-eba8-4308-9f77-c59eb30731a0",
+        "position": 8
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "3da1cc6d-c47e-414e-b9de-fcac96c64572",
+          "position": 29
+        }
+      ]
+    },
+    {
+      "front": "注文",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "66f6f1c7-f30d-44ef-b175-5a44e667dac8",
+        "position": 24
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/shopping.json",
+          "id": "ea3d8d8a-47a2-4ded-9cbe-7a9cfce988d9",
+          "position": 31
+        }
+      ]
+    },
+    {
+      "front": "空港",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "a7b46dd7-8207-4307-9754-6e700c586d25",
+        "position": 9
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "60751899-dcc1-438f-8188-ea96b4deff97",
+          "position": 18
+        },
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "6b7c889b-0473-4519-8cc4-947d79a6d2e6",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "front": "飛行機",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "87197f88-1ddb-4e11-be6b-df8eec832006",
+        "position": 6
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "2c41c185-b471-4254-988c-2adb2a759fd5",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "front": "切符",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "6f955759-1f8a-4a91-91e9-546a56f581d8",
+        "position": 10
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "a16796cb-cd01-4d23-8f25-f98d920768bd",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "front": "ホテル",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "032db692-f491-4b4b-8279-6c226c037ff6",
+        "position": 9
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "595219ff-a77a-441b-a5bb-bf00d9e94c51",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "front": "地図",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "f2dc2b05-bf03-4430-95d7-12881cc02c9c",
+        "position": 29
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "316b0cea-3e30-49fa-8c92-5962dace7883",
+          "position": 11
+        }
+      ]
+    },
+    {
+      "front": "道",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "572df23c-7639-4229-b210-8f5be013d53e",
+        "position": 12
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "27fbd1b9-319d-4d82-9bf2-f3c29a2cd69b",
+          "position": 12
+        }
+      ]
+    },
+    {
+      "front": "電車",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "696c8b48-7ad3-4c30-9c06-508d9b40134d",
+        "position": 1
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "15694da7-596b-4a8b-8098-147724e972b9",
+          "position": 14
+        }
+      ]
+    },
+    {
+      "front": "バス",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "39e99319-5f61-44dd-8ce5-72c9efb0fa58",
+        "position": 3
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "2a702d65-536a-4456-a6d0-2a24519bd61f",
+          "position": 15
+        }
+      ]
+    },
+    {
+      "front": "タクシー",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "789de712-77ed-46f7-868f-9dbec07c1b6f",
+        "position": 4
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "dd2f7a0a-033a-448b-944e-0ae7eb822a5c",
+          "position": 16
+        }
+      ]
+    },
+    {
+      "front": "お土産",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "59d4cb36-291d-4a5d-9d00-f6b0994bc264",
+        "position": 19
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "24fb1683-74ec-41c2-bd13-b5aea3e1a7d6",
+          "position": 20
+        }
+      ]
+    },
+    {
+      "front": "到着",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "e68dcb2b-65b2-415d-a997-2187d8f13b1d",
+        "position": 25
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "af791faa-c1c5-4ea0-955a-a6f63b2d1483",
+          "position": 24
+        }
+      ]
+    },
+    {
+      "front": "出発",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "3c8554a4-40fc-48b8-ae79-f66904589d69",
+        "position": 24
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "66f9530d-a179-4391-871e-b9e66faf86ee",
+          "position": 25
+        }
+      ]
+    },
+    {
+      "front": "予定",
+      "kept": {
+        "file": "japanese/n4/work.json",
+        "id": "e08fc4a3-a4db-4481-b882-d8b111393782",
+        "position": 21
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/travel.json",
+          "id": "f50cb5d3-3659-4249-800e-b6b9f1cc2c9c",
+          "position": 28
+        }
+      ]
+    },
+    {
+      "front": "忙しい",
+      "kept": {
+        "file": "japanese/n5/adjectives.json",
+        "id": "c4ba0a0f-0353-47c3-bb0a-67a1177c4ecb",
+        "position": 23
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/work.json",
+          "id": "f394a600-76a1-4dcc-bb8f-8175e61d988c",
+          "position": 18
+        }
+      ]
+    },
+    {
+      "front": "暇",
+      "kept": {
+        "file": "japanese/n5/adjectives.json",
+        "id": "b39da4a4-2827-4ace-b496-5d8b20fb3c26",
+        "position": 29
+      },
+      "removed": [
+        {
+          "file": "japanese/n4/work.json",
+          "id": "f6bd736b-235d-4426-aa06-c84f64404cc9",
+          "position": 19
+        }
+      ]
+    },
+    {
+      "front": "大きい",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "35d99ff7-d5cd-4353-a212-e9b907c56111",
+        "position": 24
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/adjectives.json",
+          "id": "a0000000-0000-0000-0000-000000000043",
+          "position": 0
+        }
+      ]
+    },
+    {
+      "front": "小さい",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "d4f8eb31-ebcd-4f15-8324-ebf74a358aa7",
+        "position": 25
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/adjectives.json",
+          "id": "a0000000-0000-0000-0000-000000000044",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "front": "新しい",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "36dd0721-e4cc-4ce5-8e59-f9cdf7e89564",
+        "position": 26
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/adjectives.json",
+          "id": "a0000000-0000-0000-0000-000000000045",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "front": "古い",
+      "kept": {
+        "file": "japanese/n5/shopping.json",
+        "id": "ee02c0d8-1003-4bc3-9e0a-3557d19ed291",
+        "position": 27
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/adjectives.json",
+          "id": "a0000000-0000-0000-0000-000000000046",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "front": "暑い",
+      "kept": {
+        "file": "japanese/n5/weather.json",
+        "id": "a0000000-0000-0000-0000-000000000066",
+        "position": 5
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/adjectives.json",
+          "id": "a0000000-0000-0000-0000-000000000049",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "front": "寒い",
+      "kept": {
+        "file": "japanese/n5/weather.json",
+        "id": "a0000000-0000-0000-0000-000000000067",
+        "position": 6
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/adjectives.json",
+          "id": "a0000000-0000-0000-0000-000000000050",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "front": "遠い",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "0755b8d1-ba7d-4b45-a58c-c4315a05d8b5",
+        "position": 34
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/adjectives.json",
+          "id": "3eb7529b-ea8c-425a-a519-1edfd0d9434f",
+          "position": 25
+        }
+      ]
+    },
+    {
+      "front": "犬",
+      "kept": {
+        "file": "japanese/n5/animals.json",
+        "id": "a0000000-0000-0000-0000-000000000008",
+        "position": 1
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "d680e67e-7fa9-4468-a715-5cf3767521db",
+          "position": 49
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "054c64d0-b53b-4e21-b5ea-7421905a2aa3",
+          "position": 64
+        }
+      ]
+    },
+    {
+      "front": "馬",
+      "kept": {
+        "file": "japanese/n5/animals.json",
+        "id": "9e76af65-845e-48a6-9b83-75bd11ddac5a",
+        "position": 4
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "a24fa8b1-54f6-4189-a5ec-0e2b37e3e38a",
+          "position": 91
+        }
+      ]
+    },
+    {
+      "front": "牛",
+      "kept": {
+        "file": "japanese/n5/animals.json",
+        "id": "46f746e4-b4eb-462f-9048-0e00dacefbe7",
+        "position": 5
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "f5aba60b-7cfe-4e2b-a8fb-7456e03b6127",
+          "position": 90
+        }
+      ]
+    },
+    {
+      "front": "赤",
+      "kept": {
+        "file": "japanese/n5/colors.json",
+        "id": "74946093-b38d-4ad7-8653-b0b5614c7e82",
+        "position": 0
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "979875da-059d-4cd5-ad11-b7f790c3eeb5",
+          "position": 78
+        }
+      ]
+    },
+    {
+      "front": "青",
+      "kept": {
+        "file": "japanese/n5/colors.json",
+        "id": "54d66b96-2081-46d8-affa-843bac5d914f",
+        "position": 1
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "e4b5698f-b9d5-4e32-bf19-833f299fa5fe",
+          "position": 79
+        }
+      ]
+    },
+    {
+      "front": "白",
+      "kept": {
+        "file": "japanese/n5/colors.json",
+        "id": "b696f444-de65-4d4a-be60-dd45b596e69b",
+        "position": 2
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "ff7ae4f3-adac-4baa-99b9-c75fe55f5184",
+          "position": 76
+        }
+      ]
+    },
+    {
+      "front": "黒",
+      "kept": {
+        "file": "japanese/n5/colors.json",
+        "id": "2b8a7f76-aed3-4f7c-aebd-9b7118fc95cf",
+        "position": 3
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "2c324829-a4d5-4da2-b600-679d8c336076",
+          "position": 77
+        }
+      ]
+    },
+    {
+      "front": "黄",
+      "kept": {
+        "file": "japanese/n5/colors.json",
+        "id": "53035843-0587-4a57-93b4-4f6079809eca",
+        "position": 4
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "89ca0999-6f64-4c3a-b4f9-5e2ff5a11547",
+          "position": 93
+        }
+      ]
+    },
+    {
+      "front": "金",
+      "kept": {
+        "file": "japanese/n5/colors.json",
+        "id": "dc71b100-3462-4d8d-b6b7-4c3adabfdb6f",
+        "position": 7
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "533c7ccb-39a1-47d1-934b-dfdfd8627ed0",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "front": "空",
+      "kept": {
+        "file": "japanese/n5/weather.json",
+        "id": "9c883eb2-ee20-4912-8eef-772a913837ae",
+        "position": 15
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/colors.json",
+          "id": "a3c73b17-1671-4c4d-9a14-37c3f8ad4f70",
+          "position": 9
+        }
+      ]
+    },
+    {
+      "front": "花",
+      "kept": {
+        "file": "japanese/n5/colors.json",
+        "id": "4287e72f-bc79-40e5-bf48-31ff404a1489",
+        "position": 10
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "ad36742b-e026-4bc4-853b-589193f5d3a9",
+          "position": 47
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "e51dcbe2-2145-49b7-b217-df80045d2d68",
+          "position": 67
+        }
+      ]
+    },
+    {
+      "front": "山",
+      "kept": {
+        "file": "japanese/n5/colors.json",
+        "id": "6e4f8719-6019-4674-880f-80d2b7843d65",
+        "position": 11
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "03a4ca4c-87f6-4623-ac0a-d941a7361afe",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "front": "海",
+      "kept": {
+        "file": "japanese/n5/colors.json",
+        "id": "c4aae2ff-f1e3-40fa-b4bc-231268c4fec9",
+        "position": 12
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "884fb3d8-f037-49d3-8de6-2b9545b9c1ad",
+          "position": 70
+        }
+      ]
+    },
+    {
+      "front": "雨",
+      "kept": {
+        "file": "japanese/n5/weather.json",
+        "id": "a0000000-0000-0000-0000-000000000062",
+        "position": 1
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/colors.json",
+          "id": "d3ff6aaf-6d96-4625-ae71-ee3d083df8aa",
+          "position": 13
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "2f31b9b7-f00d-49c9-948d-22d3f4ba00fc",
+          "position": 45
+        }
+      ]
+    },
+    {
+      "front": "雪",
+      "kept": {
+        "file": "japanese/n5/weather.json",
+        "id": "a0000000-0000-0000-0000-000000000063",
+        "position": 2
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/colors.json",
+          "id": "cd232164-ef52-4798-a7b1-e91512302891",
+          "position": 14
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "f942c376-d25f-4a0d-a10d-cfb06b3b9afa",
+          "position": 46
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "d0127b04-b370-43cc-ac50-2c0cb56d04b8",
+          "position": 71
+        }
+      ]
+    },
+    {
+      "front": "時間",
+      "kept": {
+        "file": "japanese/n5/numbers.json",
+        "id": "56db9e86-4318-4a0c-996b-2ee270b5fbe1",
+        "position": 22
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/dates_time.json",
+          "id": "a0000000-0000-0000-0000-000000000054",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "front": "週",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "0b9f4114-d476-4612-961f-71967ef999de",
+        "position": 32
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "7e9ff62d-85eb-45cf-929e-e040f1c06560",
+          "position": 87
+        }
+      ]
+    },
+    {
+      "front": "月",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "6632b494-2482-4e9e-acab-79d7967c6620",
+        "position": 33
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "f5289b70-1078-4c00-8faa-f123f0707f39",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "front": "年",
+      "kept": {
+        "file": "japanese/n5/dates_time.json",
+        "id": "a87f5b6c-b8c2-40d9-bc30-3a8273d1a0fc",
+        "position": 34
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "eaad0270-7abf-41b4-bf71-31343ff7f9fc",
+          "position": 24
+        }
+      ]
+    },
+    {
+      "front": "父",
+      "kept": {
+        "file": "japanese/n5/family.json",
+        "id": "abc6978f-be59-40f0-90d9-0fc48db24709",
+        "position": 1
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "fa32a44a-c149-4497-a3d9-51ca77dacfc0",
+          "position": 58
+        }
+      ]
+    },
+    {
+      "front": "母",
+      "kept": {
+        "file": "japanese/n5/family.json",
+        "id": "61315808-02f0-441d-8851-b546b64b8513",
+        "position": 2
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "e5676081-0cb3-40c7-bc76-d3fb67a4059a",
+          "position": 59
+        }
+      ]
+    },
+    {
+      "front": "子",
+      "kept": {
+        "file": "japanese/n5/family.json",
+        "id": "573847e0-b68e-43e2-b79b-552d6341138b",
+        "position": 10
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "8c3c7307-ed84-422a-b943-d0b71ba39cde",
+          "position": 19
+        }
+      ]
+    },
+    {
+      "front": "水",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "a0000000-0000-0000-0000-000000000006",
+        "position": 0
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "ed8523f8-db79-4c0e-8845-d9b004387a51",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "front": "牛乳",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "a9d505fb-c6a7-41f6-923e-9625e5c5b6b1",
+        "position": 7
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/food.json",
+          "id": "a4b73e0d-829a-420c-af30-cc2872c068a0",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "front": "料理",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "d07f40ac-c457-487f-96c2-68ddbde1355d",
+        "position": 17
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/food.json",
+          "id": "f4145a7d-78e5-48ee-acaa-aace29d67a09",
+          "position": 31
+        }
+      ]
+    },
+    {
+      "front": "食堂",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "24ade3de-4d8b-4db7-a8d7-fbba76e4b077",
+        "position": 18
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/food.json",
+          "id": "4e8b3e7f-5757-4610-b444-33f2f7a8bab0",
+          "position": 28
+        }
+      ]
+    },
+    {
+      "front": "円",
+      "kept": {
+        "file": "japanese/n5/food.json",
+        "id": "80507380-1d4d-4f56-94c5-e6f63f62b4e1",
+        "position": 20
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/shopping.json",
+          "id": "ea1088d0-e79d-423d-9460-773886014ba3",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "front": "何",
+      "kept": {
+        "file": "japanese/n5/introductions.json",
+        "id": "a0000000-0000-0000-0000-000000000029",
+        "position": 5
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/numbers.json",
+          "id": "4edfda79-2638-4e57-9f57-f1bb0f4b91f8",
+          "position": 14
+        }
+      ]
+    },
+    {
+      "front": "いくら",
+      "kept": {
+        "file": "japanese/n5/introductions.json",
+        "id": "2a93ebb2-bbb7-42e1-97a2-ced98ba34fbe",
+        "position": 11
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/shopping.json",
+          "id": "9475d6c4-dcc4-4ead-9a27-907abba68ccf",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "front": "いくつ",
+      "kept": {
+        "file": "japanese/n5/introductions.json",
+        "id": "4c726649-d6d5-4401-9cc4-f7b42788eff5",
+        "position": 12
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/numbers.json",
+          "id": "d8c6d4e1-8d6a-452b-8e2c-0f28ff8780f9",
+          "position": 29
+        }
+      ]
+    },
+    {
+      "front": "ここ",
+      "kept": {
+        "file": "japanese/n5/introductions.json",
+        "id": "46055d04-47e3-4947-b9fd-b61e607c5472",
+        "position": 15
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "796190fe-9438-4ed3-9fd2-41d4aa2047f2",
+          "position": 30
+        }
+      ]
+    },
+    {
+      "front": "そこ",
+      "kept": {
+        "file": "japanese/n5/introductions.json",
+        "id": "b313684a-9692-483b-8070-04a6b3050947",
+        "position": 16
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "2ee668da-df05-4fac-a342-0a975b7a93cc",
+          "position": 31
+        }
+      ]
+    },
+    {
+      "front": "あそこ",
+      "kept": {
+        "file": "japanese/n5/introductions.json",
+        "id": "7f89d583-20c5-46cf-a40e-1643510def1f",
+        "position": 17
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "3f4d8704-4dd5-40a2-b042-4fb803b6383c",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "front": "人",
+      "kept": {
+        "file": "japanese/n5/numbers.json",
+        "id": "770da8ce-9afa-4874-85d8-ba96bc64c329",
+        "position": 18
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "3737f07e-e839-48d1-9614-85213f19faf5",
+          "position": 10
+        }
+      ]
+    },
+    {
+      "front": "校",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "fbd73675-0bfd-4ca0-9fe2-83e8086ea10a",
+        "position": 21
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "b3a382a9-046d-4f78-ac3b-274a9489d6c7",
+          "position": 84
+        }
+      ]
+    },
+    {
+      "front": "本",
+      "kept": {
+        "file": "japanese/n5/school.json",
+        "id": "a0000000-0000-0000-0000-000000000005",
+        "position": 3
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/shopping.json",
+          "id": "e46efb6b-f95a-47ef-86c1-30df5fb5128d",
+          "position": 18
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "9d5c8c34-32af-427a-ae7b-3684d6930090",
+          "position": 26
+        }
+      ]
+    },
+    {
+      "front": "中",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "cc7a4e4d-75ed-4ef6-ac8c-cbdba8abca4b",
+        "position": 28
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "9bc06fb2-d7c6-4dc8-a8a9-b95dc8037f32",
+          "position": 29
+        }
+      ]
+    },
+    {
+      "front": "右",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "eb90a3b7-823e-4fc2-b85e-475287795a88",
+        "position": 15
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "9a611002-48b1-467b-806f-1596afd64bae",
+          "position": 26
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "b8b47283-1476-4bff-859d-326d4afe5690",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "front": "左",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "7c5f2639-e748-4b90-a656-b2c4a0ea2069",
+        "position": 16
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "3c59ab1b-6343-482f-aee9-40ca10a15a15",
+          "position": 27
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "27a6cfef-32a5-45bb-954b-21eb81b9b70b",
+          "position": 33
+        }
+      ]
+    },
+    {
+      "front": "東",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "ee0dad23-12f3-421c-a7d7-2235b4e7cc65",
+        "position": 34
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "edf2dc30-9b56-4a42-bcb9-5cea88eca8ce",
+          "position": 72
+        }
+      ]
+    },
+    {
+      "front": "西",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "b85fa392-af00-4c81-80b5-1d39622f023a",
+        "position": 35
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "c6fc7dcb-66f4-41a5-b3f6-e20cbf495727",
+          "position": 73
+        }
+      ]
+    },
+    {
+      "front": "南",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "69b2e539-e3ce-4f60-9ef4-03346e391000",
+        "position": 36
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "684742b7-bfa6-48ee-a1a7-ad6e34b7c237",
+          "position": 74
+        }
+      ]
+    },
+    {
+      "front": "北",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "0c418429-e6bb-4b8e-a000-c362d8926101",
+        "position": 37
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "a94764b0-76d9-4cee-8e18-2714b8c16e40",
+          "position": 75
+        }
+      ]
+    },
+    {
+      "front": "外",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "07a23afe-a089-427b-b66b-6305a690f5c4",
+        "position": 29
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "6b592670-3dd1-40c0-8563-ed7fe86ea0ba",
+          "position": 38
+        }
+      ]
+    },
+    {
+      "front": "車",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "a0000000-0000-0000-0000-000000000009",
+        "position": 0
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "a70ae51e-d1b9-4dd8-a02e-e6ef7e9a8b7f",
+          "position": 43
+        },
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "8f0bfb15-6164-4a2c-be05-e2a358696ab9",
+          "position": 53
+        }
+      ]
+    },
+    {
+      "front": "草",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "4dde6cea-2b0f-49e1-b51a-cea8c4d28497",
+        "position": 48
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "14178e58-8fe4-4f39-bbe6-f0d894bb7cce",
+          "position": 68
+        }
+      ]
+    },
+    {
+      "front": "町",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "e090d699-c490-46ad-ac3c-1163f5552f12",
+        "position": 4
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "83b0f24f-ddde-4ba1-90ba-0d7695840021",
+          "position": 51
+        }
+      ]
+    },
+    {
+      "front": "村",
+      "kept": {
+        "file": "japanese/n5/places.json",
+        "id": "838654b4-6145-494c-9619-42bf7be76a58",
+        "position": 6
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "0d1ff4fa-e409-4824-a1fe-d128d70d10a3",
+          "position": 52
+        }
+      ]
+    },
+    {
+      "front": "社",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "99790322-1af7-44c7-97da-f4d106c94b31",
+        "position": 55
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "f7a11fe3-4d6a-4935-8db0-5d9f98e3d107",
+          "position": 81
+        }
+      ]
+    },
+    {
+      "front": "会",
+      "kept": {
+        "file": "japanese/n5/kanji.json",
+        "id": "15ab2e3f-473e-4577-9d6f-35f284816aee",
+        "position": 56
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/kanji.json",
+          "id": "fe57801b-18b7-4285-bbc2-d737541826ef",
+          "position": 82
+        }
+      ]
+    },
+    {
+      "front": "図書館",
+      "kept": {
+        "file": "japanese/n5/school.json",
+        "id": "8811072b-eb9d-4b62-919a-bc001b12c997",
+        "position": 24
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "b9feb524-6a95-4390-8084-e1c9690ee08f",
+          "position": 20
+        }
+      ]
+    },
+    {
+      "front": "入口",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "bba8ac25-85ee-42be-8756-0dbd5fa99b05",
+        "position": 27
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "6e4929a3-c398-4309-a2ef-5a79e50552f3",
+          "position": 24
+        }
+      ]
+    },
+    {
+      "front": "出口",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "ee4e7948-f552-4fe0-b39c-596159c3f413",
+        "position": 28
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/places.json",
+          "id": "6430dc50-bd5e-4616-b3fd-7f3505976ac5",
+          "position": 25
+        }
+      ]
+    },
+    {
+      "front": "乗る",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "1cc06bdb-797f-47da-b7ad-79ed1f87071e",
+        "position": 18
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/verbs.json",
+          "id": "cc103e3c-ffc0-40e3-8566-8e5ed2f4667c",
+          "position": 44
+        }
+      ]
+    },
+    {
+      "front": "降りる",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "70fb529c-90b8-4365-bd55-813da5a3a784",
+        "position": 19
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/verbs.json",
+          "id": "8f5d148b-6c80-4491-8313-79e88a87b980",
+          "position": 45
+        }
+      ]
+    },
+    {
+      "front": "歩く",
+      "kept": {
+        "file": "japanese/n5/transportation.json",
+        "id": "7ebe5fc0-6eb9-4e41-9720-3843eec00baf",
+        "position": 20
+      },
+      "removed": [
+        {
+          "file": "japanese/n5/verbs.json",
+          "id": "6d5fe2fc-3f45-4b6e-b7a6-00dd630ce206",
+          "position": 17
+        }
+      ]
+    }
+  ]
+}
