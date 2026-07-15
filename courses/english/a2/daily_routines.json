@@ -9,303 +9,207 @@
   "cards": [
     {
       "id": "d5cc175d-a47e-4d06-b036-712bb1b4c974",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Wake up</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To stop sleeping and become awake.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 0
     },
     {
       "id": "4416a7d6-821a-4513-8855-2af6601948bf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Get up</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To rise from bed.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 1
     },
     {
       "id": "2dfac5a3-6511-4a95-8a27-7dbc7e06a361",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Take a shower</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To wash your body under a shower.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 2
     },
     {
       "id": "aadbac5f-5e01-45dd-8fbb-098ca5983aac",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Get dressed</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To put on clothes.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 3
     },
     {
       "id": "eb519e5e-5c38-4da0-b9fa-4c99bbe17ef5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Have breakfast</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To eat the first meal of the day.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 4
     },
     {
       "id": "08cdee0a-64f1-44de-a013-d2767066945e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Brush teeth</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To clean your teeth with a toothbrush.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 5
     },
     {
       "id": "557dd39f-092d-4db8-9fae-55081c96e608",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Go to work</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To leave for the place where you are employed.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 6
     },
     {
       "id": "460e84d0-e737-448e-8c30-6edccb2272b5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Start work</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To begin your daily job tasks.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 7
     },
     {
       "id": "a69c4ba7-7b8c-453e-a2a1-873037c4c601",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Have lunch</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To eat the meal in the middle of the day.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 8
     },
     {
       "id": "be12ec29-22d3-48b5-8e6f-5a7ec348d0cb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Finish work</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To stop working for the day.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 9
     },
     {
       "id": "58ea2197-8d38-4d6b-a4f3-eb7bf0b33f78",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Get home</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To arrive at your house.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 10
     },
     {
       "id": "23a351c6-433b-4094-ae54-2f71ef72a1c9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Cook dinner</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To prepare the evening meal.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 11
     },
     {
       "id": "72c6059f-c719-4b65-b45f-33fbd5f9985b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Have dinner</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To eat the evening meal.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 12
     },
     {
       "id": "c0d34b95-cad3-4f38-9775-5c7720e53c1f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Watch TV</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To look at television programs.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 13
     },
     {
       "id": "9c04f888-ea34-4cd4-b6bb-6da4dfa4a0ab",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Read a book</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To look at and comprehend the written words in a book.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 14
     },
     {
       "id": "98bcb644-8478-4067-9ef0-9f2187cd0c72",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Go to bed</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To get into bed to sleep.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 15
     },
     {
       "id": "13c6249e-1b43-485f-83bf-cd5d279f04a0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Sleep</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To rest your body and mind during the night.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb</div>",
       "position": 16
     },
     {
       "id": "5fa2a695-4ba1-42a1-bffc-8a1d9c886750",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Usually</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Under normal conditions; most of the time.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adverb</div>",
       "position": 17
     },
     {
       "id": "5ba7beb1-f52c-4e5b-9e9e-7d913159e1a7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Always</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>At all times; on every occasion.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adverb</div>",
       "position": 18
     },
     {
       "id": "69671b46-a827-48cb-8a53-d9d851aaa8b1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Sometimes</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Occasionally, but not always.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adverb</div>",
       "position": 19
     },
     {
       "id": "0812eacd-fc5a-44f9-9c72-b54df83dd127",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Never</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Not at any time.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adverb</div>",
       "position": 20
     },
     {
-      "id": "44f494a6-7f02-4a3a-810e-dc1a8423891b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "c9f1cfaa-b346-4bd2-a04d-82b828768066",
+      "front": "<div class=\"text-6xl font-bold text-center\">Every day</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Each day; daily.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adverbial phrase</div>",
       "position": 21
     },
     {
-      "id": "39136071-fd7e-4e4a-b5f0-1705289959ce",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "f2f835b7-88bd-403d-a576-4b5c1b8bd49b",
+      "front": "<div class=\"text-6xl font-bold text-center\">At the weekend</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>During Saturday and Sunday.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adverbial phrase</div>",
       "position": 22
     },
     {
-      "id": "cd9cbdd5-4d96-4f68-8284-9ab671776f8a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "c32f6f63-cdff-4a1c-a91c-0d6db1c17163",
+      "front": "<div class=\"text-6xl font-bold text-center\">Relax</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To rest or engage in an enjoyable activity.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb</div>",
       "position": 23
     },
     {
-      "id": "60c9175a-9ba5-4a6e-9806-201f7b61ae6f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "c4a3dd34-c8ff-48f7-af87-c64a6e642b8b",
+      "front": "<div class=\"text-6xl font-bold text-center\">Study</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To learn about a subject.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb</div>",
       "position": 24
     },
     {
-      "id": "c9f1cfaa-b346-4bd2-a04d-82b828768066",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "5101a1df-27e8-4882-8941-f53bc45cc78f",
+      "front": "<div class=\"text-6xl font-bold text-center\">Do housework</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To perform chores like cleaning.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 25
     },
     {
-      "id": "f2f835b7-88bd-403d-a576-4b5c1b8bd49b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "7b4469b1-75a3-45ea-973d-093c61ab1ba7",
+      "front": "<div class=\"text-6xl font-bold text-center\">Shopping</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The activity of buying things.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Noun</div>",
       "position": 26
     },
     {
-      "id": "c32f6f63-cdff-4a1c-a91c-0d6db1c17163",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "b0defcf4-d400-42af-904a-90b6501c17fd",
+      "front": "<div class=\"text-6xl font-bold text-center\">Meet friends</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To see and talk to friends.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 27
     },
     {
-      "id": "225be936-6c14-423e-bea2-0a0379f32d38",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "ce46f5dd-10f7-4d11-84d1-daea9fc95226",
+      "front": "<div class=\"text-6xl font-bold text-center\">Listen to music</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To hear and pay attention to music.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 28
     },
     {
-      "id": "c4a3dd34-c8ff-48f7-af87-c64a6e642b8b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "d8b6e7f8-e7f6-4c70-a0aa-c0adff60752e",
+      "front": "<div class=\"text-6xl font-bold text-center\">Computer games</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Games played on a computer or console.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Noun</div>",
       "position": 29
     },
     {
-      "id": "5101a1df-27e8-4882-8941-f53bc45cc78f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "fc7d87a5-919c-4569-922a-c320e2ce86ef",
+      "front": "<div class=\"text-6xl font-bold text-center\">Check email</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To look at your electronic messages.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 30
     },
     {
-      "id": "7b4469b1-75a3-45ea-973d-093c61ab1ba7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "3a8ef2a2-3ae0-45a7-bf7a-041d799ffd76",
+      "front": "<div class=\"text-6xl font-bold text-center\">Talk on the phone</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To have a conversation using a phone.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb phrase</div>",
       "position": 31
     },
     {
-      "id": "b0defcf4-d400-42af-904a-90b6501c17fd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "b7d50f8e-8e4e-4c18-9ba5-5d0e51f26489",
+      "front": "<div class=\"text-6xl font-bold text-center\">Drive</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To operate a vehicle.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb</div>",
       "position": 32
     },
     {
-      "id": "ce46f5dd-10f7-4d11-84d1-daea9fc95226",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 33
-    },
-    {
-      "id": "d8b6e7f8-e7f6-4c70-a0aa-c0adff60752e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 34
-    },
-    {
-      "id": "fc7d87a5-919c-4569-922a-c320e2ce86ef",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 35
-    },
-    {
-      "id": "3a8ef2a2-3ae0-45a7-bf7a-041d799ffd76",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 36
-    },
-    {
-      "id": "b7d50f8e-8e4e-4c18-9ba5-5d0e51f26489",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 37
-    },
-    {
-      "id": "008d7224-6dc4-41bf-b9f5-cc7d24b8d315",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 38
-    },
-    {
       "id": "acaa3ff0-20b2-4bbb-a9b9-8735b42ba439",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 39
-    },
-    {
-      "id": "a9250be4-b6c6-42c4-a117-1eaab8bc3df0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 40
-    },
-    {
-      "id": "82fc501a-1f8e-4378-bded-539753524dde",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 41
-    },
-    {
-      "id": "54815b18-32f0-47a6-83ef-af1563111d04",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 42
-    },
-    {
-      "id": "15f305cc-2cf0-46bf-a303-82a8887fbc10",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 43
-    },
-    {
-      "id": "efea43a6-e61b-4589-9da8-de91036855a9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 44
-    },
-    {
-      "id": "e3e8d1bb-570e-47f9-856e-2afc6f6551a0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 45
-    },
-    {
-      "id": "374f25f5-d95e-4a14-a6e3-b7e00a3c1244",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 46
-    },
-    {
-      "id": "fcea3a59-730d-437a-acc5-5a2aacd7b13b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 47
-    },
-    {
-      "id": "1ed3574b-6eb0-475a-9177-7543039826a9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 48
-    },
-    {
-      "id": "3d840b74-939e-4b99-ae71-7ff00e69d5b0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 49
+      "front": "<div class=\"text-6xl font-bold text-center\">Busy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Having a lot to do; occupied.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
+      "position": 33
     }
   ]
 }

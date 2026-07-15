@@ -9,303 +9,177 @@
   "cards": [
     {
       "id": "e8dc69d8-9acb-488c-8a6e-0cfaf9a07486",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">La película</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The movie</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">La película (La pe-lí-cu-la)</div>",
       "position": 0
     },
     {
-      "id": "c7ec931f-91ae-4128-af04-f67f441f8e57",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "5fe49297-dc3c-4649-a36f-f2b549d19f93",
+      "front": "<div class=\"text-6xl font-bold text-center\">La noticia</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The news</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">La noticia (La no-ti-cia)</div>",
       "position": 1
     },
     {
-      "id": "5fe49297-dc3c-4649-a36f-f2b549d19f93",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "10fdd139-0899-436f-9be2-92e704536564",
+      "front": "<div class=\"text-6xl font-bold text-center\">El periódico</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The newspaper</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El periódico (El pe-rió-di-co)</div>",
       "position": 2
     },
     {
-      "id": "10fdd139-0899-436f-9be2-92e704536564",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "89672b7b-37f8-44a8-be51-5bb8caee0734",
+      "front": "<div class=\"text-6xl font-bold text-center\">La televisión</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The television</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">La televisión (La te-le-vi-sión)</div>",
       "position": 3
     },
     {
-      "id": "89672b7b-37f8-44a8-be51-5bb8caee0734",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "46ef1e53-74a3-47bf-8539-9a07f7da9cc3",
+      "front": "<div class=\"text-6xl font-bold text-center\">El programa</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The program</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El programa (El pro-gra-ma)</div>",
       "position": 4
     },
     {
-      "id": "46ef1e53-74a3-47bf-8539-9a07f7da9cc3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "c6480d9e-a038-454f-9ef3-414446eeb778",
+      "front": "<div class=\"text-6xl font-bold text-center\">Internet</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The internet</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Internet (In-ter-net)</div>",
       "position": 5
     },
     {
-      "id": "c6480d9e-a038-454f-9ef3-414446eeb778",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "758dc163-75b9-4ed3-81f5-b3787641a071",
+      "front": "<div class=\"text-6xl font-bold text-center\">La revista</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The magazine</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">La revista (La re-vis-ta)</div>",
       "position": 6
     },
     {
-      "id": "758dc163-75b9-4ed3-81f5-b3787641a071",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "3d333c69-3542-46a1-896b-f9cec888afb9",
+      "front": "<div class=\"text-6xl font-bold text-center\">El artículo</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The article</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El artículo (El ar-tí-cu-lo)</div>",
       "position": 7
     },
     {
-      "id": "3d333c69-3542-46a1-896b-f9cec888afb9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "3bb955a8-5dad-4e6f-b770-62629431659d",
+      "front": "<div class=\"text-6xl font-bold text-center\">Publicar</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To publish</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Publicar (Pu-bli-car)</div>",
       "position": 8
     },
     {
-      "id": "f3ac8290-5a5e-4527-a71c-476b10986703",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "49c58ab3-2e8a-45f8-b9d3-9e656e4726d7",
+      "front": "<div class=\"text-6xl font-bold text-center\">El entretenimiento</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Entertainment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El entretenimiento (El en-tre-te-ni-mien-to)</div>",
       "position": 9
     },
     {
-      "id": "3bb955a8-5dad-4e6f-b770-62629431659d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "13c78999-edbd-4c48-adc1-ab28b121afec",
+      "front": "<div class=\"text-6xl font-bold text-center\">La red social</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Social network</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">La red social (La red so-cial)</div>",
       "position": 10
     },
     {
-      "id": "2a77aea4-b17a-40c7-874e-1376f50e5977",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "5d348ac2-5da8-4a15-8fae-4b3a05e0e53a",
+      "front": "<div class=\"text-6xl font-bold text-center\">Comentar</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To comment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Comentar (Co-men-tar)</div>",
       "position": 11
     },
     {
-      "id": "71d2fca3-e6d0-4eaa-abec-4bf43b2fdd15",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "7aa6a39d-2672-4849-8b91-dab4811ec4ac",
+      "front": "<div class=\"text-6xl font-bold text-center\">El actor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The actor</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El actor (El ac-tor)</div>",
       "position": 12
     },
     {
-      "id": "bee78c5b-d33f-4659-8e2a-e441c7e45fc6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "701e4a33-b789-4e6c-8037-1c23097701d0",
+      "front": "<div class=\"text-6xl font-bold text-center\">La actriz</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The actress</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">La actriz (La ac-triz)</div>",
       "position": 13
     },
     {
-      "id": "f6c6ea5a-353d-4ea9-9471-abc4662c838b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "990e9156-7d2c-4965-874b-8ad6f065f31a",
+      "front": "<div class=\"text-6xl font-bold text-center\">La crítica</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The review / critique</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">La crítica (La crí-ti-ca)</div>",
       "position": 14
     },
     {
-      "id": "49c58ab3-2e8a-45f8-b9d3-9e656e4726d7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "aca68997-c274-46e8-ad83-8a7e3a6e4cbd",
+      "front": "<div class=\"text-6xl font-bold text-center\">El estreno</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The premiere</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El estreno (El es-tre-no)</div>",
       "position": 15
     },
     {
-      "id": "13c78999-edbd-4c48-adc1-ab28b121afec",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "290c3d49-3569-44b4-a129-1536b8d58f66",
+      "front": "<div class=\"text-6xl font-bold text-center\">El género</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The genre</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El género (El gé-ne-ro)</div>",
       "position": 16
     },
     {
-      "id": "1cf642a0-3cf9-45e1-8d23-ff9f02766322",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "eed56b2a-378f-4d90-9563-95e49358aa28",
+      "front": "<div class=\"text-6xl font-bold text-center\">El autor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The author</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El autor (El au-tor)</div>",
       "position": 17
     },
     {
-      "id": "5d348ac2-5da8-4a15-8fae-4b3a05e0e53a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "526f39bc-6cdf-4193-87e9-d199b65dbb93",
+      "front": "<div class=\"text-6xl font-bold text-center\">La novela</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The novel</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">La novela (La no-ve-la)</div>",
       "position": 18
     },
     {
-      "id": "7aa6a39d-2672-4849-8b91-dab4811ec4ac",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "81597f52-cde6-4b53-ae1a-34e739d4c619",
+      "front": "<div class=\"text-6xl font-bold text-center\">El capítulo</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The chapter</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El capítulo (El ca-pí-tu-lo)</div>",
       "position": 19
     },
     {
-      "id": "701e4a33-b789-4e6c-8037-1c23097701d0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "341b5dbd-6183-4aa5-8c33-b988b478c002",
+      "front": "<div class=\"text-6xl font-bold text-center\">La imagen</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The image / picture</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">La imagen (La i-ma-gen)</div>",
       "position": 20
     },
     {
-      "id": "990e9156-7d2c-4965-874b-8ad6f065f31a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "2d52fc12-a6e0-4e1a-8969-a256cd071b7b",
+      "front": "<div class=\"text-6xl font-bold text-center\">El medio</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The medium / media</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El medio (El me-dio)</div>",
       "position": 21
     },
     {
-      "id": "aca68997-c274-46e8-ad83-8a7e3a6e4cbd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "da0273b2-f9a6-4ec9-a784-d660b7ffdad1",
+      "front": "<div class=\"text-6xl font-bold text-center\">Informar</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To inform</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Informar (In-for-mar)</div>",
       "position": 22
     },
     {
-      "id": "290c3d49-3569-44b4-a129-1536b8d58f66",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "b7cb75df-d89d-4ca5-9301-47ffec9f42f7",
+      "front": "<div class=\"text-6xl font-bold text-center\">El documental</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The documentary</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El documental (El do-cu-men-tal)</div>",
       "position": 23
     },
     {
-      "id": "3fe1868e-8089-4478-bf21-1d133b017783",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "69ff8498-233b-4e5a-8e92-e9c89f9a0633",
+      "front": "<div class=\"text-6xl font-bold text-center\">Descargar</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To download</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Descargar (Des-car-gar)</div>",
       "position": 24
     },
     {
-      "id": "eed56b2a-378f-4d90-9563-95e49358aa28",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "281c1260-97e9-449c-80f3-f8ef2b32168a",
+      "front": "<div class=\"text-6xl font-bold text-center\">Subir</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To upload / go up</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Subir (Su-bir)</div>",
       "position": 25
     },
     {
-      "id": "526f39bc-6cdf-4193-87e9-d199b65dbb93",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "1ae59b24-e1cd-47e6-8c2f-6391929ebd4e",
+      "front": "<div class=\"text-6xl font-bold text-center\">El usuario</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The user</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El usuario (El u-su-a-rio)</div>",
       "position": 26
     },
     {
-      "id": "81597f52-cde6-4b53-ae1a-34e739d4c619",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "cb4ce552-da66-4500-a5d9-0694752c3f6e",
+      "front": "<div class=\"text-6xl font-bold text-center\">El anuncio</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The advertisement</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">El anuncio (El a-nun-cio)</div>",
       "position": 27
     },
     {
-      "id": "341b5dbd-6183-4aa5-8c33-b988b478c002",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 28
-    },
-    {
-      "id": "2d52fc12-a6e0-4e1a-8969-a256cd071b7b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 29
-    },
-    {
-      "id": "da0273b2-f9a6-4ec9-a784-d660b7ffdad1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 30
-    },
-    {
-      "id": "c70df0c5-7516-4031-9f60-89a51a04f44c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 31
-    },
-    {
-      "id": "b7cb75df-d89d-4ca5-9301-47ffec9f42f7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 32
-    },
-    {
-      "id": "b4a8f5d4-1f77-45a9-9266-c927adf5e621",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 33
-    },
-    {
-      "id": "69ff8498-233b-4e5a-8e92-e9c89f9a0633",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 34
-    },
-    {
-      "id": "281c1260-97e9-449c-80f3-f8ef2b32168a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 35
-    },
-    {
-      "id": "1ae59b24-e1cd-47e6-8c2f-6391929ebd4e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 36
-    },
-    {
-      "id": "cb4ce552-da66-4500-a5d9-0694752c3f6e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 37
-    },
-    {
       "id": "5e10e7c4-57ae-4ec7-a745-a62d6deeb4f9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 38
-    },
-    {
-      "id": "8f213e26-74b3-443e-8984-2617e6272238",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 39
-    },
-    {
-      "id": "c6d8a849-def5-4309-a125-0cb5980dee83",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 40
-    },
-    {
-      "id": "5674954b-f9be-4db1-a019-b3d194669520",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 41
-    },
-    {
-      "id": "7fe87a5a-112d-4856-8391-217cfc2fe484",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 42
-    },
-    {
-      "id": "27f98b85-4ff4-4afc-a07d-8ce9c111838f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 43
-    },
-    {
-      "id": "d9070a23-bf5d-4835-91c8-bb274a0ba08a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 44
-    },
-    {
-      "id": "993a2f29-8bf5-416f-b096-f3bb1a24444d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 45
-    },
-    {
-      "id": "7b75467d-c53a-499b-8a71-fb390150632d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 46
-    },
-    {
-      "id": "5ee3dd32-5e7b-4d59-97ab-050b3df159d9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 47
-    },
-    {
-      "id": "fb540c88-a5f5-4b78-a7fa-9c88b16f4506",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 48
-    },
-    {
-      "id": "8a4d909e-8fe0-4c6d-a4ea-cf14b03b0618",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 49
+      "front": "<div class=\"text-6xl font-bold text-center\">La opinión</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The opinion</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">La opinión (La o-pi-nión)</div>",
+      "position": 28
     }
   ]
 }

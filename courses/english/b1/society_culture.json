@@ -9,303 +9,231 @@
   "cards": [
     {
       "id": "5c20728d-585a-4aba-941d-8724ed39fe08",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Ancestry</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The family or ethnic descent of an individual.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈænsestri/</div>",
       "position": 0
     },
     {
       "id": "0ad15075-95ae-46e0-8c6a-b37ee53e6e6a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Belief</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An acceptance that a statement is true or that something exists.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/bɪˈliːf/</div>",
       "position": 1
     },
     {
-      "id": "1c4c0d74-6a8a-42f7-9703-33317a1405aa",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "3c9435db-fac2-4394-8407-c684c17bdb1e",
+      "front": "<div class=\"text-6xl font-bold text-center\">Ceremony</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A formal religious or public occasion, typically one celebrating a particular event or anniversary.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈserəməni/</div>",
       "position": 2
     },
     {
-      "id": "3c9435db-fac2-4394-8407-c684c17bdb1e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "6bda33ce-7114-49e5-9d33-0d9036628919",
+      "front": "<div class=\"text-6xl font-bold text-center\">Citizen</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A legally recognized subject or national of a state or commonwealth, either native or naturalized.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsɪtɪzn/</div>",
       "position": 3
     },
     {
-      "id": "6bda33ce-7114-49e5-9d33-0d9036628919",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "7da525b5-826c-492e-a6d8-a0e2c1c3113c",
+      "front": "<div class=\"text-6xl font-bold text-center\">Community</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A group of people living in the same place or having a particular characteristic in common.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kəˈmjuːnəti/</div>",
       "position": 4
     },
     {
-      "id": "7da525b5-826c-492e-a6d8-a0e2c1c3113c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "6e354bcc-3b65-45bd-b365-cc226d4451e7",
+      "front": "<div class=\"text-6xl font-bold text-center\">Custom</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A traditional and widely accepted way of behaving or doing something that is specific to a particular society, place, or time.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkʌstəm/</div>",
       "position": 5
     },
     {
-      "id": "6e354bcc-3b65-45bd-b365-cc226d4451e7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "ddb48121-4a5b-488f-9e47-20ce60c5ec07",
+      "front": "<div class=\"text-6xl font-bold text-center\">Diversity</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The practice or quality of including or involving people from a range of different social and ethnic backgrounds.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/daɪˈvɜːsəti/</div>",
       "position": 6
     },
     {
-      "id": "ddb48121-4a5b-488f-9e47-20ce60c5ec07",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "a48babca-ebde-42a4-9c3d-261ad78a5019",
+      "front": "<div class=\"text-6xl font-bold text-center\">Ethnicity</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The fact or state of belonging to a social group that has a common national or cultural tradition.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/eθˈnɪsəti/</div>",
       "position": 7
     },
     {
-      "id": "a48babca-ebde-42a4-9c3d-261ad78a5019",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "ba9c3eb3-c563-4b4d-a81f-0f936365d417",
+      "front": "<div class=\"text-6xl font-bold text-center\">Family tree</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A diagram showing the relationships between people in several generations of a family.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈfæməli triː/</div>",
       "position": 8
     },
     {
-      "id": "ba9c3eb3-c563-4b4d-a81f-0f936365d417",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "ab2986bc-8d08-4d5a-982d-7e024f31537c",
+      "front": "<div class=\"text-6xl font-bold text-center\">Generation</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>All of the people born and living at about the same time, regarded collectively.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌdʒenəˈreɪʃn/</div>",
       "position": 9
     },
     {
-      "id": "4b80dd10-65b3-4135-a458-3487b5c02635",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "d7e4054b-039e-4d32-a6ff-fcd006c7c88f",
+      "front": "<div class=\"text-6xl font-bold text-center\">Heritage</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Property that is or may be inherited; valued objects and qualities such as cultural traditions passed down from previous generations.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈherɪtɪdʒ/</div>",
       "position": 10
     },
     {
-      "id": "ab2986bc-8d08-4d5a-982d-7e024f31537c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "5444322a-6f9d-40fe-af5e-506f7dc935c3",
+      "front": "<div class=\"text-6xl font-bold text-center\">Identity</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The fact of being who or what a person or thing is.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪˈdentəti/</div>",
       "position": 11
     },
     {
-      "id": "d7e4054b-039e-4d32-a6ff-fcd006c7c88f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "cac49a5c-5d0f-49b8-a134-805b7a56f6a1",
+      "front": "<div class=\"text-6xl font-bold text-center\">Immigration</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The action of coming to live permanently in a foreign country.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌɪmɪˈɡreɪʃn/</div>",
       "position": 12
     },
     {
-      "id": "5444322a-6f9d-40fe-af5e-506f7dc935c3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "c410d8de-23e9-47bd-a3cb-905ef0f16dda",
+      "front": "<div class=\"text-6xl font-bold text-center\">Integration</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The action or process of integrating; the intermixing of people or groups previously segregated.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌɪntɪˈɡreɪʃn/</div>",
       "position": 13
     },
     {
-      "id": "cac49a5c-5d0f-49b8-a134-805b7a56f6a1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "5ab9e4cf-8848-47ba-87b8-70cda602f1a1",
+      "front": "<div class=\"text-6xl font-bold text-center\">Language</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The method of human communication, either spoken or written, consisting of the use of words in a structured and conventional way.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈlæŋɡwɪdʒ/</div>",
       "position": 14
     },
     {
-      "id": "c410d8de-23e9-47bd-a3cb-905ef0f16dda",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "237d050b-35fb-4b41-b06f-c1520fb84fb0",
+      "front": "<div class=\"text-6xl font-bold text-center\">Legacy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An amount of money or property left to someone in a will; something handed down from the past.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈleɡəsi/</div>",
       "position": 15
     },
     {
-      "id": "5ab9e4cf-8848-47ba-87b8-70cda602f1a1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "96b8d83e-d2f9-4ba5-8a39-40d0de724e01",
+      "front": "<div class=\"text-6xl font-bold text-center\">Marriage</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The legally or formally recognized union of two people as partners in a personal relationship.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmærɪdʒ/</div>",
       "position": 16
     },
     {
-      "id": "237d050b-35fb-4b41-b06f-c1520fb84fb0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "c68865c9-1dbf-4e52-a9d8-661d53f8cadb",
+      "front": "<div class=\"text-6xl font-bold text-center\">Migration</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The seasonal movement of animals from one region to another; the movement of people between countries or regions.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/maɪˈɡreɪʃn/</div>",
       "position": 17
     },
     {
-      "id": "96b8d83e-d2f9-4ba5-8a39-40d0de724e01",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "07102204-c1db-4ef8-a8f3-160f12a55512",
+      "front": "<div class=\"text-6xl font-bold text-center\">Multicultural</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Relating to or constituting several cultural or ethnic groups within a society.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌmʌltiˈkʌltʃərəl/</div>",
       "position": 18
     },
     {
-      "id": "c68865c9-1dbf-4e52-a9d8-661d53f8cadb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "198559c9-e92f-44b8-be9d-b11f23ff9a6e",
+      "front": "<div class=\"text-6xl font-bold text-center\">Norm</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Something that is usual, typical, or standard.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/nɔːm/</div>",
       "position": 19
     },
     {
-      "id": "07102204-c1db-4ef8-a8f3-160f12a55512",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "11ec8e58-c7ec-4542-afc8-14847b5875ef",
+      "front": "<div class=\"text-6xl font-bold text-center\">Origin</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The point or place where something begins, arises, or is derived.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈɒrɪdʒɪn/</div>",
       "position": 20
     },
     {
-      "id": "198559c9-e92f-44b8-be9d-b11f23ff9a6e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "85ef693c-d685-4c4a-b4cf-ad0471f00cc3",
+      "front": "<div class=\"text-6xl font-bold text-center\">Population</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>All the inhabitants of a particular town, area, or country.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌpɒpjuˈleɪʃn/</div>",
       "position": 21
     },
     {
-      "id": "11ec8e58-c7ec-4542-afc8-14847b5875ef",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "a05dd879-78d0-4892-829a-613ec20d9b4d",
+      "front": "<div class=\"text-6xl font-bold text-center\">Relationship</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The way in which two or more people or things are connected, or the state of being connected.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/rɪˈleɪʃnʃɪp/</div>",
       "position": 22
     },
     {
-      "id": "85ef693c-d685-4c4a-b4cf-ad0471f00cc3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "2e0f64dd-1f9e-4359-88bc-70d734e0c11a",
+      "front": "<div class=\"text-6xl font-bold text-center\">Religion</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The belief in and worship of a superhuman controlling power, especially a personal God or gods.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/rɪˈlɪdʒən/</div>",
       "position": 23
     },
     {
-      "id": "a05dd879-78d0-4892-829a-613ec20d9b4d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "449bf12e-5e36-4624-b964-fb51e1a99c0b",
+      "front": "<div class=\"text-6xl font-bold text-center\">Ritual</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A religious or solemn ceremony consisting of a series of actions performed according to a prescribed order.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈrɪtʃuəl/</div>",
       "position": 24
     },
     {
-      "id": "2e0f64dd-1f9e-4359-88bc-70d734e0c11a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "6d537e86-ca38-458d-8743-2c4042fd1b8c",
+      "front": "<div class=\"text-6xl font-bold text-center\">Social</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Relating to society or its organization.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsəʊʃl/</div>",
       "position": 25
     },
     {
-      "id": "449bf12e-5e36-4624-b964-fb51e1a99c0b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "b1a824df-6ae3-485e-a031-8a70e39510ad",
+      "front": "<div class=\"text-6xl font-bold text-center\">Society</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The aggregate of people living together in a more or less ordered community.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/səˈsaɪəti/</div>",
       "position": 26
     },
     {
-      "id": "6d537e86-ca38-458d-8743-2c4042fd1b8c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "1290879e-1092-46d2-a921-89725be0e65e",
+      "front": "<div class=\"text-6xl font-bold text-center\">Stereotype</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A widely held but fixed and oversimplified image or idea of a particular type of person or thing.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsteriətaɪp/</div>",
       "position": 27
     },
     {
-      "id": "b1a824df-6ae3-485e-a031-8a70e39510ad",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "b8e5d021-4518-42a8-9b79-9da3e9cc918c",
+      "front": "<div class=\"text-6xl font-bold text-center\">Tradition</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The transmission of customs or beliefs from generation to generation.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/trəˈdɪʃn/</div>",
       "position": 28
     },
     {
-      "id": "1290879e-1092-46d2-a921-89725be0e65e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "ffcc378d-fdf2-4bbb-a8c7-7eedf295bda9",
+      "front": "<div class=\"text-6xl font-bold text-center\">Urban</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Relating to, or characteristic of a town or city.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈɜːbən/</div>",
       "position": 29
     },
     {
-      "id": "b8e5d021-4518-42a8-9b79-9da3e9cc918c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "32ab0297-dc0d-4101-9aac-bb0a4612aeb5",
+      "front": "<div class=\"text-6xl font-bold text-center\">Values</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Principles or standards of behavior; one's judgment of what is important in life.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈvæljuːz/</div>",
       "position": 30
     },
     {
-      "id": "ffcc378d-fdf2-4bbb-a8c7-7eedf295bda9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "03e59f7b-de5e-4048-970b-34dd1cff9c08",
+      "front": "<div class=\"text-6xl font-bold text-center\">Youth</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The period between childhood and adult age.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/juːθ/</div>",
       "position": 31
     },
     {
-      "id": "32ab0297-dc0d-4101-9aac-bb0a4612aeb5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "2fd862af-1168-441c-8608-db5862bd6eeb",
+      "front": "<div class=\"text-6xl font-bold text-center\">Ancestor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person, typically one more remote than a grandparent, from whom one is descended.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈænsestə(r)/</div>",
       "position": 32
     },
     {
-      "id": "03e59f7b-de5e-4048-970b-34dd1cff9c08",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "5167e152-dd8f-4a0b-8214-a652537f1512",
+      "front": "<div class=\"text-6xl font-bold text-center\">Assimilation</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The process of taking in and fully understanding information or ideas; the process of becoming similar to others.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/əˌsɪməˈleɪʃn/</div>",
       "position": 33
     },
     {
-      "id": "2fd862af-1168-441c-8608-db5862bd6eeb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "f54365f6-0372-4baf-b320-c20a643bf4c3",
+      "front": "<div class=\"text-6xl font-bold text-center\">Clan</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A group of close-knit and interrelated families.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/klæn/</div>",
       "position": 34
     },
     {
-      "id": "5167e152-dd8f-4a0b-8214-a652537f1512",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "dd66ed35-c87c-47ca-bc13-784aec5f5005",
+      "front": "<div class=\"text-6xl font-bold text-center\">Culture</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The arts and other manifestations of human intellectual achievement regarded collectively.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkʌltʃə(r)/</div>",
       "position": 35
     },
     {
-      "id": "f54365f6-0372-4baf-b320-c20a643bf4c3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "efb63aaf-4fa2-43fc-8c3c-c18ac817be1e",
+      "front": "<div class=\"text-6xl font-bold text-center\">Folklore</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The traditional beliefs, customs, and stories of a community, passed through the generations by word of mouth.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈfəʊklɔː(r)/</div>",
       "position": 36
     },
     {
-      "id": "dd66ed35-c87c-47ca-bc13-784aec5f5005",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 37
-    },
-    {
-      "id": "efb63aaf-4fa2-43fc-8c3c-c18ac817be1e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 38
-    },
-    {
       "id": "ee296426-4e67-4f86-a799-ca321279fe95",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 39
-    },
-    {
-      "id": "2b0d99f3-9080-4726-bc03-6a717d4fe3f1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 40
-    },
-    {
-      "id": "cc303ae3-d76d-4a89-bf30-0c18bbc43337",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 41
-    },
-    {
-      "id": "e643dc9b-843d-477e-89eb-11da7506e8f6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 42
-    },
-    {
-      "id": "59fa0387-b868-4d16-bfa2-72c7d32f3850",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 43
-    },
-    {
-      "id": "60f5c55c-4d85-444f-a79d-0ba4ed5b7bc6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 44
-    },
-    {
-      "id": "4ce855a1-9146-42c4-aded-8e97260b8f37",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 45
-    },
-    {
-      "id": "849a6109-e797-4bd0-8d7a-d06c96e3f43d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 46
-    },
-    {
-      "id": "dd0c12ac-01a1-4748-9437-30e5e26c5293",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 47
-    },
-    {
-      "id": "196a8599-77ca-4175-8d4b-dda751e2e93f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 48
-    },
-    {
-      "id": "57a96149-139c-4d1a-b34b-a89dafb49183",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 49
+      "front": "<div class=\"text-6xl font-bold text-center\">Kinship</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Blood relationship; a sharing of characteristics or origins.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkɪnʃɪp/</div>",
+      "position": 37
     }
   ]
 }

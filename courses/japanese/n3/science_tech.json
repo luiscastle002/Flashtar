@@ -50,262 +50,250 @@
       "position": 6
     },
     {
-      "id": "fb017ac5-3ad9-46ba-93c6-1f018b289fdf",
-      "front": "<div class=\"text-6xl font-bold text-center\">情報</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Information</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じょうほう (Jouhou)</div>",
-      "position": 7
-    },
-    {
       "id": "5ffc7fe7-cd3f-40b5-8309-9d7ba2cd8faf",
       "front": "<div class=\"text-6xl font-bold text-center\">通信</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Communication / Telecommunications</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つうしん (Tsuushin)</div>",
-      "position": 8
+      "position": 7
     },
     {
       "id": "32fcba17-b65f-4ef6-a15f-8bc7facfe1bf",
       "front": "<div class=\"text-6xl font-bold text-center\">電子</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Electronic</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">でんし (Denshi)</div>",
-      "position": 9
+      "position": 8
     },
     {
       "id": "7d19b93a-506f-49eb-aa81-a856725e404b",
       "front": "<div class=\"text-6xl font-bold text-center\">実験</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Experiment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じっけん (Jikken)</div>",
-      "position": 10
+      "position": 9
     },
     {
       "id": "22150d24-0180-4e43-a68c-af1c07555666",
       "front": "<div class=\"text-6xl font-bold text-center\">発明</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Invention</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はつめい (Hatsumei)</div>",
-      "position": 11
+      "position": 10
     },
     {
       "id": "ee655cc8-c880-4d06-b089-3d021aedb975",
       "front": "<div class=\"text-6xl font-bold text-center\">データ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Data</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">でーた (Deeta)</div>",
-      "position": 12
+      "position": 11
     },
     {
       "id": "64178b3b-9854-4da8-8a76-d61ac20eb1b1",
       "front": "<div class=\"text-6xl font-bold text-center\">分析</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Analysis</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぶんせき (Bunseki)</div>",
-      "position": 13
+      "position": 12
     },
     {
       "id": "24e32c59-68b6-47de-9339-b1d5a724988d",
       "front": "<div class=\"text-6xl font-bold text-center\">デジタル</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Digital</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">でじたる (Dejitaru)</div>",
-      "position": 14
+      "position": 13
     },
     {
       "id": "5e79ae88-2605-425c-8ee0-f41142487913",
       "front": "<div class=\"text-6xl font-bold text-center\">ネットワーク</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Network</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ねっとわーく (Nettowaaku)</div>",
-      "position": 15
+      "position": 14
     },
     {
       "id": "5e60b47e-edf1-4333-a432-dc4eb52a0cd1",
       "front": "<div class=\"text-6xl font-bold text-center\">ロボット</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Robot</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ろぼっと (Robotto)</div>",
-      "position": 16
+      "position": 15
     },
     {
       "id": "32fa8564-d9e7-4f0e-9315-4b348acef33f",
       "front": "<div class=\"text-6xl font-bold text-center\">宇宙</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Space / Universe</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">うちゅう (Uchuu)</div>",
-      "position": 17
+      "position": 16
     },
     {
       "id": "4dfa78cc-3380-45e2-b087-dd2518d1e806",
       "front": "<div class=\"text-6xl font-bold text-center\">環境</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Environment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんきょう (Kankyou)</div>",
-      "position": 18
+      "position": 17
     },
     {
       "id": "63399765-cc5e-4a2b-9920-cf967038e5c2",
       "front": "<div class=\"text-6xl font-bold text-center\">進歩</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Progress / Advancement</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんぽ (Shinpo)</div>",
-      "position": 19
+      "position": 18
     },
     {
       "id": "b341286f-988d-408e-bd61-b8e88786e25c",
       "front": "<div class=\"text-6xl font-bold text-center\">効率</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Efficiency</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こうりつ (Kouritsu)</div>",
-      "position": 20
+      "position": 19
     },
     {
       "id": "f9daf09f-95f4-436b-b539-c43e5b1f00a1",
       "front": "<div class=\"text-6xl font-bold text-center\">最適</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Optimum / Best</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さいてき (Saiteki)</div>",
-      "position": 21
+      "position": 20
     },
     {
       "id": "3f61edfc-f32a-445a-8cdb-dd45280aac1c",
       "front": "<div class=\"text-6xl font-bold text-center\">検証</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Verification / Inspection</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けんしょう (Kenshou)</div>",
-      "position": 22
+      "position": 21
     },
     {
       "id": "52c03bb6-cd5d-4635-990f-e5fa95e9cb77",
       "front": "<div class=\"text-6xl font-bold text-center\">機能</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Function / Feature</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きのう (Kinou)</div>",
-      "position": 23
+      "position": 22
     },
     {
       "id": "4224734c-b62f-468a-8e60-b249f55c63da",
       "front": "<div class=\"text-6xl font-bold text-center\">設計</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Design / Plan</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せっけい (Sekkei)</div>",
-      "position": 24
+      "position": 23
     },
     {
       "id": "f5b77d7a-cc80-4fd2-bb1a-5b90f1675347",
       "front": "<div class=\"text-6xl font-bold text-center\">システム</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>System</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しすてむ (Shisutemu)</div>",
-      "position": 25
+      "position": 24
     },
     {
       "id": "399fcc5e-069f-4f26-82ef-7efbad82df10",
       "front": "<div class=\"text-6xl font-bold text-center\">性能</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Performance</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せいのう (Seinou)</div>",
-      "position": 26
+      "position": 25
     },
     {
       "id": "c1374253-e597-40e3-8e94-59ea66d1d8bf",
       "front": "<div class=\"text-6xl font-bold text-center\">最新</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Latest / Most modern</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さいしん (Saishin)</div>",
-      "position": 27
+      "position": 26
     },
     {
       "id": "48c7e6e2-9327-4fa0-9653-d995de2fc24d",
       "front": "<div class=\"text-6xl font-bold text-center\">高度</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Advanced / Sophisticated</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こうど (Koudo)</div>",
-      "position": 28
+      "position": 27
     },
     {
       "id": "865b3c88-29b4-471e-942a-ce47847012de",
       "front": "<div class=\"text-6xl font-bold text-center\">革新</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Innovation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かくしん (Kakushin)</div>",
-      "position": 29
+      "position": 28
     },
     {
       "id": "429a63b5-e608-4e2d-8df3-8bbf6a66113b",
       "front": "<div class=\"text-6xl font-bold text-center\">技術者</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Engineer / Technician</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぎじゅつしゃ (Gijutsusha)</div>",
-      "position": 30
+      "position": 29
     },
     {
       "id": "cba7fcd6-179d-40a8-b707-95d9ba9aec25",
       "front": "<div class=\"text-6xl font-bold text-center\">情報化</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Digitization / Informatization</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じょうほうか (Jouhouka)</div>",
-      "position": 31
+      "position": 30
     },
     {
       "id": "3942b61e-0410-4c60-a704-1b4eabff99d8",
       "front": "<div class=\"text-6xl font-bold text-center\">自動</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Automatic</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じどう (Jidou)</div>",
-      "position": 32
+      "position": 31
     },
     {
       "id": "44f90e2f-62f2-465a-8cf8-f8eaef14b7ad",
       "front": "<div class=\"text-6xl font-bold text-center\">制御</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Control / Regulation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せいぎょ (Seigyo)</div>",
-      "position": 33
+      "position": 32
     },
     {
       "id": "6dfb545b-ac30-4f03-bd09-3e97d3115185",
       "front": "<div class=\"text-6xl font-bold text-center\">回路</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Circuit</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かいろ (Kairo)</div>",
-      "position": 34
+      "position": 33
     },
     {
       "id": "761042a9-cda0-4680-9f56-3dc23e8a846e",
       "front": "<div class=\"text-6xl font-bold text-center\">部品</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Component / Part</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぶひん (Buhin)</div>",
-      "position": 35
+      "position": 34
     },
     {
       "id": "482de0a2-cad0-42fd-b506-81e4999953ec",
       "front": "<div class=\"text-6xl font-bold text-center\">計算</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Calculation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けいさん (Keisan)</div>",
-      "position": 36
+      "position": 35
     },
     {
       "id": "6b23163a-835f-42ac-90bd-87930b0afcaa",
       "front": "<div class=\"text-6xl font-bold text-center\">入力</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Input</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">にゅうりょく (Nyuuryoku)</div>",
-      "position": 37
+      "position": 36
     },
     {
       "id": "12e837b0-ca52-4420-a383-08daee00b22c",
       "front": "<div class=\"text-6xl font-bold text-center\">出力</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Output</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しゅつりょく (Shutsuryoku)</div>",
-      "position": 38
+      "position": 37
     },
     {
       "id": "cd9957b6-f90c-4178-bbed-f1b854dff4d2",
       "front": "<div class=\"text-6xl font-bold text-center\">記録</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Record</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きろく (Kiroku)</div>",
-      "position": 39
+      "position": 38
     },
     {
       "id": "fb1c1d4c-7229-4d4c-a744-b7e613e4ce7e",
       "front": "<div class=\"text-6xl font-bold text-center\">保存</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Save / Preservation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ほぞん (Hozon)</div>",
-      "position": 40
+      "position": 39
     },
     {
       "id": "e9259fc3-ff94-4b86-af75-7c380caa8369",
       "front": "<div class=\"text-6xl font-bold text-center\">共有</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sharing</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうゆう (Kyouyuu)</div>",
-      "position": 41
+      "position": 40
     },
     {
       "id": "1d121480-2914-4d06-9d77-a81514d61c46",
       "front": "<div class=\"text-6xl font-bold text-center\">暗号</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Code / Encryption</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あんごう (Angou)</div>",
-      "position": 42
+      "position": 41
     },
     {
       "id": "8f83eaba-6ef5-483a-81af-af7a2881badd",
       "front": "<div class=\"text-6xl font-bold text-center\">通信量</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Traffic / Data usage</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つうしんりょう (Tsuushinryou)</div>",
-      "position": 43
-    },
-    {
-      "id": "3c1e3222-c59b-4a2b-86a3-739502e75e12",
-      "front": "<div class=\"text-6xl font-bold text-center\">検索</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Search</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けんさく (Kensaku)</div>",
-      "position": 44
+      "position": 42
     },
     {
       "id": "61d2bff3-b019-42bf-82cf-5eb24df00e4e",
       "front": "<div class=\"text-6xl font-bold text-center\">設定</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Setting / Configuration</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せってい (Settei)</div>",
-      "position": 45
+      "position": 43
     },
     {
       "id": "ff16e2d9-25ca-421e-8bd8-4944f74d8597",
       "front": "<div class=\"text-6xl font-bold text-center\">起動</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Startup / Launch</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きどう (Kidou)</div>",
-      "position": 46
+      "position": 44
     },
     {
       "id": "7c1a25f1-366e-4028-b16d-b787868f1b50",
       "front": "<div class=\"text-6xl font-bold text-center\">更新</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Update</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こうしん (Koushin)</div>",
-      "position": 47
+      "position": 45
     },
     {
       "id": "8f2fb2be-9785-41f7-96ad-3d406fbb6fcf",
       "front": "<div class=\"text-6xl font-bold text-center\">接続</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Connection</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せつぞく (Setsuzoku)</div>",
-      "position": 48
+      "position": 46
     },
     {
       "id": "8bc2dd98-ba4e-4e9b-b762-532929bfd3aa",
       "front": "<div class=\"text-6xl font-bold text-center\">故障</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Breakdown / Failure</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こしょう (Koshou)</div>",
-      "position": 49
+      "position": 47
     }
   ]
 }

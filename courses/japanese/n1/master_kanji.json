@@ -140,172 +140,34 @@
       "position": 21
     },
     {
-      "id": "549c5470-2cde-406c-9cd5-1feee0e3f8cb",
-      "front": "<div class=\"text-6xl font-bold text-center\">綻</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Smile / Unraveling</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">hokorobu</div>",
-      "position": 22
-    },
-    {
       "id": "ffc65995-0083-4b99-80b9-84fedb2c8cb9",
       "front": "<div class=\"text-6xl font-bold text-center\">骸</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Corpse / Remains</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">mukuro</div>",
-      "position": 23
+      "position": 22
     },
     {
       "id": "03303d1a-1789-4ee3-916c-0f7755c9dc6f",
       "front": "<div class=\"text-6xl font-bold text-center\">瞭</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Clear</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ryō</div>",
-      "position": 24
+      "position": 23
     },
     {
       "id": "03054826-945b-4e3d-b1bf-305346c6d9f7",
       "front": "<div class=\"text-6xl font-bold text-center\">彙</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Classification</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">i</div>",
-      "position": 25
-    },
-    {
-      "id": "9f5054bc-e231-48ad-9759-c3df980eaf69",
-      "front": "<div class=\"text-6xl font-bold text-center\">曖</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cloudy / Obscure</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ai</div>",
-      "position": 26
-    },
-    {
-      "id": "53a78787-19bf-4ccc-9987-270eb00a7c1f",
-      "front": "<div class=\"text-6xl font-bold text-center\">蹂</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Trample</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">jū</div>",
-      "position": 27
+      "position": 24
     },
     {
       "id": "1b633b68-b821-46db-9942-f2ed32bcc4b7",
       "front": "<div class=\"text-6xl font-bold text-center\">喧</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Noisy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ken</div>",
-      "position": 28
+      "position": 25
     },
     {
       "id": "364df91c-3f06-42a6-89aa-c135efe80ec0",
       "front": "<div class=\"text-6xl font-bold text-center\">嘩</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Clamor</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ka</div>",
-      "position": 29
-    },
-    {
-      "id": "bb74f8d8-bfda-4f1c-8002-4766305488c5",
-      "front": "<div class=\"text-6xl font-bold text-center\">遡</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Go up / Trace back</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">sakanoboru</div>",
-      "position": 30
-    },
-    {
-      "id": "c0173459-d6a7-4ec5-ad3b-45b3d50cd4d4",
-      "front": "<div class=\"text-6xl font-bold text-center\">遡</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Tracing back</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">so</div>",
-      "position": 31
-    },
-    {
-      "id": "e02e94f8-319f-4871-85a8-ad3b703ac5d3",
-      "front": "<div class=\"text-6xl font-bold text-center\">綻</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Teardrop (metaphor)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">hokorobu</div>",
-      "position": 32
-    },
-    {
-      "id": "736d8282-c078-4f3e-bd5a-04d0fb20d6ad",
-      "front": "<div class=\"text-6xl font-bold text-center\">蹂</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Trampling</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">jūrin</div>",
-      "position": 33
-    },
-    {
-      "id": "0237ffe8-6601-4fe9-ad80-54318c622b97",
-      "front": "<div class=\"text-6xl font-bold text-center\">濫</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Excess</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ran</div>",
-      "position": 34
-    },
-    {
-      "id": "e06d6498-3a52-4895-aac1-040229c94f5c",
-      "front": "<div class=\"text-6xl font-bold text-center\">饗</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Reception</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kyōō</div>",
-      "position": 35
-    },
-    {
-      "id": "1836faaf-77b8-4c41-b631-ae00cab1425f",
-      "front": "<div class=\"text-6xl font-bold text-center\">謹</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Respect</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kinshin</div>",
-      "position": 36
-    },
-    {
-      "id": "3d78d07b-ad67-4ae1-ace9-4e33058598b6",
-      "front": "<div class=\"text-6xl font-bold text-center\">繊</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fibers</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">seni</div>",
-      "position": 37
-    },
-    {
-      "id": "d8b7dce3-98ac-46e5-ab91-1e583a99da3f",
-      "front": "<div class=\"text-6xl font-bold text-center\">醸</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Brewing</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">jōzō</div>",
-      "position": 38
-    },
-    {
-      "id": "4ce93dcf-e355-43e2-ab9c-eedf151fe42c",
-      "front": "<div class=\"text-6xl font-bold text-center\">麓</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Mountain base</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">fumoto</div>",
-      "position": 39
-    },
-    {
-      "id": "9fc70afe-36fb-4adc-b4ff-d379dc384965",
-      "front": "<div class=\"text-6xl font-bold text-center\">鷹</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Falconry</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">yō</div>",
-      "position": 40
-    },
-    {
-      "id": "c152a709-d893-466d-83ad-736c30101933",
-      "front": "<div class=\"text-6xl font-bold text-center\">鑑</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Appraisal</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kantei</div>",
-      "position": 41
-    },
-    {
-      "id": "71ed3a83-e6c7-4b5c-82a2-5627b084bfb3",
-      "front": "<div class=\"text-6xl font-bold text-center\">鬱</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Depression</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">utsu</div>",
-      "position": 42
-    },
-    {
-      "id": "34d59ee5-c8a1-428c-bbb1-c5b0acde8050",
-      "front": "<div class=\"text-6xl font-bold text-center\">彙</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Collection / Compilation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">i</div>",
-      "position": 43
-    },
-    {
-      "id": "b2a06f99-5f1b-460c-89a9-600ad835605d",
-      "front": "<div class=\"text-6xl font-bold text-center\">捗</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Advancement</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">haka</div>",
-      "position": 44
-    },
-    {
-      "id": "6a5862e9-73b7-4fa6-8a3e-e73910e3f908",
-      "front": "<div class=\"text-6xl font-bold text-center\">憐</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sympathy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ren</div>",
-      "position": 45
-    },
-    {
-      "id": "cba4e243-962c-4a5d-be54-fb537e5733fb",
-      "front": "<div class=\"text-6xl font-bold text-center\">垣</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fencing</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kaki</div>",
-      "position": 46
-    },
-    {
-      "id": "9e6f1453-26db-4cb8-9e95-ed6a1d5a4201",
-      "front": "<div class=\"text-6xl font-bold text-center\">踪</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Track / Trace</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">sō</div>",
-      "position": 47
-    },
-    {
-      "id": "44512ca4-739c-443c-86a5-153590ec27f5",
-      "front": "<div class=\"text-6xl font-bold text-center\">刹</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Transient moment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">setsu</div>",
-      "position": 48
-    },
-    {
-      "id": "369bffb6-53c7-48bb-96c5-bb2f0717cc6b",
-      "front": "<div class=\"text-6xl font-bold text-center\">箇</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Article / Clause</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kasho</div>",
-      "position": 49
+      "position": 26
     }
   ]
 }

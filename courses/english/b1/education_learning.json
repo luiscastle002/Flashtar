@@ -9,303 +9,225 @@
   "cards": [
     {
       "id": "a9efc479-37b7-4230-a6dc-5b61f67cfed1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Academic</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Relating to education and scholarship.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌækəˈdemɪk/</div>",
       "position": 0
     },
     {
       "id": "28503be6-11b3-4209-8984-74d31e32dc90",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bachelor's Degree</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An undergraduate academic degree awarded by colleges and universities.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈbætʃələz dɪˌɡriː/</div>",
       "position": 1
     },
     {
       "id": "95930751-3227-4e54-b8c3-b182fdc81aef",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Campus</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The grounds and buildings of a university or college.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkæmpəs/</div>",
       "position": 2
     },
     {
       "id": "7f98e92e-7cbc-475f-9dfc-736aaee16a84",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Curriculum</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The subjects comprising a course of study in a school or college.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kəˈrɪkjələm/</div>",
       "position": 3
     },
     {
       "id": "690ca7f8-6d84-4c0b-95e1-f10b83d7ec00",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Dissertation</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A long essay on a particular subject, especially for a university degree.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌdɪsəˈteɪʃn/</div>",
       "position": 4
     },
     {
       "id": "c7ed3679-1c30-4c62-8033-e0495590217d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Elective</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An optional subject or course of study.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɪˈlektɪv/</div>",
       "position": 5
     },
     {
       "id": "22a7f877-8789-4952-b491-2571efc73961",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Faculty</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The teaching staff of a university or college.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈfæklti/</div>",
       "position": 6
     },
     {
       "id": "f14a21bd-a55d-4c0b-af1a-a4889159dada",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Grade</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A mark indicating a student's performance.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɡreɪd/</div>",
       "position": 7
     },
     {
       "id": "01de28b8-c013-4d70-9179-bee2a2b9060d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Graduate</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person who has successfully completed a course of study.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈɡrædʒuət/</div>",
       "position": 8
     },
     {
       "id": "4a3d18e2-6882-4eab-b6e5-c80c36bfdab0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Higher Education</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Education at a university level.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈhaɪə(r) ˌedʒuˈkeɪʃn/</div>",
       "position": 9
     },
     {
-      "id": "df0de4ce-ec81-4678-9f6e-260584a8f1e3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "701e73dd-6e9f-44a9-bcdd-4d8aa4651c9a",
+      "front": "<div class=\"text-6xl font-bold text-center\">Lecture</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An educational talk to an audience, especially at university.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈlektʃə(r)/</div>",
       "position": 10
     },
     {
-      "id": "701e73dd-6e9f-44a9-bcdd-4d8aa4651c9a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "cb12d37f-84f5-489e-b3f6-61b7c3c8d9ba",
+      "front": "<div class=\"text-6xl font-bold text-center\">Major</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The principal subject or course of study.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmeɪdʒə(r)/</div>",
       "position": 11
     },
     {
-      "id": "cb12d37f-84f5-489e-b3f6-61b7c3c8d9ba",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "18f3d242-0763-4b70-a644-fd4e2e59b659",
+      "front": "<div class=\"text-6xl font-bold text-center\">Master's Degree</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A postgraduate academic degree.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmɑːstəz dɪˌɡriː/</div>",
       "position": 12
     },
     {
-      "id": "18f3d242-0763-4b70-a644-fd4e2e59b659",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "11031910-53bc-4b1a-a57e-d999b8534fdf",
+      "front": "<div class=\"text-6xl font-bold text-center\">Minor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A secondary subject of study.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmaɪnə(r)/</div>",
       "position": 13
     },
     {
-      "id": "11031910-53bc-4b1a-a57e-d999b8534fdf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "9d294574-079a-4cd7-ab5f-86f8281c145f",
+      "front": "<div class=\"text-6xl font-bold text-center\">PhD</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The highest university degree, Doctor of Philosophy.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌpiː eɪtʃ ˈdiː/</div>",
       "position": 14
     },
     {
-      "id": "9d294574-079a-4cd7-ab5f-86f8281c145f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "9684e9a5-ee84-4303-bd5a-52007a9b6fa5",
+      "front": "<div class=\"text-6xl font-bold text-center\">Postgraduate</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Relating to studies done after a bachelor's degree.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌpəʊstˈɡrædʒuət/</div>",
       "position": 15
     },
     {
-      "id": "9684e9a5-ee84-4303-bd5a-52007a9b6fa5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "953d9f59-46bd-45ef-9178-c90f42b6e967",
+      "front": "<div class=\"text-6xl font-bold text-center\">Prerequisite</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A thing that is required as a prior condition for a course.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌpriːˈrekwɪzɪt/</div>",
       "position": 16
     },
     {
-      "id": "953d9f59-46bd-45ef-9178-c90f42b6e967",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "db762423-e13a-4e25-8fd3-0fba1af6541b",
+      "front": "<div class=\"text-6xl font-bold text-center\">Research</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Systematic investigation into materials and sources.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/rɪˈsɜːtʃ/</div>",
       "position": 17
     },
     {
-      "id": "db762423-e13a-4e25-8fd3-0fba1af6541b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "733bbb7a-746a-42bc-9ae6-184cede1104d",
+      "front": "<div class=\"text-6xl font-bold text-center\">Scholarship</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A grant or payment made to support a student's education.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈskɒləʃɪp/</div>",
       "position": 18
     },
     {
-      "id": "733bbb7a-746a-42bc-9ae6-184cede1104d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "e3039cf5-63a5-47eb-b6ca-cf03c0088a06",
+      "front": "<div class=\"text-6xl font-bold text-center\">Semester</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A half-year term in a university or college.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/sɪˈmestə(r)/</div>",
       "position": 19
     },
     {
-      "id": "e3039cf5-63a5-47eb-b6ca-cf03c0088a06",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "da0f8b0b-4c3e-43b7-8894-e2a5511fbaf5",
+      "front": "<div class=\"text-6xl font-bold text-center\">Seminar</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A small group discussion or meeting for study.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsemɪnɑː(r)/</div>",
       "position": 20
     },
     {
-      "id": "da0f8b0b-4c3e-43b7-8894-e2a5511fbaf5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "25bb993c-d38a-4ca6-b07c-9a0fbed37e15",
+      "front": "<div class=\"text-6xl font-bold text-center\">Syllabus</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An outline of the subjects in a course.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsɪləbəs/</div>",
       "position": 21
     },
     {
-      "id": "25bb993c-d38a-4ca6-b07c-9a0fbed37e15",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "51141210-3765-49bb-93a1-e9175be48469",
+      "front": "<div class=\"text-6xl font-bold text-center\">Thesis</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A long essay or dissertation involving personal research.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈθiːsɪs/</div>",
       "position": 22
     },
     {
-      "id": "51141210-3765-49bb-93a1-e9175be48469",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "11ac7ccc-ac9e-4e1c-8d05-a0c53c2794f9",
+      "front": "<div class=\"text-6xl font-bold text-center\">Tutorial</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A class for a small group of students with a tutor.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/tjuːˈtɔːriəl/</div>",
       "position": 23
     },
     {
-      "id": "11ac7ccc-ac9e-4e1c-8d05-a0c53c2794f9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "5056b576-8eab-49df-b92c-e386a4f3f618",
+      "front": "<div class=\"text-6xl font-bold text-center\">Undergraduate</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A student at a college or university who has not yet earned a bachelor's or equivalent degree.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌʌndəˈɡrædʒuət/</div>",
       "position": 24
     },
     {
-      "id": "5056b576-8eab-49df-b92c-e386a4f3f618",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "c3a421ca-49a9-41e8-ad9b-28e4b03564fb",
+      "front": "<div class=\"text-6xl font-bold text-center\">University</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An institution of higher education and research.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌjuːnɪˈvɜːsəti/</div>",
       "position": 25
     },
     {
-      "id": "c3a421ca-49a9-41e8-ad9b-28e4b03564fb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "1a3ad1d3-c6f6-457a-a7ec-b90183a6fed5",
+      "front": "<div class=\"text-6xl font-bold text-center\">Assignment</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A task or piece of work allocated to someone as part of a course.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/əˈsaɪnmənt/</div>",
       "position": 26
     },
     {
-      "id": "1a3ad1d3-c6f6-457a-a7ec-b90183a6fed5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "186f0c35-bd1a-48b9-bd98-990a601a6207",
+      "front": "<div class=\"text-6xl font-bold text-center\">Coursework</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Work done by students during a course of study, rather than in final exams.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkɔːswɜːk/</div>",
       "position": 27
     },
     {
-      "id": "186f0c35-bd1a-48b9-bd98-990a601a6207",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "6b4bf559-50c0-4d42-9163-53ef8a25056b",
+      "front": "<div class=\"text-6xl font-bold text-center\">Degree</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An academic rank conferred by a college or university.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/dɪˈɡriː/</div>",
       "position": 28
     },
     {
-      "id": "6b4bf559-50c0-4d42-9163-53ef8a25056b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "f80e2da9-a557-4744-a24a-bebf9681518c",
+      "front": "<div class=\"text-6xl font-bold text-center\">Essay</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A short piece of writing on a particular subject.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈeseɪ/</div>",
       "position": 29
     },
     {
-      "id": "f80e2da9-a557-4744-a24a-bebf9681518c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "99a8af1e-da03-42f7-b0c3-2bc214ecfc22",
+      "front": "<div class=\"text-6xl font-bold text-center\">Exam</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A formal test of a person's knowledge or proficiency.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɪɡˈzæm/</div>",
       "position": 30
     },
     {
-      "id": "99a8af1e-da03-42f7-b0c3-2bc214ecfc22",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "5d462623-96eb-483e-a71f-3ba9f25b4a12",
+      "front": "<div class=\"text-6xl font-bold text-center\">Fellowship</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A scholarship or position held by a fellow at a university.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈfeləʊʃɪp/</div>",
       "position": 31
     },
     {
-      "id": "5d462623-96eb-483e-a71f-3ba9f25b4a12",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "1f7f940a-896c-40b7-9efc-8c3162d5c7ed",
+      "front": "<div class=\"text-6xl font-bold text-center\">Matriculate</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To be enrolled at a college or university.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/məˈtrɪkjuleɪt/</div>",
       "position": 32
     },
     {
-      "id": "cb654c9f-125b-4b52-a1a3-631e50829713",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "addc6848-dac4-4228-afbb-0b2b908c4567",
+      "front": "<div class=\"text-6xl font-bold text-center\">Pedagogy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The method and practice of teaching.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈpedəɡɒdʒi/</div>",
       "position": 33
     },
     {
-      "id": "1f7f940a-896c-40b7-9efc-8c3162d5c7ed",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "1e9008ad-261d-45a3-9113-76369902f4a4",
+      "front": "<div class=\"text-6xl font-bold text-center\">Plagiarism</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The practice of taking someone else's work or ideas and passing them off as one's own.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈpleɪdʒərɪzəm/</div>",
       "position": 34
     },
     {
-      "id": "addc6848-dac4-4228-afbb-0b2b908c4567",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "562cb7c3-38ad-4baa-8770-86aebbd618f6",
+      "front": "<div class=\"text-6xl font-bold text-center\">Professor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A teacher of the highest rank in a university.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/prəˈfesə(r)/</div>",
       "position": 35
     },
     {
-      "id": "1e9008ad-261d-45a3-9113-76369902f4a4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 36
-    },
-    {
-      "id": "562cb7c3-38ad-4baa-8770-86aebbd618f6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 37
-    },
-    {
       "id": "542a510c-1070-4539-bf3e-dffd6d205319",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 38
-    },
-    {
-      "id": "374a591c-39a7-4d1a-aa52-867a9c18c859",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 39
-    },
-    {
-      "id": "6bd22f9d-9e57-40d4-93a9-753b22eac23e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 40
-    },
-    {
-      "id": "09caf634-3893-4374-b1ca-eeaa9a2ffcbc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 41
-    },
-    {
-      "id": "be81bc1d-dfb8-486d-97ef-9eeb115a97c3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 42
-    },
-    {
-      "id": "34834a5d-566e-4fa7-8e39-0f3d317f6669",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 43
-    },
-    {
-      "id": "8d5143cc-d57f-49bd-bd1e-aebe194bee06",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 44
-    },
-    {
-      "id": "25c12ae8-1a31-4141-9fae-2c8a195b2b81",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 45
-    },
-    {
-      "id": "373af2c5-f7a1-4745-ba7f-dc55e29a3eb3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 46
-    },
-    {
-      "id": "91707419-6261-4c06-80bc-bd233bc6624a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 47
-    },
-    {
-      "id": "de5e3c89-9642-4642-832c-b97fe1d9c55f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 48
-    },
-    {
-      "id": "94d65635-635b-4918-89a0-1d1d7c95078c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 49
+      "front": "<div class=\"text-6xl font-bold text-center\">Tuition</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A sum of money charged for teaching by an institution.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/tjuˈɪʃn/</div>",
+      "position": 36
     }
   ]
 }

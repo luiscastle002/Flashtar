@@ -8,304 +8,178 @@
   "position": 8,
   "cards": [
     {
-      "id": "855351e6-139f-4894-8019-645cbc25a10c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "e5072ea6-ef6f-4a77-9a6e-8e9ee16c46b8",
+      "front": "<div class=\"text-6xl font-bold text-center\">Sad</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling sorrow; unhappy.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 0
     },
     {
-      "id": "e5072ea6-ef6f-4a77-9a6e-8e9ee16c46b8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "84d71f58-96d9-4b0f-8750-296776f4965c",
+      "front": "<div class=\"text-6xl font-bold text-center\">Angry</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling or showing strong annoyance, displeasure, or hostility.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 1
     },
     {
-      "id": "84d71f58-96d9-4b0f-8750-296776f4965c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "a287ba64-e1ef-4b42-8379-0e45a9171d38",
+      "front": "<div class=\"text-6xl font-bold text-center\">Excited</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Very happy and enthusiastic.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 2
     },
     {
-      "id": "a287ba64-e1ef-4b42-8379-0e45a9171d38",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "1b24bd13-e911-4e73-a87b-e5ba1bea7a54",
+      "front": "<div class=\"text-6xl font-bold text-center\">Tired</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>In need of sleep or rest.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 3
     },
     {
-      "id": "1b24bd13-e911-4e73-a87b-e5ba1bea7a54",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "af418332-7378-497b-8750-18e493fe9313",
+      "front": "<div class=\"text-6xl font-bold text-center\">Scared</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling afraid of something or someone.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 4
     },
     {
-      "id": "af418332-7378-497b-8750-18e493fe9313",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "97a17b87-d264-4b5a-98ef-53c15b5f27ff",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bored</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling weary because one is unoccupied or lacks interest in one's current activity.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 5
     },
     {
-      "id": "97a17b87-d264-4b5a-98ef-53c15b5f27ff",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "c49f9a67-cf07-4e2a-8383-af0cb23dbedc",
+      "front": "<div class=\"text-6xl font-bold text-center\">Surprised</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling mild shock or amazement at something unexpected.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 6
     },
     {
-      "id": "c49f9a67-cf07-4e2a-8383-af0cb23dbedc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "9c5d10a7-df5e-438f-bb86-66a86412364d",
+      "front": "<div class=\"text-6xl font-bold text-center\">Nervous</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Easily agitated or alarmed; anxious.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 7
     },
     {
-      "id": "9c5d10a7-df5e-438f-bb86-66a86412364d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "5ddf5d74-f43d-48f3-8ae1-1efc93277135",
+      "front": "<div class=\"text-6xl font-bold text-center\">Calm</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Not showing or feeling nervousness, anger, or other strong emotions.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 8
     },
     {
-      "id": "5ddf5d74-f43d-48f3-8ae1-1efc93277135",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "5e3b9576-1ed8-4029-a0b6-3e80bd307023",
+      "front": "<div class=\"text-6xl font-bold text-center\">Confused</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Unable to think clearly; bewildered.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 9
     },
     {
-      "id": "5e3b9576-1ed8-4029-a0b6-3e80bd307023",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "7f73bacc-af01-4a9b-bb12-a51c95727ebf",
+      "front": "<div class=\"text-6xl font-bold text-center\">Proud</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling deep pleasure or satisfaction as a result of one's own achievements.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 10
     },
     {
-      "id": "7f73bacc-af01-4a9b-bb12-a51c95727ebf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "bff39676-3a2c-4776-a831-a1dd00c5c887",
+      "front": "<div class=\"text-6xl font-bold text-center\">Lonely</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sad because one has no friends or company.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 11
     },
     {
-      "id": "bff39676-3a2c-4776-a831-a1dd00c5c887",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "1aea938c-9ffd-41ec-9c2b-40c6f9f24d82",
+      "front": "<div class=\"text-6xl font-bold text-center\">Embarrassed</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling self-conscious or ashamed.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 12
     },
     {
-      "id": "1aea938c-9ffd-41ec-9c2b-40c6f9f24d82",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "c51d2a1c-0e97-417e-b114-121f76eda235",
+      "front": "<div class=\"text-6xl font-bold text-center\">Relaxed</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Free from tension and anxiety.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 13
     },
     {
-      "id": "c51d2a1c-0e97-417e-b114-121f76eda235",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "93756932-3ce5-41b0-95bd-770418a8bb23",
+      "front": "<div class=\"text-6xl font-bold text-center\">Worried</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Anxious or troubled about actual or potential problems.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 14
     },
     {
-      "id": "93756932-3ce5-41b0-95bd-770418a8bb23",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "2c282a40-ae84-4839-a364-12d2450d6b78",
+      "front": "<div class=\"text-6xl font-bold text-center\">Interested</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Showing curiosity or concern about something.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 15
     },
     {
-      "id": "2c282a40-ae84-4839-a364-12d2450d6b78",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "53a585ad-f0b8-4064-9343-5b6a81604324",
+      "front": "<div class=\"text-6xl font-bold text-center\">Upset</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Unhappy, disappointed, or worried.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 16
     },
     {
-      "id": "53a585ad-f0b8-4064-9343-5b6a81604324",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "48fcab8d-b76a-4370-9fc1-2928eee4a08c",
+      "front": "<div class=\"text-6xl font-bold text-center\">Jealous</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling or showing envy of someone or their achievements.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 17
     },
     {
-      "id": "48fcab8d-b76a-4370-9fc1-2928eee4a08c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "3f636dd6-3e2e-4396-8e58-bb06cb3f066a",
+      "front": "<div class=\"text-6xl font-bold text-center\">Hopeful</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling or inspiring optimism about a future event.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
       "position": 18
     },
     {
-      "id": "3f636dd6-3e2e-4396-8e58-bb06cb3f066a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "067761e4-4eb8-4be3-a6f9-79a9dbbd05ec",
+      "front": "<div class=\"text-6xl font-bold text-center\">Feel</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To experience an emotion or sensation.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Verb</div>",
       "position": 19
     },
     {
-      "id": "067761e4-4eb8-4be3-a6f9-79a9dbbd05ec",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "88486ab4-5d65-464b-9222-aec2ac334db2",
+      "front": "<div class=\"text-6xl font-bold text-center\">Emotion</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A strong feeling deriving from one's circumstances or mood.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Noun</div>",
       "position": 20
     },
     {
-      "id": "88486ab4-5d65-464b-9222-aec2ac334db2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "a1cd6ce7-2833-4993-b41a-e908f943bfd3",
+      "front": "<div class=\"text-6xl font-bold text-center\">Mood</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A temporary state of mind or feeling.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Noun</div>",
       "position": 21
     },
     {
-      "id": "a1cd6ce7-2833-4993-b41a-e908f943bfd3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "f90efea2-ba24-4160-9d27-0bc43212d310",
+      "front": "<div class=\"text-6xl font-bold text-center\">Stress</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A state of mental or emotional strain.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Noun</div>",
       "position": 22
     },
     {
-      "id": "f90efea2-ba24-4160-9d27-0bc43212d310",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "b98289e1-2580-4fdc-9e39-42e015dc678f",
+      "front": "<div class=\"text-6xl font-bold text-center\">Joy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A feeling of great pleasure and happiness.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Noun</div>",
       "position": 23
     },
     {
-      "id": "b98289e1-2580-4fdc-9e39-42e015dc678f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "e76ce98f-4453-4532-a0a6-c68a4c96c8ed",
+      "front": "<div class=\"text-6xl font-bold text-center\">Fear</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An unpleasant emotion caused by the belief that someone or something is dangerous.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Noun</div>",
       "position": 24
     },
     {
-      "id": "e76ce98f-4453-4532-a0a6-c68a4c96c8ed",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "bb12a19e-7a3b-4643-acbe-c39a17f9e503",
+      "front": "<div class=\"text-6xl font-bold text-center\">Love</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An intense feeling of deep affection.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Noun</div>",
       "position": 25
     },
     {
-      "id": "bb12a19e-7a3b-4643-acbe-c39a17f9e503",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "cfcf193f-1ae5-462d-9b81-ad4c81f7db67",
+      "front": "<div class=\"text-6xl font-bold text-center\">Hate</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Intense dislike.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Noun/Verb</div>",
       "position": 26
     },
     {
-      "id": "cfcf193f-1ae5-462d-9b81-ad4c81f7db67",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "d76676da-3dcf-4537-a1ca-318139d1bb68",
+      "front": "<div class=\"text-6xl font-bold text-center\">Surprise</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An unexpected or astonishing event, fact, or thing.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Noun</div>",
       "position": 27
     },
     {
-      "id": "d76676da-3dcf-4537-a1ca-318139d1bb68",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 28
-    },
-    {
       "id": "65d0ae36-775c-4d54-96a9-beceed9676b0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 29
-    },
-    {
-      "id": "fe274682-7fc5-42b9-947b-f240b0e0182d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 30
-    },
-    {
-      "id": "bb89dc3e-2637-4ba9-b880-468e0d627af2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 31
-    },
-    {
-      "id": "fe5b9767-8665-48fb-8288-55b8f54194fd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 32
-    },
-    {
-      "id": "d1173ccf-e77f-483a-a9d1-da8733156fd2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 33
-    },
-    {
-      "id": "c86455a1-c9f7-4462-bfba-9de88e1e8c81",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 34
-    },
-    {
-      "id": "3e72f022-71b5-46f2-b474-e6f7c34d4669",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 35
-    },
-    {
-      "id": "51dd0951-0c77-4094-869a-f953fd47a36d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 36
-    },
-    {
-      "id": "52540637-4b1d-4261-bcb9-ef34bd26674e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 37
-    },
-    {
-      "id": "90588139-d653-4a47-bd07-ba8b7adce7bd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 38
-    },
-    {
-      "id": "1e7fd967-3a75-4b9e-b32e-fce4246b9930",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 39
-    },
-    {
-      "id": "2113df94-63fc-4a68-92bc-c9a8dc994a1c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 40
-    },
-    {
-      "id": "d57b8b63-3f30-417e-8dd5-406f53c58cfc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 41
-    },
-    {
-      "id": "894d85d9-8961-4ce8-a894-a4d65baf5263",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 42
-    },
-    {
-      "id": "99b856cf-547d-4f9b-a1d2-8fcfe6e73089",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 43
-    },
-    {
-      "id": "4ea31013-e6b8-4307-8393-df832150cbb1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 44
-    },
-    {
-      "id": "dda3f542-81e4-4a14-80a5-2eadfffb8c39",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 45
-    },
-    {
-      "id": "84318ddb-d15e-47a0-afd3-f8ec5b1351f2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 46
-    },
-    {
-      "id": "20ac7ee5-05f8-4fde-989d-66562d30e115",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 47
-    },
-    {
-      "id": "00c9147a-21da-45d8-b69c-6fcd1e5017d6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 48
-    },
-    {
-      "id": "ea971565-62a8-4078-ac54-10ffd08c8546",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 49
+      "front": "<div class=\"text-6xl font-bold text-center\">Disappointed</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sad or displeased because expectations were not met.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">Adjective</div>",
+      "position": 28
     }
   ]
 }

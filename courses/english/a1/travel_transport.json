@@ -21,290 +21,290 @@
     },
     {
       "id": "33261502-08ca-4dd9-8a5d-ebd723bb988d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Train</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A series of connected vehicles traveling on railway tracks.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/treɪn/</div>",
       "position": 2
     },
     {
       "id": "73bb720a-4d2b-4ef6-b8a1-60e767eb12c8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bus</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A large motor vehicle carrying passengers by road.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/bʌs/</div>",
       "position": 3
     },
     {
       "id": "2a0cda70-99fb-4663-853b-04243cc5f7f2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Airplane</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A powered flying vehicle with fixed wings.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈeəpleɪn/</div>",
       "position": 4
     },
     {
       "id": "de536293-1b48-4fac-a8af-fe3ec60e0222",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Taxi</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A car with a driver that you pay to take you somewhere.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtæksi/</div>",
       "position": 5
     },
     {
       "id": "f47c183a-063d-4e43-b419-8bb20f899a32",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Subway</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An underground electric railroad system.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsʌbweɪ/</div>",
       "position": 6
     },
     {
       "id": "45babfad-3dcd-401f-aad3-c1933e01baa5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Station</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A place where trains or buses stop for passengers.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsteɪʃən/</div>",
       "position": 7
     },
     {
       "id": "82eee28f-faec-4f7a-b099-31d89a21044d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Ticket</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A printed slip showing you have paid for a journey.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtɪkɪt/</div>",
       "position": 8
     },
     {
       "id": "c7592881-3d9e-44e3-bc8f-3453aa6c6ebe",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Airport</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A place where aircraft land and take off.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈeəpɔːrt/</div>",
       "position": 9
     },
     {
       "id": "be6cb640-2ae9-4679-b900-90cb6ba2b9b4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Road</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A wide way for vehicles between places.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/rəʊd/</div>",
       "position": 10
     },
     {
       "id": "e7b8368e-8dd4-4b3d-9115-33b66986971b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bridge</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A structure built over a river or road.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/brɪdʒ/</div>",
       "position": 11
     },
     {
       "id": "9af7db8c-0769-43a8-acfe-ad2f04a95275",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Map</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A diagram showing areas, roads, or cities.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/mæp/</div>",
       "position": 12
     },
     {
       "id": "98b7a0ef-7e00-40b6-9eb1-f2285ae94693",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Traffic</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Vehicles moving along a road.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtræfɪk/</div>",
       "position": 13
     },
     {
       "id": "06e87d03-a4a3-44b0-a922-54f15ca0ba14",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Stop</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A place where a bus or train stops.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/stɒp/</div>",
       "position": 14
     },
     {
       "id": "d42555e3-d966-4873-adbd-fe8e3a603ed3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Travel</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To go from one place to another.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtrævəl/</div>",
       "position": 15
     },
     {
       "id": "c6c32a2c-6a28-481b-a107-60078fce27ec",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Walk</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To move at a regular pace on foot.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/wɔːk/</div>",
       "position": 16
     },
     {
       "id": "ae33af9b-35f5-4151-b945-84624c9733a8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Driver</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person who operates a vehicle.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈdraɪvər/</div>",
       "position": 17
     },
     {
       "id": "ab693040-ebe6-4fb3-9c46-5fec4859c22d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Passenger</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person traveling in a vehicle who is not the driver.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈpæsɪndʒər/</div>",
       "position": 18
     },
     {
       "id": "75bfb793-c1c7-448f-b95e-e9f0a8d31735",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Trip</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A journey or excursion.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/trɪp/</div>",
       "position": 19
     },
     {
       "id": "50e72ad7-f14a-43db-bbe1-cb3a98ec9441",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Left</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Towards the side of the body that is not the right.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/lɛft/</div>",
       "position": 20
     },
     {
       "id": "3bbb8609-6bfd-4ed6-9ac0-af0904dc268c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Right</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Towards the side of the body that is not the left.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/raɪt/</div>",
       "position": 21
     },
     {
       "id": "f1bbb1ba-7449-42e2-ad84-333d115c86ed",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Go</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To move to or from a place.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɡəʊ/</div>",
       "position": 22
     },
     {
       "id": "e4dfd15c-bdd4-4abc-8f91-12a60789758c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Stop (verb)</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To cease movement.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/stɒp/</div>",
       "position": 23
     },
     {
       "id": "7aa48dfd-d409-459e-b2e6-6813bbc3916f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Fast</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Moving at high speed.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/fɑːst/</div>",
       "position": 24
     },
     {
       "id": "4dab2d82-ebf9-41d8-864e-b2aac0d88584",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Slow</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Moving at a low speed.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/sləʊ/</div>",
       "position": 25
     },
     {
       "id": "b0bc158d-cd4a-4cd6-83a5-27ddcb2e2452",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Near</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>At a short distance away.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/nɪər/</div>",
       "position": 26
     },
     {
       "id": "4bf4d990-bb21-43d3-9292-aa748f442391",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Far</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>At a great distance.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/fɑːr/</div>",
       "position": 27
     },
     {
       "id": "ae3aee84-94fb-4226-955f-70eb5bbd3f6a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">North</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The direction toward the top of a map.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/nɔːrθ/</div>",
       "position": 28
     },
     {
       "id": "3b7edd25-ae80-4142-958a-01b8d0ce4d9e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">South</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The direction toward the bottom of a map.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/saʊθ/</div>",
       "position": 29
     },
     {
       "id": "d9ed954f-7055-416b-9331-c9f54b5a69ee",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">East</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The direction toward the right of a map.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/iːst/</div>",
       "position": 30
     },
     {
       "id": "2f78218f-4e16-4f15-b1d0-f53d462235e7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">West</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The direction toward the left of a map.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/wɛst/</div>",
       "position": 31
     },
     {
       "id": "953d02a9-99bc-419e-885d-a550d92b576c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Parking</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A place to leave a car.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈpɑːrkɪŋ/</div>",
       "position": 32
     },
     {
       "id": "be7903d1-8457-4965-a315-f63a583ea0d2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Hotel</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A place where people pay to stay when traveling.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/həʊˈtɛl/</div>",
       "position": 33
     },
     {
       "id": "2e9b3ca2-8bfb-45ce-ad6c-34a080412512",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Ticket Office</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A place where you buy tickets.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtɪkɪt ˌɒfɪs/</div>",
       "position": 34
     },
     {
       "id": "f59cbf57-96d1-4fe7-aefe-4de58635b3e5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Departure</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The action of leaving a place.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/dɪˈpɑːrtʃər/</div>",
       "position": 35
     },
     {
       "id": "57701441-ab03-4729-a13f-b38ea51ab61c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Arrival</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The action of arriving at a place.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/əˈraɪvəl/</div>",
       "position": 36
     },
     {
       "id": "bdff496c-6c26-48ab-b018-49d2aba9b74d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Flight</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A journey made by air.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/flaɪt/</div>",
       "position": 37
     },
     {
       "id": "c12511b0-cd1c-48c1-9695-b972299f26a6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Platform</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Area at a station where passengers wait to board a train.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈplætfɔːrm/</div>",
       "position": 38
     },
     {
       "id": "e6517d9a-f8f7-43d9-93b2-2c3281c4027b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Check-in</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The process of registering your arrival.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtʃɛk ɪn/</div>",
       "position": 39
     },
     {
       "id": "60c8ee59-9363-4951-bb3a-1a0d2e36f077",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Passport</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An official document for international travel.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈpɑːspɔːrt/</div>",
       "position": 40
     },
     {
       "id": "56231659-1e30-44b4-a37a-0445207928ae",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Luggage</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Suitcases or bags for traveling.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈlʌɡɪdʒ/</div>",
       "position": 41
     },
     {
       "id": "2238ce9e-8dcb-46e1-8356-5d9226e70371",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Seat</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Something you sit on.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/siːt/</div>",
       "position": 42
     },
     {
       "id": "7d0c0bbc-b9ac-4e8e-bb41-65555a90ef32",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Highway</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A main road, especially one connecting major towns.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈhaɪweɪ/</div>",
       "position": 43
     },
     {
       "id": "0618b0db-7423-4a40-bc2b-f49d7bca804b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bike</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Short for bicycle.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/baɪk/</div>",
       "position": 44
     },
     {
       "id": "b29079bb-8ba8-4bdb-8dc4-2c20c712ba45",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Motorcycle</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A two-wheeled vehicle with an engine.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈməʊtərˌsaɪkəl/</div>",
       "position": 45
     },
     {
       "id": "f2d6cc14-e799-4a1f-9584-4ce242c56090",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Schedule</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A plan for carrying out a process or procedure.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈskɛdʒuːl/</div>",
       "position": 46
     },
     {
       "id": "e32eaff7-2e38-47c3-8e0a-bbc231de5f00",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Gate</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A place at an airport where passengers board.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɡeɪt/</div>",
       "position": 47
     },
     {
       "id": "53ac9765-5057-4e16-934c-821898e0b947",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Tour</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A journey for pleasure in which you visit several places.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/tʊər/</div>",
       "position": 48
     },
     {
       "id": "97261c03-3355-4cc0-9b57-6792d3fa2926",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Guide</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person who shows the way to others.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɡaɪd/</div>",
       "position": 49
     }
   ]

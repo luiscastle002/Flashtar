@@ -248,64 +248,34 @@
       "position": 39
     },
     {
-      "id": "7fe76789-bebf-4b38-af5b-ec55536361a0",
-      "front": "<div class=\"text-6xl font-bold text-center\">緩和</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Mitigation / Relief</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんわ (Kanwa)</div>",
-      "position": 40
-    },
-    {
-      "id": "ad20c090-1f04-4409-a6ae-860e8d27ffa4",
-      "front": "<div class=\"text-6xl font-bold text-center\">適応</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Adaptation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">てきおう (Tekiō)</div>",
-      "position": 41
-    },
-    {
       "id": "927a80d9-0f10-42c0-b0ca-433f95c383a7",
       "front": "<div class=\"text-6xl font-bold text-center\">対策</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Countermeasure</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たいさく (Taisaku)</div>",
-      "position": 42
+      "position": 40
     },
     {
       "id": "76669e14-3cb5-4560-846e-154220d1f16c",
       "front": "<div class=\"text-6xl font-bold text-center\">排出</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Emission / Discharge</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はいしゅつ (Haishutsu)</div>",
-      "position": 43
-    },
-    {
-      "id": "33c48254-720f-4862-942b-c4dae2f773fa",
-      "front": "<div class=\"text-6xl font-bold text-center\">意識</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Awareness / Consciousness</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いしき (Ishiki)</div>",
-      "position": 44
-    },
-    {
-      "id": "047e86ac-a04e-412f-8f21-ae3ef5c161af",
-      "front": "<div class=\"text-6xl font-bold text-center\">供給</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Supply</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうきゅう (Kyōkyū)</div>",
-      "position": 45
-    },
-    {
-      "id": "1eb8cd26-ea3d-4a68-a13b-6654f9a408f8",
-      "front": "<div class=\"text-6xl font-bold text-center\">影響</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Influence / Impact</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">えいきょう (Eikyō)</div>",
-      "position": 46
+      "position": 41
     },
     {
       "id": "ec76a3b4-d174-459d-9b91-593d53521f45",
       "front": "<div class=\"text-6xl font-bold text-center\">持続</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Continuance / Persistence</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じぞく (Jizoku)</div>",
-      "position": 47
+      "position": 42
     },
     {
       "id": "31daf918-225f-4f25-b13e-54f1d48767cb",
       "front": "<div class=\"text-6xl font-bold text-center\">深刻</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Serious / Severe</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんこく (Shinkoku)</div>",
-      "position": 48
+      "position": 43
     },
     {
       "id": "4f0278fc-57ad-4528-938e-29e0e82f1a13",
       "front": "<div class=\"text-6xl font-bold text-center\">深刻化</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Becoming serious / Escalating</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんこくか (Shinkokuka)</div>",
-      "position": 49
+      "position": 44
     }
   ]
 }

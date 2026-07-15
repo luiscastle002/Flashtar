@@ -10,301 +10,301 @@
     {
       "id": "b0000000-0000-0000-0000-000000000028",
       "front": "<div class=\"text-5xl font-bold text-center\">Time / Hour</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ongoing progression of existence, and a period of 60 minutes.</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ongoing progression of existence, and a period of 60 minutes.[cite: 3]</div>",
       "position": 0
     },
     {
       "id": "b0000000-0000-0000-0000-000000000044",
       "front": "<div class=\"text-5xl font-bold text-center\">Today / Tomorrow</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The present day, and the day after today.</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The present day, and the day after today.[cite: 3]</div>",
       "position": 1
     },
     {
       "id": "b0000000-0000-0000-0000-000000000045",
       "front": "<div class=\"text-5xl font-bold text-center\">Yesterday / Day</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The day before today, and the period of light between sunrise and sunset.</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The day before today, and the period of light between sunrise and sunset.[cite: 3]</div>",
       "position": 2
     },
     {
       "id": "b0000000-0000-0000-0000-000000000046",
       "front": "<div class=\"text-5xl font-bold text-center\">Week / Month / Year</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A period of 7 days, ~30 days, and 365 days.</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A period of 7 days, ~30 days, and 365 days.[cite: 3]</div>",
       "position": 3
     },
     {
       "id": "b0000000-0000-0000-0000-000000000047",
       "front": "<div class=\"text-5xl font-bold text-center\">Monday to Wednesday</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The first three working days of the week.</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The first three working days of the week.[cite: 3]</div>",
       "position": 4
     },
     {
       "id": "b0000000-0000-0000-0000-000000000048",
       "front": "<div class=\"text-5xl font-bold text-center\">Thursday to Sunday</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The rest of the week, including the weekend.</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The rest of the week, including the weekend.[cite: 3]</div>",
       "position": 5
     },
     {
       "id": "b0000000-0000-0000-0000-000000000054",
       "front": "<div class=\"text-5xl font-bold text-center\">What time is it?</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask for the current time.</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask for the current time.[cite: 3]</div>",
       "position": 6
     },
     {
       "id": "12e13cba-c78f-440f-9313-9d19d4c3504e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">January / February</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The first and second months of the year.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈdʒænjʊəri/ / /ˈfɛbruəri/</div>",
       "position": 7
     },
     {
       "id": "102c63ba-1510-4cd1-8e56-0ec4bbbed3e1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">March / April</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The third and fourth months of the year.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/mɑːrtʃ/ / /ˈeɪprəl/</div>",
       "position": 8
     },
     {
       "id": "1f46f977-98fb-4565-a568-5e9a8f4dc52b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">May / June</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The fifth and sixth months of the year.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/meɪ/ / /dʒuːn/</div>",
       "position": 9
     },
     {
       "id": "9d9a3325-dce1-4529-8d6c-b7946c30c250",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">July / August</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The seventh and eighth months of the year.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/dʒuˈlaɪ/ / /ˈɔːɡəst/</div>",
       "position": 10
     },
     {
       "id": "df00b5a3-da80-4521-a7a8-7b04771db05e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">September / October</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The ninth and tenth months of the year.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/sɛpˈtɛmbər/ / /ɒkˈtoʊbər/</div>",
       "position": 11
     },
     {
       "id": "ee0ebc38-c98e-4e26-9a39-7ea35e853715",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">November / December</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The eleventh and twelfth months of the year.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/noʊˈvɛmbər/ / /dɪˈsɛmbər/</div>",
       "position": 12
     },
     {
       "id": "565c7b66-1f44-46fa-bd73-2371139845c8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Minute</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A period of sixty seconds.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmɪnɪt/</div>",
       "position": 13
     },
     {
       "id": "dedb1304-5e99-4fc2-82bc-e60b51990085",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Second</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A very short time; one-sixtieth of a minute.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsɛkənd/</div>",
       "position": 14
     },
     {
       "id": "4cae29aa-e8cf-4e7b-8425-8a10fdbf2234",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Morning</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The time from sunrise to noon.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmɔːrnɪŋ/</div>",
       "position": 15
     },
     {
       "id": "0922a37b-488a-4d7e-998b-acdeae5ee976",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Afternoon</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The time between noon and evening.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌæftərˈnuːn/</div>",
       "position": 16
     },
     {
       "id": "4ed85cf1-b05b-4e3c-8fa2-32eaac528285",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Evening</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The end of the day, before night.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈiːvnɪŋ/</div>",
       "position": 17
     },
     {
       "id": "41d4ff82-2040-49dd-8345-c05333e519b2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Night</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The time when it is dark.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/naɪt/</div>",
       "position": 18
     },
     {
       "id": "2e75c013-b4f5-4a4b-b040-290adc342681",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Clock</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An instrument for telling time.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/klɒk/</div>",
       "position": 19
     },
     {
       "id": "cd90796e-3029-45f8-8781-8e561228a9b6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Calendar</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A chart showing days and months.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkælɪndər/</div>",
       "position": 20
     },
     {
       "id": "b8de9d34-aa60-4485-861c-58171b1d5c19",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Date</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A specific day of the month or year.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/deɪt/</div>",
       "position": 21
     },
     {
       "id": "a7259238-93f5-4fb6-bc73-61fe2c1b0bca",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Sunny</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Bright with light from the sun.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsʌni/</div>",
       "position": 22
     },
     {
       "id": "bd9693da-3a07-4119-b80f-81dff9e725dd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Rainy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Having much rain.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈreɪni/</div>",
       "position": 23
     },
     {
       "id": "36c354e6-3643-4da0-bde8-8c9d662aacfa",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Cloudy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Full of clouds.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈklaʊdi/</div>",
       "position": 24
     },
     {
       "id": "4a9ff5af-9662-419b-80ab-d0829b2bc471",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Windy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>With strong winds.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈwɪndi/</div>",
       "position": 25
     },
     {
       "id": "e007feb3-8b4a-4adb-b635-0ab11b346e76",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Snowy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Covered with snow.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsnoʊi/</div>",
       "position": 26
     },
     {
       "id": "efa220eb-c118-4f32-b6f3-7f702e370fe8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Hot</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Having a high temperature.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/hɒt/</div>",
       "position": 27
     },
     {
       "id": "2071f9c0-d1be-46a3-93d5-502117902ca1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Cold</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Having a low temperature.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/koʊld/</div>",
       "position": 28
     },
     {
       "id": "dd58eef5-75ee-4450-b198-6275b1d0fbfe",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Weather</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The state of the atmosphere.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈwɛðər/</div>",
       "position": 29
     },
     {
       "id": "1b8e4abf-062a-4441-854e-17b3ec358473",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Temperature</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>How hot or cold something is.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtɛmprətʃər/</div>",
       "position": 30
     },
     {
       "id": "e849326c-0831-4e08-babf-6e1680a05162",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Season</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A period of the year.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsiːzən/</div>",
       "position": 31
     },
     {
       "id": "4e3f91cf-3f0a-4e68-8277-888eb6aa2f7f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Spring</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The season after winter.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/sprɪŋ/</div>",
       "position": 32
     },
     {
       "id": "8f57a331-073e-40d6-adae-b1d977c32bdb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Summer</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The warmest season.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsʌmər/</div>",
       "position": 33
     },
     {
       "id": "0461e0b8-9d4c-4703-88f1-90a6d55bc149",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Autumn</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The season after summer.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈɔːtəm/</div>",
       "position": 34
     },
     {
       "id": "cae2f5c2-475f-4d1b-b5ea-d5aadeacd11d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Winter</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The coldest season.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈwɪntər/</div>",
       "position": 35
     },
     {
       "id": "2c66e933-826c-4d9d-9d1e-48220cf8ec79",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Noon</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Twelve o'clock in the day.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/nuːn/</div>",
       "position": 36
     },
     {
       "id": "20f01c05-5533-4008-9d94-715dc32c2786",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Midnight</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Twelve o'clock at night.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmɪdˌnaɪt/</div>",
       "position": 37
     },
     {
       "id": "517c76a3-0b98-4013-9035-be5e3da601d6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Early</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Happening before the expected time.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈɜːrli/</div>",
       "position": 38
     },
     {
       "id": "617da7be-0fc2-438f-bd15-7333568a77f2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Late</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Happening after the expected time.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/leɪt/</div>",
       "position": 39
     },
     {
       "id": "15bb8355-a2c9-42f5-a272-17ca65b36584",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Before</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>At an earlier time.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/bɪˈfɔːr/</div>",
       "position": 40
     },
     {
       "id": "cd37dc8f-5901-4c75-8bbc-632ca92d2131",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">After</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>At a later time.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈæftər/</div>",
       "position": 41
     },
     {
       "id": "ac6e73ae-17d2-46a2-a00c-e895df840381",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Daily</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Happening every day.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈdeɪli/</div>",
       "position": 42
     },
     {
       "id": "624df92d-a40a-4b57-be35-cef516d9e386",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Weekly</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Happening once a week.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈwiːkli/</div>",
       "position": 43
     },
     {
       "id": "ac369616-1132-4ee7-a746-e9e1afd3789f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Monthly</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Happening once a month.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmʌnθli/</div>",
       "position": 44
     },
     {
       "id": "81a96734-ef86-4b10-a32f-089e75730575",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Yearly</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Happening once a year.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈjɪərli/</div>",
       "position": 45
     },
     {
       "id": "05f34d63-c0ff-411b-b7bc-21f1b51f4014",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Weekend</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Saturday and Sunday.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈwiːkˌɛnd/</div>",
       "position": 46
     },
     {
       "id": "7504b6a4-d8a3-4a62-bc0a-9c1fd520cbe1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Weekday</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Any day except Saturday and Sunday.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈwiːkˌdeɪ/</div>",
       "position": 47
     },
     {
       "id": "5bdd5523-00a1-4d75-9110-00f37fb57898",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Duration</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The time something continues.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/djuˈreɪʃən/</div>",
       "position": 48
     },
     {
       "id": "23e07b86-a411-43c3-9e19-6aa2d0f11e15",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Moment</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A very short period of time.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmoʊmənt/</div>",
       "position": 49
     }
   ]

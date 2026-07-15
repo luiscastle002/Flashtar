@@ -110,202 +110,154 @@
       "position": 16
     },
     {
-      "id": "164a3aea-88bb-4d6d-b8e2-47512acc1fd8",
-      "front": "<div class=\"text-6xl font-bold text-center\">客観的</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Objective</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kyakkanteki</div>",
-      "position": 17
-    },
-    {
-      "id": "c3de0809-953e-47a5-a52e-aa1a7bef3031",
-      "front": "<div class=\"text-6xl font-bold text-center\">主観的</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Subjective</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">shukanteki</div>",
-      "position": 18
-    },
-    {
       "id": "34dc6e27-a162-4061-8753-46ea6d05d9cf",
       "front": "<div class=\"text-6xl font-bold text-center\">合理主義</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Rationalism</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">gouri shugi</div>",
-      "position": 19
+      "position": 17
     },
     {
       "id": "b1d7d3a6-abe5-424f-bf15-ef6007b5e95a",
       "front": "<div class=\"text-6xl font-bold text-center\">認識論</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Epistemology</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ninshikiron</div>",
-      "position": 20
+      "position": 18
     },
     {
       "id": "753855ee-959d-4ed2-8ba8-9495a97c778e",
       "front": "<div class=\"text-6xl font-bold text-center\">弁証法</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Dialectic</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">benshouhou</div>",
-      "position": 21
+      "position": 19
     },
     {
       "id": "9a4d84b4-1450-4a4e-b057-531e16aaad88",
       "front": "<div class=\"text-6xl font-bold text-center\">人間性</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Humanity; human nature</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ningensei</div>",
-      "position": 22
-    },
-    {
-      "id": "eefb475c-9475-403a-bd5a-197b7f5c43e7",
-      "front": "<div class=\"text-6xl font-bold text-center\">パラダイム</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Paradigm</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">paradaimu</div>",
-      "position": 23
+      "position": 20
     },
     {
       "id": "317b14d8-38e8-45e7-8467-f0b472b26cec",
       "front": "<div class=\"text-6xl font-bold text-center\">形而上学</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Metaphysics</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">keijijougaku</div>",
-      "position": 24
+      "position": 21
     },
     {
       "id": "d5a5864e-053b-477c-b94d-b3df38b8eb7f",
       "front": "<div class=\"text-6xl font-bold text-center\">アンチテーゼ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Antithesis</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">anchiteeze</div>",
-      "position": 25
+      "position": 22
     },
     {
       "id": "0b6f28d1-c66b-4d36-b62d-cc33dfc971d2",
       "front": "<div class=\"text-6xl font-bold text-center\">感性</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sensibility; sensitivity</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kansei</div>",
-      "position": 26
-    },
-    {
-      "id": "84d5fde7-8872-429f-924f-b13141325c84",
-      "front": "<div class=\"text-6xl font-bold text-center\">概念</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Concept</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">gainen</div>",
-      "position": 27
+      "position": 23
     },
     {
       "id": "e8e22570-9a39-4e7b-9e1b-4804c6b29ce4",
       "front": "<div class=\"text-6xl font-bold text-center\">文明批評</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Civilization criticism</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">bunmei hihyou</div>",
-      "position": 28
+      "position": 24
     },
     {
       "id": "056d2759-b1b0-4404-874c-bd538e12600f",
       "front": "<div class=\"text-6xl font-bold text-center\">真理</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Truth</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">shinri</div>",
-      "position": 29
+      "position": 25
     },
     {
       "id": "9dc30199-ad7e-4bdb-9277-b1fe55f8550d",
       "front": "<div class=\"text-6xl font-bold text-center\">アイロニー</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Irony</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">aironii</div>",
-      "position": 30
-    },
-    {
-      "id": "eb29ee2d-ac30-4043-98a6-a4d8a5d9bdea",
-      "front": "<div class=\"text-6xl font-bold text-center\">主観</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Subjectivity</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">shukan</div>",
-      "position": 31
+      "position": 26
     },
     {
       "id": "2a6953a6-471b-44e0-8e04-5df78c6ff9e2",
       "front": "<div class=\"text-6xl font-bold text-center\">道徳律</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Moral law</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">doutokuritsu</div>",
-      "position": 32
-    },
-    {
-      "id": "8ffdaee8-e002-4f34-b20e-353e3b2c6f92",
-      "front": "<div class=\"text-6xl font-bold text-center\">直感</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Intuition</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">chokkan</div>",
-      "position": 33
+      "position": 27
     },
     {
       "id": "d9834e96-5c07-4051-85b6-5a8d333cadf2",
       "front": "<div class=\"text-6xl font-bold text-center\">合理性</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Rationality</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">gourisei</div>",
-      "position": 34
+      "position": 28
     },
     {
       "id": "9ea8bff3-0f19-4c88-be2d-c971754c221f",
       "front": "<div class=\"text-6xl font-bold text-center\">必然性</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Necessity</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">hitsuzensei</div>",
-      "position": 35
+      "position": 29
     },
     {
       "id": "1a693cfd-75cf-4c44-a000-a0d8619c4da1",
       "front": "<div class=\"text-6xl font-bold text-center\">独創性</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Originality</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">dokusousei</div>",
-      "position": 36
+      "position": 30
     },
     {
       "id": "89141892-9a81-483a-ada3-ac2c4f7ec6a9",
       "front": "<div class=\"text-6xl font-bold text-center\">相対化</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Relativization</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">soutaika</div>",
-      "position": 37
+      "position": 31
     },
     {
       "id": "12a70696-6d6b-45aa-80a9-43e33653c7c9",
       "front": "<div class=\"text-6xl font-bold text-center\">教養</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Culture; refinement</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kyouyou</div>",
-      "position": 38
+      "position": 32
     },
     {
       "id": "a8ee98bd-2b3a-4f47-a111-6b216a6f2b50",
       "front": "<div class=\"text-6xl font-bold text-center\">形而下</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Physical (non-metaphysical)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">keijika</div>",
-      "position": 39
+      "position": 33
     },
     {
       "id": "5be93936-643b-48b0-9e95-ace23655bdb7",
       "front": "<div class=\"text-6xl font-bold text-center\">実証主義</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Positivism</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">jisshou shugi</div>",
-      "position": 40
+      "position": 34
     },
     {
       "id": "446d3c68-9405-495e-928d-3d3feb659568",
       "front": "<div class=\"text-6xl font-bold text-center\">形而上</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Metaphysical</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">keijijou</div>",
-      "position": 41
+      "position": 35
     },
     {
       "id": "9b592b02-0f43-4d89-ac6e-452d74ba95a9",
       "front": "<div class=\"text-6xl font-bold text-center\">現象学</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Phenomenology</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">genshougaku</div>",
-      "position": 42
-    },
-    {
-      "id": "d584ed7b-ea26-41ec-a382-0e0f6b63caf4",
-      "front": "<div class=\"text-6xl font-bold text-center\">無意識</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Unconscious</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">muishiki</div>",
-      "position": 43
+      "position": 36
     },
     {
       "id": "46ff2dfa-311c-4d61-b48a-f0018cec7960",
       "front": "<div class=\"text-6xl font-bold text-center\">主観性</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Subjectivity</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">shukansei</div>",
-      "position": 44
+      "position": 37
     },
     {
       "id": "d4d72b4e-cac7-4bc0-a260-01c59fa82e87",
       "front": "<div class=\"text-6xl font-bold text-center\">普遍性</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Universality</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">fuhensei</div>",
-      "position": 45
+      "position": 38
     },
     {
       "id": "443dc9c2-37cf-4e64-9072-f128369801e0",
       "front": "<div class=\"text-6xl font-bold text-center\">具体化</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Embodiment; concretization</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">gutaika</div>",
-      "position": 46
-    },
-    {
-      "id": "56fb44df-a7a1-4e11-a3ad-fd2e9c1b6bce",
-      "front": "<div class=\"text-6xl font-bold text-center\">因果関係</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Causality</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ingakankei</div>",
-      "position": 47
+      "position": 39
     },
     {
       "id": "5943200b-431c-47d1-9de7-fc89c978777f",
       "front": "<div class=\"text-6xl font-bold text-center\">主体性</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Subjectivity/Agency</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">shutaisei</div>",
-      "position": 48
+      "position": 40
     },
     {
       "id": "7a907d6b-2ca3-4f5a-ae9c-8ff42a40c9a0",
       "front": "<div class=\"text-6xl font-bold text-center\">表象</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Representation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">hyoushou</div>",
-      "position": 49
+      "position": 41
     }
   ]
 }

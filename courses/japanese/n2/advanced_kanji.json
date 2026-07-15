@@ -38,274 +38,172 @@
       "position": 4
     },
     {
-      "id": "d2f047dc-b71d-4ac3-b507-5ffac81238d7",
-      "front": "<div class=\"text-6xl font-bold text-center\">懸念</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Concern / Fear</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けねん (Kenen)</div>",
-      "position": 5
-    },
-    {
-      "id": "b0a2f033-1587-446d-af77-357fc16e1210",
-      "front": "<div class=\"text-6xl font-bold text-center\">妥協</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Compromise</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">だきょう (Dakyō)</div>",
-      "position": 6
-    },
-    {
       "id": "81bacf97-0886-4e3d-898d-0cbdb9501ac8",
       "front": "<div class=\"text-6xl font-bold text-center\">概略</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Outline / Summary</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">がいりゃく (Gairyaku)</div>",
-      "position": 7
+      "position": 5
     },
     {
       "id": "ed46a763-044f-4cb7-aa93-107987f3df61",
       "front": "<div class=\"text-6xl font-bold text-center\">緻密</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Precise / Detailed</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちみつ (Chimitsu)</div>",
-      "position": 8
-    },
-    {
-      "id": "c3329e86-8f50-424b-9c62-44b4484e1c2d",
-      "front": "<div class=\"text-6xl font-bold text-center\">抑制</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Suppression / Control</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">よくせい (Yokusei)</div>",
-      "position": 9
-    },
-    {
-      "id": "0bf34f19-5dbb-446a-a4b8-feec2761eabc",
-      "front": "<div class=\"text-6xl font-bold text-center\">矛盾</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Contradiction</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">むじゅん (Mujun)</div>",
-      "position": 10
+      "position": 6
     },
     {
       "id": "fed3594a-7667-4fc7-bcb1-9da254a29d79",
       "front": "<div class=\"text-6xl font-bold text-center\">即座</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Immediately</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そくざ (Sokuza)</div>",
-      "position": 11
+      "position": 7
     },
     {
       "id": "ba203140-d483-443d-bdb5-ceb64eb03dd4",
       "front": "<div class=\"text-6xl font-bold text-center\">享受</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Enjoyment / Receipt</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうじゅ (Kyōju)</div>",
-      "position": 12
-    },
-    {
-      "id": "e6eca830-e126-4202-bd29-0a23852c7e04",
-      "front": "<div class=\"text-6xl font-bold text-center\">執着</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Obsession / Attachment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しゅうちゃく (Shūchaku)</div>",
-      "position": 13
+      "position": 8
     },
     {
       "id": "c96778a8-dccd-48e3-a9f2-751c59438f99",
       "front": "<div class=\"text-6xl font-bold text-center\">象徴</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Symbol</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょうちょう (Shōchō)</div>",
-      "position": 14
+      "position": 9
     },
     {
       "id": "22cb4825-a9bc-4e9d-ad4e-b321080b8d28",
       "front": "<div class=\"text-6xl font-bold text-center\">模索</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Groping / Searching</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">もさく (Mosaku)</div>",
-      "position": 15
-    },
-    {
-      "id": "db1f6348-1670-426e-b2ec-809b0d439777",
-      "front": "<div class=\"text-6xl font-bold text-center\">享受</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Enjoyment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうじゅ (Kyōju)</div>",
-      "position": 16
+      "position": 10
     },
     {
       "id": "38328a61-b9c8-477e-b507-b6181bf084f2",
       "front": "<div class=\"text-6xl font-bold text-center\">均衡</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Equilibrium / Balance</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きんこう (Kinkō)</div>",
-      "position": 17
+      "position": 11
     },
     {
       "id": "d63ee582-32e5-4a35-bacb-9d80ccc6bd5d",
       "front": "<div class=\"text-6xl font-bold text-center\">驚異</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Wonder / Marvel</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうい (Kyōi)</div>",
-      "position": 18
+      "position": 12
     },
     {
       "id": "b4c993c5-674b-4546-9543-44e2f4f7ebd4",
       "front": "<div class=\"text-6xl font-bold text-center\">巧妙</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ingenious / Clever</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こうみょう (Kōmyō)</div>",
-      "position": 19
-    },
-    {
-      "id": "1da25586-b842-4ed9-9363-80de8d9d0482",
-      "front": "<div class=\"text-6xl font-bold text-center\">過剰</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Excessive</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かじょう (Kajō)</div>",
-      "position": 20
-    },
-    {
-      "id": "d5f3eaf7-ad34-4e0d-b27c-7b79a01eee90",
-      "front": "<div class=\"text-6xl font-bold text-center\">享受</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Enjoyment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうじゅ (Kyōju)</div>",
-      "position": 21
+      "position": 13
     },
     {
       "id": "90b82f06-2687-4ded-9bca-595d99b6699e",
       "front": "<div class=\"text-6xl font-bold text-center\">蓄積</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Accumulation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちくせき (Chikuseki)</div>",
-      "position": 22
+      "position": 14
     },
     {
       "id": "48d26d25-b8db-4c88-abae-d3ff5b51f708",
       "front": "<div class=\"text-6xl font-bold text-center\">排除</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Exclusion / Removal</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はいじょ (Haijo)</div>",
-      "position": 23
-    },
-    {
-      "id": "00ad1d1b-fbe3-4cd8-a6a1-825618903d66",
-      "front": "<div class=\"text-6xl font-bold text-center\">連携</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cooperation / Linkage</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">れんけい (Renkei)</div>",
-      "position": 24
+      "position": 15
     },
     {
       "id": "92e0b174-8105-4e39-86ec-2dae7c3a5b4c",
       "front": "<div class=\"text-6xl font-bold text-center\">逸脱</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Deviation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いつだつ (Itsudatsu)</div>",
-      "position": 25
+      "position": 16
     },
     {
       "id": "8bec25c8-98aa-4a5f-8537-f091fca4e0d1",
       "front": "<div class=\"text-6xl font-bold text-center\">誘惑</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Temptation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆうわく (Yūwaku)</div>",
-      "position": 26
+      "position": 17
     },
     {
       "id": "871cd4ba-83e8-4f9a-a54a-790fc6566554",
       "front": "<div class=\"text-6xl font-bold text-center\">解釈</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Interpretation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かいしゃく (Kaishaku)</div>",
-      "position": 27
+      "position": 18
     },
     {
       "id": "959a140d-bbc7-45a3-b95b-04d5eab9aa56",
       "front": "<div class=\"text-6xl font-bold text-center\">頻出</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Frequent occurrence</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひんしゅつ (Hinshutsu)</div>",
-      "position": 28
+      "position": 19
     },
     {
       "id": "ed9c6194-219f-4b6d-ba66-a9bbfcc82068",
       "front": "<div class=\"text-6xl font-bold text-center\">融合</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fusion / Merging</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆうごう (Yūgō)</div>",
-      "position": 29
+      "position": 20
     },
     {
       "id": "50046c05-5839-4ab8-9476-5141307bb356",
       "front": "<div class=\"text-6xl font-bold text-center\">喚起</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Arousal / Awakening</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんき (Kanki)</div>",
-      "position": 30
-    },
-    {
-      "id": "145ed872-733d-412d-a2cf-7f102d03f14b",
-      "front": "<div class=\"text-6xl font-bold text-center\">画期的</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Groundbreaking</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かっきてき (Kakkiteki)</div>",
-      "position": 31
+      "position": 21
     },
     {
       "id": "002c4685-cae2-42a7-8b2d-3946dd33f4c6",
       "front": "<div class=\"text-6xl font-bold text-center\">是正</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Correction / Rectification</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぜせい (Zesei)</div>",
-      "position": 32
+      "position": 22
     },
     {
       "id": "718d00e1-925d-4562-9764-71a310568e3c",
       "front": "<div class=\"text-6xl font-bold text-center\">先駆</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Pioneer / Forerunner</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せんく (Senku)</div>",
-      "position": 33
+      "position": 23
     },
     {
       "id": "485413bc-523e-401b-a175-7305e2daee16",
       "front": "<div class=\"text-6xl font-bold text-center\">浸透</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Penetration / Permeation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんとう (Shintō)</div>",
-      "position": 34
-    },
-    {
-      "id": "75803fa9-7db6-45ea-be0b-2dbf47b28e2e",
-      "front": "<div class=\"text-6xl font-bold text-center\">妥当</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Appropriate / Valid</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">だとう (Datō)</div>",
-      "position": 35
+      "position": 24
     },
     {
       "id": "e450e12a-75e4-4be4-8436-aed1ff032ee5",
       "front": "<div class=\"text-6xl font-bold text-center\">追及</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Pursuit (of responsibility)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ついきゅう (Tsuikyū)</div>",
-      "position": 36
+      "position": 25
     },
     {
       "id": "aa9fc761-e6f6-4e51-a9cb-068929cb3c44",
       "front": "<div class=\"text-6xl font-bold text-center\">帰属</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Affiliation / Belonging</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きぞく (Kizoku)</div>",
-      "position": 37
-    },
-    {
-      "id": "dd8b3bda-f3ea-4b50-a969-3ecf50ab5f0e",
-      "front": "<div class=\"text-6xl font-bold text-center\">享受</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Enjoyment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうじゅ (Kyōju)</div>",
-      "position": 38
+      "position": 26
     },
     {
       "id": "2161476f-d1c0-496e-b664-64c878c22bdb",
       "front": "<div class=\"text-6xl font-bold text-center\">顕著</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Remarkable / Notable</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けんちょ (Kencho)</div>",
-      "position": 39
-    },
-    {
-      "id": "0e8d42dd-56d9-4cd4-b1ba-64e3a13aeafa",
-      "front": "<div class=\"text-6xl font-bold text-center\">拡散</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Diffusion / Spreading</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かくさん (Kakusan)</div>",
-      "position": 40
-    },
-    {
-      "id": "3c5207ee-0ebe-4038-a267-93e76e279b7c",
-      "front": "<div class=\"text-6xl font-bold text-center\">緩和</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Relief / Mitigation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんわ (Kanwa)</div>",
-      "position": 41
-    },
-    {
-      "id": "b6830e69-8090-4a84-8810-e2a2c52a5aa0",
-      "front": "<div class=\"text-6xl font-bold text-center\">享受</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Enjoyment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうじゅ (Kyōju)</div>",
-      "position": 42
+      "position": 27
     },
     {
       "id": "70ade6e3-9428-42b8-a685-9fd3a008ca66",
       "front": "<div class=\"text-6xl font-bold text-center\">充当</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Allocation / Appropriation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じゅうとう (Jūtō)</div>",
-      "position": 43
+      "position": 28
     },
     {
       "id": "f8ff9ffa-bb07-46b2-8cb1-fc91b37767b5",
       "front": "<div class=\"text-6xl font-bold text-center\">紛失</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Loss / Missing</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ふんしつ (Funshitsu)</div>",
-      "position": 44
-    },
-    {
-      "id": "93eb7ef5-f6af-4ff4-9369-5ed12ed01106",
-      "front": "<div class=\"text-6xl font-bold text-center\">促進</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Promotion / Advancement</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そくしん (Sokushin)</div>",
-      "position": 45
-    },
-    {
-      "id": "d5ccbbb3-76f6-4e18-9cdc-8c63bf355b84",
-      "front": "<div class=\"text-6xl font-bold text-center\">享受</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Enjoyment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうじゅ (Kyōju)</div>",
-      "position": 46
+      "position": 29
     },
     {
       "id": "9f9064c2-b608-4632-baec-5a741b00a75a",
       "front": "<div class=\"text-6xl font-bold text-center\">画策</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Plot / Scheme</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かくさく (Kakusaku)</div>",
-      "position": 47
+      "position": 30
     },
     {
       "id": "783badd8-11ee-4aa0-a4ae-a9d02fb988c3",
       "front": "<div class=\"text-6xl font-bold text-center\">収束</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Convergence / End</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しゅうそく (Shūsoku)</div>",
-      "position": 48
+      "position": 31
     },
     {
       "id": "ab30dc57-f9b3-4be0-80ae-9134bbf76533",
       "front": "<div class=\"text-6xl font-bold text-center\">克服</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Overcoming</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こくふく (Kokufuku)</div>",
-      "position": 49
+      "position": 32
     }
   ]
 }

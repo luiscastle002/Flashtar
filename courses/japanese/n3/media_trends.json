@@ -278,34 +278,28 @@
       "position": 44
     },
     {
-      "id": "ade0d463-6542-4cb9-932a-f363088e790c",
-      "front": "<div class=\"text-6xl font-bold text-center\">共感</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Empathy / Sympathy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうかん (Kyoukan)</div>",
-      "position": 45
-    },
-    {
       "id": "c3a77a13-72ff-4827-9323-7eab613ed2ee",
       "front": "<div class=\"text-6xl font-bold text-center\">批判</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Criticism</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひはん (Hihan)</div>",
-      "position": 46
+      "position": 45
     },
     {
       "id": "9aa3bdac-807b-442e-a02a-9ff882e3d9d9",
       "front": "<div class=\"text-6xl font-bold text-center\">擁護</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Defense / Advocacy</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ようご (Yougo)</div>",
-      "position": 47
+      "position": 46
     },
     {
       "id": "3b4a01b7-f4a0-42b1-8eb2-e6bee7d3fc1d",
       "front": "<div class=\"text-6xl font-bold text-center\">反響</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Reaction / Echo</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はんきょう (Hankyou)</div>",
-      "position": 48
+      "position": 47
     },
     {
       "id": "f4c5980f-c9dd-4707-80a2-2eaeb75828f8",
       "front": "<div class=\"text-6xl font-bold text-center\">論争</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Controversy / Debate</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ろんそう (Ronsou)</div>",
-      "position": 49
+      "position": 48
     }
   ]
 }

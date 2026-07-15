@@ -10,301 +10,301 @@
     {
       "id": "b0000000-0000-0000-0000-000000000021",
       "front": "<div class=\"text-5xl font-bold text-center\">Water / Drink</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Essential liquid, and the act of consuming liquids.</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Essential liquid, and the act of consuming liquids.[cite: 9]</div>",
       "position": 0
     },
     {
       "id": "b0000000-0000-0000-0000-000000000022",
       "front": "<div class=\"text-5xl font-bold text-center\">Food / Eat</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Nutritious substance, and the act of consuming solid food.</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Nutritious substance, and the act of consuming solid food.[cite: 9]</div>",
       "position": 1
     },
     {
       "id": "e009c1d7-837e-4cf9-ab44-c9416cd43da3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Breakfast</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The first meal of the day.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈbrekfəst/</div>",
       "position": 2
     },
     {
       "id": "3cfa9059-cea7-45d3-a1ad-31357c85164b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Lunch</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A meal eaten in the middle of the day.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/lʌntʃ/</div>",
       "position": 3
     },
     {
       "id": "4841db96-e61e-4507-a14a-5da5712ee1e6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Dinner</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The main meal of the day, eaten in the evening.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈdɪnər/</div>",
       "position": 4
     },
     {
       "id": "b77e8e02-6290-41d0-bd17-85fbf28e7fe9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bread</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A staple food made of flour and water.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/bred/</div>",
       "position": 5
     },
     {
       "id": "f2cba42e-859b-4045-8414-e27c7a011c42",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Milk</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A white liquid produced by mammals.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/mɪlk/</div>",
       "position": 6
     },
     {
       "id": "ca9d33ff-45bb-40eb-96d9-98196fe9f335",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Fruit</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The sweet product of a plant.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/fruːt/</div>",
       "position": 7
     },
     {
       "id": "07963fdc-d7bd-43aa-8352-57538fcb191a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Apple</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A round, crunchy fruit.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈæpl/</div>",
       "position": 8
     },
     {
       "id": "8031f696-7a7a-478c-9383-c1596a85da50",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Coffee</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A hot caffeinated beverage.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkɔːfi/</div>",
       "position": 9
     },
     {
       "id": "a87dc71a-0a60-4819-a496-8f5ca7f31045",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Tea</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A drink made by steeping leaves in hot water.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/tiː/</div>",
       "position": 10
     },
     {
       "id": "7cb339df-0fa8-48fe-b73a-ec17fa2d0831",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Meat</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The flesh of animals as food.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/miːt/</div>",
       "position": 11
     },
     {
       "id": "38ded223-4849-4324-a2d8-ab2f9c3baf9b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Fish</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A common aquatic animal eaten as food.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/fɪʃ/</div>",
       "position": 12
     },
     {
       "id": "09983fa0-bd6d-4f38-b8b9-d6710903d9dc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Egg</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A common breakfast food from birds.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/eɡ/</div>",
       "position": 13
     },
     {
       "id": "a446ecc3-2559-4fc4-9974-0718bdb9ea12",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Rice</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A staple cereal grain.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/raɪs/</div>",
       "position": 14
     },
     {
       "id": "95353c3f-02f2-482a-928d-20ed07124617",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Vegetable</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Plant material eaten as food.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈvedʒtəbl/</div>",
       "position": 15
     },
     {
       "id": "8738b61d-4602-4058-ada6-48ef791daef5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Salad</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A cold dish of mixed vegetables.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsæləd/</div>",
       "position": 16
     },
     {
       "id": "7dcf428f-0289-44e2-96c7-e6a9683e7367",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Chicken</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A common type of poultry.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtʃɪkɪn/</div>",
       "position": 17
     },
     {
       "id": "1f2c8472-d40d-4937-a5cf-4d7b479bdd5a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Cheese</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A dairy product made from milk.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/tʃiːz/</div>",
       "position": 18
     },
     {
       "id": "2457b822-5109-438e-8665-2bf9fabaab80",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Sugar</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A sweet substance used in cooking.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈʃʊɡər/</div>",
       "position": 19
     },
     {
       "id": "68e0f937-9a26-4c21-a0a0-84dd43b606c1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Salt</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A mineral used for seasoning.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/sɔːlt/</div>",
       "position": 20
     },
     {
       "id": "12fd8ebb-e292-4f79-a9ea-c06778c982a3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Juice</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Liquid extracted from fruit or vegetables.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/dʒuːs/</div>",
       "position": 21
     },
     {
       "id": "70704126-9f4d-4b5e-8329-7fc650bfbd50",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Cake</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A sweet, baked dessert.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/keɪk/</div>",
       "position": 22
     },
     {
       "id": "8cd377ae-858e-43fa-b309-ef46d7fefa4c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Soup</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A liquid meal made with vegetables or meat.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/suːp/</div>",
       "position": 23
     },
     {
       "id": "5fecf380-f36a-4ddb-86a7-66b82a5f4be0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Menu</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A list of food items available to order.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmenjuː/</div>",
       "position": 24
     },
     {
       "id": "5dc7b8c9-3c06-4ba1-a064-1e786903ff6c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Order</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To request food in a restaurant.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈɔːrdər/</div>",
       "position": 25
     },
     {
       "id": "2951b1ef-db7c-4fd2-8920-6bbc74c6e877",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Restaurant</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A place where you buy and eat meals.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈrestərənt/</div>",
       "position": 26
     },
     {
       "id": "9240fc30-976e-4528-8135-336249e759e6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Delicious</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Very tasty food.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/dɪˈlɪʃəs/</div>",
       "position": 27
     },
     {
       "id": "7e8d4f64-fece-49f0-850e-80d20dac84c4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Hungry</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The feeling of wanting food.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈhʌŋɡri/</div>",
       "position": 28
     },
     {
       "id": "6c3365d9-f647-4273-8894-2f49f3007313",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Thirsty</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The feeling of wanting a drink.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈθɜːrsti/</div>",
       "position": 29
     },
     {
       "id": "9bcefb1f-755f-462a-9264-ca58e69b3cdf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Coffee, please</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite way to ask for a drink.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkɔːfi, pliːz/</div>",
       "position": 30
     },
     {
       "id": "7d197da3-3108-4ec9-abca-f95338147510",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bill</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The document showing what you owe.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/bɪl/</div>",
       "position": 31
     },
     {
       "id": "0d5722e8-e691-40e0-bc78-664e94175b53",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Coffee or tea?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Question asking for a preference.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkɔːfi ɔːr tiː/</div>",
       "position": 32
     },
     {
       "id": "917e104a-45f7-46d5-9ec3-309b961a94e9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Some water</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A request for water.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/sʌm ˈwɔːtər/</div>",
       "position": 33
     },
     {
       "id": "2f58837e-f80c-4120-affb-befe8b131758",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">I am hungry</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Stating you need food.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪ æm ˈhʌŋɡri/</div>",
       "position": 34
     },
     {
       "id": "5700528a-e27a-4bb8-8dd9-3bbf99ea504a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Coffee with sugar</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Specifying a preference.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkɔːfi wɪð ˈʃʊɡər/</div>",
       "position": 35
     },
     {
       "id": "414a1cfc-729b-4dee-aec5-28441fa86a07",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">A glass of milk</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ordering a specific serving.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ə ɡlæs əv mɪlk/</div>",
       "position": 36
     },
     {
       "id": "7131f2b9-ccf8-45d7-9b79-68d4c4ba0455",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">What would you like?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite way to ask for an order.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/wɒt wʊd juː laɪk/</div>",
       "position": 37
     },
     {
       "id": "5ab18b7f-0ddf-4182-8b95-203b6e3ea6af",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Enjoy your meal</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Polite wish before eating.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɪnˈdʒɔɪ jʊər miːl/</div>",
       "position": 38
     },
     {
       "id": "71f2dabf-435a-4fac-8f01-3aa06c2a19fe",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Cold drink</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Describing temperature of a drink.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/koʊld drɪŋk/</div>",
       "position": 39
     },
     {
       "id": "5ae5702b-c176-4dbe-9746-c693cab4fda5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Hot food</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Describing temperature of food.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/hɒt fuːd/</div>",
       "position": 40
     },
     {
       "id": "90344508-2f28-44f8-9867-3e3506a87c03",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">A cup of tea</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ordering a specific serving.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ə kʌp əv tiː/</div>",
       "position": 41
     },
     {
       "id": "7ff4e1bb-0560-47e8-9d38-e76c93676f68",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Fresh fruit</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Describing quality.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/freʃ fruːt/</div>",
       "position": 42
     },
     {
       "id": "466c0680-b77a-43d0-8164-e0933436f536",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Is it good?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Asking for an opinion.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɪz ɪt ɡʊd/</div>",
       "position": 43
     },
     {
       "id": "372798ce-963e-4353-970f-a5f282d8af36",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Very tasty</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Complimenting food.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈveri ˈteɪsti/</div>",
       "position": 44
     },
     {
       "id": "66819c37-e787-4d46-884b-782440eac436",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">A little bit</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Specifying a small amount.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ə ˈlɪtl bɪt/</div>",
       "position": 45
     },
     {
       "id": "5f2b27ad-c32c-4353-9b4a-b294168af05b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Check, please</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Asking for the total.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/tʃek, pliːz/</div>",
       "position": 46
     },
     {
       "id": "43e270ec-c4e4-474e-8730-81cdccdf2b28",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">I'm full</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Done eating.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪm fʊl/</div>",
       "position": 47
     },
     {
       "id": "cd0f4379-acd7-4fc6-9ec4-b18a55fd2cc3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Water, no ice</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Specific preference.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈwɔːtər, noʊ aɪs/</div>",
       "position": 48
     },
     {
       "id": "1fc48182-c20d-47a3-ba16-9560eb78f0c2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">A table for two</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Asking for seating.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ə ˈteɪbl fɔːr tuː/</div>",
       "position": 49
     }
   ]

@@ -26,286 +26,280 @@
       "position": 2
     },
     {
-      "id": "8e5110b9-4c11-4b5c-979c-fa13375a9580",
-      "front": "<div class=\"text-6xl font-bold text-center\">守る</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To follow / Protect (rules)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まもる (Mamoru)</div>",
-      "position": 3
-    },
-    {
       "id": "8c9e15c9-282a-4cde-9e9c-e0fd536b8794",
       "front": "<div class=\"text-6xl font-bold text-center\">禁止</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Prohibition</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きんし (Kinshi)</div>",
-      "position": 4
+      "position": 3
     },
     {
       "id": "d9e2aaa0-998b-4130-a4e6-12e63d6c6ff2",
       "front": "<div class=\"text-6xl font-bold text-center\">許可</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Permission</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょか (Kyoka)</div>",
-      "position": 5
+      "position": 4
     },
     {
       "id": "72a38b5b-a262-4bf1-b424-97cc5ffd8bfe",
       "front": "<div class=\"text-6xl font-bold text-center\">義務</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Duty / Obligation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぎむ (Gimu)</div>",
-      "position": 6
+      "position": 5
     },
     {
       "id": "f6dc7fa6-5d9a-4f2a-bb17-68156635005b",
       "front": "<div class=\"text-6xl font-bold text-center\">権利</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Right / Privilege</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けんり (Kenri)</div>",
-      "position": 7
+      "position": 6
     },
     {
       "id": "2fc030c7-cd3b-4c3e-8e04-9328e1d91f45",
       "front": "<div class=\"text-6xl font-bold text-center\">公共</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Public</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こうきょう (Koukyou)</div>",
-      "position": 8
+      "position": 7
     },
     {
       "id": "6f3086cc-3007-4054-a4a0-2aae75b6394a",
       "front": "<div class=\"text-6xl font-bold text-center\">マナー違反</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Violation of manners</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まなーいはん (Manaa ihan)</div>",
-      "position": 9
+      "position": 8
     },
     {
       "id": "d8eb0d7d-c373-43d0-b791-213450b866f7",
       "front": "<div class=\"text-6xl font-bold text-center\">違反</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Violation / Breach</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いはん (Ihan)</div>",
-      "position": 10
+      "position": 9
     },
     {
       "id": "85b689b0-cfd2-4dad-81b3-c6588b7775b5",
       "front": "<div class=\"text-6xl font-bold text-center\">罰金</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fine / Penalty</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ばっきん (Bakkin)</div>",
-      "position": 11
+      "position": 10
     },
     {
       "id": "26400cba-d756-479c-b3dd-d09b19ab5b06",
       "front": "<div class=\"text-6xl font-bold text-center\">期限</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Deadline / Time limit</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きげん (Kigen)</div>",
-      "position": 12
+      "position": 11
     },
     {
       "id": "086ed316-2851-46c8-8125-206f334ff7f3",
       "front": "<div class=\"text-6xl font-bold text-center\">公的</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Official / Public</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こうてき (Kouteki)</div>",
-      "position": 13
+      "position": 12
     },
     {
       "id": "5eda2a63-7d30-4561-aa48-e6d6b7b0b668",
       "front": "<div class=\"text-6xl font-bold text-center\">優先</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Priority</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆうせん (Yuusen)</div>",
-      "position": 14
+      "position": 13
     },
     {
       "id": "a21fe55f-7b93-46fe-851a-6bfa9a37148e",
       "front": "<div class=\"text-6xl font-bold text-center\">譲る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To yield / Give up (seat)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆずる (Yuzuru)</div>",
-      "position": 15
+      "position": 14
     },
     {
       "id": "aab72c47-b3ef-4ebb-9fbd-c212797ff699",
       "front": "<div class=\"text-6xl font-bold text-center\">行列</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Line / Queue</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぎょうれつ (Gyouretsu)</div>",
-      "position": 16
+      "position": 15
     },
     {
       "id": "b186b5c8-9b5a-4827-ad08-a0909966f01e",
       "front": "<div class=\"text-6xl font-bold text-center\">割り込み</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cutting in line</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">わりこみ (Warikomi)</div>",
-      "position": 17
+      "position": 16
     },
     {
       "id": "912ae8c6-de3b-4025-865e-26332d91f4d5",
       "front": "<div class=\"text-6xl font-bold text-center\">騒音</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Noise</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そうおん (Souon)</div>",
-      "position": 18
+      "position": 17
     },
     {
       "id": "c8f9b315-79d0-462c-9f84-7495d58be0a9",
       "front": "<div class=\"text-6xl font-bold text-center\">迷惑</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Annoyance / Nuisance</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">めいわく (Meiwaku)</div>",
-      "position": 19
+      "position": 18
     },
     {
       "id": "b5b03181-ea2f-4b20-a826-7c96df20c6c4",
       "front": "<div class=\"text-6xl font-bold text-center\">禁煙</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>No smoking</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きんえん (Kinen)</div>",
-      "position": 20
+      "position": 19
     },
     {
       "id": "dbad2ab8-ef6b-473f-9e4b-ea67dad0d68c",
       "front": "<div class=\"text-6xl font-bold text-center\">喫煙所</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Smoking area</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きつえんじょ (Kitsuenjo)</div>",
-      "position": 21
+      "position": 20
     },
     {
       "id": "6cb6adb0-ab8b-46ce-8129-2627f54655a8",
       "front": "<div class=\"text-6xl font-bold text-center\">通報</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Report / Notification</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つうほう (Tsuuhou)</div>",
-      "position": 22
+      "position": 21
     },
     {
       "id": "a8c1be86-c2c4-4d66-b710-0607f8da1ce5",
       "front": "<div class=\"text-6xl font-bold text-center\">注意</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Caution / Attention</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちゅうい (Chuui)</div>",
-      "position": 23
+      "position": 22
     },
     {
       "id": "b95f1669-a790-4d03-8a83-674a1beda208",
       "front": "<div class=\"text-6xl font-bold text-center\">配慮</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Consideration</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はいりょ (Hairyo)</div>",
-      "position": 24
+      "position": 23
     },
     {
       "id": "be03d034-36b3-425d-ade1-cc3a333f96d8",
       "front": "<div class=\"text-6xl font-bold text-center\">マナーモード</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Silent mode (phone)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まなーもーど (Manaa moodo)</div>",
-      "position": 25
+      "position": 24
     },
     {
       "id": "be9906dc-1efa-4470-b619-20e08bf7cb9d",
       "front": "<div class=\"text-6xl font-bold text-center\">立入禁止</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>No entry</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たちいりきんし (Tachiiri kinshi)</div>",
-      "position": 26
+      "position": 25
     },
     {
       "id": "c10eee9f-7e3b-4e2e-a358-aa99fea80c82",
       "front": "<div class=\"text-6xl font-bold text-center\">撮影禁止</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>No photography</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さつえいきんし (Satsuei kinshi)</div>",
-      "position": 27
+      "position": 26
     },
     {
       "id": "e482d402-a1b5-4bd2-a82f-fc85192803b1",
       "front": "<div class=\"text-6xl font-bold text-center\">駐車禁止</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>No parking</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちゅうしゃきんし (Chuusha kinshi)</div>",
-      "position": 28
+      "position": 27
     },
     {
       "id": "b098dd2d-ebfc-452c-8fe8-3f8aaf952469",
       "front": "<div class=\"text-6xl font-bold text-center\">携帯電話</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Mobile phone</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けいたいでんわ (Keitai denwa)</div>",
-      "position": 29
+      "position": 28
     },
     {
       "id": "c84fab8d-76c6-4929-8c2a-4b634e98467d",
       "front": "<div class=\"text-6xl font-bold text-center\">通話</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Phone call</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">つうわ (Tsuuwa)</div>",
-      "position": 30
+      "position": 29
     },
     {
       "id": "86131818-a907-4dc2-8d20-13f4260aa3f2",
       "front": "<div class=\"text-6xl font-bold text-center\">大声</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Loud voice</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">おおごえ (Oogoe)</div>",
-      "position": 31
+      "position": 30
     },
     {
       "id": "f95de213-8446-4914-b9ee-f29dac568e0f",
       "front": "<div class=\"text-6xl font-bold text-center\">ゴミ捨て場</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Trash collection point</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ごみすてば (Gomi suteba)</div>",
-      "position": 32
+      "position": 31
     },
     {
       "id": "c61db9e3-e7ab-49d4-877e-1bb03098c7fe",
       "front": "<div class=\"text-6xl font-bold text-center\">分別</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sorting (trash)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぶんべつ (Bunbetsu)</div>",
-      "position": 33
+      "position": 32
     },
     {
       "id": "713bb77f-7e2d-4d2c-957c-5afb8f25370f",
       "front": "<div class=\"text-6xl font-bold text-center\">騒ぐ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To make noise</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さわぐ (Sawagu)</div>",
-      "position": 34
+      "position": 33
     },
     {
       "id": "6b8f667d-d52f-434a-bb48-4b32e0057aaa",
       "front": "<div class=\"text-6xl font-bold text-center\">喫煙</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Smoking</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きつえん (Kitsuen)</div>",
-      "position": 35
+      "position": 34
     },
     {
       "id": "8f6631ef-fc0c-4d57-a465-e20d593f3850",
       "front": "<div class=\"text-6xl font-bold text-center\">ポイ捨て</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Littering</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぽいすて (Poisute)</div>",
-      "position": 36
+      "position": 35
     },
     {
       "id": "8b3aa7a4-0991-4608-b088-5adf20a74985",
       "front": "<div class=\"text-6xl font-bold text-center\">歩きタバコ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Smoking while walking</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あるきたばこ (Aruki tabako)</div>",
-      "position": 37
+      "position": 36
     },
     {
       "id": "0081e9ab-01e1-4e31-b78c-d87dab224cce",
       "front": "<div class=\"text-6xl font-bold text-center\">落書き</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Graffiti</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">らくがき (Rakugaki)</div>",
-      "position": 38
+      "position": 37
     },
     {
       "id": "83d6d1f5-4ea6-4cec-aa6f-da19c7e6b235",
       "front": "<div class=\"text-6xl font-bold text-center\">ルール</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Rule</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">るーる (Ruuru)</div>",
-      "position": 39
+      "position": 38
     },
     {
       "id": "6e5b867c-8aa3-4552-b0a6-0538d22d5fa0",
       "front": "<div class=\"text-6xl font-bold text-center\">指定</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Designated</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">してい (Shitei)</div>",
-      "position": 40
+      "position": 39
     },
     {
       "id": "8c9e5672-b5a9-4186-9f08-c6868447c4be",
       "front": "<div class=\"text-6xl font-bold text-center\">マナーアップ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Improving manners</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まなーあっぷ (Manaa appu)</div>",
-      "position": 41
+      "position": 40
     },
     {
       "id": "9ec1da4d-9852-438c-a910-6919486e33ff",
       "front": "<div class=\"text-6xl font-bold text-center\">掲示板</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Bulletin board</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けいじばん (Keijiban)</div>",
-      "position": 42
+      "position": 41
     },
     {
       "id": "81317f71-a25e-4de4-9e67-d462703a2401",
       "front": "<div class=\"text-6xl font-bold text-center\">罰則</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Penalty / Punishment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ばっそく (Bassoku)</div>",
-      "position": 43
+      "position": 42
     },
     {
       "id": "81daf4bf-9b5f-4ea2-b36b-aa2bdeecfe5d",
       "front": "<div class=\"text-6xl font-bold text-center\">守秘義務</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Confidentiality obligation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しゅひぎむ (Shuhi gimu)</div>",
-      "position": 44
+      "position": 43
     },
     {
       "id": "8c58abf5-03b1-49f6-abd0-1dd03617b61a",
       "front": "<div class=\"text-6xl font-bold text-center\">緊急</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Emergency</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きんきゅう (Kinkyuu)</div>",
-      "position": 45
+      "position": 44
     },
     {
       "id": "fb30b01d-b6bf-4dae-a27e-1222619aa853",
       "front": "<div class=\"text-6xl font-bold text-center\">注意書き</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Note / Warning notice</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちゅういがき (Chuui gaki)</div>",
-      "position": 46
+      "position": 45
     },
     {
       "id": "02d22d07-6820-4783-9896-06b7154d519a",
       "front": "<div class=\"text-6xl font-bold text-center\">心得</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Knowledge / Rules</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こころえ (Kokoroe)</div>",
-      "position": 47
+      "position": 46
     },
     {
       "id": "f81211fd-6b82-49ba-9805-fd6db3daeef1",
       "front": "<div class=\"text-6xl font-bold text-center\">エチケット</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Etiquette</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">えちけっと (Echiketto)</div>",
-      "position": 48
+      "position": 47
     },
     {
       "id": "116e9f65-b968-4dd1-a9e5-76e28b500540",
       "front": "<div class=\"text-6xl font-bold text-center\">マナー教育</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Manners education</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">まなーきょういく (Manaa kyouiku)</div>",
-      "position": 49
+      "position": 48
     }
   ]
 }

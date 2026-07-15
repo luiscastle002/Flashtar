@@ -10,301 +10,301 @@
     {
       "id": "b0000000-0000-0000-0000-000000000024",
       "front": "<div class=\"text-5xl font-bold text-center\">School / Learn</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Institution of education, and the act of acquiring knowledge.</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Institution of education, and the act of acquiring knowledge.[cite: 4]</div>",
       "position": 0
     },
     {
       "id": "c74f0582-275b-4948-b459-98d941ac2b00",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Teacher / Student</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person who teaches, and a person who is studying.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtiːtʃər/ / /ˈstjuːdənt/</div>",
       "position": 1
     },
     {
       "id": "b693377d-7b0e-4b3a-bf3b-f63d0379c554",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Classroom / Desk</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A room where students are taught, and a piece of furniture for writing.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈklɑːsruːm/ / /dɛsk/</div>",
       "position": 2
     },
     {
       "id": "721bd6f7-a046-4d5f-babf-08f32584b58f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Book / Pen</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Bound pages for reading, and an instrument for writing with ink.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/bʊk/ / /pɛn/</div>",
       "position": 3
     },
     {
       "id": "d8d9a542-f822-4c93-a094-5c50b07fbf3f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Notebook / Pencil</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Book with pages for notes, and a graphite writing tool.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈnoʊtbʊk/ / /ˈpɛnsəl/</div>",
       "position": 4
     },
     {
       "id": "7cde0215-7826-42f2-92f1-65d387e7678f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Subject / Lesson</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An area of knowledge, and a period of learning.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsʌbdʒɪkt/ / /ˈlɛsən/</div>",
       "position": 5
     },
     {
       "id": "fdfd3e5c-cb1b-4861-8e7b-8c7c36d0e276",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Exam / Homework</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A test of knowledge, and schoolwork done at home.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɪɡˈzæm/ / /ˈhoʊmwɜːrk/</div>",
       "position": 6
     },
     {
       "id": "b32957ac-534e-4ebe-a25b-7497511a0edd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">University / Library</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Higher education institution, and a building housing books.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌjuːnɪˈvɜːrsɪti/ / /ˈlaɪbreri/</div>",
       "position": 7
     },
     {
       "id": "c3ec2c08-e4c0-442c-a2a8-33e5fd72eb9f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Math / Science</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Study of numbers, and study of the physical world.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/mæθ/ / /ˈsaɪəns/</div>",
       "position": 8
     },
     {
       "id": "5966e221-fa79-4cf8-84a2-4862a0ac7695",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">History / Art</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Study of the past, and creative human expression.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈhɪstəri/ / /ɑːrt/</div>",
       "position": 9
     },
     {
       "id": "8a2b78f9-cebf-4780-b3fd-e11af1efbc08",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Language / Dictionary</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>System of communication, and a reference book for words.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈlæŋɡwɪdʒ/ / /ˈdɪkʃəneri/</div>",
       "position": 10
     },
     {
       "id": "15f4ad59-8d0b-4728-9cba-57decc45e90d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Eraser / Sharpener</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Tool to remove pencil, and tool to sharpen pencils.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɪˈreɪzər/ / /ˈʃɑːrpənər/</div>",
       "position": 11
     },
     {
       "id": "638fca48-6afd-4250-8604-8da6e59c928b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Grade / Mark</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Level of study, and a score on an exam.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɡreɪd/ / /mɑːrk/</div>",
       "position": 12
     },
     {
       "id": "8730724d-e89d-4539-b33f-03054a100304",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Paper / Board</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Material for writing, and surface for teachers to write on.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈpeɪpər/ / /bɔːrd/</div>",
       "position": 13
     },
     {
       "id": "4c2e4683-95b1-4cfb-827c-099ed9fbdec7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Understand / Practice</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To grasp meaning, and to repeat for improvement.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌʌndərˈstænd/ / /ˈpræktɪs/</div>",
       "position": 14
     },
     {
       "id": "cd56a4a6-02a2-4f3a-9832-031f6f729d05",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Research / Project</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Systematic investigation, and a planned task.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/rɪˈsɜːrtʃ/ / /ˈprɒdʒɛkt/</div>",
       "position": 15
     },
     {
       "id": "bd347b55-a88e-4d23-a34e-99ca86d4d7b6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Read / Write</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Interpret symbols, and produce text.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/riːd/ / /raɪt/</div>",
       "position": 16
     },
     {
       "id": "1ef8ce68-5f86-49dc-ab5a-a44113a4f47e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Listen / Speak</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Perceive sound, and convey thoughts orally.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈlɪsən/ / /spiːk/</div>",
       "position": 17
     },
     {
       "id": "bf870326-b124-4fe1-8fde-9fd4c239bc19",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Campus / Degree</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>University grounds, and an academic qualification.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkæmpəs/ / /dɪˈɡriː/</div>",
       "position": 18
     },
     {
       "id": "c0fd6e91-583e-4fb0-99d3-5cac37144418",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Computer / Internet</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Electronic device for work, and global network.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kəmˈpjuːtər/ / /ˈɪntərnɛt/</div>",
       "position": 19
     },
     {
       "id": "56fc4727-836c-440b-859a-1bd27546e705",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Principal / Staff</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Head of a school, and the group of employees.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈprɪnsəpəl/ / /stæf/</div>",
       "position": 20
     },
     {
       "id": "8ee45566-c888-45b1-9474-6a0e69bb88cc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Gym / Stadium</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Room for exercise, and large sports field.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/dʒɪm/ / /ˈsteɪdiəm/</div>",
       "position": 21
     },
     {
       "id": "99024d44-0838-470b-9485-6cacb2564abb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Science / Biology</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Study of nature, and study of living organisms.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsaɪəns/ / /baɪˈɒlədʒi/</div>",
       "position": 22
     },
     {
       "id": "9bc47c1e-e122-4026-9f39-b0e73170b943",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Chemistry / Physics</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Study of substances, and study of energy and matter.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkɛmɪstri/ / /ˈfɪzɪks/</div>",
       "position": 23
     },
     {
       "id": "2c965515-682b-4aca-8e9a-77144858f968",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Geography / Literature</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Study of Earth, and study of written works.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/dʒiˈɒɡrəfi/ / /ˈlɪtərətʃər/</div>",
       "position": 24
     },
     {
       "id": "214a790d-1e4e-4360-b191-41bd019bf229",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Backpack / Ruler</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Bag for school, and tool for straight lines.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈbækpæk/ / /ˈruːlər/</div>",
       "position": 25
     },
     {
       "id": "6ed259d7-e731-4ebc-9477-7e5e839e3c08",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Attendance / Absent</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Being present, and not being present.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/əˈtɛndəns/ / /ˈæbsənt/</div>",
       "position": 26
     },
     {
       "id": "cc988292-e910-43bc-aff5-eccca27ddcc8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Career / Skill</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Profession, and ability to do something.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kəˈrɪər/ / /skɪl/</div>",
       "position": 27
     },
     {
       "id": "abcf89b8-6b48-48a2-9dcc-36016d8b75c3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Academic / Creative</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Related to education, and related to art.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌækəˈdɛmɪk/ / /kriˈeɪtɪv/</div>",
       "position": 28
     },
     {
       "id": "93e74026-d285-4244-b230-39a2a1853686",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Semester / Term</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Half a school year, and a period of school.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/sɪˈmɛstər/ / /tɜːrm/</div>",
       "position": 29
     },
     {
       "id": "c099cd69-64ba-46a6-995f-36bd85f4396f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Course / Syllabus</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Program of study, and list of topics.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kɔːrs/ / /ˈsɪləbəs/</div>",
       "position": 30
     },
     {
       "id": "4823b391-3622-4ad2-ae6f-00c74d2ed7d8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Scholarship / Tuition</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Money for studies, and fee for instruction.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈskɒlərʃɪp/ / /tuˈɪʃən/</div>",
       "position": 31
     },
     {
       "id": "f001da73-33c1-4238-98a6-bb2505ba47e9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Graduation / Diploma</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ceremony of finishing, and certificate of study.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌɡrædʒuˈeɪʃən/ / /dɪˈploʊmə/</div>",
       "position": 32
     },
     {
       "id": "def75941-9b62-4b7d-9305-4693f5cdde2a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Group / Partner</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Team for work, and person you study with.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɡruːp/ / /ˈpɑːrtnər/</div>",
       "position": 33
     },
     {
       "id": "362bb2f4-222d-421b-9add-5f89481083e2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Presentation / Speech</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Showing your work, and oral presentation.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌprɛzənˈteɪʃən/ / /spiːtʃ/</div>",
       "position": 34
     },
     {
       "id": "4282bc87-996d-4db7-9feb-3da50c6e5c66",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Discussion / Debate</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Conversation, and structured argument.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/dɪˈskʌʃən/ / /dɪˈbeɪt/</div>",
       "position": 35
     },
     {
       "id": "d4bef49a-cf0f-4174-a2b8-dec29572f3c4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Quiz / Essay</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Short test, and a long written text.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kwɪz/ / /ˈɛseɪ/</div>",
       "position": 36
     },
     {
       "id": "712ef75b-90a4-49da-bf80-b90fd98f3fa4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Task / Goal</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Specific job, and desired outcome.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/tæsk/ / /ɡoʊl/</div>",
       "position": 37
     },
     {
       "id": "061a3f14-0fea-4c4f-9dfe-44f9370ee297",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Memory / Think</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ability to remember, and process of reasoning.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmɛməri/ / /θɪŋk/</div>",
       "position": 38
     },
     {
       "id": "f5e46163-c081-4e81-bb1d-d253e7b33d7d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Logic / Theory</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Reasoned argument, and a set of principles.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈlɒdʒɪk/ / /ˈθɪəri/</div>",
       "position": 39
     },
     {
       "id": "6e4443df-233f-4ca7-a39d-682a0e2189a9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Science / Research</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Field of knowledge, and method of inquiry.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsaɪəns/ / /rɪˈsɜːrtʃ/</div>",
       "position": 40
     },
     {
       "id": "ad194012-1bd2-4fe1-9cef-c376226aee03",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Art / Design</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Creative work, and planning structure.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɑːrt/ / /dɪˈzaɪn/</div>",
       "position": 41
     },
     {
       "id": "62bcd19b-d7aa-497c-a96a-e96d2368f9d6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Music / Drama</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Study of melodies, and study of performance.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmjuːzɪk/ / /ˈdrɑːmə/</div>",
       "position": 42
     },
     {
       "id": "479e3d1f-ebfd-4e43-89a5-76e3306ec942",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Teacher / Educator</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Person who teaches, and professional in education.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtiːtʃər/ / /ˈɛdʒukeɪtər/</div>",
       "position": 43
     },
     {
       "id": "26a8650e-5029-4131-a91d-a83a8abe8df9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Study / Review</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Action of learning, and action of revisiting work.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈstʌdi/ / /rɪˈvjuː/</div>",
       "position": 44
     },
     {
       "id": "b224adad-7601-4eeb-9262-5c1e413a305b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Help / Tutor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Support given, and a private teacher.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/hɛlp/ / /ˈtuːtər/</div>",
       "position": 45
     },
     {
       "id": "2692679a-bc3a-44b5-afa8-a65357b11173",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Class / Seminar</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A lesson group, and a specialist meeting.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/klɑːs/ / /ˈsɛmɪnɑːr/</div>",
       "position": 46
     },
     {
       "id": "16c53d8c-f611-4338-9a4a-de2fcba5a457",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Lecture / Professor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A formal lesson, and a university teacher.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈlɛktʃər/ / /prəˈfɛsər/</div>",
       "position": 47
     },
     {
       "id": "b9f31c8a-0aca-4bcb-a5a6-13650e32b542",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Library / Quiet</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Place for books, and state of silence.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈlaɪbreri/ / /ˈkwaɪət/</div>",
       "position": 48
     },
     {
       "id": "2ccef8fb-762c-40e1-a349-79633647fa83",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Success / Fail</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Achieving a goal, and not achieving it.[cite: 4]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/səkˈsɛs/ / /feɪl/</div>",
       "position": 49
     }
   ]

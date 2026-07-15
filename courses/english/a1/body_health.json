@@ -9,303 +9,285 @@
   "cards": [
     {
       "id": "0d1b0c30-496f-4ffb-96c0-a97bc7232a88",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Head</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The top part of the body. 👤</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/hed/</div>",
       "position": 0
     },
     {
       "id": "7c27177e-ad5c-45e9-9087-d1f480545faa",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Face</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The front part of your head. 🙂</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/feɪs/</div>",
       "position": 1
     },
     {
       "id": "25bfe7c0-258d-4531-bc88-e82e9c95ca74",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Eye</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The organ you see with. 👀</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪ/</div>",
       "position": 2
     },
     {
       "id": "b2286286-afdc-4193-9b07-365b846647fe",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Ear</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The organ you hear with. 👂</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɪər/</div>",
       "position": 3
     },
     {
       "id": "c92a7684-f297-459f-8d59-80ff580564cb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Nose</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The part used for smelling. 👃</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/noʊz/</div>",
       "position": 4
     },
     {
       "id": "557e5c70-d847-436d-8538-ce58cc5d824b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Mouth</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The part used for eating and speaking. 👄</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/maʊθ/</div>",
       "position": 5
     },
     {
       "id": "ca47108e-c17e-402c-8260-3e27a70aecf9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Arm</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The upper limb of the body. 💪</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɑːrm/</div>",
       "position": 6
     },
     {
       "id": "e73e0202-8b55-408a-a832-ab6cf6b92431",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Hand</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The part at the end of your arm. ✋</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/hænd/</div>",
       "position": 7
     },
     {
       "id": "910eb26d-b325-4583-9106-91ea84961b57",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Finger</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>One of the five parts of your hand. ☝️</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈfɪŋɡər/</div>",
       "position": 8
     },
     {
       "id": "b5740619-551f-4e6e-8483-d2a75a788224",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Leg</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The lower limb of the body. 🦵</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/leɡ/</div>",
       "position": 9
     },
     {
       "id": "8ac8b6e4-30ec-422d-9134-1df720f46686",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Foot</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The part you walk on. 🦶</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/fʊt/</div>",
       "position": 10
     },
     {
       "id": "82cf7ee3-15a2-4419-b933-0a9510e383c3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Stomach</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The organ where food is digested. 🤢</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈstʌmək/</div>",
       "position": 11
     },
     {
       "id": "0880f070-fa9e-41c9-8feb-d7f1a0689d93",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Sick</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling ill or unwell. 🤒</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/sɪk/</div>",
       "position": 12
     },
     {
       "id": "bdf7d288-ed13-48d0-92cd-7eecea070b94",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Doctor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person trained to treat the sick. 👨‍⚕️</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈdɒktər/</div>",
       "position": 13
     },
     {
       "id": "318c3064-ed5e-45c9-ba52-d885b81090f1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Health</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The state of being free from illness. 🍎</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/helθ/</div>",
       "position": 14
     },
     {
       "id": "58b5afdf-89da-480a-ad11-e3c07891aa15",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Pain</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A feeling of physical suffering. 🤕</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/peɪn/</div>",
       "position": 15
     },
     {
       "id": "a5dc9846-ea3f-49b1-91a7-5d306595774a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Hair</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The thin strands growing from the head. 💇</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/heər/</div>",
       "position": 16
     },
     {
       "id": "650c79b6-12c9-45ae-bc63-002dfdf2c9d5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Back</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The rear surface of the human body. 🔙</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/bæk/</div>",
       "position": 17
     },
     {
       "id": "3df42b49-3a3c-4d2a-849b-884aacab8ec1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Tooth</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The hard structures in the mouth. 🦷</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/tuːθ/</div>",
       "position": 18
     },
     {
       "id": "5f534263-57cb-42d0-950d-c00da6400073",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Medicine</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A substance used for treating illness. 💊</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈmedɪsn/</div>",
       "position": 19
     },
     {
       "id": "33c587e8-af49-4a57-bbfa-4224936d379d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Well</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>In good health. ✅</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/wel/</div>",
       "position": 20
     },
     {
       "id": "78c46df0-5f41-411d-866f-a2c503ca1db9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Heart</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The organ that pumps blood. ❤️</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/hɑːrt/</div>",
       "position": 21
     },
     {
       "id": "64fdcb8a-1f1f-4242-be1a-0128e39ff9df",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Shoulder</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The part connecting the arm to the body. 👕</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈʃoʊldər/</div>",
       "position": 22
     },
     {
       "id": "53e50567-73ad-4d29-b8d7-fc3d8ad8e077",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Knee</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The joint between the thigh and lower leg. 👖</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/niː/</div>",
       "position": 23
     },
     {
       "id": "034680d6-2765-43c2-b017-eca10d3be1ac",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Neck</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The part connecting the head to the body. 🧣</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/nek/</div>",
       "position": 24
     },
     {
-      "id": "25e688c4-feb6-4a6a-a71f-87674a7defce",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "f4dbd971-f6f4-47c2-b80d-3a3bc3fd2184",
+      "front": "<div class=\"text-6xl font-bold text-center\">Toe</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>One of the five parts of your foot. 👣</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/toʊ/</div>",
       "position": 25
     },
     {
-      "id": "f4dbd971-f6f4-47c2-b80d-3a3bc3fd2184",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "ab3d3ea1-5f7d-43fc-8403-73cd4863a9ed",
+      "front": "<div class=\"text-6xl font-bold text-center\">Skin</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The outer covering of the body. 🧴</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/skɪn/</div>",
       "position": 26
     },
     {
-      "id": "ab3d3ea1-5f7d-43fc-8403-73cd4863a9ed",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "2a415bd9-648d-4c50-b339-ca60024641d8",
+      "front": "<div class=\"text-6xl font-bold text-center\">Breath</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The air taken into the lungs. 🌬️</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/breθ/</div>",
       "position": 27
     },
     {
-      "id": "2a415bd9-648d-4c50-b339-ca60024641d8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "dea37722-fce3-454e-b5e3-423f139c4641",
+      "front": "<div class=\"text-6xl font-bold text-center\">Body</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The whole physical structure of a person. 🧍</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈbɒdi/</div>",
       "position": 28
     },
     {
-      "id": "dea37722-fce3-454e-b5e3-423f139c4641",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "623249ff-1259-4ae1-b251-9dcde28499ab",
+      "front": "<div class=\"text-6xl font-bold text-center\">Exercise</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Physical activity for health. 🏃</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈeksərsaɪz/</div>",
       "position": 29
     },
     {
-      "id": "623249ff-1259-4ae1-b251-9dcde28499ab",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "1b818878-fb5a-4669-b40a-df97d4e4fffd",
+      "front": "<div class=\"text-6xl font-bold text-center\">Flu</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A common viral infection. 🤧</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/fluː/</div>",
       "position": 30
     },
     {
-      "id": "1b818878-fb5a-4669-b40a-df97d4e4fffd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "bfa15f45-437b-4474-b06f-ca7c52ef4a5a",
+      "front": "<div class=\"text-6xl font-bold text-center\">Hospital</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A place where sick people get care. 🏥</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈhɒspɪtl/</div>",
       "position": 31
     },
     {
-      "id": "bfa15f45-437b-4474-b06f-ca7c52ef4a5a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "106cfdc9-d39a-495e-95d2-2a75f1dae5ae",
+      "front": "<div class=\"text-6xl font-bold text-center\">Diet</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The kinds of food a person eats. 🥗</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈdaɪət/</div>",
       "position": 32
     },
     {
-      "id": "106cfdc9-d39a-495e-95d2-2a75f1dae5ae",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "88cc988a-c13a-4651-abf4-69608c36b8f0",
+      "front": "<div class=\"text-6xl font-bold text-center\">Rest</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To relax or sleep. 🛌</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/rest/</div>",
       "position": 33
     },
     {
-      "id": "88cc988a-c13a-4651-abf4-69608c36b8f0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "c798f506-114e-4c06-8f2f-c7718e69961a",
+      "front": "<div class=\"text-6xl font-bold text-center\">Cough</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To force air from lungs noisily. 🗣️</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kɒf/</div>",
       "position": 34
     },
     {
-      "id": "c798f506-114e-4c06-8f2f-c7718e69961a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "f581c63c-8363-4305-b345-d47f615978d2",
+      "front": "<div class=\"text-6xl font-bold text-center\">Fever</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>High body temperature. 🌡️</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈfiːvər/</div>",
       "position": 35
     },
     {
-      "id": "f581c63c-8363-4305-b345-d47f615978d2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "47e559fd-d740-424d-a962-1dc206c0733f",
+      "front": "<div class=\"text-6xl font-bold text-center\">Strength</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Physical power. 💪</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/streŋθ/</div>",
       "position": 36
     },
     {
-      "id": "47e559fd-d740-424d-a962-1dc206c0733f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "fe64eb73-7e2a-4f3f-8b2d-a39e2ea80a94",
+      "front": "<div class=\"text-6xl font-bold text-center\">Weak</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Lacking physical strength. 🛋️</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/wiːk/</div>",
       "position": 37
     },
     {
-      "id": "fe64eb73-7e2a-4f3f-8b2d-a39e2ea80a94",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "9eed1d21-daf6-4198-b7f2-4f929bf82a54",
+      "front": "<div class=\"text-6xl font-bold text-center\">Care</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Looking after someone. 🤝</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/keər/</div>",
       "position": 38
     },
     {
-      "id": "9eed1d21-daf6-4198-b7f2-4f929bf82a54",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "e3803775-1795-48cc-b911-d22687f9b3a9",
+      "front": "<div class=\"text-6xl font-bold text-center\">Injury</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Physical harm to the body. 🤕</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈɪndʒəri/</div>",
       "position": 39
     },
     {
-      "id": "e3803775-1795-48cc-b911-d22687f9b3a9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "889a2078-040b-493f-a801-67ff86a26f66",
+      "front": "<div class=\"text-6xl font-bold text-center\">Nurse</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person who cares for the sick. 👩‍⚕️</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/nɜːrs/</div>",
       "position": 40
     },
     {
-      "id": "889a2078-040b-493f-a801-67ff86a26f66",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "b9377c90-446a-455e-a8aa-1a00222829ab",
+      "front": "<div class=\"text-6xl font-bold text-center\">Headache</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A continuous pain in the head. 🤯</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈhedeɪk/</div>",
       "position": 41
     },
     {
-      "id": "b9377c90-446a-455e-a8aa-1a00222829ab",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "737c1b80-ee4b-4e2d-ae31-fdd93d595cbd",
+      "front": "<div class=\"text-6xl font-bold text-center\">Toothache</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A pain in a tooth. 🦷</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtuːθeɪk/</div>",
       "position": 42
     },
     {
-      "id": "737c1b80-ee4b-4e2d-ae31-fdd93d595cbd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "6506b79b-d7f7-428e-9fc3-a13705f10d40",
+      "front": "<div class=\"text-6xl font-bold text-center\">Backache</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A pain in the back. 🔙</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈbækeɪk/</div>",
       "position": 43
     },
     {
-      "id": "6506b79b-d7f7-428e-9fc3-a13705f10d40",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "66a4847f-e8bf-46df-835f-a7feb36dda93",
+      "front": "<div class=\"text-6xl font-bold text-center\">Sore throat</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Pain in the throat. 🗣️</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/sɔːr θroʊt/</div>",
       "position": 44
     },
     {
-      "id": "66a4847f-e8bf-46df-835f-a7feb36dda93",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "14f566b0-7996-42c7-af4b-4eb19b50795a",
+      "front": "<div class=\"text-6xl font-bold text-center\">Stomachache</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A pain in the stomach. 🤢</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈstʌməkeɪk/</div>",
       "position": 45
     },
     {
-      "id": "14f566b0-7996-42c7-af4b-4eb19b50795a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 46
-    },
-    {
-      "id": "f5f4c21b-bc13-4874-b9db-092cbdddcb14",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 47
-    },
-    {
       "id": "6fd14038-d128-4cea-94b1-07a2c5ec2f27",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 48
-    },
-    {
-      "id": "00c2797a-e415-4942-9e50-2a85e5c18ac1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 49
+      "front": "<div class=\"text-6xl font-bold text-center\">Allergy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A reaction to a specific substance. 🤧</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈælərdʒi/</div>",
+      "position": 46
     }
   ]
 }

@@ -9,303 +9,171 @@
   "cards": [
     {
       "id": "9d61c4f2-dc56-4cbb-9249-4a78df970891",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Allegory</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A story, poem, or picture that can be interpreted to reveal a hidden meaning, typically a moral or political one.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈæl.ə.ɡər.i/</div>",
       "position": 0
     },
     {
       "id": "a9538502-14fa-45cc-8846-229a670fcaa5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Archetype</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A recurrent symbol or motif in literature, art, or mythology.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈɑː.kɪ.taɪp/</div>",
       "position": 1
     },
     {
       "id": "720b4ab3-c71a-4a79-8671-bf69b055caca",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bildungsroman</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A novel dealing with one person's formative years or spiritual education.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌbɪl.dʊŋz.roʊˈmɑːn/</div>",
       "position": 2
     },
     {
       "id": "01b661ce-9f0a-451a-969c-62d519f62a24",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Catharsis</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The process of releasing, and thereby providing relief from, strong or repressed emotions.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kəˈθɑː.sɪs/</div>",
       "position": 3
     },
     {
       "id": "6651cad8-9c09-4799-a572-86a14bb8d9de",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Deconstruction</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A method of critical analysis which emphasizes the internal workings of language and conceptual systems.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌdiː.kənˈstrʌk.ʃən/</div>",
       "position": 4
     },
     {
       "id": "f83062f0-b9ed-45f7-a6b7-dbba21e17839",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Dénouement</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The final part of a play, movie, or narrative in which the strands of the plot are drawn together.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/deɪˈnuː.mɑ̃ː/</div>",
       "position": 5
     },
     {
       "id": "d24f6032-3c49-4841-9085-3a713680a6d8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Didacticism</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A philosophy that emphasizes instructional and informative qualities in literature.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/daɪˈdæk.tɪ.sɪ.zəm/</div>",
       "position": 6
     },
     {
       "id": "74c722e8-600a-4e2f-986c-6413cfa80fe8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Exegesis</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Critical explanation or interpretation of a text, especially a religious one.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌek.səˈdʒiː.sɪs/</div>",
       "position": 7
     },
     {
       "id": "8676d974-d099-4746-b8f8-0842418f072c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Foreshadowing</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Be a warning or indication of a future event.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/fɔːˈʃæd.əʊ.ɪŋ/</div>",
       "position": 8
     },
     {
       "id": "9dcb1522-1e48-4e89-a076-885a090b8c43",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Hamartia</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A fatal flaw leading to the downfall of a tragic hero.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/hæˈmɑː.ti.ə/</div>",
       "position": 9
     },
     {
       "id": "4e107c91-5db2-411d-8a3c-e7f5aff3274b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Hyperbole</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Exaggerated statements or claims not meant to be taken literally.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/haɪˈpɜː.bə.li/</div>",
       "position": 10
     },
     {
       "id": "49d1f62e-5f19-4a67-aac9-21586654fa33",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Intertextuality</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The relationship between texts, especially literary ones.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌɪn.tə.tek.stʃuˈæl.ə.ti/</div>",
       "position": 11
     },
     {
       "id": "0bee40fd-417d-4f64-bf6d-5a97c47e031f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Juxtaposition</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The fact of two things being seen or placed close together with contrasting effect.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌdʒʌk.stə.pəˈzɪʃ.ən/</div>",
       "position": 12
     },
     {
       "id": "c31e051c-128d-4d24-a25f-40ae8400132e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Liminality</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The quality of ambiguity or disorientation that occurs in the middle stage of a rite of passage.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌlɪm.ɪˈnæl.ə.ti/</div>",
       "position": 13
     },
     {
-      "id": "43348f79-a299-4ced-84f1-c4520ce149a5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "6e5c4141-422d-47d2-9408-d561868d83a6",
+      "front": "<div class=\"text-6xl font-bold text-center\">Narratology</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The study of narrative structure.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌnær.əˈtɒl.ə.dʒi/</div>",
       "position": 14
     },
     {
-      "id": "6e5c4141-422d-47d2-9408-d561868d83a6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "c56fad00-9d5a-48e4-8865-93f001855089",
+      "front": "<div class=\"text-6xl font-bold text-center\">Objective Correlative</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A set of objects, a situation, or a chain of events which shall be the formula of that particular emotion.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/əbˈdʒek.tɪv kəˈrel.ə.tɪv/</div>",
       "position": 15
     },
     {
-      "id": "c56fad00-9d5a-48e4-8865-93f001855089",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "8577cb50-1f95-4384-bae3-018597661cea",
+      "front": "<div class=\"text-6xl font-bold text-center\">Pastiche</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An artistic work in a style that imitates that of another work, artist, or period.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/pæsˈtiːʃ/</div>",
       "position": 16
     },
     {
-      "id": "8577cb50-1f95-4384-bae3-018597661cea",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "6a70ffc0-7e9a-41a5-82ce-1a1645c040a9",
+      "front": "<div class=\"text-6xl font-bold text-center\">Quixotic</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Exceedingly idealistic; unrealistic and impractical.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kwɪkˈsɒt.ɪk/</div>",
       "position": 17
     },
     {
-      "id": "c06c35ce-9ae8-4a94-a739-d71331506fd4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "80d5d99e-fa29-41b5-a48a-a86036ed7f98",
+      "front": "<div class=\"text-6xl font-bold text-center\">Realism</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The attitude or practice of accepting a situation as it is and being prepared to deal with it accordingly.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈrɪə.lɪ.zəm/</div>",
       "position": 18
     },
     {
-      "id": "6a70ffc0-7e9a-41a5-82ce-1a1645c040a9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "86df8982-43e1-443f-833d-529ab9658506",
+      "front": "<div class=\"text-6xl font-bold text-center\">Stream of Consciousness</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person's thoughts and conscious reactions to events, perceived as a continuous flow.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/striːm əv ˈkɒn.ʃəs.nəs/</div>",
       "position": 19
     },
     {
-      "id": "80d5d99e-fa29-41b5-a48a-a86036ed7f98",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "d5cd9383-635d-4616-9740-a918b016cee3",
+      "front": "<div class=\"text-6xl font-bold text-center\">Symbolism</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The use of symbols to represent ideas or qualities.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsɪm.bəl.ɪ.zəm/</div>",
       "position": 20
     },
     {
-      "id": "86df8982-43e1-443f-833d-529ab9658506",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "b78d9338-a8d8-4216-9c82-6668ba8692fb",
+      "front": "<div class=\"text-6xl font-bold text-center\">Trope</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A significant or recurrent theme; a motif.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/trəʊp/</div>",
       "position": 21
     },
     {
-      "id": "d5cd9383-635d-4616-9740-a918b016cee3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "cf3eaf07-db28-45bb-aae2-34b3b801ae5d",
+      "front": "<div class=\"text-6xl font-bold text-center\">Unreliable Narrator</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A narrator whose credibility has been seriously compromised.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌʌn.rɪˈlaɪ.ə.bəl nəˈreɪ.tər/</div>",
       "position": 22
     },
     {
-      "id": "b78d9338-a8d8-4216-9c82-6668ba8692fb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "68cbd35e-da83-4e8a-8c1e-2a856b46d4b0",
+      "front": "<div class=\"text-6xl font-bold text-center\">Verisimilitude</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The appearance of being true or real.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌver.ɪ.sɪˈmɪl.ɪ.tjuːd/</div>",
       "position": 23
     },
     {
-      "id": "cf3eaf07-db28-45bb-aae2-34b3b801ae5d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "92c2cd6a-c44b-40be-819e-dfe4434dced0",
+      "front": "<div class=\"text-6xl font-bold text-center\">Weltanschauung</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A particular philosophy or view of life; the world view of an individual or group.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈvel.tɑːnˌʃaʊ.ʊŋ/</div>",
       "position": 24
     },
     {
-      "id": "68cbd35e-da83-4e8a-8c1e-2a856b46d4b0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "2f8330ae-6d33-445f-8824-34302ef229f5",
+      "front": "<div class=\"text-6xl font-bold text-center\">Xenoglossy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The purported ability to speak or write a language one has never learned, often utilized as a trope in speculative fiction.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈzen.əˌɡlɒs.i/</div>",
       "position": 25
     },
     {
-      "id": "92c2cd6a-c44b-40be-819e-dfe4434dced0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "9ba208cb-aa7a-41d9-b101-7829ec418cd7",
+      "front": "<div class=\"text-6xl font-bold text-center\">Yonic</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Relating to the female genitalia, used as a symbol in literary criticism.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈjɒn.ɪk/</div>",
       "position": 26
     },
     {
-      "id": "2f8330ae-6d33-445f-8824-34302ef229f5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 27
-    },
-    {
-      "id": "9ba208cb-aa7a-41d9-b101-7829ec418cd7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 28
-    },
-    {
       "id": "37c152d8-693d-442c-ae4a-3545e623340a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 29
-    },
-    {
-      "id": "94715f4e-8434-42bf-a234-c248ba1f0683",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 30
-    },
-    {
-      "id": "9007cff5-d9bb-4334-b214-cbaf4b003e4f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 31
-    },
-    {
-      "id": "22778a35-d663-4f78-b178-dd33e1fc6bd8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 32
-    },
-    {
-      "id": "cb36aa19-db21-4910-a00b-dc8c2561e5d8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 33
-    },
-    {
-      "id": "3060e1e5-c440-4da4-ae27-367197d37b32",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 34
-    },
-    {
-      "id": "87c42b47-018e-4581-9231-59e744943e80",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 35
-    },
-    {
-      "id": "86c9c03b-1b5f-49af-abf2-49880bd652c7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 36
-    },
-    {
-      "id": "8f96dfb3-2552-4b27-900f-269697051325",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 37
-    },
-    {
-      "id": "82c06fae-00fd-4bdf-81cf-674575b4f41d",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 38
-    },
-    {
-      "id": "276fa419-8a18-426e-a639-fafbd07e07b4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 39
-    },
-    {
-      "id": "bb8a544f-4209-4166-9234-76871a160b4b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 40
-    },
-    {
-      "id": "37394ecb-67f3-4486-a3da-e17ad2ebdee0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 41
-    },
-    {
-      "id": "5f22e1f1-dec4-4e55-acc6-acc273907407",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 42
-    },
-    {
-      "id": "353634f3-2788-4b23-98de-af69bbb3b344",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 43
-    },
-    {
-      "id": "70f6fae6-41ae-4927-a7fa-aef188272e19",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 44
-    },
-    {
-      "id": "a52acb15-04c8-44f8-b916-87bc177d2fc2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 45
-    },
-    {
-      "id": "ee7c9cac-b5ca-4d40-b366-e38c1997a6ad",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 46
-    },
-    {
-      "id": "bbf841c6-58ac-4abc-8db4-1b9835d94934",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 47
-    },
-    {
-      "id": "8f6d703a-88d3-495d-8cf0-c872cfe48a20",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 48
-    },
-    {
-      "id": "a2845ca8-4633-4964-a312-18e3f40909c0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 49
+      "front": "<div class=\"text-6xl font-bold text-center\">Zeitgeist</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The defining spirit or mood of a particular period of history as shown by the ideas and beliefs of the time.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈzaɪt.ɡaɪst/</div>",
+      "position": 27
     }
   ]
 }

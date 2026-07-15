@@ -212,100 +212,94 @@
       "position": 33
     },
     {
-      "id": "09dcb856-1028-4a76-a43d-4b882308d567",
-      "front": "<div class=\"text-6xl font-bold text-center\">おぼつかなし</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Uncertain; expectant</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">obotsukanashi</div>",
-      "position": 34
-    },
-    {
       "id": "d40f5c0a-3243-49e0-9b14-f083bbfe45de",
       "front": "<div class=\"text-6xl font-bold text-center\">むげなり</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Utterly; extremely; base</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">mugenari</div>",
-      "position": 35
+      "position": 34
     },
     {
       "id": "8c2441f4-0852-4ccb-96c8-3eb0278758cb",
       "front": "<div class=\"text-6xl font-bold text-center\">ひたぶるなり</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Single-minded; earnest</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">hitaburunari</div>",
-      "position": 36
+      "position": 35
     },
     {
       "id": "ccbb7c0e-c2c0-4ea5-9f3d-4af0e84766a0",
       "front": "<div class=\"text-6xl font-bold text-center\">さやけし</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Clear; bright; crisp</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">sayakeshi</div>",
-      "position": 37
+      "position": 36
     },
     {
       "id": "51ec1d96-b6ed-45f8-87b7-462753461961",
       "front": "<div class=\"text-6xl font-bold text-center\">しるし</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Clear; obvious; evident</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">shirushi</div>",
-      "position": 38
+      "position": 37
     },
     {
       "id": "180b8b0b-fb39-4f5a-90f0-4937963fa1de",
       "front": "<div class=\"text-6xl font-bold text-center\">すきずきし</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Romantic; eccentric; refined</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">sukizukishi</div>",
-      "position": 39
+      "position": 38
     },
     {
       "id": "3f96fc4e-ddd4-44fe-9af6-721d80427e93",
       "front": "<div class=\"text-6xl font-bold text-center\">よろし</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Good; acceptable; tolerable</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">yoroshi</div>",
-      "position": 40
+      "position": 39
     },
     {
       "id": "1449b396-8904-469b-9b9d-2ae86745a5c9",
       "front": "<div class=\"text-6xl font-bold text-center\">わろし</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Bad; poor; inferior</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">waroshi</div>",
-      "position": 41
+      "position": 40
     },
     {
       "id": "12d2858f-9b58-4000-b4af-7cc831b26e7e",
       "front": "<div class=\"text-6xl font-bold text-center\">あし</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Bad; evil</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ashi</div>",
-      "position": 42
+      "position": 41
     },
     {
       "id": "ab840a1d-791a-434d-8ec1-8de76124f7b5",
       "front": "<div class=\"text-6xl font-bold text-center\">おぼゆ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To be felt; to be remembered</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">oboyu</div>",
-      "position": 43
+      "position": 42
     },
     {
       "id": "d5df5dbf-2cc1-4a81-9e25-4da85949a810",
       "front": "<div class=\"text-6xl font-bold text-center\">まゐる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To go/come (humble); to visit</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">mairu</div>",
-      "position": 44
+      "position": 43
     },
     {
       "id": "202662f3-3af5-4cd3-8ac5-fd2cc3630aa9",
       "front": "<div class=\"text-6xl font-bold text-center\">たてまつる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To offer (humble); to do (humble)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">tatematsuru</div>",
-      "position": 45
+      "position": 44
     },
     {
       "id": "d2456564-f951-4cd9-8ca7-26e8f5682827",
       "front": "<div class=\"text-6xl font-bold text-center\">さぶらふ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To serve (humble); to be (polite)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">saburau</div>",
-      "position": 46
+      "position": 45
     },
     {
       "id": "c16ff279-1490-4357-8780-95d418e1db3e",
       "front": "<div class=\"text-6xl font-bold text-center\">たまふ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To give (honorific); to do (honorific)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">tamau</div>",
-      "position": 47
+      "position": 46
     },
     {
       "id": "5177ded0-eae9-4ff0-a458-2f21dfed277b",
       "front": "<div class=\"text-6xl font-bold text-center\">のたまふ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To say (honorific)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">notamau</div>",
-      "position": 48
+      "position": 47
     },
     {
       "id": "667b42df-f57b-4225-aa05-cc4d1981ffd7",
       "front": "<div class=\"text-6xl font-bold text-center\">きこゆ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To be heard; to be understood</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">kikoyu</div>",
-      "position": 49
+      "position": 48
     }
   ]
 }

@@ -158,154 +158,148 @@
       "position": 24
     },
     {
-      "id": "dfa7fd61-42d7-4a2d-862a-68c794140b5e",
-      "front": "<div class=\"text-6xl font-bold text-center\">〜なりに</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>In one's own way</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ nari ni</div>",
-      "position": 25
-    },
-    {
       "id": "7bca9157-df02-4192-a4e1-adb2dffc4d2b",
       "front": "<div class=\"text-6xl font-bold text-center\">〜て以来</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Since (then)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ te irai</div>",
-      "position": 26
+      "position": 25
     },
     {
       "id": "cadeef98-5afd-4026-9f15-882defea6dc3",
       "front": "<div class=\"text-6xl font-bold text-center\">〜かと思いきや</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>I thought it was X, but...</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ ka to omoikiya</div>",
-      "position": 27
+      "position": 26
     },
     {
       "id": "4438e3dd-74f8-4083-a169-3ed5cb56f3f7",
       "front": "<div class=\"text-6xl font-bold text-center\">〜ものなら</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>If I can (do)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ mono nara</div>",
-      "position": 28
+      "position": 27
     },
     {
       "id": "eeb28ccb-0506-44a0-a809-9d7d7786f08a",
       "front": "<div class=\"text-6xl font-bold text-center\">〜というものだ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>It is certainly the case that</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ to iu mono da</div>",
-      "position": 29
+      "position": 28
     },
     {
       "id": "bca37766-eb61-41ec-962b-b35ce55f824b",
       "front": "<div class=\"text-6xl font-bold text-center\">〜ないことには</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Unless</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ nai koto ni wa</div>",
-      "position": 30
+      "position": 29
     },
     {
       "id": "b0d97d03-1bd6-497f-b9a2-caf84d1ed7c3",
       "front": "<div class=\"text-6xl font-bold text-center\">〜を皮切りに</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Starting with</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ o kawakiri ni</div>",
-      "position": 31
+      "position": 30
     },
     {
       "id": "87423b82-68cd-4b1e-8ef4-ce124dca0707",
       "front": "<div class=\"text-6xl font-bold text-center\">〜といえども</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Even if / Even though</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ to iedomo</div>",
-      "position": 32
+      "position": 31
     },
     {
       "id": "a2b91ff8-c27b-49d6-81db-37341ce4400b",
       "front": "<div class=\"text-6xl font-bold text-center\">〜まじき</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Unforgivable/Unacceptable for</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ majiki</div>",
-      "position": 33
+      "position": 32
     },
     {
       "id": "497a8158-51fa-48f2-adb1-e27f677e3cbc",
       "front": "<div class=\"text-6xl font-bold text-center\">〜極まる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Extremely (negative)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ kiwamaru</div>",
-      "position": 34
+      "position": 33
     },
     {
       "id": "0d64d76d-ce28-427f-9372-d564dc176611",
       "front": "<div class=\"text-6xl font-bold text-center\">〜ずにはおかない</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cannot help but (do)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ zu ni wa okanai</div>",
-      "position": 35
+      "position": 34
     },
     {
       "id": "de207b9d-17dd-44d6-8e17-71726ec67712",
       "front": "<div class=\"text-6xl font-bold text-center\">〜なり</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>As soon as</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ nari</div>",
-      "position": 36
+      "position": 35
     },
     {
       "id": "0067e2db-f79c-4c05-b982-eeed262c176d",
       "front": "<div class=\"text-6xl font-bold text-center\">〜にあって</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>In (a situation)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ ni atte</div>",
-      "position": 37
+      "position": 36
     },
     {
       "id": "a800a160-dc74-468b-8c6c-dd2cab34fca0",
       "front": "<div class=\"text-6xl font-bold text-center\">〜にかたくない</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Easy to (imagine/guess)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ ni katakunai</div>",
-      "position": 38
+      "position": 37
     },
     {
       "id": "fa1dd678-ce6b-41ed-83c9-4a3f9715981c",
       "front": "<div class=\"text-6xl font-bold text-center\">〜を余儀なくされる</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To be forced to</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ o yogi naku sareru</div>",
-      "position": 39
+      "position": 38
     },
     {
       "id": "a41cd92b-063e-4b44-b5ff-53c992de094a",
       "front": "<div class=\"text-6xl font-bold text-center\">〜いかんだ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Depends on / Depending on</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ ikanda</div>",
-      "position": 40
+      "position": 39
     },
     {
       "id": "9fef61af-7d9e-4eca-a403-d831aa944134",
       "front": "<div class=\"text-6xl font-bold text-center\">〜てからというもの</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Since / Ever since</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ te kara to iu mono</div>",
-      "position": 41
+      "position": 40
     },
     {
       "id": "dda66be8-21d6-4de1-9af8-cc78f5832fc0",
       "front": "<div class=\"text-6xl font-bold text-center\">〜たるもの</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>As a (person of status)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ tarumono</div>",
-      "position": 42
+      "position": 41
     },
     {
       "id": "dc1a6123-271b-4406-a81a-0f13d41dfe7f",
       "front": "<div class=\"text-6xl font-bold text-center\">〜を禁じ得ない</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cannot help but feel</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ o kinji enai</div>",
-      "position": 43
+      "position": 42
     },
     {
       "id": "ca38669b-cebe-43fd-8453-f006a9ee3489",
       "front": "<div class=\"text-6xl font-bold text-center\">〜の至り</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The height of / Very (formal)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ no itari</div>",
-      "position": 44
+      "position": 43
     },
     {
       "id": "ad4728db-26d4-4e4d-857a-8670b26de079",
       "front": "<div class=\"text-6xl font-bold text-center\">〜始末だ</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The result was (negative)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ shimatsu da</div>",
-      "position": 45
+      "position": 44
     },
     {
       "id": "f3667511-1e08-4bbc-b027-798737c17837",
       "front": "<div class=\"text-6xl font-bold text-center\">〜かたがた</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>At the same time as</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ katagata</div>",
-      "position": 46
+      "position": 45
     },
     {
       "id": "afee62fc-c3af-413b-a76b-dfe082ca273c",
       "front": "<div class=\"text-6xl font-bold text-center\">〜ずじまい</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ended up not doing</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ zu jimai</div>",
-      "position": 47
+      "position": 46
     },
     {
       "id": "47db4742-f814-496d-8561-08479fab0e57",
       "front": "<div class=\"text-6xl font-bold text-center\">〜の極み</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The ultimate / Peak of</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ no kiwami</div>",
-      "position": 48
+      "position": 47
     },
     {
       "id": "3cc05a3a-3bcd-4e94-ab76-e7db48eccfb7",
       "front": "<div class=\"text-6xl font-bold text-center\">〜だに</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Even (thinking/dreaming)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">~ dani</div>",
-      "position": 49
+      "position": 48
     }
   ]
 }

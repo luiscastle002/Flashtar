@@ -50,262 +50,178 @@
       "position": 6
     },
     {
-      "id": "b0000000-0000-0000-0000-000000000057",
-      "front": "<div class=\"text-5xl font-bold text-center\">Where are you from?</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A phrase used to ask about someone's origin or country.</div>",
-      "position": 7
-    },
-    {
       "id": "b0000000-0000-0000-0000-000000000058",
       "front": "<div class=\"text-5xl font-bold text-center\">I am from...</div>",
       "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to state your country of origin.</div>",
-      "position": 8
-    },
-    {
-      "id": "19ef9d48-75fb-407c-b7e8-f3fe619234b6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 9
+      "position": 7
     },
     {
       "id": "10757572-762d-4af7-ba63-3948878641e0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 10
-    },
-    {
-      "id": "3607a035-c552-45ce-b676-9646573fb671",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 11
-    },
-    {
-      "id": "ea675573-3c6e-42fe-a1ce-c6b23be91a44",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 12
+      "front": "<div class=\"text-6xl font-bold text-center\">I'm sorry</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to apologize for a mistake or show sympathy.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪm ˈsɒri/</div>",
+      "position": 8
     },
     {
       "id": "8b4c2555-1f67-46cc-8208-1a3a1949a588",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 13
+      "front": "<div class=\"text-6xl font-bold text-center\">Yes, please</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to accept an offer politely.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/jɛs, pliːz/</div>",
+      "position": 9
     },
     {
       "id": "ad908c4f-07b9-444b-b963-a619484f1f48",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 14
-    },
-    {
-      "id": "bbbe00b9-0d02-4e5a-a879-25ca1b34f373",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 15
+      "front": "<div class=\"text-6xl font-bold text-center\">No, thank you</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to decline an offer politely.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/nəʊ, θæŋk juː/</div>",
+      "position": 10
     },
     {
       "id": "23e2e26d-9269-442a-8b79-c5ec854848b4",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 16
+      "front": "<div class=\"text-6xl font-bold text-center\">Where is the train station?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to find public transport.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/weər ɪz ðə treɪn ˈsteɪʃən/</div>",
+      "position": 11
     },
     {
       "id": "28beaba0-7dbf-479f-a525-34b358cf1ddf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 17
+      "front": "<div class=\"text-6xl font-bold text-center\">Can you speak slowly?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Request for someone to talk at a slower pace.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kæn juː spiːk ˈsləʊli/</div>",
+      "position": 12
     },
     {
       "id": "40137c12-f295-4c8a-b75e-b1b0d7e9163b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 18
+      "front": "<div class=\"text-6xl font-bold text-center\">What does this mean?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Asking for the definition of a word or phrase.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/wɒt dʌz ðɪs miːn/</div>",
+      "position": 13
     },
     {
       "id": "1f9afcd9-cf63-41d4-99aa-0a00a32dc8b2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 19
+      "front": "<div class=\"text-6xl font-bold text-center\">How do you spell that?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Asking for the spelling of a word.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/haʊ duː juː spɛl ðæt/</div>",
+      "position": 14
     },
     {
       "id": "1260cc0e-c040-45dd-a2c7-a9153d9ec13b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 20
+      "front": "<div class=\"text-6xl font-bold text-center\">Do you speak... ?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Asking if someone speaks a specific language.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/duː juː spiːk/</div>",
+      "position": 15
     },
     {
       "id": "d6297cd3-d61d-4a6c-97a1-26e249d83b65",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 21
+      "front": "<div class=\"text-6xl font-bold text-center\">Where can I buy a ticket?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Inquiring about purchasing a travel pass.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/weər kæn aɪ baɪ ə ˈtɪkɪt/</div>",
+      "position": 16
     },
     {
       "id": "8a97caab-9748-4167-92ef-072b3c3ed911",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 22
+      "front": "<div class=\"text-6xl font-bold text-center\">I am lost</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Stating that you do not know your location.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪ æm lɒst/</div>",
+      "position": 17
     },
     {
       "id": "910a77a6-cb2b-4829-b365-f741f629c053",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 23
+      "front": "<div class=\"text-6xl font-bold text-center\">Could you show me?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Asking for a visual demonstration.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kʊd juː ʃəʊ miː/</div>",
+      "position": 18
     },
     {
       "id": "739b48e4-5e98-4e38-bbd1-62ff3e7855ad",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 24
-    },
-    {
-      "id": "1dd4f2cc-040e-4b06-b679-93f0ec5403e6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 25
-    },
-    {
-      "id": "0d6157c5-3f69-45c6-89d5-89ea524e057f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 26
-    },
-    {
-      "id": "68c54926-6625-4877-8a91-a15c62e6e4b6",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 27
+      "front": "<div class=\"text-6xl font-bold text-center\">What is your name?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Asking someone for their name.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/wɒt ɪz jɔː neɪm/</div>",
+      "position": 19
     },
     {
       "id": "28ebb8ea-94e1-46f4-aea1-c9267c6a9afb",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 28
-    },
-    {
-      "id": "580694dc-acc5-43cf-b3b3-5da16fc0711f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 29
-    },
-    {
-      "id": "a0213753-a0a2-4e7c-9fb4-a5eed9dc9703",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 30
-    },
-    {
-      "id": "785488db-8208-4e31-ade2-868885b59df3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 31
-    },
-    {
-      "id": "86445f36-1f28-445e-9f1a-fc070a89a5f7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 32
-    },
-    {
-      "id": "b5529018-4903-4f68-9a3d-756b77e891a0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 33
-    },
-    {
-      "id": "b2a611d4-318b-4032-b177-63982c5ff1e2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 34
+      "front": "<div class=\"text-6xl font-bold text-center\">I am fine, thank you</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Standard polite response to \"How are you?\".</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪ æm faɪn, θæŋk juː/</div>",
+      "position": 20
     },
     {
       "id": "3c693e7b-ed15-419e-8859-d0afa9972047",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 35
+      "front": "<div class=\"text-6xl font-bold text-center\">I have a question</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to indicate you want to ask something.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪ hæv ə ˈkwɛstʃən/</div>",
+      "position": 21
     },
     {
       "id": "178894c5-add0-4367-8c5a-af0748830488",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 36
+      "front": "<div class=\"text-6xl font-bold text-center\">Just a moment</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used to ask someone to wait briefly.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/dʒʌst ə ˈməʊmənt/</div>",
+      "position": 22
     },
     {
       "id": "e6338bd7-99d3-4923-9308-b3cbcb72d994",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 37
+      "front": "<div class=\"text-6xl font-bold text-center\">How much does it cost?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Alternative way to ask about price.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/haʊ mʌtʃ dʌz ɪt kɒst/</div>",
+      "position": 23
     },
     {
       "id": "9363757e-1d83-40a4-a283-1844ea771b62",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 38
+      "front": "<div class=\"text-6xl font-bold text-center\">Where is the exit?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Asking for the way out of a building.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/weər ɪz ði ˈɛksɪt/</div>",
+      "position": 24
     },
     {
       "id": "7c27bacf-c406-4b37-ba36-1a9f5966002a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 39
+      "front": "<div class=\"text-6xl font-bold text-center\">Is there a pharmacy nearby?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Inquiring about a local store for medicine.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɪz ðeər ə ˈfɑːrməsi ˌnɪərˈbaɪ/</div>",
+      "position": 25
     },
     {
       "id": "1e2d6c7b-c075-417b-b33a-e81bf5f8b294",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 40
+      "front": "<div class=\"text-6xl font-bold text-center\">I am looking for...</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Stating you are searching for a specific item or place.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪ æm ˈlʊkɪŋ fɔːr/</div>",
+      "position": 26
     },
     {
       "id": "2b98d5b7-4d20-4b99-a4b9-0d46bd6965ef",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 41
+      "front": "<div class=\"text-6xl font-bold text-center\">Could you speak louder?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Request for higher volume.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kʊd juː spiːk ˈlaʊdər/</div>",
+      "position": 27
     },
     {
       "id": "2f5fd2ee-65d4-42eb-900f-30daa9a87731",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 42
+      "front": "<div class=\"text-6xl font-bold text-center\">Where is the nearest bank?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Asking for the location of a bank.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/weər ɪz ðə ˈnɪərɪst bæŋk/</div>",
+      "position": 28
     },
     {
       "id": "e72aadbf-73b3-4c2c-b65c-862782a4d7a8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 43
+      "front": "<div class=\"text-6xl font-bold text-center\">I don't know</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Used when you have no information.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪ dəʊnt nəʊ/</div>",
+      "position": 29
     },
     {
       "id": "e8f95527-b948-44df-81d0-0aefb13d3ff5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 44
+      "front": "<div class=\"text-6xl font-bold text-center\">Can you help me?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Direct request for assistance.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kæn juː hɛlp miː/</div>",
+      "position": 30
     },
     {
       "id": "b3604202-c4e3-4b85-84bd-844f4a05111f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 45
+      "front": "<div class=\"text-6xl font-bold text-center\">Where is the hospital?</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Asking for emergency medical location.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/weər ɪz ðə ˈhɒspɪtl/</div>",
+      "position": 31
     },
     {
       "id": "aa697bd9-0b1d-4d1d-b370-cd5dfba84ce9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 46
+      "front": "<div class=\"text-6xl font-bold text-center\">I am happy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Expressing a positive emotion.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪ æm ˈhæpi/</div>",
+      "position": 32
     },
     {
       "id": "4a72f566-0262-42f0-846f-54997a9173c0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 47
+      "front": "<div class=\"text-6xl font-bold text-center\">I am tired</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Expressing the need for rest.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪ æm ˈtaɪəd/</div>",
+      "position": 33
     },
     {
       "id": "042e65c5-b364-479d-a8e5-8d52bab98549",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 48
+      "front": "<div class=\"text-6xl font-bold text-center\">See you tomorrow</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A common farewell when meeting again soon.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/siː juː təˈmɒrəʊ/</div>",
+      "position": 34
     },
     {
       "id": "1091a41e-4fb2-49af-98ed-13598f7d5638",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 49
+      "front": "<div class=\"text-6xl font-bold text-center\">I need a doctor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Urgent request for medical help.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/aɪ niːd ə ˈdɒktər/</div>",
+      "position": 35
     }
   ]
 }

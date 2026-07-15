@@ -10,301 +10,301 @@
     {
       "id": "b0000000-0000-0000-0000-000000000023",
       "front": "<div class=\"text-5xl font-bold text-center\">House / Home</div>",
-      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The building you live in, and the place where you feel you belong.</div>",
+      "back": "<div class=\"text-3xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The building you live in, and the place where you feel you belong.[cite: 7]</div>",
       "position": 0
     },
     {
       "id": "1e217425-5934-441d-a4b0-c146cb1c9f52",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Kitchen / Bedroom</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Room for cooking, and room for sleeping.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkɪtʃɪn/ / /ˈbɛdruːm/</div>",
       "position": 1
     },
     {
       "id": "12f56d55-6ddd-4a28-a8ad-692a62a1cfbd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bathroom / Living Room</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Room for washing, and room for relaxing.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈbæθruːm/ / /ˈlɪvɪŋ ruːm/</div>",
       "position": 2
     },
     {
       "id": "b396c9af-f318-4af0-9701-52d85096a0f2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bed / Chair</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Furniture for sleeping, and seat for sitting.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/bɛd/ / /tʃɛər/</div>",
       "position": 3
     },
     {
       "id": "bcf6539b-c803-485f-a014-b692b3248c99",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Table / Sofa</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Surface for eating, and soft seat for relaxing.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈteɪbəl/ / /ˈsoʊfə/</div>",
       "position": 4
     },
     {
       "id": "edcaf72a-0fb2-491c-8f4a-99be1b1eda9f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Door / Window</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Entryway, and glass opening for light.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/dɔːr/ / /ˈwɪndoʊ/</div>",
       "position": 5
     },
     {
       "id": "28fa8b59-a728-42a7-b26d-a461b4ab7a70",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Fridge / Stove</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cooler for food, and heater for cooking.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/frɪdʒ/ / /stoʊv/</div>",
       "position": 6
     },
     {
       "id": "236ada44-ff90-43b0-99d4-881d39c5b456",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Lamp / Light</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Object for light, and brightness.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/læmp/ / /laɪt/</div>",
       "position": 7
     },
     {
       "id": "f9c99dde-9767-4a46-a02f-226ebb2600d8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Clock / Mirror</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Device for time, and glass for reflection.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/klɒk/ / /ˈmɪrər/</div>",
       "position": 8
     },
     {
       "id": "c49d8a21-da05-4bf1-baaa-19bec02a17d7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Key / Lock</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Tool to open doors, and mechanism for security.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kiː/ / /lɒk/</div>",
       "position": 9
     },
     {
       "id": "bbfd051d-6331-4eed-beaf-06818ba9e06c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Phone / Computer</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Device for calls, and device for work.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/foʊn/ / /kəmˈpjuːtər/</div>",
       "position": 10
     },
     {
       "id": "3aea60a7-41fe-4aea-a62b-3f4adc576b11",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Cup / Plate</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Container for drinks, and dish for food.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kʌp/ / /pleɪt/</div>",
       "position": 11
     },
     {
       "id": "1cd02904-ad3c-418f-8de1-7ae699a6d06b",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Knife / Fork</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Tool for cutting, and tool for eating.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/naɪf/ / /fɔːrk/</div>",
       "position": 12
     },
     {
       "id": "467089a1-fce5-4c1b-9de1-6afdb07a7cc9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bowl / Spoon</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Deep dish, and tool for liquid food.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/boʊl/ / /spuːn/</div>",
       "position": 13
     },
     {
       "id": "43620a57-b318-4fb5-bb5d-b9771d92fe6e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Towel / Soap</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cloth for drying, and cleaning bar.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtaʊəl/ / /soʊp/</div>",
       "position": 14
     },
     {
       "id": "b9d3fdfe-8afd-4acf-9d6e-74b315a9e179",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Shower / Bath</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Vertical spray, and tub for soaking.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈʃaʊər/ / /bæθ/</div>",
       "position": 15
     },
     {
       "id": "c241e1ec-d9ee-4d89-afc5-19526a076caf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Carpet / Rug</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Floor covering, and small mat.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkɑːrpɪt/ / /rʌɡ/</div>",
       "position": 16
     },
     {
       "id": "a8cd797b-2983-4bd5-b579-037262e2aefd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Wall / Floor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Side barrier, and ground surface.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/wɔːl/ / /flɔːr/</div>",
       "position": 17
     },
     {
       "id": "481c6944-b237-468f-bf2d-a0e4e1a0fe24",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Ceiling / Roof</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Room top, and building top.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsiːlɪŋ/ / /ruːf/</div>",
       "position": 18
     },
     {
       "id": "62ecf82f-28a5-4015-b807-4662286b6c44",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Garden / Yard</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Space with plants, and outdoor area.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈɡɑːrdən/ / /jɑːrd/</div>",
       "position": 19
     },
     {
       "id": "4468c987-0302-4486-bdaa-ec8e11bb59e9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Garage / Hallway</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Space for cars, and corridor.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɡəˈrɑːʒ/ / /ˈhɔːlweɪ/</div>",
       "position": 20
     },
     {
       "id": "b38a45b8-06c1-4cb7-a89b-04fc3df0f676",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Balcony / Stairs</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Outdoor platform, and steps between levels.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈbælkəni/ / /stɛərz/</div>",
       "position": 21
     },
     {
       "id": "61e1efdf-e99e-4816-ad5b-bcd6c907433a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Cleaning / Tidy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Action of washing, and state of order.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkliːnɪŋ/ / /ˈtaɪdi/</div>",
       "position": 22
     },
     {
       "id": "395f1a16-6179-4f77-bb6e-89a8dd9437ca",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Repair / Fix</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Process of restoring, and to mend.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/rɪˈpɛər/ / /fɪks/</div>",
       "position": 23
     },
     {
       "id": "2f8c14b3-0429-4970-8125-e30d9e380890",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Safety / Secure</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Condition of safety, and protected state.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈseɪfti/ / /sɪˈkjʊər/</div>",
       "position": 24
     },
     {
       "id": "83078cb8-2f71-4cbb-8bc2-f4bafeea00c3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Furniture / Decor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Items for use, and items for beauty.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈfɜːrnɪtʃər/ / /ˈdɛkɔːr/</div>",
       "position": 25
     },
     {
       "id": "c0a1a1e8-57cf-48e3-9122-d540d4995734",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Storage / Box</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Space for items, and container.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈstɔːrɪdʒ/ / /bɒks/</div>",
       "position": 26
     },
     {
       "id": "44e481fc-9e88-44d6-8565-4df454686cf9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Blanket / Pillow</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Covering for warmth, and cushion for head.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈblæŋkɪt/ / /ˈpɪloʊ/</div>",
       "position": 27
     },
     {
       "id": "1dbb3b00-e4a0-4dad-96c7-54af038d32ec",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Curtain / Blinds</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Fabric screen, and slats for window.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkɜːrtən/ / /blaɪndz/</div>",
       "position": 28
     },
     {
       "id": "99d810d9-8662-4563-b2ef-27a38fe4aae3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Shelf / Cabinet</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Horizontal surface, and enclosed unit.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ʃɛlf/ / /ˈkæbɪnɪt/</div>",
       "position": 29
     },
     {
       "id": "bf49cd92-f503-431e-9f32-464a0c1a9965",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Drawer / Handle</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Sliding compartment, and part for pulling.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/drɔːr/ / /ˈhændəl/</div>",
       "position": 30
     },
     {
       "id": "fb18eaa5-c849-473e-b233-1c9e69876ec3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Plug / Socket</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Connector end, and wall port.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/plʌɡ/ / /ˈsɒkɪt/</div>",
       "position": 31
     },
     {
       "id": "79fd7884-13f4-4c3e-8604-0f8b58735c9f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Switch / Battery</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Toggle for power, and energy cell.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/swɪtʃ/ / /ˈbætəri/</div>",
       "position": 32
     },
     {
       "id": "ef6ad2ab-265f-4e4c-8de3-63edb901d974",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Heat / Cooling</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Warm temperature, and low temperature.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/hiːt/ / /ˈkuːlɪŋ/</div>",
       "position": 33
     },
     {
       "id": "b4845070-cd54-410f-83b6-41616ec780e2",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Vent / Chimney</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Air opening, and smoke path.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/vɛnt/ / /ˈtʃɪmni/</div>",
       "position": 34
     },
     {
       "id": "a3c9c31a-cc8b-4968-85f5-c1ac5c7fac13",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Pantry / Attic</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Storage room, and roof space.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈpæntri/ / /ˈætɪk/</div>",
       "position": 35
     },
     {
       "id": "0def5acf-b71b-4fbc-ae19-200b39ae8f54",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Basement / Cellar</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Lower floor, and storage cellar.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈbeɪsmənt/ / /ˈsɛlər/</div>",
       "position": 36
     },
     {
       "id": "92ce6c64-9f4c-4bb7-b4ce-c2cd9d86f2ab",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Patio / Deck</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Stone outdoor area, and wood platform.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈpætioʊ/ / /dɛk/</div>",
       "position": 37
     },
     {
       "id": "2b321e16-99f4-4f53-a060-ceadfb587433",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Fence / Gate</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Boundary structure, and barrier gate.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/fɛns/ / /ɡeɪt/</div>",
       "position": 38
     },
     {
       "id": "f5d509fb-6da9-4e92-bf87-af5939a7b344",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Path / Driveway</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Walking way, and car way.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/pæθ/ / /ˈdraɪvweɪ/</div>",
       "position": 39
     },
     {
       "id": "db71b689-e988-4ff3-a359-07d2a6243ffa",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Housework / Chores</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Work at home, and list of tasks.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈhaʊswɜːrk/ / /tʃɔːrz/</div>",
       "position": 40
     },
     {
       "id": "a7a8a844-5ce7-4626-9954-730bf0ed7db3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Laundry / Wash</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Clothes to wash, and to clean.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈlɔːndri/ / /wɒʃ/</div>",
       "position": 41
     },
     {
       "id": "3071ec12-45ea-4017-9de4-9f6b2e26e1cd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Vacuum / Broom</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cleaner for carpets, and tool for sweeping.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈvækjuːm/ / /bruːm/</div>",
       "position": 42
     },
     {
       "id": "149de76f-6f60-4f70-ab9c-6fc15fb491e9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Mop / Bucket</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Tool for wet floors, and pail for water.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/mɒp/ / /ˈbʌkɪt/</div>",
       "position": 43
     },
     {
       "id": "f7477257-baf1-436d-9d19-e32f26c44338",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Trash / Bin</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Waste, and holder for waste.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/træʃ/ / /bɪn/</div>",
       "position": 44
     },
     {
       "id": "0e0df261-b133-422c-a878-1a98952c645c",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Mail / Post</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Letters received, and sending system.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/meɪl/ / /poʊst/</div>",
       "position": 45
     },
     {
       "id": "fc0b81a4-1b4e-4e29-8241-3c85bf43d220",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Welcome / Guest</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Greeting, and visitor.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈwɛlkəm/ / /ɡɛst/</div>",
       "position": 46
     },
     {
       "id": "f654f922-4c39-4b5a-860b-ac811392e398",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Decorate / Paint</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To improve looks, and to color surfaces.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈdɛkəreɪt/ / /peɪnt/</div>",
       "position": 47
     },
     {
       "id": "e9633cf7-7b6f-45b5-810b-3e71fbcdea81",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Comfort / Cozy</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Feeling of ease, and warm/comfortable.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈkʌmfərt/ / /ˈkoʊzi/</div>",
       "position": 48
     },
     {
       "id": "756bbe84-bb50-4731-ac78-c293f6eb0a33",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Move / Pack</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Changing home, and boxing items.</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/muːv/ / /pæk/</div>",
       "position": 49
     }
   ]

@@ -74,238 +74,184 @@
       "position": 10
     },
     {
-      "id": "902a4d14-f58d-4a08-a220-9c019b83f7f2",
-      "front": "<div class=\"text-6xl font-bold text-center\">会議</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Meeting</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かいぎ (Kaigi)</div>",
-      "position": 11
-    },
-    {
       "id": "932140b7-605b-4413-8f0f-46958dd8c40c",
       "front": "<div class=\"text-6xl font-bold text-center\">アポイント</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Appointment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">アポイント (Apointo)</div>",
-      "position": 12
+      "position": 11
     },
     {
       "id": "28be8b67-9748-47b7-a216-befef7060920",
       "front": "<div class=\"text-6xl font-bold text-center\">調整する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To adjust / Coordinate</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちょうせいする (Chōsei suru)</div>",
-      "position": 13
+      "position": 12
     },
     {
       "id": "dfd59060-6b27-4554-a12a-0fe000d8e11d",
       "front": "<div class=\"text-6xl font-bold text-center\">日程</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Schedule / Itinerary</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">にってい (Nittei)</div>",
-      "position": 14
+      "position": 13
     },
     {
       "id": "12bcf6f9-74c9-4c60-9761-96fb651a041e",
       "front": "<div class=\"text-6xl font-bold text-center\">添付する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To attach (a file)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">てんぷする (Tenpu suru)</div>",
-      "position": 15
+      "position": 14
     },
     {
       "id": "b1bd6fab-674f-4968-b5f5-1c578254cff9",
       "front": "<div class=\"text-6xl font-bold text-center\">共有する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To share</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">きょうゆうする (Kyōyū suru)</div>",
-      "position": 16
+      "position": 15
     },
     {
       "id": "81fa220d-f177-4545-8b25-c1993bd3296d",
       "front": "<div class=\"text-6xl font-bold text-center\">修正する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To correct / Revise</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しゅうせいする (Shūsei suru)</div>",
-      "position": 17
+      "position": 16
     },
     {
       "id": "df69fc70-1cc9-4507-877d-0b17b8730752",
       "front": "<div class=\"text-6xl font-bold text-center\">返信する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To reply</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">へんしんする (Henshin suru)</div>",
-      "position": 18
+      "position": 17
     },
     {
       "id": "7844f5af-b3fe-44f1-ad2f-920553a9e3b2",
       "front": "<div class=\"text-6xl font-bold text-center\">件名</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Subject line (email)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けんめい (Kenmei)</div>",
-      "position": 19
+      "position": 18
     },
     {
       "id": "6831b0bb-6950-4ed0-b82b-48964064ad97",
       "front": "<div class=\"text-6xl font-bold text-center\">進捗</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Progress</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんちょく (Shinchoku)</div>",
-      "position": 20
+      "position": 19
     },
     {
       "id": "58f0cfe8-c30c-446e-be63-e6cdad4d5ce8",
       "front": "<div class=\"text-6xl font-bold text-center\">報告する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To report</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ほうこくする (Hōkoku suru)</div>",
-      "position": 21
-    },
-    {
-      "id": "a62909ac-aa7c-447c-81c5-101058b8b22c",
-      "front": "<div class=\"text-6xl font-bold text-center\">資料</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Materials / Documents</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しりょう (Shiryō)</div>",
-      "position": 22
+      "position": 20
     },
     {
       "id": "fb48b4b1-6d49-4c63-8779-7c3cdc9bf8aa",
       "front": "<div class=\"text-6xl font-bold text-center\">契約書</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Contract</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けいやくしょ (Keiyakusho)</div>",
-      "position": 23
+      "position": 21
     },
     {
       "id": "7eb0c16f-8c32-4920-8057-68af8a685d61",
       "front": "<div class=\"text-6xl font-bold text-center\">署名</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Signature</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょめい (Shomei)</div>",
-      "position": 24
+      "position": 22
     },
     {
       "id": "91086084-9db5-48c1-b097-e86e05adc0c5",
       "front": "<div class=\"text-6xl font-bold text-center\">対応する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To handle / Respond</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たいおうする (Taiō suru)</div>",
-      "position": 25
+      "position": 23
     },
     {
       "id": "d0ec1498-fdf3-42f1-bc45-e0ea9a0afc2a",
       "front": "<div class=\"text-6xl font-bold text-center\">欠席する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To be absent</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けっせきする (Kesseki suru)</div>",
-      "position": 26
+      "position": 24
     },
     {
       "id": "3f4f5446-45e9-40d5-9a57-7c4415d37b05",
       "front": "<div class=\"text-6xl font-bold text-center\">出席する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To attend</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しゅっせきする (Shusseki suru)</div>",
-      "position": 27
+      "position": 25
     },
     {
       "id": "f4b60d27-66b3-447e-9195-ec99168364fd",
       "front": "<div class=\"text-6xl font-bold text-center\">承諾する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To consent / Accept</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しょうだくする (Shōdaku suru)</div>",
-      "position": 28
+      "position": 26
     },
     {
       "id": "f1b32425-f072-4f91-94ea-548eeadb3350",
       "front": "<div class=\"text-6xl font-bold text-center\">断る</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To refuse / Decline</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ことわる (Kotowaru)</div>",
-      "position": 29
-    },
-    {
-      "id": "c4010872-9493-4122-8c0b-7646d89c0569",
-      "front": "<div class=\"text-6xl font-bold text-center\">伺う</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To ask / Hear (humble)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">うかがう (Ukagau)</div>",
-      "position": 30
+      "position": 27
     },
     {
       "id": "3025181f-e063-4b48-a4cc-889e6d3bafe1",
       "front": "<div class=\"text-6xl font-bold text-center\">確認する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To confirm / Check</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かくにんする (Kakunin suru)</div>",
-      "position": 31
+      "position": 28
     },
     {
       "id": "e846c248-4dee-4f86-947f-072ede065395",
       "front": "<div class=\"text-6xl font-bold text-center\">作成する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To create / Prepare (documents)</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さくせいする (Sakusei suru)</div>",
-      "position": 32
-    },
-    {
-      "id": "5c57cdfa-db54-4915-8f8c-cd32ebceb182",
-      "front": "<div class=\"text-6xl font-bold text-center\">部署</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Department / Division</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぶしょ (Busho)</div>",
-      "position": 33
+      "position": 29
     },
     {
       "id": "1f22f230-ede4-475b-a66f-759fb96e87fe",
       "front": "<div class=\"text-6xl font-bold text-center\">担当者</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Person in charge</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たんとうしゃ (Tantōsha)</div>",
-      "position": 34
+      "position": 30
     },
     {
       "id": "9020c3d0-b4c1-48c0-a7b6-6d11e0117ac6",
       "front": "<div class=\"text-6xl font-bold text-center\">役職</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Position / Title</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">やくしょく (Yakushoku)</div>",
-      "position": 35
-    },
-    {
-      "id": "d16f4457-41fd-4e6b-a739-b4fa116abf94",
-      "front": "<div class=\"text-6xl font-bold text-center\">上司</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Boss / Superior</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じょうし (Jōshi)</div>",
-      "position": 36
-    },
-    {
-      "id": "da325e8f-9f62-49dc-a502-e92b9caa858a",
-      "front": "<div class=\"text-6xl font-bold text-center\">部下</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Subordinate</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぶか (Buka)</div>",
-      "position": 37
-    },
-    {
-      "id": "78e9e5c0-dff9-49d2-a6f7-409f16a66b4e",
-      "front": "<div class=\"text-6xl font-bold text-center\">同僚</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Colleague</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">どうりょう (Dōryō)</div>",
-      "position": 38
+      "position": 31
     },
     {
       "id": "b4a1a09c-3a0e-4900-bb47-137f2e43f49a",
       "front": "<div class=\"text-6xl font-bold text-center\">指示</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Instruction / Direction</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しじ (Shiji)</div>",
-      "position": 39
+      "position": 32
     },
     {
       "id": "3a6b5328-59d8-4f1c-baa2-4f72a790429c",
       "front": "<div class=\"text-6xl font-bold text-center\">相談する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To consult</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">そうだんする (Sōdan suru)</div>",
-      "position": 40
+      "position": 33
     },
     {
       "id": "3d04356d-1cfb-45c3-b7f2-2e59230d36f8",
       "front": "<div class=\"text-6xl font-bold text-center\">意見</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Opinion</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いけん (Iken)</div>",
-      "position": 41
+      "position": 34
     },
     {
       "id": "67eaef34-a89a-4940-99a3-2476044c262b",
       "front": "<div class=\"text-6xl font-bold text-center\">提案する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To propose / Suggest</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ていあんする (Teian suru)</div>",
-      "position": 42
+      "position": 35
     },
     {
       "id": "4813c704-5f1d-4bc2-9160-b19e81df37db",
       "front": "<div class=\"text-6xl font-bold text-center\">決定する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To decide</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けっていする (Kettei suru)</div>",
-      "position": 43
+      "position": 36
     },
     {
       "id": "67503dd2-0f96-41ae-8587-27231cd180fd",
       "front": "<div class=\"text-6xl font-bold text-center\">達成する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To achieve</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">たっせいする (Tassei suru)</div>",
-      "position": 44
-    },
-    {
-      "id": "473c0ba2-8188-4c12-9582-0687b58929af",
-      "front": "<div class=\"text-6xl font-bold text-center\">目標</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Goal / Target</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">もくひょう (Mokuhyō)</div>",
-      "position": 45
+      "position": 37
     },
     {
       "id": "df3d2fff-9a9e-4ed8-a20c-a7fb0b24f0bb",
       "front": "<div class=\"text-6xl font-bold text-center\">交渉する</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To negotiate</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">こうしょうする (Kōshō suru)</div>",
-      "position": 46
+      "position": 38
     },
     {
       "id": "d8c1cf79-5d63-4760-8bb5-f0e21af7d292",
       "front": "<div class=\"text-6xl font-bold text-center\">現状</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Present condition / Current status</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">げんじょう (Genjō)</div>",
-      "position": 47
-    },
-    {
-      "id": "58176192-bf1f-48f8-899a-2aa94055d37e",
-      "front": "<div class=\"text-6xl font-bold text-center\">優先</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Priority</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ゆうせん (Yūsen)</div>",
-      "position": 48
+      "position": 39
     },
     {
       "id": "b6e62ce4-24d2-479e-b20b-af05a7f92f4e",
       "front": "<div class=\"text-6xl font-bold text-center\">問題点</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Problem / Issue</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">もんだいてん (Mondaiten)</div>",
-      "position": 49
+      "position": 40
     }
   ]
 }

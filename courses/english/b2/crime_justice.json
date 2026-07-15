@@ -9,303 +9,171 @@
   "cards": [
     {
       "id": "4f2dcf4d-a602-4583-8a7a-563d2db198e0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 1</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Verdict</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A decision on a disputed issue in a civil or criminal case or an inquest.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈvɜːdɪkt/</div>",
       "position": 0
     },
     {
       "id": "263bf38a-7ac9-4b51-a61d-fb817434eb63",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 2</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Defendant</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An individual, company, or institution sued or accused in a court of law.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/dɪˈfendənt/</div>",
       "position": 1
     },
     {
       "id": "aef1443a-d8a1-4c12-8bd4-4262715b02b1",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 3</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Prosecution</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The institution and conducting of legal proceedings against someone in respect of a criminal charge.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌprɒsɪˈkjuːʃn/</div>",
       "position": 2
     },
     {
       "id": "ffc2177f-354d-41ee-8c53-13ae20eb9862",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 4</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Acquit</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To free someone from a criminal charge by a verdict of not guilty.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/əˈkwɪt/</div>",
       "position": 3
     },
     {
       "id": "c2bcb670-eaa6-4ef7-8319-25b151f61d29",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 5</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Convict</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>To declare formally that someone is guilty of a criminal offense.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/kənˈvɪkt/</div>",
       "position": 4
     },
     {
       "id": "c9177478-e263-453e-9f37-8504c43bec84",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 6</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Testimony</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A formal written or spoken statement, especially one given in a court of law.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈtestɪməni/</div>",
       "position": 5
     },
     {
       "id": "174aa9ab-aa05-47b6-9242-71c3a2766b8e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 7</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Evidence</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Information indicating whether a belief or proposition is true or valid.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈevɪdəns/</div>",
       "position": 6
     },
     {
       "id": "9972f9de-c077-4b16-978c-db9b4c5c1948",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 8</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Sentence</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The punishment assigned to a defendant found guilty by a court.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈsentəns/</div>",
       "position": 7
     },
     {
       "id": "8df14770-acd7-4543-b6d7-ddc54f7850e9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 9</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Appeal</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An application to a higher court for a decision to be reversed.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/əˈpiːl/</div>",
       "position": 8
     },
     {
       "id": "04670439-14af-473e-9408-07d46a2e63d7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 10</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Plaintiff</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person who brings a case against another in a court of law.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈpleɪntɪf/</div>",
       "position": 9
     },
     {
       "id": "e9c781c2-5264-45b2-a537-6848d20c1c1e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 11</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Allegation</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A claim or assertion that someone has done something illegal or wrong.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌæləˈɡeɪʃn/</div>",
       "position": 10
     },
     {
       "id": "7d868033-4ec1-4140-8db6-0ac30e2dc335",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 12</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Offense</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An act that is punishable by law; a crime.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/əˈfens/</div>",
       "position": 11
     },
     {
       "id": "e4399a3a-ef49-45b2-bd53-c3f69a2d80f8",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 13</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Witness</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person who sees an event, typically a crime or accident, take place.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈwɪtnəs/</div>",
       "position": 12
     },
     {
       "id": "a2258c6b-f8c5-4612-83ed-e809fb06dd39",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 14</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Jury</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A body of people sworn to give a verdict in a legal case.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈdʒʊəri/</div>",
       "position": 13
     },
     {
       "id": "5383d20e-9116-4044-b324-38d0eba24750",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 15</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Bail</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The temporary release of an accused person awaiting trial, sometimes on condition that a sum of money be lodged to guarantee their appearance in court.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/beɪl/</div>",
       "position": 14
     },
     {
       "id": "0dcfb3f8-b747-4540-a1ff-c6a33cf16040",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 16</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Attorney</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A person appointed to act for another in business or legal matters; a lawyer.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/əˈtɜːni/</div>",
       "position": 15
     },
     {
       "id": "621cc32f-de2c-41bf-b512-7dc14fd0546f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 17</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Felony</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A crime, typically one involving violence, regarded as more serious than a misdemeanor.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈfeləni/</div>",
       "position": 16
     },
     {
       "id": "9e40f0bc-73f5-40cb-ad72-fa081342a549",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 18</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Misdemeanor</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A minor wrongdoing or crime.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌmɪsdɪˈmiːnə(r)/</div>",
       "position": 17
     },
     {
       "id": "b35b7378-8a35-4e08-918f-cf71a08fbb85",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 19</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Probation</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The release of an offender from detention, subject to a period of good behavior under supervision.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/prəˈbeɪʃn/</div>",
       "position": 18
     },
     {
       "id": "c1dfbb8b-9a8e-496a-9392-3659f6fa9171",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 20</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Incarceration</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The state of being confined in prison; imprisonment.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɪnˌkɑːsəˈreɪʃn/</div>",
       "position": 19
     },
     {
       "id": "102d8bfc-2592-4cb3-9620-87b6450aeed9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 21</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Statute</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A written law passed by a legislative body.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈstætʃuːt/</div>",
       "position": 20
     },
     {
       "id": "e1feab12-570b-4600-92cb-ae8293004d48",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 22</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "front": "<div class=\"text-6xl font-bold text-center\">Litigation</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The process of taking legal action.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌlɪtɪˈɡeɪʃn/</div>",
       "position": 21
     },
     {
-      "id": "083cd9b7-3cf8-4803-af63-1eb9788294c3",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 23</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "281db148-87b7-4db1-b35b-073f700f4be0",
+      "front": "<div class=\"text-6xl font-bold text-center\">Plea</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A formal statement by or on behalf of a defendant or prisoner, stating guilt or innocence in response to a charge.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/pliː/</div>",
       "position": 22
     },
     {
-      "id": "281db148-87b7-4db1-b35b-073f700f4be0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 24</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "3bdbe3cf-1ba9-4e4d-b15d-2dc395b8f362",
+      "front": "<div class=\"text-6xl font-bold text-center\">Indictment</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>A formal charge or accusation of a serious crime.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ɪnˈdaɪtmənt/</div>",
       "position": 23
     },
     {
-      "id": "3bdbe3cf-1ba9-4e4d-b15d-2dc395b8f362",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 25</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "5f70862f-4aa1-443e-8e40-3a55b510fdb9",
+      "front": "<div class=\"text-6xl font-bold text-center\">Precedent</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈpresɪdənt/</div>",
       "position": 24
     },
     {
-      "id": "7006abc7-b8d6-4ee6-be17-b92c378871fc",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 26</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "03cabb97-9d26-4fd7-815c-4a973755028a",
+      "front": "<div class=\"text-6xl font-bold text-center\">Jurisdiction</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The official power to make legal decisions and judgments.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˌdʒʊərɪsˈdɪkʃn/</div>",
       "position": 25
     },
     {
-      "id": "5f70862f-4aa1-443e-8e40-3a55b510fdb9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 27</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
+      "id": "373d2338-d6d1-4115-bb1d-370418de021a",
+      "front": "<div class=\"text-6xl font-bold text-center\">Parole</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>The release of a prisoner temporarily or permanently before the completion of a sentence, on the promise of good behavior.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/pəˈrəʊl/</div>",
       "position": 26
     },
     {
-      "id": "03cabb97-9d26-4fd7-815c-4a973755028a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 28</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 27
-    },
-    {
-      "id": "373d2338-d6d1-4115-bb1d-370418de021a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 29</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 28
-    },
-    {
       "id": "713ecc8a-68a7-40f5-a6a6-10d1ccf62a3e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 30</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 29
-    },
-    {
-      "id": "00e12fc1-fa6f-4ba3-90d0-e8ad587bbf35",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 31</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 30
-    },
-    {
-      "id": "a1df5a60-cb2e-473a-987a-19a532f94baf",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 32</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 31
-    },
-    {
-      "id": "93b8c212-b52f-443a-80f9-9ba410e31032",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 33</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 32
-    },
-    {
-      "id": "45ffc780-dc24-4fdf-87f9-03f3fedb861a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 34</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 33
-    },
-    {
-      "id": "7a763a03-cd48-4cc8-bd93-fd4c444ac301",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 35</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 34
-    },
-    {
-      "id": "81f5d085-92f3-4adc-a493-6f70dc4f1e52",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 36</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 35
-    },
-    {
-      "id": "f119dd7c-07c1-42e8-bf92-d039e2d322e5",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 37</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 36
-    },
-    {
-      "id": "86fcc20f-c71a-44d3-824d-204b67424f71",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 38</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 37
-    },
-    {
-      "id": "4a85834f-2bed-4b01-8a20-5e6dce093f65",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 39</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 38
-    },
-    {
-      "id": "3c61e49e-caf7-433b-8c8d-d5822819700f",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 40</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 39
-    },
-    {
-      "id": "ef228782-2988-4201-b897-d8de9ce1d4e9",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 41</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 40
-    },
-    {
-      "id": "c05d6bf0-d5ce-4720-be4d-0b86b333f6b0",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 42</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 41
-    },
-    {
-      "id": "ac825ffe-2af0-4303-958a-86917b922272",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 43</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 42
-    },
-    {
-      "id": "dfcf5a65-3c18-4424-82af-44cc91fc7c91",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 44</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 43
-    },
-    {
-      "id": "2b99672a-98ca-4792-8b7c-605d20da5ccd",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 45</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 44
-    },
-    {
-      "id": "fa25087e-1bef-4934-94cd-ccb1b164a607",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 46</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 45
-    },
-    {
-      "id": "a61f4786-ae3e-495d-b33c-1cbc006e2e7e",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 47</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 46
-    },
-    {
-      "id": "10bb3c05-1779-4de0-8a9a-2652b620d38a",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 48</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 47
-    },
-    {
-      "id": "0a49d29e-5c56-4325-aea7-6858c21819c7",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 49</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 48
-    },
-    {
-      "id": "a2629d64-f26a-4335-ad70-bc792afb2e72",
-      "front": "<div class=\"text-6xl font-bold text-center\">Placeholder 50</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Placeholder</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">placeholder</div>",
-      "position": 49
+      "front": "<div class=\"text-6xl font-bold text-center\">Justice</div>",
+      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Just behavior or treatment; the administration of the law.[cite: 14]</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">/ˈdʒʌstɪs/</div>",
+      "position": 27
     }
   ]
 }

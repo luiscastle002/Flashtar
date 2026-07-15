@@ -146,166 +146,112 @@
       "position": 22
     },
     {
-      "id": "ed79953f-638c-4cb8-8cd2-6164e6e5491c",
-      "front": "<div class=\"text-6xl font-bold text-center\">手術</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Surgery / Operation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しゅじゅつ (Shujutsu)</div>",
-      "position": 23
-    },
-    {
-      "id": "c176ab9c-4063-4429-9a7a-26b96644e364",
-      "front": "<div class=\"text-6xl font-bold text-center\">緩和</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Relief / Mitigation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんわ (Kanwa)</div>",
-      "position": 24
-    },
-    {
       "id": "488afa07-3761-4323-86c9-2ab2f3931097",
       "front": "<div class=\"text-6xl font-bold text-center\">合併症</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Complication</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">がっぺいしょう (Gappeishou)</div>",
-      "position": 25
+      "position": 23
     },
     {
       "id": "0f35fe26-59c4-4565-91d0-c7706afa9dd7",
       "front": "<div class=\"text-6xl font-bold text-center\">解剖</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Anatomy / Dissection</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かいぼう (Kaibou)</div>",
-      "position": 26
+      "position": 24
     },
     {
       "id": "4eea2889-9e0d-40df-a2fc-68b6e92132af",
       "front": "<div class=\"text-6xl font-bold text-center\">ホルモン</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Hormone</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ほるもん (Horumon)</div>",
-      "position": 27
+      "position": 25
     },
     {
       "id": "f7f50b78-e343-4159-8cc5-cb0e4f7fc3cc",
       "front": "<div class=\"text-6xl font-bold text-center\">再生</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Regeneration</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">さいせい (Saisei)</div>",
-      "position": 28
+      "position": 26
     },
     {
       "id": "a62f37d0-db51-4203-90e0-98242fef44b1",
       "front": "<div class=\"text-6xl font-bold text-center\">老化</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Aging</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ろうか (Rouka)</div>",
-      "position": 29
+      "position": 27
     },
     {
       "id": "7b0b1079-e5ff-4c7c-aa86-61afc0847179",
       "front": "<div class=\"text-6xl font-bold text-center\">緩和ケア</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Palliative care</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんわけあ (Kanwa kea)</div>",
-      "position": 30
+      "position": 28
     },
     {
       "id": "4e70a917-e370-4149-b7c4-990be53e3688",
       "front": "<div class=\"text-6xl font-bold text-center\">臨床研究</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Clinical research</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">りんしょうけんきゅう (Rinshou kenkyuu)</div>",
-      "position": 31
+      "position": 29
     },
     {
       "id": "7dc66a1e-f9d8-4ce7-b896-50c51a98ebea",
       "front": "<div class=\"text-6xl font-bold text-center\">生物学</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Biology</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せいぶつがく (Seibutsu-gaku)</div>",
-      "position": 32
+      "position": 30
     },
     {
       "id": "cc182838-65e0-4b42-b55a-f01bead2bb52",
       "front": "<div class=\"text-6xl font-bold text-center\">治癒</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Cure / Healing</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちゆ (Chiyu)</div>",
-      "position": 33
+      "position": 31
     },
     {
       "id": "754f096d-4047-40a4-869c-41c36e1cc7e0",
       "front": "<div class=\"text-6xl font-bold text-center\">医療</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Medical care</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">いりょう (Iryou)</div>",
-      "position": 34
-    },
-    {
-      "id": "609d1f6e-0b37-4fd8-8b75-7b1d3afb6b28",
-      "front": "<div class=\"text-6xl font-bold text-center\">科学</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Science</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かがく (Kagaku)</div>",
-      "position": 35
-    },
-    {
-      "id": "6c02ef06-b271-49c0-a94a-557416377c77",
-      "front": "<div class=\"text-6xl font-bold text-center\">実験</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Experiment</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">じっけん (Jikken)</div>",
-      "position": 36
+      "position": 32
     },
     {
       "id": "def2f2c4-0974-4e4a-96ab-3558b72ef3fa",
       "front": "<div class=\"text-6xl font-bold text-center\">検診</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Medical examination</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">けんしん (Kenshin)</div>",
-      "position": 37
+      "position": 33
     },
     {
       "id": "03f17533-c9d5-4e10-b1c1-1a3360f01b74",
       "front": "<div class=\"text-6xl font-bold text-center\">患者</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Patient</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かんじゃ (Kanja)</div>",
-      "position": 38
+      "position": 34
     },
     {
       "id": "2c912cf1-6c45-401a-aa4f-268809bcd3df",
       "front": "<div class=\"text-6xl font-bold text-center\">専門家</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Specialist / Expert</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">せんもんか (Senmon-ka)</div>",
-      "position": 39
+      "position": 35
     },
     {
       "id": "f42caf8d-0001-4aaa-9675-965616d68355",
       "front": "<div class=\"text-6xl font-bold text-center\">発見</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Discovery</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">はっけん (Hakken)</div>",
-      "position": 40
-    },
-    {
-      "id": "238b7a3f-6f9b-4231-ad20-9c9cf56817d1",
-      "front": "<div class=\"text-6xl font-bold text-center\">開発</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Development</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">かいはつ (Kaihatsu)</div>",
-      "position": 41
+      "position": 36
     },
     {
       "id": "ac96e5d4-c421-4a5f-8b45-6f66c1742183",
       "front": "<div class=\"text-6xl font-bold text-center\">安全</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Safety</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">あんぜん (Anzen)</div>",
-      "position": 42
-    },
-    {
-      "id": "5dce2479-57ed-4c26-883a-be47614e1feb",
-      "front": "<div class=\"text-6xl font-bold text-center\">技術</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Technology / Skill</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぎじゅつ (Gijutsu)</div>",
-      "position": 43
+      "position": 37
     },
     {
       "id": "ec90ee71-b8c1-418c-a9e0-1b7fb09b899b",
       "front": "<div class=\"text-6xl font-bold text-center\">知識</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Knowledge</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ちしき (Chishiki)</div>",
-      "position": 44
-    },
-    {
-      "id": "11d6cfa3-58fd-4716-a319-eb04f2b79699",
-      "front": "<div class=\"text-6xl font-bold text-center\">データ</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Data</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">でーた (Deeta)</div>",
-      "position": 45
-    },
-    {
-      "id": "9f8db8ca-8637-45c4-a8f1-958474f370dd",
-      "front": "<div class=\"text-6xl font-bold text-center\">分析</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Analysis</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ぶんせき (Bunseki)</div>",
-      "position": 46
+      "position": 38
     },
     {
       "id": "d32e091c-6f33-4dc5-9777-15f92759f87b",
       "front": "<div class=\"text-6xl font-bold text-center\">評価</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Evaluation</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">ひょうか (Hyouka)</div>",
-      "position": 47
-    },
-    {
-      "id": "f66e14a7-8b0d-47e8-b3d1-a377bae00126",
-      "front": "<div class=\"text-6xl font-bold text-center\">進歩</div>",
-      "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Progress / Advance</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">しんぽ (Shinpo)</div>",
-      "position": 48
+      "position": 39
     },
     {
       "id": "72fd3bc1-7718-44ea-865e-5fc95b248407",
       "front": "<div class=\"text-6xl font-bold text-center\">倫理</div>",
       "back": "<div class=\"text-4xl text-center\"><span class=\"text-muted-foreground text-lg block\">Meaning</span>Ethics</div><div class=\"text-2xl text-center text-muted-foreground mt-2\">りんり (Rinri)</div>",
-      "position": 49
+      "position": 40
     }
   ]
 }
