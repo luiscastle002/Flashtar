@@ -41,14 +41,15 @@ const supabase = createClient(supabaseUrl, supabaseServiceKey, {
 
 const AUDIO_EXTENSIONS = [".mp3", ".wav", ".ogg"];
 
+const officialAudioSource = env['OFFICIAL_COURSE_AUDIO_SOURCE'] || path.join(__dirname, '..', 'public', 'audio', 'courses');
+
 /**
  * Resolves the path of the official course audio.
  * Future-proofed for CDN/Supabase Storage redirection.
  */
 function resolveOfficialAudio(course, level, cardId, existingAudioUrl) {
   for (const ext of AUDIO_EXTENSIONS) {
-    const localRelPath = `public/audio/courses/${course}/${level}/${cardId}${ext}`;
-    const localAbsPath = path.join(__dirname, '..', localRelPath);
+    const localAbsPath = path.join(officialAudioSource, course, level, `${cardId}${ext}`);
     if (fs.existsSync(localAbsPath)) {
       return `audio/${course}/${level}/${cardId}${ext}`;
     }
